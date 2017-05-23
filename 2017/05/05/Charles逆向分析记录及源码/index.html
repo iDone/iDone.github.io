@@ -42,7 +42,7 @@
   <meta property="og:url" content="/2017/05/05/Charles逆向分析记录及源码/index.html">
   <meta property="og:site_name" content="@iYoungDone&#39;s Hexo Blog">
   <meta property="og:description" content="查尔斯动态加载启动器(CharlesLoader) v4.x   —by B.S. 5/5/2017    极其强大的Web调试、代理抓包工具启动器。 Charles v4.x 动态加载启动器loader 最新版v4.1.1相对v.4.0.2以上版本比较，明文类名已混淆。         gitoschina码云源码:http://git.oschina.net/iYoungDone/">
-  <meta property="og:updated_time" content="2017-05-17T11:12:24.000Z">
+  <meta property="og:updated_time" content="2017-05-23T05:32:17.000Z">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Charles逆向分析记录及源码">
   <meta name="twitter:description" content="查尔斯动态加载启动器(CharlesLoader) v4.x   —by B.S. 5/5/2017    极其强大的Web调试、代理抓包工具启动器。 Charles v4.x 动态加载启动器loader 最新版v4.1.1相对v.4.0.2以上版本比较，明文类名已混淆。         gitoschina码云源码:http://git.oschina.net/iYoungDone/">
@@ -307,11 +307,38 @@
                       <a href="http://git.oschina.net/iYoungDone/charlesloader" target="_blank" rel="external">gitoschina码云源码:http://git.oschina.net/iYoungDone/charlesloader</a>
                     </p>
                   </blockquote>
-                  <h5 id="最新版v4-1-1相对v-4-0-2比较，明文类名已混淆">
-                    <a href="#最新版v4-1-1相对v-4-0-2比较，明文类名已混淆" class="headerlink" title="最新版v4.1.1相对v.4.0.2比较，明文类名已混淆."></a>最新版v4.1.1相对v.4.0.2比较，明文类名已混淆.</h5>
+                  <h2 id="Charles-v4-1-2版本分析记录">
+                    <a href="#Charles-v4-1-2版本分析记录" class="headerlink" title="Charles v4.1.2版本分析记录"></a>
+                    <strong>Charles v4.1.2版本分析记录</strong>
+                  </h2>
+                  <p>–by B.S.</p>
+                  <p>5/23/2017 1:32:17 PM</p>
+                  <h5 id="最新版v4-1-2相对v-4-0-2比较，明文类名已混淆">
+                    <a href="#最新版v4-1-2相对v-4-0-2比较，明文类名已混淆" class="headerlink" title="最新版v4.1.2相对v.4.0.2比较，明文类名已混淆."></a>最新版v4.1.2相对v.4.0.2比较，明文类名已混淆.</h5>
                   <h5 id="反编译为源码后-找关键点的分析流程">
                     <a href="#反编译为源码后-找关键点的分析流程" class="headerlink" title="反编译为源码后,找关键点的分析流程:"></a>反编译为源码后,找关键点的分析流程:</h5>
+                  <blockquote>
+                    <ol>
+                      <li>在com\xk72\charles\gui\frames\RegisterFrame.java里找到this.bRegister.addActionListener导入的类import
+                        com.xk72.charles.gui.frames.GTvL;
+                      </li>
+                      <li>在com.xk72.charles.gui.frames.GTvL里找到if (object2 != null) 使他永久为null的函数导入的类import
+                        com.xk72.charles.qFep;
+                      </li>
+                      <li>在com.xk72.charles.qFep里就是关键类。分析关键点HOOK。</li>
+                    </ol>
+                  </blockquote>
+                  <hr>
+                  <h2 id="Charles-v4-1-1版本分析记录">
+                    <a href="#Charles-v4-1-1版本分析记录" class="headerlink" title="Charles v4.1.1版本分析记录"></a>
+                    <strong>Charles v4.1.1版本分析记录</strong>
+                  </h2>
+                  <p>–by B.S.O.D.</p>
                   <p>5/5/2017 8:30:00 AM</p>
+                  <h5 id="最新版v4-1-1相对v-4-0-2比较，明文类名已混淆">
+                    <a href="#最新版v4-1-1相对v-4-0-2比较，明文类名已混淆" class="headerlink" title="最新版v4.1.1相对v.4.0.2比较，明文类名已混淆."></a>最新版v4.1.1相对v.4.0.2比较，明文类名已混淆.</h5>
+                  <h5 id="反编译为源码后-找关键点的分析流程-1">
+                    <a href="#反编译为源码后-找关键点的分析流程-1" class="headerlink" title="反编译为源码后,找关键点的分析流程:"></a>反编译为源码后,找关键点的分析流程:</h5>
                   <blockquote>
                     <ol>
                       <li>在com\xk72\charles\gui\frames\RegisterFrame.java里找到this.bRegister.addActionListener导入的类
@@ -549,7 +576,7 @@
                 </span>
 
                 <span class="links-of-author-item">
-                  <a href="#" target="_blank" title="Facebook">
+                  <a href="" target="_blank" title="Facebook">
 
                     <i class="fa fa-fw fa-facebook"></i>
 
@@ -678,22 +705,66 @@
                               极其强大的Web调试、代理抓包工具启动器。 Charles v4.x 动态加载启动器loader 最新版v4.1.1相对v.4.0.2以上版本比较，明文类名已混淆。</span>
                           </a>
                         </li>
-                        <li class="nav-item nav-level-5">
-                          <a class="nav-link" href="#最新版v4-1-1相对v-4-0-2比较，明文类名已混淆">
-                            <span class="nav-number">1.0.0.2.</span>
-                            <span class="nav-text">
-                              最新版v4.1.1相对v.4.0.2比较，明文类名已混淆.</span>
-                          </a>
-                        </li>
-                        <li class="nav-item nav-level-5">
-                          <a class="nav-link" href="#反编译为源码后-找关键点的分析流程">
-                            <span class="nav-number">1.0.0.3.</span>
-                            <span class="nav-text">
-                              反编译为源码后,找关键点的分析流程:</span>
-                          </a>
-                        </li>
                       </ol>
                     </li>
+                  </ol>
+                  </li>
+                  </ol>
+                  </li>
+                  <li class="nav-item nav-level-2">
+                    <a class="nav-link" href="#Charles-v4-1-2版本分析记录">
+                      <span class="nav-number">2.</span>
+                      <span class="nav-text">
+
+                        Charles v4.1.2版本分析记录
+                      </span>
+                    </a>
+                    <ol class="nav-child">
+                      <li class="nav-item nav-level-5">
+                        <a class="nav-link" href="#最新版v4-1-2相对v-4-0-2比较，明文类名已混淆">
+                          <span class="nav-number">2.0.0.1.</span>
+                          <span class="nav-text">
+                            最新版v4.1.2相对v.4.0.2比较，明文类名已混淆.</span>
+                        </a>
+                      </li>
+                      <li class="nav-item nav-level-5">
+                        <a class="nav-link" href="#反编译为源码后-找关键点的分析流程">
+                          <span class="nav-number">2.0.0.2.</span>
+                          <span class="nav-text">
+                            反编译为源码后,找关键点的分析流程:</span>
+                        </a>
+                      </li>
+                    </ol>
+                  </li>
+                  </ol>
+                  </li>
+                  </ol>
+                  </li>
+                  <li class="nav-item nav-level-2">
+                    <a class="nav-link" href="#Charles-v4-1-1版本分析记录">
+                      <span class="nav-number">3.</span>
+                      <span class="nav-text">
+
+                        Charles v4.1.1版本分析记录
+                      </span>
+                    </a>
+                    <ol class="nav-child">
+                      <li class="nav-item nav-level-5">
+                        <a class="nav-link" href="#最新版v4-1-1相对v-4-0-2比较，明文类名已混淆">
+                          <span class="nav-number">3.0.0.1.</span>
+                          <span class="nav-text">
+                            最新版v4.1.1相对v.4.0.2比较，明文类名已混淆.</span>
+                        </a>
+                      </li>
+                      <li class="nav-item nav-level-5">
+                        <a class="nav-link" href="#反编译为源码后-找关键点的分析流程-1">
+                          <span class="nav-number">3.0.0.2.</span>
+                          <span class="nav-text">
+                            反编译为源码后,找关键点的分析流程:</span>
+                        </a>
+                      </li>
+                    </ol>
+                  </li>
                   </ol>
                   </li>
                   </ol>

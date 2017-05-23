@@ -329,7 +329,7 @@ idone@AY1402261427509974f2Z:~$
     <link href="/2017/05/05/Charles%E9%80%86%E5%90%91%E5%88%86%E6%9E%90%E8%AE%B0%E5%BD%95%E5%8F%8A%E6%BA%90%E7%A0%81/"/>
     <id>/2017/05/05/Charles逆向分析记录及源码/</id>
     <published>2017-05-05T00:30:00.000Z</published>
-    <updated>2017-05-17T11:12:24.000Z</updated>
+    <updated>2017-05-23T05:32:17.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="查尔斯动态加载启动器-CharlesLoader-v4-x">
   <a href="#查尔斯动态加载启动器-CharlesLoader-v4-x" class="headerlink" title="查尔斯动态加载启动器(CharlesLoader) v4.x"></a>
@@ -343,11 +343,36 @@ idone@AY1402261427509974f2Z:~$
     <a href="http://git.oschina.net/iYoungDone/charlesloader" target="_blank" rel="external">gitoschina码云源码:http://git.oschina.net/iYoungDone/charlesloader</a>
   </p>
 </blockquote>
-<h5 id="最新版v4-1-1相对v-4-0-2比较，明文类名已混淆">
-  <a href="#最新版v4-1-1相对v-4-0-2比较，明文类名已混淆" class="headerlink" title="最新版v4.1.1相对v.4.0.2比较，明文类名已混淆."></a>最新版v4.1.1相对v.4.0.2比较，明文类名已混淆.</h5>
+<h2 id="Charles-v4-1-2版本分析记录">
+  <a href="#Charles-v4-1-2版本分析记录" class="headerlink" title="Charles v4.1.2版本分析记录"></a>
+  <strong>Charles v4.1.2版本分析记录</strong>
+</h2>
+<p>–by B.S.</p>
+<p>5/23/2017 1:32:17 PM</p>
+<h5 id="最新版v4-1-2相对v-4-0-2比较，明文类名已混淆">
+  <a href="#最新版v4-1-2相对v-4-0-2比较，明文类名已混淆" class="headerlink" title="最新版v4.1.2相对v.4.0.2比较，明文类名已混淆."></a>最新版v4.1.2相对v.4.0.2比较，明文类名已混淆.</h5>
 <h5 id="反编译为源码后-找关键点的分析流程">
   <a href="#反编译为源码后-找关键点的分析流程" class="headerlink" title="反编译为源码后,找关键点的分析流程:"></a>反编译为源码后,找关键点的分析流程:</h5>
+<blockquote>
+  <ol>
+    <li>在com\xk72\charles\gui\frames\RegisterFrame.java里找到this.bRegister.addActionListener导入的类import
+      com.xk72.charles.gui.frames.GTvL;</li>
+    <li>在com.xk72.charles.gui.frames.GTvL里找到if (object2 != null) 使他永久为null的函数导入的类import
+      com.xk72.charles.qFep;</li>
+    <li>在com.xk72.charles.qFep里就是关键类。分析关键点HOOK。</li>
+  </ol>
+</blockquote>
+<hr>
+<h2 id="Charles-v4-1-1版本分析记录">
+  <a href="#Charles-v4-1-1版本分析记录" class="headerlink" title="Charles v4.1.1版本分析记录"></a>
+  <strong>Charles v4.1.1版本分析记录</strong>
+</h2>
+<p>–by B.S.O.D.</p>
 <p>5/5/2017 8:30:00 AM</p>
+<h5 id="最新版v4-1-1相对v-4-0-2比较，明文类名已混淆">
+  <a href="#最新版v4-1-1相对v-4-0-2比较，明文类名已混淆" class="headerlink" title="最新版v4.1.1相对v.4.0.2比较，明文类名已混淆."></a>最新版v4.1.1相对v.4.0.2比较，明文类名已混淆.</h5>
+<h5 id="反编译为源码后-找关键点的分析流程-1">
+  <a href="#反编译为源码后-找关键点的分析流程-1" class="headerlink" title="反编译为源码后,找关键点的分析流程:"></a>反编译为源码后,找关键点的分析流程:</h5>
 <blockquote>
   <ol>
     <li>在com\xk72\charles\gui\frames\RegisterFrame.java里找到this.bRegister.addActionListener导入的类

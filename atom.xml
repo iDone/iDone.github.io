@@ -325,9 +325,9 @@ idone@AY1402261427509974f2Z:~$
   </entry>
   
   <entry>
-    <title>Charles逆向分析记录及源码</title>
-    <link href="/2017/05/05/Charles%E9%80%86%E5%90%91%E5%88%86%E6%9E%90%E8%AE%B0%E5%BD%95%E5%8F%8A%E6%BA%90%E7%A0%81/"/>
-    <id>/2017/05/05/Charles逆向分析记录及源码/</id>
+    <title>Charles逆向分析记录及破解程序CharlesLoader源码</title>
+    <link href="/2017/05/05/Charles%E9%80%86%E5%90%91%E5%88%86%E6%9E%90%E8%AE%B0%E5%BD%95%E5%8F%8A%E7%A0%B4%E8%A7%A3%E7%A8%8B%E5%BA%8FCharlesLoader%E6%BA%90%E7%A0%81/"/>
+    <id>/2017/05/05/Charles逆向分析记录及破解程序CharlesLoader源码/</id>
     <published>2017-05-05T00:30:00.000Z</published>
     <updated>2017-05-23T05:32:17.000Z</updated>
     
@@ -336,13 +336,26 @@ idone@AY1402261427509974f2Z:~$
   <strong>查尔斯动态加载启动器(CharlesLoader) v4.x</strong>
 </h2>
 <p> —by B.S. 5/5/2017</p>
-<h5 id="极其强大的Web调试、代理抓包工具启动器。-Charles-v4-x-动态加载启动器loader-最新版v4-1-1相对v-4-0-2以上版本比较，明文类名已混淆。">
-  <a href="#极其强大的Web调试、代理抓包工具启动器。-Charles-v4-x-动态加载启动器loader-最新版v4-1-1相对v-4-0-2以上版本比较，明文类名已混淆。" class="headerlink" title="极其强大的Web调试、代理抓包工具启动器。 Charles v4.x 动态加载启动器loader 最新版v4.1.1相对v.4.0.2以上版本比较，明文类名已混淆。"></a>极其强大的Web调试、代理抓包工具启动器。 Charles v4.x 动态加载启动器loader 最新版v4.1.1相对v.4.0.2以上版本比较，明文类名已混淆。</h5>
+<h5 id="极其强大的Web调试、代理抓包工具启动器。-Charles-v4-x-动态加载启动器loader-最新版v4-1-2相对v-4-0-2以上版本比较，明文类名已混淆。">
+  <a href="#极其强大的Web调试、代理抓包工具启动器。-Charles-v4-x-动态加载启动器loader-最新版v4-1-2相对v-4-0-2以上版本比较，明文类名已混淆。" class="headerlink" title="极其强大的Web调试、代理抓包工具启动器。 Charles v4.x 动态加载启动器loader 最新版v4.1.2相对v.4.0.2以上版本比较，明文类名已混淆。"></a>极其强大的Web调试、代理抓包工具启动器。 Charles v4.x 动态加载启动器loader 最新版v4.1.2相对v.4.0.2以上版本比较，明文类名已混淆。</h5>
 <blockquote>
   <p>
     <a href="http://git.oschina.net/iYoungDone/charlesloader" target="_blank" rel="external">gitoschina码云源码:http://git.oschina.net/iYoungDone/charlesloader</a>
   </p>
 </blockquote>
+<h5 id="破解-Charles-的屌炸天的-shell-脚本">
+  <a href="#破解-Charles-的屌炸天的-shell-脚本" class="headerlink" title="破解 Charles 的屌炸天的 shell 脚本"></a>
+  <a href="/uploads/codes/charles-bs-v412.sh">破解 Charles 的屌炸天的 shell 脚本</a>
+</h5>
+<p>
+  <a href="/uploads/codes/charles.jar">最新charles破解文件</a>
+</p>
+<ol>
+  <li>Windows 平台,将下载的charles.jar文件覆盖到安装目录下的lib文件夹下即可完成破解!</li>
+  <li>Mac 平台,将下载的charles.jar文件右键 Charles.app 显示包内容,覆盖到Content-&gt;Java下即可完成破解!
+    <br>注意: 这是v4.1.2的破解文件,不确定其他版本也同样适用!</li>
+</ol>
+<hr>
 <h2 id="Charles-v4-1-2版本分析记录">
   <a href="#Charles-v4-1-2版本分析记录" class="headerlink" title="Charles v4.1.2版本分析记录"></a>
   <strong>Charles v4.1.2版本分析记录</strong>
@@ -410,6 +423,8 @@ idone@AY1402261427509974f2Z:~$
     
       <category term="源码(source)" scheme="/tags/%E6%BA%90%E7%A0%81-source/"/>
     
+      <category term="shell" scheme="/tags/shell/"/>
+    
   </entry>
   
   <entry>
@@ -417,7 +432,7 @@ idone@AY1402261427509974f2Z:~$
     <link href="/2017/04/20/deke_tv_crack/"/>
     <id>/2017/04/20/deke_tv_crack/</id>
     <published>2017-04-20T10:18:00.000Z</published>
-    <updated>2017-05-17T12:56:41.000Z</updated>
+    <updated>2017-05-24T02:44:03.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="DEKE-TV-封包分析和代理服务器欺骗破解">
   <a href="#DEKE-TV-封包分析和代理服务器欺骗破解" class="headerlink" title="DEKE TV 封包分析和代理服务器欺骗破解"></a>
@@ -442,7 +457,8 @@ idone@AY1402261427509974f2Z:~$
     </li>
     <li>
       <p>安卓版下载：
-        <a href="http://www.8idone.com/pc123.apk" target="_blank" rel="external">Packet Capture v1.2.3汉化佛祖去广告V2</a>
+        <a href="/uploads/apk/pc123.apk">Packet Capture v1.2.3汉化佛祖去广告V2</a>
+        <a href="http://www.8idone.com/pc123.apk" target="_blank" rel="external">备用下载</a>
       </p>
     </li>
   </ul>

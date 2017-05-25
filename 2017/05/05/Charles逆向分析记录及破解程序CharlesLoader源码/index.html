@@ -27,7 +27,7 @@
 
   <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
-  <meta name="keywords" content="appleos, B.S., Hexo, NexT, Charles, CharlesLoader"
+  <meta name="keywords" content="逆向工程(Reverse Engineering),破解(Crack),Java,Charles,Loader,javassist,源码(source),shell,"
   />
 
   <link rel="alternate" href="/atom.xml" title="@iYoungDone's Hexo Blog" type="application/atom+xml"
@@ -35,15 +35,17 @@
 
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
 
-  <meta name="description" content="An My GitHub Hexo Blog. http://www.appleos.xyz">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="@iYoungDone&#39;s Hexo Blog">
-  <meta property="og:url" content="/tags/Ribbon/index.html">
+  <meta name="description" content="查尔斯动态加载启动器(CharlesLoader) v4.x   —by B.S. 5/5/2017    极其强大的Web调试、代理抓包工具启动器。 Charles v4.x 动态加载启动器loader 最新版v4.1.2相对v.4.0.2以上版本比较，明文类名已混淆。         gitoschina码云源码:http://git.oschina.net/iYoungDone/">
+  <meta name="keywords" content="逆向工程(Reverse Engineering),破解(Crack),Java,Charles,Loader,javassist,源码(source),shell">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Charles逆向分析记录及破解程序CharlesLoader源码">
+  <meta property="og:url" content="/2017/05/05/Charles逆向分析记录及破解程序CharlesLoader源码/index.html">
   <meta property="og:site_name" content="@iYoungDone&#39;s Hexo Blog">
-  <meta property="og:description" content="An My GitHub Hexo Blog. http://www.appleos.xyz">
+  <meta property="og:description" content="查尔斯动态加载启动器(CharlesLoader) v4.x   —by B.S. 5/5/2017    极其强大的Web调试、代理抓包工具启动器。 Charles v4.x 动态加载启动器loader 最新版v4.1.2相对v.4.0.2以上版本比较，明文类名已混淆。         gitoschina码云源码:http://git.oschina.net/iYoungDone/">
+  <meta property="og:updated_time" content="2017-05-23T05:32:17.000Z">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="@iYoungDone&#39;s Hexo Blog">
-  <meta name="twitter:description" content="An My GitHub Hexo Blog. http://www.appleos.xyz">
+  <meta name="twitter:title" content="Charles逆向分析记录及破解程序CharlesLoader源码">
+  <meta name="twitter:description" content="查尔斯动态加载启动器(CharlesLoader) v4.x   —by B.S. 5/5/2017    极其强大的Web调试、代理抓包工具启动器。 Charles v4.x 动态加载启动器loader 最新版v4.1.2相对v.4.0.2以上版本比较，明文类名已混淆。         gitoschina码云源码:http://git.oschina.net/iYoungDone/">
 
   <script type="text/javascript" id="hexo.configurations">
     var NexT = window.NexT || {};
@@ -81,9 +83,9 @@
 
   </script>
 
-  <link rel="canonical" href="/tags/Ribbon/" />
+  <link rel="canonical" href="/2017/05/05/Charles逆向分析记录及破解程序CharlesLoader源码/" />
 
-  <title>标签: Ribbon | @iYoungDone's Hexo Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>Charles逆向分析记录及破解程序CharlesLoader源码 | @iYoungDone's Hexo Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -99,7 +101,7 @@
 
   </script>
 
-  <div class="container sidebar-position-right  ">
+  <div class="container sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -221,37 +223,287 @@
         <div class="content-wrap">
           <div id="content" class="content">
 
-            <div id="posts" class="posts-collapse">
-              <div class="collection-title">
-                <h1>Ribbon
-                  <small>标签</small>
-                </h1>
-              </div>
+            <div id="posts" class="posts-expand">
 
-              <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+                <link itemprop="mainEntityOfPage" href="/2017/05/05/Charles逆向分析记录及破解程序CharlesLoader源码/">
+
+                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <meta itemprop="name" content="YoungDone(B.S.)">
+                  <meta itemprop="description" content="">
+                  <meta itemprop="image" content="/images/avatar.jpg">
+                </span>
+
+                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                  <meta itemprop="name" content="@iYoungDone's Hexo Blog">
+                </span>
+
                 <header class="post-header">
 
-                  <h2 class="post-title">
-
-                    <a class="post-title-link" href="/2017/05/20/为hexo博客主题添加漂亮的绶带GitHub-Ribbons/" itemprop="url">
-
-                      <span itemprop="name">为hexo博客主题添加漂亮的绶带GitHub Ribbons</span>
-
-                    </a>
-
-                  </h2>
+                  <h1 class="post-title" itemprop="name headline">Charles逆向分析记录及破解程序CharlesLoader源码</h1>
 
                   <div class="post-meta">
-                    <time class="post-time" itemprop="dateCreated" datetime="2017-05-20T18:07:37+08:00"
-                                                                                                    content="2017-05-20">
-                      05-20
-                    </time>
+                    <span class="post-time">
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-calendar-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">发表于</span>
+
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-05T08:30:00+08:00">
+                        2017-05-05
+                      </time>
+
+                    </span>
+
+                    <span class="post-category">
+
+                      <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-folder-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/逆向工程-Reverse-Engineering/" itemprop="url" rel="index">
+                          <span itemprop="name">逆向工程(Reverse Engineering)</span>
+                        </a>
+                      </span>
+
+                      ，
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/逆向工程-Reverse-Engineering/破解-Crack/" itemprop="url" rel="index">
+                          <span itemprop="name">破解(Crack)</span>
+                        </a>
+                      </span>
+
+                    </span>
+
+                    <span class="post-meta-divider">|</span>
+                    <span class="page-pv">
+                      <i class="fa fa-file-o"></i>
+                      <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+                    </span>
+
+                  </div>
+                </header>
+
+                <div class="post-body han-init-context" itemprop="articleBody">
+
+                  <h2 id="查尔斯动态加载启动器-CharlesLoader-v4-x">
+                    <a href="#查尔斯动态加载启动器-CharlesLoader-v4-x" class="headerlink" title="查尔斯动态加载启动器(CharlesLoader) v4.x"></a>
+                    <strong>查尔斯动态加载启动器(CharlesLoader) v4.x</strong>
+                  </h2>
+                  <p> —by B.S. 5/5/2017</p>
+                  <h5 id="极其强大的Web调试、代理抓包工具启动器。-Charles-v4-x-动态加载启动器loader-最新版v4-1-2相对v-4-0-2以上版本比较，明文类名已混淆。">
+                    <a href="#极其强大的Web调试、代理抓包工具启动器。-Charles-v4-x-动态加载启动器loader-最新版v4-1-2相对v-4-0-2以上版本比较，明文类名已混淆。"
+                                                                                                    class="headerlink" title="极其强大的Web调试、代理抓包工具启动器。 Charles v4.x 动态加载启动器loader 最新版v4.1.2相对v.4.0.2以上版本比较，明文类名已混淆。"></a>极其强大的Web调试、代理抓包工具启动器。 Charles v4.x 动态加载启动器loader 最新版v4.1.2相对v.4.0.2以上版本比较，明文类名已混淆。</h5>
+                  <blockquote>
+                    <p>
+                      <a href="http://git.oschina.net/iYoungDone/charlesloader" target="_blank" rel="external">gitoschina码云源码:http://git.oschina.net/iYoungDone/charlesloader</a>
+                    </p>
+                  </blockquote>
+                  <h5 id="破解-Charles-的屌炸天的-shell-脚本">
+                    <a href="#破解-Charles-的屌炸天的-shell-脚本" class="headerlink" title="破解 Charles 的屌炸天的 shell 脚本"></a>
+                    <a href="/uploads/codes/charles-bs-v412.sh">破解 Charles 的屌炸天的 shell 脚本</a>
+                  </h5>
+                  <p>
+                    <a href="/uploads/codes/charles.jar">最新charles破解文件</a>
+                  </p>
+                  <ol>
+                    <li>Windows 平台,将下载的charles.jar文件覆盖到安装目录下的lib文件夹下即可完成破解!</li>
+                    <li>Mac 平台,将下载的charles.jar文件右键 Charles.app 显示包内容,覆盖到Content-&gt;Java下即可完成破解!
+                      <br>注意: 这是v4.1.2的破解文件,不确定其他版本也同样适用!</li>
+                  </ol>
+                  <hr>
+                  <h2 id="Charles-v4-1-2版本分析记录">
+                    <a href="#Charles-v4-1-2版本分析记录" class="headerlink" title="Charles v4.1.2版本分析记录"></a>
+                    <strong>Charles v4.1.2版本分析记录</strong>
+                  </h2>
+                  <p>–by B.S.</p>
+                  <p>5/23/2017 1:32:17 PM</p>
+                  <h5 id="最新版v4-1-2相对v-4-0-2比较，明文类名已混淆">
+                    <a href="#最新版v4-1-2相对v-4-0-2比较，明文类名已混淆" class="headerlink" title="最新版v4.1.2相对v.4.0.2比较，明文类名已混淆."></a>最新版v4.1.2相对v.4.0.2比较，明文类名已混淆.</h5>
+                  <h5 id="反编译为源码后-找关键点的分析流程">
+                    <a href="#反编译为源码后-找关键点的分析流程" class="headerlink" title="反编译为源码后,找关键点的分析流程:"></a>反编译为源码后,找关键点的分析流程:</h5>
+                  <blockquote>
+                    <ol>
+                      <li>在com\xk72\charles\gui\frames\RegisterFrame.java里找到this.bRegister.addActionListener导入的类import
+                        com.xk72.charles.gui.frames.GTvL;
+                      </li>
+                      <li>在com.xk72.charles.gui.frames.GTvL里找到if (object2 != null) 使他永久为null的函数导入的类import
+                        com.xk72.charles.qFep;
+                      </li>
+                      <li>在com.xk72.charles.qFep里就是关键类。分析关键点HOOK。</li>
+                    </ol>
+                  </blockquote>
+                  <hr>
+                  <h2 id="Charles-v4-1-1版本分析记录">
+                    <a href="#Charles-v4-1-1版本分析记录" class="headerlink" title="Charles v4.1.1版本分析记录"></a>
+                    <strong>Charles v4.1.1版本分析记录</strong>
+                  </h2>
+                  <p>–by B.S.O.D.</p>
+                  <p>5/5/2017 8:30:00 AM</p>
+                  <h5 id="最新版v4-1-1相对v-4-0-2比较，明文类名已混淆">
+                    <a href="#最新版v4-1-1相对v-4-0-2比较，明文类名已混淆" class="headerlink" title="最新版v4.1.1相对v.4.0.2比较，明文类名已混淆."></a>最新版v4.1.1相对v.4.0.2比较，明文类名已混淆.</h5>
+                  <h5 id="反编译为源码后-找关键点的分析流程-1">
+                    <a href="#反编译为源码后-找关键点的分析流程-1" class="headerlink" title="反编译为源码后,找关键点的分析流程:"></a>反编译为源码后,找关键点的分析流程:</h5>
+                  <blockquote>
+                    <ol>
+                      <li>在com\xk72\charles\gui\frames\RegisterFrame.java里找到this.bRegister.addActionListener导入的类
+                        <br>import com.xk72.charles.gui.frames.idkH;</li>
+                      <li>在com.xk72.charles.gui.frames.idkH里找到if (object2 != null) 使他永久为null的函数导入的类import
+                        com.xk72.charles.slZe;
+                      </li>
+                      <li>在com.xk72.charles.slZe里就是关键类。分析关键点HOOK。</li>
+                    </ol>
+                  </blockquote>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                  <div style="padding: 10px 0; margin: 20px auto; width: 88%; text-align: center;">
+                    <div>您觉得好,您就随意打赏点吧(*^__^*)您的鼓励,是我坚持的动力!</div>
+                    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+                      <span>赞赏支持</span>
+                    </button>
+                    <div id="QR" style="display: none;">
+
+                      <div id="wechat" style="display: inline-block">
+                        <img id="wechat_qr" src="/uploads/qrcode/wechat-reward.png" alt="YoungDone(B.S.) WeChat Pay"
+                        />
+                        <p>微信打赏</p>
+                      </div>
+
+                      <div id="alipay" style="display: inline-block">
+                        <img id="alipay_qr" src="/uploads/qrcode/alipay-reward.jpg" alt="YoungDone(B.S.) Alipay"
+                        />
+                        <p>支付宝打赏</p>
+                      </div>
+
+                    </div>
                   </div>
 
-                </header>
+                </div>
+
+                <div>
+
+                  <ul class="post-copyright">
+                    <li class="post-copyright-author">
+                      <strong>本文作者：</strong>
+                      YoungDone(B.S.)
+                    </li>
+                    <li class="post-copyright-link">
+                      <strong>本文链接：</strong>
+                      <a href="/2017/05/05/Charles逆向分析记录及破解程序CharlesLoader源码/" title="Charles逆向分析记录及破解程序CharlesLoader源码">/2017/05/05/Charles逆向分析记录及破解程序CharlesLoader源码/</a>
+                    </li>
+                    <li class="post-copyright-license">
+                      <strong>版权声明： </strong>
+                      本博客所有文章除特别声明外，均采用
+                      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                                                                                                      rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+                    </li>
+                  </ul>
+
+                </div>
+
+                <footer class="post-footer">
+
+                  <div class="post-tags">
+
+                    <a href="/tags/逆向工程-Reverse-Engineering/" rel="tag"># 逆向工程(Reverse Engineering)</a>
+
+                    <a href="/tags/破解-Crack/" rel="tag"># 破解(Crack)</a>
+
+                    <a href="/tags/Java/" rel="tag"># Java</a>
+
+                    <a href="/tags/Charles/" rel="tag"># Charles</a>
+
+                    <a href="/tags/Loader/" rel="tag"># Loader</a>
+
+                    <a href="/tags/javassist/" rel="tag"># javassist</a>
+
+                    <a href="/tags/源码-source/" rel="tag"># 源码(source)</a>
+
+                    <a href="/tags/shell/" rel="tag"># shell</a>
+
+                  </div>
+
+                  <div class="post-nav">
+                    <div class="post-nav-next post-nav-item">
+
+                      <a href="/2017/04/20/deke_tv_crack/" rel="next" title="DEKE TV 封包分析和代理服务器欺骗破解">
+                        <i class="fa fa-chevron-left"></i> DEKE TV 封包分析和代理服务器欺骗破解
+                      </a>
+
+                    </div>
+
+                    <span class="post-nav-divider"></span>
+
+                    <div class="post-nav-prev post-nav-item">
+
+                      <a href="/2017/05/12/hello-world/" rel="prev" title="Hello World">
+                        Hello World
+                        <i class="fa fa-chevron-right"></i>
+                      </a>
+
+                    </div>
+                  </div>
+
+                </footer>
               </article>
 
+              <div class="post-spread">
+
+                <script>
+                  window._bd_share_config = {
+                    "common": {
+                      "bdText": "",
+                      "bdMini": "1",
+                      "bdMiniList": false,
+                      "bdPic": ""
+                    },
+                    "image": {
+                      "viewList": ["tsina", "douban", "sqq", "qzone",
+                        "weixin", "twi", "fbook"
+                      ],
+                      "viewText": "分享到：",
+                      "viewSize": "16"
+                    },
+                    "slide": {
+                      "bdImg": "5",
+                      "bdPos": "left",
+                      "bdTop": "100"
+                    }
+                  }
+
+                </script>
+
+                <script>
+                  with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(
+                      createElement('script')).src =
+                    '//bdimg.share.baidu.com/static/api/js/share.js?cdnversion=' +
+                    ~(-new Date() / 36e5)];
+
+                </script>
+
+              </div>
             </div>
+
+          </div>
+
+          <div class="comments" id="comments">
+
+            <div id="lv-container" data-id="city" data-uid="MTAyMC8yODcwNi81Mjc3"></div>
 
           </div>
 
@@ -268,7 +520,16 @@
         <aside id="sidebar" class="sidebar">
           <div class="sidebar-inner">
 
-            <section class="site-overview sidebar-panel sidebar-panel-active">
+            <ul class="sidebar-nav motion-element">
+              <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+                文章目录
+              </li>
+              <li class="sidebar-nav-overview" data-target="site-overview">
+                站点概览
+              </li>
+            </ul>
+
+            <section class="site-overview sidebar-panel">
               <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
                 <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="YoungDone(B.S.)"
                 />
@@ -437,6 +698,108 @@
 
             </section>
 
+            <!--noindex-->
+            <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+              <div class="post-toc">
+
+                <div class="post-toc-content">
+                  <ol class="nav">
+                    <li class="nav-item nav-level-2">
+                      <a class="nav-link" href="#查尔斯动态加载启动器-CharlesLoader-v4-x">
+                        <span class="nav-number">1.</span>
+                        <span class="nav-text">
+
+                          查尔斯动态加载启动器(CharlesLoader) v4.x
+                        </span>
+                      </a>
+                      <ol class="nav-child">
+                        <li class="nav-item nav-level-5">
+                          <a class="nav-link" href="#极其强大的Web调试、代理抓包工具启动器。-Charles-v4-x-动态加载启动器loader-最新版v4-1-2相对v-4-0-2以上版本比较，明文类名已混淆。">
+                            <span class="nav-number">1.0.0.1.</span>
+                            <span class="nav-text">
+                              极其强大的Web调试、代理抓包工具启动器。 Charles v4.x 动态加载启动器loader 最新版v4.1.2相对v.4.0.2以上版本比较，明文类名已混淆。</span>
+                          </a>
+                        </li>
+                        <li class="nav-item nav-level-5">
+                          <a class="nav-link" href="#破解-Charles-的屌炸天的-shell-脚本">
+                            <span class="nav-number">1.0.0.2.</span>
+                            <span class="nav-text">
+
+                              破解 Charles 的屌炸天的 shell 脚本
+                            </span>
+                          </a>
+                        </li>
+                      </ol>
+                    </li>
+                  </ol>
+                  </li>
+                  </ol>
+                  </li>
+                  <li class="nav-item nav-level-2">
+                    <a class="nav-link" href="#Charles-v4-1-2版本分析记录">
+                      <span class="nav-number">2.</span>
+                      <span class="nav-text">
+
+                        Charles v4.1.2版本分析记录
+                      </span>
+                    </a>
+                    <ol class="nav-child">
+                      <li class="nav-item nav-level-5">
+                        <a class="nav-link" href="#最新版v4-1-2相对v-4-0-2比较，明文类名已混淆">
+                          <span class="nav-number">2.0.0.1.</span>
+                          <span class="nav-text">
+                            最新版v4.1.2相对v.4.0.2比较，明文类名已混淆.</span>
+                        </a>
+                      </li>
+                      <li class="nav-item nav-level-5">
+                        <a class="nav-link" href="#反编译为源码后-找关键点的分析流程">
+                          <span class="nav-number">2.0.0.2.</span>
+                          <span class="nav-text">
+                            反编译为源码后,找关键点的分析流程:</span>
+                        </a>
+                      </li>
+                    </ol>
+                  </li>
+                  </ol>
+                  </li>
+                  </ol>
+                  </li>
+                  <li class="nav-item nav-level-2">
+                    <a class="nav-link" href="#Charles-v4-1-1版本分析记录">
+                      <span class="nav-number">3.</span>
+                      <span class="nav-text">
+
+                        Charles v4.1.1版本分析记录
+                      </span>
+                    </a>
+                    <ol class="nav-child">
+                      <li class="nav-item nav-level-5">
+                        <a class="nav-link" href="#最新版v4-1-1相对v-4-0-2比较，明文类名已混淆">
+                          <span class="nav-number">3.0.0.1.</span>
+                          <span class="nav-text">
+                            最新版v4.1.1相对v.4.0.2比较，明文类名已混淆.</span>
+                        </a>
+                      </li>
+                      <li class="nav-item nav-level-5">
+                        <a class="nav-link" href="#反编译为源码后-找关键点的分析流程-1">
+                          <span class="nav-number">3.0.0.2.</span>
+                          <span class="nav-text">
+                            反编译为源码后,找关键点的分析流程:</span>
+                        </a>
+                      </li>
+                    </ol>
+                  </li>
+                  </ol>
+                  </li>
+                  </ol>
+                  </li>
+                  </ol>
+                </div>
+
+              </div>
+            </section>
+            <!--/noindex-->
+
             <div class="back-to-top">
               <i class="fa fa-arrow-up"></i>
 
@@ -528,7 +891,24 @@
 
   <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
 
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
   <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+      if (typeof LivereTower === 'function') {
+        return;
+      }
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+
+  </script>
 
   <script type="text/javascript">
     // Popup Window;
@@ -865,19 +1245,7 @@
 
   </script>
 
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes:
-    true, skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
-    });
-  </script>
-
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() { var all = MathJax.Hub.getAllJax(), i; for (i=0; i
-    < all.length; i +=1 ) { all[i].SourceElement().parentNode.className +=' has-jax'
-                                                                                    ; } }); </script>
-      <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-      <script type="text/javascript" src="/js/src/exturl.js?v=5.1.1"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+  <script type="text/javascript" src="/js/src/exturl.js?v=5.1.1"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>

@@ -41,7 +41,7 @@
   <meta property="og:url" content="/2017/05/22/Windows命令netsh设置IP和DNS/index.html">
   <meta property="og:site_name" content="@iYoungDone&#39;s Hexo Blog">
   <meta property="og:description" content="Windows命令netsh设置IP和DNS    今天去王总新搬的公司混饭吃,新办公地网络受公司要求必须要指定内部用的 IP 和 DNS.有个同事的电脑 Windows7网络设置一直闪退,没法界面设置 IP     和 DNS,后来我写了个简单的bat批处理用命令 netsh 来设置 IP 和 DNS 的. bat批处理代码如下:(可以更改相应 IP 地址适用于你自己)">
-  <meta property="og:updated_time" content="2017-05-22T11:31:01.000Z">
+  <meta property="og:updated_time" content="2017-05-31T05:53:39.000Z">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Windows命令netsh设置IP和DNS">
   <meta name="twitter:description" content="Windows命令netsh设置IP和DNS    今天去王总新搬的公司混饭吃,新办公地网络受公司要求必须要指定内部用的 IP 和 DNS.有个同事的电脑 Windows7网络设置一直闪退,没法界面设置 IP     和 DNS,后来我写了个简单的bat批处理用命令 netsh 来设置 IP 和 DNS 的. bat批处理代码如下:(可以更改相应 IP 地址适用于你自己)">
@@ -305,14 +305,14 @@
                       <a href="/uploads/codes/ip-netsh.bat">ip-netsh.bat</a>
                     </p>
                   </blockquote>
-                  <figure class="highlight plain">
+                  <figure class="highlight bat">
                     <table>
                       <tr>
                         <td class="gutter">
                           <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre>
                         </td>
                         <td class="code">
-                          <pre><div class="line">@echo off</div><div class="line">@echo ==================</div><div class="line">@echo 开始设置IP......</div><div class="line">@echo ==================</div><div class="line">@rem echo on</div><div class="line">:: 自动获取IP</div><div class="line">@echo 自动获取DNS......</div><div class="line">::netsh interface ip set address name=&quot;本地连接&quot; source=dhcp</div><div class="line">:: 设置静态IP</div><div class="line">@echo 设置静态IP......</div><div class="line">netsh interface ip set address name=&quot;本地连接&quot; source=static address=9.236.40.71 mask=255.255.255.192 gateway=9.236.40.126 gwmetric=1</div><div class="line">@echo;</div><div class="line">@echo ==================</div><div class="line">@echo 开始设置DNS......</div><div class="line">@echo ==================</div><div class="line">:: 自动获取DNS</div><div class="line">@echo 自动获取DNS......</div><div class="line">netsh interface ip set dnsservers name=&quot;本地连接&quot; source=dhcp</div><div class="line">@echo 添加主DNS......</div><div class="line">netsh interface ip add dnsservers name=&quot;本地连接&quot; address=9.236.5.3  index=1</div><div class="line">@echo 添加副DNS......</div><div class="line">netsh interface ip add dnsservers name=&quot;本地连接&quot; address=202.96.128.166  index=2</div><div class="line">:: 设置静态DNS</div><div class="line">@echo 修改设置注册主DNS......</div><div class="line">netsh interface ip set dnsservers name=&quot;本地连接&quot; source=static address=9.236.5.3  register=primary</div><div class="line">@echo,</div><div class="line">@echo off</div><div class="line">@echo ==================</div><div class="line">@echo IP和DNS设置完毕!!!</div><div class="line">@echo ==================</div><div class="line">@pause</div><div class="line">@exit</div></pre>
+                          <pre><div class="line">@<span class="built_in">echo</span> off</div><div class="line">@<span class="built_in">echo</span> ==================</div><div class="line">@<span class="built_in">echo</span> 开始设置IP......</div><div class="line">@<span class="built_in">echo</span> ==================</div><div class="line"><span class="comment">@rem echo on</span></div><div class="line">:: 自动获取IP</div><div class="line">@<span class="built_in">echo</span> 自动获取DNS......</div><div class="line">::netsh interface ip <span class="built_in">set</span> address name="本地连接" source=dhcp</div><div class="line">:: 设置静态IP</div><div class="line">@<span class="built_in">echo</span> 设置静态IP......</div><div class="line">netsh interface ip <span class="built_in">set</span> address name="本地连接" source=static address=<span class="number">9</span>.<span class="number">236</span>.<span class="number">40</span>.<span class="number">71</span> mask=<span class="number">255</span>.<span class="number">255</span>.<span class="number">255</span>.<span class="number">192</span> gateway=<span class="number">9</span>.<span class="number">236</span>.<span class="number">40</span>.<span class="number">126</span> gwmetric=<span class="number">1</span></div><div class="line">@<span class="built_in">echo</span>;</div><div class="line">@<span class="built_in">echo</span> ==================</div><div class="line">@<span class="built_in">echo</span> 开始设置DNS......</div><div class="line">@<span class="built_in">echo</span> ==================</div><div class="line">:: 自动获取DNS</div><div class="line">@<span class="built_in">echo</span> 自动获取DNS......</div><div class="line">netsh interface ip <span class="built_in">set</span> dnsservers name="本地连接" source=dhcp</div><div class="line">@<span class="built_in">echo</span> 添加主DNS......</div><div class="line">netsh interface ip add dnsservers name="本地连接" address=<span class="number">9</span>.<span class="number">236</span>.<span class="number">5</span>.<span class="number">3</span>  index=<span class="number">1</span></div><div class="line">@<span class="built_in">echo</span> 添加副DNS......</div><div class="line">netsh interface ip add dnsservers name="本地连接" address=<span class="number">202</span>.<span class="number">96</span>.<span class="number">128</span>.<span class="number">166</span>  index=<span class="number">2</span></div><div class="line">:: 设置静态DNS</div><div class="line">@<span class="built_in">echo</span> 修改设置注册主DNS......</div><div class="line">netsh interface ip <span class="built_in">set</span> dnsservers name="本地连接" source=static address=<span class="number">9</span>.<span class="number">236</span>.<span class="number">5</span>.<span class="number">3</span>  register=primary</div><div class="line">@<span class="built_in">echo</span>,</div><div class="line">@<span class="built_in">echo</span> off</div><div class="line">@<span class="built_in">echo</span> ==================</div><div class="line">@<span class="built_in">echo</span> IP和DNS设置完毕<span class="variable">!!!</span></div><div class="line">@<span class="built_in">echo</span> ==================</div><div class="line">@<span class="built_in">pause</span></div><div class="line">@<span class="keyword">exit</span></div></pre>
                         </td>
                       </tr>
                     </table>
@@ -395,6 +395,12 @@
                     <span class="post-nav-divider"></span>
 
                     <div class="post-nav-prev post-nav-item">
+
+                      <a href="/2017/06/01/C的printf函数终端输出彩色字符(Unix,Linux,MacOS,Windows全平台适用)/" rel="prev"
+                                                                                                      title="C的printf函数终端输出彩色字符(Unix,Linux,MacOS,Windows全平台适用)">
+                        C的printf函数终端输出彩色字符(Unix,Linux,MacOS,Windows全平台适用)
+                        <i class="fa fa-chevron-right"></i>
+                      </a>
 
                     </div>
                   </div>
@@ -482,7 +488,7 @@
 
                 <div class="site-state-item site-state-posts">
                   <a href="/archives">
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -496,7 +502,7 @@
 
                 <div class="site-state-item site-state-tags">
                   <a href="/tags/index.html">
-                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-count">37</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

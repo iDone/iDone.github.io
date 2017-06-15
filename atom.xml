@@ -38,12 +38,32 @@
 <p>
   <strong>仅供学习研究,请勿用作商业用途,如若喜欢请支持正版!</strong>
 </p>
-<p>也可以去各大安卓市场或者主页下载最新版本:
-  <br>
-  <a href="http://www.yodo1.cn/archives/omg-td.html" title="http://www.yodo1.cn/archives/omg-td.html" target="_blank" rel="external">http://www.yodo1.cn/archives/omg-td.html</a>
-</p>
-<h5 id="1-找到支付相关的sdk类-如-和支付的关键破解点在”onResult”Method中">
-  <a href="#1-找到支付相关的sdk类-如-和支付的关键破解点在”onResult”Method中" class="headerlink" title="1. 找到支付相关的sdk类,如,和支付的关键破解点在”onResult”Method中"></a>1. 找到支付相关的sdk类,如,和支付的关键破解点在”onResult”Method中</h5>
+<p>也可以去各大安卓市场或者主页下载最新版本:</p>
+<blockquote>
+  <p>
+    <a href="http://g.10086.cn/" title="http://g.10086.cn/" target="_blank" rel="external">咪咕: http://g.10086.cn/</a>
+  </p>
+  <p>
+    <a href="http://mm.10086.cn/android" title="http://mm.10086.cn/android" target="_blank" rel="external">中国移动应用商城: http://mm.10086.cn/android</a>
+  </p>
+  <p>
+    <a href="http://android.myapp.com/" title="http://android.myapp.com/" target="_blank" rel="external">腾讯应用宝: http://android.myapp.com/</a>
+  </p>
+  <p>
+    <a href="http://zhushou.360.cn/" title="http://zhushou.360.cn/" target="_blank" rel="external">360手机助手: http://zhushou.360.cn/</a>
+  </p>
+  <p>
+    <a href="http://apk.hiapk.com/" title="http://apk.hiapk.com/" target="_blank" rel="external">百度旗下安卓市场: http://apk.hiapk.com/</a>
+  </p>
+  <p>
+    <a href="http://www.anzhi.com/" title="http://www.anzhi.com/" target="_blank" rel="external">安智市场: http://www.anzhi.com/</a>
+  </p>
+  <p>
+    <a href="http://www.yodo1.cn/archives/omg-td.html" title="http://www.yodo1.cn/archives/omg-td.html" target="_blank" rel="external">游道易官网: http://www.yodo1.cn/archives/omg-td.html</a>
+  </p>
+</blockquote>
+<h3 id="1-找到支付相关的sdk类的关键破解点在”onResult”Method中">
+  <a href="#1-找到支付相关的sdk类的关键破解点在”onResult”Method中" class="headerlink" title="1. 找到支付相关的sdk类的关键破解点在”onResult”Method中"></a>1. 找到支付相关的sdk类的关键破解点在”onResult”Method中</h3>
 <blockquote>
   <p>public void onResult(int arg0, String arg1, Object arg2)</p>
 </blockquote>
@@ -54,17 +74,33 @@
         <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre>
       </td>
       <td class="code">
-        <pre><div class="line">.method public onResult(ILjava/lang/String;Ljava/lang/Object;)V</div><div class="line">    .locals 3</div><div class="line">    .param p1, "arg0"    # I</div><div class="line">    .param p2, "arg1"    # Ljava/lang/String;</div><div class="line">    .param p3, "arg2"    # Ljava/lang/Object;</div><div class="line"></div><div class="line">    .prologue</div><div class="line"></div><div class="line"></div><div class="line">.end method</div></pre>
+        <pre><div class="line">.method public onResult(ILjava/lang/String;Ljava/lang/Object;)V</div><div class="line">    .locals 3</div><div class="line">    .param p1, "arg0"    # I</div><div class="line">    .param p2, "arg1"    # Ljava/lang/String;</div><div class="line">    .param p3, "arg2"    # Ljava/lang/Object;</div><div class="line"></div><div class="line">    .prologue</div><div class="line"></div><div class="line">#此处省略Java汇编smali代码若干</div><div class="line">.end method</div></pre>
       </td>
     </tr>
   </table>
 </figure>
-<h5 id="2-android-killer出马java反编译后到路劲">
-  <a href="#2-android-killer出马java反编译后到路劲" class="headerlink" title="2. android killer出马java反编译后到路劲"></a>2. android killer出马java反编译后到路劲</h5>
+<h3 id="2-android-killer出马java反编译后到路径">
+  <a href="#2-android-killer出马java反编译后到路径" class="headerlink" title="2. android killer出马java反编译后到路径"></a>2. android killer出马java反编译后到路径</h3>
 <blockquote>
   <p>package com.yodo1.sdk.game.smspay;</p>
 </blockquote>
-<p>移动咪咕和支付接口,相关源码,直接上图.当然还要电信,联通的</p>
+<p>移动咪咕和支付接口,相关源码,直接上图.当然还有电信,联通的
+  <br>关键在这个switch里,使他总是走case 1:支付成功.有时候需要向上层调用回溯才能定位到他支付校验的代码,让他支付校验的代码总是返回真即可.可以在最后的smali汇编代码里修该为这个样子.
+  <br>
+  <strong>秒杀所有smspay支付</strong>
+</p>
+<figure class="highlight">
+  <table>
+    <tr>
+      <td class="gutter">
+        <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre>
+      </td>
+      <td class="code">
+        <pre><div class="line">goto :goto_0</div><div class="line"></div><div class="line">.line 42</div><div class="line">:pswitch_data_0</div><div class="line">.packed-switch 0x1</div><div class="line">    :pswitch_1 #全部开关到switch 1: 支付成功的流程</div><div class="line">    :pswitch_1 #全部开关到switch 1: 支付成功的流程</div><div class="line">    :pswitch_1 #全部开关到switch 1: 支付成功的流程</div><div class="line">.end packed-switch</div></pre>
+      </td>
+    </tr>
+  </table>
+</figure>
 <p>
   <img src="/images/omg-td-001.png" alt="smspay">
 </p>
@@ -80,8 +116,8 @@
     </tr>
   </table>
 </figure>
-<h5 id="3-破解修改的另一处更简单的地方">
-  <a href="#3-破解修改的另一处更简单的地方" class="headerlink" title="3. 破解修改的另一处更简单的地方:"></a>3. 破解修改的另一处更简单的地方:</h5>
+<h3 id="3-破解修改的另一处更简单的地方">
+  <a href="#3-破解修改的另一处更简单的地方" class="headerlink" title="3. 破解修改的另一处更简单的地方:"></a>3. 破解修改的另一处更简单的地方:</h3>
 <p>android killer 找到下面这个类的smali文件</p>
 <blockquote>
   <p>.class Lcom/yodo1/sdk/game/Yodo14GameSmsPay$2;</p>
@@ -127,8 +163,11 @@
     </tr>
   </table>
 </figure>
-<p>有图有真相,动画演示:
-  <br>
+<p>有图有真相,动画演示:</p>
+<p>
+  <img src="https://pan.baidu.com/s/1o89Ig7w" alt="https://pan.baidu.com/s/1o89Ig7w">
+</p>
+<p>
   <img src="https://thumbnail0.baidupcs.com/thumbnail/d02d170143fc08e5b30e1443cff32b33?fid=3489926961-250528-740743108987177&amp;time=1497438000&amp;rt=sh&amp;sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-krBtPq7J9eS%2B2xLrNxRjU796Vms%3D&amp;expires=8h&amp;chkv=0&amp;chkbd=0&amp;chkpc=&amp;dp-logid=3822026735490792761&amp;dp-callid=0&amp;size=c710_u400&amp;quality=100&amp;vuk=-&amp;ft=video" alt="smspay">
 </p>
 ]]></content>
@@ -157,6 +196,8 @@
       <category term="Crack" scheme="/tags/Crack/"/>
     
       <category term="youdao1" scheme="/tags/youdao1/"/>
+    
+      <category term="smspay" scheme="/tags/smspay/"/>
     
       <category term="jadx" scheme="/tags/jadx/"/>
     
@@ -301,6 +342,8 @@
       <category term="笔记" scheme="/categories/macOS/%E7%AC%94%E8%AE%B0/"/>
     
     
+      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
+    
       <category term="printf" scheme="/tags/printf/"/>
     
       <category term="C" scheme="/tags/C/"/>
@@ -316,8 +359,6 @@
       <category term="全平台" scheme="/tags/%E5%85%A8%E5%B9%B3%E5%8F%B0/"/>
     
       <category term="printfcolor" scheme="/tags/printfcolor/"/>
-    
-      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   

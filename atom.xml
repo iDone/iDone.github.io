@@ -32,34 +32,39 @@
 <p>
   <strong>仅供学习研究,请勿用作商业用途,如若喜欢请支持正版!</strong>
 </p>
-<p>原程序:
+<p>原程序:(貌似android 5.x 以上版本运行不起来)</p>
+<p>
   <a href="https://pan.baidu.com/s/1o8fWad8" target="_blank" rel="external">百度下载</a>
 </p>
-<p>B.S.内购破解版:
-  <a href="https://pan.baidu.com/s/1kVfwgjt" target="_blank" rel="external">百度下载</a>(链接:
+<p>
+  <a href="http://www.yodo1.cn/archives/omg-td.html" title="游道易官网" target="_blank" rel="external">游道易官网: http://www.yodo1.cn/archives/omg-td.html</a>
+</p>
+<p>B.S.内购破解版:</p>
+<p>
+  <a href="http://www.8idone.com/app/omg-TD-BS-Cr.apk" target="_blank" rel="external">百度下载</a>(链接:
   <a href="https://pan.baidu.com/s/1kVfwgjt" target="_blank" rel="external">https://pan.baidu.com/s/1kVfwgjt</a> 密码: ktdy)</p>
-<p>也可以去各大安卓市场或者主页下载最新版本:</p>
+<p>也可以去各大安卓市场搜索下载最新版本:(推荐支付接口比较熟悉的移动,咪咕游戏,爱游戏)</p>
 <blockquote>
   <p>
-    <a href="http://g.10086.cn/" title="http://g.10086.cn/" target="_blank" rel="external">咪咕: http://g.10086.cn/</a>
+    <a href="http://www.play.cn/" title="爱游戏" target="_blank" rel="external">爱游戏: http://www.play.cn/</a>
   </p>
   <p>
-    <a href="http://mm.10086.cn/android" title="http://mm.10086.cn/android" target="_blank" rel="external">中国移动应用商城: http://mm.10086.cn/android</a>
+    <a href="http://g.10086.cn/" title="咪咕游戏" target="_blank" rel="external">咪咕游戏: http://g.10086.cn/</a>
   </p>
   <p>
-    <a href="http://android.myapp.com/" title="http://android.myapp.com/" target="_blank" rel="external">腾讯应用宝: http://android.myapp.com/</a>
+    <a href="http://mm.10086.cn/android" title="中国移动应用商城" target="_blank" rel="external">中国移动应用商城: http://mm.10086.cn/android</a>
   </p>
   <p>
-    <a href="http://zhushou.360.cn/" title="http://zhushou.360.cn/" target="_blank" rel="external">360手机助手: http://zhushou.360.cn/</a>
+    <a href="http://android.myapp.com/" title="腾讯应用宝" target="_blank" rel="external">腾讯应用宝: http://android.myapp.com/</a>
   </p>
   <p>
-    <a href="http://apk.hiapk.com/" title="http://apk.hiapk.com/" target="_blank" rel="external">百度旗下安卓市场: http://apk.hiapk.com/</a>
+    <a href="http://zhushou.360.cn/" title="360手机助手" target="_blank" rel="external">360手机助手: http://zhushou.360.cn/</a>
   </p>
   <p>
-    <a href="http://www.anzhi.com/" title="http://www.anzhi.com/" target="_blank" rel="external">安智市场: http://www.anzhi.com/</a>
+    <a href="http://apk.hiapk.com/" title="安卓市场" target="_blank" rel="external">百度旗下安卓市场: http://apk.hiapk.com/</a>
   </p>
   <p>
-    <a href="http://www.yodo1.cn/archives/omg-td.html" title="http://www.yodo1.cn/archives/omg-td.html" target="_blank" rel="external">游道易官网: http://www.yodo1.cn/archives/omg-td.html</a>
+    <a href="http://www.anzhi.com/" title="安智市场" target="_blank" rel="external">安智市场: http://www.anzhi.com/</a>
   </p>
 </blockquote>
 <h3 id="1-找到支付相关的sdk类的关键破解点在”onResult”Method中">
@@ -174,7 +179,7 @@
 </p>
 <h3 id="4-后记-一点总结和补充">
   <a href="#4-后记-一点总结和补充" class="headerlink" title="4. 后记(一点总结和补充):"></a>4. 后记(一点总结和补充):</h3>
-<p>先破解电信支付(不弹窗,不弹消息的购买成功),然后把联通和移动的接口强制改为电信接口.</p>
+<p>先破解电信支付(不弹窗支付窗口的,不弹消息的购买成功的修改方法有很多种),然后把联通和移动的接口强制改为电信接口.</p>
 <h5 id="破解电信支付">
   <a href="#破解电信支付" class="headerlink" title="破解电信支付:"></a>破解电信支付:</h5>
 <blockquote>
@@ -195,8 +200,8 @@
     </tr>
   </table>
 </figure>
-<h5 id="统一接口强制改为电信的支付接口">
-  <a href="#统一接口强制改为电信的支付接口" class="headerlink" title="统一接口强制改为电信的支付接口:"></a>统一接口强制改为电信的支付接口:</h5>
+<h5 id="统一接口-强制改为电信的支付接口">
+  <a href="#统一接口-强制改为电信的支付接口" class="headerlink" title="统一接口,强制改为电信的支付接口:"></a>统一接口,强制改为电信的支付接口:</h5>
 <blockquote>
   <p>.class public Lcom/talaya/share/utils/OperatorUtils;</p>
   <p>.super Ljava/lang/Object;</p>

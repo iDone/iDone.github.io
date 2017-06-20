@@ -29,15 +29,15 @@
 <hr>
 <p>—Creaked by B.S. 6/14/2017 2:10:58 PM</p>
 <p>无聊练手,当作学习Android优秀源码的笔记</p>
+<p>
+  <strong>仅供学习研究,请勿用作商业用途,如若喜欢请支持正版!</strong>
+</p>
 <p>原程序:
   <a href="https://pan.baidu.com/s/1o8fWad8" target="_blank" rel="external">百度下载</a>
 </p>
 <p>B.S.内购破解版:
   <a href="https://pan.baidu.com/s/1kVfwgjt" target="_blank" rel="external">百度下载</a>(链接:
   <a href="https://pan.baidu.com/s/1kVfwgjt" target="_blank" rel="external">https://pan.baidu.com/s/1kVfwgjt</a> 密码: ktdy)</p>
-<p>
-  <strong>仅供学习研究,请勿用作商业用途,如若喜欢请支持正版!</strong>
-</p>
 <p>也可以去各大安卓市场或者主页下载最新版本:</p>
 <blockquote>
   <p>
@@ -174,7 +174,7 @@
 </p>
 <h3 id="4-后记-一点总结和补充">
   <a href="#4-后记-一点总结和补充" class="headerlink" title="4. 后记(一点总结和补充):"></a>4. 后记(一点总结和补充):</h3>
-<p>把先破解电信支付(不弹窗,不弹消息的购买成功),然后把联通和移动的接口强制改为电信接口.</p>
+<p>先破解电信支付(不弹窗,不弹消息的购买成功),然后把联通和移动的接口强制改为电信接口.</p>
 <h5 id="破解电信支付">
   <a href="#破解电信支付" class="headerlink" title="破解电信支付:"></a>破解电信支付:</h5>
 <blockquote>
@@ -183,14 +183,14 @@
   <p>.source “YgSmsPayAdapterTelsub.java”</p>
 </blockquote>
 <p>用onSuccess函数,替换掉onCanceled,onFailed函数.修改smali汇编代码,变为下面这个样子:</p>
-<figure class="highlight">
+<figure class="highlight java">
   <table>
     <tr>
       <td class="gutter">
-        <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre>
+        <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre>
       </td>
       <td class="code">
-        <pre><div class="line"># virtual methods</div><div class="line">.method public payCancel(Ljava/lang/String;)V</div><div class="line">#替换为paySuccess函数体</div><div class="line">    .locals 2</div><div class="line">    .param p1, "arg0"    # Ljava/lang/String;</div><div class="line"></div><div class="line">    .prologue</div><div class="line">    .line 44</div><div class="line">    iget-object v0, p0, Lcom/yodo1/sdk/game/smspay/YgSmsPayAdapterTelsub$1;-&gt;val$listener:Lcom/yodo1/sdk/game/Yodo14GameSmsPayListener;</div><div class="line"></div><div class="line">    if-eqz v0, :cond_0</div><div class="line"></div><div class="line">    .line 45</div><div class="line">    iget-object v0, p0, Lcom/yodo1/sdk/game/smspay/YgSmsPayAdapterTelsub$1;-&gt;val$listener:Lcom/yodo1/sdk/game/Yodo14GameSmsPayListener;</div><div class="line"></div><div class="line">    invoke-interface &#123;v0&#125;, Lcom/yodo1/sdk/game/Yodo14GameSmsPayListener;-&gt;onSuccess()V</div><div class="line"></div><div class="line">    .line 46</div><div class="line">    iget-boolean v0, p0, Lcom/yodo1/sdk/game/smspay/YgSmsPayAdapterTelsub$1;-&gt;val$isRepeated:Z</div><div class="line"></div><div class="line">    if-nez v0, :cond_0</div><div class="line"></div><div class="line">    .line 47</div><div class="line">    iget-object v0, p0, Lcom/yodo1/sdk/game/smspay/YgSmsPayAdapterTelsub$1;-&gt;val$activity:Landroid/app/Activity;</div><div class="line"></div><div class="line">    iget-object v1, p0, Lcom/yodo1/sdk/game/smspay/YgSmsPayAdapterTelsub$1;-&gt;val$productId:Ljava/lang/String;</div><div class="line"></div><div class="line">    invoke-static &#123;v0, v1&#125;, Lcom/yodo1/sdk/game/smspay/YgSmsPayAdapterBase;-&gt;setPaid(Landroid/content/Context;Ljava/lang/String;)V</div><div class="line"></div><div class="line">    .line 50</div><div class="line">    :cond_0</div><div class="line">    return-void</div><div class="line">.end method</div></pre>
+        <pre><div class="line">.<span class="function">method <span class="keyword">public</span> <span class="title">payCancel</span><span class="params">(Ljava/lang/String;)</span>V</span></div><div class="line">    #替换为paySuccess函数体代码</div><div class="line">    .locals 2</div><div class="line">    .param p1, "arg0"    # Ljava/lang/String;</div><div class="line"></div><div class="line">    .prologue</div><div class="line">    .line <span class="number">44</span></div><div class="line">    iget-object v0, p0, Lcom/yodo1/sdk/game/smspay/YgSmsPayAdapterTelsub$<span class="number">1</span>;-&gt;val$listener:Lcom/yodo1/sdk/game/Yodo14GameSmsPayListener;</div><div class="line"></div><div class="line">    <span class="keyword">if</span>-eqz v0, :cond_0</div><div class="line"></div><div class="line">    .line <span class="number">45</span></div><div class="line">    iget-object v0, p0, Lcom/yodo1/sdk/game/smspay/YgSmsPayAdapterTelsub$<span class="number">1</span>;-&gt;val$listener:Lcom/yodo1/sdk/game/Yodo14GameSmsPayListener;</div><div class="line"></div><div class="line">    invoke-<span class="class"><span class="keyword">interface</span> </span>&#123;v0&#125;, Lcom/yodo1/sdk/game/Yodo14GameSmsPayListener;-&gt;onSuccess()V</div><div class="line"></div><div class="line">    .line <span class="number">46</span></div><div class="line">    iget-<span class="keyword">boolean</span> v0, p0, Lcom/yodo1/sdk/game/smspay/YgSmsPayAdapterTelsub$<span class="number">1</span>;-&gt;val$isRepeated:Z</div><div class="line"></div><div class="line">    <span class="keyword">if</span>-nez v0, :cond_0</div><div class="line"></div><div class="line">    .line <span class="number">47</span></div><div class="line">    iget-object v0, p0, Lcom/yodo1/sdk/game/smspay/YgSmsPayAdapterTelsub$<span class="number">1</span>;-&gt;val$activity:Landroid/app/Activity;</div><div class="line"></div><div class="line">    iget-object v1, p0, Lcom/yodo1/sdk/game/smspay/YgSmsPayAdapterTelsub$<span class="number">1</span>;-&gt;val$productId:Ljava/lang/String;</div><div class="line"></div><div class="line">    invoke-<span class="keyword">static</span> &#123;v0, v1&#125;, Lcom/yodo1/sdk/game/smspay/YgSmsPayAdapterBase;-&gt;setPaid(Landroid/content/Context;Ljava/lang/String;)V</div><div class="line"></div><div class="line">    .line <span class="number">50</span></div><div class="line">    :cond_0</div><div class="line">    <span class="keyword">return</span>-<span class="keyword">void</span></div><div class="line">.end method</div></pre>
       </td>
     </tr>
   </table>
@@ -231,6 +231,7 @@
     <tr>
       <th>运营商网络</th>
       <th>特征码</th>
+      <th>备注</th>
     </tr>
   </thead>
   <tbody>
@@ -252,7 +253,7 @@
     <tr>
       <td>中国铁通</td>
       <td>46020、</td>
-      <td></td>
+      <td>归属移动</td>
     </tr>
   </tbody>
 </table>
@@ -431,8 +432,6 @@
       <category term="笔记" scheme="/categories/macOS/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
-    
       <category term="printf" scheme="/tags/printf/"/>
     
       <category term="C" scheme="/tags/C/"/>
@@ -448,6 +447,8 @@
       <category term="全平台" scheme="/tags/%E5%85%A8%E5%B9%B3%E5%8F%B0/"/>
     
       <category term="printfcolor" scheme="/tags/printfcolor/"/>
+    
+      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   

@@ -360,10 +360,15 @@
                   </blockquote>
                   <ul>
                     <li>
-                      <strong>只需要在用javassist时,设置这一句就可以将破解好的class类文件dump出来然后打包回原来的charles.jar里,破解文件制作完成.</strong>
+                      <p>
+                        <strong>只需要在用javassist时,设置这一句就可以将破解好的class类文件dump出来然后打包回原来的charles.jar里,破解文件制作完成.</strong>
+                      </p>
                       <blockquote>
                         <p>CtClass.debugDump = “./charles-bs-cr”;</p>
                       </blockquote>
+                    </li>
+                    <li>
+                      <p>要做跨平台的破解文件最好用MacOS下的charles.jar文件进行破解,Windows平台下的文件破解后到MacOS下起不来.我比对过破解的class类文件,二进制是相同的,估计在其他地方有细微差别.</p>
                     </li>
                   </ul>
                   <hr>

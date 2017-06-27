@@ -888,8 +888,6 @@
       <category term="笔记" scheme="/categories/macOS/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
-    
       <category term="printf" scheme="/tags/printf/"/>
     
       <category term="C" scheme="/tags/C/"/>
@@ -905,6 +903,8 @@
       <category term="全平台" scheme="/tags/%E5%85%A8%E5%B9%B3%E5%8F%B0/"/>
     
       <category term="printfcolor" scheme="/tags/printfcolor/"/>
+    
+      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
@@ -1293,10 +1293,15 @@ idone@AY1402261427509974f2Z:~$
 </blockquote>
 <ul>
   <li>
-    <strong>只需要在用javassist时,设置这一句就可以将破解好的class类文件dump出来然后打包回原来的charles.jar里,破解文件制作完成.</strong>
+    <p>
+      <strong>只需要在用javassist时,设置这一句就可以将破解好的class类文件dump出来然后打包回原来的charles.jar里,破解文件制作完成.</strong>
+    </p>
     <blockquote>
       <p>CtClass.debugDump = “./charles-bs-cr”;</p>
     </blockquote>
+  </li>
+  <li>
+    <p>要做跨平台的破解文件最好用MacOS下的charles.jar文件进行破解,Windows平台下的文件破解后到MacOS下起不来.我比对过破解的class类文件,二进制是相同的,估计在其他地方有细微差别.</p>
   </li>
 </ul>
 <hr>

@@ -888,6 +888,8 @@
       <category term="笔记" scheme="/categories/macOS/%E7%AC%94%E8%AE%B0/"/>
     
     
+      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
+    
       <category term="printf" scheme="/tags/printf/"/>
     
       <category term="C" scheme="/tags/C/"/>
@@ -903,8 +905,6 @@
       <category term="全平台" scheme="/tags/%E5%85%A8%E5%B9%B3%E5%8F%B0/"/>
     
       <category term="printfcolor" scheme="/tags/printfcolor/"/>
-    
-      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
@@ -1241,20 +1241,20 @@ idone@AY1402261427509974f2Z:~$
   <a href="#极其强大的Web调试、代理抓包工具启动器。-Charles-v4-x-动态加载启动器loader-最新版v4-1-2相对v-4-0-2以上版本比较，明文类名已混淆。" class="headerlink" title="极其强大的Web调试、代理抓包工具启动器。 Charles v4.x 动态加载启动器loader 最新版v4.1.2相对v.4.0.2以上版本比较，明文类名已混淆。"></a>极其强大的Web调试、代理抓包工具启动器。 Charles v4.x 动态加载启动器loader 最新版v4.1.2相对v.4.0.2以上版本比较，明文类名已混淆。</h5>
 <blockquote>
   <p>
-    <a href="http://git.oschina.net/iYoungDone/charlesloader" target="_blank" rel="external">gitoschina码云源码:http://git.oschina.net/iYoungDone/charlesloader</a>
+    <a href="http://git.oschina.net/iYoungDone/charlesloader" target="_blank" rel="external">gitoschina码云源码: http://git.oschina.net/iYoungDone/charlesloader</a>
   </p>
 </blockquote>
-<h5 id="破解-Charles-的屌炸天的-shell-脚本">
-  <a href="#破解-Charles-的屌炸天的-shell-脚本" class="headerlink" title="破解 Charles 的屌炸天的 shell 脚本"></a>
-  <a href="/uploads/codes/charles-bs-v413.sh">破解 Charles 的屌炸天的 shell 脚本</a>
+<h5 id="破解-Charles-的屌炸天的-shell-脚本for-MacOS-Linux-Unix">
+  <a href="#破解-Charles-的屌炸天的-shell-脚本for-MacOS-Linux-Unix" class="headerlink" title="破解 Charles 的屌炸天的 shell 脚本for MacOS,Linux,Unix"></a>
+  <a href="/uploads/codes/charles-bs-v413.sh">破解 Charles 的屌炸天的 shell 脚本for MacOS,Linux,Unix</a>
 </h5>
 <p>
-  <a href="/uploads/codes/charles.jar">最新charles破解文件</a>
+  <a href="/uploads/codes/charles.jar">最新charles-v4.1.3破解文件</a>
 </p>
 <ol>
   <li>Windows 平台,将下载的charles.jar文件覆盖到安装目录下的lib文件夹下即可完成破解!</li>
   <li>Mac 平台,将下载的charles.jar文件右键 Charles.app 显示包内容,覆盖到Content-&gt;Java下即可完成破解!
-    <br>注意: 这是v4.1.3的破解文件,不确定其他版本也同样适用!</li>
+    <br>注意: 这是v4.1.3的破解文件,不确定其他版本也同样适用!请下载相应版本文件,然后改名为charles.jar.</li>
 </ol>
 <hr>
 <h2 id="Charles-v4-1-3版本分析记录">
@@ -1291,11 +1291,14 @@ idone@AY1402261427509974f2Z:~$
   </ol>
   <p>hook掉public static boolean x1()和public static java.lang.String x3()两个方法函数就可以了,当然最好public修饰的都hook掉;</p>
 </blockquote>
-<h5 id="只需要在用javassist时-设置这一句就可以将破解好的class类文件就会dump出来">
-  <a href="#只需要在用javassist时-设置这一句就可以将破解好的class类文件就会dump出来" class="headerlink" title="只需要在用javassist时,设置这一句就可以将破解好的class类文件就会dump出来"></a>只需要在用javassist时,设置这一句就可以将破解好的class类文件就会dump出来</h5>
-<blockquote>
-  <p>CtClass.debugDump = “./charles-bs-cr”;</p>
-</blockquote>
+<ul>
+  <li>
+    <strong>只需要在用javassist时,设置这一句就可以将破解好的class类文件dump出来然后打包回原来的charles.jar里,破解文件制作完成.</strong>
+    <blockquote>
+      <p>CtClass.debugDump = “./charles-bs-cr”;</p>
+    </blockquote>
+  </li>
+</ul>
 <hr>
 <h2 id="Charles-v4-1-2版本分析记录">
   <a href="#Charles-v4-1-2版本分析记录" class="headerlink" title="Charles v4.1.2版本分析记录"></a>

@@ -1,3 +1,8 @@
+#!/bin/bash
+# Coded by B.S.
+# wwww.appleos.xyz
+# www.allin1.xyz
+#
 echo;
 echo "Charles Patcher"
 echo " by B.S. "
@@ -20,7 +25,7 @@ cd $dir
 echo "I Am Working......"
 echo "Work @ $dir"
 
-cat >> qFep.java <<EOF
+cat >> psPJ.java <<EOF
 /*
  * Decompiled with CFR 0_121.
  * Coded by B.S.
@@ -34,8 +39,8 @@ public final class psPJ {
 }
 EOF
 echo "javac -encoding UTF-8 *.java -d . && jar -uvf (*^__^*)"
-javac -encoding UTF-8 qFep.java -d .&& jar -uvf $charles com/xk72/charles/qFep.class
+javac -encoding UTF-8 psPJ.java -d .&& jar -uvf $charles com/xk72/charles/psPJ.class
 echo "rm -rf *"
-read -p "Press any key to continue." var1
+read -p "Press any key & return to continue." var1
 cd .. && rm -rf $dir
 echo "Catch you later!"

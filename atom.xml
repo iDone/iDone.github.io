@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>@iYoungDone&#39;s Hexo Blog</title>
-  <subtitle>『想女孩子能使你成为哲学家--太相信女人』❤ http://wwww.allin1.xyz</subtitle>
+  <subtitle>『想女孩子能使你成为哲学家--太相信女人』❤ http://www.allin1.xyz</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
@@ -913,10 +913,10 @@
     <link href="/2017/05/22/Windows%E5%91%BD%E4%BB%A4netsh%E8%AE%BE%E7%BD%AEIP%E5%92%8CDNS/"/>
     <id>/2017/05/22/Windows命令netsh设置IP和DNS/</id>
     <published>2017-05-22T10:41:47.000Z</published>
-    <updated>2017-06-14T11:14:24.000Z</updated>
+    <updated>2017-06-27T08:31:18.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Windows命令netsh设置IP和DNS">
-  <a href="#Windows命令netsh设置IP和DNS" class="headerlink" title="Windows命令netsh设置IP和DNS"></a>Windows命令netsh设置IP和DNS</h2>
+    <content type="html"><![CDATA[<h3 id="Windows命令netsh设置IP和DNS">
+  <a href="#Windows命令netsh设置IP和DNS" class="headerlink" title="Windows命令netsh设置IP和DNS"></a>Windows命令netsh设置IP和DNS</h3>
 <hr>
 <ul>
   <li>今天去王总新搬的公司混饭吃,新办公地网络受公司要求必须要指定内部用的 IP 和 DNS.有个同事的电脑 Windows7网络设置一直闪退,没法界面设置 IP
@@ -925,6 +925,9 @@
 <blockquote>
   <p>
     <a href="/uploads/codes/ip-netsh.bat">ip-netsh.bat</a>
+  </p>
+  <p>
+    <a href="/uploads/codes/内外网切换程序-zgrs&amp;zgdx.exe">搞到一个人家的内外网切换工具–管理密码我破解了(￣▽￣)</a>
   </p>
 </blockquote>
 <figure class="highlight bat">
@@ -943,7 +946,7 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Windows命令netsh设置IP和DNS&quot;&gt;
+      &lt;h3 id=&quot;Windows命令netsh设置IP和DNS&quot;&gt;
   &lt;a href=&quot;#Windows命令netsh设置IP和DNS&quot; class=&quot;headerlink&quot; title=&quot;Windows命令netsh设置IP和DNS&quot;&gt;&lt;/a&gt;Windows命令netsh设置I
     
     </summary>
@@ -1243,7 +1246,7 @@ idone@AY1402261427509974f2Z:~$
 </blockquote>
 <h5 id="破解-Charles-的屌炸天的-shell-脚本">
   <a href="#破解-Charles-的屌炸天的-shell-脚本" class="headerlink" title="破解 Charles 的屌炸天的 shell 脚本"></a>
-  <a href="/uploads/codes/charles-bs-v412.sh">破解 Charles 的屌炸天的 shell 脚本</a>
+  <a href="/uploads/codes/charles-bs-v413.sh">破解 Charles 的屌炸天的 shell 脚本</a>
 </h5>
 <p>
   <a href="/uploads/codes/charles.jar">最新charles破解文件</a>
@@ -1251,8 +1254,48 @@ idone@AY1402261427509974f2Z:~$
 <ol>
   <li>Windows 平台,将下载的charles.jar文件覆盖到安装目录下的lib文件夹下即可完成破解!</li>
   <li>Mac 平台,将下载的charles.jar文件右键 Charles.app 显示包内容,覆盖到Content-&gt;Java下即可完成破解!
-    <br>注意: 这是v4.1.2的破解文件,不确定其他版本也同样适用!</li>
+    <br>注意: 这是v4.1.3的破解文件,不确定其他版本也同样适用!</li>
 </ol>
+<hr>
+<h2 id="Charles-v4-1-3版本分析记录">
+  <a href="#Charles-v4-1-3版本分析记录" class="headerlink" title="Charles v4.1.3版本分析记录"></a>
+  <strong>Charles v4.1.3版本分析记录</strong>
+</h2>
+<p>–by B.S.</p>
+<p>6/27/2017 2:07:52 PM </p>
+<h5 id="最新版v4-1-3相对v-4-0-2比较，明文类名已混淆">
+  <a href="#最新版v4-1-3相对v-4-0-2比较，明文类名已混淆" class="headerlink" title="最新版v4.1.3相对v.4.0.2比较，明文类名已混淆."></a>最新版v4.1.3相对v.4.0.2比较，明文类名已混淆.</h5>
+<h5 id="反编译为源码后-找关键点的分析流程">
+  <a href="#反编译为源码后-找关键点的分析流程" class="headerlink" title="反编译为源码后,找关键点的分析流程:"></a>反编译为源码后,找关键点的分析流程:</h5>
+<blockquote>
+  <ol>
+    <li>在com\xk72\charles\gui\frames\RegisterFrame.java里找到this.bRegister.addActionListener导入的类import
+      com.xk72.charles.gui.frames.NvMh;</li>
+    <li>在com.xk72.charles.gui.frames.NvMh里找到if (object2 != null) 使他永久为null的函数导入的类import
+      com.xk72.charles.psPJ;</li>
+    <li>在com.xk72.charles.psPJ里就是关键类。分析关键点HOOK。</li>
+    <li>用javap -public psPj.class查看给外部类调用的公有函数方法如下:
+      <figure class="highlight java">
+        <table>
+          <tr>
+            <td class="gutter">
+              <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre>
+            </td>
+            <td class="code">
+              <pre><div class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">com</span>.<span class="title">xk72</span>.<span class="title">charles</span>.<span class="title">psPJ</span> </span>&#123;</div><div class="line">  <span class="keyword">public</span> com.xk72.charles.psPJ();</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">qIvM</span><span class="params">()</span></span>;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">mLFE</span><span class="params">()</span></span>;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> java.lang.<span class="function">String <span class="title">tCiz</span><span class="params">()</span></span>;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">static</span> java.lang.<span class="function">String <span class="title">qIvM</span><span class="params">(java.lang.String, java.lang.String)</span></span>;</div><div class="line">&#125;</div></pre>
+            </td>
+          </tr>
+        </table>
+      </figure>
+    </li>
+  </ol>
+  <p>hook掉public static boolean x1()和public static java.lang.String x3()两个方法函数就可以了,当然最好public修饰的都hook掉;</p>
+</blockquote>
+<h5 id="只需要在用javassist时-设置这一句就可以将破解好的class类文件就会dump出来">
+  <a href="#只需要在用javassist时-设置这一句就可以将破解好的class类文件就会dump出来" class="headerlink" title="只需要在用javassist时,设置这一句就可以将破解好的class类文件就会dump出来"></a>只需要在用javassist时,设置这一句就可以将破解好的class类文件就会dump出来</h5>
+<blockquote>
+  <p>CtClass.debugDump = “./charles-bs-cr”;</p>
+</blockquote>
 <hr>
 <h2 id="Charles-v4-1-2版本分析记录">
   <a href="#Charles-v4-1-2版本分析记录" class="headerlink" title="Charles v4.1.2版本分析记录"></a>
@@ -1262,8 +1305,8 @@ idone@AY1402261427509974f2Z:~$
 <p>5/23/2017 1:32:17 PM</p>
 <h5 id="最新版v4-1-2相对v-4-0-2比较，明文类名已混淆">
   <a href="#最新版v4-1-2相对v-4-0-2比较，明文类名已混淆" class="headerlink" title="最新版v4.1.2相对v.4.0.2比较，明文类名已混淆."></a>最新版v4.1.2相对v.4.0.2比较，明文类名已混淆.</h5>
-<h5 id="反编译为源码后-找关键点的分析流程">
-  <a href="#反编译为源码后-找关键点的分析流程" class="headerlink" title="反编译为源码后,找关键点的分析流程:"></a>反编译为源码后,找关键点的分析流程:</h5>
+<h5 id="反编译为源码后-找关键点的分析流程-1">
+  <a href="#反编译为源码后-找关键点的分析流程-1" class="headerlink" title="反编译为源码后,找关键点的分析流程:"></a>反编译为源码后,找关键点的分析流程:</h5>
 <blockquote>
   <ol>
     <li>在com\xk72\charles\gui\frames\RegisterFrame.java里找到this.bRegister.addActionListener导入的类import
@@ -1282,8 +1325,8 @@ idone@AY1402261427509974f2Z:~$
 <p>5/5/2017 8:30:00 AM</p>
 <h5 id="最新版v4-1-1相对v-4-0-2比较，明文类名已混淆">
   <a href="#最新版v4-1-1相对v-4-0-2比较，明文类名已混淆" class="headerlink" title="最新版v4.1.1相对v.4.0.2比较，明文类名已混淆."></a>最新版v4.1.1相对v.4.0.2比较，明文类名已混淆.</h5>
-<h5 id="反编译为源码后-找关键点的分析流程-1">
-  <a href="#反编译为源码后-找关键点的分析流程-1" class="headerlink" title="反编译为源码后,找关键点的分析流程:"></a>反编译为源码后,找关键点的分析流程:</h5>
+<h5 id="反编译为源码后-找关键点的分析流程-2">
+  <a href="#反编译为源码后-找关键点的分析流程-2" class="headerlink" title="反编译为源码后,找关键点的分析流程:"></a>反编译为源码后,找关键点的分析流程:</h5>
 <blockquote>
   <ol>
     <li>在com\xk72\charles\gui\frames\RegisterFrame.java里找到this.bRegister.addActionListener导入的类

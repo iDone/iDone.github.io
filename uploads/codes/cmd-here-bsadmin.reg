@@ -1,0 +1,54 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\cmd]
+@="在此处打开CMD-B.S."
+"icon"="C:\\Windows\\System32\\shell32.dll,14"
+[HKEY_CLASSES_ROOT\Directory\Background\shell\cmd\command]
+@="cmd.exe /s /k pushd \"%V\""
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\runas]
+@="管理员CMD-B.S."
+"icon"="C:\\Windows\\System32\\shell32.dll,24"
+[HKEY_CLASSES_ROOT\Directory\Background\shell\runas\command]
+@="cmd.exe /s /k pushd \"%V\""
+
+
+[HKEY_CLASSES_ROOT\Folder\shell\cmd]
+@="在此处打开命令窗口-B.S."
+"icon"="C:\\Windows\\System32\\shell32.dll,14"
+[HKEY_CLASSES_ROOT\Folder\shell\cmd\command]
+@="cmd.exe /s /k pushd \"%V\""
+
+[HKEY_CLASSES_ROOT\Folder\shell\runas]
+@="管理员CMD-B.S."
+"icon"="C:\\Windows\\System32\\shell32.dll,24"
+[HKEY_CLASSES_ROOT\Folder\shell\runas\command]
+@="cmd.exe /s /k pushd \"%V\""
+
+
+
+
+
+
+
+
+[-HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\shell\CMD]
+@="在此处打开命令窗口-B.S.O.D"
+
+[-HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\shell\CMD\command]
+@="CMD.EXE /K CD %1"
+
+
+[-HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\Background\shell\CMD]
+@="在此处打开命令窗口-B.S.O.D"
+
+[-HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\Background\shell\CMD\command]
+@="CMD.EXE /K CD %1"
+
+[-HKEY_CURRENT_USER\SOFTWARE\Classes\Drive\shell\CMD]
+@="在此处打开命令窗口-B.S.O.D"
+
+[-HKEY_CURRENT_USER\SOFTWARE\Classes\Drive\shell\CMD\command]
+
+@="CMD.EXE /K CD %1"
+

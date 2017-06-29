@@ -22,21 +22,25 @@
     <published>2017-06-26T13:22:00.000Z</published>
     <updated>2017-06-26T13:30:00.000Z</updated>
     
-    <content type="html"><![CDATA[<p>—Creaked by B.S. 6/26/2017 9:22:40 PM</p>
+    <content type="html"><![CDATA[<p>—Creaked by B.S. 6/26/2017 9:22:40 PM </p>
 <p>无聊练手,当作学习Android优秀源码的笔记</p>
 <p>
   <strong>仅供学习研究,请勿用作商业用途,如若喜欢请支持正版!</strong>
 </p>
-<p>原程序:(v1.14.1)</p>
+<p>最新版原程序:(v1.14.1)</p>
 <p>
   <a href="http://huo.dl.hoolaigames.com/hcrlm.apk" target="_blank" rel="external">百度下载</a>
 </p>
 <p>
   <a href="http://huo.dl.hoolaigames.com/hcrlm.apk" title="火柴人联盟官网" target="_blank" rel="external">火柴人联盟官网: http://huo.hoolaigames.com/</a>
 </p>
-<p>B.S.去签名去广告内购破解版:</p>
+<p>B.S.去签名去广告内购破解版:(无限内购)</p>
 <p>
-  <a href="http://www.8idone.com/app/hcrlm-BS-Cr.apk" target="_blank" rel="external">百度下载</a>
+  <a href="http://www.8idone.com/app/hcrlm-v1.14.1-BS-Cr.apk" target="_blank" rel="external">百度下载</a>
+  <br>链接:
+  <a href="https://pan.baidu.com/s/1qXTbuVU" target="_blank" rel="external">https://pan.baidu.com/s/1qXTbuVU</a> 密码: r9sb</p>
+<p>
+  <a href="http://www.8idone.com/app/hcrlm-BS-Cr.apk" target="_blank" rel="external">有确认支付的电信接口内购版</a>
 </p>
 <p>也可以去各大安卓市场搜索下载最新版本:(推荐支付接口比较熟悉的移动,咪咕游戏,爱游戏)</p>
 <blockquote>
@@ -90,7 +94,7 @@
 </table>
 <h3 id="1-去签名验证">
   <a href="#1-去签名验证" class="headerlink" title="1. 去签名验证:"></a>1. 去签名验证:</h3>
-<p>是有签名验证的回编译后,检测提示盗版游戏.</p>
+<p>android killer不修改直接回编译后,是有签名验证的,检测提示盗版破解游戏.</p>
 <p>
   <img src="/images/hcrlm-002.png" alt="签名验证盗版提示">
 </p>
@@ -119,7 +123,8 @@
     </tr>
   </table>
 </figure>
-<p>修改方法很多种,还可以在下面的类里定位到check方法函数.</p>
+<p>去验证的修改方法很多种,还可以在下面的类里定位到check方法函数.</p>
+<p>根据经验可以去看看onCreate有没可用的信息,一般初始化在这里有处理.</p>
 <blockquote>
   <p>.class public Lcom/DBGame/DiabloLOL/DiabloLOL;</p>
   <p>.super Lorg/cocos2dx/lib/Cocos2dxActivity;</p>
@@ -150,7 +155,8 @@
     </tr>
   </table>
 </figure>
-<p>处理check()V</p>
+<p>看到Lcn/mycompany/addblackname/AddBlackName;-&gt;Check()V是在添加黑名单的类里,
+  <br>查看方法,处理check()V</p>
 <figure class="highlight">
   <table>
     <tr>
@@ -158,7 +164,7 @@
         <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre>
       </td>
       <td class="code">
-        <pre><div class="line">.method public static Check()V</div><div class="line">    .locals 6</div><div class="line"></div><div class="line">    .prologue</div><div class="line">    ######插入代码开始 coded by B.S.</div><div class="line"></div><div class="line">    const-string v0, "Lcn/mycompany/addblackname/AddBlackName;-&gt;check()V \n  -- by B.S."</div><div class="line"></div><div class="line">    invoke-static &#123;v0&#125;, Lcom/android/BS/Log;-&gt;LogStr(Ljava/lang/String;)V</div><div class="line"></div><div class="line">    ######插入代码结束 coded by B.S.</div><div class="line">    return-void   #直接返回使签名验证失效.</div><div class="line">.end method</div></pre>
+        <pre><div class="line">.method public static Check()V</div><div class="line">    .locals 6</div><div class="line"></div><div class="line">    .prologue</div><div class="line">    ######插入代码开始 coded by B.S.</div><div class="line">    </div><div class="line">    const-string v0, "Lcn/mycompany/addblackname/AddBlackName;-&gt;check()V \n  -- by B.S."</div><div class="line">    </div><div class="line">    invoke-static &#123;v0&#125;, Lcom/android/BS/Log;-&gt;LogStr(Ljava/lang/String;)V</div><div class="line">    </div><div class="line">    ######插入代码结束 coded by B.S.</div><div class="line">    return-void   #直接返回使签名验证失效.</div><div class="line">.end method</div></pre>
       </td>
     </tr>
   </table>
@@ -167,14 +173,14 @@
   <a href="#2-去广告" class="headerlink" title="2. 去广告:"></a>2. 去广告:</h3>
 <h5 id="去除返回退出的横幅广告">
   <a href="#去除返回退出的横幅广告" class="headerlink" title="去除返回退出的横幅广告:"></a>去除返回退出的横幅广告:</h5>
-<p>点返回按钮,logcat找到敏感字符
-  <br>—– showInterAD –exit
-  <br>反编译,搜索
-  <br>—– showInterAD</p>
-<p>HANDLER_SHOW_INTER_AD</p>
+<p>点返回按钮,logcat找到敏感字符</p>
 <blockquote>
-  <p>public static final int HANDLER_SHOW_INTER_AD = 211;</p>
-  <p>.field public static final HANDLER_SHOW_INTER_AD:I = 0xd3</p>
+  <p>—– showInterAD –exit</p>
+</blockquote>
+<p>反编译后,搜索</p>
+<blockquote>
+  <p>—– showInterAD</p>
+  <p>HANDLER_SHOW_INTER_AD</p>
 </blockquote>
 <p>在下面类修改</p>
 <blockquote>
@@ -183,6 +189,10 @@
   <p>.source “BLHelper.java”</p>
 </blockquote>
 <p>不让他发送显示广告的消息</p>
+<blockquote>
+  <p>public static final int HANDLER_SHOW_INTER_AD = 211;</p>
+  <p>.field public static final HANDLER_SHOW_INTER_AD:I = 0xd3</p>
+</blockquote>
 <figure class="highlight">
   <table>
     <tr>
@@ -190,7 +200,7 @@
         <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div></pre>
       </td>
       <td class="code">
-        <pre><div class="line">.method public static showInterAD(Ljava/lang/String;)V</div><div class="line">    .locals 6</div><div class="line">    .param p0, "tag"    # Ljava/lang/String;</div><div class="line"></div><div class="line">    .prologue</div><div class="line">    .line 360</div><div class="line">    const-string v3, "ad"</div><div class="line"></div><div class="line">    new-instance v4, Ljava/lang/StringBuilder;</div><div class="line"></div><div class="line">    invoke-direct &#123;v4&#125;, Ljava/lang/StringBuilder;-&gt;&lt;init&gt;()V</div><div class="line"></div><div class="line">    const-string v5, "----- showInterAD --"</div><div class="line"></div><div class="line">    invoke-virtual &#123;v4, v5&#125;, Ljava/lang/StringBuilder;-&gt;append(Ljava/lang/String;)Ljava/lang/StringBuilder;</div><div class="line"></div><div class="line">    move-result-object v4</div><div class="line"></div><div class="line">    invoke-virtual &#123;v4, p0&#125;, Ljava/lang/StringBuilder;-&gt;append(Ljava/lang/String;)Ljava/lang/StringBuilder;</div><div class="line"></div><div class="line">    move-result-object v4</div><div class="line"></div><div class="line">    invoke-virtual &#123;v4&#125;, Ljava/lang/StringBuilder;-&gt;toString()Ljava/lang/String;</div><div class="line"></div><div class="line">    move-result-object v4</div><div class="line"></div><div class="line">    invoke-static &#123;v3, v4&#125;, Landroid/util/Log;-&gt;w(Ljava/lang/String;Ljava/lang/String;)I</div><div class="line"></div><div class="line">    .line 361</div><div class="line">    const/4 v1, 0x0</div><div class="line"></div><div class="line">    .line 362</div><div class="line">    .local v1, "index":I</div><div class="line">    const/4 v0, 0x0</div><div class="line"></div><div class="line">    .local v0, "i":I</div><div class="line">    :goto_0</div><div class="line">    sget-object v3, Lcom/DBGame/Common/BLHelper;-&gt;adTags:[Ljava/lang/String;</div><div class="line"></div><div class="line">    array-length v3, v3</div><div class="line"></div><div class="line">    if-ge v0, v3, :cond_0</div><div class="line"></div><div class="line">    .line 363</div><div class="line">    sget-object v3, Lcom/DBGame/Common/BLHelper;-&gt;adTags:[Ljava/lang/String;</div><div class="line"></div><div class="line">    aget-object v3, v3, v0</div><div class="line"></div><div class="line">    invoke-virtual &#123;v3, p0&#125;, Ljava/lang/String;-&gt;equals(Ljava/lang/Object;)Z</div><div class="line"></div><div class="line">    move-result v3</div><div class="line"></div><div class="line">    if-eqz v3, :cond_1</div><div class="line"></div><div class="line">    .line 364</div><div class="line">    move v1, v0</div><div class="line"></div><div class="line">    .line 368</div><div class="line">    :cond_0</div><div class="line">    new-instance v2, Landroid/os/Message;</div><div class="line"></div><div class="line">    invoke-direct &#123;v2&#125;, Landroid/os/Message;-&gt;&lt;init&gt;()V</div><div class="line"></div><div class="line">    .line 369</div><div class="line">    .local v2, "msg":Landroid/os/Message;</div><div class="line">    const/16 v3, 0xd3</div><div class="line"></div><div class="line">    iput v3, v2, Landroid/os/Message;-&gt;what:I</div><div class="line"></div><div class="line">    .line 370</div><div class="line">    iput v1, v2, Landroid/os/Message;-&gt;arg1:I</div><div class="line"></div><div class="line">    .line 371</div><div class="line">    sget-object v3, Lcom/DBGame/Common/BLHelper;-&gt;sContext:Lcom/DBGame/DiabloLOL/DiabloLOL;</div><div class="line">    #去退出广告,不让他发送显示广告的消息</div><div class="line">    #invoke-virtual &#123;v3, v2&#125;, Lcom/DBGame/DiabloLOL/DiabloLOL;-&gt;sendMessage(Landroid/os/Message;)V</div><div class="line"></div><div class="line">    .line 372</div><div class="line">    return-void</div><div class="line"></div><div class="line">    .line 362</div><div class="line">    .end local v2    # "msg":Landroid/os/Message;</div><div class="line">    :cond_1</div><div class="line">    add-int/lit8 v0, v0, 0x1</div><div class="line"></div><div class="line">    goto :goto_0</div><div class="line">.end method</div></pre>
+        <pre><div class="line">.method public static showInterAD(Ljava/lang/String;)V</div><div class="line">    .locals 6</div><div class="line">    .param p0, "tag"    # Ljava/lang/String;</div><div class="line"></div><div class="line">    .prologue</div><div class="line">    .line 360</div><div class="line">    const-string v3, "ad"</div><div class="line"></div><div class="line">    new-instance v4, Ljava/lang/StringBuilder;</div><div class="line"></div><div class="line">    invoke-direct &#123;v4&#125;, Ljava/lang/StringBuilder;-&gt;&lt;init&gt;()V</div><div class="line"></div><div class="line">    const-string v5, "----- showInterAD --"</div><div class="line"></div><div class="line">    invoke-virtual &#123;v4, v5&#125;, Ljava/lang/StringBuilder;-&gt;append(Ljava/lang/String;)Ljava/lang/StringBuilder;</div><div class="line"></div><div class="line">    move-result-object v4</div><div class="line"></div><div class="line">    invoke-virtual &#123;v4, p0&#125;, Ljava/lang/StringBuilder;-&gt;append(Ljava/lang/String;)Ljava/lang/StringBuilder;</div><div class="line"></div><div class="line">    move-result-object v4</div><div class="line"></div><div class="line">    invoke-virtual &#123;v4&#125;, Ljava/lang/StringBuilder;-&gt;toString()Ljava/lang/String;</div><div class="line"></div><div class="line">    move-result-object v4</div><div class="line"></div><div class="line">    invoke-static &#123;v3, v4&#125;, Landroid/util/Log;-&gt;w(Ljava/lang/String;Ljava/lang/String;)I</div><div class="line"></div><div class="line">    .line 361</div><div class="line">    const/4 v1, 0x0</div><div class="line"></div><div class="line">    .line 362</div><div class="line">    .local v1, "index":I</div><div class="line">    const/4 v0, 0x0</div><div class="line"></div><div class="line">    .local v0, "i":I</div><div class="line">    :goto_0</div><div class="line">    sget-object v3, Lcom/DBGame/Common/BLHelper;-&gt;adTags:[Ljava/lang/String;</div><div class="line"></div><div class="line">    array-length v3, v3</div><div class="line"></div><div class="line">    if-ge v0, v3, :cond_0</div><div class="line"></div><div class="line">    .line 363</div><div class="line">    sget-object v3, Lcom/DBGame/Common/BLHelper;-&gt;adTags:[Ljava/lang/String;</div><div class="line"></div><div class="line">    aget-object v3, v3, v0</div><div class="line"></div><div class="line">    invoke-virtual &#123;v3, p0&#125;, Ljava/lang/String;-&gt;equals(Ljava/lang/Object;)Z</div><div class="line"></div><div class="line">    move-result v3</div><div class="line"></div><div class="line">    if-eqz v3, :cond_1</div><div class="line"></div><div class="line">    .line 364</div><div class="line">    move v1, v0</div><div class="line"></div><div class="line">    .line 368</div><div class="line">    :cond_0</div><div class="line">    new-instance v2, Landroid/os/Message;</div><div class="line"></div><div class="line">    invoke-direct &#123;v2&#125;, Landroid/os/Message;-&gt;&lt;init&gt;()V</div><div class="line"></div><div class="line">    .line 369</div><div class="line">    .local v2, "msg":Landroid/os/Message;</div><div class="line">    const/16 v3, 0xd3</div><div class="line"></div><div class="line">    iput v3, v2, Landroid/os/Message;-&gt;what:I</div><div class="line"></div><div class="line">    .line 370</div><div class="line">    iput v1, v2, Landroid/os/Message;-&gt;arg1:I</div><div class="line"></div><div class="line">    .line 371</div><div class="line">    sget-object v3, Lcom/DBGame/Common/BLHelper;-&gt;sContext:Lcom/DBGame/DiabloLOL/DiabloLOL;</div><div class="line">    #去退出广告,不让他发送显示广告的消息,下面一句给注释或删掉</div><div class="line">    #invoke-virtual &#123;v3, v2&#125;, Lcom/DBGame/DiabloLOL/DiabloLOL;-&gt;sendMessage(Landroid/os/Message;)V</div><div class="line"></div><div class="line">    .line 372</div><div class="line">    return-void</div><div class="line"></div><div class="line">    .line 362</div><div class="line">    .end local v2    # "msg":Landroid/os/Message;</div><div class="line">    :cond_1</div><div class="line">    add-int/lit8 v0, v0, 0x1</div><div class="line"></div><div class="line">    goto :goto_0</div><div class="line">.end method</div></pre>
       </td>
     </tr>
   </table>
@@ -201,15 +211,15 @@
   <table>
     <tr>
       <td class="gutter">
-        <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre>
+        <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre>
       </td>
       <td class="code">
-        <pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> HANDLER_SHOWBANNER = <span class="number">200</span>;</div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> HANDLER_HIDEBANNER = <span class="number">210</span>;</div><div class="line"></div><div class="line"><span class="keyword">case</span> DiabloLOL.HANDLER_HIDEBANNER <span class="comment">/*210*/</span>:</div><div class="line">                    DiabloLOL.<span class="keyword">this</span>.hideBanner();</div><div class="line"><span class="keyword">case</span> <span class="number">200</span>:</div><div class="line">                    DiabloLOL.<span class="keyword">this</span>.showBanner();</div></pre>
+        <pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> HANDLER_SHOWBANNER = <span class="number">200</span>;</div><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> HANDLER_HIDEBANNER = <span class="number">210</span>;</div><div class="line"></div><div class="line"><span class="keyword">case</span> DiabloLOL.HANDLER_HIDEBANNER <span class="comment">/*210*/</span>:</div><div class="line">                    DiabloLOL.<span class="keyword">this</span>.hideBanner();</div><div class="line"><span class="keyword">case</span> <span class="number">200</span>:</div><div class="line">                    DiabloLOL.<span class="keyword">this</span>.showBanner();</div></pre>
       </td>
     </tr>
   </table>
 </figure>
-<p>修改类里的方法</p>
+<p>修改下面类里的方法</p>
 <blockquote>
   <p>.class public Lcom/DBGame/Common/BLHelper;</p>
   <p>.super Ljava/lang/Object;</p>
@@ -222,12 +232,13 @@
         <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre>
       </td>
       <td class="code">
-        <pre><div class="line">.method public static showBanner(Ljava/lang/String;)V</div><div class="line">    .locals 2</div><div class="line">    .param p0, "tag"    # Ljava/lang/String;</div><div class="line"></div><div class="line">    .prologue</div><div class="line">    .line 375</div><div class="line">    new-instance v0, Landroid/os/Message;</div><div class="line"></div><div class="line">    invoke-direct &#123;v0&#125;, Landroid/os/Message;-&gt;&lt;init&gt;()V</div><div class="line"></div><div class="line">    .line 376</div><div class="line">    .local v0, "msg":Landroid/os/Message;</div><div class="line">    const/16 v1, 0xd2  #const/16 v1, 0xc8  #显示横幅广告的发送消息的代码 0xc8 200 休改为 0xd2 210   隐藏横幅</div><div class="line"></div><div class="line">    iput v1, v0, Landroid/os/Message;-&gt;what:I</div><div class="line"></div><div class="line">    .line 377</div><div class="line">    sget-object v1, Lcom/DBGame/Common/BLHelper;-&gt;sContext:Lcom/DBGame/DiabloLOL/DiabloLOL;</div><div class="line"></div><div class="line">    #去横幅广告,或者不让他发送显示广告的消息,</div><div class="line">    invoke-virtual &#123;v1, v0&#125;, Lcom/DBGame/DiabloLOL/DiabloLOL;-&gt;sendMessage(Landroid/os/Message;)V</div><div class="line"></div><div class="line">    .line 378</div><div class="line">    return-void</div><div class="line">.end method</div></pre>
+        <pre><div class="line">.method public static showBanner(Ljava/lang/String;)V</div><div class="line">    .locals 2</div><div class="line">    .param p0, "tag"    # Ljava/lang/String;</div><div class="line"></div><div class="line">    .prologue</div><div class="line">    .line 375</div><div class="line">    new-instance v0, Landroid/os/Message;</div><div class="line"></div><div class="line">    invoke-direct &#123;v0&#125;, Landroid/os/Message;-&gt;&lt;init&gt;()V</div><div class="line"></div><div class="line">    .line 376</div><div class="line">    .local v0, "msg":Landroid/os/Message;</div><div class="line">    const/16 v1, 0xd2  #const/16 v1, 0xc8  #显示横幅广告的发送消息的代码 0xc8 200 休改为 0xd2 210   隐藏横幅</div><div class="line">    </div><div class="line">    iput v1, v0, Landroid/os/Message;-&gt;what:I</div><div class="line"></div><div class="line">    .line 377</div><div class="line">    sget-object v1, Lcom/DBGame/Common/BLHelper;-&gt;sContext:Lcom/DBGame/DiabloLOL/DiabloLOL;</div><div class="line"></div><div class="line">    #去横幅广告,或者不让他发送显示广告的消息,</div><div class="line">    invoke-virtual &#123;v1, v0&#125;, Lcom/DBGame/DiabloLOL/DiabloLOL;-&gt;sendMessage(Landroid/os/Message;)V</div><div class="line"></div><div class="line">    .line 378</div><div class="line">    return-void</div><div class="line">.end method</div></pre>
       </td>
     </tr>
   </table>
 </figure>
-<p>消息处理的地方</p>
+<p>可以再去下面类里看看,消息处理的地方
+  <br>.method public handleMessage(Landroid/os/Message;)V</p>
 <blockquote>
   <p>.class Lcom/DBGame/DiabloLOL/DiabloLOL$3;</p>
   <p>.super Landroid/os/Handler;</p>
@@ -240,7 +251,7 @@
         <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre>
       </td>
       <td class="code">
-        <pre><div class="line"><span class="keyword">case</span> <span class="number">200</span>:</div><div class="line">  <span class="comment">//DiabloLOL.access$400(this.this$0);</span></div><div class="line">  <span class="keyword">return</span>;</div><div class="line"><span class="keyword">case</span> <span class="number">210</span>:</div><div class="line">  <span class="comment">//DiabloLOL.access$500(this.this$0);</span></div><div class="line">  <span class="keyword">return</span>;</div><div class="line"><span class="keyword">case</span> <span class="number">211</span>:</div><div class="line">  Log.e(<span class="string">"qq"</span>, <span class="string">"HANDLER_SHOW_INTER_AD=========="</span>);</div><div class="line">  <span class="comment">//DiabloLOL.access$600(this.this$0, paramMessage.arg1);</span></div><div class="line">  <span class="keyword">return</span>;</div></pre>
+        <pre><div class="line"><span class="keyword">case</span> <span class="number">200</span>: </div><div class="line">  <span class="comment">//DiabloLOL.access$400(this.this$0);</span></div><div class="line">  <span class="keyword">return</span>;</div><div class="line"><span class="keyword">case</span> <span class="number">210</span>: </div><div class="line">  <span class="comment">//DiabloLOL.access$500(this.this$0);</span></div><div class="line">  <span class="keyword">return</span>;</div><div class="line"><span class="keyword">case</span> <span class="number">211</span>: </div><div class="line">  Log.e(<span class="string">"qq"</span>, <span class="string">"HANDLER_SHOW_INTER_AD=========="</span>);</div><div class="line">  <span class="comment">//DiabloLOL.access$600(this.this$0, paramMessage.arg1);</span></div><div class="line">  <span class="keyword">return</span>;</div></pre>
       </td>
     </tr>
   </table>
@@ -271,7 +282,9 @@
     </tr>
   </table>
 </figure>
-<p>顺便也解决下其他的函数</p>
+<p>顺便也解决下其他的函数,
+  <br>.method private showBanner()V和.method private showInterAd(I)V
+  <br>处理掉直接返回</p>
 <blockquote>
   <p>.class public Lcom/DBGame/DiabloLOL/DiabloLOL;</p>
   <p>.super Lorg/cocos2dx/lib/Cocos2dxActivity;</p>
@@ -284,19 +297,36 @@
         <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre>
       </td>
       <td class="code">
-        <pre><div class="line">.<span class="function">method <span class="keyword">private</span> <span class="title">showBanner</span><span class="params">()</span>V</span></div><div class="line">    .locals 5</div><div class="line"></div><div class="line">    .prologue</div><div class="line">    .line 338</div><div class="line">    return-<span class="keyword">void</span>    #直接返回</div><div class="line"></div><div class="line">    <span class="keyword">const</span> v1, 0x3e4ccccd    # 0.2f</div><div class="line"></div><div class="line">    <span class="keyword">const</span> v2, 0x3f4ccccd    # 0.8f</div><div class="line"></div><div class="line">    <span class="keyword">const</span> v3, 0x3f19999a    # 0.6f</div><div class="line"></div><div class="line">    <span class="keyword">const</span> v4, 0x3e19999a    # 0.15f</div><div class="line"></div><div class="line">    :try_start_0</div><div class="line">    invoke-<span class="keyword">static</span> &#123;p0, v1, v2, v3, v4&#125;, Lcn/cmgame/billing/api/game/main/Tool;-&gt;adNativeShow(Landroid/app/Activity;FFFF)V</div><div class="line">    :try_end_0</div><div class="line">    .<span class="keyword">catch</span> Ljava/lang/Exception; &#123;:try_start_0 .. :try_end_0&#125; :catch_0</div><div class="line"></div><div class="line">    .line <span class="number">342</span></div><div class="line">    :goto_0</div><div class="line">    <span class="keyword">return</span>-<span class="keyword">void</span></div><div class="line"></div><div class="line">    .line <span class="number">339</span></div><div class="line">    :catch_0</div><div class="line">    move-exception v0</div><div class="line"></div><div class="line">    .line <span class="number">340</span></div><div class="line">    .local v0, <span class="string">"e"</span>:Ljava/lang/Exception;</div><div class="line">    invoke-virtual &#123;v0&#125;, Ljava/lang/Exception;-&gt;printStackTrace()V</div><div class="line"></div><div class="line">    goto :goto_0</div><div class="line">.end method</div><div class="line"></div><div class="line">.<span class="function">method <span class="keyword">private</span> <span class="title">showInterAd</span><span class="params">(I)</span>V</span></div><div class="line">    .locals 1</div><div class="line">    .param p1, "index"    # I</div><div class="line"></div><div class="line">    .prologue</div><div class="line">    .line 354</div><div class="line">    return-<span class="keyword">void</span>  #直接返回</div><div class="line">    :try_start_0</div><div class="line">    invoke-<span class="keyword">static</span> &#123;p0, p1&#125;, Lcn/cmgame/billing/api/game/main/Tool;-&gt;adIntervalShow(Landroid/app/Activity;I)V</div><div class="line">    :try_end_0</div><div class="line">    .<span class="keyword">catch</span> Ljava/lang/Exception; &#123;:try_start_0 .. :try_end_0&#125; :catch_0</div><div class="line"></div><div class="line">    .line <span class="number">358</span></div><div class="line">    :goto_0</div><div class="line">    <span class="keyword">return</span>-<span class="keyword">void</span></div><div class="line"></div><div class="line">    .line <span class="number">355</span></div><div class="line">    :catch_0</div><div class="line">    move-exception v0</div><div class="line"></div><div class="line">    .line <span class="number">356</span></div><div class="line">    .local v0, <span class="string">"e"</span>:Ljava/lang/Exception;</div><div class="line">    invoke-virtual &#123;v0&#125;, Ljava/lang/Exception;-&gt;printStackTrace()V</div><div class="line"></div><div class="line">    goto :goto_0</div><div class="line">.end method</div></pre>
+        <pre><div class="line">.<span class="function">method <span class="keyword">private</span> <span class="title">showBanner</span><span class="params">()</span>V</span></div><div class="line">    .locals 5</div><div class="line"></div><div class="line">    .prologue</div><div class="line">    .line 338</div><div class="line">    return-<span class="keyword">void</span>    #直接返回</div><div class="line">    </div><div class="line">    <span class="keyword">const</span> v1, 0x3e4ccccd    # 0.2f</div><div class="line"></div><div class="line">    <span class="keyword">const</span> v2, 0x3f4ccccd    # 0.8f</div><div class="line"></div><div class="line">    <span class="keyword">const</span> v3, 0x3f19999a    # 0.6f</div><div class="line"></div><div class="line">    <span class="keyword">const</span> v4, 0x3e19999a    # 0.15f</div><div class="line">    </div><div class="line">    :try_start_0</div><div class="line">    invoke-<span class="keyword">static</span> &#123;p0, v1, v2, v3, v4&#125;, Lcn/cmgame/billing/api/game/main/Tool;-&gt;adNativeShow(Landroid/app/Activity;FFFF)V</div><div class="line">    :try_end_0</div><div class="line">    .<span class="keyword">catch</span> Ljava/lang/Exception; &#123;:try_start_0 .. :try_end_0&#125; :catch_0</div><div class="line"></div><div class="line">    .line <span class="number">342</span></div><div class="line">    :goto_0</div><div class="line">    <span class="keyword">return</span>-<span class="keyword">void</span></div><div class="line"></div><div class="line">    .line <span class="number">339</span></div><div class="line">    :catch_0</div><div class="line">    move-exception v0</div><div class="line"></div><div class="line">    .line <span class="number">340</span></div><div class="line">    .local v0, <span class="string">"e"</span>:Ljava/lang/Exception;</div><div class="line">    invoke-virtual &#123;v0&#125;, Ljava/lang/Exception;-&gt;printStackTrace()V</div><div class="line"></div><div class="line">    goto :goto_0</div><div class="line">.end method</div><div class="line"></div><div class="line">.<span class="function">method <span class="keyword">private</span> <span class="title">showInterAd</span><span class="params">(I)</span>V</span></div><div class="line">    .locals 1</div><div class="line">    .param p1, "index"    # I</div><div class="line"></div><div class="line">    .prologue</div><div class="line">    .line 354</div><div class="line">    return-<span class="keyword">void</span>  #直接返回</div><div class="line">    :try_start_0</div><div class="line">    invoke-<span class="keyword">static</span> &#123;p0, p1&#125;, Lcn/cmgame/billing/api/game/main/Tool;-&gt;adIntervalShow(Landroid/app/Activity;I)V</div><div class="line">    :try_end_0</div><div class="line">    .<span class="keyword">catch</span> Ljava/lang/Exception; &#123;:try_start_0 .. :try_end_0&#125; :catch_0</div><div class="line"></div><div class="line">    .line <span class="number">358</span></div><div class="line">    :goto_0</div><div class="line">    <span class="keyword">return</span>-<span class="keyword">void</span></div><div class="line"></div><div class="line">    .line <span class="number">355</span></div><div class="line">    :catch_0</div><div class="line">    move-exception v0</div><div class="line"></div><div class="line">    .line <span class="number">356</span></div><div class="line">    .local v0, <span class="string">"e"</span>:Ljava/lang/Exception;</div><div class="line">    invoke-virtual &#123;v0&#125;, Ljava/lang/Exception;-&gt;printStackTrace()V</div><div class="line"></div><div class="line">    goto :goto_0</div><div class="line">.end method</div></pre>
       </td>
     </tr>
   </table>
 </figure>
 <h3 id="3-内购破解：">
   <a href="#3-内购破解：" class="headerlink" title="3. 内购破解："></a>3. 内购破解：</h3>
-<h5 id="电信：">
-  <a href="#电信：" class="headerlink" title="电信："></a>电信：</h5>
-<p>logcat搜索字符串定位,</p>
-<p>Egame支付成功</p>
-<p>Egame支付Cancel</p>
-<p>order id:</p>
+<h5 id="去除可能会产生费用的危险权限">
+  <a href="#去除可能会产生费用的危险权限" class="headerlink" title="去除可能会产生费用的危险权限:"></a>去除可能会产生费用的危险权限:</h5>
+<p>AndroidManifest.xml里搜索</p>
+<blockquote>
+  <p>android.permission.SEND_SMS</p>
+  <p>android.permission.CALL_PHONE</p>
+</blockquote>
+<p>删掉</p>
+<blockquote>
+  <uses-permission android:name="android.permission.SEND_SMS">
+
+  <uses-permission android:name="android.permission.CALL_PHONE">
+
+</uses-permission></uses-permission></blockquote>
+<h5 id="电信支付接口：">
+  <a href="#电信支付接口：" class="headerlink" title="电信支付接口："></a>电信支付接口：</h5>
+<p>logcat字符串定位,</p>
+<blockquote>
+  <p>Egame支付成功</p>
+  <p>Egame支付Cancel</p>
+  <p>order id:</p>
+</blockquote>
+<p>搜索上面字符串,向上分析,回溯分析.</p>
 <blockquote>
   <p>.class public Lcn/egame/terminal/paysdk/EgamePay;</p>
   <p>.super Ljava/lang/Object;</p>
@@ -320,11 +350,14 @@
   <p>.super Ljava/lang/Object;</p>
   <p>.source “DiabloLOL.java”</p>
 </blockquote>
-<h5 id="联通：">
-  <a href="#联通：" class="headerlink" title="联通："></a>联通：</h5>
+<h5 id="联通支付接口：">
+  <a href="#联通支付接口：" class="headerlink" title="联通支付接口："></a>联通支付接口：</h5>
 <p>logcat字符串定位啊,</p>
-<p>Unicom支付成功</p>
-<p>Unicom支付cancel</p>
+<blockquote>
+  <p>Unicom支付成功</p>
+  <p>Unicom支付cancel</p>
+</blockquote>
+<p>在下面类修改处理,可以用goto大法或者switch大法.</p>
 <blockquote>
   <p>.class Lcom/DBGame/DiabloLOL/DiabloLOL$4;</p>
   <p>.super Ljava/lang/Object;</p>
@@ -337,17 +370,20 @@
         <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre>
       </td>
       <td class="code">
-        <pre><div class="line">.<span class="function">method <span class="keyword">public</span> <span class="title">PayResult</span><span class="params">(Ljava/lang/String;IILjava/lang/String;)</span>V</span></div><div class="line"></div><div class="line">    .prologue</div><div class="line">    .line 694</div><div class="line">    goto  :pswitch_0  #联通支付接口，直接JMP无条件跳到支付成功</div><div class="line">    packed-<span class="keyword">switch</span> p2, :pswitch_data_0</div></pre>
+        <pre><div class="line">.<span class="function">method <span class="keyword">public</span> <span class="title">PayResult</span><span class="params">(Ljava/lang/String;IILjava/lang/String;)</span>V</span></div><div class="line"></div><div class="line">    .prologue</div><div class="line">    .line 694</div><div class="line">    goto  :pswitch_0  #联通支付接口，直接JMP无条件跳到支付成功 </div><div class="line">    packed-<span class="keyword">switch</span> p2, :pswitch_data_0</div></pre>
       </td>
     </tr>
   </table>
 </figure>
-<h5 id="移动：">
-  <a href="#移动：" class="headerlink" title="移动："></a>移动：</h5>
+<h5 id="移动支付接口：">
+  <a href="#移动支付接口：" class="headerlink" title="移动支付接口："></a>移动支付接口：</h5>
 <p>logcat定位字符串,</p>
-<p>购买道具：[</p>
-<p>] 成功！</p>
-<p>] 失败！</p>
+<blockquote>
+  <p>购买道具：[</p>
+  <p>] 成功！</p>
+  <p>] 失败！</p>
+</blockquote>
+<p>在下面类修改</p>
 <blockquote>
   <p>.class Lcom/DBGame/DiabloLOL/DiabloLOL$5;</p>
   <p>.super Ljava/lang/Object;</p>
@@ -360,7 +396,7 @@
         <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre>
       </td>
       <td class="code">
-        <pre><div class="line">.method public onResult(ILjava/lang/String;Ljava/lang/Object;)V</div><div class="line"></div><div class="line"></div><div class="line">    .prologue</div><div class="line">    .line 735</div><div class="line">    const-string v0, ""</div><div class="line"></div><div class="line">    .line 736</div><div class="line">    .local v0, "result":Ljava/lang/String;</div><div class="line">    goto :pswitch_0   #移动支付接口，直接JMP无条件跳到支付成功</div><div class="line">    packed-switch p1, :pswitch_data_0</div></pre>
+        <pre><div class="line">.method public onResult(ILjava/lang/String;Ljava/lang/Object;)V</div><div class="line"></div><div class="line"></div><div class="line">    .prologue</div><div class="line">    .line 735</div><div class="line">    const-string v0, ""</div><div class="line"></div><div class="line">    .line 736</div><div class="line">    .local v0, "result":Ljava/lang/String;</div><div class="line">    goto :pswitch_0   #移动支付接口，直接JMP无条件跳到支付成功 </div><div class="line">    packed-switch p1, :pswitch_data_0</div></pre>
       </td>
     </tr>
   </table>
@@ -369,7 +405,9 @@
   <a href="#4-统一支付接口" class="headerlink" title="4. 统一支付接口:"></a>4. 统一支付接口:</h3>
 <p>统一为电信的吧.可以直接成功,没那么多弹窗支付</p>
 <p>定位字符串</p>
-<p>电信初始化成功</p>
+<blockquote>
+  <p>电信初始化成功</p>
+</blockquote>
 <figure class="highlight java">
   <table>
     <tr>
@@ -404,7 +442,7 @@
         <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div></pre>
       </td>
       <td class="code">
-        <pre><div class="line">.method private getSimType()I</div><div class="line">    .locals 6</div><div class="line"></div><div class="line">    .prologue</div><div class="line">    .line 267</div><div class="line">    const/4 v3, 0x1  #const/4 v3, 0x0  #初始化为0是移动</div><div class="line"></div><div class="line">    .line 268</div><div class="line">    .local v3, "type":I</div><div class="line">    const-string v5, "phone"</div><div class="line"></div><div class="line">    .line 269</div><div class="line">    invoke-virtual &#123;p0, v5&#125;, Lcom/DBGame/DiabloLOL/DiabloLOL;-&gt;getSystemService(Ljava/lang/String;)Ljava/lang/Object;</div><div class="line"></div><div class="line">    move-result-object v2</div><div class="line"></div><div class="line">    check-cast v2, Landroid/telephony/TelephonyManager;</div><div class="line"></div><div class="line">    .line 270</div><div class="line">    .local v2, "tm":Landroid/telephony/TelephonyManager;</div><div class="line">    invoke-virtual &#123;v2&#125;, Landroid/telephony/TelephonyManager;-&gt;getSimOperator()Ljava/lang/String;</div><div class="line"></div><div class="line">    move-result-object v5</div><div class="line"></div><div class="line">    invoke-virtual &#123;v5&#125;, Ljava/lang/String;-&gt;trim()Ljava/lang/String;</div><div class="line"></div><div class="line">    move-result-object v1</div><div class="line"></div><div class="line">    ######插入自定义log开始</div><div class="line"></div><div class="line">    invoke-static &#123;v1&#125;, Lcom/android/BS/Log;-&gt;LogStr(Ljava/lang/String;)V</div><div class="line"></div><div class="line">    ######插入自定义log结束</div><div class="line"></div><div class="line">    ######插入自定义log开始</div><div class="line"></div><div class="line">    const-string v0, "\n\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n www.appleos.xyz \n-- by B.S."</div><div class="line"></div><div class="line">    invoke-static &#123;v0&#125;, Lcom/android/BS/Log;-&gt;LogStr(Ljava/lang/String;)V</div><div class="line"></div><div class="line">    ######插入自定义log结束</div><div class="line"></div><div class="line"></div><div class="line">    .line 271</div><div class="line">    .local v1, "sOperator":Ljava/lang/String;</div><div class="line">    if-eqz v1, :cond_0</div><div class="line"></div><div class="line">    const-string v5, ""</div><div class="line"></div><div class="line">    invoke-virtual &#123;v1, v5&#125;, Ljava/lang/String;-&gt;equals(Ljava/lang/Object;)Z</div><div class="line"></div><div class="line">    move-result v5</div><div class="line"></div><div class="line">    if-eqz v5, :cond_1</div><div class="line"></div><div class="line">    :cond_0</div><div class="line">    move v4, v3    #移动为0</div><div class="line"></div><div class="line">    .line 295</div><div class="line">    .end local v3    # "type":I</div><div class="line">    .local v4, "type":I</div><div class="line">    :goto_0</div><div class="line">    return v4</div><div class="line"></div><div class="line">    .line 274</div><div class="line">    .end local v4    # "type":I</div><div class="line">    .restart local v3    # "type":I</div><div class="line">    :cond_1</div><div class="line">    invoke-static &#123;v1&#125;, Ljava/lang/Integer;-&gt;valueOf(Ljava/lang/String;)Ljava/lang/Integer;</div><div class="line"></div><div class="line">    move-result-object v5</div><div class="line"></div><div class="line">    invoke-virtual &#123;v5&#125;, Ljava/lang/Integer;-&gt;intValue()I</div><div class="line"></div><div class="line">    move-result v0</div><div class="line"></div><div class="line">    .line 275</div><div class="line">    .local v0, "sCode":I</div><div class="line">    packed-switch v0, :pswitch_data_0</div><div class="line"></div><div class="line">    :goto_1</div><div class="line">    :pswitch_0</div><div class="line">    move v4, v3</div><div class="line"></div><div class="line">    .line 295</div><div class="line">    .end local v3    # "type":I</div><div class="line">    .restart local v4    # "type":I</div><div class="line">    goto :goto_0</div><div class="line"></div><div class="line">    .line 280</div><div class="line">    .end local v4    # "type":I</div><div class="line">    .restart local v3    # "type":I</div><div class="line">    :pswitch_1</div><div class="line">    const/4 v3, 0x1  #const/4 v3, 0x0   #移动</div><div class="line"></div><div class="line">    .line 281</div><div class="line">    goto :goto_1</div><div class="line"></div><div class="line">    .line 284</div><div class="line">    :pswitch_2</div><div class="line">    const/4 v3, 0x1  #const/4 v3, 0x2   #联通</div><div class="line"></div><div class="line">    .line 285</div><div class="line">    goto :goto_1</div><div class="line"></div><div class="line">    .line 289</div><div class="line">    :pswitch_3</div><div class="line">    const/4 v3, 0x1    #电信</div><div class="line"></div><div class="line">    .line 290</div><div class="line">    goto :goto_1</div><div class="line"></div><div class="line">    .line 275</div><div class="line">    :pswitch_data_0</div><div class="line">    .packed-switch 0xb3b0</div><div class="line">        :pswitch_1</div><div class="line">        :pswitch_2</div><div class="line">        :pswitch_1</div><div class="line">        :pswitch_3</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_3</div><div class="line">        :pswitch_2</div><div class="line">        :pswitch_1</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_3</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_1</div><div class="line">    .end packed-switch</div><div class="line">.end method</div></pre>
+        <pre><div class="line">.method private getSimType()I</div><div class="line">    .locals 6</div><div class="line"></div><div class="line">    .prologue</div><div class="line">    .line 267</div><div class="line">    const/4 v3, 0x1  #const/4 v3, 0x0  #初始化为0是移动</div><div class="line"></div><div class="line">    .line 268</div><div class="line">    .local v3, "type":I</div><div class="line">    const-string v5, "phone"</div><div class="line"></div><div class="line">    .line 269</div><div class="line">    invoke-virtual &#123;p0, v5&#125;, Lcom/DBGame/DiabloLOL/DiabloLOL;-&gt;getSystemService(Ljava/lang/String;)Ljava/lang/Object;</div><div class="line"></div><div class="line">    move-result-object v2</div><div class="line"></div><div class="line">    check-cast v2, Landroid/telephony/TelephonyManager;</div><div class="line"></div><div class="line">    .line 270</div><div class="line">    .local v2, "tm":Landroid/telephony/TelephonyManager;</div><div class="line">    invoke-virtual &#123;v2&#125;, Landroid/telephony/TelephonyManager;-&gt;getSimOperator()Ljava/lang/String;</div><div class="line"></div><div class="line">    move-result-object v5</div><div class="line"></div><div class="line">    invoke-virtual &#123;v5&#125;, Ljava/lang/String;-&gt;trim()Ljava/lang/String;</div><div class="line"></div><div class="line">    move-result-object v1</div><div class="line">    </div><div class="line">    ######插入自定义log开始</div><div class="line">    </div><div class="line">    invoke-static &#123;v1&#125;, Lcom/android/BS/Log;-&gt;LogStr(Ljava/lang/String;)V</div><div class="line">    </div><div class="line">    ######插入自定义log结束</div><div class="line">    </div><div class="line">    ######插入自定义log开始  </div><div class="line">    </div><div class="line">    const-string v0, "\n\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n www.appleos.xyz \n-- by B.S."</div><div class="line">    </div><div class="line">    invoke-static &#123;v0&#125;, Lcom/android/BS/Log;-&gt;LogStr(Ljava/lang/String;)V</div><div class="line">    </div><div class="line">    ######插入自定义log结束</div><div class="line">  </div><div class="line"></div><div class="line">    .line 271</div><div class="line">    .local v1, "sOperator":Ljava/lang/String;</div><div class="line">    if-eqz v1, :cond_0</div><div class="line"></div><div class="line">    const-string v5, ""</div><div class="line"></div><div class="line">    invoke-virtual &#123;v1, v5&#125;, Ljava/lang/String;-&gt;equals(Ljava/lang/Object;)Z</div><div class="line"></div><div class="line">    move-result v5</div><div class="line"></div><div class="line">    if-eqz v5, :cond_1</div><div class="line"></div><div class="line">    :cond_0</div><div class="line">    move v4, v3    #移动为0</div><div class="line"></div><div class="line">    .line 295</div><div class="line">    .end local v3    # "type":I</div><div class="line">    .local v4, "type":I</div><div class="line">    :goto_0</div><div class="line">    return v4</div><div class="line"></div><div class="line">    .line 274</div><div class="line">    .end local v4    # "type":I</div><div class="line">    .restart local v3    # "type":I</div><div class="line">    :cond_1</div><div class="line">    invoke-static &#123;v1&#125;, Ljava/lang/Integer;-&gt;valueOf(Ljava/lang/String;)Ljava/lang/Integer;</div><div class="line"></div><div class="line">    move-result-object v5</div><div class="line"></div><div class="line">    invoke-virtual &#123;v5&#125;, Ljava/lang/Integer;-&gt;intValue()I</div><div class="line"></div><div class="line">    move-result v0</div><div class="line"></div><div class="line">    .line 275</div><div class="line">    .local v0, "sCode":I</div><div class="line">    packed-switch v0, :pswitch_data_0</div><div class="line"></div><div class="line">    :goto_1</div><div class="line">    :pswitch_0</div><div class="line">    move v4, v3</div><div class="line"></div><div class="line">    .line 295</div><div class="line">    .end local v3    # "type":I</div><div class="line">    .restart local v4    # "type":I</div><div class="line">    goto :goto_0</div><div class="line"></div><div class="line">    .line 280</div><div class="line">    .end local v4    # "type":I</div><div class="line">    .restart local v3    # "type":I</div><div class="line">    :pswitch_1</div><div class="line">    const/4 v3, 0x1  #const/4 v3, 0x0   #移动</div><div class="line"></div><div class="line">    .line 281</div><div class="line">    goto :goto_1</div><div class="line"></div><div class="line">    .line 284</div><div class="line">    :pswitch_2</div><div class="line">    const/4 v3, 0x1  #const/4 v3, 0x2   #联通</div><div class="line"></div><div class="line">    .line 285</div><div class="line">    goto :goto_1</div><div class="line"></div><div class="line">    .line 289</div><div class="line">    :pswitch_3</div><div class="line">    const/4 v3, 0x1    #电信</div><div class="line"></div><div class="line">    .line 290</div><div class="line">    goto :goto_1</div><div class="line"></div><div class="line">    .line 275</div><div class="line">    :pswitch_data_0</div><div class="line">    .packed-switch 0xb3b0    </div><div class="line">        :pswitch_1</div><div class="line">        :pswitch_2</div><div class="line">        :pswitch_1</div><div class="line">        :pswitch_3</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_3</div><div class="line">        :pswitch_2</div><div class="line">        :pswitch_1</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_3</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_1</div><div class="line">    .end packed-switch</div><div class="line">.end method</div></pre>
       </td>
     </tr>
   </table>
@@ -417,7 +455,7 @@
         <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre>
       </td>
       <td class="code">
-        <pre><div class="line">.<span class="function">method <span class="keyword">private</span> <span class="title">getSimType</span><span class="params">()</span>I</span></div><div class="line">    .locals 6</div><div class="line"></div><div class="line">    ###统一为移动短信支付接口直接返回为0</div><div class="line">    #<span class="keyword">const</span>/4 v4, 0x0</div><div class="line"></div><div class="line">    #return v4</div><div class="line">.end method</div></pre>
+        <pre><div class="line">.<span class="function">method <span class="keyword">private</span> <span class="title">getSimType</span><span class="params">()</span>I</span></div><div class="line">    .locals 6</div><div class="line">    </div><div class="line">    ###统一为移动短信支付接口直接返回为0</div><div class="line">    #<span class="keyword">const</span>/4 v4, 0x0</div><div class="line"></div><div class="line">    #return v4</div><div class="line">.end method</div></pre>
       </td>
     </tr>
   </table>
@@ -454,6 +492,21 @@
     </tr>
   </table>
 </figure>
+<p>有童靴反应真机内购,会卡在”正在处理,请稍后…..”
+  <br>那么久干脆干掉她,如下.要上面说的两个goto :goto_0夹着那段代码,另外记得这里面的代码
+  <br>要合并处理this指针问题哟.</p>
+<figure class="highlight java">
+  <table>
+    <tr>
+      <td class="gutter">
+        <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre>
+      </td>
+      <td class="code">
+        <pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">payInYidong</span><span class="params">()</span> </span>&#123;</div><div class="line">        String str = <span class="string">"购买道具：["</span> + <span class="keyword">this</span>.PAY_NAME[<span class="keyword">this</span>.mPayIndex] + <span class="string">"] 成功！"</span>;</div><div class="line">        BLHelper.purchaseComplete(<span class="keyword">this</span>.PRO_ID_Str[<span class="keyword">this</span>.mPayIndex], <span class="number">1</span>);</div><div class="line">    &#125;</div></pre>
+      </td>
+    </tr>
+  </table>
+</figure>
 <h5 id="几种支付方式如下-短信-联通-移动-Egame支付">
   <a href="#几种支付方式如下-短信-联通-移动-Egame支付" class="headerlink" title="几种支付方式如下:(短信,联通,移动,Egame支付)"></a>几种支付方式如下:(短信,联通,移动,Egame支付)</h5>
 <p>其中电信用的是Egame支付</p>
@@ -473,12 +526,12 @@
     
     <summary type="html">
     
-      &lt;p&gt;—Creaked by B.S. 6/26/2017 9:22:40 PM&lt;/p&gt;
+      &lt;p&gt;—Creaked by B.S. 6/26/2017 9:22:40 PM &lt;/p&gt;
 &lt;p&gt;无聊练手,当作学习Android优秀源码的笔记&lt;/p&gt;
 &lt;p&gt;
   &lt;strong&gt;仅供学习研究,请勿用作商业用途,如若喜欢请支持正版!&lt;/strong&gt;
 &lt;/p&gt;
-&lt;p&gt;原程序:(v
+&lt;p&gt;最新版原程
     
     </summary>
     
@@ -947,6 +1000,8 @@
       <category term="笔记" scheme="/categories/macOS/%E7%AC%94%E8%AE%B0/"/>
     
     
+      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
+    
       <category term="printf" scheme="/tags/printf/"/>
     
       <category term="C" scheme="/tags/C/"/>
@@ -962,8 +1017,6 @@
       <category term="全平台" scheme="/tags/%E5%85%A8%E5%B9%B3%E5%8F%B0/"/>
     
       <category term="printfcolor" scheme="/tags/printfcolor/"/>
-    
-      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   

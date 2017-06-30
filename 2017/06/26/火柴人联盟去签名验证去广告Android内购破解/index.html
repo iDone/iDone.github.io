@@ -27,7 +27,7 @@
 
   <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
-  <meta name="keywords" content="逆向工程(Reverse Engineering),破解(Crack),android,内购,Crack,签名验证,去广告,logcat,signatures,46003,egame,jadx,java,android killer,smali,"
+  <meta name="keywords" content="逆向工程(Reverse Engineering),破解(Crack),android,内购,Crack,jadx,java,android killer,smali,签名验证,去广告,logcat,signatures,46003,egame,"
   />
 
   <link rel="alternate" href="/atom.xml" title="@iYoungDone's Hexo Blog" type="application/atom+xml"
@@ -36,7 +36,7 @@
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
 
   <meta name="description" content="—Creaked by B.S. 6/26/2017 9:22:40 PM  无聊练手,当作学习Android优秀源码的笔记    仅供学习研究,请勿用作商业用途,如若喜欢请支持正版!  最新版原程序:(v1.14.1)    百度下载     火柴人联盟官网: http://huo.hoolaigames.com/  B.S.去签名去广告内购破解版:(无限内购)    百度下载   链接:">
-  <meta name="keywords" content="逆向工程(Reverse Engineering),破解(Crack),android,内购,Crack,签名验证,去广告,logcat,signatures,46003,egame,jadx,java,android killer,smali">
+  <meta name="keywords" content="逆向工程(Reverse Engineering),破解(Crack),android,内购,Crack,jadx,java,android killer,smali,签名验证,去广告,logcat,signatures,46003,egame">
   <meta property="og:type" content="article">
   <meta property="og:title" content="火柴人联盟去签名验证去广告Android内购破解">
   <meta property="og:url" content="/2017/06/26/火柴人联盟去签名验证去广告Android内购破解/index.html">
@@ -311,11 +311,13 @@
                   </p>
                   <p>B.S.去签名去广告内购破解版:(无限内购)</p>
                   <p>
-                    <a href="http://www.8idone.com/app/hcrlm-v1.14.1-BS-Cr.apk" target="_blank" rel="external">百度下载</a>
+                    <a href="http://www.8idone.com/app/hcrlm-v1.14.1-BS-Cr.apk" title="移动支付接口修复版" target="_blank"
+                                                                                                    rel="external">百度下载</a>
                     <br>链接:
                     <a href="https://pan.baidu.com/s/1qXTbuVU" target="_blank" rel="external">https://pan.baidu.com/s/1qXTbuVU</a> 密码: r9sb</p>
                   <p>
-                    <a href="http://www.8idone.com/app/hcrlm-BS-Cr.apk" target="_blank" rel="external">有确认支付的电信接口内购版</a>
+                    <a href="http://www.8idone.com/app/hcrlm-BS-Cr.apk" title="点我在线下载安装" target="_blank"
+                                                                                                    rel="external">有确认支付的电信接口内购版</a>
                   </p>
                   <p>也可以去各大安卓市场搜索下载最新版本:(推荐支付接口比较熟悉的移动,咪咕游戏,爱游戏)</p>
                   <blockquote>
@@ -587,14 +589,18 @@
                     <p>android.permission.CALL_PHONE</p>
                   </blockquote>
                   <p>删掉</p>
-                  <blockquote>
-                    <uses-permission android:name="android.permission.SEND_SMS">
-
-                      <uses-permission android:name="android.permission.CALL_PHONE">
-
-                      </uses-permission>
-                    </uses-permission>
-                  </blockquote>
+                  <figure class="highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line">&lt;uses-permission android:name=<span class="string">"android.permission.SEND_SMS"</span>/&gt;</div><div class="line"></div><div class="line">&lt;uses-permission android:name=<span class="string">"android.permission.CALL_PHONE"</span>/&gt;</div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
                   <h5 id="电信支付接口：">
                     <a href="#电信支付接口：" class="headerlink" title="电信支付接口："></a>电信支付接口：</h5>
                   <p>logcat字符串定位,</p>
@@ -710,7 +716,7 @@
                       </tr>
                     </table>
                   </figure>
-                  <p>直接return 1;伪装为电信,支付接口统一完毕.看前面的SIM类型表格</p>
+                  <p>直接return 1;伪装为电信,支付接口统一完毕.请参看本文开头的SIM类型表格</p>
                   <p>我第一次比较麻烦的改法如下,</p>
                   <figure class="highlight">
                     <table>
@@ -769,9 +775,8 @@
                       </tr>
                     </table>
                   </figure>
-                  <p>有童靴反应真机内购,会卡在”正在处理,请稍后…..”
-                    <br>那么久干脆干掉她,如下.要上面说的两个goto :goto_0夹着那段代码,另外记得这里面的代码
-                    <br>要合并处理this指针问题哟.</p>
+                  <p>有童靴反应真机内购,会卡在”正在处理,请稍后…..”,其实这个要等一会的,等一会儿就消失了.
+                    <br>不愿意等太长时间,那么就干脆干掉她,如下,只要上面说的两个goto :goto_0夹着那段代码,另外记得这里面的代码,需要合并处理this指针问题哟.</p>
                   <figure class="highlight java">
                     <table>
                       <tr>
@@ -867,6 +872,14 @@
 
                     <a href="/tags/Crack/" rel="tag"># Crack</a>
 
+                    <a href="/tags/jadx/" rel="tag"># jadx</a>
+
+                    <a href="/tags/java/" rel="tag"># java</a>
+
+                    <a href="/tags/android-killer/" rel="tag"># android killer</a>
+
+                    <a href="/tags/smali/" rel="tag"># smali</a>
+
                     <a href="/tags/签名验证/" rel="tag"># 签名验证</a>
 
                     <a href="/tags/去广告/" rel="tag"># 去广告</a>
@@ -878,14 +891,6 @@
                     <a href="/tags/46003/" rel="tag"># 46003</a>
 
                     <a href="/tags/egame/" rel="tag"># egame</a>
-
-                    <a href="/tags/jadx/" rel="tag"># jadx</a>
-
-                    <a href="/tags/java/" rel="tag"># java</a>
-
-                    <a href="/tags/android-killer/" rel="tag"># android killer</a>
-
-                    <a href="/tags/smali/" rel="tag"># smali</a>
 
                   </div>
 

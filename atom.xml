@@ -36,11 +36,11 @@
 </p>
 <p>B.S.去签名去广告内购破解版:(无限内购)</p>
 <p>
-  <a href="http://www.8idone.com/app/hcrlm-v1.14.1-BS-Cr.apk" target="_blank" rel="external">百度下载</a>
+  <a href="http://www.8idone.com/app/hcrlm-v1.14.1-BS-Cr.apk" title="移动支付接口修复版" target="_blank" rel="external">百度下载</a>
   <br>链接:
   <a href="https://pan.baidu.com/s/1qXTbuVU" target="_blank" rel="external">https://pan.baidu.com/s/1qXTbuVU</a> 密码: r9sb</p>
 <p>
-  <a href="http://www.8idone.com/app/hcrlm-BS-Cr.apk" target="_blank" rel="external">有确认支付的电信接口内购版</a>
+  <a href="http://www.8idone.com/app/hcrlm-BS-Cr.apk" title="点我在线下载安装" target="_blank" rel="external">有确认支付的电信接口内购版</a>
 </p>
 <p>也可以去各大安卓市场搜索下载最新版本:(推荐支付接口比较熟悉的移动,咪咕游戏,爱游戏)</p>
 <blockquote>
@@ -312,12 +312,18 @@
   <p>android.permission.CALL_PHONE</p>
 </blockquote>
 <p>删掉</p>
-<blockquote>
-  <uses-permission android:name="android.permission.SEND_SMS">
-
-  <uses-permission android:name="android.permission.CALL_PHONE">
-
-</uses-permission></uses-permission></blockquote>
+<figure class="highlight bash">
+  <table>
+    <tr>
+      <td class="gutter">
+        <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre>
+      </td>
+      <td class="code">
+        <pre><div class="line">&lt;uses-permission android:name=<span class="string">"android.permission.SEND_SMS"</span>/&gt;</div><div class="line"></div><div class="line">&lt;uses-permission android:name=<span class="string">"android.permission.CALL_PHONE"</span>/&gt;</div></pre>
+      </td>
+    </tr>
+  </table>
+</figure>
 <h5 id="电信支付接口：">
   <a href="#电信支付接口：" class="headerlink" title="电信支付接口："></a>电信支付接口：</h5>
 <p>logcat字符串定位,</p>
@@ -433,7 +439,7 @@
     </tr>
   </table>
 </figure>
-<p>直接return 1;伪装为电信,支付接口统一完毕.看前面的SIM类型表格</p>
+<p>直接return 1;伪装为电信,支付接口统一完毕.请参看本文开头的SIM类型表格</p>
 <p>我第一次比较麻烦的改法如下,</p>
 <figure class="highlight">
   <table>
@@ -492,9 +498,8 @@
     </tr>
   </table>
 </figure>
-<p>有童靴反应真机内购,会卡在”正在处理,请稍后…..”
-  <br>那么久干脆干掉她,如下.要上面说的两个goto :goto_0夹着那段代码,另外记得这里面的代码
-  <br>要合并处理this指针问题哟.</p>
+<p>有童靴反应真机内购,会卡在”正在处理,请稍后…..”,其实这个要等一会的,等一会儿就消失了.
+  <br>不愿意等太长时间,那么就干脆干掉她,如下,只要上面说的两个goto :goto_0夹着那段代码,另外记得这里面的代码,需要合并处理this指针问题哟.</p>
 <figure class="highlight java">
   <table>
     <tr>
@@ -550,6 +555,14 @@
     
       <category term="Crack" scheme="/tags/Crack/"/>
     
+      <category term="jadx" scheme="/tags/jadx/"/>
+    
+      <category term="java" scheme="/tags/java/"/>
+    
+      <category term="android killer" scheme="/tags/android-killer/"/>
+    
+      <category term="smali" scheme="/tags/smali/"/>
+    
       <category term="签名验证" scheme="/tags/%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81/"/>
     
       <category term="去广告" scheme="/tags/%E5%8E%BB%E5%B9%BF%E5%91%8A/"/>
@@ -561,14 +574,6 @@
       <category term="46003" scheme="/tags/46003/"/>
     
       <category term="egame" scheme="/tags/egame/"/>
-    
-      <category term="jadx" scheme="/tags/jadx/"/>
-    
-      <category term="java" scheme="/tags/java/"/>
-    
-      <category term="android killer" scheme="/tags/android-killer/"/>
-    
-      <category term="smali" scheme="/tags/smali/"/>
     
   </entry>
   
@@ -853,6 +858,10 @@
     
       <category term="Crack" scheme="/tags/Crack/"/>
     
+      <category term="youdao1" scheme="/tags/youdao1/"/>
+    
+      <category term="smspay" scheme="/tags/smspay/"/>
+    
       <category term="jadx" scheme="/tags/jadx/"/>
     
       <category term="java" scheme="/tags/java/"/>
@@ -860,10 +869,6 @@
       <category term="android killer" scheme="/tags/android-killer/"/>
     
       <category term="smali" scheme="/tags/smali/"/>
-    
-      <category term="youdao1" scheme="/tags/youdao1/"/>
-    
-      <category term="smspay" scheme="/tags/smspay/"/>
     
   </entry>
   
@@ -1000,8 +1005,6 @@
       <category term="笔记" scheme="/categories/macOS/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
-    
       <category term="printf" scheme="/tags/printf/"/>
     
       <category term="C" scheme="/tags/C/"/>
@@ -1017,6 +1020,8 @@
       <category term="全平台" scheme="/tags/%E5%85%A8%E5%B9%B3%E5%8F%B0/"/>
     
       <category term="printfcolor" scheme="/tags/printfcolor/"/>
+    
+      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   

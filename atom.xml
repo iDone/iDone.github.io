@@ -560,6 +560,14 @@
     
       <category term="Crack" scheme="/tags/Crack/"/>
     
+      <category term="jadx" scheme="/tags/jadx/"/>
+    
+      <category term="java" scheme="/tags/java/"/>
+    
+      <category term="android killer" scheme="/tags/android-killer/"/>
+    
+      <category term="smali" scheme="/tags/smali/"/>
+    
       <category term="签名验证" scheme="/tags/%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81/"/>
     
       <category term="去广告" scheme="/tags/%E5%8E%BB%E5%B9%BF%E5%91%8A/"/>
@@ -571,14 +579,6 @@
       <category term="46003" scheme="/tags/46003/"/>
     
       <category term="egame" scheme="/tags/egame/"/>
-    
-      <category term="jadx" scheme="/tags/jadx/"/>
-    
-      <category term="java" scheme="/tags/java/"/>
-    
-      <category term="android killer" scheme="/tags/android-killer/"/>
-    
-      <category term="smali" scheme="/tags/smali/"/>
     
   </entry>
   
@@ -863,6 +863,10 @@
     
       <category term="Crack" scheme="/tags/Crack/"/>
     
+      <category term="youdao1" scheme="/tags/youdao1/"/>
+    
+      <category term="smspay" scheme="/tags/smspay/"/>
+    
       <category term="jadx" scheme="/tags/jadx/"/>
     
       <category term="java" scheme="/tags/java/"/>
@@ -870,10 +874,6 @@
       <category term="android killer" scheme="/tags/android-killer/"/>
     
       <category term="smali" scheme="/tags/smali/"/>
-    
-      <category term="youdao1" scheme="/tags/youdao1/"/>
-    
-      <category term="smspay" scheme="/tags/smspay/"/>
     
   </entry>
   
@@ -1010,8 +1010,6 @@
       <category term="笔记" scheme="/categories/macOS/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
-    
       <category term="printf" scheme="/tags/printf/"/>
     
       <category term="C" scheme="/tags/C/"/>
@@ -1027,6 +1025,8 @@
       <category term="全平台" scheme="/tags/%E5%85%A8%E5%B9%B3%E5%8F%B0/"/>
     
       <category term="printfcolor" scheme="/tags/printfcolor/"/>
+    
+      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   

@@ -37,8 +37,13 @@
 <p>B.S.去签名去广告内购破解版:(无限内购)</p>
 <p>
   <a href="http://www.8idone.com/app/hcrlm-v1.14.1-BS-Cr.apk" title="移动支付接口修复版" target="_blank" rel="external">百度下载</a>
-  <br>链接:
-  <a href="https://pan.baidu.com/s/1qXTbuVU" target="_blank" rel="external">https://pan.baidu.com/s/1qXTbuVU</a> 密码: r9sb</p>
+</p>
+<p>链接:
+  <a href="https://pan.baidu.com/s/1slTpHUH" target="_blank" rel="external">https://pan.baidu.com/s/1slTpHUH</a> 密码: rt4r</p>
+<p>
+  <del>链接:
+    <a href="https://pan.baidu.com/s/1qxtbuvu" target="_blank" rel="external">https://pan.baidu.com/s/1qxtbuvu</a> 密码: r9sb</del>
+</p>
 <p>
   <a href="http://www.8idone.com/app/hcrlm-BS-Cr.apk" title="点我在线下载安装" target="_blank" rel="external">有确认支付的电信接口内购版</a>
 </p>
@@ -70,25 +75,25 @@
 <table>
   <thead>
     <tr>
-      <th>运营商网络</th>
-      <th>特征码</th>
-      <th>备注</th>
+      <th style="text-align:center">运营商网络</th>
+      <th style="text-align:left">特征码</th>
+      <th style="text-align:right">备注</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>中国移动</td>
-      <td>46000、46002、46007、46020</td>
-      <td></td>
+      <td style="text-align:center">中国移动</td>
+      <td style="text-align:left">46000、46002、46007、46020</td>
+      <td style="text-align:right"></td>
     </tr>
     <tr>
-      <td>中国联通</td>
-      <td>46001、46006、46010</td>
-      <td></td>
+      <td style="text-align:center">中国联通</td>
+      <td style="text-align:left">46001、46006、46010</td>
+      <td style="text-align:right"></td>
     </tr>
     <tr>
-      <td>中国电信</td>
-      <td>46003、46005、46011</td>
+      <td style="text-align:center">中国电信</td>
+      <td style="text-align:left">46003、46005、46011</td>
     </tr>
   </tbody>
 </table>
@@ -555,14 +560,6 @@
     
       <category term="Crack" scheme="/tags/Crack/"/>
     
-      <category term="jadx" scheme="/tags/jadx/"/>
-    
-      <category term="java" scheme="/tags/java/"/>
-    
-      <category term="android killer" scheme="/tags/android-killer/"/>
-    
-      <category term="smali" scheme="/tags/smali/"/>
-    
       <category term="签名验证" scheme="/tags/%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81/"/>
     
       <category term="去广告" scheme="/tags/%E5%8E%BB%E5%B9%BF%E5%91%8A/"/>
@@ -574,6 +571,14 @@
       <category term="46003" scheme="/tags/46003/"/>
     
       <category term="egame" scheme="/tags/egame/"/>
+    
+      <category term="jadx" scheme="/tags/jadx/"/>
+    
+      <category term="java" scheme="/tags/java/"/>
+    
+      <category term="android killer" scheme="/tags/android-killer/"/>
+    
+      <category term="smali" scheme="/tags/smali/"/>
     
   </entry>
   
@@ -858,10 +863,6 @@
     
       <category term="Crack" scheme="/tags/Crack/"/>
     
-      <category term="youdao1" scheme="/tags/youdao1/"/>
-    
-      <category term="smspay" scheme="/tags/smspay/"/>
-    
       <category term="jadx" scheme="/tags/jadx/"/>
     
       <category term="java" scheme="/tags/java/"/>
@@ -869,6 +870,10 @@
       <category term="android killer" scheme="/tags/android-killer/"/>
     
       <category term="smali" scheme="/tags/smali/"/>
+    
+      <category term="youdao1" scheme="/tags/youdao1/"/>
+    
+      <category term="smspay" scheme="/tags/smspay/"/>
     
   </entry>
   
@@ -1005,6 +1010,8 @@
       <category term="笔记" scheme="/categories/macOS/%E7%AC%94%E8%AE%B0/"/>
     
     
+      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
+    
       <category term="printf" scheme="/tags/printf/"/>
     
       <category term="C" scheme="/tags/C/"/>
@@ -1020,8 +1027,6 @@
       <category term="全平台" scheme="/tags/%E5%85%A8%E5%B9%B3%E5%8F%B0/"/>
     
       <category term="printfcolor" scheme="/tags/printfcolor/"/>
-    
-      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   

@@ -1,0 +1,1545 @@
+<!doctype html>
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
+  />
+
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
+
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+  <meta name="google-site-verification" content="8y8FSBTI7MzPBT0cEOMTQ9jUdF2rk4jyPmZo9MWYHxc"
+  />
+
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"
+  />
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
+                                                                                  rel="stylesheet" type="text/css">
+
+  <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet"
+                                                                                  type="text/css" />
+
+  <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+  <meta name="keywords" content="逆向工程(Reverse Engineering),破解(Crack),android,内购,Crack,去签名验证,so签名验证,native,jadx,java,android killer,smali,"
+  />
+
+  <link rel="alternate" href="/atom.xml" title="@iYoungDone's Hexo Blog" type="application/atom+xml"
+  />
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+  <meta name="description" content="—Creaked by B.S. 6/24/2017 16:17:58 PM 无聊练手,当作学习Android优秀源码的笔记    仅供学习研究,请勿用作商业用途,如若喜欢请支持正版!  原程序:(v4.3.1.0)    移动下载v4.3.1.0(D)    百度下载v4.3.1.0(D)百度版 B.S.内购破解版:    百度下载 v4.3.1.0(E) 也可以去各大安卓市场搜索下载最新版本:">
+  <meta name="keywords" content="逆向工程(Reverse Engineering),破解(Crack),android,内购,Crack,去签名验证,so签名验证,native,jadx,java,android killer,smali">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="饥饿鲨：进化去so签名验证Android内购破解">
+  <meta property="og:url" content="/2017/06/24/饥饿鲨：进化去so签名验证Android内购破解/index.html">
+  <meta property="og:site_name" content="@iYoungDone&#39;s Hexo Blog">
+  <meta property="og:description" content="—Creaked by B.S. 6/24/2017 16:17:58 PM 无聊练手,当作学习Android优秀源码的笔记    仅供学习研究,请勿用作商业用途,如若喜欢请支持正版!  原程序:(v4.3.1.0)    移动下载v4.3.1.0(D)    百度下载v4.3.1.0(D)百度版 B.S.内购破解版:    百度下载 v4.3.1.0(E) 也可以去各大安卓市场搜索下载最新版本:">
+  <meta property="og:image" content="/images/jesjh-bs-cr-001.png">
+  <meta property="og:updated_time" content="2017-06-24T08:17:00.000Z">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="饥饿鲨：进化去so签名验证Android内购破解">
+  <meta name="twitter:description" content="—Creaked by B.S. 6/24/2017 16:17:58 PM 无聊练手,当作学习Android优秀源码的笔记    仅供学习研究,请勿用作商业用途,如若喜欢请支持正版!  原程序:(v4.3.1.0)    移动下载v4.3.1.0(D)    百度下载v4.3.1.0(D)百度版 B.S.内购破解版:    百度下载 v4.3.1.0(E) 也可以去各大安卓市场搜索下载最新版本:">
+  <meta name="twitter:image" content="/images/jesjh-bs-cr-001.png">
+
+  <script type="text/javascript" id="hexo.configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {
+      root: '/',
+      scheme: 'Pisces',
+      sidebar: {
+        "position": "right",
+        "display": "post",
+        "offset": 12,
+        "offset_float": 0,
+        "b2t": true,
+        "scrollpercent": true
+      },
+      fancybox: true,
+      motion: true,
+      duoshuo: {
+        userId: '0',
+        author: '博主'
+      },
+      algolia: {
+        applicationID: '',
+        apiKey: '',
+        indexName: '',
+        hits: {
+          "per_page": 10
+        },
+        labels: {
+          "input_placeholder": "Search for Posts",
+          "hits_empty": "We didn't find any results for the search: ${query}",
+          "hits_stats": "${hits} results found in ${time} ms"
+        }
+      }
+    };
+
+  </script>
+
+  <link rel="canonical" href="/2017/06/24/饥饿鲨：进化去so签名验证Android内购破解/" />
+
+  <title>饥饿鲨：进化去so签名验证Android内购破解 | @iYoungDone's Hexo Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?5458071b11ad5bcea830141d3ae7f866";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+
+  </script>
+
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner">
+        <div class="site-brand-wrapper">
+          <div class="site-meta ">
+
+            <div class="custom-logo-site-title">
+              <a href="/" class="brand" rel="start">
+                <span class="logo-line-before">
+                  <i></i>
+                </span>
+                <span class="site-title">@iYoungDone's Hexo Blog</span>
+                <span class="logo-line-after">
+                  <i></i>
+                </span>
+              </a>
+            </div>
+
+            <p class="site-subtitle">『想女孩子能使你成为哲学家--太相信女人』❤ http://www.allin1.xyz</p>
+
+          </div>
+
+          <div class="site-nav-toggle">
+            <button>
+              <span class="btn-bar"></span>
+              <span class="btn-bar"></span>
+              <span class="btn-bar"></span>
+            </button>
+          </div>
+        </div>
+
+        <nav class="site-nav">
+
+          <ul id="menu" class="menu">
+
+            <li class="menu-item menu-item-home">
+              <a href="/" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-home"></i>
+                <br /> 首页
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-categories">
+              <a href="/categories" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-th"></i>
+                <br /> 分类
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-archives">
+              <a href="/archives" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-archive"></i>
+                <br /> 归档
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-tags">
+              <a href="/tags" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-tags"></i>
+                <br /> 标签
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-about">
+              <a href="/about" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-user"></i>
+                <br /> 关于
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-search">
+
+              <a href="javascript:;" class="popup-trigger">
+
+                <i class="menu-item-icon fa fa-search fa-fw"></i>
+                <br /> 搜索
+              </a>
+            </li>
+
+          </ul>
+
+          <div class="site-search">
+
+            <div class="popup search-popup local-search-popup">
+              <div class="local-search-header clearfix">
+                <span class="search-icon">
+                  <i class="fa fa-search"></i>
+                </span>
+                <span class="popup-btn-close">
+                  <i class="fa fa-times-circle"></i>
+                </span>
+                <div class="local-search-input-wrapper">
+                  <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+                </div>
+              </div>
+              <div id="local-search-result"></div>
+            </div>
+
+          </div>
+
+        </nav>
+
+        <a href="https://github.com/idone/">
+          <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67"
+                                                                                          alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png">
+        </a>
+
+      </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+
+            <div id="posts" class="posts-expand">
+
+              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+                <link itemprop="mainEntityOfPage" href="/2017/06/24/饥饿鲨：进化去so签名验证Android内购破解/">
+
+                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <meta itemprop="name" content="YoungDone(B.S.)">
+                  <meta itemprop="description" content="">
+                  <meta itemprop="image" content="/images/avatar.jpg">
+                </span>
+
+                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                  <meta itemprop="name" content="@iYoungDone's Hexo Blog">
+                </span>
+
+                <header class="post-header">
+
+                  <h1 class="post-title" itemprop="name headline">饥饿鲨：进化去so签名验证Android内购破解</h1>
+
+                  <div class="post-meta">
+                    <span class="post-time">
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-calendar-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">发表于</span>
+
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-24T16:17:00+08:00">
+                        2017-06-24
+                      </time>
+
+                    </span>
+
+                    <span class="post-category">
+
+                      <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-folder-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/逆向工程-Reverse-Engineering/" itemprop="url" rel="index">
+                          <span itemprop="name">逆向工程(Reverse Engineering)</span>
+                        </a>
+                      </span>
+
+                      ，
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/逆向工程-Reverse-Engineering/破解-Crack/" itemprop="url" rel="index">
+                          <span itemprop="name">破解(Crack)</span>
+                        </a>
+                      </span>
+
+                    </span>
+
+                    <span class="post-meta-divider">|</span>
+                    <span class="page-pv">
+                      <i class="fa fa-file-o"></i>
+                      <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+                    </span>
+
+                  </div>
+                </header>
+
+                <div class="post-body han-init-context" itemprop="articleBody">
+
+                  <p>—Creaked by B.S. 6/24/2017 16:17:58 PM</p>
+                  <p>无聊练手,当作学习Android优秀源码的笔记</p>
+                  <p>
+                    <strong>仅供学习研究,请勿用作商业用途,如若喜欢请支持正版!</strong>
+                  </p>
+                  <p>原程序:(v4.3.1.0)</p>
+                  <p>
+                    <a href="http://download.cmgame.com:8080/entry?C=0300000001&amp;ContentID=602716016815&amp;F=10375624_10375626&amp;T=7545f23059fc4de7ad9b2caf9c0296ed&amp;D=0&amp;Y=2&amp;H=12064000&amp;M=0&amp;P=1&amp;G=0&amp;U=0&amp;E=6118&amp;R=DL&amp;A=006043315000&amp;W=760000014920&amp;CFM=1&amp;GCT=0&amp;FN=%5Bg.10086.cn%5DJESJH.apk&amp;CPN=0&amp;PLT=1&amp;PLK=f7dc5a576034a89040bbb84f4b17bf3e20170614102619&amp;TIP=223.74.103.72&amp;S=779817f9669519f9c82386698c0d0689"
+                                                                                                    target="_blank" rel="external">移动下载</a>v4.3.1.0(D)</p>
+                  <p>
+                    <a href="http://123.66.30.56/apk.r1.market.hiapk.com/data/upload/apkres/2017/4_28/12/com.fgol.bd_120613.apk?wsiphost=ipdb"
+                                                                                                    title="饥饿鲨:进化" target="_blank" rel="external">百度下载</a>v4.3.1.0(D)百度版</p>
+                  <p>B.S.内购破解版:</p>
+                  <p>
+                    <a href="http://www.8idone.com/app/[g.10086.cn]JESJH_BS-v4.3.1.0.apk" target="_blank"
+                                                                                                    rel="external">百度下载</a> v4.3.1.0(E)</p>
+                  <p>也可以去各大安卓市场搜索下载最新版本:(推荐支付接口比较熟悉的移动,咪咕游戏,爱游戏)</p>
+                  <blockquote>
+                    <p>
+                      <a href="http://www.play.cn/" title="爱游戏" target="_blank" rel="external">爱游戏: http://www.play.cn/</a>
+                    </p>
+                    <p>
+                      <a href="http://g.10086.cn/" title="咪咕游戏" target="_blank" rel="external">咪咕游戏: http://g.10086.cn/</a>
+                    </p>
+                    <p>
+                      <a href="http://mm.10086.cn/android" title="中国移动应用商城" target="_blank" rel="external">中国移动应用商城: http://mm.10086.cn/android</a>
+                    </p>
+                    <p>
+                      <a href="http://android.myapp.com/" title="腾讯应用宝" target="_blank" rel="external">腾讯应用宝: http://android.myapp.com/</a>
+                    </p>
+                    <p>
+                      <a href="http://zhushou.360.cn/" title="360手机助手" target="_blank" rel="external">360手机助手: http://zhushou.360.cn/</a>
+                    </p>
+                    <p>
+                      <a href="http://apk.hiapk.com/" title="安卓市场" target="_blank" rel="external">百度旗下安卓市场: http://apk.hiapk.com/</a>
+                    </p>
+                    <p>
+                      <a href="http://www.anzhi.com/" title="安智市场" target="_blank" rel="external">安智市场: http://www.anzhi.com/</a>
+                    </p>
+                  </blockquote>
+                  <p>有图有真相,动画演示:</p>
+                  <p>
+                    <img src="/images/jesjh-bs-cr-001.png" alt="无限内购B.S.破解版">
+                  </p>
+                  <h3 id="1-内购破解">
+                    <a href="#1-内购破解" class="headerlink" title="1. 内购破解:"></a>1. 内购破解:</h3>
+                  <p>搜索logcat定位字符串,</p>
+                  <blockquote>
+                    <p>支付 测试:</p>
+                    <p>g+:</p>
+                    <p>unity购买失败</p>
+                    <p>unity购买成功</p>
+                    <p>支付失败</p>
+                    <p>ourpalm_tip_gw_chargfail</p>
+                  </blockquote>
+                  <p>还可以通过查找\res\values\strings.xml有没有支付相关字符串可以用,</p>
+                  <blockquote>
+                    <p>解析支付协议失败</p>
+                    <p>ourpalm_tip_prasecharginfoerror</p>
+                  </blockquote>
+                  <p>找到在下面这个函数里,</p>
+                  <blockquote>
+                    <p>.class public Lourpalm/android/pay/Ourpalm_Entry;</p>
+                    <p>.super Ljava/lang/Object;</p>
+                    <p>.source “Ourpalm_Entry.java”</p>
+                  </blockquote>
+                  <figure class="highlight java">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line">.<span class="function">method <span class="keyword">private</span> <span class="title">Ourpalm_Pay_FormSdk</span><span class="params">(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lourpalm/android/callback/Ourpalm_PaymentCallBack;Ljava/lang/String;Ljava/lang/String;)</span>V</span></div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <figure class="highlight">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line">.line 718</div><div class="line">:cond_4</div><div class="line">sget-object v1, Lourpalm/android/pay/Ourpalm_Entry_Model;-&gt;mActivity:Landroid/app/Activity;</div><div class="line"></div><div class="line">.line 720</div><div class="line">sget-object v2, Lourpalm/android/pay/Ourpalm_Entry_Model;-&gt;mActivity:Landroid/app/Activity;</div><div class="line"></div><div class="line">.line 721</div><div class="line">const-string v3, "ourpalm_tip_prasecharginfoerror"</div><div class="line"></div><div class="line">.line 719</div><div class="line">invoke-static &#123;v2, v3&#125;, Lourpalm/android/pay/Ourpalm_GetResId;-&gt;GetString(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;</div><div class="line"></div><div class="line">move-result-object v2</div><div class="line"></div><div class="line">.line 722</div><div class="line">const/4 v3, 0x0</div><div class="line"></div><div class="line">.line 718</div><div class="line">#可以注释掉不提示,解析支付协议失败,这里注意这个函数里16个寄存器都给用了</div><div class="line">invoke-static &#123;v1, v2, v3&#125;, Lourpalm/android/view/Ourpalm_Toast;-&gt;makeText(Landroid/content/Context;Ljava/lang/String;I)V</div><div class="line"></div><div class="line">######Toast显示自定义字符串</div><div class="line">const-string v3, "\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n www.appleos.xyz \n-- by B.S."</div><div class="line">move-object/from16 v2, v3</div><div class="line">const/4 v3, 0x0</div><div class="line">invoke-static &#123;v1, v2, v3&#125;, Lourpalm/android/view/Ourpalm_Toast;-&gt;makeText(Landroid/content/Context;Ljava/lang/String;I)V</div><div class="line">######</div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <p>在Ourpalm_Pay_FormSdk方法函数里,跳过支付窗口</p>
+                  <figure class="highlight">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line">.line 714</div><div class="line">goto :cond_4  #直接跳过下面的pay支付框 #if-eqz v1, :cond_4</div><div class="line"></div><div class="line">.line 716</div><div class="line">invoke-static &#123;&#125;, Lourpalm/android/channels/Ourpalm_Channels_Manage;-&gt;getInstance()Lourpalm/android/channels/Ourpalm_Channels_Manage;</div><div class="line"></div><div class="line">move-result-object v1</div><div class="line"></div><div class="line">invoke-virtual &#123;v1&#125;, Lourpalm/android/channels/Ourpalm_Channels_Manage;-&gt;Pay()Z</div><div class="line"></div><div class="line">goto/16 :goto_0</div><div class="line"></div><div class="line">.line 718</div><div class="line">:cond_4</div><div class="line">sget-object v1, Lourpalm/android/pay/Ourpalm_Entry_Model;-&gt;mActivity:Landroid/app/Activity;</div><div class="line"></div><div class="line">.line 720</div><div class="line">sget-object v2, Lourpalm/android/pay/Ourpalm_Entry_Model;-&gt;mActivity:Landroid/app/Activity;</div><div class="line"></div><div class="line">.line 721</div><div class="line">const-string v3, "ourpalm_tip_prasecharginfoerror"</div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <p>改失败为直接成功然后,goto返回</p>
+                  <figure class="highlight">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line">.line 723</div><div class="line">sget-object v1, Lourpalm/android/pay/Ourpalm_Statics;-&gt;mChargingResult:Lourpalm/android/callback/Ourpalm_PaymentCallBack;</div><div class="line"></div><div class="line">.line 724</div><div class="line">const/16 v2, 0x6a</div><div class="line"></div><div class="line">const-string v3, ""</div><div class="line"></div><div class="line">.line 723</div><div class="line">move-object/from16 v0, p1</div><div class="line"></div><div class="line">#invoke-virtual &#123;v1, v2, v3, v0&#125;, Lourpalm/android/callback/Ourpalm_PaymentCallBack;-&gt;Ourpalm_PaymentFail(ILjava/lang/String;Ljava/lang/String;)V</div><div class="line"></div><div class="line">#######这里换为调用成功</div><div class="line">invoke-virtual &#123;v1, v2, v3, v0&#125;, Lourpalm/android/callback/Ourpalm_PaymentCallBack;-&gt;Ourpalm_PaymentSuccess(ILjava/lang/String;Ljava/lang/String;)V</div><div class="line"></div><div class="line">.line 725</div><div class="line">const/4 v1, 0x0</div><div class="line"></div><div class="line">sput-boolean v1, Lourpalm/android/pay/Ourpalm_Statics;-&gt;IsExecute:Z</div><div class="line"></div><div class="line">goto/16 :goto_0</div><div class="line"></div><div class="line">.line 732</div><div class="line">:cond_5</div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <p>另外一种破解方法(第2种改法),也可以搜索字符</p>
+                  <blockquote>
+                    <p>Ourpalm_PaymentFail</p>
+                  </blockquote>
+                  <p>看哪里调用引用了这个方法函数</p>
+                  <blockquote>
+                    <p>.class public Lcom/fgol/OurpalmIAPListener;</p>
+                    <p>.super Lourpalm/android/callback/Ourpalm_PaymentCallBack;</p>
+                    <p>.source “OurpalmIAPListener.java”</p>
+                  </blockquote>
+                  <p>用成功的代码替换掉失败方法里的代码</p>
+                  <figure class="highlight java">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line">.<span class="function">method <span class="keyword">public</span> <span class="title">Ourpalm_PaymentSuccess</span><span class="params">(ILjava/lang/String;Ljava/lang/String;)</span>V</span></div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <figure class="highlight java">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line">.<span class="function">method <span class="keyword">public</span> <span class="title">Ourpalm_PaymentFail</span><span class="params">(ILjava/lang/String;Ljava/lang/String;)</span>V</span></div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <p>这里只需要修改一句调用的函数,修改如下:</p>
+                  <figure class="highlight">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line">.method public Ourpalm_PaymentFail(ILjava/lang/String;Ljava/lang/String;)V</div><div class="line">    .locals 4</div><div class="line">    .param p1, "arg0"    # I</div><div class="line">    .param p2, "arg1"    # Ljava/lang/String;</div><div class="line">    .param p3, "arg2"    # Ljava/lang/String;</div><div class="line"></div><div class="line">    .prologue</div><div class="line">    .line 74</div><div class="line">    if-nez p2, :cond_0</div><div class="line"></div><div class="line">    const-string v0, "000000"</div><div class="line"></div><div class="line">    .line 75</div><div class="line">    .local v0, "tid":Ljava/lang/String;</div><div class="line">    :goto_0</div><div class="line">    iget-object v1, p0, Lcom/fgol/OurpalmIAPListener;-&gt;context:Lcom/fgol/IAPInterface;</div><div class="line"></div><div class="line">    #invoke-virtual &#123;v1, v0&#125;, Lcom/fgol/IAPInterface;-&gt;purchaseFailed(Ljava/lang/String;)V</div><div class="line">    ######这里替换为成功的方法函数,失败变成功,上面原来的语句删掉或者注释掉即可</div><div class="line">    invoke-virtual &#123;v1, v0&#125;, Lcom/fgol/IAPInterface;-&gt;purchaseSuccess(Ljava/lang/String;)V</div><div class="line"></div><div class="line"></div><div class="line">    .line 76</div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <p>来看一下java源码,就知道改那个语句了:</p>
+                  <figure class="highlight java">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Ourpalm_PaymentFail</span><span class="params">(<span class="keyword">int</span> i, String str, String str2)</span> </span>&#123;</div><div class="line">    <span class="keyword">this</span>.context.purchaseFailed(str == <span class="keyword">null</span> ? <span class="string">"000000"</span> : str);</div><div class="line">    Log.d(<span class="string">"HSE"</span>, <span class="keyword">new</span> StringBuilder(String.valueOf(i)).append(<span class="string">"支付失败##"</span>).append(str).append(<span class="string">"##"</span>).append(str2).toString());</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Ourpalm_PaymentSuccess</span><span class="params">(<span class="keyword">int</span> i, String str, String str2)</span> </span>&#123;</div><div class="line">    <span class="keyword">this</span>.context.purchaseSuccess(str == <span class="keyword">null</span> ? <span class="string">"000000"</span> : str);</div><div class="line">    Log.d(<span class="string">"HSE"</span>, <span class="keyword">new</span> StringBuilder(String.valueOf(i)).append(<span class="string">"支付成功##"</span>).append(str).append(<span class="string">"##"</span>).append(str2).toString());</div><div class="line">&#125;</div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <p>或者进入purchaseFailed函数方法里面去改(这是第3种改法了):</p>
+                  <figure class="highlight">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line">.line 246</div><div class="line">#const-string v1, "purchaseFailed"</div><div class="line">######这换改为传入成功的消息参数</div><div class="line">const-string v1, "purchaseSucceeded"</div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <p>源码如下:</p>
+                  <figure class="highlight java">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">purchaseFailed</span><span class="params">(String str)</span> </span>&#123;</div><div class="line">    Log.d(TAG, <span class="string">"unity购买失败"</span> + str);</div><div class="line">    <span class="keyword">if</span> (!isCanBuy()) &#123;</div><div class="line">        UnityPlayer.UnitySendMessage(<span class="string">"IAPCNManager"</span>, <span class="string">"purchaseFailed"</span>, str);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">purchaseSuccess</span><span class="params">(String str)</span> </span>&#123;</div><div class="line">    Log.d(TAG, <span class="string">"unity购买成功"</span> + str);</div><div class="line">    <span class="keyword">if</span> (!isCanBuy()) &#123;</div><div class="line">        UnityPlayer.UnitySendMessage(<span class="string">"IAPCNManager"</span>, <span class="string">"purchaseSucceeded"</span>, str);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <h3 id="2-去so签名验证">
+                    <a href="#2-去so签名验证" class="headerlink" title="2. 去so签名验证:"></a>2. 去so签名验证:</h3>
+                  <p>android killer修改内购破解后直接回编译后安装游戏,进游戏闪退,是有签名验证的.</p>
+                  <p>搜索定位字符串</p>
+                  <blockquote>
+                    <p>signatures</p>
+                  </blockquote>
+                  <p>没有什么实用价值的代码</p>
+                  <p>再搜索</p>
+                  <blockquote>
+                    <p>内购接口初始化</p>
+                    <p>ShareSDKUtils.prepare</p>
+                  </blockquote>
+                  <p>向上回溯,哪里引用到了,定位到.method protected onCreate(Landroid/os/Bundle;)V
+                    <br>在下面的内购界面的类里,</p>
+                  <p>经验:所以在没有找着有用信息是,去onCreate瞧一瞧,也许会有惊奇的发现</p>
+                  <p>先看看源码,关键在public void init()函数里:</p>
+                  <figure class="highlight java">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle bundle)</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onCreate(bundle);</div><div class="line">    <span class="keyword">this</span>.mContext = <span class="keyword">this</span>;</div><div class="line">    init();</div><div class="line">    UMGameAgent.setDebugMode(<span class="keyword">true</span>);</div><div class="line">    UMGameAgent.init(<span class="keyword">this</span>.mContext);</div><div class="line">    ShareSDKUtils.prepare(getApplicationContext());</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</div><div class="line">    Log.d(TAG, <span class="string">"内购接口初始化"</span>);</div><div class="line">    FlurryHelper.init(<span class="keyword">this</span>.mContext);</div><div class="line">    getMobileType(<span class="keyword">this</span>.mContext);</div><div class="line">    Log.d(TAG, <span class="keyword">new</span> StringBuilder(String.valueOf(<span class="keyword">this</span>.mContext.getPackageName())).append(<span class="string">"++"</span>).append(<span class="keyword">this</span>.mContext.toString()).toString());</div><div class="line">    <span class="keyword">this</span>.mIAPIdentifier = <span class="keyword">new</span> IAPIdentifier();</div><div class="line">    <span class="keyword">this</span>.mListener = <span class="keyword">new</span> OurpalmIAPListener(<span class="keyword">this</span>);</div><div class="line">    Ourpalm_Entry.getInstance(<span class="keyword">this</span>).Ourpalm_Init(<span class="string">"2"</span>, <span class="string">"1.0"</span>, <span class="string">"1.0"</span>, <span class="keyword">this</span>.mListener);</div><div class="line">    setCanBuy(<span class="keyword">true</span>);</div><div class="line">&#125;</div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <blockquote>
+                    <p>.class public Lcom/fgol/IAPInterface;</p>
+                    <p>.super Lcom/unity3d/player/UnityPlayerActivity;</p>
+                    <p>.source “IAPInterface.java”</p>
+                  </blockquote>
+                  <p>跟进,查看Ourpalm_Init函数方法</p>
+                  <figure class="highlight java">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Ourpalm_Init</span><span class="params">(String str, String str2, String str3, Ourpalm_CallBackListener ourpalm_CallBackListener)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (ourpalm_CallBackListener == <span class="keyword">null</span>) &#123;</div><div class="line">        Logs.e(TAG, <span class="string">"Ourpalm_Init  mCallBackListener == null"</span>);</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    String string;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        ApplicationInfo applicationInfo = Ourpalm_Entry_Model.mActivity.getPackageManager().getApplicationInfo(Ourpalm_Entry_Model.mActivity.getPackageName(), <span class="number">128</span>);</div><div class="line">        <span class="keyword">if</span> (applicationInfo != <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="keyword">if</span> (<span class="string">"show"</span>.equals(applicationInfo.metaData.getString(<span class="string">"useShowLog"</span>))) &#123;</div><div class="line">                Logs.isShowLog_1 = <span class="keyword">true</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">this</span>.useImplicitLogon = applicationInfo.metaData.getString(<span class="string">"useImplicitLogon"</span>);</div><div class="line">            Logs.i(TAG, <span class="string">"useImplicitLogon == "</span> + <span class="keyword">this</span>.useImplicitLogon);</div><div class="line">            string = applicationInfo.metaData.getString(<span class="string">"useCheckLog"</span>);</div><div class="line">            <span class="keyword">if</span> (string != <span class="keyword">null</span> &amp;&amp; <span class="string">"NO"</span>.equals(string)) &#123;</div><div class="line">                <span class="keyword">this</span>.useCheckLog = <span class="keyword">false</span>;</div><div class="line">            &#125;</div><div class="line">            Logs.i(TAG, <span class="string">"useCheckLog == "</span> + <span class="keyword">this</span>.useCheckLog);</div><div class="line">        &#125;</div><div class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125;</div><div class="line">    Ourpalm_Statics.mCallBackListener = ourpalm_CallBackListener;</div><div class="line">    GameInfo.GameType = str;</div><div class="line">    Ourpalm_Statics.GameRoleLoginType = <span class="number">0</span>;</div><div class="line">    Ourpalm_Statics.IsExecute = <span class="keyword">false</span>;</div><div class="line">    Ourpalm_Statics.mSimType = Ourpalm_Statics.getSimType(Ourpalm_Entry_Model.mActivity);</div><div class="line">    initMapPhoneInfo();</div><div class="line">    <span class="keyword">this</span>.ourpalm_jni = <span class="keyword">new</span> ourpalm_android_SdkJni();</div><div class="line">    <span class="keyword">this</span>.ourpalm_jni.RunSign(Ourpalm_Entry_Model.mActivity.getApplicationContext());</div><div class="line">    Ourpalm_Statics.Ourpalm_kkey = <span class="keyword">this</span>.ourpalm_jni.getPublicKey();</div><div class="line">    Ourpalm_Statics.UpdateSecretKey();</div><div class="line">    Ourpalm_Entry_Model.getInstance().userInfo = <span class="keyword">new</span> Ourpalm_UserInfo();</div><div class="line">    Ourpalm_Entry_Model.getInstance().mOurpalm_Account_HeartBeat = <span class="keyword">new</span> Ourpalm_Account_HeartBeat();</div><div class="line">    Ourpalm_Entry_Model.getInstance().mGameInfo = <span class="keyword">new</span> GameInfo();</div><div class="line">    Ourpalm_Entry_Model.getInstance().mGameInfo.setGameResVersion(str3);</div><div class="line">    string = Ourpalm_Statics.getAppVersion(Ourpalm_Entry_Model.mActivity).trim();</div><div class="line">    <span class="keyword">if</span> (Ourpalm_Statics.IsNull(string)) &#123;</div><div class="line">        string = str2;</div><div class="line">    &#125;</div><div class="line">    Ourpalm_Entry_Model.getInstance().mGameInfo.setGameVersion(string);</div><div class="line">    Ourpalm_Entry_Model.getInstance().parseLocalData();</div><div class="line">    Ourpalm_CrashHandler.getInstance().init(Ourpalm_Entry_Model.mActivity);</div><div class="line">    Ourpalm_Statistics_Entry.getInstance().initStatisticsLog(Ourpalm_Entry_Model.mActivity);</div><div class="line">    Ourpalm_Entry_Model.getInstance().netInitData = <span class="keyword">new</span> NetInitData();</div><div class="line">    <span class="keyword">this</span>.mOurpalm_Init_Net = <span class="keyword">new</span> Ourpalm_Init_Net(<span class="keyword">this</span>.mInit_Net_callback);</div><div class="line">    <span class="keyword">if</span> (DK_GetPhoneInfo.getInstance(Ourpalm_Entry_Model.mActivity).NetworkIsAvailable()) &#123;</div><div class="line">        <span class="keyword">this</span>.mOurpalm_Init_Net.start(Ourpalm_Init_Net.INIT_NET_INIT);</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (GameInfo.GameType == <span class="string">"2"</span>) &#123;</div><div class="line">        <span class="keyword">new</span> Thread(<span class="keyword">new</span> <span class="number">2</span>(<span class="keyword">this</span>)).start();</div><div class="line">    &#125;</div><div class="line">    Ourpalm_Channels_Manage.getInstance().init();</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.useCheckLog) &#123;</div><div class="line">        JSONObject jSONObject = <span class="keyword">new</span> JSONObject();</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            jSONObject.put(<span class="string">"gameType"</span>, str);</div><div class="line">            jSONObject.put(<span class="string">"gameVer"</span>, str2);</div><div class="line">            jSONObject.put(<span class="string">"gameResVer"</span>, str3);</div><div class="line">        &#125; <span class="keyword">catch</span> (JSONException e2) &#123;</div><div class="line">            e2.printStackTrace();</div><div class="line">        &#125;</div><div class="line">        sendCheckLog(<span class="string">"Ourpalm_Init"</span>, jSONObject.toString());</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <blockquote>
+                    <p>his.ourpalm_jni = new ourpalm_android_SdkJni();</p>
+                    <p> this.ourpalm_jni.RunSign(Ourpalm_Entry_Model.mActivity.getApplicationContext());</p>
+                    <p>Ourpalm_Statics.Ourpalm_kkey = this.ourpalm_jni.getPublicKey();
+                      <br>Ourpalm_Statics.UpdateSecretKey();</p>
+                  </blockquote>
+                  <figure class="highlight java">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">native</span> String <span class="title">RunSign</span><span class="params">(Context paramContext)</span></span>;</div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <p>下次维护,定位可以搜索</p>
+                  <blockquote>
+                    <p>RunSign</p>
+                    <p>UpdateSecretKey</p>
+                    <p>getSimType</p>
+                  </blockquote>
+                  <p>native函数,去初始化里,看看ourpalm_jni.RunSign是在哪里导入的,这里可以用IDEA调试smali代码在初始化下段然后单步跟踪,确定出这里是退出前的地方.</p>
+                  <figure class="highlight java">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line"><span class="keyword">public</span> ourpalm_android_SdkJni ourpalm_jni;</div><div class="line"><span class="keyword">private</span> <span class="keyword">boolean</span> useCheckLog = <span class="keyword">true</span>;</div><div class="line"><span class="keyword">private</span> String useImplicitLogon;</div><div class="line"></div><div class="line"><span class="keyword">static</span> &#123;</div><div class="line">    System.loadLibrary(<span class="string">"ourpalm_sdk_a"</span>);</div><div class="line">    System.loadLibrary(<span class="string">"dumpcrash"</span>);</div><div class="line">&#125;</div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <p>在lib文件夹里,找到libourpalm_sdk_a.so文件</p>
+                  <blockquote>
+                    <p>\lib\armeabi-v7a\libourpalm_sdk_a.so</p>
+                  </blockquote>
+                  <p>IDA载入,在导出函数表里Alt-T或者Ctrl-F搜索RunSign</p>
+                  <blockquote>
+                    <p>EXPORT Java_ourpalm_android_sdkjni_ourpalm_1android_1SdkJni_RunSign</p>
+                    <p>.text:000244B4 Java_ourpalm_android_sdkjni_ourpalm_1android_1SdkJni_RunSign</p>
+                  </blockquote>
+                  <figure class="highlight plain">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line">.text:000244C4 FF F7 3E FF                             BL              checksign</div><div class="line"></div><div class="line">.text:000244CE FF F7 55 FD                             BL              checkdexex</div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <p>用16进制工具C32Asm去掉,这两个函数call调用的地方</p>
+                  <p>改为”悙悙” 即是,填充为0或者90</p>
+                  <figure class="highlight java">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line">.text:<span class="number">000244</span>C4 <span class="number">90</span> <span class="number">90</span> <span class="number">90</span> <span class="number">90</span>             aRrrr_0         DCB <span class="string">"悙悙"</span></div><div class="line"></div><div class="line">.text:<span class="number">000244</span>CE <span class="number">90</span> <span class="number">90</span> <span class="number">90</span> <span class="number">90</span>             aRrrr           DCB <span class="string">"悙悙"</span></div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <blockquote>
+                    <p>\lib\x86\libourpalm_sdk_a.so</p>
+                  </blockquote>
+                  <p>x86的也顺便一起处理了</p>
+                  <figure class="highlight plain">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line">.text:000302DA  90 90 90 90 90</div><div class="line"></div><div class="line">.text:000302EA  90 90 90 90 90</div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <h3 id="3-添加版权自定义提示等信息">
+                    <a href="#3-添加版权自定义提示等信息" class="headerlink" title="3. 添加版权自定义提示等信息"></a>3. 添加版权自定义提示等信息</h3>
+                  <p>自己定义版权提示Unicode字符串:</p>
+                  <blockquote>
+                    <p>\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n www.appleos.xyz
+                      \n \u7231\u6deb\u8361 \n – by B.S.</p>
+                  </blockquote>
+                  <p>通常在启动页面或者闪屏页面的onCreate里插入log和弹出消息,又或者是利用程序自己的封装的消息机制.
+                    <br>比如,内购破解改法1里的:</p>
+                  <figure class="highlight">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line">.line 722</div><div class="line">const/4 v3, 0x0</div><div class="line"></div><div class="line">.line 718</div><div class="line">#可以注释掉不提示,解析支付协议失败,这里注意这个函数里16个寄存器都给用了</div><div class="line">invoke-static &#123;v1, v2, v3&#125;, Lourpalm/android/view/Ourpalm_Toast;-&gt;makeText(Landroid/content/Context;Ljava/lang/String;I)V</div><div class="line"></div><div class="line">######Toast显示自定义字符串</div><div class="line">const-string v3, "\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n www.appleos.xyz \n-- by B.S."</div><div class="line">move-object/from16 v2, v3</div><div class="line">const/4 v3, 0x0</div><div class="line">invoke-static &#123;v1, v2, v3&#125;, Lourpalm/android/view/Ourpalm_Toast;-&gt;makeText(Landroid/content/Context;Ljava/lang/String;I)V</div><div class="line">######</div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <h3 id="4-统一支付接口">
+                    <a href="#4-统一支付接口" class="headerlink" title="4. 统一支付接口"></a>4. 统一支付接口</h3>
+                  <p>只需要让getMobileType返回你想要伪装的类型值就行了,返回值为3是电信,1是移动,2是联通.</p>
+                  <figure class="highlight java">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getMobileType</span><span class="params">(Context context)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> i;</div><div class="line">    String simOperator = ((TelephonyManager) context.getSystemService(<span class="string">"phone"</span>)).getSimOperator();</div><div class="line">    <span class="keyword">if</span> (simOperator.length() &lt;= <span class="number">0</span>) &#123;</div><div class="line">        Log.d(TAG, <span class="string">"未找到sim卡"</span>);</div><div class="line">        i = <span class="number">0</span>;</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (simOperator.equals(<span class="string">"46000"</span>) || simOperator.equals(<span class="string">"46002"</span>) || simOperator.equals(<span class="string">"46007"</span>)) &#123;</div><div class="line">        i = <span class="number">1</span>;</div><div class="line">        Log.d(TAG, <span class="string">"中国移动"</span>);</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (simOperator.equals(<span class="string">"46001"</span>) || simOperator.equals(<span class="string">"46006"</span>)) &#123;</div><div class="line">        i = <span class="number">2</span>;</div><div class="line">        Log.d(TAG, <span class="string">"中国联通"</span>);</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (simOperator.equals(<span class="string">"46003"</span>) || simOperator.equals(<span class="string">"46005"</span>)) &#123;</div><div class="line">        i = <span class="number">3</span>;</div><div class="line">        Log.d(TAG, <span class="string">"中国电信"</span>);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        Log.d(TAG, <span class="string">"中国未知"</span>);</div><div class="line">        i = <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    mobileType = i;</div><div class="line">    <span class="keyword">return</span> i;</div><div class="line">&#125;</div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <p>要修改的类</p>
+                  <blockquote>
+                    <p>.class public Lcom/fgol/IAPInterface;</p>
+                    <p>.super Lcom/unity3d/player/UnityPlayerActivity;</p>
+                    <p>.source “IAPInterface.java”</p>
+                  </blockquote>
+                  <p>下面函数修改地方:</p>
+                  <blockquote>
+                    <p>.method public static getMobileType(Landroid/content/Context;)I</p>
+                  </blockquote>
+                  <figure class="highlight">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line">.line 130</div><div class="line">:goto_0</div><div class="line">###### 让返回值v2等于3电信,1移动,2联通都可以</div><div class="line">const/4 v2, 0x3</div><div class="line"></div><div class="line">sput v2, Lcom/fgol/IAPInterface;-&gt;mobileType:I</div><div class="line"></div><div class="line">.line 132</div><div class="line">return v2</div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                  <div style="padding: 10px 0; margin: 20px auto; width: 88%; text-align: center;">
+                    <div>您觉得好,您就随意打赏点吧(*^__^*)您的鼓励,是我坚持的动力!</div>
+                    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+                      <span>赞赏支持</span>
+                    </button>
+                    <div id="QR" style="display: none;">
+
+                      <div id="wechat" style="display: inline-block">
+                        <img id="wechat_qr" src="/uploads/qrcode/wechat-reward.png" alt="YoungDone(B.S.) WeChat Pay"
+                        />
+                        <p>微信打赏</p>
+                      </div>
+
+                      <div id="alipay" style="display: inline-block">
+                        <img id="alipay_qr" src="/uploads/qrcode/alipay-reward.jpg" alt="YoungDone(B.S.) Alipay"
+                        />
+                        <p>支付宝打赏</p>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+
+                <div>
+
+                  <ul class="post-copyright">
+                    <li class="post-copyright-author">
+                      <strong>本文作者：</strong>
+                      YoungDone(B.S.)
+                    </li>
+                    <li class="post-copyright-link">
+                      <strong>本文链接：</strong>
+                      <a href="/2017/06/24/饥饿鲨：进化去so签名验证Android内购破解/" title="饥饿鲨：进化去so签名验证Android内购破解">/2017/06/24/饥饿鲨：进化去so签名验证Android内购破解/</a>
+                    </li>
+                    <li class="post-copyright-license">
+                      <strong>版权声明： </strong>
+                      本博客所有文章除特别声明外，均采用
+                      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                                                                                                      rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+                    </li>
+                  </ul>
+
+                </div>
+
+                <footer class="post-footer">
+
+                  <div class="post-tags">
+
+                    <a href="/tags/逆向工程-Reverse-Engineering/" rel="tag"># 逆向工程(Reverse Engineering)</a>
+
+                    <a href="/tags/破解-Crack/" rel="tag"># 破解(Crack)</a>
+
+                    <a href="/tags/android/" rel="tag"># android</a>
+
+                    <a href="/tags/内购/" rel="tag"># 内购</a>
+
+                    <a href="/tags/Crack/" rel="tag"># Crack</a>
+
+                    <a href="/tags/去签名验证/" rel="tag"># 去签名验证</a>
+
+                    <a href="/tags/so签名验证/" rel="tag"># so签名验证</a>
+
+                    <a href="/tags/native/" rel="tag"># native</a>
+
+                    <a href="/tags/jadx/" rel="tag"># jadx</a>
+
+                    <a href="/tags/java/" rel="tag"># java</a>
+
+                    <a href="/tags/android-killer/" rel="tag"># android killer</a>
+
+                    <a href="/tags/smali/" rel="tag"># smali</a>
+
+                  </div>
+
+                  <div class="post-nav">
+                    <div class="post-nav-next post-nav-item">
+
+                      <a href="/2017/06/14/yodo1偶滴神(最SB塔防)Android内购破解/" rel="next" title="yodo1偶滴神(最SB塔防)Android内购破解">
+                        <i class="fa fa-chevron-left"></i> yodo1偶滴神(最SB塔防)Android内购破解
+                      </a>
+
+                    </div>
+
+                    <span class="post-nav-divider"></span>
+
+                    <div class="post-nav-prev post-nav-item">
+
+                      <a href="/2017/06/26/火柴人联盟去签名验证去广告Android内购破解/" rel="prev" title="火柴人联盟去签名验证去广告Android内购破解">
+                        火柴人联盟去签名验证去广告Android内购破解
+                        <i class="fa fa-chevron-right"></i>
+                      </a>
+
+                    </div>
+                  </div>
+
+                </footer>
+              </article>
+
+              <div class="post-spread">
+
+                <script>
+                  window._bd_share_config = {
+                    "common": {
+                      "bdText": "",
+                      "bdMini": "1",
+                      "bdMiniList": false,
+                      "bdPic": ""
+                    },
+                    "image": {
+                      "viewList": ["tsina", "douban", "sqq", "qzone",
+                        "weixin", "twi", "fbook"
+                      ],
+                      "viewText": "分享到：",
+                      "viewSize": "16"
+                    },
+                    "slide": {
+                      "bdImg": "5",
+                      "bdPos": "left",
+                      "bdTop": "100"
+                    }
+                  }
+
+                </script>
+
+                <script>
+                  with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(
+                      createElement('script')).src =
+                    '//bdimg.share.baidu.com/static/api/js/share.js?cdnversion=' +
+                    ~(-new Date() / 36e5)];
+
+                </script>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="comments" id="comments">
+
+            <div id="lv-container" data-id="city" data-uid="MTAyMC8yODcwNi81Mjc3"></div>
+
+          </div>
+
+        </div>
+
+        <div class="sidebar-toggle">
+          <div class="sidebar-toggle-line-wrap">
+            <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+            <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+            <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+          </div>
+        </div>
+
+        <aside id="sidebar" class="sidebar">
+          <div class="sidebar-inner">
+
+            <ul class="sidebar-nav motion-element">
+              <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+                文章目录
+              </li>
+              <li class="sidebar-nav-overview" data-target="site-overview">
+                站点概览
+              </li>
+            </ul>
+
+            <section class="site-overview sidebar-panel">
+              <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="YoungDone(B.S.)"
+                />
+                <p class="site-author-name" itemprop="name">YoungDone(B.S.)</p>
+
+                <p class="site-description motion-element" itemprop="description">An My GitHub Hexo Blog. http://www.appleos.xyz</p>
+
+              </div>
+              <nav class="site-state motion-element">
+
+                <div class="site-state-item site-state-posts">
+                  <a href="/archives">
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    <span class="site-state-item-count">54</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+
+              </nav>
+
+              <div class="feed-link motion-element">
+                <a href="/atom.xml" rel="alternate">
+                  <i class="fa fa-rss"></i>
+                  RSS
+                </a>
+              </div>
+
+              <div class="links-of-author motion-element">
+
+                <span class="links-of-author-item">
+                  <a href="https://github.com/iDone/" target="_blank" title="GitHub">
+
+                    <i class="fa fa-fw fa-github"></i>
+
+                    GitHub
+                  </a>
+                </span>
+
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/iYoungDone/" target="_blank" title="Twitter">
+
+                    <i class="fa fa-fw fa-twitter"></i>
+
+                    Twitter
+                  </a>
+                </span>
+
+                <span class="links-of-author-item">
+                  <a href="" target="_blank" title="Facebook">
+
+                    <i class="fa fa-fw fa-facebook"></i>
+
+                    Facebook
+                  </a>
+                </span>
+
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com/u/0/115713567264921192616" target="_blank" title="Google">
+
+                    <i class="fa fa-fw fa-google"></i>
+
+                    Google
+                  </a>
+                </span>
+
+                <span class="links-of-author-item">
+                  <a href="https://weibo.com/82done/" target="_blank" title="Weibo">
+
+                    <i class="fa fa-fw fa-weibo"></i>
+
+                    Weibo
+                  </a>
+                </span>
+
+                <span class="links-of-author-item">
+                  <a href="/uploads/qrcode/wechat-qrcode.jpg" target="_blank" title="Weixin">
+
+                    <i class="fa fa-fw fa-weixin"></i>
+
+                    Weixin
+                  </a>
+                </span>
+
+                <span class="links-of-author-item">
+                  <a href="mailto:272253042@qq.com" target="_blank" title="Mail">
+
+                    <i class="fa fa-fw fa-envelope"></i>
+
+                    Mail
+                  </a>
+                </span>
+
+                <span class="links-of-author-item">
+                  <a href="" target="_blank" title="LinkedIn">
+
+                    <i class="fa fa-fw fa-linkedin"></i>
+
+                    LinkedIn
+                  </a>
+                </span>
+
+              </div>
+
+              <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+                <div class="links-of-blogroll-title">
+                  <i class="fa  fa-fw fa-globe"></i>
+                  Links
+                </div>
+                <ul class="links-of-blogroll-list">
+
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.appleos.xyz/" title="Blog" target="_blank">Blog</a>
+                  </li>
+
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hexo.io/" title="Hexo" target="_blank">Hexo</a>
+                  </li>
+
+                  <li class="links-of-blogroll-item">
+                    <a href="https://pages.github.com/" title="GitHub Pages" target="_blank">GitHub Pages</a>
+                  </li>
+
+                  <li class="links-of-blogroll-item">
+                    <a href="http://iissnan.com/" title="iissnan" target="_blank">iissnan</a>
+                  </li>
+
+                  <li class="links-of-blogroll-item">
+                    <a href="http://litten.me/" title="litten" target="_blank">litten</a>
+                  </li>
+
+                  <li class="links-of-blogroll-item">
+                    <a href="http://moxfive.xyz/" title="MOxFIVE" target="_blank">MOxFIVE</a>
+                  </li>
+
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.allin1.xyz/" title="allin1.xyz" target="_blank">allin1.xyz</a>
+                  </li>
+
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.appleos.xyz/" title="appleos.xyz" target="_blank">appleos.xyz</a>
+                  </li>
+
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.8idone.com/" title="8idone.com" target="_blank">8idone.com</a>
+                  </li>
+
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.a2ons.com/" title="a2ons.com" target="_blank">a2ons.com</a>
+                  </li>
+
+                </ul>
+              </div>
+
+            </section>
+
+            <!--noindex-->
+            <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+              <div class="post-toc">
+
+                <div class="post-toc-content">
+                  <ol class="nav">
+                    <li class="nav-item nav-level-3">
+                      <a class="nav-link" href="#1-内购破解">
+                        <span class="nav-number">1.</span>
+                        <span class="nav-text">
+                          1. 内购破解:</span>
+                      </a>
+                    </li>
+                    <li class="nav-item nav-level-3">
+                      <a class="nav-link" href="#2-去so签名验证">
+                        <span class="nav-number">2.</span>
+                        <span class="nav-text">
+                          2. 去so签名验证:</span>
+                      </a>
+                    </li>
+                    <li class="nav-item nav-level-3">
+                      <a class="nav-link" href="#3-添加版权自定义提示等信息">
+                        <span class="nav-number">3.</span>
+                        <span class="nav-text">
+                          3. 添加版权自定义提示等信息</span>
+                      </a>
+                    </li>
+                    <li class="nav-item nav-level-3">
+                      <a class="nav-link" href="#4-统一支付接口">
+                        <span class="nav-number">4.</span>
+                        <span class="nav-text">
+                          4. 统一支付接口</span>
+                      </a>
+                    </li>
+                  </ol>
+                </div>
+
+              </div>
+            </section>
+            <!--/noindex-->
+
+            <div class="back-to-top">
+              <i class="fa fa-arrow-up"></i>
+
+              <span id="scrollpercent">
+                <span>0</span>%</span>
+
+            </div>
+
+          </div>
+        </aside>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+
+          &copy; 2006 -
+          <span itemprop="copyrightYear">2017</span>
+          <span class="with-love">
+            <i class="fa fa-heart"></i>
+          </span>
+          <span class="author" itemprop="copyrightHolder">YoungDone(B.S.)</span>
+        </div>
+
+        <div class="powered-by">
+          由
+          <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+        </div>
+
+        <div class="theme-info">
+          主题 -
+          <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+            NexT.Pisces
+          </a>
+        </div>
+
+        <div class="busuanzi-count">
+          <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+          <span class="site-uv">
+            <i class="fa fa-user"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+
+          </span>
+
+          <span class="site-pv">
+            <i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+
+          </span>
+
+        </div>
+
+      </div>
+    </footer>
+
+  </div>
+
+  <script type="text/javascript">
+    if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+      window.Promise = null;
+    }
+
+  </script>
+
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+      if (typeof LivereTower === 'function') {
+        return;
+      }
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+
+  </script>
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+    var onPopupClose = function(e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append(
+          '<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css(
+        'text-align', 'center');
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(
+                  /<[^>]+>/g, "");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if (title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text,
+                      caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0,
+                        position = [],
+                        index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word,
+                          startPosition)) > -1) {
+                        index.push({
+                          position: position,
+                          word: word
+                        });
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+                    indexOfTitle = indexOfTitle.concat(
+                      getIndexByWord(keyword,
+                        titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(
+                      getIndexByWord(keyword,
+                        contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length >
+                    0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length +
+                      indexOfContent.length;
+                  }
+                }
+                // show search results
+                if (isMatch) {
+                  // sort index by position of keyword
+                  [indexOfTitle, indexOfContent].forEach(function(
+                    index) {
+                    index.sort(function(itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft
+                        .position) {
+                        return itemRight.position -
+                          itemLeft.position;
+                      } else {
+                        return itemLeft.word.length -
+                          itemRight.word.length;
+                      }
+                    });
+                  });
+                  // merge hits into slices
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index
+                      .length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({
+                        position: position,
+                        length: word.length
+                      });
+                      var wordEnd = position + word.length;
+                      // move to next position of hit
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0,
+                      title.length, indexOfTitle));
+                  }
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length -
+                      1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if (start < 0) {
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if (end > content.length) {
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content,
+                      start, end, indexOfContent));
+                  }
+                  // sort slices in content by search text's count and hits' count
+                  slicesOfContent.sort(function(sliceLeft,
+                    sliceRight) {
+                    if (sliceLeft.searchTextCount !==
+                      sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount -
+                        sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !==
+                      sliceRight.hits.length) {
+                      return sliceRight.hits.length -
+                        sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+                  // select top N slices in content
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0,
+                      upperBound);
+                  }
+                  // highlight title and content
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function(hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' +
+                        text.substring(hit.position, end) +
+                        '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+                  var resultItem = '';
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl +
+                      "' class='search-result-title'>" +
+                      highlightKeyword(title, slicesOfTitle[0]) +
+                      "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl +
+                      "' class='search-result-title'>" + title +
+                      "</a>";
+                  }
+                  slicesOfContent.forEach(function(slice) {
+                    resultItem += "<a href='" + articleUrl +
+                      "'>" +
+                      "<p class=\"search-result\">" +
+                      highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML =
+                '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML =
+                '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function(resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft
+                    .searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList =
+                '<ul class=\"search-result-list\">';
+              resultItems.forEach(function(result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+          if ('auto' === 'manual') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function(event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+          proceedsearch();
+        }
+      });
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function(event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+  </script>
+
+  <script type="text/javascript" src="/js/src/exturl.js?v=5.1.1"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() { var all = MathJax.Hub.getAllJax(), i; for(i=0; i
+  <
+                                                                                  all.length; i +=1 ) { all[i].SourceElement().parentNode.className +=' has-jax'
+                                                                                  ; } }); </script>
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+
+
+    </script>
+    <!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+</body>
+
+</html>

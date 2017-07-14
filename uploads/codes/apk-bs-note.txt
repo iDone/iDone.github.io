@@ -1,0 +1,2414 @@
+================================================================================
+滑雪大冒险 v2.3.5
+滑雪大冒险2
+
+去广告
+
+.class public Lcom/yodo1/android/sdk/unity/UnityYodo1Advertising;
+.super Ljava/lang/Object;
+.source "UnityYodo1Advertising.java"
+
+5个广告相关的函数都是void类型的,直接返回即可移除广告.
+
+.method public showBannerAd(Ljava/lang/String;Ljava/lang/String;)V
+.method public showIapInterstitialAd(Ljava/lang/String;Ljava/lang/String;)V
+.method public showInterstitialAd(Ljava/lang/String;Ljava/lang/String;)V
+.method public showNativeAd(Ljava/lang/String;FFFFLjava/lang/String;)V
+
+.method public showRewardVideo(Ljava/lang/String;Ljava/lang/String;)V
+
+.method public SplashAd(Ljava/lang/String;Ljava/lang/String;)V
+
+
+.method public showInterstitialAd(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 2
+    .param p1, "gameObject"    # Ljava/lang/String;
+    .param p2, "callbackName"    # Ljava/lang/String;
+
+    .prologue
+    .line 95
+    const-string v0, "Yodo1SDK, Unity call Android --- showInterstitialAd ...B.S.移除插播式广告"
+
+    invoke-static {v0}, Lcom/yodo1/sdk/kit/YLog;->d(Ljava/lang/String;)V
+    return-void #直接返回
+    .line 96
+    invoke-static {}, Lcom/yodo1/android/sdk/unity/UnityYodo1SDK;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/yodo1/android/sdk/unity/UnityYodo1Advertising$3;
+
+    invoke-direct {v1, p0, p1, p2}, Lcom/yodo1/android/sdk/unity/UnityYodo1Advertising$3;-><init>(Lcom/yodo1/android/sdk/unity/UnityYodo1Advertising;Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
+
+    .line 113
+    return-void
+.end method
+
+
+.method public SplashAd(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 2
+    .param p1, "gameObject"    # Ljava/lang/String;
+    .param p2, "callbackName"    # Ljava/lang/String;
+
+    .prologue
+    .line 156
+    const-string v0, "Yodo1SDK, Unity call Android --- SplashAd ...B.S.移除启动界面广告"
+
+    invoke-static {v0}, Lcom/yodo1/sdk/kit/YLog;->d(Ljava/lang/String;)V
+    return-void #直接返回
+    .line 157
+
+    return-void
+.end method
+
+
+.class public Lcom/yodo1/android/sdk/open/Yodo1Advert;
+.super Ljava/lang/Object;
+.source "Yodo1Advert.java"
+
+.class public Lcom/yodo1/android/sdk/unity/UnityYodo1Advertising;
+.super Ljava/lang/Object;
+.source "UnityYodo1Advertising.java"
+
+
+签名验证
+
+sdk_code串为 : 
+
+.class public Lcom/yodo1/sdk/adapter/ChannelAdapterFactory;
+.super Ljava/lang/Object;
+.source "ChannelAdapterFactory.java"
+
+.method public initChannelAdapters(Landroid/content/Context;)V
+
+
+
+
+Yodo1Analytics, 验证签名失败! 将导致统计全部失效, 请检查你的包签名
+
+
+[发布渠道] :
+
+.class public Lcom/yodo1/android/ops/net/Yodo1OPSBuilder;
+.super Ljava/lang/Object;
+.source "Yodo1OPSBuilder.java"
+
+
+[OPS - GameAppKey] : 1Kiq09tiwV
+[OPS - RegionCode] : e2e652cf
+
+.class public Lcom/yodo1/android/sdk/helper/Yodo1AnalyticsHelper;
+.super Ljava/lang/Object;
+.source "Yodo1AnalyticsHelper.java"
+
+.method private check()V
+
+.class public Lcom/yodo1/android/sdk/helper/Yodo1AnalyticsHelper;
+.super Ljava/lang/Object;
+.source "Yodo1AnalyticsHelper.java"
+
+com.yodo1.android.sdk.exception.Yodo1CheckSignException: 检测到包签名无效， 统计功能将不能生效
+
+.class public Lcom/yodo1/android/sdk/exception/Yodo1CheckSignException;
+.super Ljava/lang/Exception;
+.source "Yodo1CheckSignException.java"
+
+
+内购破解
+
+删除收费权限
+
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+
+BillingResult.SUCCESS
+
+移动接口
+
+计费点  ：
+支付  SUCCESS
+
+.method public onResult(ILjava/lang/String;Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    .line 43
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_1  #:pswitch_1   #成功
+        :pswitch_1  #:pswitch_0   #失败
+        :pswitch_1  #:pswitch_2   #取消
+    .end packed-switch
+
+	
+为保护您的支付安全，请确保您的网络连接!
+	
+直接购买成功回调处理
+
+.class public Lcom/yodo1/sdk/pay/PayAdapterCMCC;
+.super Lcom/yodo1/sdk/adapter/function/PayAdapterBase;
+.source "PayAdapterCMCC.java"
+
+
+YLog.e("支付  SUCCESS");	
+this.val$callback.onResult(1, 0, "");
+return;	
+
+
+const/4 v3, 0x0
+
+.line 34
+const/4 v1, 0x1  #const/4 v1, 0x0  #修改这里的掉函数参数为0x1能离线购买直接成功
+
+const/4 v2, 0x0
+
+const-string v3, ""
+
+move-object/from16 v0, p6
+
+invoke-interface {v0, v1, v2, v3}, Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;->onResult(IILjava/lang/String;)V
+
+.line 36
+const-string v1, "\u4e3a\u4fdd\u62a4\u60a8\u7684\u652f\u4ed8\u5b89\u5168\uff0c\u8bf7\u786e\u4fdd\u60a8\u7684\u7f51\u7edc\u8fde\u63a5!"
+
+const/4 v2, 0x0
+
+invoke-static {p1, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+
+move-result-object v1
+
+invoke-virtual {v1}, Landroid/widget/Toast;->show()V
+
+.line 55
+:goto_0
+return-void
+
+
+
+.line 48
+:cond_1
+const-string v0, "\u652f\u4ed8  SUCCESS"
+
+invoke-static {v0}, Lcom/yodo1/sdk/kit/YLog;->e(Ljava/lang/String;)V
+
+.line 49
+iget-object v0, p0, Lcom/yodo1/sdk/basic/CmccIniter$1;->val$callback:Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;
+
+if-eqz v0, :cond_0
+
+.line 50
+iget-object v0, p0, Lcom/yodo1/sdk/basic/CmccIniter$1;->val$callback:Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;
+
+const/4 v1, 0x1
+
+const-string v2, ""
+
+invoke-interface {v0, v1, v3, v2}, Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;->onResult(IILjava/lang/String;)V
+
+goto :goto_0	
+
+ChannelSDKCallback回调大法上,强势秒杀,通杀
+
+java源码为
+
+public void pay(Activity activity, ChannelPayInfo payInfo, Element payElement, String extraParam, ChannelSDKUser user, ChannelSDKCallback callback) {
+        callback.onResult(1, 0, "");
+        Toast.makeText(activity, "无限内购B.S.破解版\n  www.appleos.xyz \n  爱淫荡  多合一 \n  www.allin1.xyz \n  -- by B.S.", 0).show();
+    }
+	
+java反汇编smali源码为
+
+    .line 52
+    :cond_1
+    #invoke-static/range {p1 .. p6}, Lcom/yodo1/sdk/basic/CmccIniter;->pay(Landroid/app/Activity;Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;Lorg/w3c/dom/Element;Ljava/lang/String;Lcom/yodo1/sdk/adapter/entity/ChannelSDKUser;Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;)V
+    
+       
+    ###### 
+    const/4 v1, 0x1  #修改这里的回调函数参数1为0x1能购买直接成功
+
+    const/4 v2, 0x0
+
+    const-string v3, ""
+
+    move-object/from16 v0, p6
+
+    invoke-interface {v0, v1, v2, v3}, Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;->onResult(IILjava/lang/String;)V
+
+    .line 36
+    const-string v1, "\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n  www.appleos.xyz \n  \u7231\u6DEB\u8361  \u591A\u5408\u4E00 \n  www.allin1.xyz \n  -- by B.S."
+
+    const/4 v2, 0x0
+
+    invoke-static {p1, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/widget/Toast;->show()V
+
+    ######return-void  
+    ######
+
+    goto :goto_0
+.end method
+
+
+
+
+
+
+电信支付
+
+计费点id	
+
+.class Lcom/yodo1/sdk/pay/PayAdapterTelecom3C$1;
+.super Ljava/lang/Object;
+.source "PayAdapterTelecom3C.java"
+
+payCancel,payFailed的函数体换成paySuccess.其实只需要改回调函数onResult第一个参数为1就行.
+
+public void paySuccess(Map<String, String> paramAnonymousMap)
+	{
+	  if (paramChannelSDKCallback != null) {
+		paramChannelSDKCallback.onResult(1, 0, paramString);
+	  }
+	}
+
+联通支付
+
+unicom pay
+
+计费点id
+
+
+
+短信支付
+
+Yodo1SDK, Unity call Android --- sendGoods ...
+
+
+
+
+
+微信支付
+
+小米支付  Wechat 计费点：
+
+小米支付  Wechat  是否可重复购买：
+
+小米支付, callback , msg = 没有安装客户端, i = 809
+
+
+.method private payForWechat(Landroid/app/Activity;Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;)V
+    .locals 12
+    .param p1, "activity"    # Landroid/app/Activity;
+    .param p2, "payInfo"    # Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;
+    .param p3, "callback"    # Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;
+
+	
+.line 192
+new-instance v2, Lcom/yodo1/sdk/pay/PayAdapterXiaomi$4;
+
+
+.class Lcom/yodo1/sdk/pay/PayAdapterXiaomi$4;
+.super Ljava/lang/Object;
+.source "PayAdapterXiaomi.java"
+
+# interfaces
+.implements Lcom/xiaomi/gamecenter/awpay/PayResultCallback;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/yodo1/sdk/pay/PayAdapterXiaomi;->payForWechat(Landroid/app/Activity;Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;)V
+.end annotation
+
+找出回调成功的代码,合并处理this指针
+
+.method public onSuccess(Ljava/lang/String;)V
+    .locals 4
+    .param p1, "s"    # Ljava/lang/String;
+
+    .prologue
+    .line 203
+    iget-object v0, p0, Lcom/yodo1/sdk/pay/PayAdapterXiaomi$4;->val$callback:Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;
+
+    if-eqz v0, :cond_BS
+
+    .line 204
+    iget-object v0, p0, Lcom/yodo1/sdk/pay/PayAdapterXiaomi$4;->val$callback:Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    iget-object v3, p0, Lcom/yodo1/sdk/pay/PayAdapterXiaomi$4;->val$orderId:Ljava/lang/String;
+
+    invoke-interface {v0, v1, v2, v3}, Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;->onResult(IILjava/lang/String;)V
+
+    .line 206
+    :cond_BS
+    return-void
+.end method
+
+处理后为
+
+    .line 191
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "\u5c0f\u7c73\u652f\u4ed8  Wechat  \u662f\u5426\u53ef\u91cd\u590d\u8d2d\u4e70\uff1a "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {p2}, Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;->isRepeated()Z
+
+    move-result v7
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v6}, Lcom/yodo1/sdk/kit/YLog;->i(Ljava/lang/String;)V
+
+    .line 192
+    #new-instance v2, Lcom/yodo1/sdk/pay/PayAdapterXiaomi$4;
+
+    #invoke-direct {v2, p0, p3, v1}, Lcom/yodo1/sdk/pay/PayAdapterXiaomi$4;-><init>(Lcom/yodo1/sdk/pay/PayAdapterXiaomi;Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;Ljava/lang/String;)V
+    
+    ######
+    if-eqz p3, :cond_BS  #这里填入ChannelSDKCallback参数
+    
+    const/4 v3, 0x1  #修改这里的回调函数参数1为0x1能购买直接成功
+    
+    const/4 v2, 0x0
+    
+    #const-string v3, ""  #String orderId
+    
+    move-object/from16 v0, p3  #这里填入ChannelSDKCallback参数
+    
+    #前面的.local v1, "orderId":Ljava/lang/String;
+    invoke-interface {v0, v3, v2, v1}, Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;->onResult(IILjava/lang/String;)V
+    
+    const-string v1, "\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n  www.appleos.xyz \n  \u7231\u6DEB\u8361  \u591A\u5408\u4E00 \n  www.allin1.xyz \n  -- by B.S."
+    
+    const/4 v2, 0x0
+    
+    invoke-static {p1, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    
+    move-result-object v1
+    
+    invoke-virtual {v1}, Landroid/widget/Toast;->show()V
+    
+    :cond_BS
+    return-void  
+    ######
+
+
+
+
+支付宝支付
+
+小米支付  Alipay  计费点：
+
+小米支付  Alipay  是否可重复购买：
+
+小米支付  可重复购买  计费点购买
+
+.method private payForAlipay(Landroid/app/Activity;Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;)V
+    .locals 12
+    .param p1, "activity"    # Landroid/app/Activity;
+    .param p2, "payInfo"    # Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;
+    .param p3, "callback"    # Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;
+
+
+    .line 136
+    new-instance v2, Lcom/yodo1/sdk/pay/PayAdapterXiaomi$3;
+
+    invoke-direct {v2, p0, p3, v1}, Lcom/yodo1/sdk/pay/PayAdapterXiaomi$3;-><init>(Lcom/yodo1/sdk/pay/PayAdapterXiaomi;Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;Ljava/lang/String;)V
+	
+
+	
+.class Lcom/yodo1/sdk/pay/PayAdapterXiaomi$3;
+.super Ljava/lang/Object;
+.source "PayAdapterXiaomi.java"
+
+# interfaces
+.implements Lcom/xiaomi/gamecenter/awpay/PayResultCallback;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/yodo1/sdk/pay/PayAdapterXiaomi;->payForAlipay(Landroid/app/Activity;Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;)V
+.end annotation
+	
+	
+
+搬迁里面的回调函数里的成功代码到.line 136的new-instance v2, Lcom/yodo1/sdk/pay/PayAdapterXiaomi$3;
+
+最终修改为
+
+    .line 136
+    #new-instance v2, Lcom/yodo1/sdk/pay/PayAdapterXiaomi$3;
+
+    #invoke-direct {v2, p0, p3, v1}, Lcom/yodo1/sdk/pay/PayAdapterXiaomi$3;-><init>(Lcom/yodo1/sdk/pay/PayAdapterXiaomi;Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;Ljava/lang/String;)V
+    
+    ######
+    if-eqz p3, :cond_BS  #这里填入ChannelSDKCallback参数
+    
+    const/4 v3, 0x1  #修改这里的回调函数参数1为0x1能购买直接成功
+    
+    const/4 v2, 0x0
+    
+    #const-string v3, ""  #String orderId
+    
+    move-object/from16 v0, p3  #这里填入ChannelSDKCallback参数
+    
+    #前面的.local v1, "orderId":Ljava/lang/String;
+    invoke-interface {v0, v3, v2, v1}, Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;->onResult(IILjava/lang/String;)V
+    
+    const-string v1, "\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n  www.appleos.xyz \n  \u7231\u6DEB\u8361  \u591A\u5408\u4E00 \n  www.allin1.xyz \n  -- by B.S."
+    
+    const/4 v2, 0x0
+    
+    invoke-static {p1, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    
+    move-result-object v1
+    
+    invoke-virtual {v1}, Landroid/widget/Toast;->show()V
+    
+    :cond_BS
+    return-void  
+    ######
+    
+
+    .line 152
+    .local v2, "payCallback":Lcom/xiaomi/gamecenter/awpay/PayResultCallback;
+
+
+	
+	
+
+
+EGL_adreno
+
+eglSurfaceAttrib not implemented
+
+KTPlayCallStack
+
+onPause
+
+cn.cmgame.d.a
+
+went background
+
+cn.cmgame.d.a
+
+went foreground
+
+
+KTPlayCallStack
+
+onResume
+
+
+米币支付
+
+Yodo1SDK, Activity onStart end, time = 
+
+Service Connected
+
+disconnect:
+
+.class public final Lcom/xiaomi/gamecenter/sdk/MiCommplatform;
+.super Ljava/lang/Object;
+
+
+Lcom/xiaomi/gamecenter/awpay/PayResultCallback;
+
+
+.class Lcom/anysdk/framework/IAPOnlineXiaoMi$5;
+.super Ljava/lang/Object;
+.source "IAPOnlineXiaoMi.java
+
+.class public Lcom/anysdk/framework/IAPOnlineXiaoMi;
+.super Ljava/lang/Object;
+.source "IAPOnlineXiaoMi.java"
+
+
+米币离线线支付在下面位置改成相应代码
+
+.method public payOffline(Landroid/app/Activity;Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;)V
+    .locals 7
+    .param p1, "activity"    # Landroid/app/Activity;
+    .param p2, "payInfo"    # Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;
+    .param p3, "callback"    # Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;
+
+    .line 331
+    #invoke-static {}, Lcom/xiaomi/gamecenter/sdk/MiCommplatform;->getInstance()Lcom/xiaomi/gamecenter/sdk/MiCommplatform;
+
+    #move-result-object v4
+
+    #new-instance v5, Lcom/yodo1/sdk/pay/PayAdapterXiaomi$7;
+
+    #invoke-direct {v5, p0, p3, v3}, Lcom/yodo1/sdk/pay/PayAdapterXiaomi$7;-><init>(Lcom/yodo1/sdk/pay/PayAdapterXiaomi;Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;Ljava/lang/String;)V
+
+    #invoke-virtual {v4, p1, v2, v5}, Lcom/xiaomi/gamecenter/sdk/MiCommplatform;->miUniPayOffline(Landroid/app/Activity;Lcom/xiaomi/gamecenter/sdk/entry/MiBuyInfoOffline;Lcom/xiaomi/gamecenter/sdk/OnPayProcessListener;)I
+    
+    ######
+    if-eqz p3, :cond_BS  #这里填入ChannelSDKCallback参数
+    
+    const/4 v1, 0x1  #修改这里的回调函数参数1为0x1能购买直接成功
+    
+    const/4 v2, 0x0
+    
+    #const-string v3, ""  #String orderId
+    
+    move-object/from16 v0, p3  #这里填入ChannelSDKCallback参数
+    
+    #前面的.local v3, "orderId":Ljava/lang/String;
+    invoke-interface {v0, v1, v2, v3}, Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;->onResult(IILjava/lang/String;)V
+    
+    const-string v1, "\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n  www.appleos.xyz \n  \u7231\u6DEB\u8361  \u591A\u5408\u4E00 \n  www.allin1.xyz \n  -- by B.S."
+    
+    const/4 v2, 0x0
+    
+    invoke-static {p1, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    
+    move-result-object v1
+    
+    invoke-virtual {v1}, Landroid/widget/Toast;->show()V
+    
+    :cond_BS
+    return-void  
+    ######
+
+米币在线支付最终修改如下	
+	
+.method public payOnline(Landroid/app/Activity;Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;Lcom/yodo1/sdk/adapter/entity/ChannelSDKUser;Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;)V
+    .locals 7
+    .param p1, "activity"    # Landroid/app/Activity;
+    .param p2, "payInfo"    # Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;
+    .param p3, "user"    # Lcom/yodo1/sdk/adapter/entity/ChannelSDKUser;
+    .param p4, "callback"    # Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;
+
+    .prologue
+    .line 243
+    invoke-virtual {p2}, Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;->getOrderId()Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 245
+    .local v3, "orderId":Ljava/lang/String;
+    new-instance v2, Lcom/xiaomi/gamecenter/sdk/entry/MiBuyInfoOnline;
+
+    invoke-direct {v2}, Lcom/xiaomi/gamecenter/sdk/entry/MiBuyInfoOnline;-><init>()V
+
+    .line 246
+    .local v2, "online":Lcom/xiaomi/gamecenter/sdk/entry/MiBuyInfoOnline;
+    invoke-virtual {v2, v3}, Lcom/xiaomi/gamecenter/sdk/entry/MiBuyInfoOnline;->setCpOrderId(Ljava/lang/String;)V
+
+    .line 247
+    const-string v4, "http://payment.api.yodo1.cn/payment/channel/XIAOMI/callback"
+
+    invoke-virtual {v2, v4}, Lcom/xiaomi/gamecenter/sdk/entry/MiBuyInfoOnline;->setCpUserInfo(Ljava/lang/String;)V
+
+    .line 248
+    invoke-virtual {p2}, Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;->getProductPrice()D
+
+    move-result-wide v4
+
+    double-to-int v4, v4
+
+    invoke-virtual {v2, v4}, Lcom/xiaomi/gamecenter/sdk/entry/MiBuyInfoOnline;->setMiBi(I)V
+
+    .line 251
+    :try_start_0
+    new-instance v1, Landroid/os/Bundle;
+
+    invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
+
+    .line 252
+    .local v1, "mBundle":Landroid/os/Bundle;
+    const-string v4, "balance"
+
+    const-string v5, "0"
+
+    invoke-virtual {v1, v4, v5}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 253
+    const-string v4, "vip"
+
+    const-string v5, "0"
+
+    invoke-virtual {v1, v4, v5}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 254
+    const-string v4, "lv"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {p3}, Lcom/yodo1/sdk/adapter/entity/ChannelSDKUser;->getLevel()I
+
+    move-result v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string v6, ""
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v1, v4, v5}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 255
+    const-string v4, "partyName"
+
+    const-string v5, "\u730e\u4eba"
+
+    invoke-virtual {v1, v4, v5}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 256
+    const-string v4, "roleName"
+
+    invoke-virtual {p3}, Lcom/yodo1/sdk/adapter/entity/ChannelSDKUser;->getNickName()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v1, v4, v5}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 257
+    const-string v4, "roleId"
+
+    invoke-virtual {p3}, Lcom/yodo1/sdk/adapter/entity/ChannelSDKUser;->getUid()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v1, v4, v5}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 258
+    const-string v4, "serverName"
+
+    invoke-virtual {p3}, Lcom/yodo1/sdk/adapter/entity/ChannelSDKUser;->getGameServerId()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v1, v4, v5}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 261
+    #invoke-static {}, Lcom/xiaomi/gamecenter/sdk/MiCommplatform;->getInstance()Lcom/xiaomi/gamecenter/sdk/MiCommplatform;
+
+    #move-result-object v4
+
+    #new-instance v5, Lcom/yodo1/sdk/pay/PayAdapterXiaomi$5;
+
+    #invoke-direct {v5, p0, p4, v3}, Lcom/yodo1/sdk/pay/PayAdapterXiaomi$5;-><init>(Lcom/yodo1/sdk/pay/PayAdapterXiaomi;Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;Ljava/lang/String;)V
+
+    #invoke-virtual {v4, p1, v2, v1, v5}, Lcom/xiaomi/gamecenter/sdk/MiCommplatform;->miUniPayOnline(Landroid/app/Activity;Lcom/xiaomi/gamecenter/sdk/entry/MiBuyInfoOnline;Landroid/os/Bundle;Lcom/xiaomi/gamecenter/sdk/OnPayProcessListener;)I
+    
+    ######
+    if-eqz p3, :cond_BS  #这里填入ChannelSDKCallback参数
+    
+    const/4 v1, 0x1  #修改这里的回调函数参数1为0x1能购买直接成功
+    
+    const/4 v2, 0x0
+    
+    #const-string v3, ""  #String orderId
+    
+    move-object/from16 v0, p3  #这里填入ChannelSDKCallback参数
+    
+    #前面的.local v3, "orderId":Ljava/lang/String;
+    invoke-interface {v0, v1, v2, v3}, Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;->onResult(IILjava/lang/String;)V
+    
+    const-string v1, "\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n  www.appleos.xyz \n  \u7231\u6DEB\u8361  \u591A\u5408\u4E00 \n  www.allin1.xyz \n  -- by B.S."
+    
+    const/4 v2, 0x0
+    
+    invoke-static {p1, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    
+    move-result-object v1
+    
+    invoke-virtual {v1}, Landroid/widget/Toast;->show()V
+    
+    :cond_BS
+    goto :goto_0
+    ###return-void  
+    ######    
+    
+    
+    
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 293
+    .end local v1    # "mBundle":Landroid/os/Bundle;
+    :goto_0
+    return-void
+
+    .line 289
+    :catch_0
+    move-exception v0
+
+    .line 290
+    .local v0, "e":Ljava/lang/Exception;
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+
+    goto :goto_0
+.end method
+
+
+小米支付, callback , msg = 没有安装客户端, i = 809
+
+
+httpType = 1, submit str = {"sign":"51dae58ec391fa88234c8105e232f339","data":{"orderid":"6420c85f768944f0a6f41931658307dc"}}	
+response={"error_code":0,"error":"","status":0,"orderid":"6420c85f768944f0a6f41931658307dc"}	
+query order , queryResult = CONTINUE_LOOP_UNKNOWN
+query order unknown, continue loop
+
+callBack(Lcom/yodo1/android/ops/payment/QueryResult;Ljava/lang/String;)V
+
+	
+全部统一到移动支付接口
+
+cmcc UIAdapterCMCC
+
+cmcc  动态加载 megjb
+
+cmcc  动态加载成功
+
+.class public Lcom/yodo1/sdk/basic/BasicAdapterCMCC;
+.super Lcom/yodo1/sdk/adapter/function/BasicAdapterBase;
+.source "BasicAdapterCMCC.java"
+
+
+# instance fields
+.field private payAdapter:Lcom/yodo1/sdk/pay/PayAdapterCMCC;
+
+.field private uiAdapter:Lcom/yodo1/sdk/ui/UIAdapterCMCC;
+
+
+.method public onCreateApplication(Landroid/app/Application;)V
+
+返回值为0x1为移动支付
+
+
+.class public Lcom/yodo1/android/sdk/utils/YOperatorUtils;
+.super Ljava/lang/Object;
+.source "YOperatorUtils.java"
+
+
+.method public static getOperatorChannelId(Landroid/content/Context;)I
+
+
+.line 63
+:cond_0
+:goto_0
+#move v2, v3  #返回0x1,伪装为移动支付
+
+return v2
+
+.line 48
+:cond_1
+const-string v4, "phone"
+
+invoke-virtual {p0, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+move-result-object v1
+
+check-cast v1, Landroid/telephony/TelephonyManager;
+
+.line 49
+.local v1, "phoneManager":Landroid/telephony/TelephonyManager;
+invoke-virtual {v1}, Landroid/telephony/TelephonyManager;->getSubscriberId()Ljava/lang/String;
+
+move-result-object v0
+
+.line 50
+.local v0, "operator":Ljava/lang/String;
+if-eqz v0, :cond_0
+
+
+应该调用的是下面这个
+
+.class public Lcom/yodo1/advert/utils/Yodo1OperatorUtils;
+.super Ljava/lang/Object;
+.source "Yodo1OperatorUtils.java"
+
+
+.method public static getOperatorType(Landroid/content/Context;)I
+
+还可统一各支付平台
+
+private void channelPay(Activity activity, ChannelPayInfo payInfo, Platform type, ChannelSDKUser user, ChannelSDKCallback callback) {
+	if (type == Platform.WECHAT) {
+		payForWechat(activity, payInfo, callback);
+	} else if (type == Platform.ALIPAY) {
+		payForAlipay(activity, payInfo, callback);
+	} else if ("online" == SdkConfigXiaomi.NETWORKING) {
+		payOnline(activity, payInfo, user, callback);
+	} else {
+		payOffline(activity, payInfo, callback);
+	}
+
+强大的ChannelSDKCallback回调大法	
+	
+.method private channelPay(Landroid/app/Activity;Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;Lcom/yodo1/sdk/adapter/callback/Yodo1PayViewCallback$Platform;Lcom/yodo1/sdk/adapter/entity/ChannelSDKUser;Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;)V
+    .locals 2
+    .param p1, "activity"    # Landroid/app/Activity;
+    .param p2, "payInfo"    # Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;
+    .param p3, "type"    # Lcom/yodo1/sdk/adapter/callback/Yodo1PayViewCallback$Platform;
+    .param p4, "user"    # Lcom/yodo1/sdk/adapter/entity/ChannelSDKUser;
+    .param p5, "callback"    # Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;
+
+    .prologue
+    .line 118
+    ######ChannelSDKCallback回调大法
+    if-eqz p5, :cond_BS  #这里填入ChannelSDKCallback参数
+    
+    const/4 v1, 0x1  #修改这里的回调函数参数1为0x1能购买直接成功
+    
+    const/4 v2, 0x0
+    
+    const-string v3, ""  #String orderId
+    
+    move-object/from16 v0, p5  #这里填入ChannelSDKCallback参数
+    
+    #前面的.local v3, "orderId":Ljava/lang/String;
+    invoke-interface {v0, v1, v2, v3}, Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;->onResult(IILjava/lang/String;)V
+    
+    const-string v1, "\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n  www.appleos.xyz \n  \u7231\u6DEB\u8361  \u591A\u5408\u4E00 \n  www.allin1.xyz \n  -- by B.S."
+    
+    const/4 v2, 0x0
+    
+    invoke-static {p1, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    
+    move-result-object v1
+    
+    invoke-virtual {v1}, Landroid/widget/Toast;->show()V
+    
+    :cond_BS
+    goto :goto_0
+    :goto_0
+    return-void  
+    ###### 
+.end method
+
+================================================================================
+
+割绳子2 微信QQ版
+
+sdk通知支付失败...... 
+sdk通知支付失败...... 
+
+======onResult=====sdk通知结果 : 取消, msg = a7a127f40e0a43b6b26c4a731680455f
+MidasNetFinish(Ljava/lang/String;Ljava/lang/String;)V
+.method public onResp(Lcom/tencent/mm/sdk/modelbase/BaseResp;)V
+APMidawxPayHelper
+Yodo1ResultConst.ResultCode.Failed
+Yodo1ResultConst.ResultCode.Cancel
+Yodo1ResultConst.ResultCode.Success
+
+
+.class Lcom/zeptolab/zframework/billing/ZYodo1BillingManager$1;
+.super Ljava/lang/Object;
+.source "ZYodo1BillingManager.java"
+
+
+.method public onResult(Lcom/yodo1/android/core/constants/Yodo1ResultConst$ResultType;Lcom/yodo1/android/core/constants/Yodo1ResultConst$ResultCode;Ljava/lang/String;)V
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/zeptolab/zframework/billing/ZYodo1BillingManager;->purchase(Ljava/lang/String;)V
+.end annotation
+
+.class public Lcom/zeptolab/zframework/billing/ZYodo1BillingManager;
+.super Lcom/zeptolab/zframework/billing/ZBillingManager;
+.source "ZYodo1BillingManager.java"
+
+.method public purchase(Ljava/lang/String;)V
+
+
+
+    ######直接支付成功,后面的pay支付回调函数全部删除或者注释掉.
+    ######从.class Lcom/zeptolab/zframework/billing/ZYodo1BillingManager$1;里的onResult搬过来的成功代码
+    .line 138
+    invoke-virtual {v1}, Lcom/yodo1/android/sdk/entity/Yodo1PayInfo;->getProductId()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/zeptolab/zframework/billing/ZYodo1BillingManager;->userPaySuccess(Ljava/lang/String;)V
+    ######
+
+
+	
+移动咪咕版
+
+.class final Lcom/zeptolab/zframework/billing/Yodo1SDKHelper$2;
+	
+.class public Lcom/zeptolab/zframework/billing/Yodo1SDKHelper;
+	
+.method public static pay(Ljava/lang/String;Lcom/yodo1/android/sdk/constants/PayType;)V
+
+    .line 730
+    :cond_BS
+    ######直接支付成功,后面的pay支付回调函数全部删除或者注释掉.
+    ######从.class final Lcom/zeptolab/zframework/billing/Yodo1SDKHelper$2;里的purchase搬过来的成功代码
+    .line 221
+    invoke-virtual {v1}, Lcom/yodo1/android/sdk/helper/ProductData;->getProductId()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/zeptolab/zframework/billing/Yodo1SDKHelper;->userPaySuccess(Ljava/lang/String;)V
+    ######
+
+--------------------------------------------------------------------------------
+割绳子2
+
+
+BillingResult.SUCCESS
+
+
+.class final Lcom/yodo1/sdk/basic/CmccIniter$1;
+.super Ljava/lang/Object;
+.source "CmccIniter.java"
+
+
+
+
+
+    public static void pay(Activity arg4, ChannelPayInfo arg5, Element arg6, String arg7, ChannelSDKUser arg8, ChannelSDKCallback arg9) {
+        String v0 = arg5.getChannelFid();
+        YLog.e("计费点  ：" + v0);
+        int v1 = arg5.isRepeated() ? 2 : 1;
+        GameInterface.doBilling(((Context)arg4), v1, v0, null, new GameInterface$IPayCallback(arg9) {
+            public void onResult(int arg5, String arg6, Object arg7) {
+                switch(arg5) {
+                    case 1: {
+                        YLog.e("支付  BillingResult.SUCCESS");
+                        if("10".equals(arg7.toString())) {
+                            if(this.val$callback == null) {
+                                return;
+                            }
+
+                            this.val$callback.onResult(0, 202, "");
+                            return;
+                        }
+
+                        YLog.e("支付  SUCCESS");
+                        if(this.val$callback == null) {
+                            return;
+                        }
+
+                        this.val$callback.onResult(1, 0, "");
+                        break;
+                    }
+                    case 3: {
+                        YLog.e("BillingResult.CANCELLED");
+                        if(this.val$callback == null) {
+                            return;
+                        }
+
+                        this.val$callback.onResult(2, 0, "");
+                        break;
+                    }
+                    default: {
+                        YLog.e("BillingResult.STATUS_FAILED  == " + arg5 + "   billingIndex :" + arg6);
+                        if(this.val$callback == null) {
+                            return;
+                        }
+
+                        this.val$callback.onResult(0, 0, "");
+                        break;
+                    }
+                }
+            }
+        });
+    }
+
+
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_1  #:pswitch_1  #SUCCESS  成功
+        :pswitch_1  #:pswitch_0  #STATUS_FAILED  失败
+        :pswitch_1  #:pswitch_2  #CANCELLED
+    .end packed-switch
+
+
+
+
+
+
+更改成功后
+
+    public static void pay(Activity arg4, ChannelPayInfo arg5, Element arg6, String arg7, ChannelSDKUser arg8, ChannelSDKCallback arg9) {
+        String v0 = arg5.getChannelFid();
+        YLog.e("计费点  ：" + v0);
+        int v1 = arg5.isRepeated() ? 2 : 1;
+        GameInterface.doBilling(((Context)arg4), v1, v0, null, new GameInterface$IPayCallback(arg9) {
+            public void onResult(int arg5, String arg6, Object arg7) {
+                switch(arg5) {
+                    case 1: 
+                    case 2: 
+                    case 3: {
+                        YLog.e("支付  BillingResult.SUCCESS");
+                        if(!"10".equals(arg7.toString())) {
+                            YLog.e("支付  SUCCESS");
+                            if(this.val$callback != null) {
+                                this.val$callback.onResult(1, 0, "");
+                            }
+                        }
+                        else if(this.val$callback != null) {
+                            this.val$callback.onResult(0, 202, "");
+                        }
+
+                        break;
+                    }
+                    default: {
+                        YLog.e("BillingResult.STATUS_FAILED  == " + arg5 + "   billingIndex :" + arg6);
+                        if(this.val$callback != null) {
+                            this.val$callback.onResult(0, 0, "");
+                        }
+
+                        break;
+                    }
+                }
+            }
+        });
+    }
+
+
+
+
+.class public Lcom/yodo1/android/sdk/utils/YOperatorUtils;
+.super Ljava/lang/Object;
+.source "YOperatorUtils.java"
+
+
+
+
+    public static int getOperatorChannelId(Context arg5) {
+        int v2 = 0;
+        if(!YOperatorUtils.isTablet(arg5)) {
+            Object v1 = arg5.getSystemService("phone");
+            String v0 = ((TelephonyManager)v1).getSubscriberId();
+            if(v0 != null && v0.length() >= 1 && ((TelephonyManager)v1).getSimState() != 1) {
+                if(!v0.startsWith("46000") && !v0.startsWith("46002") && !v0.startsWith("46007") && !v0.startsWith("46020")) {
+                    if(!v0.startsWith("46001") && !v0.startsWith("46006")) {
+                        if(!v0.startsWith("46003") && !v0.startsWith("46005") && !v0.startsWith("46011")) {
+                            return v2;
+                        }
+
+                        return 2;
+                    }
+
+                    return 4;
+                }
+
+                v2 = 1;
+            }
+        }
+
+        return v2;
+    }
+
+
+================================================================================
+
+饥饿鲨：进化 去so签名验证和内购破解
+
+v3.7.2.0
+v4.3.1.0
+
+\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n www.appleos.xyz \n-- by B.S.
+
+
+内购破解:
+
+搜索定位字符串,
+
+支付 测试:
+unity购买失败
+unity购买成功
+
+doCMCCBilling
+
+
+解析支付协议失败
+ourpalm_tip_prasecharginfoerror
+
+
+
+
+    .line 718
+    #可以不提示,解析支付协议失败,这里注意这个函数里16个寄存器都给用了
+    invoke-static {v1, v2, v3}, Lourpalm/android/view/Ourpalm_Toast;->makeText(Landroid/content/Context;Ljava/lang/String;I)V
+    
+    ######Toast显示自定义字符串
+    const-string v3, "\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n www.appleos.xyz \n-- by B.S."
+    move-object/from16 v2, v3
+    const/4 v3, 0x0
+    invoke-static {v1, v2, v3}, Lourpalm/android/view/Ourpalm_Toast;->makeText(Landroid/content/Context;Ljava/lang/String;I)V
+    ######
+
+
+
+在
+Ourpalm_Pay_FormSdk
+里
+
+
+跳过支付窗口
+
+    .line 714
+    goto :cond_4  #直接跳过下面的pay支付框 #if-eqz v1, :cond_4
+
+    .line 716
+    invoke-static {}, Lourpalm/android/channels/Ourpalm_Channels_Manage;->getInstance()Lourpalm/android/channels/Ourpalm_Channels_Manage;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lourpalm/android/channels/Ourpalm_Channels_Manage;->Pay()Z
+
+    goto/16 :goto_0
+
+    .line 718
+    :cond_4
+    sget-object v1, Lourpalm/android/pay/Ourpalm_Entry_Model;->mActivity:Landroid/app/Activity;
+
+改失败为直接成功然后,goto返回
+
+    .line 724
+    const/16 v2, 0x6a
+
+    const-string v3, ""
+
+    .line 723
+    move-object/from16 v0, p1
+
+    #invoke-virtual {v1, v2, v3, v0}, Lourpalm/android/callback/Ourpalm_PaymentCallBack;->Ourpalm_PaymentFail(ILjava/lang/String;Ljava/lang/String;)V
+    
+    #这里换为调用成功
+    invoke-virtual {v1, v2, v3, v0}, Lourpalm/android/callback/Ourpalm_PaymentCallBack;->Ourpalm_PaymentSuccess(ILjava/lang/String;Ljava/lang/String;)V
+
+    .line 725
+    const/4 v1, 0x0
+
+    sput-boolean v1, Lourpalm/android/pay/Ourpalm_Statics;->IsExecute:Z
+
+    goto/16 :goto_0
+
+
+
+
+也可以将
+.class public Lcom/fgol/OurpalmIAPListener;
+.super Lourpalm/android/callback/Ourpalm_PaymentCallBack;
+.source "OurpalmIAPListener.java"
+
+
+.method public Ourpalm_PaymentSuccess(ILjava/lang/String;Ljava/lang/String;)V
+方法体里的代码代替
+.method public Ourpalm_PaymentFail(ILjava/lang/String;Ljava/lang/String;)V
+
+
+
+
+签名验证:
+
+搜索定位字符串
+
+内购接口初始化
+掌趣SDK初始化成功
+ourpalm_sdk_a
+
+
+ShareSDKUtils.prepare
+
+
+Ourpalm_Init
+
+
+在lib文件夹里,找到libourpalm_sdk_a.so文件
+
+\lib\armeabi-v7a\libourpalm_sdk_a.so
+
+IDA载入导出函数表里Alt-T搜索RunSign
+
+EXPORT Java_ourpalm_android_sdkjni_ourpalm_1android_1SdkJni_RunSign
+.text:000244B4 Java_ourpalm_android_sdkjni_ourpalm_1android_1SdkJni_RunSign
+
+
+.text:000244C4 FF F7 3E FF                             BL              checksign
+
+.text:000244CE FF F7 55 FD                             BL              checkdexex
+
+
+改这两个函数call调用的地方
+
+
+改为"悙悙" 即是,填充为0或者90
+
+.text:000244C4 90 90 90 90             aRrrr_0         DCB "悙悙"
+
+.text:000244CE 90 90 90 90             aRrrr           DCB "悙悙"
+
+
+\lib\x86\libourpalm_sdk_a.so文件也一样
+
+.text:000302DA  90 90 90 90 90
+
+.text:000302EA  90 90 90 90 90
+
+
+
+
+  public void init()
+  {
+    Log.d("HSE", "内购接口初始化");
+    FlurryHelper.init(this.mContext);
+    getMobileType(this.mContext);
+    Log.d("HSE", this.mContext.getPackageName() + "++" + this.mContext.toString());
+    this.mIAPIdentifier = new IAPIdentifier();
+    this.mListener = new OurpalmIAPListener(this);
+    Ourpalm_Entry.getInstance(this).Ourpalm_Init("2", "1.0", "1.0", this.mListener);
+    setCanBuy(true);
+  }
+  
+================================================================================
+
+火柴人联盟
+v1.14.1
+
+
+v1.15.1
+http://www.appchina.com/app/com.DBGame.DiabloLOL.yyh
+http://android.myapp.com/myapp/detail.htm?apkName=com.DBGame.DiabloLOL
+
+去签名验证:
+
+
+signatures
+
+getAPPSecretString
+
+
+3AooNepowFYqscHpDu0DfouzXs9ilTw
+e89b158e4bcf988ebd09eb83f5378e87
+
+
+
+call AppKey
+
+APPKEY: W0gn7H5K8Odj9SycTo9N
+CHANNEL: hoolai
+
+
+IMEI
+
+######deviceID#####
+
+
+.class public Lcn/mycompany/addblackname/utils/utils;
+.super Ljava/lang/Object;
+.source "utils.java"
+
+
+.method public static getAPPSecretString(Landroid/content/Context;)Ljava/lang/String;
+
+    .prologue
+    .line 21
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 22
+    .local v4, "pkgname":Ljava/lang/String;
+    const-string v1, ""
+    #去签名验证从:try_start_0开始到:catch_0,但里面的返回留着.直接返回空的字符串
+
+
+    return-object v1
+
+
+修改方法很多种,还可以在下面的类里定位到
+.class public Lcom/DBGame/DiabloLOL/DiabloLOL;
+.super Lorg/cocos2dx/lib/Cocos2dxActivity;
+.source "DiabloLOL.java"
+
+
+.method protected onCreate(Landroid/os/Bundle;)V
+
+
+    ###黑名单功能开始
+    .line 240
+
+    new-instance v0, Lcn/mycompany/addblackname/AddBlackName;
+
+    invoke-direct {v0, p0}, Lcn/mycompany/addblackname/AddBlackName;-><init>(Landroid/content/Context;)V
+
+    .line 241
+    .local v0, "blackName":Lcn/mycompany/addblackname/AddBlackName;
+    #invoke-static {}, Lcn/mycompany/addblackname/AddBlackName;->Check()V
+    ###黑名单功能结束
+
+顺便广告的也处理了
+
+    ###广告的初始化开始
+    .line 260
+    #invoke-static {p0, v7}, Lcn/cmgame/billing/api/game/main/Tool;->adIntervalInit(Landroid/app/Activity;Lcn/cmgame/billing/api/game/main/Listener;)V
+
+    .line 262
+    #invoke-static {p0, v7}, Lcn/cmgame/billing/api/game/main/Tool;->adNativeInit(Landroid/app/Activity;Lcn/cmgame/billing/api/game/main/Listener;)V
+    ###广告的初始化结束
+
+
+去除返回退出的横幅广告:
+
+不让他发送显示广告的消息
+
+
+----- showInterAD --exit
+----- showInterAD
+ 
+HANDLER_SHOW_INTER_AD
+
+public static final int HANDLER_SHOW_INTER_AD = 211;
+
+    :cond_0
+    new-instance v2, Landroid/os/Message;
+
+    invoke-direct {v2}, Landroid/os/Message;-><init>()V
+
+    .line 369
+    .local v2, "msg":Landroid/os/Message;
+    const/16 v3, 0xd3
+
+    iput v3, v2, Landroid/os/Message;->what:I
+
+    .line 370
+    iput v1, v2, Landroid/os/Message;->arg1:I
+
+    .line 371
+    sget-object v3, Lcom/DBGame/Common/BLHelper;->sContext:Lcom/DBGame/DiabloLOL/DiabloLOL;
+    #去退出广告，不让他发送显示广告的消息
+    #invoke-virtual {v3, v2}, Lcom/DBGame/DiabloLOL/DiabloLOL;->sendMessage(Landroid/os/Message;)V
+
+    .line 372
+    return-void
+
+    .line 362
+    .end local v2    # "msg":Landroid/os/Message;
+    :cond_1
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+
+
+去除选英雄和副本的横幅广告：
+
+
+public static final int HANDLER_SHOWBANNER = 200;
+public static final int HANDLER_HIDEBANNER = 210;
+
+
+
+
+case DiabloLOL.HANDLER_HIDEBANNER /*210*/:
+                    DiabloLOL.this.hideBanner();
+case 200:
+                    DiabloLOL.this.showBanner();
+
+
+
+.class public Lcom/DBGame/Common/BLHelper;
+.super Ljava/lang/Object;
+.source "BLHelper.java"
+
+
+
+.method public static showBanner(Ljava/lang/String;)V
+    .locals 2
+    .param p0, "tag"    # Ljava/lang/String;
+
+    .prologue
+    .line 375
+    new-instance v0, Landroid/os/Message;
+
+    invoke-direct {v0}, Landroid/os/Message;-><init>()V
+
+    .line 376
+    .local v0, "msg":Landroid/os/Message;
+    const/16 v1, 0xd2  #const/16 v1, 0xc8  #显示横幅广告的发送消息的代码 0xc8 200 休改为 0xd2 210   隐藏横幅
+    
+    iput v1, v0, Landroid/os/Message;->what:I
+
+    .line 377
+    sget-object v1, Lcom/DBGame/Common/BLHelper;->sContext:Lcom/DBGame/DiabloLOL/DiabloLOL;
+
+    #去横幅广告,或者不让他发送显示广告的消息,
+    invoke-virtual {v1, v0}, Lcom/DBGame/DiabloLOL/DiabloLOL;->sendMessage(Landroid/os/Message;)V
+
+    .line 378
+    return-void
+.end method
+
+
+
+
+
+
+.class Lcom/DBGame/DiabloLOL/DiabloLOL$3;
+.super Landroid/os/Handler;
+.source "DiabloLOL.java"
+
+
+
+    case 200: 
+      //DiabloLOL.access$400(this.this$0);
+      return;
+    case 210: 
+      //DiabloLOL.access$500(this.this$0);
+      return;
+    case 211: 
+      Log.e("qq", "HANDLER_SHOW_INTER_AD==========");
+      //DiabloLOL.access$600(this.this$0, paramMessage.arg1);
+      return;
+
+对应的smali
+
+    .line 650
+    #去除显示横幅sswitch_8
+    :sswitch_8
+    iget-object v2, p0, Lcom/DBGame/DiabloLOL/DiabloLOL$3;->this$0:Lcom/DBGame/DiabloLOL/DiabloLOL;
+
+    # invokes: Lcom/DBGame/DiabloLOL/DiabloLOL;->showBanner()V
+    #invoke-static {v2}, Lcom/DBGame/DiabloLOL/DiabloLOL;->access$400(Lcom/DBGame/DiabloLOL/DiabloLOL;)V
+
+    goto :goto_0
+
+    .line 654
+    #去除隐藏横幅sswitch_9
+    :sswitch_9
+    iget-object v2, p0, Lcom/DBGame/DiabloLOL/DiabloLOL$3;->this$0:Lcom/DBGame/DiabloLOL/DiabloLOL;
+
+    # invokes: Lcom/DBGame/DiabloLOL/DiabloLOL;->hideBanner()V
+    #invoke-static {v2}, Lcom/DBGame/DiabloLOL/DiabloLOL;->access$500(Lcom/DBGame/DiabloLOL/DiabloLOL;)V
+
+    goto :goto_0
+
+    .line 658
+    #去除显示嵌入式广告sswitch_a
+    :sswitch_a
+    const-string v2, "qq"
+
+    const-string v3, "HANDLER_SHOW_INTER_AD=========="
+
+    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 659
+    iget-object v2, p0, Lcom/DBGame/DiabloLOL/DiabloLOL$3;->this$0:Lcom/DBGame/DiabloLOL/DiabloLOL;
+
+    iget v3, p1, Landroid/os/Message;->arg1:I
+
+    # invokes: Lcom/DBGame/DiabloLOL/DiabloLOL;->showInterAd(I)V
+    #invoke-static {v2, v3}, Lcom/DBGame/DiabloLOL/DiabloLOL;->access$600(Lcom/DBGame/DiabloLOL/DiabloLOL;I)V
+
+    goto/16 :goto_0
+
+
+
+
+消息处理的代码如下：
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case 10:
+                    DiabloLOL.this.exitGame();
+                    return;
+                case 11:
+                    ((ClipboardManager) Cocos2dxActivity.getContext().getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText(MiniDefine.ax, BLHelper.copyString));
+                    Toast.makeText(DiabloLOL.this, "拷贝成功！", 0).show();
+                    return;
+                case 30:
+                    if (BLHelper.IPAYTAYPE == 1) {
+                        DiabloLOL.this.payInDuanXin();
+                        return;
+                    } else if (BLHelper.IPAYTAYPE != 2 && DiabloLOL.RECHARGE_CHANNELS.indexOf(String.valueOf(DiabloLOL.this.iFromPay)) != -1) {
+                        DiabloLOL.this.payInDuanXin();
+                        return;
+                    } else {
+                        return;
+                    }
+                case 102:
+                    OGPub.Instance().closeLoad();
+                    return;
+                case 200:
+                    DiabloLOL.this.showBanner();
+                    return;
+                case DiabloLOL.HANDLER_HIDEBANNER /*210*/:
+                    DiabloLOL.this.hideBanner();
+                    return;
+                case DiabloLOL.HANDLER_SHOW_INTER_AD /*211*/:
+                    Log.e("qq", "HANDLER_SHOW_INTER_AD==========");
+                    DiabloLOL.this.showInterAd(msg.arg1);
+                    return;
+                case DiabloLOL.HANDLER_REYUN_EXIT /*400*/:
+                    ReYun.exitSdk();
+                    return;
+                case DiabloLOL.HANDLER_SHOWSHARE /*420*/:
+                    DiabloLOL.this.showShareDialog();
+                    return;
+                case DiabloLOL.HANDLER_SAVEPIC /*450*/:
+                    BLHelper.savePic();
+                    return;
+                case DiabloLOL.HANDLER_MONTHCONTRA /*470*/:
+                    DiabloLOL.this.purchaseMonthlyContract(msg.arg1);
+                    return;
+                case DiabloLOL.HANDLER_HIDEWEBDATA /*998*/:
+                    BLHelper.webout();
+                    return;
+                default:
+                    return;
+            }
+        }
+
+
+顺便也解决下其他的函数
+.class public Lcom/DBGame/DiabloLOL/DiabloLOL;
+.super Lorg/cocos2dx/lib/Cocos2dxActivity;
+.source "DiabloLOL.java"
+
+
+.method private showBanner()V
+    .locals 5
+
+    .prologue
+    .line 338
+    return-void    #直接返回
+    
+    const v1, 0x3e4ccccd    # 0.2f
+
+    const v2, 0x3f4ccccd    # 0.8f
+
+    const v3, 0x3f19999a    # 0.6f
+
+    const v4, 0x3e19999a    # 0.15f
+    
+    :try_start_0
+    invoke-static {p0, v1, v2, v3, v4}, Lcn/cmgame/billing/api/game/main/Tool;->adNativeShow(Landroid/app/Activity;FFFF)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 342
+    :goto_0
+    return-void
+
+    .line 339
+    :catch_0
+    move-exception v0
+
+    .line 340
+    .local v0, "e":Ljava/lang/Exception;
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+
+    goto :goto_0
+.end method
+
+.method private showInterAd(I)V
+    .locals 1
+    .param p1, "index"    # I
+
+    .prologue
+    .line 354
+    return-void  #直接返回
+    :try_start_0
+    invoke-static {p0, p1}, Lcn/cmgame/billing/api/game/main/Tool;->adIntervalShow(Landroid/app/Activity;I)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 358
+    :goto_0
+    return-void
+
+    .line 355
+    :catch_0
+    move-exception v0
+
+    .line 356
+    .local v0, "e":Ljava/lang/Exception;
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+
+    goto :goto_0
+.end method
+
+去今日推荐5秒闪屏广告
+
+.method public static adSplashShow(Landroid/app/Activity;Ljava/lang/Class;Ljava/lang/Class;Landroid/os/Handler;)Z
+    .locals 7
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    const-string v2, "---adSplashShow----"
+
+    invoke-static {v2}, Lcn/cmgame/billing/api/game/e/d;->b(Ljava/lang/String;)V
+
+    sput-object p0, Lcn/cmgame/billing/api/game/main/Tool;->splashActivity:Landroid/app/Activity;
+
+    :try_start_0
+    ###### 自带日志输出  appSign
+    const-string v3, "---B.S.---Tool.adSplashShow"
+    #move-object/from16 v2, v2  #v0是要打印输出的内容
+    invoke-static {v3, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    move v0, v1  #这里要，返回为0去今日推荐5秒闪屏广告，返回为1会一直黑屏
+    goto :goto_0
+    ######
+
+
+内购破解：
+
+
+order id:
+
+
+
+电信：
+
+Egame支付成功
+
+Egame支付Cancel
+
+.class public Lcn/egame/terminal/paysdk/EgamePay;
+.super Ljava/lang/Object;
+.source "EgamePay.java"
+
+
+
+.method public static pay(Landroid/app/Activity;Ljava/util/Map;Lcn/egame/terminal/paysdk/EgamePayListener;)V
+    .locals 1
+    .param p0, "activity"    # Landroid/app/Activity;
+    .param p2, "listener"    # Lcn/egame/terminal/paysdk/EgamePayListener;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/app/Activity;",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;",
+            "Lcn/egame/terminal/paysdk/EgamePayListener;",
+            ")V"
+        }
+    .end annotation
+
+    .prologue
+    .line 78
+    #注意paySuccess这个函数只有一个参数.method public abstract paySuccess(Ljava/util/Map;)V
+    #而失败payFailed这个函数有第二个整型参数 .method public abstract payFailed(Ljava/util/Map;I)V
+    # Egame支付成功
+    invoke-interface {p2, p1}, Lcn/egame/terminal/paysdk/EgamePayListener;->paySuccess(Ljava/util/Map;)V
+
+    return-void
+
+.end method
+
+
+
+还可以用paySuccess函数体代替payCancel和payFailed.
+
+.class Lcom/DBGame/DiabloLOL/DiabloLOL$6;
+.super Ljava/lang/Object;
+.source "DiabloLOL.java"
+
+
+
+
+联通：
+
+Unicom支付成功
+
+Unicom支付cancel
+
+
+.class Lcom/DBGame/DiabloLOL/DiabloLOL$4;
+.super Ljava/lang/Object;
+.source "DiabloLOL.java"
+
+.method public PayResult(Ljava/lang/String;IILjava/lang/String;)V
+
+
+    .prologue
+    .line 694
+    goto  :pswitch_0  #联通支付接口，直接JMP无条件跳到支付成功 
+    packed-switch p2, :pswitch_data_0
+
+
+移动：
+
+购买道具：[
+
+
+] 成功！
+
+] 失败！
+
+
+.class Lcom/DBGame/DiabloLOL/DiabloLOL$5;
+.super Ljava/lang/Object;
+.source "DiabloLOL.java"
+
+
+
+    .prologue
+    .line 735
+    const-string v0, ""
+
+    .line 736
+    .local v0, "result":Ljava/lang/String;
+    goto :pswitch_0   #移动支付接口，直接JMP无条件跳到支付成功 
+    packed-switch p1, :pswitch_data_0
+
+
+统一为电信接支付接口:
+
+
+电信初始化成功
+
+.method protected onCreate(Landroid/os/Bundle;)V
+
+    private int getSimType() {
+        int type = 0;
+        String sOperator = ((TelephonyManager) getSystemService("phone")).getSimOperator().trim();
+        if (sOperator == null || sOperator.equals("")) {
+            return 0;
+        }
+        switch (Integer.valueOf(sOperator).intValue()) {
+            case 46000:
+            case 46002:
+            case 46007:
+            case 46020:
+                type = 0;
+                break;
+            case 46001:
+            case 46006:
+                type = 2;
+                break;
+            case 46003:
+            case 46005:
+            case 46011:
+                type = 1;
+                break;
+        }
+        return type;
+    }
+
+
+
+直接return 1;伪装为电信.支付统一完毕.
+
+
+    private void payInDuanXin() {
+        if (RECHARGE_CHANNELS.indexOf(String.valueOf(this.iFromPay)) != -1) {
+            if (this.iFromPay == 2) {
+                payInUnicom();
+            } else if (this.iFromPay == 0) {
+                payInYidong();
+            } else if (this.iFromPay == 1) {
+                payInEgame();
+            }
+        }
+    }
+
+    private void payInUnicom() {
+        Utils.getInstances().pay(this, this.PAY_CODE_UNICOM[this.mPayIndex], new UnipayPayResultListener() {
+            public void PayResult(String arg0, int arg1, int arg2, String arg3) {
+                switch (arg1) {
+                    case 1:
+                        DiabloLOL.this.setPayment();
+                        BLHelper.purchaseComplete(DiabloLOL.this.PRO_ID_Str[DiabloLOL.this.mPayIndex], 1);
+                        BLHelper.closeShieldLayer();
+                        Log.e("qq", "Unicom支付成功");
+                        return;
+                    case 2:
+                        BLHelper.closeShieldLayer();
+                        Log.e("qq", "Unicom支付Fail");
+                        return;
+                    case 3:
+                        BLHelper.closeShieldLayer();
+                        Log.e("qq", "Unicom支付cancel");
+                        return;
+                    default:
+                        Log.e("qq", "Unicom支付Default");
+                        return;
+                }
+            }
+        });
+    }
+
+    private void payInYidong() {
+        if (LOLConstant.sCMCC_OPEN == 0) {
+            BLHelper.showShieldLayer("正在处理,请稍后.....");
+        }
+        GameInterface.doBilling(this, true, true, this.PAY_CODE_MM[this.mPayIndex], null, this.payCallback);
+    }
+
+    public void payInEgame() {
+        HashMap<String, String> payParams = new HashMap();
+        payParams.put(EgamePay.PAY_PARAMS_KEY_TOOLS_ALIAS, this.PAY_CODE_SMS[this.mPayIndex]);
+        if (this.iOpen == -1) {
+            this.iOpen = BLHelper.getOpenCTCC("ctcc", this, true);
+        }
+        Log.e("qq", "iOpen=" + this.iOpen);
+        if (this.iOpen == 1) {
+            this.gameManager.gameConfig.PaySdkUIForCP = 1;
+        } else {
+            this.gameManager.gameConfig.PaySdkUIForCP = 0;
+        }
+        this.gameManager.EGamePay(payParams, new EgamePayListener() {
+            public void paySuccess(Map<String, String> map) {
+                DiabloLOL.this.setPayment();
+                BLHelper.purchaseComplete(DiabloLOL.this.PRO_ID_Str[DiabloLOL.this.mPayIndex], 1);
+                BLHelper.closeShieldLayer();
+                Log.e("qq", "Egame支付成功");
+                DiabloLOL.this.mPayIndex = -1;
+            }
+
+            public void payFailed(Map<String, String> map, int arg1) {
+                BLHelper.closeShieldLayer();
+                Log.e("qq", "Egame支付Fail==" + arg1);
+                DiabloLOL.this.mPayIndex = -1;
+            }
+
+            public void payCancel(Map<String, String> map) {
+                BLHelper.closeShieldLayer();
+                Log.e("qq", "Egame支付Cancel");
+                DiabloLOL.this.mPayIndex = -1;
+            }
+        });
+    }
+
+
+
+
+
+
+purchaseMonthlyContract>>>respond is
+purchaseMonthlyContract>>>command is
+
+
+
+
+================================================================================
+
+
+    ### 自带日志输出  app加密串    
+    const-string v4, "---B.S.---getAPPSecretString  sSecret: "
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "sSecret="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    move v3, v1
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v4, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    ####
+
+
+================================================================================
+梦想城镇v5.6.0  小米版
+http://game.xiaomi.com/app-appdetail--app_id__45383.html
+
+http://app.flyme.cn/
+
+bf4a5a4d5b3c2bdb
+7039043556374859
+
+代码:
+SJFZ53
+XJQZZU
+UEQWG7
+
+GSC2EY     mi4s
+WQE34W     m1 note
+
+CDFDE398
+CDFDE3A0
+
+
+CDFDE3820
+CDFDE3828
+
+
+共存版只要修改包名就可以了,可以搜索定位字符串
+
+package=
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.playrix.township.chukong.mi.bs" platformBuildVersionCode="24" platformBuildVersionName="7.0">
+
+搜索定位字符串
+
+app_name
+
+修改strings.xml里的app_name程序名字为
+
+<string name="app_name">梦想城镇[B.S.Cr]</string>
+
+添加自定义版权东西:
+
+搜索定位字符串
+
+Loading
+
+修改文件all_strings_preload.xml
+
+<p id="Loading" attr="font=Style3_1_14 align=center valign=center">Loadıng...Cracked by B.S.</p>
+<p id="Loading" attr="font=Style3_1_14 align=center valign=center">加载中…Cracked by B.S.</p>
+<p id="Connecting">Connecting...Cracked by B.S.</p>
+<p id="Connecting">连接中...Cracked by B.S.</p>
+
+
+
+去登录提示:
+
+.method private doLogin(J)V
+    .locals 3
+
+    const/4 v2, 0x1  #const/4 v2, 0x0
+
+    invoke-static {}, Lcom/playrix/township/AnyChannel;->nativeIsLogin()Z
+
+    move-result v1
+
+    #if-eqz v1, :cond_0   #直接去掉条件,执行下面语句,跳过提示.传入1使hasLogin登陆过
+
+    # setter for: Lcom/playrix/township/AnyChannel;->hasLogin:Z
+    invoke-static {v2}, Lcom/playrix/township/AnyChannel;->access$302(Z)Z
+
+    :goto_0
+    return-void
+
+    :cond_0
+    new-instance v0, Landroid/app/AlertDialog$Builder;
+
+    # getter for: Lcom/playrix/township/AnyChannel;->mActivity:Landroid/app/Activity;
+    invoke-static {}, Lcom/playrix/township/AnyChannel;->access$000()Landroid/app/Activity;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+
+    const-string v1, "\u63d0\u793a"
+
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+
+    invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
+
+    const-string v1, "\u8bf7\u767b\u5f55"
+
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+
+    const-string v1, "\u786e\u5b9a"
+
+    new-instance v2, Lcom/playrix/township/AnyChannel$5$1;
+
+    invoke-direct {v2, p0, p1, p2}, Lcom/playrix/township/AnyChannel$5$1;-><init>(Lcom/playrix/township/AnyChannel$5;J)V
+
+    invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
+
+    move-result-object v1
+
+    # setter for: Lcom/playrix/township/AnyChannel;->loginDialog:Landroid/app/AlertDialog;
+    invoke-static {v1}, Lcom/playrix/township/AnyChannel;->access$402(Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
+
+    # getter for: Lcom/playrix/township/AnyChannel;->loginDialog:Landroid/app/AlertDialog;
+    invoke-static {}, Lcom/playrix/township/AnyChannel;->access$400()Landroid/app/AlertDialog;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/app/AlertDialog;->show()V
+
+    goto :goto_0
+.end method
+
+
+修改金币和绿钞后
+
+搜索定位字符串
+
+cheat
+
+<p id="NoSocialText" attr="font=Style1_12 width=300 align=center valign=center">We suspect you may be cheatıng, whıch ıs why you are no longer permıtted to ınteract wıth other players. We apologıze for any ınconvenıence caused.</p>
+<p id="NoSocialText" attr="font=Style1_12 width=300 align=center valign=center">我们认为你有作弊的嫌疑，因此禁止你与其他玩家互动。对此造成的不便，我们深表歉意。</p>
+
+
+回溯后
+
+.method public static isMaybeCheater()Z
+    .locals 1
+
+    invoke-static {}, Lcom/playrix/lib/Playrix;->nativeIsMaybeCheater()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+在下面函数有调用
+
+.method public trackIap(Lcom/playrix/lib/PlayrixBilling$PurchaseDetails;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 3
+
+    const/4 v2, 0x0
+
+    invoke-static {}, Lcom/playrix/lib/Playrix;->isMaybeCheater()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    const-string v1, "AppsFlyerDisabled"
+
+    invoke-static {v1, v2}, Lcom/playrix/lib/Playrix;->nativeGetConstBool(Ljava/lang/String;Z)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    const-string v1, "AppsFlyerTrackPurchaseDisabled"
+
+    invoke-static {v1, v2}, Lcom/playrix/lib/Playrix;->nativeGetConstBool(Ljava/lang/String;Z)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    :cond_0
+    const-string v1, "AppsFlyerWrapper"
+
+    const-string v2, "trackIap disabled"
+
+    invoke-static {v1, v2}, Lcom/playrix/lib/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :goto_0
+    return-void
+
+    :cond_1
+    new-instance v0, Lcom/playrix/township/lib/AppsFlyerWrapper$5;
+
+    invoke-direct {v0, p0, p1, p2, p3}, Lcom/playrix/township/lib/AppsFlyerWrapper$5;-><init>(Lcom/playrix/township/lib/AppsFlyerWrapper;Lcom/playrix/lib/PlayrixBilling$PurchaseDetails;Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-direct {p0, v0}, Lcom/playrix/township/lib/AppsFlyerWrapper;->runOrQueue(Ljava/lang/Runnable;)V
+
+    goto :goto_0
+.end method
+
+改为
+
+.method public static isMaybeCheater()Z
+    .locals 1
+
+    invoke-static {}, Lcom/playrix/lib/Playrix;->nativeIsMaybeCheater()Z
+
+    move-result v0
+    
+    const/4 v0, 0x0  #返回0为假
+
+    return v0
+.end method
+
+
+
+
+
+
+.class public Lcom/xiaomi/gamecenter/awpay/HyAwPay;
+.super Ljava/lang/Object;
+.source "HyAwPay.java"
+
+
+.class public Lcom/xiaomi/gamecenter/awpay/HyMixpayActivity;
+.super Landroid/app/Activity;
+.source "HyMixpayActivity.java"
+
+计费代码不能为空
+
+
+需要更新
+
+VersionDescription
+
+newVersion
+
+
+CloseButton
+
+更新按钮打开
+
+<string name="app_store_url">market://details?id=com.playrix.township</string>
+<string name="app_store_url">market://details?id=com.playrix.township</string>
+
+获取app信息：
+
+#####
+const-string v0, "phone"
+
+invoke-virtual {p0, v0}, Lcom/example/hbssz/MainActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+move-result-object v0
+
+check-cast v0, Landroid/telephony/TelephonyManager;
+
+invoke-virtual {p0}, Lcom/example/hbssz/MainActivity;->getApplicationContext()Landroid/content/Context;
+
+move-result-object v2
+
+new-instance v3, Ljava/lang/StringBuilder;
+
+const-string v4, "AppInfo Ver:"
+
+invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+sget-object v4, Landroid/os/Build$VERSION;->RELEASE:Ljava/lang/String;
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+const-string v4, ","
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+const-string v4, "\n==>"
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+sget-object v4, Landroid/os/Build;->MODEL:Ljava/lang/String;
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+const-string v4, "\n==>"
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+sget-object v4, Landroid/os/Build;->CPU_ABI:Ljava/lang/String;
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+const-string v4, "\n==>"
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+sget-object v4, Landroid/os/Build;->CPU_ABI2:Ljava/lang/String;
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+const-string v4, "\n==>"
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+sget-object v4, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+const-string v4, "\n==>"
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+sget-object v4, Landroid/os/Build;->ID:Ljava/lang/String;
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+const-string v4, "\n==>"
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+sget-object v4, Landroid/os/Build;->SERIAL:Ljava/lang/String;
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+const-string v4, "\n==>"
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+sget-object v4, Landroid/os/Build;->HARDWARE:Ljava/lang/String;
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+const-string v4, "\n==>"
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+sget-object v4, Landroid/os/Build;->FINGERPRINT:Ljava/lang/String;
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+const-string v4, "\n==>"
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+iget-object v4, p0, Lcom/example/hbssz/MainActivity;->m:Ljava/lang/String;
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+const-string v4, "\n==>"
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+invoke-virtual {v0}, Landroid/telephony/TelephonyManager;->getDeviceId()Ljava/lang/String;
+
+move-result-object v0
+
+invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v0
+
+const-string v3, "\n  --Coded by B.S."
+
+invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v0
+
+invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+move-result-object v0
+
+invoke-static {v2, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+
+move-result-object v0
+
+const/16 v2, 0x31
+
+invoke-virtual {v0, v2, v6, v6}, Landroid/widget/Toast;->setGravity(III)V
+
+invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+######
+      
+
+
+
+###### logBS origin日志输出
+new-instance v3, Ljava/lang/StringBuilder;
+
+const-string v4, "---B.S.---"
+
+invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+const-string v1, "sSecret = "
+
+invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+######invoke-virtual {v0}, Landroid/telephony/TelephonyManager;->getDeviceId()Ljava/lang/String;
+
+######move-result-object v0
+
+move-object/from16 v2, v12  #v0是要打印输出的对象内容
+
+invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v0
+
+const-string v3, "\n  --Coded by B.S."
+
+invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v0
+
+invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+move-result-object v0
+
+invoke-static {v4, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+######
+
+###### 自带日志输出  mobileType
+#const-string v3, "---B.S.---  mobileType= "
+#invoke-static {v2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+#move-result-object v4
+#invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+######
+
+
+
+

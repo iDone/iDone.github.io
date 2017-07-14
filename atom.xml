@@ -27,25 +27,31 @@
 <p>
   <strong>仅供学习研究,请勿用作商业用途,如若喜欢请支持正版!</strong>
 </p>
-<p>最新版原程序:(v1.14.1)</p>
+<p>最新版原程序:</p>
 <p>
   <a href="http://huo.dl.hoolaigames.com/hcrlm.apk" target="_blank" rel="external">百度下载</a>
 </p>
+<p>(v1.15.1)</p>
 <p>
-  <a href="http://huo.dl.hoolaigames.com/hcrlm.apk" title="火柴人联盟官网" target="_blank" rel="external">火柴人联盟官网: http://huo.hoolaigames.com/</a>
+  <a href="http://www.appchina.com/app/com.DBGame.DiabloLOL.yyh" target="_blank" rel="external">http://www.appchina.com/app/com.DBGame.DiabloLOL.yyh</a>
+</p>
+<p>
+  <a href="http://android.myapp.com/myapp/detail.htm?apkName=com.DBGame.DiabloLOL" target="_blank" rel="external">http://android.myapp.com/myapp/detail.htm?apkName=com.DBGame.DiabloLOL</a>
+</p>
+<p>
+  <a href="http://huo.dl.hoolaigames.com/" title="火柴人联盟官网" target="_blank" rel="external">火柴人联盟官网: http://huo.hoolaigames.com/</a>
 </p>
 <p>B.S.去签名去广告内购破解版:(无限内购)</p>
 <p>
-  <a href="http://www.8idone.com/app/hcrlm-v1.14.1-BS-Cr.apk" title="移动支付接口修复版" target="_blank" rel="external">百度下载</a>
+  <a href="http://www.8idone.com/app/hcrlm-v1.15.1-BS-Cr.apk" title="移动支付接口直接成功版" target="_blank" rel="external">百度下载</a>
 </p>
-<p>链接:
-  <a href="https://pan.baidu.com/s/1slTpHUH" target="_blank" rel="external">https://pan.baidu.com/s/1slTpHUH</a> 密码: rt4r</p>
-<p>
+<p>(v1.15.1)</p>
+<p>(v1.14.1)
   <del>链接:
-    <a href="https://pan.baidu.com/s/1qxtbuvu" target="_blank" rel="external">https://pan.baidu.com/s/1qxtbuvu</a> 密码: r9sb</del>
+    <a href="https://pan.baidu.com/s/1slTpHUH" target="_blank" rel="external">https://pan.baidu.com/s/1slTpHUH</a> 密码: rt4r</del>
 </p>
 <p>
-  <a href="http://www.8idone.com/app/hcrlm-BS-Cr.apk" title="点我在线下载安装" target="_blank" rel="external">有确认支付的电信接口内购版</a>
+  <a href="http://www.8idone.com/app/hcrlm-BS-Cr.apk" title="点我在线下载安装" target="_blank" rel="external">电信支付接口提示确认支付无限内购版</a>
 </p>
 <p>也可以去各大安卓市场搜索下载最新版本:(推荐支付接口比较熟悉的移动,咪咕游戏,爱游戏)</p>
 <blockquote>
@@ -70,6 +76,18 @@
   <p>
     <a href="http://www.anzhi.com/" title="安智市场" target="_blank" rel="external">安智市场: http://www.anzhi.com/</a>
   </p>
+  <p>
+    <a href="http://www.appchina.com/" title="应用汇安卓市场" target="_blank" rel="external">应用汇安卓市场: http://www.appchina.com/</a>
+  </p>
+  <p>
+    <a href="http://app.flyme.cn/" title="魅族应用商店" target="_blank" rel="external">魅族应用商店: http://app.flyme.cn/</a>
+  </p>
+  <p>
+    <a href="http://http://game.xiaomi.com/index.php" title="小米游戏中心" target="_blank" rel="external">小米游戏中心: http://game.xiaomi.com/index.php</a>
+  </p>
+  <p>
+    <a href="http://appstore.huawei.com/" title="华为应用市场" target="_blank" rel="external">华为应用市场: http://appstore.huawei.com/</a>
+  </p>
 </blockquote>
 <p>有图有真相:</p>
 <table>
@@ -84,16 +102,17 @@
     <tr>
       <td style="text-align:center">中国移动</td>
       <td style="text-align:left">46000、46002、46007、46020</td>
-      <td style="text-align:right"></td>
+      <td style="text-align:right">getMobileType</td>
     </tr>
     <tr>
       <td style="text-align:center">中国联通</td>
       <td style="text-align:left">46001、46006、46010</td>
-      <td style="text-align:right"></td>
+      <td style="text-align:right">getOperatorType</td>
     </tr>
     <tr>
       <td style="text-align:center">中国电信</td>
       <td style="text-align:left">46003、46005、46011</td>
+      <td style="text-align:right">getSimType</td>
     </tr>
   </tbody>
 </table>
@@ -307,6 +326,24 @@
     </tr>
   </table>
 </figure>
+<h5 id="去除今日推荐5秒闪屏广告">
+  <a href="#去除今日推荐5秒闪屏广告" class="headerlink" title="去除今日推荐5秒闪屏广告:"></a>去除今日推荐5秒闪屏广告:</h5>
+<blockquote>
+  <p>.class public Lcn/cmgame/billing/api/game/main/Tool;</p>
+  <p>.super Ljava/lang/Object;</p>
+</blockquote>
+<figure class="highlight">
+  <table>
+    <tr>
+      <td class="gutter">
+        <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre>
+      </td>
+      <td class="code">
+        <pre><div class="line">.method public static adSplashShow(Landroid/app/Activity;Ljava/lang/Class;Ljava/lang/Class;Landroid/os/Handler;)Z</div><div class="line">    .locals 7</div><div class="line">    const/4 v0, 0x1</div><div class="line"></div><div class="line">    const/4 v1, 0x0</div><div class="line"></div><div class="line">    const-string v2, "---adSplashShow----"</div><div class="line"></div><div class="line">    invoke-static &#123;v2&#125;, Lcn/cmgame/billing/api/game/e/d;-&gt;b(Ljava/lang/String;)V</div><div class="line"></div><div class="line">    sput-object p0, Lcn/cmgame/billing/api/game/main/Tool;-&gt;splashActivity:Landroid/app/Activity;</div><div class="line"></div><div class="line">    :try_start_0</div><div class="line">    ###### 自带日志输出  appSign</div><div class="line">    const-string v3, "---B.S.---Tool.adSplashShow"</div><div class="line">    #move-object/from16 v2, v2  #v0是要打印输出的内容</div><div class="line">    invoke-static &#123;v3, v2&#125;, Landroid/util/Log;-&gt;e(Ljava/lang/String;Ljava/lang/String;)I</div><div class="line">    move v0, v1  #这里要，返回为0去今日推荐5秒闪屏广告，返回为1会一直黑屏</div><div class="line">    goto :goto_0</div><div class="line">    ######</div></pre>
+      </td>
+    </tr>
+  </table>
+</figure>
 <h3 id="3-内购破解：">
   <a href="#3-内购破解：" class="headerlink" title="3. 内购破解："></a>3. 内购破解：</h3>
 <h5 id="去除可能会产生费用的危险权限">
@@ -453,7 +490,7 @@
         <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div></pre>
       </td>
       <td class="code">
-        <pre><div class="line">.method private getSimType()I</div><div class="line">    .locals 6</div><div class="line"></div><div class="line">    .prologue</div><div class="line">    .line 267</div><div class="line">    const/4 v3, 0x1  #const/4 v3, 0x0  #初始化为0是移动</div><div class="line"></div><div class="line">    .line 268</div><div class="line">    .local v3, "type":I</div><div class="line">    const-string v5, "phone"</div><div class="line"></div><div class="line">    .line 269</div><div class="line">    invoke-virtual &#123;p0, v5&#125;, Lcom/DBGame/DiabloLOL/DiabloLOL;-&gt;getSystemService(Ljava/lang/String;)Ljava/lang/Object;</div><div class="line"></div><div class="line">    move-result-object v2</div><div class="line"></div><div class="line">    check-cast v2, Landroid/telephony/TelephonyManager;</div><div class="line"></div><div class="line">    .line 270</div><div class="line">    .local v2, "tm":Landroid/telephony/TelephonyManager;</div><div class="line">    invoke-virtual &#123;v2&#125;, Landroid/telephony/TelephonyManager;-&gt;getSimOperator()Ljava/lang/String;</div><div class="line"></div><div class="line">    move-result-object v5</div><div class="line"></div><div class="line">    invoke-virtual &#123;v5&#125;, Ljava/lang/String;-&gt;trim()Ljava/lang/String;</div><div class="line"></div><div class="line">    move-result-object v1</div><div class="line">    </div><div class="line">    ######插入自定义log开始</div><div class="line">    </div><div class="line">    invoke-static &#123;v1&#125;, Lcom/android/BS/Log;-&gt;LogStr(Ljava/lang/String;)V</div><div class="line">    </div><div class="line">    ######插入自定义log结束</div><div class="line">    </div><div class="line">    ######插入自定义log开始  </div><div class="line">    </div><div class="line">    const-string v0, "\n\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n www.appleos.xyz \n-- by B.S."</div><div class="line">    </div><div class="line">    invoke-static &#123;v0&#125;, Lcom/android/BS/Log;-&gt;LogStr(Ljava/lang/String;)V</div><div class="line">    </div><div class="line">    ######插入自定义log结束</div><div class="line">  </div><div class="line"></div><div class="line">    .line 271</div><div class="line">    .local v1, "sOperator":Ljava/lang/String;</div><div class="line">    if-eqz v1, :cond_0</div><div class="line"></div><div class="line">    const-string v5, ""</div><div class="line"></div><div class="line">    invoke-virtual &#123;v1, v5&#125;, Ljava/lang/String;-&gt;equals(Ljava/lang/Object;)Z</div><div class="line"></div><div class="line">    move-result v5</div><div class="line"></div><div class="line">    if-eqz v5, :cond_1</div><div class="line"></div><div class="line">    :cond_0</div><div class="line">    move v4, v3    #移动为0</div><div class="line"></div><div class="line">    .line 295</div><div class="line">    .end local v3    # "type":I</div><div class="line">    .local v4, "type":I</div><div class="line">    :goto_0</div><div class="line">    return v4</div><div class="line"></div><div class="line">    .line 274</div><div class="line">    .end local v4    # "type":I</div><div class="line">    .restart local v3    # "type":I</div><div class="line">    :cond_1</div><div class="line">    invoke-static &#123;v1&#125;, Ljava/lang/Integer;-&gt;valueOf(Ljava/lang/String;)Ljava/lang/Integer;</div><div class="line"></div><div class="line">    move-result-object v5</div><div class="line"></div><div class="line">    invoke-virtual &#123;v5&#125;, Ljava/lang/Integer;-&gt;intValue()I</div><div class="line"></div><div class="line">    move-result v0</div><div class="line"></div><div class="line">    .line 275</div><div class="line">    .local v0, "sCode":I</div><div class="line">    packed-switch v0, :pswitch_data_0</div><div class="line"></div><div class="line">    :goto_1</div><div class="line">    :pswitch_0</div><div class="line">    move v4, v3</div><div class="line"></div><div class="line">    .line 295</div><div class="line">    .end local v3    # "type":I</div><div class="line">    .restart local v4    # "type":I</div><div class="line">    goto :goto_0</div><div class="line"></div><div class="line">    .line 280</div><div class="line">    .end local v4    # "type":I</div><div class="line">    .restart local v3    # "type":I</div><div class="line">    :pswitch_1</div><div class="line">    const/4 v3, 0x1  #const/4 v3, 0x0   #移动</div><div class="line"></div><div class="line">    .line 281</div><div class="line">    goto :goto_1</div><div class="line"></div><div class="line">    .line 284</div><div class="line">    :pswitch_2</div><div class="line">    const/4 v3, 0x1  #const/4 v3, 0x2   #联通</div><div class="line"></div><div class="line">    .line 285</div><div class="line">    goto :goto_1</div><div class="line"></div><div class="line">    .line 289</div><div class="line">    :pswitch_3</div><div class="line">    const/4 v3, 0x1    #电信</div><div class="line"></div><div class="line">    .line 290</div><div class="line">    goto :goto_1</div><div class="line"></div><div class="line">    .line 275</div><div class="line">    :pswitch_data_0</div><div class="line">    .packed-switch 0xb3b0    </div><div class="line">        :pswitch_1</div><div class="line">        :pswitch_2</div><div class="line">        :pswitch_1</div><div class="line">        :pswitch_3</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_3</div><div class="line">        :pswitch_2</div><div class="line">        :pswitch_1</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_3</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_1</div><div class="line">    .end packed-switch</div><div class="line">.end method</div></pre>
+        <pre><div class="line">.method private getSimType()I</div><div class="line">    .locals 6</div><div class="line"></div><div class="line">    .prologue</div><div class="line">    .line 267</div><div class="line">    const/4 v3, 0x1  #const/4 v3, 0x0  #初始化为0是移动</div><div class="line"></div><div class="line">    .line 268</div><div class="line">    .local v3, "type":I</div><div class="line">    const-string v5, "phone"</div><div class="line"></div><div class="line">    .line 269</div><div class="line">    invoke-virtual &#123;p0, v5&#125;, Lcom/DBGame/DiabloLOL/DiabloLOL;-&gt;getSystemService(Ljava/lang/String;)Ljava/lang/Object;</div><div class="line"></div><div class="line">    move-result-object v2</div><div class="line"></div><div class="line">    check-cast v2, Landroid/telephony/TelephonyManager;</div><div class="line"></div><div class="line">    .line 270</div><div class="line">    .local v2, "tm":Landroid/telephony/TelephonyManager;</div><div class="line">    invoke-virtual &#123;v2&#125;, Landroid/telephony/TelephonyManager;-&gt;getSimOperator()Ljava/lang/String;</div><div class="line"></div><div class="line">    move-result-object v5</div><div class="line"></div><div class="line">    invoke-virtual &#123;v5&#125;, Ljava/lang/String;-&gt;trim()Ljava/lang/String;</div><div class="line"></div><div class="line">    move-result-object v1</div><div class="line"></div><div class="line">    ######插入自定义log开始</div><div class="line"></div><div class="line">    invoke-static &#123;v1&#125;, Lcom/android/BS/Log;-&gt;LogStr(Ljava/lang/String;)V</div><div class="line"></div><div class="line">    ######插入自定义log结束</div><div class="line"></div><div class="line">    ######插入自定义log开始</div><div class="line"></div><div class="line">    const-string v0, "\n\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n www.appleos.xyz \n-- by B.S."</div><div class="line"></div><div class="line">    invoke-static &#123;v0&#125;, Lcom/android/BS/Log;-&gt;LogStr(Ljava/lang/String;)V</div><div class="line"></div><div class="line">    ######插入自定义log结束</div><div class="line"></div><div class="line"></div><div class="line">    .line 271</div><div class="line">    .local v1, "sOperator":Ljava/lang/String;</div><div class="line">    if-eqz v1, :cond_0</div><div class="line"></div><div class="line">    const-string v5, ""</div><div class="line"></div><div class="line">    invoke-virtual &#123;v1, v5&#125;, Ljava/lang/String;-&gt;equals(Ljava/lang/Object;)Z</div><div class="line"></div><div class="line">    move-result v5</div><div class="line"></div><div class="line">    if-eqz v5, :cond_1</div><div class="line"></div><div class="line">    :cond_0</div><div class="line">    move v4, v3    #移动为0</div><div class="line"></div><div class="line">    .line 295</div><div class="line">    .end local v3    # "type":I</div><div class="line">    .local v4, "type":I</div><div class="line">    :goto_0</div><div class="line">    return v4</div><div class="line"></div><div class="line">    .line 274</div><div class="line">    .end local v4    # "type":I</div><div class="line">    .restart local v3    # "type":I</div><div class="line">    :cond_1</div><div class="line">    invoke-static &#123;v1&#125;, Ljava/lang/Integer;-&gt;valueOf(Ljava/lang/String;)Ljava/lang/Integer;</div><div class="line"></div><div class="line">    move-result-object v5</div><div class="line"></div><div class="line">    invoke-virtual &#123;v5&#125;, Ljava/lang/Integer;-&gt;intValue()I</div><div class="line"></div><div class="line">    move-result v0</div><div class="line"></div><div class="line">    .line 275</div><div class="line">    .local v0, "sCode":I</div><div class="line">    packed-switch v0, :pswitch_data_0</div><div class="line"></div><div class="line">    :goto_1</div><div class="line">    :pswitch_0</div><div class="line">    move v4, v3</div><div class="line"></div><div class="line">    .line 295</div><div class="line">    .end local v3    # "type":I</div><div class="line">    .restart local v4    # "type":I</div><div class="line">    goto :goto_0</div><div class="line"></div><div class="line">    .line 280</div><div class="line">    .end local v4    # "type":I</div><div class="line">    .restart local v3    # "type":I</div><div class="line">    :pswitch_1</div><div class="line">    const/4 v3, 0x1  #const/4 v3, 0x0   #移动</div><div class="line"></div><div class="line">    .line 281</div><div class="line">    goto :goto_1</div><div class="line"></div><div class="line">    .line 284</div><div class="line">    :pswitch_2</div><div class="line">    const/4 v3, 0x1  #const/4 v3, 0x2   #联通</div><div class="line"></div><div class="line">    .line 285</div><div class="line">    goto :goto_1</div><div class="line"></div><div class="line">    .line 289</div><div class="line">    :pswitch_3</div><div class="line">    const/4 v3, 0x1    #电信</div><div class="line"></div><div class="line">    .line 290</div><div class="line">    goto :goto_1</div><div class="line"></div><div class="line">    .line 275</div><div class="line">    :pswitch_data_0</div><div class="line">    .packed-switch 0xb3b0</div><div class="line">        :pswitch_1</div><div class="line">        :pswitch_2</div><div class="line">        :pswitch_1</div><div class="line">        :pswitch_3</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_3</div><div class="line">        :pswitch_2</div><div class="line">        :pswitch_1</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_3</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_0</div><div class="line">        :pswitch_1</div><div class="line">    .end packed-switch</div><div class="line">.end method</div></pre>
       </td>
     </tr>
   </table>
@@ -466,7 +503,7 @@
         <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre>
       </td>
       <td class="code">
-        <pre><div class="line">.<span class="function">method <span class="keyword">private</span> <span class="title">getSimType</span><span class="params">()</span>I</span></div><div class="line">    .locals 6</div><div class="line">    </div><div class="line">    ###统一为移动短信支付接口直接返回为0</div><div class="line">    <span class="keyword">const</span>/4 v4, 0x0</div><div class="line"></div><div class="line">    return v4</div><div class="line">.end method</div></pre>
+        <pre><div class="line">.<span class="function">method <span class="keyword">private</span> <span class="title">getSimType</span><span class="params">()</span>I</span></div><div class="line">    .locals 6</div><div class="line"></div><div class="line">    ###统一为移动短信支付接口直接返回为0</div><div class="line">    <span class="keyword">const</span>/4 v4, 0x0</div><div class="line"></div><div class="line">    return v4</div><div class="line">.end method</div></pre>
       </td>
     </tr>
   </table>
@@ -1009,6 +1046,12 @@
     
       <category term="Crack" scheme="/tags/Crack/"/>
     
+      <category term="去签名验证" scheme="/tags/%E5%8E%BB%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81/"/>
+    
+      <category term="so签名验证" scheme="/tags/so%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81/"/>
+    
+      <category term="native" scheme="/tags/native/"/>
+    
       <category term="jadx" scheme="/tags/jadx/"/>
     
       <category term="java" scheme="/tags/java/"/>
@@ -1016,12 +1059,6 @@
       <category term="android killer" scheme="/tags/android-killer/"/>
     
       <category term="smali" scheme="/tags/smali/"/>
-    
-      <category term="去签名验证" scheme="/tags/%E5%8E%BB%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81/"/>
-    
-      <category term="so签名验证" scheme="/tags/so%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81/"/>
-    
-      <category term="native" scheme="/tags/native/"/>
     
   </entry>
   
@@ -1306,10 +1343,6 @@
     
       <category term="Crack" scheme="/tags/Crack/"/>
     
-      <category term="youdao1" scheme="/tags/youdao1/"/>
-    
-      <category term="smspay" scheme="/tags/smspay/"/>
-    
       <category term="jadx" scheme="/tags/jadx/"/>
     
       <category term="java" scheme="/tags/java/"/>
@@ -1317,6 +1350,10 @@
       <category term="android killer" scheme="/tags/android-killer/"/>
     
       <category term="smali" scheme="/tags/smali/"/>
+    
+      <category term="youdao1" scheme="/tags/youdao1/"/>
+    
+      <category term="smspay" scheme="/tags/smspay/"/>
     
   </entry>
   

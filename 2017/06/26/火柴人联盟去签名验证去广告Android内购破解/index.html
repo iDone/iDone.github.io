@@ -27,7 +27,7 @@
 
   <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
-  <meta name="keywords" content="逆向工程(Reverse Engineering),破解(Crack),android,内购,Crack,jadx,java,android killer,smali,签名验证,去广告,logcat,signatures,46003,egame,"
+  <meta name="keywords" content="逆向工程(Reverse Engineering),破解(Crack),android,内购,Crack,签名验证,去广告,logcat,signatures,46003,egame,jadx,java,android killer,smali,"
   />
 
   <link rel="alternate" href="/atom.xml" title="@iYoungDone's Hexo Blog" type="application/atom+xml"
@@ -36,7 +36,7 @@
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
 
   <meta name="description" content="—Creaked by B.S. 6/26/2017 9:22:40 PM  无聊练手,当作学习Android优秀源码的笔记    仅供学习研究,请勿用作商业用途,如若喜欢请支持正版!  最新版原程序:    百度下载  (v1.15.1)    http://www.appchina.com/app/com.DBGame.DiabloLOL.yyh     http://android.myap">
-  <meta name="keywords" content="逆向工程(Reverse Engineering),破解(Crack),android,内购,Crack,jadx,java,android killer,smali,签名验证,去广告,logcat,signatures,46003,egame">
+  <meta name="keywords" content="逆向工程(Reverse Engineering),破解(Crack),android,内购,Crack,签名验证,去广告,logcat,signatures,46003,egame,jadx,java,android killer,smali">
   <meta property="og:type" content="article">
   <meta property="og:title" content="火柴人联盟去签名验证去广告Android内购破解">
   <meta property="og:url" content="/2017/06/26/火柴人联盟去签名验证去广告Android内购破解/index.html">
@@ -314,12 +314,12 @@
                                                                                                     target="_blank" rel="external">http://android.myapp.com/myapp/detail.htm?apkName=com.DBGame.DiabloLOL</a>
                   </p>
                   <p>
-                    <a href="http://huo.dl.hoolaigames.com/" title="火柴人联盟官网" target="_blank" rel="external">火柴人联盟官网: http://huo.hoolaigames.com/</a>
+                    <a href="http://huo.hoolaigames.com/" title="火柴人联盟官网" target="_blank" rel="external">火柴人联盟官网: http://huo.hoolaigames.com/</a>
                   </p>
                   <p>B.S.去签名去广告内购破解版:(无限内购)</p>
                   <p>
-                    <a href="http://www.8idone.com/app/hcrlm-v1.15.1-BS-Cr.apk" title="移动支付接口直接成功版" target="_blank"
-                                                                                                    rel="external">百度下载</a>
+                    <a href="http://www.8idone.com/app/hcrlm-v1.15.1-BS-Cr.apk" title="移动联通电信全网通+第三方支付接口版"
+                                                                                                    target="_blank" rel="external">百度下载</a>
                   </p>
                   <p>(v1.15.1)</p>
                   <p>(v1.14.1)
@@ -466,7 +466,7 @@
                           <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre>
                         </td>
                         <td class="code">
-                          <pre><div class="line">.method public static Check()V</div><div class="line">    .locals 6</div><div class="line"></div><div class="line">    .prologue</div><div class="line">    ######插入代码开始 coded by B.S.</div><div class="line">    </div><div class="line">    const-string v0, "Lcn/mycompany/addblackname/AddBlackName;-&gt;check()V \n  -- by B.S."</div><div class="line">    </div><div class="line">    invoke-static &#123;v0&#125;, Lcom/android/BS/Log;-&gt;LogStr(Ljava/lang/String;)V</div><div class="line">    </div><div class="line">    ######插入代码结束 coded by B.S.</div><div class="line">    return-void   #直接返回使签名验证失效.</div><div class="line">.end method</div></pre>
+                          <pre><div class="line">.method public static Check()V</div><div class="line">    .locals 6</div><div class="line"></div><div class="line">    .prologue</div><div class="line">    ######插入代码开始 coded by B.S.</div><div class="line"></div><div class="line">    const-string v0, "Lcn/mycompany/addblackname/AddBlackName;-&gt;check()V \n  -- by B.S."</div><div class="line"></div><div class="line">    invoke-static &#123;v0&#125;, Lcom/android/BS/Log;-&gt;LogStr(Ljava/lang/String;)V</div><div class="line"></div><div class="line">    ######插入代码结束 coded by B.S.</div><div class="line">    return-void   #直接返回使签名验证失效.</div><div class="line">.end method</div></pre>
                         </td>
                       </tr>
                     </table>
@@ -640,6 +640,66 @@
                         </td>
                         <td class="code">
                           <pre><div class="line">&lt;uses-permission android:name=<span class="string">"android.permission.SEND_SMS"</span>/&gt;</div><div class="line"></div><div class="line">&lt;uses-permission android:name=<span class="string">"android.permission.CALL_PHONE"</span>/&gt;</div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <p>#####补充一个强大的函数</p>
+                  <p>######不需要支付购买?!!!竟然有这函数</p>
+                  <blockquote>
+                    <p>invoke-direct {p0}, Lcom/DBGame/DiabloLOL/DiabloLOL;-&gt;buyWithoutPay()V</p>
+                  </blockquote>
+                  <p>第三方支付里可以直接调用上面的函数,直接购买成功</p>
+                  <blockquote>
+                    <p>.method public payThird(Ljava/lang/String;)V</p>
+                  </blockquote>
+                  <figure class="highlight java">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">paySuccess</span><span class="params">(Map&lt;String, String&gt; paramAnonymousMap)</span></span></div><div class="line">&#123;</div><div class="line">	DiabloLOL.<span class="keyword">this</span>.setPayment();</div><div class="line">	BLHelper.purchaseComplete(DiabloLOL.<span class="keyword">this</span>.PRO_ID_Str[DiabloLOL.<span class="keyword">this</span>.mPayIndex], <span class="number">1</span>);</div><div class="line">	BLHelper.closeShieldLayer();</div><div class="line">	Log.e(<span class="string">"B.S."</span>, <span class="string">"模拟Egame支付成功 --by B.S."</span>);</div><div class="line">	DiabloLOL.access$<span class="number">202</span>(DiabloLOL.<span class="keyword">this</span>, -<span class="number">1</span>);</div><div class="line">&#125;</div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <p>将原来的buyWithoutPay模拟上面的paySuccess成功代码处理一下,要不然只能第一次购买成功.</p>
+                  <figure class="highlight java">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">buyWithoutPay</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	setPayment();</div><div class="line">	BLHelper.purchaseComplete(<span class="keyword">this</span>.PRO_ID_Str[<span class="keyword">this</span>.mPayIndex], <span class="number">1</span>);</div><div class="line">	BLHelper.closeShieldLayer();</div><div class="line">&#125;</div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <p>经过修复过的不支付购买函数</p>
+                  <figure class="highlight java">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">buyWithoutPay</span><span class="params">()</span> </span>&#123;</div><div class="line">	com.android.BS.Log.LogStr(<span class="string">"无限内购B.S.破解版\n  www.appleos.xyz \n  爱淫荡  多合一 \n  www.allin1.xyz \n  buyWithoutPay -- by B.S."</span>);</div><div class="line">	setPayment();</div><div class="line">	BLHelper.purchaseComplete(<span class="keyword">this</span>.PRO_ID_Str[<span class="keyword">this</span>.mPayIndex], <span class="number">1</span>);</div><div class="line">	BLHelper.closeShieldLayer();</div><div class="line">	Log.e(<span class="string">"---B.S.---"</span>, <span class="string">"模拟EGame支付成功 --by B.S."</span>);</div><div class="line">	<span class="keyword">this</span>.mPayIndex = -<span class="number">1</span>;</div><div class="line">&#125;</div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <p>对应的smali</p>
+                  <figure class="highlight">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line">.method private buyWithoutPay()V</div><div class="line">    .locals 2</div><div class="line"></div><div class="line">    .prologue</div><div class="line">    .line 730</div><div class="line">    ######插入代码开始 coded by B.S.</div><div class="line">    </div><div class="line">    const-string v0, "\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n  www.appleos.xyz \n  \u7231\u6DEB\u8361  \u591A\u5408\u4E00 \n  www.allin1.xyz \n  buyWithoutPay -- by B.S."</div><div class="line">    </div><div class="line">    invoke-static &#123;v0&#125;, Lcom/android/BS/Log;-&gt;LogStr(Ljava/lang/String;)V</div><div class="line">    </div><div class="line">    ######插入代码结束 coded by B.S.  </div><div class="line">    </div><div class="line">    invoke-direct &#123;p0&#125;, Lcom/DBGame/DiabloLOL/DiabloLOL;-&gt;setPayment()V</div><div class="line"></div><div class="line">    .line 731</div><div class="line">    iget-object v0, p0, Lcom/DBGame/DiabloLOL/DiabloLOL;-&gt;PRO_ID_Str:[Ljava/lang/String;</div><div class="line"></div><div class="line">    iget v1, p0, Lcom/DBGame/DiabloLOL/DiabloLOL;-&gt;mPayIndex:I</div><div class="line"></div><div class="line">    aget-object v0, v0, v1</div><div class="line"></div><div class="line">    const/4 v1, 0x1</div><div class="line"></div><div class="line">    invoke-static &#123;v0, v1&#125;, Lcom/DBGame/Common/BLHelper;-&gt;purchaseComplete(Ljava/lang/String;I)V</div><div class="line"></div><div class="line">    .line 732</div><div class="line">    invoke-static &#123;&#125;, Lcom/DBGame/Common/BLHelper;-&gt;closeShieldLayer()V</div><div class="line"></div><div class="line">    ###</div><div class="line">    const-string v0, "---B.S.---"</div><div class="line"></div><div class="line">    const-string v1, "\u6a21\u62dfEGame\u652f\u4ed8\u6210\u529f --by B.S."</div><div class="line"></div><div class="line">    invoke-static &#123;v0, v1&#125;, Landroid/util/Log;-&gt;e(Ljava/lang/String;Ljava/lang/String;)I</div><div class="line"></div><div class="line">    const/4 v1, -0x1</div><div class="line"></div><div class="line">    # setter for: Lcom/DBGame/DiabloLOL/DiabloLOL;-&gt;mPayIndex:I</div><div class="line">    invoke-static &#123;p0, v1&#125;, Lcom/DBGame/DiabloLOL/DiabloLOL;-&gt;access$202(Lcom/DBGame/DiabloLOL/DiabloLOL;I)I</div><div class="line">    ###</div><div class="line"></div><div class="line"></div><div class="line">    .line 733</div><div class="line">    return-void</div><div class="line">.end method</div></pre>
                         </td>
                       </tr>
                     </table>
@@ -915,14 +975,6 @@
 
                     <a href="/tags/Crack/" rel="tag"># Crack</a>
 
-                    <a href="/tags/jadx/" rel="tag"># jadx</a>
-
-                    <a href="/tags/java/" rel="tag"># java</a>
-
-                    <a href="/tags/android-killer/" rel="tag"># android killer</a>
-
-                    <a href="/tags/smali/" rel="tag"># smali</a>
-
                     <a href="/tags/签名验证/" rel="tag"># 签名验证</a>
 
                     <a href="/tags/去广告/" rel="tag"># 去广告</a>
@@ -934,6 +986,14 @@
                     <a href="/tags/46003/" rel="tag"># 46003</a>
 
                     <a href="/tags/egame/" rel="tag"># egame</a>
+
+                    <a href="/tags/jadx/" rel="tag"># jadx</a>
+
+                    <a href="/tags/java/" rel="tag"># java</a>
+
+                    <a href="/tags/android-killer/" rel="tag"># android killer</a>
+
+                    <a href="/tags/smali/" rel="tag"># smali</a>
 
                   </div>
 

@@ -22,7 +22,7 @@
     <published>2017-06-26T13:22:00.000Z</published>
     <updated>2017-06-26T13:30:00.000Z</updated>
     
-    <content type="html"><![CDATA[<p>—Creaked by B.S. 6/26/2017 9:22:40 PM </p>
+    <content type="html"><![CDATA[<p>—Creaked by B.S. 6/26/2017 9:22:40 PM</p>
 <p>无聊练手,当作学习Android优秀源码的笔记</p>
 <p>
   <strong>仅供学习研究,请勿用作商业用途,如若喜欢请支持正版!</strong>
@@ -43,15 +43,15 @@
 </p>
 <p>B.S.去签名去广告内购破解版:(无限内购)</p>
 <p>
-  <a href="http://www.8idone.com/app/hcrlm-v1.15.1-BS-Cr.apk" title="移动联通电信全网通+第三方支付接口版" target="_blank" rel="external">百度下载</a>
-</p>
-<p>(v1.15.1)</p>
+  <a href="http://app.allin1.xyz/apk/hcrlm_1151_bs_sign.apk" title="移动联通电信全网通+第三方支付接口版" target="_blank" rel="external">百度下载</a>(移动联通电信全网通+第三方支付接口版)</p>
+<p>(v1.15.1) 链接:
+  <a href="https://pan.baidu.com/s/1bLxtjo" target="_blank" rel="external">https://pan.baidu.com/s/1bLxtjo</a> 密码: teyv</p>
 <p>(v1.14.1)
   <del>链接:
     <a href="https://pan.baidu.com/s/1slTpHUH" target="_blank" rel="external">https://pan.baidu.com/s/1slTpHUH</a> 密码: rt4r</del>
 </p>
 <p>
-  <a href="http://www.8idone.com/app/hcrlm-BS-Cr.apk" title="点我在线下载安装" target="_blank" rel="external">电信支付接口提示确认支付无限内购版</a>
+  <a href="http://app.allin1.xyz/apk/hcrlm_bs_sign.apk" title="点我在线下载安装最新测试版" target="_blank" rel="external">联通接口游戏联盟会员包月直接领铂金会员礼包无限内购版</a>
 </p>
 <p>也可以去各大安卓市场搜索下载最新版本:(推荐支付接口比较熟悉的移动,咪咕游戏,爱游戏)</p>
 <blockquote>
@@ -102,17 +102,17 @@
     <tr>
       <td style="text-align:center">中国移动</td>
       <td style="text-align:left">46000、46002、46007、46020</td>
-      <td style="text-align:right">getMobileType</td>
+      <td style="text-align:right">return 0 getMobileType</td>
     </tr>
     <tr>
       <td style="text-align:center">中国联通</td>
       <td style="text-align:left">46001、46006、46010</td>
-      <td style="text-align:right">getOperatorType</td>
+      <td style="text-align:right">return 2 getOperatorType</td>
     </tr>
     <tr>
       <td style="text-align:center">中国电信</td>
       <td style="text-align:left">46003、46005、46011</td>
-      <td style="text-align:right">getSimType</td>
+      <td style="text-align:right">return 1 getSimType</td>
     </tr>
   </tbody>
 </table>
@@ -256,7 +256,7 @@
         <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre>
       </td>
       <td class="code">
-        <pre><div class="line">.method public static showBanner(Ljava/lang/String;)V</div><div class="line">    .locals 2</div><div class="line">    .param p0, "tag"    # Ljava/lang/String;</div><div class="line"></div><div class="line">    .prologue</div><div class="line">    .line 375</div><div class="line">    new-instance v0, Landroid/os/Message;</div><div class="line"></div><div class="line">    invoke-direct &#123;v0&#125;, Landroid/os/Message;-&gt;&lt;init&gt;()V</div><div class="line"></div><div class="line">    .line 376</div><div class="line">    .local v0, "msg":Landroid/os/Message;</div><div class="line">    const/16 v1, 0xd2  #const/16 v1, 0xc8  #显示横幅广告的发送消息的代码 0xc8 200 休改为 0xd2 210   隐藏横幅</div><div class="line">    </div><div class="line">    iput v1, v0, Landroid/os/Message;-&gt;what:I</div><div class="line"></div><div class="line">    .line 377</div><div class="line">    sget-object v1, Lcom/DBGame/Common/BLHelper;-&gt;sContext:Lcom/DBGame/DiabloLOL/DiabloLOL;</div><div class="line"></div><div class="line">    #去横幅广告,或者不让他发送显示广告的消息,</div><div class="line">    invoke-virtual &#123;v1, v0&#125;, Lcom/DBGame/DiabloLOL/DiabloLOL;-&gt;sendMessage(Landroid/os/Message;)V</div><div class="line"></div><div class="line">    .line 378</div><div class="line">    return-void</div><div class="line">.end method</div></pre>
+        <pre><div class="line">.method public static showBanner(Ljava/lang/String;)V</div><div class="line">    .locals 2</div><div class="line">    .param p0, "tag"    # Ljava/lang/String;</div><div class="line"></div><div class="line">    .prologue</div><div class="line">    .line 375</div><div class="line">    new-instance v0, Landroid/os/Message;</div><div class="line"></div><div class="line">    invoke-direct &#123;v0&#125;, Landroid/os/Message;-&gt;&lt;init&gt;()V</div><div class="line"></div><div class="line">    .line 376</div><div class="line">    .local v0, "msg":Landroid/os/Message;</div><div class="line">    const/16 v1, 0xd2  #const/16 v1, 0xc8  #显示横幅广告的发送消息的代码 0xc8=200 修改为 0xd2=210   隐藏横幅</div><div class="line">    </div><div class="line">    iput v1, v0, Landroid/os/Message;-&gt;what:I</div><div class="line"></div><div class="line">    .line 377</div><div class="line">    sget-object v1, Lcom/DBGame/Common/BLHelper;-&gt;sContext:Lcom/DBGame/DiabloLOL/DiabloLOL;</div><div class="line"></div><div class="line">    #去横幅广告,或者不让他发送显示广告的消息,</div><div class="line">    invoke-virtual &#123;v1, v0&#125;, Lcom/DBGame/DiabloLOL/DiabloLOL;-&gt;sendMessage(Landroid/os/Message;)V</div><div class="line"></div><div class="line">    .line 378</div><div class="line">    return-void</div><div class="line">.end method</div></pre>
       </td>
     </tr>
   </table>
@@ -366,12 +366,14 @@
     </tr>
   </table>
 </figure>
-<p>#####补充一个强大的函数</p>
-<p>######不需要支付购买?!!!竟然有这函数</p>
+<h5 id="补充一个强大的函数">
+  <a href="#补充一个强大的函数" class="headerlink" title="补充一个强大的函数"></a>补充一个强大的函数</h5>
+<h6 id="不需要支付购买-竟然有这函数-分析v1-15-1腾讯渠道第三方支付版发现的">
+  <a href="#不需要支付购买-竟然有这函数-分析v1-15-1腾讯渠道第三方支付版发现的" class="headerlink" title="不需要支付购买?!!!竟然有这函数(分析v1.15.1腾讯渠道第三方支付版发现的)"></a>不需要支付购买?!!!竟然有这函数(分析v1.15.1腾讯渠道第三方支付版发现的)</h6>
 <blockquote>
   <p>invoke-direct {p0}, Lcom/DBGame/DiabloLOL/DiabloLOL;-&gt;buyWithoutPay()V</p>
 </blockquote>
-<p>第三方支付里可以直接调用上面的函数,直接购买成功</p>
+<p>在第三方支付里可以直接调用上面的函数,直接购买成功</p>
 <blockquote>
   <p>.method public payThird(Ljava/lang/String;)V</p>
 </blockquote>
@@ -400,7 +402,7 @@
     </tr>
   </table>
 </figure>
-<p>经过修复过的不支付购买函数</p>
+<p>经过修正过的不支付购买函数</p>
 <figure class="highlight java">
   <table>
     <tr>
@@ -413,15 +415,15 @@
     </tr>
   </table>
 </figure>
-<p>对应的smali</p>
+<p>修正后的buyWithoutPay对应的smali</p>
 <figure class="highlight">
   <table>
     <tr>
       <td class="gutter">
-        <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre>
+        <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre>
       </td>
       <td class="code">
-        <pre><div class="line">.method private buyWithoutPay()V</div><div class="line">    .locals 2</div><div class="line"></div><div class="line">    .prologue</div><div class="line">    .line 730</div><div class="line">    ######插入代码开始 coded by B.S.</div><div class="line">    </div><div class="line">    const-string v0, "\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n  www.appleos.xyz \n  \u7231\u6DEB\u8361  \u591A\u5408\u4E00 \n  www.allin1.xyz \n  buyWithoutPay -- by B.S."</div><div class="line">    </div><div class="line">    invoke-static &#123;v0&#125;, Lcom/android/BS/Log;-&gt;LogStr(Ljava/lang/String;)V</div><div class="line">    </div><div class="line">    ######插入代码结束 coded by B.S.  </div><div class="line">    </div><div class="line">    invoke-direct &#123;p0&#125;, Lcom/DBGame/DiabloLOL/DiabloLOL;-&gt;setPayment()V</div><div class="line"></div><div class="line">    .line 731</div><div class="line">    iget-object v0, p0, Lcom/DBGame/DiabloLOL/DiabloLOL;-&gt;PRO_ID_Str:[Ljava/lang/String;</div><div class="line"></div><div class="line">    iget v1, p0, Lcom/DBGame/DiabloLOL/DiabloLOL;-&gt;mPayIndex:I</div><div class="line"></div><div class="line">    aget-object v0, v0, v1</div><div class="line"></div><div class="line">    const/4 v1, 0x1</div><div class="line"></div><div class="line">    invoke-static &#123;v0, v1&#125;, Lcom/DBGame/Common/BLHelper;-&gt;purchaseComplete(Ljava/lang/String;I)V</div><div class="line"></div><div class="line">    .line 732</div><div class="line">    invoke-static &#123;&#125;, Lcom/DBGame/Common/BLHelper;-&gt;closeShieldLayer()V</div><div class="line"></div><div class="line">    ###</div><div class="line">    const-string v0, "---B.S.---"</div><div class="line"></div><div class="line">    const-string v1, "\u6a21\u62dfEGame\u652f\u4ed8\u6210\u529f --by B.S."</div><div class="line"></div><div class="line">    invoke-static &#123;v0, v1&#125;, Landroid/util/Log;-&gt;e(Ljava/lang/String;Ljava/lang/String;)I</div><div class="line"></div><div class="line">    const/4 v1, -0x1</div><div class="line"></div><div class="line">    # setter for: Lcom/DBGame/DiabloLOL/DiabloLOL;-&gt;mPayIndex:I</div><div class="line">    invoke-static &#123;p0, v1&#125;, Lcom/DBGame/DiabloLOL/DiabloLOL;-&gt;access$202(Lcom/DBGame/DiabloLOL/DiabloLOL;I)I</div><div class="line">    ###</div><div class="line"></div><div class="line"></div><div class="line">    .line 733</div><div class="line">    return-void</div><div class="line">.end method</div></pre>
+        <pre><div class="line">.method private buyWithoutPay()V</div><div class="line">    .locals 2</div><div class="line"></div><div class="line">    .prologue</div><div class="line">    .line 730</div><div class="line">    ######插入代码开始 coded by B.S.</div><div class="line">    </div><div class="line">    const-string v0, "\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n  www.appleos.xyz \n  \u7231\u6DEB\u8361  \u591A\u5408\u4E00 \n  www.allin1.xyz \n  buyWithoutPay -- by B.S."</div><div class="line">    </div><div class="line">    invoke-static &#123;v0&#125;, Lcom/android/BS/Log;-&gt;LogStr(Ljava/lang/String;)V</div><div class="line">    </div><div class="line">    ######插入代码结束 coded by B.S.  </div><div class="line">    </div><div class="line">    invoke-direct &#123;p0&#125;, Lcom/DBGame/DiabloLOL/DiabloLOL;-&gt;setPayment()V</div><div class="line"></div><div class="line">    .line 731</div><div class="line">    iget-object v0, p0, Lcom/DBGame/DiabloLOL/DiabloLOL;-&gt;PRO_ID_Str:[Ljava/lang/String;</div><div class="line"></div><div class="line">    iget v1, p0, Lcom/DBGame/DiabloLOL/DiabloLOL;-&gt;mPayIndex:I</div><div class="line"></div><div class="line">    aget-object v0, v0, v1</div><div class="line"></div><div class="line">    const/4 v1, 0x1</div><div class="line"></div><div class="line">    invoke-static &#123;v0, v1&#125;, Lcom/DBGame/Common/BLHelper;-&gt;purchaseComplete(Ljava/lang/String;I)V</div><div class="line"></div><div class="line">    .line 732</div><div class="line">    invoke-static &#123;&#125;, Lcom/DBGame/Common/BLHelper;-&gt;closeShieldLayer()V</div><div class="line"></div><div class="line">    ###</div><div class="line">    const-string v0, "---B.S.---"</div><div class="line"></div><div class="line">    const-string v1, "\u6a21\u62dfEGame\u652f\u4ed8\u6210\u529f --by B.S."</div><div class="line"></div><div class="line">    invoke-static &#123;v0, v1&#125;, Landroid/util/Log;-&gt;e(Ljava/lang/String;Ljava/lang/String;)I</div><div class="line"></div><div class="line">    const/4 v1, -0x1</div><div class="line"></div><div class="line">    # setter for: Lcom/DBGame/DiabloLOL/DiabloLOL;-&gt;mPayIndex:I</div><div class="line">    #invoke-static &#123;p0, v1&#125;, Lcom/DBGame/DiabloLOL/DiabloLOL;-&gt;access$202(Lcom/DBGame/DiabloLOL/DiabloLOL;I)I</div><div class="line">    ######下面是上一句代码里面的简写形式 setter for: Lcom/DBGame/DiabloLOL/DiabloLOL;-&gt;mPayIndex:I</div><div class="line">    iput v1, p0, Lcom/DBGame/DiabloLOL/DiabloLOL;-&gt;mPayIndex:I</div><div class="line">    ###</div><div class="line"></div><div class="line">    .line 733</div><div class="line">    return-void</div><div class="line">.end method</div></pre>
       </td>
     </tr>
   </table>
@@ -614,6 +616,28 @@
     </tr>
   </table>
 </figure>
+<h5 id="补充一个统一伪装为联通-游戏联盟支付后-直接领取游戏联盟包月-铂金会员礼包">
+  <a href="#补充一个统一伪装为联通-游戏联盟支付后-直接领取游戏联盟包月-铂金会员礼包" class="headerlink" title="补充一个统一伪装为联通,游戏联盟支付后,直接领取游戏联盟包月,铂金会员礼包"></a>补充一个统一伪装为联通,游戏联盟支付后,直接领取游戏联盟包月,铂金会员礼包</h5>
+<p>找字符串</p>
+<blockquote>
+  <p>purchaseMonthlyContract&gt;&gt;&gt;command is {“command”:”month_order_25”</p>
+  <p>purchaseMonthlyContract&gt;&gt;&gt;respond is {“md5”:””,”msg”:”用户取消”,”result”:3,”firstOrder”:””}</p>
+  <p>purchaseMonthlyContract&gt;&gt;&gt;respond is</p>
+  <p>purchaseMonthlyContract&gt;&gt;&gt;command is</p>
+</blockquote>
+<p>修改purchaseMonthlyContract函数如下</p>
+<figure class="highlight">
+  <table>
+    <tr>
+      <td class="gutter">
+        <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div></pre>
+      </td>
+      <td class="code">
+        <pre><div class="line">.method public purchaseMonthlyContract(I)V</div><div class="line">    .locals 5</div><div class="line">    .param p1, "command"    # I</div><div class="line"></div><div class="line">    .prologue</div><div class="line">    .line 996</div><div class="line">    new-instance v1, Lorg/json/JSONObject;</div><div class="line"></div><div class="line">    invoke-direct &#123;v1&#125;, Lorg/json/JSONObject;-&gt;&lt;init&gt;()V</div><div class="line"></div><div class="line">    .line 998</div><div class="line">    .local v1, "object":Lorg/json/JSONObject;</div><div class="line">    :try_start_0</div><div class="line">    const-string v2, "command"</div><div class="line"></div><div class="line">    new-instance v3, Ljava/lang/StringBuilder;</div><div class="line"></div><div class="line">    invoke-direct &#123;v3&#125;, Ljava/lang/StringBuilder;-&gt;&lt;init&gt;()V</div><div class="line"></div><div class="line">    const-string v4, "month_order_"</div><div class="line"></div><div class="line">    invoke-virtual &#123;v3, v4&#125;, Ljava/lang/StringBuilder;-&gt;append(Ljava/lang/String;)Ljava/lang/StringBuilder;</div><div class="line"></div><div class="line">    move-result-object v3</div><div class="line"></div><div class="line">    invoke-virtual &#123;v3, p1&#125;, Ljava/lang/StringBuilder;-&gt;append(I)Ljava/lang/StringBuilder;</div><div class="line"></div><div class="line">    move-result-object v3</div><div class="line"></div><div class="line">    invoke-virtual &#123;v3&#125;, Ljava/lang/StringBuilder;-&gt;toString()Ljava/lang/String;</div><div class="line"></div><div class="line">    move-result-object v3</div><div class="line"></div><div class="line">    invoke-virtual &#123;v1, v2, v3&#125;, Lorg/json/JSONObject;-&gt;put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;</div><div class="line">    :try_end_0</div><div class="line">    .catch Lorg/json/JSONException; &#123;:try_start_0 .. :try_end_0&#125; :catch_0</div><div class="line"></div><div class="line">    .line 1002</div><div class="line">    :goto_0</div><div class="line">    sget-object v2, Lcom/DBGame/DiabloLOL/DiabloLOL;-&gt;LOG_TAG:Ljava/lang/String;</div><div class="line"></div><div class="line">    new-instance v3, Ljava/lang/StringBuilder;</div><div class="line"></div><div class="line">    invoke-direct &#123;v3&#125;, Ljava/lang/StringBuilder;-&gt;&lt;init&gt;()V</div><div class="line"></div><div class="line">    const-string v4, "purchaseMonthlyContract&gt;&gt;&gt;command is "</div><div class="line"></div><div class="line">    invoke-virtual &#123;v3, v4&#125;, Ljava/lang/StringBuilder;-&gt;append(Ljava/lang/String;)Ljava/lang/StringBuilder;</div><div class="line"></div><div class="line">    move-result-object v3</div><div class="line"></div><div class="line">    .line 1003</div><div class="line">    invoke-virtual &#123;v1&#125;, Lorg/json/JSONObject;-&gt;toString()Ljava/lang/String;</div><div class="line"></div><div class="line">    move-result-object v4</div><div class="line"></div><div class="line">    invoke-virtual &#123;v3, v4&#125;, Ljava/lang/StringBuilder;-&gt;append(Ljava/lang/String;)Ljava/lang/StringBuilder;</div><div class="line"></div><div class="line">    move-result-object v3</div><div class="line"></div><div class="line">    invoke-virtual &#123;v3&#125;, Ljava/lang/StringBuilder;-&gt;toString()Ljava/lang/String;</div><div class="line"></div><div class="line">    move-result-object v3</div><div class="line"></div><div class="line">    .line 1002</div><div class="line">    invoke-static &#123;v2, v3&#125;, Landroid/util/Log;-&gt;d(Ljava/lang/String;Ljava/lang/String;)I</div><div class="line"></div><div class="line">    .line 1004</div><div class="line">    #invoke-static &#123;&#125;, Lcom/unicom/dcLoader/Utils;-&gt;getInstances()Lcom/unicom/dcLoader/Utils;</div><div class="line"></div><div class="line">    #move-result-object v2</div><div class="line"></div><div class="line">    #invoke-virtual &#123;v1&#125;, Lorg/json/JSONObject;-&gt;toString()Ljava/lang/String;</div><div class="line"></div><div class="line">    #move-result-object v3</div><div class="line"></div><div class="line">    #new-instance v4, Lcom/DBGame/DiabloLOL/DiabloLOL$10;</div><div class="line"></div><div class="line">    #invoke-direct &#123;v4, p0&#125;, Lcom/DBGame/DiabloLOL/DiabloLOL$10;-&gt;&lt;init&gt;(Lcom/DBGame/DiabloLOL/DiabloLOL;)V</div><div class="line"></div><div class="line">    #invoke-virtual &#123;v2, p0, v3, v4&#125;, Lcom/unicom/dcLoader/Utils;-&gt;customCommand(Landroid/content/Context;Ljava/lang/String;Lcom/unicom/dcLoader/Utils$UnipayCommandResultListener;)V</div><div class="line">    </div><div class="line">    ######</div><div class="line">    .line 1019</div><div class="line">    const/4 v4, 0x1  #游戏联盟铂金已经包月0x1</div><div class="line"></div><div class="line">    invoke-static &#123;v4&#125;, Lcom/DBGame/Common/BLHelper;-&gt;onMonthlyContractPurchased(Z)V</div><div class="line">    ######</div><div class="line"></div><div class="line">    .line 1032</div><div class="line">    return-void</div><div class="line"></div><div class="line">    .line 999</div><div class="line">    :catch_0</div><div class="line">    move-exception v0</div><div class="line"></div><div class="line">    .line 1000</div><div class="line">    .local v0, "e":Lorg/json/JSONException;</div><div class="line">    invoke-virtual &#123;v0&#125;, Lorg/json/JSONException;-&gt;printStackTrace()V</div><div class="line"></div><div class="line">    goto :goto_0</div><div class="line">.end method</div></pre>
+      </td>
+    </tr>
+  </table>
+</figure>
 <h5 id="几种支付方式如下-短信-联通-移动-Egame支付">
   <a href="#几种支付方式如下-短信-联通-移动-Egame支付" class="headerlink" title="几种支付方式如下:(短信,联通,移动,Egame支付)"></a>几种支付方式如下:(短信,联通,移动,Egame支付)</h5>
 <p>其中电信用的是Egame支付</p>
@@ -633,12 +657,12 @@
     
     <summary type="html">
     
-      &lt;p&gt;—Creaked by B.S. 6/26/2017 9:22:40 PM &lt;/p&gt;
+      &lt;p&gt;—Creaked by B.S. 6/26/2017 9:22:40 PM&lt;/p&gt;
 &lt;p&gt;无聊练手,当作学习Android优秀源码的笔记&lt;/p&gt;
 &lt;p&gt;
   &lt;strong&gt;仅供学习研究,请勿用作商业用途,如若喜欢请支持正版!&lt;/strong&gt;
 &lt;/p&gt;
-&lt;p&gt;最新版原程
+&lt;p&gt;最新版原程序
     
     </summary>
     
@@ -1550,6 +1574,8 @@
       <category term="笔记" scheme="/categories/macOS/%E7%AC%94%E8%AE%B0/"/>
     
     
+      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
+    
       <category term="printf" scheme="/tags/printf/"/>
     
       <category term="C" scheme="/tags/C/"/>
@@ -1565,8 +1591,6 @@
       <category term="全平台" scheme="/tags/%E5%85%A8%E5%B9%B3%E5%8F%B0/"/>
     
       <category term="printfcolor" scheme="/tags/printfcolor/"/>
-    
-      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   

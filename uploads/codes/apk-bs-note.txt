@@ -775,11 +775,24 @@ Lcom/xiaomi/gamecenter/awpay/PayResultCallback;
 
 小米支付, callback , msg = 没有安装客户端, i = 809
 
+misdk pay productCode =
+ 
+mi pay, callback , code = -18003
+
+Yodo1PayHelpe,  已购买，返回购买成功
+
 
 httpType = 1, submit str = {"sign":"51dae58ec391fa88234c8105e232f339","data":{"orderid":"6420c85f768944f0a6f41931658307dc"}}	
 response={"error_code":0,"error":"","status":0,"orderid":"6420c85f768944f0a6f41931658307dc"}	
 query order , queryResult = CONTINUE_LOOP_UNKNOWN
 query order unknown, continue loop
+
+
+response={"error_code":208,"error":"","status":0,"orderid":"292627149ac0455283e5f66b8f6d76b8"}
+
+
+
+
 
 callBack(Lcom/yodo1/android/ops/payment/QueryResult;Ljava/lang/String;)V
 
@@ -978,8 +991,106 @@ Yodo1ResultConst.ResultCode.Success
     ######
 
 --------------------------------------------------------------------------------
-割绳子2
+割绳子2  官方版
 
+去广告
+
+
+去今日推荐5秒闪屏广告
+
+.class public Lcn/cmgame/billing/api/game/main/Tool;
+.super Ljava/lang/Object;
+
+.method public static adSplashShow(Landroid/app/Activity;Ljava/lang/Class;Ljava/lang/Class;Landroid/os/Handler;)Z
+    .locals 7
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    const-string v2, "---adSplashShow----"
+
+    invoke-static {v2}, Lcn/cmgame/billing/api/game/e/d;->b(Ljava/lang/String;)V
+
+    sput-object p0, Lcn/cmgame/billing/api/game/main/Tool;->splashActivity:Landroid/app/Activity;
+
+    :try_start_0
+    ###### 自带日志输出  appSign
+    const-string v3, "---B.S.---Tool.adSplashShow"
+    #move-object/from16 v2, v2  #v0是要打印输出的内容
+    invoke-static {v3, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    move v0, v1  #这里要，返回为0去闪屏广告，返回为1会一直黑屏
+    goto :goto_0
+    ######
+
+
+.class public Lcom/yodo1/android/sdk/unity/UnityYodo1Advertising;
+.super Ljava/lang/Object;
+.source "UnityYodo1Advertising.java"
+
+
+.method public showBannerAd(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 2
+    .param p1, "gameObject"    # Ljava/lang/String;
+    .param p2, "callbackName"    # Ljava/lang/String;
+
+    .prologue
+    .line 150
+    const-string v0, "Yodo1SDK, Unity call Android --- showBannerAd ..."
+
+    invoke-static {v0}, Lcom/yodo1/sdk/kit/YLog;->d(Ljava/lang/String;)V
+    
+    return-void  #直接返回
+
+.method public showIapInterstitialAd(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 2
+    .param p1, "gameObject"    # Ljava/lang/String;
+    .param p2, "callbackName"    # Ljava/lang/String;
+
+    .prologue
+    .line 67
+    const-string v0, "Yodo1SDK, Unity call Android --- showIapInterstitialAd ..."
+
+    invoke-static {v0}, Lcom/yodo1/sdk/kit/YLog;->d(Ljava/lang/String;)V
+    
+    return-void  #直接返回	
+	
+.method public showInterstitialAd(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 2
+    .param p1, "gameObject"    # Ljava/lang/String;
+    .param p2, "callbackName"    # Ljava/lang/String;
+
+    .prologue
+    .line 93
+    const-string v0, "Yodo1SDK, Unity call Android --- showInterstitialAd ..."
+
+    invoke-static {v0}, Lcom/yodo1/sdk/kit/YLog;->d(Ljava/lang/String;)V
+
+    return-void  #直接返回
+
+.method public showNativeAd(Ljava/lang/String;FFFFLjava/lang/String;)V
+    .locals 9
+    .param p1, "gameObject"    # Ljava/lang/String;
+    .param p2, "px"    # F
+    .param p3, "py"    # F
+    .param p4, "pw"    # F
+    .param p5, "ph"    # F
+    .param p6, "callbackName"    # Ljava/lang/String;
+
+    .prologue
+    .line 124
+    const-string v0, "Yodo1SDK, Unity call Android --- showNativeAd ..."
+
+    invoke-static {v0}, Lcom/yodo1/sdk/kit/YLog;->d(Ljava/lang/String;)V
+    
+    return-void  #直接返回
+	
+	
+	
+	
+
+
+	
 
 BillingResult.SUCCESS
 
@@ -1093,14 +1204,87 @@ BillingResult.SUCCESS
         });
     }
 
+	
+电信Egame支付EgamePayListener
 
 
+.class public Lcn/egame/terminal/paysdk/EgamePay;
+.super Ljava/lang/Object;
+.source "EgamePay.java"
 
+.method public static pay(Landroid/app/Activity;Ljava/util/Map;Lcn/egame/terminal/paysdk/EgamePayListener;)V
+    .locals 1
+    .param p0, "activity"    # Landroid/app/Activity;
+    .param p2, "listener"    # Lcn/egame/terminal/paysdk/EgamePayListener;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/app/Activity;",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;",
+            "Lcn/egame/terminal/paysdk/EgamePayListener;",
+            ")V"
+        }
+    .end annotation
+
+    .prologue
+    .line 78
+    #.local p1, "payParams":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
+    #sget v0, Lcn/egame/terminal/paysdk/EgamePay;->sInitStatus:I
+
+    #if-eqz v0, :cond_0
+
+    #.line 79
+    #sget v0, Lcn/egame/terminal/paysdk/EgamePay;->sInitStatus:I
+
+    #invoke-interface {p2, p1, v0}, Lcn/egame/terminal/paysdk/EgamePayListener;->payFailed(Ljava/util/Map;I)V
+
+    #.line 84
+    #:goto_0
+    #return-void
+
+    #.line 83
+    #:cond_0
+    #invoke-static {p0, p1, p2}, Lcn/egame/terminal/sdk/jni/EgamePayProtocol;->pay(Landroid/content/Context;Ljava/util/Map;Lcn/egame/terminal/paysdk/EgamePayListener;)V
+    
+
+    ######EgamePayListener回调大法
+    #注意paySuccess这个函数只有一个参数.method public abstract paySuccess(Ljava/util/Map;)V
+    #而失败payFailed这个函数有第二个整型参数 .method public abstract payFailed(Ljava/util/Map;I)V
+    # Egame支付成功
+    invoke-interface {p2, p1}, Lcn/egame/terminal/paysdk/EgamePayListener;->paySuccess(Ljava/util/Map;)V
+
+    return-void
+    ######
+
+    #goto :goto_0
+.end method
+	
+
+联通游戏联盟支付Utils$UnipayPayResultListener	
+
+
+	
+	
+	
+统一支付接口	
+	
 .class public Lcom/yodo1/android/sdk/utils/YOperatorUtils;
 .super Ljava/lang/Object;
 .source "YOperatorUtils.java"
 
 
+# static fields
+.field public static final CHANNEL_ID_cmcc:I = 0x1
+
+.field public static final CHANNEL_ID_default:I = 0x0
+
+.field public static final CHANNEL_ID_telecom:I = 0x2
+
+.field public static final CHANNEL_ID_unicom:I = 0x4
 
 
     public static int getOperatorChannelId(Context arg5) {
@@ -1300,6 +1484,130 @@ v1.14.1
 v1.15.1
 http://www.appchina.com/app/com.DBGame.DiabloLOL.yyh
 http://android.myapp.com/myapp/detail.htm?apkName=com.DBGame.DiabloLOL
+
+腾讯加固壳带壳破解
+
+改4个地方
+
+1,
+.class public Lcom/DBGame/DiabloLOL/DiabloLOL;
+.super Lorg/cocos2dx/lib/Cocos2dxActivity;
+.source "DiabloLOL.java"
+
+
+.method private getSimType()I
+    .locals 6
+
+    .prologue
+    .line 353
+    ###统一为电信Egame支付接口直接返回为1
+    const/4 v4, 0x1
+
+    return v4
+
+	
+2,
+
+.class public Lcn/play/egamemanager/GameManager;
+.super Ljava/lang/Object;
+	
+.method public EGamePay(Landroid/app/Activity;Ljava/util/HashMap;Lcn/egame/terminal/paysdk/EgamePayListener;)V
+
+	
+    :goto_0
+    iget-object v0, p0, Lcn/play/egamemanager/GameManager;->gameConfig:Lcn/play/egamemanager/GameConfig;
+
+    invoke-virtual {v0}, Lcn/play/egamemanager/GameConfig;->getPayConfirm()I
+
+    move-result v0
+
+    #const/4 v0, 0x0  #添加这句不要确认支付弹框
+    
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_1
+
+    new-instance v0, Landroid/app/AlertDialog$Builder;
+
+    invoke-direct {v0, p1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+
+    const-string v1, "B.S.\u6e29\u99a8\u63d0\u793a\u652f\u4ed8\u786e\u8ba4"
+
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+
+    const-string v1, "\u4ee5\u4e0b\u64cd\u4f5c\u5c06\u901a\u8fc7B.S.\u8bdd\u8d39\u652f\u4ed8\uff0c\u786e\u8ba4\u64cd\u4f5c\uff1f \n  www.appleos.xyz \n  爱淫荡 多合一 \n  www.allin1.xyz \n  EGamePay --by B.S."
+
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+
+    const-string v1, "\u786e\u8ba4B.S.\u7834\u89e3\u652f\u4ed8"
+
+    new-instance v2, Lcn/play/egamemanager/f;
+
+    invoke-direct {v2, p0, p1, p2, p3}, Lcn/play/egamemanager/f;-><init>(Lcn/play/egamemanager/GameManager;Landroid/app/Activity;Ljava/util/HashMap;Lcn/egame/terminal/paysdk/EgamePayListener;)V
+
+    invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    const-string v1, "\u53d6\u6d88"
+
+    new-instance v2, Lcn/play/egamemanager/g;
+
+    invoke-direct {v2, p0, p3, p2}, Lcn/play/egamemanager/g;-><init>(Lcn/play/egamemanager/GameManager;Lcn/egame/terminal/paysdk/EgamePayListener;Ljava/util/HashMap;)V
+
+    invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
+
+    :goto_1
+    return-void
+	
+3,
+
+.class public Lcn/egame/terminal/paysdk/EgamePay;
+.super Ljava/lang/Object;
+.source "EgamePay.java"
+
+
+.method public static pay(Landroid/app/Activity;Ljava/util/Map;Lcn/egame/terminal/paysdk/EgamePayListener;)V
+    .locals 1
+    .param p0, "activity"    # Landroid/app/Activity;
+    .param p2, "listener"    # Lcn/egame/terminal/paysdk/EgamePayListener;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/app/Activity;",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;",
+            "Lcn/egame/terminal/paysdk/EgamePayListener;",
+            ")V"
+        }
+    .end annotation
+
+    .prologue
+    .line 78
+    .local p1, "payParams":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
+    #sget v0, Lcn/egame/terminal/paysdk/EgamePay;->sInitStatus:I
+
+    #if-eqz v0, :cond_0
+
+    #.line 79
+    #sget v0, Lcn/egame/terminal/paysdk/EgamePay;->sInitStatus:I
+
+    #invoke-interface {p2, p1, v0}, Lcn/egame/terminal/paysdk/EgamePayListener;->payFailed(Ljava/util/Map;I)V
+    
+    ######
+    #注意paySuccess这个函数只有一个参数.method public abstract paySuccess(Ljava/util/Map;)V
+    #而失败payFailed这个函数有第二个整型参数 .method public abstract payFailed(Ljava/util/Map;I)V
+    # Egame支付成功
+    invoke-interface {p2, p1}, Lcn/egame/terminal/paysdk/EgamePayListener;->paySuccess(Ljava/util/Map;)V
+
+    return-void
+    ######	
+.end method
+
+4,
 
 去签名验证:
 
@@ -1660,6 +1968,9 @@ case 200:
 
 去今日推荐5秒闪屏广告
 
+.class public Lcn/cmgame/billing/api/game/main/Tool;
+.super Ljava/lang/Object;
+
 .method public static adSplashShow(Landroid/app/Activity;Ljava/lang/Class;Ljava/lang/Class;Landroid/os/Handler;)Z
     .locals 7
     const/4 v0, 0x1
@@ -1684,10 +1995,101 @@ case 200:
 
 内购破解：
 
+http://www.52pojie.cn/forum.php?mod=redirect&goto=findpost&ptid=620244&pid=16469555
 
-order id:
+<uses-permission android:name="android.permission.SEND_SMS"/>
+<uses-permission android:name="android.permission.CALL_PHONE"/>
 
 
+
+###不需要支付购买?!!!竟然有这函数
+invoke-direct {p0}, Lcom/DBGame/DiabloLOL/DiabloLOL;->buyWithoutPay()V
+
+public void paySuccess(Map<String, String> paramAnonymousMap)
+{
+	DiabloLOL.this.setPayment();
+	BLHelper.purchaseComplete(DiabloLOL.this.PRO_ID_Str[DiabloLOL.this.mPayIndex], 1);
+	BLHelper.closeShieldLayer();
+	Log.e("B.S.", "模拟Egame支付成功 --by B.S.");
+	DiabloLOL.access$202(DiabloLOL.this, -1);
+}
+
+将原来的buyWithoutPay模拟上面的paySuccess成功代码处理一下,要不然只能第一次购买成功.
+
+private void buyWithoutPay()
+{
+	setPayment();
+	BLHelper.purchaseComplete(this.PRO_ID_Str[this.mPayIndex], 1);
+	BLHelper.closeShieldLayer();
+}
+
+
+经过修正过的不支付购买函数
+
+
+private void buyWithoutPay() {
+	com.android.BS.Log.LogStr("无限内购B.S.破解版\n  www.appleos.xyz \n  爱淫荡  多合一 \n  www.allin1.xyz \n  buyWithoutPay -- by B.S.");
+	setPayment();
+	BLHelper.purchaseComplete(this.PRO_ID_Str[this.mPayIndex], 1);
+	BLHelper.closeShieldLayer();
+	Log.e("---B.S.---", "模拟EGame支付成功 --by B.S.");
+	this.mPayIndex = -1;
+}
+
+修正后的buyWithoutPay对应的smali
+
+.method private buyWithoutPay()V
+    .locals 2
+
+    .prologue
+    .line 730
+    ######插入代码开始 coded by B.S.
+    
+    const-string v0, "\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n  www.appleos.xyz \n  \u7231\u6DEB\u8361  \u591A\u5408\u4E00 \n  www.allin1.xyz \n  buyWithoutPay -- by B.S."
+    
+    invoke-static {v0}, Lcom/android/BS/Log;->LogStr(Ljava/lang/String;)V
+    
+    ######插入代码结束 coded by B.S.  
+    
+    invoke-direct {p0}, Lcom/DBGame/DiabloLOL/DiabloLOL;->setPayment()V
+
+    .line 731
+    iget-object v0, p0, Lcom/DBGame/DiabloLOL/DiabloLOL;->PRO_ID_Str:[Ljava/lang/String;
+
+    iget v1, p0, Lcom/DBGame/DiabloLOL/DiabloLOL;->mPayIndex:I
+
+    aget-object v0, v0, v1
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1}, Lcom/DBGame/Common/BLHelper;->purchaseComplete(Ljava/lang/String;I)V
+
+    .line 732
+    invoke-static {}, Lcom/DBGame/Common/BLHelper;->closeShieldLayer()V
+
+    ###
+    const-string v0, "---B.S.---"
+
+    const-string v1, "\u6a21\u62dfEGame\u652f\u4ed8\u6210\u529f --by B.S."
+
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 v1, -0x1
+
+    # setter for: Lcom/DBGame/DiabloLOL/DiabloLOL;->mPayIndex:I
+    #invoke-static {p0, v1}, Lcom/DBGame/DiabloLOL/DiabloLOL;->access$202(Lcom/DBGame/DiabloLOL/DiabloLOL;I)I
+    ######下面是上一句代码里面的简写形式 setter for: Lcom/DBGame/DiabloLOL/DiabloLOL;->mPayIndex:I
+    iput v1, p0, Lcom/DBGame/DiabloLOL/DiabloLOL;->mPayIndex:I
+    ###
+
+
+    .line 733
+    return-void
+.end method
+
+
+  
+order id:		
 
 电信：
 
@@ -1909,12 +2311,120 @@ Unicom支付cancel
 
 
 
+联通支付下,游戏联盟,是否铂金会员礼包
+
+
+purchaseMonthlyContract>>>command is {"command":"month_order_25"}
+purchaseMonthlyContract>>>respond is {"md5":"","msg":"用户取消","result":3,"firstOrder":""}
+
 
 purchaseMonthlyContract>>>respond is
+
 purchaseMonthlyContract>>>command is
 
 
+.method public purchaseMonthlyContract(I)V
+    .locals 5
+    .param p1, "command"    # I
 
+    .prologue
+    .line 996
+    new-instance v1, Lorg/json/JSONObject;
+
+    invoke-direct {v1}, Lorg/json/JSONObject;-><init>()V
+
+    .line 998
+    .local v1, "object":Lorg/json/JSONObject;
+    :try_start_0
+    const-string v2, "command"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "month_order_"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    :try_end_0
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 1002
+    :goto_0
+    sget-object v2, Lcom/DBGame/DiabloLOL/DiabloLOL;->LOG_TAG:Ljava/lang/String;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "purchaseMonthlyContract>>>command is "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    .line 1003
+    invoke-virtual {v1}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 1002
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 1004
+    #invoke-static {}, Lcom/unicom/dcLoader/Utils;->getInstances()Lcom/unicom/dcLoader/Utils;
+
+    #move-result-object v2
+
+    #invoke-virtual {v1}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
+
+    #move-result-object v3
+
+    #new-instance v4, Lcom/DBGame/DiabloLOL/DiabloLOL$10;
+
+    #invoke-direct {v4, p0}, Lcom/DBGame/DiabloLOL/DiabloLOL$10;-><init>(Lcom/DBGame/DiabloLOL/DiabloLOL;)V
+
+    #invoke-virtual {v2, p0, v3, v4}, Lcom/unicom/dcLoader/Utils;->customCommand(Landroid/content/Context;Ljava/lang/String;Lcom/unicom/dcLoader/Utils$UnipayCommandResultListener;)V
+    
+    ######
+    .line 1019
+    const/4 v4, 0x1  #游戏联盟铂金已经包月0x1
+
+    invoke-static {v4}, Lcom/DBGame/Common/BLHelper;->onMonthlyContractPurchased(Z)V
+    ######
+
+    .line 1032
+    return-void
+
+    .line 999
+    :catch_0
+    move-exception v0
+
+    .line 1000
+    .local v0, "e":Lorg/json/JSONException;
+    invoke-virtual {v0}, Lorg/json/JSONException;->printStackTrace()V
+
+    goto :goto_0
+.end method
 
 ================================================================================
 

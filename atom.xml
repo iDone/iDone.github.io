@@ -1574,8 +1574,6 @@
       <category term="笔记" scheme="/categories/macOS/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
-    
       <category term="printf" scheme="/tags/printf/"/>
     
       <category term="C" scheme="/tags/C/"/>
@@ -1591,6 +1589,8 @@
       <category term="全平台" scheme="/tags/%E5%85%A8%E5%B9%B3%E5%8F%B0/"/>
     
       <category term="printfcolor" scheme="/tags/printfcolor/"/>
+    
+      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
@@ -1917,10 +1917,10 @@ idone@AY1402261427509974f2Z:~$
     <published>2017-05-05T00:30:00.000Z</published>
     <updated>2017-05-23T05:32:17.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="查尔斯动态加载启动器-CharlesLoader-v4-x">
+    <content type="html"><![CDATA[<h1 id="查尔斯动态加载启动器-CharlesLoader-v4-x">
   <a href="#查尔斯动态加载启动器-CharlesLoader-v4-x" class="headerlink" title="查尔斯动态加载启动器(CharlesLoader) v4.x"></a>
   <strong>查尔斯动态加载启动器(CharlesLoader) v4.x</strong>
-</h2>
+</h1>
 <hr>
 <p> —by B.S. 5/5/2017</p>
 <h5 id="极其强大的Web调试、代理抓包工具启动器。-Charles-v4-x-动态加载启动器loader-最新版v4-1-2相对v-4-0-2以上版本比较，明文类名已混淆。">
@@ -1932,16 +1932,63 @@ idone@AY1402261427509974f2Z:~$
 </blockquote>
 <h5 id="破解-Charles-的屌炸天的-shell-脚本for-MacOS-Linux-Unix">
   <a href="#破解-Charles-的屌炸天的-shell-脚本for-MacOS-Linux-Unix" class="headerlink" title="破解 Charles 的屌炸天的 shell 脚本for MacOS,Linux,Unix"></a>
-  <a href="/uploads/codes/charles-bs-v413.sh">破解 Charles 的屌炸天的 shell 脚本for MacOS,Linux,Unix</a>
+  <a href="/uploads/codes/charles-bs-v414.sh">破解 Charles 的屌炸天的 shell 脚本for MacOS,Linux,Unix</a>
 </h5>
 <p>
-  <a href="/uploads/codes/charles.jar">最新charles-v4.1.3破解文件</a>
+  <a href="/uploads/codes/charles.jar">最新charles-v4.1.4破解文件(For All)</a>
 </p>
+<blockquote>
+  <ol>
+    <li>Windows 平台,将下载的charles.jar文件覆盖到安装目录下的lib文件夹下即可完成破解!</li>
+    <li>Mac 平台,将下载的charles.jar文件右键 Charles.app 显示包内容,覆盖到Content-&gt;Java下即可完成破解!
+      <br>注意: 这是v4.1.4的破解文件,不确定其他版本也同样适用!请下载相应版本文件,然后改名为charles.jar.</li>
+  </ol>
+</blockquote>
+<hr>
+<h2 id="Charles-v4-1-4版本分析记录">
+  <a href="#Charles-v4-1-4版本分析记录" class="headerlink" title="Charles v4.1.4版本分析记录"></a>
+  <strong>Charles v4.1.4版本分析记录</strong>
+</h2>
+<p>–by B.S.</p>
+<p>July 18, 2017 5:25 PM</p>
+<h5 id="最新版v4-1-4相对v-4-0-2比较，明文类名已混淆">
+  <a href="#最新版v4-1-4相对v-4-0-2比较，明文类名已混淆" class="headerlink" title="最新版v4.1.4相对v.4.0.2比较，明文类名已混淆."></a>最新版v4.1.4相对v.4.0.2比较，明文类名已混淆.</h5>
+<h5 id="反编译为源码后-找关键点的分析流程">
+  <a href="#反编译为源码后-找关键点的分析流程" class="headerlink" title="反编译为源码后,找关键点的分析流程:"></a>反编译为源码后,找关键点的分析流程:</h5>
+<h6 id="这里414试一试另外一种更简单的方法">
+  <a href="#这里414试一试另外一种更简单的方法" class="headerlink" title="这里414试一试另外一种更简单的方法:"></a>这里414试一试另外一种更简单的方法:</h6>
+<blockquote>
+  <ol>
+    <li>在com.xk72.charles.gui.SplashWindow.java里找到
+      <br>public void showRegistrationStatus()函数方法;
+      <figure class="highlight java">
+        <table>
+          <tr>
+            <td class="gutter">
+              <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre>
+            </td>
+            <td class="code">
+              <pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showRegistrationStatus</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (gIbD.xUFT()) &#123;</div><div class="line">        <span class="keyword">this</span>.showStatus(<span class="string">"Registered to: "</span> + gIbD.PcqR());</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">this</span>.showSharewareStatus();</div><div class="line">&#125;</div></pre>
+            </td>
+          </tr>
+        </table>
+      </figure>
+    </li>
+  </ol>
+</blockquote>
 <ol>
-  <li>Windows 平台,将下载的charles.jar文件覆盖到安装目录下的lib文件夹下即可完成破解!</li>
-  <li>Mac 平台,将下载的charles.jar文件右键 Charles.app 显示包内容,覆盖到Content-&gt;Java下即可完成破解!
-    <br>注意: 这是v4.1.3的破解文件,不确定其他版本也同样适用!请下载相应版本文件,然后改名为charles.jar.</li>
+  <li>在if()条件里的,是否注册成功gIbD.xUFT()函数和”Registered to: “后面的注册给谁的gIbD.PcqR()函数,都来自import
+    com.xk72.charles.gIbD类</li>
+  <li>在com.xk72.charles.gIbD就是关键类。修改掉上面两个函数即可。</li>
 </ol>
+<blockquote>
+  <p>hook掉public static boolean x1()和public static java.lang.String x3()两个方法函数就可以了,当然最好public修饰的都hook掉;</p>
+</blockquote>
+<h5 id="只需要在用javassist时-设置这一句就可以将破解好的class类文件就会dump出来">
+  <a href="#只需要在用javassist时-设置这一句就可以将破解好的class类文件就会dump出来" class="headerlink" title="只需要在用javassist时,设置这一句就可以将破解好的class类文件就会dump出来"></a>只需要在用javassist时,设置这一句就可以将破解好的class类文件就会dump出来</h5>
+<blockquote>
+  <p>CtClass.debugDump = “./charles-bs-cr”;</p>
+</blockquote>
 <hr>
 <h2 id="Charles-v4-1-3版本分析记录">
   <a href="#Charles-v4-1-3版本分析记录" class="headerlink" title="Charles v4.1.3版本分析记录"></a>
@@ -1951,8 +1998,8 @@ idone@AY1402261427509974f2Z:~$
 <p>6/27/2017 2:07:52 PM </p>
 <h5 id="最新版v4-1-3相对v-4-0-2比较，明文类名已混淆">
   <a href="#最新版v4-1-3相对v-4-0-2比较，明文类名已混淆" class="headerlink" title="最新版v4.1.3相对v.4.0.2比较，明文类名已混淆."></a>最新版v4.1.3相对v.4.0.2比较，明文类名已混淆.</h5>
-<h5 id="反编译为源码后-找关键点的分析流程">
-  <a href="#反编译为源码后-找关键点的分析流程" class="headerlink" title="反编译为源码后,找关键点的分析流程:"></a>反编译为源码后,找关键点的分析流程:</h5>
+<h5 id="反编译为源码后-找关键点的分析流程-1">
+  <a href="#反编译为源码后-找关键点的分析流程-1" class="headerlink" title="反编译为源码后,找关键点的分析流程:"></a>反编译为源码后,找关键点的分析流程:</h5>
 <blockquote>
   <ol>
     <li>在com\xk72\charles\gui\frames\RegisterFrame.java里找到this.bRegister.addActionListener导入的类import
@@ -1999,8 +2046,8 @@ idone@AY1402261427509974f2Z:~$
 <p>5/23/2017 1:32:17 PM</p>
 <h5 id="最新版v4-1-2相对v-4-0-2比较，明文类名已混淆">
   <a href="#最新版v4-1-2相对v-4-0-2比较，明文类名已混淆" class="headerlink" title="最新版v4.1.2相对v.4.0.2比较，明文类名已混淆."></a>最新版v4.1.2相对v.4.0.2比较，明文类名已混淆.</h5>
-<h5 id="反编译为源码后-找关键点的分析流程-1">
-  <a href="#反编译为源码后-找关键点的分析流程-1" class="headerlink" title="反编译为源码后,找关键点的分析流程:"></a>反编译为源码后,找关键点的分析流程:</h5>
+<h5 id="反编译为源码后-找关键点的分析流程-2">
+  <a href="#反编译为源码后-找关键点的分析流程-2" class="headerlink" title="反编译为源码后,找关键点的分析流程:"></a>反编译为源码后,找关键点的分析流程:</h5>
 <blockquote>
   <ol>
     <li>在com\xk72\charles\gui\frames\RegisterFrame.java里找到this.bRegister.addActionListener导入的类import
@@ -2015,12 +2062,12 @@ idone@AY1402261427509974f2Z:~$
   <a href="#Charles-v4-1-1版本分析记录" class="headerlink" title="Charles v4.1.1版本分析记录"></a>
   <strong>Charles v4.1.1版本分析记录</strong>
 </h2>
-<p>–by B.S.O.D.</p>
+<p>–by B.S.</p>
 <p>5/5/2017 8:30:00 AM</p>
 <h5 id="最新版v4-1-1相对v-4-0-2比较，明文类名已混淆">
   <a href="#最新版v4-1-1相对v-4-0-2比较，明文类名已混淆" class="headerlink" title="最新版v4.1.1相对v.4.0.2比较，明文类名已混淆."></a>最新版v4.1.1相对v.4.0.2比较，明文类名已混淆.</h5>
-<h5 id="反编译为源码后-找关键点的分析流程-2">
-  <a href="#反编译为源码后-找关键点的分析流程-2" class="headerlink" title="反编译为源码后,找关键点的分析流程:"></a>反编译为源码后,找关键点的分析流程:</h5>
+<h5 id="反编译为源码后-找关键点的分析流程-3">
+  <a href="#反编译为源码后-找关键点的分析流程-3" class="headerlink" title="反编译为源码后,找关键点的分析流程:"></a>反编译为源码后,找关键点的分析流程:</h5>
 <blockquote>
   <ol>
     <li>在com\xk72\charles\gui\frames\RegisterFrame.java里找到this.bRegister.addActionListener导入的类
@@ -2034,7 +2081,7 @@ idone@AY1402261427509974f2Z:~$
     
     <summary type="html">
     
-      &lt;h2 id=&quot;查尔斯动态加载启动器-CharlesLoader-v4-x&quot;&gt;
+      &lt;h1 id=&quot;查尔斯动态加载启动器-CharlesLoader-v4-x&quot;&gt;
   &lt;a href=&quot;#查尔斯动态加载启动器-CharlesLoader-v4-x&quot; class=&quot;headerlink&quot; title=&quot;查尔斯动态加载启动器(CharlesLoader) v4.x&quot;
     
     </summary>

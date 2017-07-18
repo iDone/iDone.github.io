@@ -681,6 +681,14 @@
     
       <category term="Crack" scheme="/tags/Crack/"/>
     
+      <category term="jadx" scheme="/tags/jadx/"/>
+    
+      <category term="java" scheme="/tags/java/"/>
+    
+      <category term="android killer" scheme="/tags/android-killer/"/>
+    
+      <category term="smali" scheme="/tags/smali/"/>
+    
       <category term="签名验证" scheme="/tags/%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81/"/>
     
       <category term="去广告" scheme="/tags/%E5%8E%BB%E5%B9%BF%E5%91%8A/"/>
@@ -692,14 +700,6 @@
       <category term="46003" scheme="/tags/46003/"/>
     
       <category term="egame" scheme="/tags/egame/"/>
-    
-      <category term="jadx" scheme="/tags/jadx/"/>
-    
-      <category term="java" scheme="/tags/java/"/>
-    
-      <category term="android killer" scheme="/tags/android-killer/"/>
-    
-      <category term="smali" scheme="/tags/smali/"/>
     
   </entry>
   
@@ -1427,6 +1427,10 @@
     
       <category term="Crack" scheme="/tags/Crack/"/>
     
+      <category term="youdao1" scheme="/tags/youdao1/"/>
+    
+      <category term="smspay" scheme="/tags/smspay/"/>
+    
       <category term="jadx" scheme="/tags/jadx/"/>
     
       <category term="java" scheme="/tags/java/"/>
@@ -1434,10 +1438,6 @@
       <category term="android killer" scheme="/tags/android-killer/"/>
     
       <category term="smali" scheme="/tags/smali/"/>
-    
-      <category term="youdao1" scheme="/tags/youdao1/"/>
-    
-      <category term="smspay" scheme="/tags/smspay/"/>
     
   </entry>
   

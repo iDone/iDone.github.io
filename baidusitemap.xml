@@ -3,6 +3,48 @@
 
 
     
+    
+  <url>
+    <loc>/2017/07/25/%E4%BF%AE%E6%94%B9android_server%E9%BB%98%E8%AE%A4%E8%B0%83%E8%AF%95%E7%AB%AF%E5%8F%A3%E5%8F%B7%E5%8F%8D%E8%B0%83%E8%AF%95/</loc>
+    <lastmod>2017-07-25T04:08:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>修改android_server默认调试端口号反调试</title>
+        <pubTime>2017-07-25T04:06:00.000Z</pubTime>
+        
+        <tag>逆向工程(Reverse Engineering)</tag>
+         
+        <tag>破解(Crack)</tag>
+         
+        <tag>Java</tag>
+         
+        <tag>android</tag>
+         
+        <tag>android_server</tag>
+         
+        <tag>so调试</tag>
+         
+        <tag>IDA调试</tag>
+         
+        <tag>android调试</tag>
+         
+        <tag>23946</tag>
+         
+        <tag>apk调试</tag>
+         
+         
+           
+             
+              <breadCrumb title="逆向工程(Reverse Engineering)" url="/categories/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B-Reverse-Engineering/"/>
+          
+             
+              <breadCrumb title="破解(Crack)" url="/categories/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B-Reverse-Engineering/%E7%A0%B4%E8%A7%A3-Crack/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
   <url>
     <loc>/2017/05/22/Windows%E5%91%BD%E4%BB%A4netsh%E8%AE%BE%E7%BD%AEIP%E5%92%8CDNS/</loc>
     <lastmod>2017-06-28T18:46:17.000Z</lastmod>
@@ -314,7 +356,6 @@
     </data>
     </url>
 
-    
     
     
     

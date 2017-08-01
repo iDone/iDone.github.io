@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="/"/>
-  <updated>2017-06-26T13:30:00.000Z</updated>
+  <updated>2017-07-25T04:08:00.000Z</updated>
   <id>/</id>
   
   <author>
@@ -14,6 +14,150 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>修改android_server默认调试端口号反调试</title>
+    <link href="/2017/07/25/%E4%BF%AE%E6%94%B9android_server%E9%BB%98%E8%AE%A4%E8%B0%83%E8%AF%95%E7%AB%AF%E5%8F%A3%E5%8F%B7%E5%8F%8D%E8%B0%83%E8%AF%95/"/>
+    <id>/2017/07/25/修改android_server默认调试端口号反调试/</id>
+    <published>2017-07-25T04:06:00.000Z</published>
+    <updated>2017-07-25T04:08:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="修改android-server默认调试端口号反调试">
+  <a href="#修改android-server默认调试端口号反调试" class="headerlink" title="修改android_server默认调试端口号反调试"></a>
+  <strong>修改android_server默认调试端口号反调试</strong>
+</h1>
+<hr>
+<p>July 25, 2017 12:06 PM</p>
+<h3 id="IDA载入文件android-server分析">
+  <a href="#IDA载入文件android-server分析" class="headerlink" title="IDA载入文件android_server分析"></a>IDA载入文件android_server分析</h3>
+<p>android_server默认调试端口号是: ==23946==, 十六进制值为: ==0x5D8A==</p>
+<p>Shift+F12 查找字符串</p>
+<blockquote>
+  <p>.rodata:00074224 0000004A C IDA Android 32-bit remote debug server(ST) v1.%d. Hex-Rays
+    (c) 2004-2015\n</p>
+  <p>.rodata:00074160 0000000D C init_sockets</p>
+</blockquote>
+<p>点击数据交叉来到代码区</p>
+<h5 id="第一处">
+  <a href="#第一处" class="headerlink" title="第一处:"></a>第一处:</h5>
+<figure class="highlight plain">
+  <table>
+    <tr>
+      <td class="gutter">
+        <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre>
+      </td>
+      <td class="code">
+        <pre><div class="line">.text:0000B620                               loc_B620                                ; CODE XREF: sub_B5DC+22j</div><div class="line">.text:0000B620 A9 4B                                         LDR     R3, =(off_7FBD0 - 0xB62A)</div><div class="line">.text:0000B622 AA 48                                         LDR     R0, =(aIdaAndroid32Bi - 0xB62E)</div><div class="line">.text:0000B624 13 21                                         MOVS    R1, #0x13</div><div class="line">.text:0000B626 7B 44                                         ADD     R3, PC ; off_7FBD0</div><div class="line">.text:0000B628 1B 68                                         LDR     R3, [R3] ; unk_80BB0</div><div class="line">.text:0000B62A 78 44                                         ADD     R0, PC          ; &quot;IDA Android 32-bit remote debug server(&quot;...</div><div class="line">.text:0000B62C 1D 78                                         LDRB    R5, [R3]</div><div class="line">.text:0000B62E 04 F0 AB FC                                   BL      sub_FF88</div><div class="line">.text:0000B632 01 2E                                         CMP     R6, #1</div><div class="line">.text:0000B634 1C DD                                         BLE     loc_B670</div><div class="line">.text:0000B636 62 68                                         LDR     R2, [R4,#4]</div><div class="line">.text:0000B638 13 78                                         LDRB    R3, [R2]</div><div class="line">.text:0000B63A 02 22                                         MOVS    R2, #2</div><div class="line">.text:0000B63C 93 43                                         BICS    R3, R2</div><div class="line">.text:0000B63E 2D 2B                                         CMP     R3, #0x2D</div><div class="line">.text:0000B640 16 D1                                         BNE     loc_B670</div><div class="line">.text:0000B642 00 2D                                         CMP     R5, #0</div><div class="line">.text:0000B644 00 D1                                         BNE     loc_B648</div><div class="line">.text:0000B646 9F E1                                         B       loc_B988</div><div class="line">.text:0000B648                               ; ---------------------------------------------------------------------------</div><div class="line">.text:0000B648</div><div class="line">.text:0000B648                               loc_B648                                ; CODE XREF: sub_B5DC+68j</div><div class="line">.text:0000B648 A1 4B                                         LDR     R3, =(dword_8074C - 0xB652)</div><div class="line">.text:0000B64A A2 4A                                         LDR     R2, =(dword_8074C - 0xB654)</div><div class="line">.text:0000B64C A2 4D                                         LDR     R5, =0x5D8A</div><div class="line">.text:0000B64E 7B 44                                         ADD     R3, PC ; dword_8074C</div><div class="line">.text:0000B650 7A 44                                         ADD     R2, PC ; dword_8074C</div><div class="line">.text:0000B652 99 46                                         MOV     R9, R3</div><div class="line">.text:0000B654 01 27                                         MOVS    R7, #1</div><div class="line">.text:0000B656 90 46                                         MOV     R8, R2</div><div class="line">.text:0000B658</div><div class="line">.text:0000B658                               loc_B658                                ; CODE XREF: sub_B5DC+2BAj</div><div class="line">.text:0000B658 63 68                                         LDR     R3, [R4,#4]</div><div class="line">.text:0000B65A 58 78                                         LDRB    R0, [R3,#1]</div><div class="line">.text:0000B65C 50 38                                         SUBS    R0, #0x50       ; switch 39 cases</div><div class="line">.text:0000B65E 26 28                                         CMP     R0, #0x26</div><div class="line">.text:0000B660 00 D8                                         BHI     def_B826        ; jumptable 0000B826 default case</div><div class="line">.text:0000B662 E0 E0                                         B       loc_B826</div></pre>
+      </td>
+    </tr>
+  </table>
+</figure>
+<h5 id="第二处">
+  <a href="#第二处" class="headerlink" title="第二处:"></a>第二处:</h5>
+<figure class="highlight plain">
+  <table>
+    <tr>
+      <td class="gutter">
+        <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre>
+      </td>
+      <td class="code">
+        <pre><div class="line">.text:0000B97E                               loc_B97E                                ; CODE XREF: sub_B5DC+C2j</div><div class="line">.text:0000B97E 30 49                                         LDR     R1, =(aInit_sockets - 0xB986)</div><div class="line">.text:0000B980 00 20                                         MOVS    R0, #0</div><div class="line">.text:0000B982 79 44                                         ADD     R1, PC          ; &quot;init_sockets&quot;</div><div class="line">.text:0000B984 00 F0 EC FC                                   BL      sub_C360</div><div class="line">.text:0000B988                               ; ---------------------------------------------------------------------------</div><div class="line">.text:0000B988</div><div class="line">.text:0000B988                               loc_B988                                ; CODE XREF: sub_B5DC+6Aj</div><div class="line">.text:0000B988 2E 4B                                         LDR     R3, =(dword_8074C - 0xB992)</div><div class="line">.text:0000B98A 2F 4D                                         LDR     R5, =0x5D8A</div><div class="line">.text:0000B98C 2C 22                                         MOVS    R2, #0x2C</div><div class="line">.text:0000B98E 7B 44                                         ADD     R3, PC ; dword_8074C</div><div class="line">.text:0000B990 99 46                                         MOV     R9, R3</div><div class="line">.text:0000B992 90 46                                         MOV     R8, R2</div><div class="line">.text:0000B994 01 27                                         MOVS    R7, #1</div><div class="line">.text:0000B996</div><div class="line">.text:0000B996                               loc_B996                                ; CODE XREF: sub_B5DC:loc_B9CCj</div><div class="line">.text:0000B996 60 68                                         LDR     R0, [R4,#4]</div><div class="line">.text:0000B998 43 78                                         LDRB    R3, [R0,#1]</div><div class="line">.text:0000B99A 1A 06                                         LSLS    R2, R3, #0x18</div><div class="line">.text:0000B99C 13 0E                                         LSRS    R3, R2, #0x18</div><div class="line">.text:0000B99E 6B 2B                                         CMP     R3, #0x6B</div><div class="line">.text:0000B9A0 37 D0                                         BEQ     loc_BA12</div><div class="line">.text:0000B9A2 2D D8                                         BHI     loc_BA00</div><div class="line">.text:0000B9A4 50 2B                                         CMP     R3, #0x50</div><div class="line">.text:0000B9A6 3D D0                                         BEQ     loc_BA24</div><div class="line">.text:0000B9A8 69 2B                                         CMP     R3, #0x69</div></pre>
+      </td>
+    </tr>
+  </table>
+</figure>
+<p>IDA Ctrl+J 列出交叉参考来源</p>
+<h5 id="第一处-1">
+  <a href="#第一处-1" class="headerlink" title="第一处:"></a>第一处:</h5>
+<figure class="highlight plain">
+  <table>
+    <tr>
+      <td class="gutter">
+        <pre><div class="line">1</div><div class="line">2</div></pre>
+      </td>
+      <td class="code">
+        <pre><div class="line">.text:0000B8D8 8A 5D 00 00                   dword_B8D8      DCD 0x5D8A              ; DATA XREF: sub_B5DC+70r</div><div class="line">.text:0000B8D8                                                                       ; sub_B5DC:loc_B670r</div></pre>
+      </td>
+    </tr>
+  </table>
+</figure>
+<h5 id="第二处-1">
+  <a href="#第二处-1" class="headerlink" title="第二处:"></a>第二处:</h5>
+<figure class="highlight plain">
+  <table>
+    <tr>
+      <td class="gutter">
+        <pre><div class="line">1</div><div class="line">2</div></pre>
+      </td>
+      <td class="code">
+        <pre><div class="line">.text:0000BA44                                                                       ; DATA XREF: sub_B5DC:loc_B988r</div><div class="line">.text:0000BA48 8A 5D 00 00                   dword_BA48      DCD 0x5D8A              ; DATA XREF: sub_B5DC+3AEr</div></pre>
+      </td>
+    </tr>
+  </table>
+</figure>
+<h3 id="用十六进制工具-010-Editor-Ctrl-G-修改">
+  <a href="#用十六进制工具-010-Editor-Ctrl-G-修改" class="headerlink" title="用十六进制工具 010 Editor Ctrl+G 修改"></a>用十六进制工具 010 Editor Ctrl+G 修改</h3>
+<p>0000B8D8 和 0000BA48 两处的值为 ==0x41F8== 注意字节序是输入 ==F841==</p>
+<p>几个端口号对应16进制</p>
+<blockquote>
+  <p>0x5D8A=23946</p>
+  <p>0x41F8=16888</p>
+  <p>0x3039=12345</p>
+</blockquote>
+<p>将修改过的文件push到手机上,用 ==chmod 777== 添加执行权限</p>
+<blockquote>
+  <p>adb push android_server /data/local/tmp/android_server</p>
+  <p>adb shell chmod 777 /data/local/tmp/android_server</p>
+</blockquote>
+<p>然后运行试试,看看效果</p>
+<figure class="highlight bat">
+  <table>
+    <tr>
+      <td class="gutter">
+        <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre>
+      </td>
+      <td class="code">
+        <pre><div class="line"><span class="function">C:\<span class="title">Users</span>\<span class="title">Administrator</span>\<span class="title">Desktop</span>&gt;<span class="title">adb</span> <span class="title">shell</span> /<span class="title">data</span>/<span class="title">local</span>/<span class="title">tmp</span>/<span class="title">android_server</span></span></div><div class="line"><span class="title">IDA</span> <span class="title">Android</span> 32-<span class="title">bit</span> <span class="title">remote</span> <span class="title">debug</span> <span class="title">server</span>(<span class="title">ST</span>) <span class="title">v1</span>.19. <span class="title">Hex</span>-<span class="title">Rays</span> (<span class="title">c</span>) 2004-2015</div><div class="line"><span class="title">Listening</span> <span class="title">on</span> <span class="title">port</span> #16888...</div></pre>
+      </td>
+    </tr>
+  </table>
+</figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;修改android-server默认调试端口号反调试&quot;&gt;
+  &lt;a href=&quot;#修改android-server默认调试端口号反调试&quot; class=&quot;headerlink&quot; title=&quot;修改android_server默认调试端口号反调试&quot;&gt;&lt;/a&gt;
+  &lt;s
+    
+    </summary>
+    
+      <category term="逆向工程(Reverse Engineering)" scheme="/categories/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B-Reverse-Engineering/"/>
+    
+      <category term="破解(Crack)" scheme="/categories/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B-Reverse-Engineering/%E7%A0%B4%E8%A7%A3-Crack/"/>
+    
+    
+      <category term="逆向工程(Reverse Engineering)" scheme="/tags/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B-Reverse-Engineering/"/>
+    
+      <category term="破解(Crack)" scheme="/tags/%E7%A0%B4%E8%A7%A3-Crack/"/>
+    
+      <category term="Java" scheme="/tags/Java/"/>
+    
+      <category term="android" scheme="/tags/android/"/>
+    
+      <category term="android_server" scheme="/tags/android-server/"/>
+    
+      <category term="so调试" scheme="/tags/so%E8%B0%83%E8%AF%95/"/>
+    
+      <category term="IDA调试" scheme="/tags/IDA%E8%B0%83%E8%AF%95/"/>
+    
+      <category term="android调试" scheme="/tags/android%E8%B0%83%E8%AF%95/"/>
+    
+      <category term="23946" scheme="/tags/23946/"/>
+    
+      <category term="apk调试" scheme="/tags/apk%E8%B0%83%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>火柴人联盟去签名验证去广告Android内购破解</title>

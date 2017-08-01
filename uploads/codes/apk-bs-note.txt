@@ -1,4 +1,4 @@
-================================================================================
+﻿================================================================================
 滑雪大冒险 v2.3.5
 滑雪大冒险2
 
@@ -75,6 +75,8 @@
 
 签名验证
 
+Landroid/content/pm/PackageInfo;->signatures:[Landroid/content/pm/Signature
+
 sdk_code串为 : 
 
 .class public Lcom/yodo1/sdk/adapter/ChannelAdapterFactory;
@@ -82,8 +84,6 @@ sdk_code串为 :
 .source "ChannelAdapterFactory.java"
 
 .method public initChannelAdapters(Landroid/content/Context;)V
-
-
 
 
 Yodo1Analytics, 验证签名失败! 将导致统计全部失效, 请检查你的包签名
@@ -1086,11 +1086,102 @@ Yodo1ResultConst.ResultCode.Success
     return-void  #直接返回
 	
 	
+
+libctr2.so
 	
-	
+CHANNEL ID ERROR
 
 
-	
+.text:000B4814 00 2E                                         CMP             R6, #0
+.text:000B4816 18 BF                                         IT NE
+.text:000B4818 01 26                                         MOVNE           R6, #1
+.text:000B481A 30 46                                         MOV             R0, R6
+.text:000B481C BD E8 F0 88                                   POP.W           {R4-R7,R11,PC}
+
+
+.text:000B4814 00 2E                                         CMP             R6, #0
+.text:000B4816 18 BF                                         IT NE
+.text:000B4818 01 26                                         MOVNE           R6, #1
+.text:000B481A 01 20                                         MOVS            R0, #1
+.text:000B481C BD E8 F0 88                                   POP.W           {R4-R7,R11,PC}
+
+
+ZFRAMEWORK
+－－－－－－－－首次启动游戏--－－－－
+X86                   0042B8B3
+armeabi-v7a           002AE19A
+
+ZFRAMEWORK
+－－－------hidePopup-----－－---
+armeabi-v7a           002AE1D3
+
+
+002AE19A  2D 2D 2D 2D 2D 2D 2D 2D  2D 2D 2D 2D 2D 2D 2D 2D
+002AE1AA  2D 2D 2D 2D 2D 2D 2D 3E  E9 A6 96 E6 AC A1 E5 90
+002AE1BA  AF E5 8A A8 E6 B8 B8 E6  88 8F 3C 2D 2D 2D 2D 2D
+002AE1CA  2D 2D 2D 2D 2D 2D 2D 2D  00 2D 2D 2D 2D 2D 2D 2D
+002AE1DA  2D 2D 2D 2D 2D 2D 2D 3D  68 69 64 65 50 6F 70 75
+002AE1EA  70 3D 2D 2D 2D 2D 2D 2D  2D 2D 2D 2D 2D 2D 2D 00
+
+
+ZFRAMEWORK	
+－－－userIsLogin----1
+ZFRAMEWORK
+=========pay=====warning====popup======
+
+com.yodo1.android.core.Yodo1CheckSignException: 检测到包签名无效， 统计功能将不能生效	
+
+
+Should have subtitle controller already set
+
+Yodo1SDKHelper
+===eventName====OPEN_SET_EXIT
+
+ZFRAMEWORK	
+－－－－－－guest,
+
+Yodo1SDKHelper
+===eventName====VISITORS_LOGIN
+
+Yodo1SDKHelper
+===eventName====QQ_LOGIN
+
+ZActivity
+========user=====loginType====Channel
+========user=====loginResult==失败
+
+Yodo1SDKHelpe
+===eventName====WEIXIN_LOGIN
+
+System.err
+com.yodo1.android.core.Yodo1CheckSignException: 检测到包签名无效， 统计功能将不能生效
+ZActivity
+========user=====loginType====Channel
+========user=====loginResult==失败
+
+
+ZActivity
+========user=====loginType====Channel_WX
+========user=====loginResult==成功
+
+ZFRAMEWORK
+－－－－－－callback---－－login------success-----－－－－
+
+LoginType
+Channel(0),  Device(1),  Account(2),  Channel_GUEST(10),  Channel_QQ(11),  Channel_WX(12),  Channel_Weibo(13);
+
+
+CHANNEL ID ERROR
+
+
+
+vip	
+
+.line 20
+const-string v0, "vip"  #const-string v0, "0" #vip
+
+iput-object v0, p0, Lcom/yodo1/android/sdk/usercenter/Yodo1UserInfo;->vip:Ljava/lang/String;
+
 
 BillingResult.SUCCESS
 
@@ -2470,8 +2561,13 @@ SJFZ53
 XJQZZU
 UEQWG7
 
-GSC2EY     mi4s
+
+
+GSC2EY     mi4s    MI    
 WQE34W     m1 note
+
+MJ9X7V     m1 note    9game
+
 
 CDFDE398
 CDFDE3A0
@@ -2918,6 +3014,1123 @@ invoke-static {v4, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/Strin
 #move-result-object v4
 #invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 ######
+
+.method public onCreate()V
+    .locals 5
+    ######插入代码开始 coded by B.S.
+    
+    const-string v0, "\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n  www.appleos.xyz \n  \u7231\u6deb\u8361 \n  -- by B.S."
+    
+    invoke-static {v0}, Lcom/android/BS/Log;->LogStr(Ljava/lang/String;)V
+    
+    ######插入代码结束 coded by B.S.
+    
+    
+    ######插入代码开始 coded by B.S.
+    
+    const-string v0, "\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n  www.appleos.xyz \n  \u7231\u6deb\u8361 \n  -- by B.S."
+    
+    invoke-static {v0}, Lcom/android/BS/Log;->LogStr(Ljava/lang/String;)V
+    
+    ######插入代码结束 coded by B.S.
+    ######显示通知消息
+    const-string v0, "\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n  www.appleos.xyz \n  \u7231\u6deb\u8361 \n  -- by B.S."
+    
+    const/4 v1, 0x1
+    
+    invoke-static {p0, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    
+    move-result-object v2
+    
+    const/4 v4, 0x0
+    
+    const/16 v3, 0x31
+    
+    invoke-virtual {v2, v3, v4, v4}, Landroid/widget/Toast;->setGravity(III)V
+    
+    invoke-virtual {v2}, Landroid/widget/Toast;->show()V
+    ######
+    ######显示通知消息
+    const-string v0, "\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n  www.appleos.xyz \n  \u7231\u6deb\u8361 \n  -- by B.S."
+    
+    const/4 v1, 0x1
+    
+    invoke-static {p0, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    
+    move-result-object v2
+    
+    const/4 v4, 0x0
+    
+    const/16 v3, 0x11
+    
+    invoke-virtual {v2, v3, v4, v4}, Landroid/widget/Toast;->setGravity(III)V
+    
+    invoke-virtual {v2}, Landroid/widget/Toast;->show()V
+    ######
+
+    
+    ######插入代码开始 coded by B.S.  存档注入
+    #invoke-static/range {p0 .. p0}, Lcom/savegame/SavesRestoring;->DoSmth(Landroid/content/Context;)V
+    #invoke-direct {p0}, Lcom/playrix/township/chukong/ChuKongLuancher;->data()V
+    ######插入代码结束 coded by B.S.
+    
+    
+
+    const/4 v2, 0x0
+
+    invoke-super {p0}, Lcom/anysdk/framework/HyApplication;->onCreate()V
+
+    invoke-virtual {p0}, Lcom/playrix/township/chukong/ChuKongApplication;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/playrix/lib/Playrix;->onCreate(Landroid/content/Context;)V
+
+    const-string v0, "ChuKongApplication init flurry."
+
+    new-array v1, v2, [Ljava/lang/Object;
+
+    invoke-static {v0, v1}, Lcom/playrix/township/CkLog;->dd(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    invoke-static {v2}, Lcom/flurry/android/FlurryAgent;->setLogEnabled(Z)V
+
+    const-string v0, "24BV5TB27668H6GTG5YX"
+
+    invoke-static {p0, v0}, Lcom/flurry/android/FlurryAgent;->init(Landroid/content/Context;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+
+
+
+
+
+
+
+
+================================================================================
+
+帮MT管理器群里一位朋友逆向筑梦桃子手游,得的联系客服QQ的代码,有代码混淆
+
+
+package defpackage;
+
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.widget.Toast;
+
+public final class biq {
+    public static boolean a(Context context) {
+        String str = (String) bkl.a("last_qq_service_number_CustomerServiceHelper", String.class);
+        if (str == null) {
+            switch ((int) (System.currentTimeMillis() % 3)) {
+                case 0:
+                    str = "844552471";
+                    break;
+                case 1:
+                    str = "844552471";
+                    break;
+                case 2:
+                    str = "844552471";
+                    break;
+                default:
+                    str = "844552471";
+                    break;
+            }
+            bkl.a("last_qq_service_number_CustomerServiceHelper", (Object) str);
+        }
+        if (biq.b(context)) {
+            context.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("mqqwpa://im/chat?chat_type=wpa&uin=" + str + "&version=1")));
+            return true;
+        }
+        Toast.makeText(context, "请先安装QQ", 0).show();
+        return false;
+    }
+
+    private static boolean b(Context context) {
+        try {
+            context.getPackageManager().getPackageInfo("com.tencent.mobileqq", 0);
+            return true;
+        } catch (Throwable e) {
+            bjs.a("CustomerServiceHelper", "checkHasInstallQQ: ", e);
+            return false;
+        } catch (Exception e2) {
+            return false;
+        }
+    }
+}
+
+================================================================================
+andftp
+
+
+
+public boolean c(String str) {
+        return str != null && str.length() > 0 && Pattern.compile("^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$", 2).matcher(str).matches();
+    }
+
+public boolean a(Context context, boolean z) {
+        if (!this.aq || z) {
+            try {
+                Object invoke = context.getClass().getMethod(a("FDUq@BJ@FDl@O@FDS", "!"), (Class[]) null).invoke(context, (Object[]) null);
+                Method method = invoke.getClass().getMethod(a("BIDBJrHFO@UTSDR", "!"), new Class[]{String.class, String.class});
+                int intValue = ((Integer) method.invoke(invoke, new Object[]{this.ah.toString(), this.ai.toString()})).intValue();
+                int intValue2 = ((Integer) method.invoke(invoke, new Object[]{this.ah.toString(), this.aj.toString()})).intValue();
+                this.ar = ((intValue2 != 0 ? 1 : 0) & (intValue == 0 ? 1 : 0)) & this.ak;
+            } catch (Throwable e) {
+                l.b(Y, e.getMessage(), e);
+            } finally {
+                this.aq = true;
+            }
+        }
+        return this.ar;
+    }
+
+
+.method public onClick(Landroid/content/DialogInterface;I)V
+    .locals 7
+
+    const v6, 0x7f08018c  #options_activate_popup_error_title激活出错
+
+    const/4 v4, 0x1
+
+    iget-object v0, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    iget-object v1, p0, Llysesoft/andftp/ay;->a:Landroid/widget/EditText;
+
+    invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Llysesoft/andftp/OptionsActivity;->a(Llysesoft/andftp/OptionsActivity;Ljava/lang/String;)Ljava/lang/String;
+
+    iget-object v0, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    invoke-static {v0}, Llysesoft/andftp/OptionsActivity;->b(Llysesoft/andftp/OptionsActivity;)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_2  #验证激活码是否为空
+
+    iget-object v0, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    invoke-static {v0}, Llysesoft/andftp/OptionsActivity;->b(Llysesoft/andftp/OptionsActivity;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    if-lez v0, :cond_2  #验证激活码长度小于等于0
+
+    :try_start_0
+    iget-object v0, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    invoke-static {v0}, Llysesoft/andftp/OptionsActivity;->a(Llysesoft/andftp/OptionsActivity;)Llysesoft/transfer/client/util/c;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "{"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    invoke-static {v2}, Llysesoft/andftp/OptionsActivity;->b(Llysesoft/andftp/OptionsActivity;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "}"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Llysesoft/transfer/client/util/c;->q(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {}, Llysesoft/andftp/OptionsActivity;->j()Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Key: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Llysesoft/transfer/client/util/l;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v1, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    invoke-static {v1}, Llysesoft/andftp/OptionsActivity;->a(Llysesoft/andftp/OptionsActivity;)Llysesoft/transfer/client/util/c;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Llysesoft/transfer/client/util/c;->c(Ljava/lang/String;)Z
+
+    move-result v0   #正则表达式是否验证成功
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    invoke-static {v0}, Llysesoft/andftp/OptionsActivity;->c(Llysesoft/andftp/OptionsActivity;)Llysesoft/andftp/client/ftpdesign/a;
+
+    move-result-object v0
+
+    iget-object v1, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    invoke-static {v1}, Llysesoft/andftp/OptionsActivity;->b(Llysesoft/andftp/OptionsActivity;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Llysesoft/andftp/client/ftpdesign/a;->aa(Ljava/lang/String;)V
+
+    iget-object v0, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    invoke-virtual {v0}, Llysesoft/andftp/OptionsActivity;->h()V
+
+    iget-object v0, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    const v1, 0x7f0a00a0  #options_activate_info_label_id
+
+    invoke-virtual {v0, v1}, Llysesoft/andftp/OptionsActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iget-object v1, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    invoke-static {v1}, Llysesoft/andftp/OptionsActivity;->b(Llysesoft/andftp/OptionsActivity;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object v0, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    invoke-static {v0}, Llysesoft/andftp/OptionsActivity;->a(Llysesoft/andftp/OptionsActivity;)Llysesoft/transfer/client/util/c;
+
+    move-result-object v0
+
+    iget-object v1, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Llysesoft/transfer/client/util/c;->a(Landroid/content/Context;Z)Z
+
+    move-result v0  #这里返回为1
+
+    new-instance v1, Landroid/app/AlertDialog$Builder;
+
+    iget-object v2, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    invoke-direct {v1, v2}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+
+    const v2, 0x7f020023
+
+    invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
+
+    const v2, 0x7f080187  #options_activate_popup_title激活
+
+    invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
+
+    if-ne v0, v4, :cond_0     #不等于v4=1跳到激活成功,并下载pro版本
+
+    const v2, 0x7f08018a  #options_activate_popup_success_label激活成功
+
+    invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
+
+    :goto_0
+    const v2, 0x7f0800bd  #settings_ok_button确认
+
+    new-instance v3, Llysesoft/andftp/az;
+
+    invoke-direct {v3, p0, v0}, Llysesoft/andftp/az;-><init>(Llysesoft/andftp/ay;Z)V
+
+    invoke-virtual {v1, v2, v3}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
+
+    :goto_1
+    return-void
+
+    :cond_0
+    const v2, 0x7f08018b  #options_activate_popup_success_download_label激活成功。AndFTPPro 将被下载并安装
+
+    invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    invoke-static {}, Llysesoft/andftp/OptionsActivity;->j()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v1, v0}, Llysesoft/transfer/client/util/l;->b(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    iget-object v1, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    invoke-virtual {v1, v6}, Llysesoft/andftp/OptionsActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    iget-object v2, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    const v3, 0x7f08018e   #options_activate_popup_error_syntax_label无效的激活密钥格式, 请检查确保您没有出现拼写错误。
+
+    invoke-virtual {v2, v3}, Llysesoft/andftp/OptionsActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Llysesoft/andftp/OptionsActivity;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_1
+
+    :cond_1
+    :try_start_1
+    iget-object v0, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    iget-object v1, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    const v2, 0x7f08018c  #options_activate_popup_error_title激活出错
+
+    invoke-virtual {v1, v2}, Llysesoft/andftp/OptionsActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    iget-object v2, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    const v3, 0x7f08018f  #options_activate_popup_error_invalid_label无效的激活密钥, 请仔细检查如果问题仍然存在请联系
+
+    invoke-virtual {v2, v3}, Llysesoft/andftp/OptionsActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    const/4 v3, 0x1
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    const/4 v4, 0x0
+
+    const-string v5, "support@lysesoft.com"
+
+    aput-object v5, v3, v4
+
+    invoke-static {v2, v3}, Ljava/text/MessageFormat;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Llysesoft/andftp/OptionsActivity;->a(Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+
+    goto :goto_1
+
+    :cond_2
+    iget-object v0, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    iget-object v1, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    invoke-virtual {v1, v6}, Llysesoft/andftp/OptionsActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    iget-object v2, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    const v3, 0x7f08018d  #options_activate_popup_error_empty_label激活密匙不能为空
+
+    invoke-virtual {v2, v3}, Llysesoft/andftp/OptionsActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Llysesoft/andftp/OptionsActivity;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_1
+.end method
+
+================================================================================
+apk加固脱壳
+
+
+在动态调试加固apk程序的时候，需要在几个关键点函数 open、strtol、mmap、memcmp处下断点，后面具体的分析。由于android系统是由Linux系统修改而来，因此Android系统上很多的属性和Linux系统下的属性。Linux下进程和线程的信息是保存在文件中的，因此要查询进程或者线程的信息必须通过open或者fopen等方式操作文件来完成。
+ 
+Android的so调试的步骤略过，已经在上面提到的4个函数处下断点，注意下断点的技巧，下断点的时候，要在一个函数的第1条指令和最后一条指令的地方下断点。
+
+/proc/self/status
+过掉通过TracePid方式的反调试的方法是在strtol函数处下断点，在strstol函数的最后一行指令的地方，修改该函数的返回值R0的值为0即可，然后F9运行程序。
+
+/proc/net/tcp
+当strstr函数的返回值不为0为字符串“sl local_address rem_address”时，需要注意，说明当前进程已经检测到了本地连接的套接字，因此需要修改strstsr函数的返回值为0即可。
+
+/proc/pid/mdline
+通过"/proc/pid/mdline"对android_server、gdb、strace、ltrace调试器进行反调试，但是只要向前文提到的修改android_server的名称即可过掉该反调试。
+
+/proc/pid/maps
+
+再经过大约2次mmap函数运行以后，再一次调用memcmp函数即到了脱壳的地方，注意此时加固外壳apk程序呈现的堆栈和内存的状态。由于360加固自己制作了dvmDexFileOpenPartial函数，但是该函数需要调用memcmp进行dex文件的魔法字符串”dex“的比较，因此此时是脱壳的最佳时机。
+
+
+
+
+
+
+================================================================================
+补丁android killer反编译引擎jd为jadx
+
+Breakpoints
+地址                                  模块                              激活                       反汇编                                注释
+7435B000 kernel32.CreateProcessW      kernel32                          始终                         mov edi,edi
+74367B30 kernel32.ExitProcess         kernel32                          始终                         push ebp
+7437FF70 kernel32.WinExec             kernel32                          始终                         mov edi,edi
+74380750 kernel32.CreateProcessA      kernel32                          始终                         mov edi,edi
+76010530 shell32.ShellExecuteW        shell32                           始终                         mov edi,edi
+760EEF50 shell32.ShellExecuteA        shell32                           始终                         mov edi,edi
+
+
+
+Breakpoints
+地址                                                                     模块                          激活                       反汇编                                注释
+00FB7B8C AKCommon.Ak::Shell::TWindowsShell::Open                         AKCommon                      已禁止                        push ebp
+06CBC394 APKKille.Apk::Fui::TfrmApkUI::OpenJar                           APKKille                      已禁止                        push ebp
+06CCA030 APKKille.Apk::Feditor::TfrmApkEditor::actJavaViewExecute        APKKille                      已禁止                        push ebp
+06CCA063                                                                 APKKille                      已禁止                        mov ecx,APKKille.06CCA150
+7435B000 kernel32.CreateProcessW                                         kernel32                      始终                         mov edi,edi
+74367B30 kernel32.ExitProcess                                            kernel32                      始终                         push ebp
+7437FF70 kernel32.WinExec                                                kernel32                      始终                         mov edi,edi
+74380750 kernel32.CreateProcessA                                         kernel32                      始终                         mov edi,edi
+76010530 shell32.ShellExecuteW                                           shell32                       始终                         mov edi,edi
+760EEF50 shell32.ShellExecuteA                                           shell32                       始终                         mov edi,edi
+
+
+
+
+Breakpoints, 条目 0
+ 地址=00FB7B8C AKCommon.Ak::Shell::TWindowsShell::Open
+ 模块=AKCommon
+ 激活=始终
+ 反汇编=push ebp
+
+Breakpoints, 条目 0
+ 地址=00FB7B8C AKCommon.Ak::Shell::TWindowsShell::Open
+ 模块=AKCommon
+ 激活=始终
+ 反汇编=push ebp
+
+?00FB7B8C-00DC0000=001F7B8C
+
+RVA=001F7B8C 
+
+-------------------------------------------------------------------------------- 
+Breakpoints, 条目 2
+ 地址=06FAA030 APKKille.Apk::Feditor::TfrmApkEditor::actJavaViewExecute
+ 模块=APKKille
+ 激活=始终
+ 反汇编=push ebp
+
+Breakpoints, 条目 1
+ 地址=070EA030 APKKille.Apk::Feditor::TfrmApkEditor::actJavaViewExecute
+ 模块=APKKille
+ 激活=始终
+ 反汇编=push ebp
+ 
+
+Breakpoints, 条目 1
+ 地址=070DA030 APKKille.Apk::Feditor::TfrmApkEditor::actJavaViewExecute
+ 模块=APKKille
+ 激活=始终
+ 反汇编=push ebp
+ 
+Breakpoints, 条目 0
+ 地址=06FAA030 APKKille.Apk::Feditor::TfrmApkEditor::actJavaViewExecute
+ 模块=APKKille
+ 激活=已禁止
+ 反汇编=push ebp
+ True
+Breakpoints, 条目 1
+ 地址=06CCA030 APKKille.Apk::Feditor::TfrmApkEditor::actJavaViewExecute
+ 模块=APKKille
+ 激活=已禁止
+ 反汇编=push ebp
+
+Log data, 条目 63
+ 地址=06B90000
+ 消息=Module D:\AndroidKiller_1.3.1\plugins\APKKiller.bpl
+
+06CCA030-06B90000=0013A030
+
+RVA=0013A030
+
+06CCA150-06B90000=0013A150
+
+注意模块的重定位
+
+修改\plugins\APKKiller.bpl文件的代码
+
+OD载入这个dll文件,也就是这个bpl
+
+找到字符串,
+ 
+bin\jd-gui\jd-gui.exe
+
+
+06CCA150  62 00 69 00 6E 00 5C 00 6A 00 64 00 2D 00 67 00  bin\jd-g
+06CCA160  75 00 69 00 5C 00 6A 00 64 00 2D 00 67 00 75 00  ui\jd-gu
+06CCA170  69 00 2E 00 65 00 78 00 65 00 00 00 B0 04 02 00  i.exe.Ұ
+
+或者Ctrl+B搜索二进制代码
+
+62 00 69 00 6E 00 5C 00 6A 00 64 00 2D 00 67 00 75 00 69 00 5C 00 6A 00 64 00 2D 00 67 00 75 00
+69 00 2E 00 65 00 78 00 65 00 00 00
+
+修改为字符串
+bin\jadx\bin\jadx.cmd
+的二进制代码
+
+62 00 69 00 6E 00 5C 00 6A 00 61 00 64 00 78 00 5C 00 62 00 69 00 6E 00 5C 00 6A 00 61 00 64 00
+78 00 2E 00 63 00 6D 00 64 00 00 00
+
+44个字节
+
+bin\jadx\bin\jadx-gui.bat
+bin\jadx\bin\jadx.cmd
+
+
+
+06CCA0A7                  B9 88A1CC06     mov ecx,APKKille.06CCA188                ; UNICODE ".class"
+06CCA0AC                  BA A4A1CC06     mov edx,APKKille.06CCA1A4                ; UNICODE ".smali"
+06CCA0B1                  E8 5280ECFF     call APKKille.06B92108                   ; jmp 到 offset rtl230.System::Sysutils::TStringHelper::Replace
+
+定位特征码
+
+B9 88 ?? ?? ?? BA A4 ?? ?? ?? E8
+
+
+06CCA0DC                  BA C0A1CC06     mov edx,APKKille.06CCA1C0                ; UNICODE "androidjavanotsmalisrc"
+06CCA0E1                  E8 B6D6ECFF     call APKKille.06B9779C                   ; jmp 到 AKCommon.Ak::Lang::TAKLang::GetValue
+
+BA C0 ?? ?? ?? E8
+ 
+
+06CCA030 APKKille.Apk::Feditor::TfrmApkEditor::actJavaViewExecute     55              push ebp
+06CCA031                                                              8BEC            mov ebp,esp
+06CCA033                                                              B9 05000000     mov ecx,0x5
+06CCA038                                                              6A 00           push 0x0
+06CCA03A                                                              6A 00           push 0x0
+06CCA03C                                                              49              dec ecx
+06CCA03D                                                            ^ 75 F9           jnz short APKKille.06CCA038
+06CCA03F                                                              53              push ebx
+06CCA040                                                              8BD8            mov ebx,eax
+06CCA042                                                              33C0            xor eax,eax
+06CCA044                                                              55              push ebp
+06CCA045                                                              68 38A1CC06     push APKKille.06CCA138
+06CCA04A                                                              64:FF30         push dword ptr fs:[eax]
+06CCA04D                                                              64:8920         mov dword ptr fs:[eax],esp
+06CCA050                                                              8D55 F4         lea edx,dword ptr ss:[ebp-0xC]
+06CCA053                                                              A1 24D7CD06     mov eax,dword ptr ds:[0x6CDD724]
+06CCA058                                                              E8 7788ECFF     call APKKille.06B928D4                   ; jmp 到 AKCommon.Ak::Paths::TPaths::AppPath
+06CCA05D                                                              8B55 F4         mov edx,dword ptr ss:[ebp-0xC]
+06CCA060                                                              8D45 FC         lea eax,dword ptr ss:[ebp-0x4]
+06CCA063                                                              B9 50A1CC06     mov ecx,APKKille.06CCA150                ; UNICODE "bin\jd-gui\jd-gui.exe"
+06CCA068                                                              E8 5371ECFF     call APKKille.06B911C0                   ; jmp 到 offset rtl230.System::UStrCat3
+06CCA06D                                                              8D45 F8         lea eax,dword ptr ss:[ebp-0x8]
+06CCA070                                                              50              push eax
+06CCA071                                                              8D55 F0         lea edx,dword ptr ss:[ebp-0x10]
+06CCA074                                                              8B83 60050000   mov eax,dword ptr ds:[ebx+0x560]
+06CCA07A                                                              8B08            mov ecx,dword ptr ds:[eax]
+06CCA07C                                                              FF51 10         call dword ptr ds:[ecx+0x10]
+06CCA07F                                                              8B45 F0         mov eax,dword ptr ss:[ebp-0x10]
+06CCA082                                                              50              push eax
+06CCA083                                                              8D55 EC         lea edx,dword ptr ss:[ebp-0x14]
+06CCA086                                                              8B83 60050000   mov eax,dword ptr ds:[ebx+0x560]
+06CCA08C                                                              8B08            mov ecx,dword ptr ds:[eax]
+06CCA08E                                                              FF51 0C         call dword ptr ds:[ecx+0xC]
+06CCA091                                                              8B55 EC         mov edx,dword ptr ss:[ebp-0x14]
+06CCA094                                                              8D83 44050000   lea eax,dword ptr ds:[ebx+0x544]
+06CCA09A                                                              59              pop ecx
+06CCA09B                                                              E8 6880ECFF     call APKKille.06B92108                   ; jmp 到 offset rtl230.System::Sysutils::TStringHelper::Replace
+06CCA0A0                                                              8D45 E8         lea eax,dword ptr ss:[ebp-0x18]
+06CCA0A3                                                              50              push eax
+06CCA0A4                                                              8D45 F8         lea eax,dword ptr ss:[ebp-0x8]
+06CCA0A7                                                              B9 88A1CC06     mov ecx,APKKille.06CCA188                ; UNICODE ".class"
+06CCA0AC                                                              BA A4A1CC06     mov edx,APKKille.06CCA1A4                ; UNICODE ".smali"
+06CCA0B1                                                              E8 5280ECFF     call APKKille.06B92108                   ; jmp 到 offset rtl230.System::Sysutils::TStringHelper::Replace
+06CCA0B6                                                              8B55 E8         mov edx,dword ptr ss:[ebp-0x18]
+06CCA0B9                                                              8D45 F8         lea eax,dword ptr ss:[ebp-0x8]
+06CCA0BC                                                              E8 AF70ECFF     call APKKille.06B91170                   ; jmp 到 offset rtl230.System::UStrLAsg
+06CCA0C1                                                              B2 01           mov dl,0x1
+06CCA0C3                                                              8B45 F8         mov eax,dword ptr ss:[ebp-0x8]
+06CCA0C6                                                              E8 0D7FECFF     call APKKille.06B91FD8                   ; jmp 到 offset rtl230.System::Sysutils::FileExists
+06CCA0CB                                                              84C0            test al,al
+06CCA0CD                                                              75 21           jnz short APKKille.06CCA0F0
+06CCA0CF                                                              A1 B0E0CD06     mov eax,dword ptr ds:[0x6CDE0B0]
+06CCA0D4                                                              E8 CBD6ECFF     call APKKille.06B977A4                   ; jmp 到 AKCommon.Ak::Lang::TAKLang::Instance
+06CCA0D9                                                              8D4D E4         lea ecx,dword ptr ss:[ebp-0x1C]
+06CCA0DC                                                              BA C0A1CC06     mov edx,APKKille.06CCA1C0                ; UNICODE "androidjavanotsmalisrc"
+06CCA0E1                                                              E8 B6D6ECFF     call APKKille.06B9779C                   ; jmp 到 AKCommon.Ak::Lang::TAKLang::GetValue
+06CCA0E6                                                              8B45 E4         mov eax,dword ptr ss:[ebp-0x1C]
+06CCA0E9                                                              E8 4ED0ECFF     call APKKille.06B9713C                   ; jmp 到 offset vcl230.Vcl::Dialogs::ShowMessage
+06CCA0EE                                                              EB 2D           jmp short APKKille.06CCA11D
+06CCA0F0                                                              8D45 E0         lea eax,dword ptr ss:[ebp-0x20]
+06CCA0F3                                                              50              push eax
+06CCA0F4                                                              8B45 F8         mov eax,dword ptr ss:[ebp-0x8]
+06CCA0F7                                                              8945 D8         mov dword ptr ss:[ebp-0x28],eax
+06CCA0FA                                                              C645 DC 11      mov byte ptr ss:[ebp-0x24],0x11
+06CCA0FE                                                              8D55 D8         lea edx,dword ptr ss:[ebp-0x28]
+06CCA101                                                              33C9            xor ecx,ecx
+06CCA103                                                              B8 FCA1CC06     mov eax,APKKille.06CCA1FC                ; UNICODE ""%s""
+06CCA108                                                              E8 337FECFF     call APKKille.06B92040                   ; jmp 到 offset rtl230.System::Sysutils::Format
+06CCA10D                                                              8B4D E0         mov ecx,dword ptr ss:[ebp-0x20]
+06CCA110                                                              8B55 FC         mov edx,dword ptr ss:[ebp-0x4]
+06CCA113                                                              A1 34D8CD06     mov eax,dword ptr ds:[0x6CDD834]
+06CCA118                                                              E8 2FCCECFF     call APKKille.06B96D4C                   ; jmp 到 AKCommon.Ak::Shell::TWindowsShell::Open
+06CCA11D                                                              33C0            xor eax,eax
+06CCA11F                                                              5A              pop edx
+06CCA120                                                              59              pop ecx
+06CCA121                                                              59              pop ecx
+06CCA122                                                              64:8910         mov dword ptr fs:[eax],edx
+06CCA125                                                              68 3FA1CC06     push APKKille.06CCA13F
+06CCA12A                                                              8D45 E0         lea eax,dword ptr ss:[ebp-0x20]
+06CCA12D                                                              BA 08000000     mov edx,0x8
+06CCA132                                                              E8 1170ECFF     call APKKille.06B91148                   ; jmp 到 offset rtl230.System::UStrArrayClr
+06CCA137                                                              C3              retn
+06CCA138                                                            ^ E9 BB6FECFF     jmp APKKille.06B910F8                    ; jmp 到 offset rtl230.System::HandleFinally
+06CCA13D                                                            ^ EB EB           jmp short APKKille.06CCA12A
+06CCA13F                                                              5B              pop ebx
+06CCA140                                                              8BE5            mov esp,ebp
+06CCA142                                                              5D              pop ebp
+06CCA143                                                              C3              retn
+
+
+
+bin\jd-gui\jd-gui.exe
+
+bin\jadx\bin\jadx-gui.bat
+bin\jadx\bin\jadx.cmd
+
+
+06CBC430-06B90000=0012C430
+
+06CBC430  62 00 69 00 6E 00 5C 00 6A 00 64 00 2D 00 67 00  bin\jd-g
+06CBC440  75 00 69 00 5C 00 6A 00 64 00 2D 00 67 00 75 00  ui\jd-gu
+06CBC450  69 00 2E 00 65 00 78 00 65 00 00 00 B0 04 02 00  i.exe.Ұ
+
+
+62 00 69 00 6E 00 5C 00 6A 00 64 00 2D 00 67 00 75 00 69 00 5C 00 6A 00 64 00 2D 00 67 00 75 00
+69 00 2E 00 65 00 78 00 65 00 00 00
+
+62 00 69 00 6E 00 5C 00 6A 00 61 00 64 00 78 00 5C 00 62 00 69 00 6E 00 5C 00 6A 00 61 00 64 00
+78 00 2E 00 63 00 6D 00 64 00 00 00
+
+
+
+06CBC3D3                                          50              push eax
+06CBC3D4                                          68 68C4CB06     push APKKille.06CBC468             ; UNICODE """
+06CBC3D9                                          FF75 FC         push dword ptr ss:[ebp-0x4]
+06CBC3DC                                          68 68C4CB06     push APKKille.06CBC468             ; UNICODE """
+06CBC3E1                                          8D45 F4         lea eax,dword ptr ss:[ebp-0xC]
+06CBC3E4                                          BA 03000000     mov edx,0x3
+06CBC3E9                                          E8 DA4DEDFF     call APKKille.06B911C8             ; jmp 到 offset rtl230.System::UStrCatN
+
+
+50 68 68 C4 CB 06 FF 75 FC 68 68 C4 CB 06 8D 45 F4 BA 03 00 00 00 E8
+
+06CBC394 APKKille.Apk::Fui::TfrmApkUI::OpenJar    55              push ebp                           ; user32.77294BBE
+06CBC395                                          8BEC            mov ebp,esp
+06CBC397                                          6A 00           push 0x0
+06CBC399                                          6A 00           push 0x0
+06CBC39B                                          6A 00           push 0x0
+06CBC39D                                          8955 FC         mov dword ptr ss:[ebp-0x4],edx
+06CBC3A0                                          8B45 FC         mov eax,dword ptr ss:[ebp-0x4]
+06CBC3A3                                          E8 B04DEDFF     call APKKille.06B91158             ; jmp 到 offset rtl230.System::UStrAddRef
+06CBC3A8                                          33C0            xor eax,eax
+06CBC3AA                                          55              push ebp                           ; user32.77294BBE
+06CBC3AB                                          68 17C4CB06     push APKKille.06CBC417
+06CBC3B0                                          64:FF30         push dword ptr fs:[eax]
+06CBC3B3                                          64:8920         mov dword ptr fs:[eax],esp
+06CBC3B6                                          8D55 F8         lea edx,dword ptr ss:[ebp-0x8]
+06CBC3B9                                          A1 24D7CD06     mov eax,dword ptr ds:[0x6CDD724]
+06CBC3BE                                          E8 1165EDFF     call APKKille.06B928D4             ; jmp 到 AKCommon.Ak::Paths::TPaths::AppPath
+06CBC3C3                                          8D45 F8         lea eax,dword ptr ss:[ebp-0x8]
+06CBC3C6                                          BA 30C4CB06     mov edx,APKKille.06CBC430          ; UNICODE "bin\jd-gui\jd-gui.exe"
+06CBC3CB                                          E8 E84DEDFF     call APKKille.06B911B8             ; jmp 到 offset rtl230.System::UStrCat
+06CBC3D0                                          8B45 F8         mov eax,dword ptr ss:[ebp-0x8]
+06CBC3D3                                          50              push eax
+06CBC3D4                                          68 68C4CB06     push APKKille.06CBC468             ; UNICODE """
+06CBC3D9                                          FF75 FC         push dword ptr ss:[ebp-0x4]
+06CBC3DC                                          68 68C4CB06     push APKKille.06CBC468             ; UNICODE """
+06CBC3E1                                          8D45 F4         lea eax,dword ptr ss:[ebp-0xC]
+06CBC3E4                                          BA 03000000     mov edx,0x3
+06CBC3E9                                          E8 DA4DEDFF     call APKKille.06B911C8             ; jmp 到 offset rtl230.System::UStrCatN
+06CBC3EE                                          8B4D F4         mov ecx,dword ptr ss:[ebp-0xC]
+06CBC3F1                                          A1 34D8CD06     mov eax,dword ptr ds:[0x6CDD834]
+06CBC3F6                                          5A              pop edx
+06CBC3F7                                          E8 50A9EDFF     call APKKille.06B96D4C             ; jmp 到 AKCommon.Ak::Shell::TWindowsShell::Open
+06CBC3FC                                          33C0            xor eax,eax
+06CBC3FE                                          5A              pop edx
+06CBC3FF                                          59              pop ecx
+06CBC400                                          59              pop ecx
+06CBC401                                          64:8910         mov dword ptr fs:[eax],edx
+06CBC404                                          68 1EC4CB06     push APKKille.06CBC41E
+06CBC409                                          8D45 F4         lea eax,dword ptr ss:[ebp-0xC]
+06CBC40C                                          BA 03000000     mov edx,0x3
+06CBC411                                          E8 324DEDFF     call APKKille.06B91148             ; jmp 到 offset rtl230.System::UStrArrayClr
+06CBC416                                          C3              retn
+06CBC417                                        ^ E9 DC4CEDFF     jmp APKKille.06B910F8              ; jmp 到 offset rtl230.System::HandleFinally
+06CBC41C                                        ^ EB EB           jmp short APKKille.06CBC409
+06CBC41E                                          8BE5            mov esp,ebp                        ; user32.77294BBE
+06CBC420                                          5D              pop ebp                            ; user32.77294BBE
+06CBC421                                          C3              retn
+
+
+================================================================================
+修改android_server默认调试端口号反调试
+
+IDA载入文件android_server分析
+
+Shift+F12 查找字符串
+
+.rodata:00074224 0000004A C IDA Android 32-bit remote debug server(ST) v1.%d. Hex-Rays (c) 2004-2015\n
+
+.rodata:00074160 0000000D C init_sockets
+
+点击数据交叉来到代码区
+
+第一处:
+
+.text:0000B620                               loc_B620                                ; CODE XREF: sub_B5DC+22j
+.text:0000B620 A9 4B                                         LDR     R3, =(off_7FBD0 - 0xB62A)
+.text:0000B622 AA 48                                         LDR     R0, =(aIdaAndroid32Bi - 0xB62E)
+.text:0000B624 13 21                                         MOVS    R1, #0x13
+.text:0000B626 7B 44                                         ADD     R3, PC ; off_7FBD0
+.text:0000B628 1B 68                                         LDR     R3, [R3] ; unk_80BB0
+.text:0000B62A 78 44                                         ADD     R0, PC          ; "IDA Android 32-bit remote debug server("...
+.text:0000B62C 1D 78                                         LDRB    R5, [R3]
+.text:0000B62E 04 F0 AB FC                                   BL      sub_FF88
+.text:0000B632 01 2E                                         CMP     R6, #1
+.text:0000B634 1C DD                                         BLE     loc_B670
+.text:0000B636 62 68                                         LDR     R2, [R4,#4]
+.text:0000B638 13 78                                         LDRB    R3, [R2]
+.text:0000B63A 02 22                                         MOVS    R2, #2
+.text:0000B63C 93 43                                         BICS    R3, R2
+.text:0000B63E 2D 2B                                         CMP     R3, #0x2D
+.text:0000B640 16 D1                                         BNE     loc_B670
+.text:0000B642 00 2D                                         CMP     R5, #0
+.text:0000B644 00 D1                                         BNE     loc_B648
+.text:0000B646 9F E1                                         B       loc_B988
+.text:0000B648                               ; ---------------------------------------------------------------------------
+.text:0000B648
+.text:0000B648                               loc_B648                                ; CODE XREF: sub_B5DC+68j
+.text:0000B648 A1 4B                                         LDR     R3, =(dword_8074C - 0xB652)
+.text:0000B64A A2 4A                                         LDR     R2, =(dword_8074C - 0xB654)
+.text:0000B64C A2 4D                                         LDR     R5, =0x5D8A
+.text:0000B64E 7B 44                                         ADD     R3, PC ; dword_8074C
+.text:0000B650 7A 44                                         ADD     R2, PC ; dword_8074C
+.text:0000B652 99 46                                         MOV     R9, R3
+.text:0000B654 01 27                                         MOVS    R7, #1
+.text:0000B656 90 46                                         MOV     R8, R2
+.text:0000B658
+.text:0000B658                               loc_B658                                ; CODE XREF: sub_B5DC+2BAj
+.text:0000B658 63 68                                         LDR     R3, [R4,#4]
+.text:0000B65A 58 78                                         LDRB    R0, [R3,#1]
+.text:0000B65C 50 38                                         SUBS    R0, #0x50       ; switch 39 cases
+.text:0000B65E 26 28                                         CMP     R0, #0x26
+.text:0000B660 00 D8                                         BHI     def_B826        ; jumptable 0000B826 default case
+.text:0000B662 E0 E0                                         B       loc_B826
+
+第二处:
+
+.text:0000B97E                               loc_B97E                                ; CODE XREF: sub_B5DC+C2j
+.text:0000B97E 30 49                                         LDR     R1, =(aInit_sockets - 0xB986)
+.text:0000B980 00 20                                         MOVS    R0, #0
+.text:0000B982 79 44                                         ADD     R1, PC          ; "init_sockets"
+.text:0000B984 00 F0 EC FC                                   BL      sub_C360
+.text:0000B988                               ; ---------------------------------------------------------------------------
+.text:0000B988
+.text:0000B988                               loc_B988                                ; CODE XREF: sub_B5DC+6Aj
+.text:0000B988 2E 4B                                         LDR     R3, =(dword_8074C - 0xB992)
+.text:0000B98A 2F 4D                                         LDR     R5, =0x5D8A
+.text:0000B98C 2C 22                                         MOVS    R2, #0x2C
+.text:0000B98E 7B 44                                         ADD     R3, PC ; dword_8074C
+.text:0000B990 99 46                                         MOV     R9, R3
+.text:0000B992 90 46                                         MOV     R8, R2
+.text:0000B994 01 27                                         MOVS    R7, #1
+.text:0000B996
+.text:0000B996                               loc_B996                                ; CODE XREF: sub_B5DC:loc_B9CCj
+.text:0000B996 60 68                                         LDR     R0, [R4,#4]
+.text:0000B998 43 78                                         LDRB    R3, [R0,#1]
+.text:0000B99A 1A 06                                         LSLS    R2, R3, #0x18
+.text:0000B99C 13 0E                                         LSRS    R3, R2, #0x18
+.text:0000B99E 6B 2B                                         CMP     R3, #0x6B
+.text:0000B9A0 37 D0                                         BEQ     loc_BA12
+.text:0000B9A2 2D D8                                         BHI     loc_BA00
+.text:0000B9A4 50 2B                                         CMP     R3, #0x50
+.text:0000B9A6 3D D0                                         BEQ     loc_BA24
+.text:0000B9A8 69 2B                                         CMP     R3, #0x69
+
+
+
+IDA Ctrl+J 列出交叉参考来源
+
+.text:0000B8D8 8A 5D 00 00                   dword_B8D8      DCD 0x5D8A              ; DATA XREF: sub_B5DC+70r
+.text:0000B8D8                                                                       ; sub_B5DC:loc_B670r
+
+
+.text:0000BA44                                                                       ; DATA XREF: sub_B5DC:loc_B988r
+.text:0000BA48 8A 5D 00 00                   dword_BA48      DCD 0x5D8A              ; DATA XREF: sub_B5DC+3AEr
+
+几个端口号对应16进制
+
+0x5D8A=23946
+
+0x41F8=16888
+
+0x3039=12345
+
+用十六进制工具 010 Editor Ctrl+G 修改
+
+0000B8D8 和 0000BA48两处的值为 0x41F8 注意字节序是输入F841
+
+
+
+
+
+
+D:\Program Files\IDA Pro v6.8>adb devices
+List of devices attached
+71MBBKU24655    device
+
+D:\Program Files\IDA Pro v6.8>adb push dbgsrv\android_server /data/data/android_server
+failed to copy 'dbgsrv\android_server' to '/data/data/android_server': Permission denied
+
+shell@m1note:/ $ id
+id
+uid=2000(shell) gid=2000(shell) groups=1003(graphics),1004(input),1007(log),1011(adb),1015(sdcard_rw),1028(sdcard_r),3001(net_bt_admin),3002(net_bt),3003(inet),3006(net_bw_stats) context=u:r:shell:s0
+shell@m1note:/
+shell@m1note:/ # id
+id
+uid=0(root) gid=0(root) groups=1003(graphics),1004(input),1007(log),1011(adb),1015(sdcard_rw),1028(sdcard_r),3001(net_bt_admin),3002(net_bt),3003(inet),3006(net_bw_stats) context=u:r:shell:s0
+shell@m1note:/ #
+
+D:\Program Files\IDA Pro v6.8>adb shell ls /data/local/tmp/
+busybox
+busybox1
+flatland
+
+D:\Program Files\IDA Pro v6.8>adb push dbgsrv\android_server /data/local/tmp/
+3798 KB/s (523480 bytes in 0.134s)
+
+D:\Program Files\IDA Pro v6.8>adb shell ls -al /data/local/tmp/
+-rw-rw-rw- shell    shell      523480 2015-04-13 18:35 android_server
+-rwxr-xr-x shell    shell     1062992 2016-03-28 14:41 busybox
+-rwxr-xr-x shell    shell      358336 2016-03-28 14:41 busybox1
+-rw-r--r-- root     root        34284 2015-04-13 20:56 flatland
+
+D:\Program Files\IDA Pro v6.8>adb shell /data/local/tmp/android_server
+/system/bin/sh: /data/local/tmp/android_server: can't execute: Permission denied
+
+D:\Program Files\IDA Pro v6.8>adb shell chmod 777 /data/local/tmp/android_server
+
+D:\Program Files\IDA Pro v6.8>adb shell /data/local/tmp/android_server
+IDA Android 32-bit remote debug server(ST) v1.19. Hex-Rays (c) 2004-2015
+Listening on port #23946...
+
+
+
+<application android:allowBackup="true" android:debuggable="true
+
+C:\Users\Administrator\Desktop>adb shell
+* daemon not running. starting it now on port 5037 *
+* daemon started successfully *
+root@m1note:/ # id
+id
+uid=0(root) gid=0(root) context=u:r:shell:s0
+
+
+
+
+
+C:\Users\Administrator\Desktop>adb shell am start -D -n com.ali.tg.testapp/com.ali.tg.testapp.MainActivity
+Starting: Intent { cmp=com.ali.tg.testapp/.MainActivity }
+
+C:\Users\Administrator\Desktop>adb shell am start -D -n com.ali.tg.testapp/.MainActivity
+Starting: Intent { cmp=com.ali.tg.testapp/.MainActivity }
+
+adb forward tcp:23946 tcp:23946
+
+
+jdb -connect com.sun.jdi.SocketAttach:hostname=localhost,port=8700
+
+C:\Users\Administrator\Desktop>jdb -attach localhost:12345
+
+
+C:\Users\Administrator\Desktop>adb shell am start -D -n loading.androidmanual/loading.androidmanual.BeginningActivity
+Starting: Intent { cmp=loading.androidmanual/.BeginningActivity }
+
+
+C:\Users\Administrator\Desktop>adb shell am start -D -n com.ali.tg.testapp/.MainActivity
+Starting: Intent { cmp=com.ali.tg.testapp/.MainActivity }
+
+C:\Users\Administrator\Desktop>adb jdwp
+1429
+10898
+
+C:\Users\Administrator\Desktop>adb forward tcp:8877 jdwp:10898
+
+C:\Users\Administrator\Desktop>jdb -connect com.sun.jdi.SocketAttach:hostname=localhost,port=8877
+设置未捕获的java.lang.Throwable
+设置延迟的未捕获的java.lang.Throwable
+正在初始化jdb...
+>
+
+
+android:debuggable="true"
+
+C:\Users\Administrator\Desktop>adb devices
+List of devices attached
+71MBBKU24655    device
+127.0.0.1:21503 device
+
+adb -s 71MBBKU24655 push mprop /data/local/tmp/mprop
+adb -s 71MBBKU24655 shell ls -al /data/local/tmp/mprop
+adb -s 71MBBKU24655 shell chmod 777 /data/local/tmp/mprop
+
+adb -s 71MBBKU24655 shell /data/local/tmp/mprop ro.debuggable 1
+adb -s 71MBBKU24655 shell getprop ro.debuggable
+
+adb -s 71MBBKU24655 shell stop;start
+adb -s 71MBBKU24655 jdwp
+
+adb -s 71MBBKU24655 push android_server  /data/local/tmp/android_server
+
+adb -s 71MBBKU24655 shell chmod 777 /data/local/tmp/android_server
+
+adb -s 71MBBKU24655 shell /data/local/tmp/android_server
+
+adb -s 71MBBKU24655 forward tcp:23946 tcp:16888
+
+netstat -ano | findstr :23946
+
+netstat -ano | findstr :16888
+
+tasklist | findstr 8300
+
+adb -s 71MBBKU24655 shell am start -D -n loading.androidmanual/.BeginningActivity
+
+adb -s 71MBBKU24655 shell am start -D -n com.yaotong.crackme/.MainActivity
+
+adb -s 71MBBKU24655 shell dumpsys package com.droider.crackme0201
+
+aapt dump xmltree AliCrackme_2.apk AndroidManifest.xml > D:\AndroidManifest.txt
+
+
+adb -s 71MBBKU24655 shell am start -D -n com.yaotong.crackme/.MainActivity
+
+jdb -connect com.sun.jdi.SocketAttach:hostname=localhost,port=8700
+
+C:\Users\Administrator\Desktop>adb devices
+List of devices attached
+71MBBKU24655    device
+127.0.0.1:21503 device
+
+
+C:\Users\Administrator\Desktop>adb -s 71MBBKU24655 shell am start -D -n com.droider.crackme0201/.MainActivity
+Starting: Intent { cmp=com.droider.crackme0201/.MainActivity }
+
+C:\Users\Administrator\Desktop>adb -s 71MBBKU24655 jdwp
+1429
+12935
+
+C:\Users\Administrator\Desktop>adb -s 71MBBKU24655 forward tcp:8877 jdwp:13069
+
+C:\Users\Administrator\Desktop>adb -s 71MBBKU24655 forward tcp:23946 tcp:16888
+
+F9运行IDA
+
+C:\Users\Administrator\Desktop>jdb -connect com.sun.jdi.SocketAttach:hostname=localhost,port=8877
+设置未捕获的java.lang.Throwable
+设置延迟的未捕获的java.lang.Throwable
+正在初始化jdb...
+>
+
+adb -s 71MBBKU24655 shell cat /proc/13753/status
+
+IDA,再两次F9
+
+adb -s 71MBBKU24655 shell cat /proc/13753/status
+
+
+adb -s 71MBBKU24655 shell ps | grep 32008
+
+C:\Users\Administrator\Desktop>adb shell
+root@m1note:/ # ps |grep 32008
+ps |grep 32008
+root      32008 16052 15168  13396 ffffffff b6ea7948 S /data/local/tmp/android_server
+
+
+
+root@m1note:/sdcard # setprop ro.build.version.sdk 22
+setprop ro.build.version.sdk 22
+root@m1note:/sdcard # getprop ro.build.version.sdk
+getprop ro.build.version.sdk
+19
+
+
+
+
+
+
+
+
+
+
+
 
 
 

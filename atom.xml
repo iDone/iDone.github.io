@@ -1718,6 +1718,8 @@
       <category term="笔记" scheme="/categories/macOS/%E7%AC%94%E8%AE%B0/"/>
     
     
+      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
+    
       <category term="printf" scheme="/tags/printf/"/>
     
       <category term="C" scheme="/tags/C/"/>
@@ -1733,8 +1735,6 @@
       <category term="全平台" scheme="/tags/%E5%85%A8%E5%B9%B3%E5%8F%B0/"/>
     
       <category term="printfcolor" scheme="/tags/printfcolor/"/>
-    
-      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
@@ -1936,8 +1936,6 @@ idone@AY1402261427509974f2Z:~$
       <category term="笔记" scheme="/categories/macOS/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
-    
       <category term="macOS" scheme="/tags/macOS/"/>
     
       <category term="ssh" scheme="/tags/ssh/"/>
@@ -1949,6 +1947,8 @@ idone@AY1402261427509974f2Z:~$
       <category term="远程登录" scheme="/tags/%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/"/>
     
       <category term="Ubuntu" scheme="/tags/Ubuntu/"/>
+    
+      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   

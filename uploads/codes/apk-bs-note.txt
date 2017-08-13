@@ -4035,6 +4035,7 @@ android:debuggable="true"
 C:\Users\Administrator\Desktop>adb devices
 List of devices attached
 71MBBKU24655    device
+127.0.0.1:62001 device
 127.0.0.1:21503 device
 
 adb -s 71MBBKU24655 push mprop /data/local/tmp/mprop
@@ -4045,6 +4046,7 @@ adb -s 71MBBKU24655 shell /data/local/tmp/mprop ro.debuggable 1
 adb -s 71MBBKU24655 shell getprop ro.debuggable
 
 adb -s 71MBBKU24655 shell stop;start
+
 adb -s 71MBBKU24655 jdwp
 
 adb -s 71MBBKU24655 push android_server  /data/local/tmp/android_server
@@ -4063,21 +4065,128 @@ tasklist | findstr 8300
 
 adb -s 71MBBKU24655 shell am start -D -n loading.androidmanual/.BeginningActivity
 
-adb -s 71MBBKU24655 shell am start -D -n com.yaotong.crackme/.MainActivity
+adb -s 71MBBKU24655 shell am start -D -n com.droider.crackme0201/.MainActivity
 
 adb -s 71MBBKU24655 shell dumpsys package com.droider.crackme0201
+
+
+adb -s 71MBBKU24655 shell am start -D -n com.yaotong.crackme/.MainActivity
 
 aapt dump xmltree AliCrackme_2.apk AndroidManifest.xml > D:\AndroidManifest.txt
 
 
-adb -s 71MBBKU24655 shell am start -D -n com.yaotong.crackme/.MainActivity
+
+adb -s 71MBBKU24655 shell am start -D -n com.CMapp/com.e4a.runtime.android.mainActivity
+
+adb -s 71MBBKU24655 shell am start -D -n com.example.hbssz/.MainActivity
 
 jdb -connect com.sun.jdi.SocketAttach:hostname=localhost,port=8700
 
-C:\Users\Administrator\Desktop>adb devices
-List of devices attached
-71MBBKU24655    device
-127.0.0.1:21503 device
+adb -s 71MBBKU24655 jdwp
+
+adb -s 71MBBKU24655 forward tcp:8877 jdwp:20524
+
+jdb -connect com.sun.jdi.SocketAttach:hostname=localhost,port=8877
+
+
+mmap
+mmap+4e
+
+fopen
+fopen+0x82
+
+fgets
+fgets+0x98
+
+com.CMapp_1.apk:78CAC004 00 F0 20 E3                   NOP
+
+11次f9断在mmap后f8单步
+
+
+返回到这里
+78CF7000: loaded /data/data/com.CMapp/files/libjiagu.so
+
+0x59e0
+
+libjiagu.so:78CFC9E0 01 00 70 E3                   CMN             R0, #1
+libjiagu.so:78CFC9E4 00 00 85 15                   STRNE           R0, [R5]
+libjiagu.so:78CFC9E8 04 40 85 15                   STRNE           R4, [R5,#4]
+libjiagu.so:78CFC9EC 0C D0 8D E2                   ADD             SP, SP, #0xC
+libjiagu.so:78CFC9F0 30 80 BD E8                   LDMFD           SP!, {R4,R5,PC}
+
+
+com.CMapp_1.apk:78CAC014                               loc_78CAC014                            ; CODE XREF: com.CMapp_1.apk:78CAC00Cj
+com.CMapp_1.apk:78CAC014 3E FF 2F E1                   BLX             LR ; loc_78CFA42C
+com.CMapp_1.apk:78CAC018 00 00 50 E3                   CMP             R0, #0
+com.CMapp_1.apk:78CAC01C 00 00 00 1A                   BNE             loc_78CAC024
+com.CMapp_1.apk:78CAC020 01 00 00 EA                   B               loc_78CAC02C
+
+
+0x35ec  第1处反调试改为
+00 00 A0 E3
+
+libjiagu.so:78CF95D4 0A 20 A0 E3                   MOV             R2, #0xA
+libjiagu.so:78CF95D8 09 00 A0 E1                   MOV             R0, R9
+libjiagu.so:78CF95DC B2 F8 FF EB                   BL              unk_78CF78AC
+libjiagu.so:78CF95E0 00 40 A0 E1                   MOV             R4, R0
+libjiagu.so:78CF95E4 06 00 A0 E1                   MOV             R0, R6
+libjiagu.so:78CF95E8 AC F8 FF EB                   BL              unk_78CF78A0
+libjiagu.so:78CF95EC 04 00 A0 E1                   MOV             R0, R4
+libjiagu.so:78CF95F0 F0 FF FF EA                   B               loc_78CF95B8
+
+libjiagu.so:78CF95D4 0A 20 A0 E3                   MOV             R2, #0xA
+libjiagu.so:78CF95D8 09 00 A0 E1                   MOV             R0, R9
+libjiagu.so:78CF95DC B2 F8 FF EB                   BL              unk_78CF78AC
+libjiagu.so:78CF95E0 00 40 A0 E1                   MOV             R4, R0
+libjiagu.so:78CF95E4 06 00 A0 E1                   MOV             R0, R6
+libjiagu.so:78CF95E8 AC F8 FF EB                   BL              unk_78CF78A0
+libjiagu.so:78CF95EC 00 00 A0 E3                   MOV             R0, #0
+libjiagu.so:78CF95F0 F0 FF FF EA                   B               loc_78CF95B8
+
+
+com.CMapp_1.apk:78CAC038                               loc_78CAC038                            ; CODE XREF: com.CMapp_1.apk:78CAC030j
+com.CMapp_1.apk:78CAC038 3E FF 2F E1                   BLX             LR ; loc_78CFA614
+com.CMapp_1.apk:78CAC03C 00 00 50 E3                   CMP             R0, #0
+com.CMapp_1.apk:78CAC040 00 00 00 1A                   BNE             loc_78CAC048
+com.CMapp_1.apk:78CAC044 01 00 00 EA                   B               loc_78CAC050
+
+0x3720  第2处反调试改为
+00 00 A0 E3
+
+libjiagu.so:78CF9708 06 00 A0 E1                   MOV             R0, R6
+libjiagu.so:78CF970C 1E F8 FF EB                   BL              unk_78CF778C
+libjiagu.so:78CF9710 00 10 50 E2                   SUBS            R1, R0, #0
+libjiagu.so:78CF9714 F1 FF FF 0A                   BEQ             loc_78CF96E0
+libjiagu.so:78CF9718 07 00 A0 E1                   MOV             R0, R7
+libjiagu.so:78CF971C 5F F8 FF EB                   BL              unk_78CF78A0
+libjiagu.so:78CF9720 01 00 A0 E3                   MOV             R0, #1
+libjiagu.so:78CF9724 02 00 00 EA                   B               loc_78CF9734
+
+
+libjiagu.so:78CF9708 06 00 A0 E1                   MOV             R0, R6
+libjiagu.so:78CF970C 1E F8 FF EB                   BL              unk_78CF778C
+libjiagu.so:78CF9710 00 10 50 E2                   SUBS            R1, R0, #0
+libjiagu.so:78CF9714 F1 FF FF 0A                   BEQ             loc_78CF96E0
+libjiagu.so:78CF9718 07 00 A0 E1                   MOV             R0, R7
+libjiagu.so:78CF971C 5F F8 FF EB                   BL              unk_78CF78A0
+libjiagu.so:78CF9720 00 00 A0 E3                   MOV             R0, #0
+libjiagu.so:78CF9724 02 00 00 EA                   B               loc_78CF9734
+
+f9运行28次断在fopen,观察r0为
+/proc/6922/maps.
+f9运行1次断在mmap,堆栈里出现
+data@app@com.CMapp_1.apk@classes.dex:78C926BD
+f8单步,直到Hex View里r0的指向的数据,出现dex.035.然后dump下来
+debug155:7905D818 03 9B             LDR             R3, [SP,#0xC]
+debug155:7905D81A 20 1C             MOVS            R0, R4
+debug155:7905D81C 5B 69             LDR             R3, [R3,#0x14]
+debug155:7905D81E 70 21             MOVS            R1, #0x70
+debug155:7905D820 1A 1C             MOVS            R2, R3
+debug155:7905D822 0C 93             STR             R3, [SP,#0x30]
+debug155:7905D824 02 F0 28 FF       BL              unk_79060678
+debug155:7905D828 20 1C             MOVS            R0, R4
+debug155:7905D82A 1D F0 7F FA       BL              unk_7907AD2C
+
 
 
 C:\Users\Administrator\Desktop>adb -s 71MBBKU24655 shell am start -D -n com.droider.crackme0201/.MainActivity
@@ -4086,6 +4195,10 @@ Starting: Intent { cmp=com.droider.crackme0201/.MainActivity }
 C:\Users\Administrator\Desktop>adb -s 71MBBKU24655 jdwp
 1429
 12935
+
+adb -s 71MBBKU24655 shell kill -19 29542
+adb -s 71MBBKU24655 shell kill -18 29542
+
 
 C:\Users\Administrator\Desktop>adb -s 71MBBKU24655 forward tcp:8877 jdwp:13069
 
@@ -4122,8 +4235,262 @@ getprop ro.build.version.sdk
 19
 
 
+400B9000: loaded /system/bin/linker
+
+0x400bb870
+
+.text:00002868                 ADD             R1, PC  ; "linker"
+.text:0000286A                 ADD             R2, PC  ; "[ Calling %s @ %p for '%s' ]"
+.text:0000286C                 BL              sub_47E4
+.text:00002870
+.text:00002870 loc_2870                                ; CODE XREF: sub_2844+16j
+.text:00002870                 BLX             R4
+.text:00002872                 LDR             R1, =(dword_146AC - 0x2878)
+.text:00002874                 ADD             R1, PC ; dword_146AC
+.text:00002876                 LDR             R2, [R1]
+.text:00002878                 CMP             R2, #1
+.text:0000287A                 BLE             loc_2890
+.text:0000287C                 LDR             R1, =(aLinker - 0x288C)
+.text:0000287E                 MOVS            R0, #4
 
 
+.fini_array:00005E84
+.fini_array:00005E84 ; Segment type: Pure data
+.fini_array:00005E84                 AREA .fini_array, DATA
+.fini_array:00005E84                 ; ORG 0x5E84
+.fini_array:00005E84                 DCD sub_1164
+.fini_array:00005E88                 DCB    0
+.fini_array:00005E89                 DCB    0
+.fini_array:00005E8A                 DCB    0
+.fini_array:00005E8B                 DCB    0
+.fini_array:00005E8B ; .fini_array   ends
+.fini_array:00005E8B
+.init_array:00005E8C ; ===========================================================================
+.init_array:00005E8C
+.init_array:00005E8C ; Segment type: Pure data
+.init_array:00005E8C                 AREA .init_array, DATA
+.init_array:00005E8C                 ; ORG 0x5E8C
+.init_array:00005E8C                 DCD sub_2378
+.init_array:00005E90                 DCB    0
+.init_array:00005E91                 DCB    0
+.init_array:00005E92                 DCB    0
+.init_array:00005E93                 DCB    0
+.init_array:00005E93 ; .init_array   ends
+.init_array:00005E93
+.got:00005F94 ; ===========================================================================
+.got:00005F94
+
+78F04000: loaded /data/app-lib/com.yaotong.crackme-1/libcrackme.so
+
+.text:00001B9C ; =============== S U B R O U T I N E =======================================
+.text:00001B9C
+.text:00001B9C ; Attributes: bp-based frame
+.text:00001B9C
+.text:00001B9C                 EXPORT JNI_OnLoad
+.text:00001B9C JNI_OnLoad
+.text:00001B9C
+.text:00001B9C var_20          = -0x20
+.text:00001B9C
+.text:00001B9C                 STMFD   SP!, {R4-R9,R11,LR}
+.text:00001BA0                 ADD     R11, SP, #0x18
+.text:00001BA4                 SUB     SP, SP, #8
+.text:00001BA8                 MOV     R4, R0
+.text:00001BAC                 LDR     R0, =(_GLOBAL_OFFSET_TABLE_ - 0x1BC0)
+.text:00001BB0                 LDR     R9, =(unk_6290 - 0x5FBC)
+.text:00001BB4                 MOV     R8, #0
+.text:00001BB8                 ADD     R0, PC, R0 ; _GLOBAL_OFFSET_TABLE_
+.text:00001BBC                 ADD     R0, R9, R0 ; unk_6290
+.text:00001BC0                 STR     R8, [R0,#(dword_62C8 - 0x6290)]
+.text:00001BC4                 LDR     R5, [R0,#(dword_62C4 - 0x6290)]
+.text:00001BC8                 CMP     R5, #0
+.text:00001BCC                 BEQ     loc_1C28
+.text:00001BD0
+.text:00001BD0 loc_1BD0
+
+.text:00001C28                               loc_1C28                                ; CODE XREF: JNI_OnLoad+30j
+.text:00001C28 08 50 4D E2                                   SUB     R5, SP, #8
+.text:00001C2C 05 D0 A0 E1                                   MOV     SP, R5
+.text:00001C30 68 00 9F E5                                   LDR     R0, =(_GLOBAL_OFFSET_TABLE_ - 0x1C48)
+.text:00001C34 68 10 9F E5                                   LDR     R1, =(sub_16A4 - 0x5FBC)
+.text:00001C38 00 30 A0 E3                                   MOV     R3, #0
+.text:00001C3C 00 80 85 E5                                   STR     R8, [R5]
+.text:00001C40 00 00 8F E0                                   ADD     R0, PC, R0 ; _GLOBAL_OFFSET_TABLE_
+.text:00001C44 00 20 81 E0                                   ADD     R2, R1, R0 ; sub_16A4
+.text:00001C48 00 00 89 E0                                   ADD     R0, R9, R0 ; unk_6290
+.text:00001C4C 00 10 A0 E3                                   MOV     R1, #0          ; name
+.text:00001C50 24 70 90 E5                                   LDR     R7, [R0,#(dword_62B4 - 0x6290)]
+.text:00001C54 20 00 4B E2                                   SUB     R0, R11, #-handle ; handle
+.text:00001C58 37 FF 2F E1                                   BLX     R7 ; __imp_dlsym
+.text:00001C5C E4 FE FF EB                                   BL      sub_17F4
+.text:00001C60 00 00 94 E5                                   LDR     R0, [R4]
+.text:00001C64 04 60 A0 E3                                   MOV     R6, #4
+.text:00001C68 05 10 A0 E1                                   MOV     R1, R5
+.text:00001C6C 01 68 86 E3                                   ORR     R6, R6, #0x10000
+.text:00001C70 06 20 A0 E1                                   MOV     R2, R6
+.text:00001C74 18 30 90 E5                                   LDR     R3, [R0,#0x18]
+.text:00001C78 04 00 A0 E1                                   MOV     R0, R4
+.text:00001C7C 33 FF 2F E1                                   BLX     R3 ; __imp___aeabi_memset
+.text:00001C80 00 00 50 E3                                   CMP     R0, #0
+.text:00001C84 00 60 E0 13                                   MOVNE   R6, #0xFFFFFFFF
+.text:00001C88 06 00 A0 E1                                   MOV     R0, R6
+.text:00001C8C 18 D0 4B E2                                   SUB     SP, R11, #0x18
+.text:00001C90 F0 8B BD E8                                   LDMFD   SP!, {R4-R9,R11,PC}
+
+.text:00001C58 00 00 A0 E1                                   NOP
+.text:00001C5C E4 FE FF EB                                   BL      sub_17F4
+                    
+.text:000011A8
+.text:000011A8 ; =============== S U B R O U T I N E =======================================
+.text:000011A8
+.text:000011A8
+.text:000011A8                 EXPORT Java_com_yaotong_crackme_MainActivity_securityCheck
+.text:000011A8 Java_com_yaotong_crackme_MainActivity_securityCheck
+.text:000011A8
+.text:000011A8 var_20          = -0x20
+.text:000011A8 var_1C          = -0x1C
+.text:000011A8
+.text:000011A8                 STMFD   SP!, {R4-R7,R11,LR}
+.text:000011AC                 SUB     SP, SP, #8
+.text:000011B0                 MOV     R5, R0
+.text:000011B4                 LDR     R0, =(_GLOBAL_OFFSET_TABLE_ - 0x11C8)
+.text:000011B8                 LDR     R6, =(unk_6290 - 0x5FBC)
+.text:000011BC                 MOV     R4, R2
+.text:000011C0                 ADD     R0, PC, R0 ; _GLOBAL_OFFSET_TABLE_
+.text:000011C4                 ADD     R0, R6, R0 ; unk_6290
+.text:000011C8                 LDRB    R0, [R0,#(byte_6359 - 0x6290)]
+.text:000011CC                 CMP     R0, #0
+.text:000011D0                 BNE     loc_1214
+.text:000011D4                 MOV     R1, #2
+.text:000011D8                 MOV     R0, #7
+.text:000011DC                 STR     R1, [SP,#0x20+var_20]
+.text:000011E0                 STR     R0, [SP,#0x20+var_1C]
+.text:000011E4                 LDR     R0, =(_GLOBAL_OFFSET_TABLE_ - 0x11F4)
+.text:000011E8                 LDR     R1, =(unk_446B - 0x5FBC)
+.text:000011EC                 ADD     R0, PC, R0 ; _GLOBAL_OFFSET_TABLE_
+
+yaotong
+SecurityCheck Started...
+
+.text:0000126C
+.text:0000126C                               loc_126C                                ; CODE XREF: Java_com_yaotong_crackme_MainActivity_securityCheck+80j
+.text:0000126C 90 00 9F E5                                   LDR     R0, =(_GLOBAL_OFFSET_TABLE_ - 0x1278)
+.text:00001270 00 70 8F E0                                   ADD     R7, PC, R0 ; _GLOBAL_OFFSET_TABLE_
+.text:00001274 07 00 86 E0                                   ADD     R0, R6, R7 ; unk_6290
+.text:00001278 74 10 80 E2                                   ADD     R1, R0, #0x74 ; off_628C
+.text:0000127C DC 20 80 E2                                   ADD     R2, R0, #0xDC ; off_628C
+.text:00001280 04 00 A0 E3                                   MOV     R0, #4
+.text:00001284 92 FF FF EB                                   BL      __android_log_print
+.text:00001288 00 00 95 E5                                   LDR     R0, [R5]
+.text:0000128C 04 10 A0 E1                                   MOV     R1, R4
+.text:00001290 00 20 A0 E3                                   MOV     R2, #0
+.text:00001294 A4 32 90 E5                                   LDR     R3, [R0,#0x2A4]
+.text:00001298 05 00 A0 E1                                   MOV     R0, R5
+.text:0000129C 33 FF 2F E1                                   BLX     R3
+.text:000012A0 60 10 9F E5                                   LDR     R1, =(off_628C - 0x5FBC)
+.text:000012A4 07 20 91 E7                                   LDR     R2, [R1,R7] ; off_628C
+.text:000012A8
+.text:000012A8                               loc_12A8                                ; CODE XREF: Java_com_yaotong_crackme_MainActivity_securityCheck+120j
+.text:000012A8 00 30 D2 E5                                   LDRB    R3, [R2]
+.text:000012AC 00 10 D0 E5                                   LDRB    R1, [R0]
+.text:000012B0 01 00 53 E1                                   CMP     R3, R1
+.text:000012B4 05 00 00 1A                                   BNE     loc_12D0
+.text:000012B8 01 20 82 E2                                   ADD     R2, R2, #1
+.text:000012BC 01 00 80 E2                                   ADD     R0, R0, #1
+.text:000012C0 01 10 A0 E3                                   MOV     R1, #1
+.text:000012C4 00 00 53 E3                                   CMP     R3, #0
+
+aiyou,bucuoo
+aiyou,bucuoo
+
+.text:0000126C
+.text:0000126C                               loc_126C                                ; CODE XREF: Java_com_yaotong_crackme_MainActivity_securityCheck+80j
+.text:0000126C 90 00 9F E5                                   LDR     R0, =(_GLOBAL_OFFSET_TABLE_ - 0x1278)
+.text:00001270 00 70 8F E0                                   ADD     R7, PC, R0 ; _GLOBAL_OFFSET_TABLE_
+.text:00001274 8C 60 9F E5                                   LDR     R6, =(off_628C - 0x5FBC) ; unk_6290
+.text:00001278 07 10 96 E7                                   LDR     R1, [R6,R7] ; off_628C
+.text:0000127C 07 20 96 E7                                   LDR     R2, [R6,R7] ; off_628C
+.text:00001280 04 00 A0 E3                                   MOV     R0, #4
+.text:00001284 92 FF FF EB                                   BL      __android_log_print
+.text:00001288 00 00 95 E5                                   LDR     R0, [R5]
+.text:0000128C 04 10 A0 E1                                   MOV     R1, R4
+.text:00001290 00 20 A0 E3                                   MOV     R2, #0
+.text:00001294 A4 32 90 E5                                   LDR     R3, [R0,#0x2A4]
+.text:00001298 05 00 A0 E1                                   MOV     R0, R5
+.text:0000129C 33 FF 2F E1                                   BLX     R3
+.text:000012A0 60 10 9F E5                                   LDR     R1, =(off_628C - 0x5FBC)
+.text:000012A4 07 20 91 E7                                   LDR     R2, [R1,R7] ; off_628C
+.text:000012A8
+.text:000012A8                               loc_12A8                                ; CODE XREF: Java_com_yaotong_crackme_MainActivity_securityCheck+120j
+.text:000012A8 00 30 D2 E5                                   LDRB    R3, [R2]
+.text:000012AC 00 10 D0 E5                                   LDRB    R1, [R0]
+.text:000012B0 01 00 53 E1                                   CMP     R3, R1
+.text:000012B4 05 00 00 1A                                   BNE     loc_12D0
+.text:000012B8 01 20 82 E2                                   ADD     R2, R2, #1
+.text:000012BC 01 00 80 E2                                   ADD     R0, R0, #1
+.text:000012C0 01 10 A0 E3                                   MOV     R1, #1
+.text:000012C4 00 00 53 E3                                   CMP     R3, #0
+
+
+
+
+.data:0000628C off_628C        DCD aWojiushidaan       ; DATA XREF: Java_com_yaotong_crackme_MainActivity_securityCheck+FCr
+.data:0000628C                                         ; .text:off_1308o
+.data:0000628C ; .data         ends                    ; "wojiushidaan"
+.data:0000628C
+
+aiyou,bucuoo
+
+libcrackme.so:78F08450 61 69 79 6F 75 2C 62 75 63 75+aAiyouBucuoo DCB "aiyou,bucuoo",0
+libcrackme.so:78F0845D 4C                            DCB 0x4C ; L
+libcrackme.so:78F0845E 37                            DCB 0x37 ; 7
+libcrackme.so:78F0845F 39                            DCB 0x39 ; 9
+
+
+.text:000016A4
+.text:000016A4                               ; =============== S U B R O U T I N E =======================================
+.text:000016A4
+.text:000016A4                               ; Attributes: noreturn
+.text:000016A4
+.text:000016A4                               sub_16A4                                ; DATA XREF: JNI_OnLoad+A8o
+.text:000016A4                                                                       ; .text:off_1CA4o
+.text:000016A4 10 40 2D E9                                   STMFD   SP!, {R4,LR}
+.text:000016A8 1C 00 9F E5                                   LDR     R0, =(_GLOBAL_OFFSET_TABLE_ - 0x16B8)
+.text:000016AC 1C 10 9F E5                                   LDR     R1, =(unk_6290 - 0x5FBC)
+.text:000016B0 00 00 8F E0                                   ADD     R0, PC, R0 ; _GLOBAL_OFFSET_TABLE_
+.text:000016B4 00 40 81 E0                                   ADD     R4, R1, R0 ; unk_6290
+.text:000016B8
+.text:000016B8                               loc_16B8                                ; CODE XREF: sub_16A4+24j
+.text:000016B8 13 FF FF EB                                   BL      sub_130C
+.text:000016BC 20 10 94 E5                                   LDR     R1, [R4,#(dword_62B0 - 0x6290)]
+.text:000016C0 03 00 A0 E3                                   MOV     R0, #3
+.text:000016C4 31 FF 2F E1                                   BLX     R1
+.text:000016C8 FA FF FF EA                                   B       loc_16B8
+.text:000016C8                               ; End of function sub_16A4
+
+
+.text:000016B8 00 00 A0 E1                                   NOP
+
+
+
+C:\Python27>pip install gmpy2-2.0.8-cp27-none-win32.whl
+Processing c:\python27\gmpy2-2.0.8-cp27-none-win32.whl
+Installing collected packages: gmpy2
+Successfully installed gmpy2-2.0.8
+
+C:\Python27>pip install capstone
+Requirement already satisfied: capstone in c:\python27\lib\site-packages
+
+https://alexaltea.github.io/capstone.js/dist/capstone.min.js
+
+F552B38DBDDE72E2E693B2AED5C769C0DCB3DA83534480A80E652FFE53544CD91A18C3
+
+.sympath SRV*C:\Symbols*http://msdl.microsoft.com/download/symbols/
+c:\symbols;srv*c:\symbols*https://msdl.microsoft.com/download/symbols
+_NT_SYMBOL_PATH = SRV*E:\localsymbols*http://msdl.microsoft.com/download/symbols/
+
+
+http://vv.video.qq.com/getinfo?vids=x0013uxrjp0
+http://vv.video.qq.com/getkey?vid=x0013uxrjp0&filename=x0013uxrjp0.p201.2.mp4&format=10201
 
 
 

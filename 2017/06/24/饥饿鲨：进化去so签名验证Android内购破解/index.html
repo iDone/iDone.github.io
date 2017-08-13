@@ -605,6 +605,8 @@
                   </figure>
                   <p>用16进制工具C32Asm去掉,这两个函数call调用的地方</p>
                   <p>改为”悙悙” 即是,填充为0或者90</p>
+                  <p>或者改为 00 00 A0 E1 是move r0,r0 相当于ARM汇编的NOP
+                    <br>又或者改为 00 F0 20 E3 是ARM汇编的NOP；</p>
                   <figure class="highlight java">
                     <table>
                       <tr>

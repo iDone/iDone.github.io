@@ -35,16 +35,16 @@
         <tag>android</tag>
         <tag>内购</tag>
         <tag>Crack</tag>
+        <tag>jadx</tag>
+        <tag>java</tag>
+        <tag>android killer</tag>
+        <tag>smali</tag>
         <tag>签名验证</tag>
         <tag>去广告</tag>
         <tag>logcat</tag>
         <tag>signatures</tag>
         <tag>46003</tag>
         <tag>egame</tag>
-        <tag>jadx</tag>
-        <tag>java</tag>
-        <tag>android killer</tag>
-        <tag>smali</tag>
       </tags>
   </entry>
   <entry>
@@ -84,12 +84,12 @@
         <tag>android</tag>
         <tag>内购</tag>
         <tag>Crack</tag>
+        <tag>youdao1</tag>
+        <tag>smspay</tag>
         <tag>jadx</tag>
         <tag>java</tag>
         <tag>android killer</tag>
         <tag>smali</tag>
-        <tag>youdao1</tag>
-        <tag>smspay</tag>
       </tags>
   </entry>
   <entry>
@@ -101,6 +101,7 @@
         <category>笔记</category>
       </categories>
       <tags>
+        <tag>随笔</tag>
         <tag>printf</tag>
         <tag>C</tag>
         <tag>Unix</tag>
@@ -109,7 +110,6 @@
         <tag>Windows</tag>
         <tag>全平台</tag>
         <tag>printfcolor</tag>
-        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -172,7 +172,7 @@
   <entry>
     <title><![CDATA[Charles逆向分析记录及破解程序CharlesLoader源码]]></title>
     <url>%2F2017%2F05%2F05%2FCharles%E9%80%86%E5%90%91%E5%88%86%E6%9E%90%E8%AE%B0%E5%BD%95%E5%8F%8A%E7%A0%B4%E8%A7%A3%E7%A8%8B%E5%BA%8FCharlesLoader%E6%BA%90%E7%A0%81%2F</url>
-    <content type="text"><![CDATA[查尔斯动态加载启动器(CharlesLoader) v4.x —by B.S. 5/5/2017 极其强大的Web调试、代理抓包工具启动器。 Charles v4.x 动态加载启动器loader 最新版v4.1.2相对v.4.0.2以上版本比较，明文类名已混淆。 gitoschina码云源码: http://git.oschina.net/iYoungDone/charlesloader 破解 Charles 的屌炸天的 shell 脚本for MacOS,Linux,Unix 最新charles-v4.1.4破解文件(For All) Windows 平台,将下载的charles.jar文件覆盖到安装目录下的lib文件夹下即可完成破解! Mac 平台,将下载的charles.jar文件右键 Charles.app 显示包内容,覆盖到Content-&gt;Java下即可完成破解! 注意: 这是v4.1.4的破解文件,不确定其他版本也同样适用!请下载相应版本文件,然后改名为charles.jar. Charles v4.1.4版本分析记录 –by B.S. July 18, 2017 5:25 PM 最新版v4.1.4相对v.4.0.2比较，明文类名已混淆. 反编译为源码后,找关键点的分析流程: 这里414试一试另外一种更简单的方法: 在com.xk72.charles.gui.SplashWindow.java里找到 public void showRegistrationStatus()函数方法; 1234567 public void showRegistrationStatus() &#123; if (gIbD.xUFT()) &#123; this.showStatus("Registered to: " + gIbD.PcqR()); return; &#125; this.showSharewareStatus();&#125; 在if()条件里的,是否注册成功gIbD.xUFT()函数和”Registered to: “后面的注册给谁的gIbD.PcqR()函数,都来自import com.xk72.charles.gIbD类 在com.xk72.charles.gIbD就是关键类。修改掉上面两个函数即可。 hook掉public static boolean x1()和public static java.lang.String x3()两个方法函数就可以了,当然最好public修饰的都hook掉; 只需要在用javassist时,设置这一句就可以将破解好的class类文件就会dump出来 CtClass.debugDump = “./charles-bs-cr”; Charles v4.1.3版本分析记录 –by B.S. 6/27/2017 2:07:52 PM 最新版v4.1.3相对v.4.0.2比较，明文类名已混淆. 反编译为源码后,找关键点的分析流程: 在com\xk72\charles\gui\frames\RegisterFrame.java里找到this.bRegister.addActionListener导入的类import com.xk72.charles.gui.frames.NvMh; 在com.xk72.charles.gui.frames.NvMh里找到if (object2 != null) 使他永久为null的函数导入的类import com.xk72.charles.psPJ; 在com.xk72.charles.psPJ里就是关键类。分析关键点HOOK。 用javap -public psPj.class查看给外部类调用的公有函数方法如下: 1234567 public final class com.xk72.charles.psPJ &#123; public com.xk72.charles.psPJ(); public static boolean qIvM(); public static void mLFE(); public static java.lang.String tCiz(); public static java.lang.String qIvM(java.lang.String, java.lang.String);&#125; hook掉public static boolean x1()和public static java.lang.String x3()两个方法函数就可以了,当然最好public修饰的都hook掉; 只需要在用javassist时,设置这一句就可以将破解好的class类文件dump出来然后打包回原来的charles.jar里,破解文件制作完成. CtClass.debugDump = “./charles-bs-cr”; 要做跨平台的破解文件最好用MacOS下的charles.jar文件进行破解,Windows平台下的文件破解后到MacOS下起不来.我比对过破解的class类文件,二进制是相同的,估计在其他地方有细微差别. Charles v4.1.2版本分析记录 –by B.S. 5/23/2017 1:32:17 PM 最新版v4.1.2相对v.4.0.2比较，明文类名已混淆. 反编译为源码后,找关键点的分析流程: 在com\xk72\charles\gui\frames\RegisterFrame.java里找到this.bRegister.addActionListener导入的类import com.xk72.charles.gui.frames.GTvL; 在com.xk72.charles.gui.frames.GTvL里找到if (object2 != null) 使他永久为null的函数导入的类import com.xk72.charles.qFep; 在com.xk72.charles.qFep里就是关键类。分析关键点HOOK。 Charles v4.1.1版本分析记录 –by B.S. 5/5/2017 8:30:00 AM 最新版v4.1.1相对v.4.0.2比较，明文类名已混淆. 反编译为源码后,找关键点的分析流程: 在com\xk72\charles\gui\frames\RegisterFrame.java里找到this.bRegister.addActionListener导入的类 import com.xk72.charles.gui.frames.idkH; 在com.xk72.charles.gui.frames.idkH里找到if (object2 != null) 使他永久为null的函数导入的类import com.xk72.charles.slZe; 在com.xk72.charles.slZe里就是关键类。分析关键点HOOK。]]></content>
+    <content type="text"><![CDATA[查尔斯动态加载启动器(CharlesLoader) v4.x —by B.S. 5/5/2017 极其强大的Web调试、代理抓包工具启动器。 Charles v4.x 动态加载启动器loader 最新版v4.x.x相对v.4.0.2以上版本比较，明文类名已混淆。 gitoschina码云源码: http://git.oschina.net/iYoungDone/charlesloader 破解 Charles 的屌炸天的 shell 脚本for MacOS,Linux,Unix 最新charles-v4.2破解文件(For All) 链接: https://pan.baidu.com/s/1sl4YMK1 密码: b8cy Windows 平台,将下载的charles.jar文件覆盖到安装目录下的lib文件夹下即可完成破解! Mac 平台,将下载的charles.jar文件右键 Charles.app 显示包内容,覆盖到Content-&gt;Java下即可完成破解! 注意: 这是v4.2的破解文件,不确定其他版本也同样适用!请下载相应版本文件,然后改名为charles.jar. Charles v4.2版本分析记录 –by B.S. October 6, 2017 10:08 PM 最新版v4.2相对v.4.0.2比较，明文类名已混淆. https://www.charlesproxy.com/assets/release/4.2/charles-proxy-4.2-win64.msi https://www.charlesproxy.com/assets/release/4.2/charles-proxy-4.2-win32.msi https://www.charlesproxy.com/assets/release/4.2/charles-proxy-4.2.dmg https://www.charlesproxy.com/assets/release/4.2/charles-proxy-4.2_amd64.tar.gz https://www.charlesproxy.com/assets/release/4.2/charles-proxy-4.2.tar.gz 反编译为源码后,找关键点的分析流程: 这里414试一试另外一种更简单的方法: 在com.xk72.charles.gui.SplashWindow.java里找到 public void showRegistrationStatus()函数方法; 1234567 public void showRegistrationStatus() &#123; if (WNzU.OjEP()) &#123; this.showStatus("Registered to: " + WNzU.DZZn()); return; &#125; this.showSharewareStatus(); &#125; 在if()条件里的,是否注册成功 WNzU.OjEP() 函数和 “Registered to: “ 后面的注册给谁的WNzU.DZZn() 函数,都来自 import com.xk72.charles.WNzU 类; 在com.xk72.charles.WNzU 就是关键类。修改掉上面两个函数即可。 hook掉public static boolean x1()和public static java.lang.String x3()两个方法函数就可以了,当然最好public修饰的都hook掉; 只需要在用javassist时,设置这一句就可以将破解好的class类文件就会dump出来 CtClass.debugDump = “./charles-bs-cr”; Charles v4.1.4版本分析记录 –by B.S. July 18, 2017 5:25 PM 最新版v4.1.4相对v.4.0.2比较，明文类名已混淆. 反编译为源码后,找关键点的分析流程: 这里414试一试另外一种更简单的方法: 在com.xk72.charles.gui.SplashWindow.java里找到 public void showRegistrationStatus()函数方法; 1234567 public void showRegistrationStatus() &#123; if (gIbD.xUFT()) &#123; this.showStatus("Registered to: " + gIbD.PcqR()); return; &#125; this.showSharewareStatus();&#125; 在if()条件里的,是否注册成功gIbD.xUFT()函数和”Registered to: “后面的注册给谁的gIbD.PcqR()函数,都来自import com.xk72.charles.gIbD类 在com.xk72.charles.gIbD就是关键类。修改掉上面两个函数即可。 hook掉public static boolean x1()和public static java.lang.String x3()两个方法函数就可以了,当然最好public修饰的都hook掉; 只需要在用javassist时,设置这一句就可以将破解好的class类文件就会dump出来 CtClass.debugDump = “./charles-bs-cr”; Charles v4.1.3版本分析记录 –by B.S. 6/27/2017 2:07:52 PM 最新版v4.1.3相对v.4.0.2比较，明文类名已混淆. 反编译为源码后,找关键点的分析流程: 在com\xk72\charles\gui\frames\RegisterFrame.java里找到this.bRegister.addActionListener导入的类import com.xk72.charles.gui.frames.NvMh; 在com.xk72.charles.gui.frames.NvMh里找到if (object2 != null) 使他永久为null的函数导入的类import com.xk72.charles.psPJ; 在com.xk72.charles.psPJ里就是关键类。分析关键点HOOK。 用javap -public psPj.class查看给外部类调用的公有函数方法如下: 1234567 public final class com.xk72.charles.psPJ &#123; public com.xk72.charles.psPJ(); public static boolean qIvM(); public static void mLFE(); public static java.lang.String tCiz(); public static java.lang.String qIvM(java.lang.String, java.lang.String);&#125; hook掉public static boolean x1()和public static java.lang.String x3()两个方法函数就可以了,当然最好public修饰的都hook掉; 只需要在用javassist时,设置这一句就可以将破解好的class类文件dump出来然后打包回原来的charles.jar里,破解文件制作完成. CtClass.debugDump = “./charles-bs-cr”; 要做跨平台的破解文件最好用MacOS下的charles.jar文件进行破解,Windows平台下的文件破解后到MacOS下起不来.我比对过破解的class类文件,二进制是相同的,估计在其他地方有细微差别. Charles v4.1.2版本分析记录 –by B.S. 5/23/2017 1:32:17 PM 最新版v4.1.2相对v.4.0.2比较，明文类名已混淆. 反编译为源码后,找关键点的分析流程: 在com\xk72\charles\gui\frames\RegisterFrame.java里找到this.bRegister.addActionListener导入的类import com.xk72.charles.gui.frames.GTvL; 在com.xk72.charles.gui.frames.GTvL里找到if (object2 != null) 使他永久为null的函数导入的类import com.xk72.charles.qFep; 在com.xk72.charles.qFep里就是关键类。分析关键点HOOK。 Charles v4.1.1版本分析记录 –by B.S. 5/5/2017 8:30:00 AM 最新版v4.1.1相对v.4.0.2比较，明文类名已混淆. 反编译为源码后,找关键点的分析流程: 在com\xk72\charles\gui\frames\RegisterFrame.java里找到this.bRegister.addActionListener导入的类 import com.xk72.charles.gui.frames.idkH; 在com.xk72.charles.gui.frames.idkH里找到if (object2 != null) 使他永久为null的函数导入的类import com.xk72.charles.slZe; 在com.xk72.charles.slZe里就是关键类。分析关键点HOOK。]]></content>
       <categories>
         <category>逆向工程(Reverse Engineering)</category>
         <category>破解(Crack)</category>

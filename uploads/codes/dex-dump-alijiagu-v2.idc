@@ -6,9 +6,9 @@ static main(void)
 	
   fp = fopen(path, "wb"); //打开或创建一个文件
 	
-  end_addr = r4 + r5;             //dex基址 //dex基址790B5000 + dex文件大小0x0004BC38
+  end_addr = r0 + r1;             //dex基址 //dex基址 + dex文件大小
 	
-  for (dex_addr = r4; dex_addr < end_addr; dex_addr ++)
+  for (dex_addr = r0; dex_addr < end_addr; dex_addr ++)
   {
     fputc(Byte(dex_addr), fp);  //按字节将其dump到本地文件中
   }

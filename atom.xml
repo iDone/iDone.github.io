@@ -103,6 +103,9 @@
   <p>0x5D8A=23946</p>
   <p>0x41F8=16888</p>
   <p>0x3039=12345</p>
+  <p>0x2222=8738</p>
+  <p>0xEEEE=61166</p>
+  <p>0xFFFF=65535</p>
 </blockquote>
 <p>将修改过的文件push到手机上,用 ==chmod 777== 添加执行权限</p>
 <blockquote>
@@ -122,6 +125,10 @@
     </tr>
   </table>
 </figure>
+<p>修改所有v22 = 23946;的地方</p>
+<p>
+  <a href="/uploads/codes/android_server_nonpie_main.html">IDA PRO v7.0 android_server_nonpie_v1.20分析修改参考</a>
+</p>
 ]]></content>
     
     <summary type="html">
@@ -1724,8 +1731,6 @@
       <category term="笔记" scheme="/categories/macOS/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
-    
       <category term="printf" scheme="/tags/printf/"/>
     
       <category term="C" scheme="/tags/C/"/>
@@ -1741,6 +1746,8 @@
       <category term="全平台" scheme="/tags/%E5%85%A8%E5%B9%B3%E5%8F%B0/"/>
     
       <category term="printfcolor" scheme="/tags/printfcolor/"/>
+    
+      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   

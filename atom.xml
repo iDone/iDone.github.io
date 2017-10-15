@@ -31,7 +31,7 @@
 <h3 id="IDA载入文件android-server分析">
   <a href="#IDA载入文件android-server分析" class="headerlink" title="IDA载入文件android_server分析"></a>IDA载入文件android_server分析</h3>
 <p>android_server默认调试端口号是: ==23946==, 十六进制值为: ==0x5D8A==</p>
-<p>Shift+F12 查找字符串</p>
+<p>==Shift+F12== 查找字符串</p>
 <blockquote>
   <p>.rodata:00074224 0000004A C IDA Android 32-bit remote debug server(ST) v1.%d. Hex-Rays
     (c) 2004-2015\n</p>
@@ -66,7 +66,7 @@
     </tr>
   </table>
 </figure>
-<p>IDA Ctrl+J 列出交叉参考来源</p>
+<p>IDA按 ==Ctrl+J== 列出交叉参考来源</p>
 <h5 id="第一处-1">
   <a href="#第一处-1" class="headerlink" title="第一处:"></a>第一处:</h5>
 <figure class="highlight plain">
@@ -95,9 +95,17 @@
     </tr>
   </table>
 </figure>
-<h3 id="用十六进制工具-010-Editor-Ctrl-G-修改">
-  <a href="#用十六进制工具-010-Editor-Ctrl-G-修改" class="headerlink" title="用十六进制工具 010 Editor Ctrl+G 修改"></a>用十六进制工具 010 Editor Ctrl+G 修改</h3>
-<p>0000B8D8 和 0000BA48 两处的值为 ==0x41F8== 注意字节序是输入 ==F841==</p>
+<h3 id="用十六进制工具-010-Editor">
+  <a href="#用十六进制工具-010-Editor" class="headerlink" title="用十六进制工具 010 Editor"></a>用十六进制工具 010 Editor</h3>
+<p>==Ctrl+G== 到文件物理地址offset去修改，</p>
+<p>IDA v6.8里 ==0000B8D8== 和 ==0000BA48== 两处的值 ==0x5D8A== 改为 ==0x41F8==
+  <br>注意字节序是输入 ==F841==</p>
+<p>October 15, 2017 1:00 PM
+  <br>IDA v7.0里 ==0000FBA0== 处的值 ==0x5D8A== 改为 ==0xFFFF==
+  <br>注意字节序是输入 ==FFFF==</p>
+<ul>
+  <li>[x] 如果是nonpie版本的，IDA的地址要减去 ==Imagebase:8000== 才能得到文件物理地址offset偏移</li>
+</ul>
 <p>几个端口号对应16进制</p>
 <blockquote>
   <p>0x5D8A=23946</p>
@@ -125,10 +133,36 @@
     </tr>
   </table>
 </figure>
-<p>修改所有v22 = 23946;的地方</p>
+<p>还可以 ==ln -s== ====做一个软链接，链接到/system/xbin/下或者/system/bin/下作为环境命令执行
+  <br>需要root权限和adbd为root启动</p>
+<figure class="highlight bat">
+  <table>
+    <tr>
+      <td class="gutter">
+        <pre><div class="line">1</div></pre>
+      </td>
+      <td class="code">
+        <pre><div class="line">adb shell ln -s /data/local/tmp/bs70_nonpie /system/xbin/bs70_nonpie</div></pre>
+      </td>
+    </tr>
+  </table>
+</figure>
+<p>换言之，就是修改所有v22 = 23946;的地方，参考如下</p>
 <p>
-  <a href="/uploads/codes/android_server_nonpie_main.html">IDA PRO v7.0 android_server_nonpie_v1.20分析修改参考</a>
+  <a href="/uploads/codes/android_server_nonpie_main.html">IDA PRO v7.0 android_server_nonpie_v1.20分析修改参考（右键下载保存）</a>
 </p>
+<figure class="highlight bat">
+  <table>
+    <tr>
+      <td class="gutter">
+        <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre>
+      </td>
+      <td class="code">
+        <pre><div class="line"><span class="function">C:\<span class="title">Users</span>\<span class="title">Administrator</span>\<span class="title">Desktop</span>&gt;<span class="title">adb</span> <span class="title">shell</span> <span class="title">bs70_nonpie</span></span></div><div class="line"><span class="title">IDA</span> <span class="title">Android</span> 32-<span class="title">bit</span> <span class="title">remote</span> <span class="title">debug</span> <span class="title">server</span>(<span class="title">ST</span>) <span class="title">v1</span>.22. <span class="title">Hex</span>-<span class="title">Rays</span> (<span class="title">c</span>) 2004-2017</div><div class="line"><span class="title">Listening</span> <span class="title">on</span> 0.0.0.0:65535...</div><div class="line">^<span class="title">C</span></div><div class="line"><span class="title">C</span>:\<span class="title">Users</span>\<span class="title">Administrator</span>\<span class="title">Desktop</span>&gt;<span class="title">adb</span> <span class="title">shell</span> <span class="title">bs70_nonpie</span> -<span class="title">p12345</span></div><div class="line"><span class="title">IDA</span> <span class="title">Android</span> 32-<span class="title">bit</span> <span class="title">remote</span> <span class="title">debug</span> <span class="title">server</span>(<span class="title">ST</span>) <span class="title">v1</span>.22. <span class="title">Hex</span>-<span class="title">Rays</span> (<span class="title">c</span>) 2004-2017</div><div class="line"><span class="title">Listening</span> <span class="title">on</span> 0.0.0.0:12345...</div><div class="line">^<span class="title">C</span></div><div class="line"><span class="title">C</span>:\<span class="title">Users</span>\<span class="title">Administrator</span>\<span class="title">Desktop</span>&gt;</div></pre>
+      </td>
+    </tr>
+  </table>
+</figure>
 ]]></content>
     
     <summary type="html">
@@ -163,6 +197,10 @@
       <category term="23946" scheme="/tags/23946/"/>
     
       <category term="apk调试" scheme="/tags/apk%E8%B0%83%E8%AF%95/"/>
+    
+      <category term="ln" scheme="/tags/ln/"/>
+    
+      <category term="nonpie" scheme="/tags/nonpie/"/>
     
   </entry>
   
@@ -1731,6 +1769,8 @@
       <category term="笔记" scheme="/categories/macOS/%E7%AC%94%E8%AE%B0/"/>
     
     
+      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
+    
       <category term="printf" scheme="/tags/printf/"/>
     
       <category term="C" scheme="/tags/C/"/>
@@ -1746,8 +1786,6 @@
       <category term="全平台" scheme="/tags/%E5%85%A8%E5%B9%B3%E5%8F%B0/"/>
     
       <category term="printfcolor" scheme="/tags/printfcolor/"/>
-    
-      <category term="随笔" scheme="/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   

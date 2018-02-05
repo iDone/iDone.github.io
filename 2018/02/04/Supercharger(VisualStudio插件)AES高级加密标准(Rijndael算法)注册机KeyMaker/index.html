@@ -1,0 +1,1268 @@
+<!doctype html>
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
+  />
+
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
+
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+  <meta name="google-site-verification" content="8y8FSBTI7MzPBT0cEOMTQ9jUdF2rk4jyPmZo9MWYHxc"
+  />
+
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"
+  />
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
+                                                                                  rel="stylesheet" type="text/css">
+
+  <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet"
+                                                                                  type="text/css" />
+
+  <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+  <meta name="keywords" content="逆向工程(Reverse Engineering),破解(Crack),C#,.Net,Crack,Supercharger,VisualStudio插件,AES高级加密标准,Rijndael算法,注册机,注册码,CodeMap注册码,Supercharger注册码,axtools注册码,KeyMaker,KeyGen,CodeMap,Editor View Enhancer,Comment Extender,VS10X,dnSpy,dotPeek,Reflector,JetBrains decompiler,"
+  />
+
+  <link rel="alternate" href="/atom.xml" title="@iYoungDone's Hexo Blog" type="application/atom+xml"
+  />
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+  <meta name="description" content="Created by B.S. February 5, 2018 9:22:33 PM 利用业余时间,一锅端了VS10X系列的三个插件和Supercharger插件,   至此 Michael Kiss [BG8] 的所有插件完爆.   第一次分析AES高级加密标准(Rijndael算法),君莫笑.    仅供学习研究,请勿用作商业用途,如若喜欢请支持正版!  注册机下载(暂不提供):    百度">
+  <meta name="keywords" content="逆向工程(Reverse Engineering),破解(Crack),C#,.Net,Crack,Supercharger,VisualStudio插件,AES高级加密标准,Rijndael算法,注册机,注册码,CodeMap注册码,Supercharger注册码,axtools注册码,KeyMaker,KeyGen,CodeMap,Editor View Enhancer,Comment Extender,VS10X,dnSpy,dotPeek,Reflector,JetBrains decompiler">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Supercharger(VisualStudio插件)AES高级加密标准(Rijndael算法)注册机KeyMaker">
+  <meta property="og:url" content="/2018/02/04/Supercharger(VisualStudio插件)AES高级加密标准(Rijndael算法)注册机KeyMaker/index.html">
+  <meta property="og:site_name" content="@iYoungDone&#39;s Hexo Blog">
+  <meta property="og:description" content="Created by B.S. February 5, 2018 9:22:33 PM 利用业余时间,一锅端了VS10X系列的三个插件和Supercharger插件,   至此 Michael Kiss [BG8] 的所有插件完爆.   第一次分析AES高级加密标准(Rijndael算法),君莫笑.    仅供学习研究,请勿用作商业用途,如若喜欢请支持正版!  注册机下载(暂不提供):    百度">
+  <meta property="og:image" content="/images/Supercharger-AES-KeyGen.jpg">
+  <meta property="og:updated_time" content="2018-02-04T13:33:00.000Z">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Supercharger(VisualStudio插件)AES高级加密标准(Rijndael算法)注册机KeyMaker">
+  <meta name="twitter:description" content="Created by B.S. February 5, 2018 9:22:33 PM 利用业余时间,一锅端了VS10X系列的三个插件和Supercharger插件,   至此 Michael Kiss [BG8] 的所有插件完爆.   第一次分析AES高级加密标准(Rijndael算法),君莫笑.    仅供学习研究,请勿用作商业用途,如若喜欢请支持正版!  注册机下载(暂不提供):    百度">
+  <meta name="twitter:image" content="/images/Supercharger-AES-KeyGen.jpg">
+
+  <script type="text/javascript" id="hexo.configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {
+      root: '/',
+      scheme: 'Pisces',
+      sidebar: {
+        "position": "right",
+        "display": "post",
+        "offset": 12,
+        "offset_float": 0,
+        "b2t": true,
+        "scrollpercent": true
+      },
+      fancybox: true,
+      motion: true,
+      duoshuo: {
+        userId: '0',
+        author: '博主'
+      },
+      algolia: {
+        applicationID: '',
+        apiKey: '',
+        indexName: '',
+        hits: {
+          "per_page": 10
+        },
+        labels: {
+          "input_placeholder": "Search for Posts",
+          "hits_empty": "We didn't find any results for the search: ${query}",
+          "hits_stats": "${hits} results found in ${time} ms"
+        }
+      }
+    };
+
+  </script>
+
+  <link rel="canonical" href="/2018/02/04/Supercharger(VisualStudio插件)AES高级加密标准(Rijndael算法)注册机KeyMaker/"
+  />
+
+  <title>Supercharger(VisualStudio插件)AES高级加密标准(Rijndael算法)注册机KeyMaker | @iYoungDone's Hexo
+    Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?5458071b11ad5bcea830141d3ae7f866";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+
+  </script>
+
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner">
+        <div class="site-brand-wrapper">
+          <div class="site-meta ">
+
+            <div class="custom-logo-site-title">
+              <a href="/" class="brand" rel="start">
+                <span class="logo-line-before">
+                  <i></i>
+                </span>
+                <span class="site-title">@iYoungDone's Hexo Blog</span>
+                <span class="logo-line-after">
+                  <i></i>
+                </span>
+              </a>
+            </div>
+
+            <p class="site-subtitle">『想女孩子能使你成为哲学家--太相信女人』❤ http://www.allin1.xyz</p>
+
+          </div>
+
+          <div class="site-nav-toggle">
+            <button>
+              <span class="btn-bar"></span>
+              <span class="btn-bar"></span>
+              <span class="btn-bar"></span>
+            </button>
+          </div>
+        </div>
+
+        <nav class="site-nav">
+
+          <ul id="menu" class="menu">
+
+            <li class="menu-item menu-item-home">
+              <a href="/" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-home"></i>
+                <br /> 首页
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-categories">
+              <a href="/categories" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-th"></i>
+                <br /> 分类
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-archives">
+              <a href="/archives" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-archive"></i>
+                <br /> 归档
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-tags">
+              <a href="/tags" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-tags"></i>
+                <br /> 标签
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-about">
+              <a href="/about" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-user"></i>
+                <br /> 关于
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-search">
+
+              <a href="javascript:;" class="popup-trigger">
+
+                <i class="menu-item-icon fa fa-search fa-fw"></i>
+                <br /> 搜索
+              </a>
+            </li>
+
+          </ul>
+
+          <div class="site-search">
+
+            <div class="popup search-popup local-search-popup">
+              <div class="local-search-header clearfix">
+                <span class="search-icon">
+                  <i class="fa fa-search"></i>
+                </span>
+                <span class="popup-btn-close">
+                  <i class="fa fa-times-circle"></i>
+                </span>
+                <div class="local-search-input-wrapper">
+                  <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+                </div>
+              </div>
+              <div id="local-search-result"></div>
+            </div>
+
+          </div>
+
+        </nav>
+
+        <a href="https://github.com/idone/">
+          <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67"
+                                                                                          alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png">
+        </a>
+
+      </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+
+            <div id="posts" class="posts-expand">
+
+              <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+                <link itemprop="mainEntityOfPage" href="/2018/02/04/Supercharger(VisualStudio插件)AES高级加密标准(Rijndael算法)注册机KeyMaker/">
+
+                <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                  <meta itemprop="name" content="YoungDone(B.S.)">
+                  <meta itemprop="description" content="">
+                  <meta itemprop="image" content="/images/avatar.jpg">
+                </span>
+
+                <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                  <meta itemprop="name" content="@iYoungDone's Hexo Blog">
+                </span>
+
+                <header class="post-header">
+
+                  <h1 class="post-title" itemprop="name headline">Supercharger(VisualStudio插件)AES高级加密标准(Rijndael算法)注册机KeyMaker</h1>
+
+                  <div class="post-meta">
+                    <span class="post-time">
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-calendar-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">发表于</span>
+
+                      <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-04T21:22:00+08:00">
+                        2018-02-04
+                      </time>
+
+                    </span>
+
+                    <span class="post-category">
+
+                      <span class="post-meta-divider">|</span>
+
+                      <span class="post-meta-item-icon">
+                        <i class="fa fa-folder-o"></i>
+                      </span>
+
+                      <span class="post-meta-item-text">分类于</span>
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/逆向工程-Reverse-Engineering/" itemprop="url" rel="index">
+                          <span itemprop="name">逆向工程(Reverse Engineering)</span>
+                        </a>
+                      </span>
+
+                      ，
+
+                      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                        <a href="/categories/逆向工程-Reverse-Engineering/注册机-KeyGen/" itemprop="url" rel="index">
+                          <span itemprop="name">注册机(KeyGen)</span>
+                        </a>
+                      </span>
+
+                    </span>
+
+                    <span class="post-meta-divider">|</span>
+                    <span class="page-pv">
+                      <i class="fa fa-file-o"></i>
+                      <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+                    </span>
+
+                  </div>
+                </header>
+
+                <div class="post-body han-init-context" itemprop="articleBody">
+
+                  <p>Created by B.S.</p>
+                  <p>February 5, 2018 9:22:33 PM</p>
+                  <p>利用业余时间,一锅端了VS10X系列的三个插件和Supercharger插件,
+                    <br>至此 Michael Kiss [BG8] 的所有插件完爆.
+                    <br>第一次分析AES高级加密标准(Rijndael算法),君莫笑.</p>
+                  <p>
+                    <strong>仅供学习研究,请勿用作商业用途,如若喜欢请支持正版!</strong>
+                  </p>
+                  <p>注册机下载(暂不提供):</p>
+                  <p>
+                    <a href="/uploads/codes/SuperchargerKeyGen.exe">百度下载</a>
+                  </p>
+                  <p>
+                    <img src="/images/Supercharger-AES-KeyGen.jpg" alt="Supercharger-AES-KeyGen">
+                  </p>
+                  <p>###提供几组注册码给广大网友试用
+                    <br>(算法不变的情况下可以永久使用)</p>
+                  <hr>
+                  <ul>
+                    <li>Supercharger 注册码(商业版授权)</li>
+                  </ul>
+                  <figure class="highlight plain">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line">tt4e2HN4X3ggeKGEaLHimXqdrrC6zMcJU26+l9QHaO+Y6k3+vqhCgVyIn/TleZhBfhicAb4ndUfmNUp3QnHPaDYLP68ZpqnyJ2rg3M5vILHetTi/EwUp3q+USoXUcqx0Evjzbp3lK8H</div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <figure class="highlight plain">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line">tt4e2HN4X3gGfGtqcGOm0G3PF10efSFEIwlsy1iG9q+sFIry6+cv8qn5Odn7ptpfwqooAsbOWDhMyGcLQ/d/FOaVAPSLUT6S2GsQf0T1wNqgpm73t3t4wnSDrbnsm65Ces60f77DtTl</div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <figure class="highlight plain">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line">tt4e2HN4X3geZ3VCRMW0HgLWFrxEc5HRH7hj6sZRDh4gC1AQTOaNLMEyIHLnkRElFnRxFBhHuz1b5hbmd7aLtJxr+hr9+1PgskD/8PUoAp0wzZ2qf+smoa7HhYRz0HVuuEiiFOYr0lm</div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <figure class="highlight plain">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line">tt4e2HN4X3gL3hZN+cq9XVHt9srW459P8WsGFWPxaNdS9Pr8LjjVRFPBQtRO2b5QWvHADdEOL69bSG+RsVMJkU+brXGm+Z7InqHgWDlCaXqg0uKqe6sGUC2tlfDiOWtHLimlvFas/+O</div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <hr>
+                  <ul>
+                    <li>Supercharger 注册码(个人专业版授权)</li>
+                  </ul>
+                  <figure class="highlight plain">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line">6pAF3t43w9B+eUQ+tFVjzAQAnweFm+cJ5cTVvenQT+EQTxW8EO4P6aVp6VCmLXafi6E/Ie1m4q4yq3ty6KoqlQ6mDYHbM48jSv+WXKcR/YPQab+yIulqX9qfKW7brPx02mjzIPOx</div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <hr>
+                  <ul>
+                    <li>Supercharger 注册码(个人版授权)</li>
+                  </ul>
+                  <figure class="highlight plain">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line">6kDE7f22Q5pDY/7cYI1igalmapWahx+A8WyYz6NymOQHjtgDH6JJslzlEtbc4z8U3zMcTJByBSyyBx0KtlxfWrXQq62jOsWuncXUncqK3wGNcJqwfe1Aq2FfdcHNQzsqdsieleQt</div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <hr>
+                  <ul>
+                    <li>VS10x CodeMAP 注册码</li>
+                  </ul>
+                  <figure class="highlight plain">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line">#$aLpbUGWYtw9gYWOppNS55c0yXZzNtGX2mVTYMoVHUR8wjZI/GxtRUYTTwDiF4b1D7F858Y3j/uWr+VEWgcbIsWIMx7ly1w2DmEWdV4CV3uM9whtx/lB4KxdBCqlASMdSp</div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <ul>
+                    <li>VS10x Editor View Enhancer 注册码</li>
+                  </ul>
+                  <figure class="highlight plain">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line">#$bKI8RFwZkTg7C3a6dAg2xJB2Fpx45hU8tddnwcVFGWTA/KuNvvpld+tTTFODBrmN8Lbhqk/bGYnJg8MkVqpF0PV12as+BfhpOGEbMUW4qf+zcXyhvRP9v75SPaKuGBJ8H</div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <ul>
+                    <li>VS10x Comment Extender 注册码</li>
+                  </ul>
+                  <figure class="highlight plain">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><div class="line">1</div></pre>
+                        </td>
+                        <td class="code">
+                          <pre><div class="line">#$cyONtjA7dBJsE78MBifkQDAmsVd/lnyjjBydFu+zQE6EhsoQmL894gNATrYd+hDHxm5plKa+UoPVZZ+3spALHkF/ebK4VLURnUHxRJawlMseeebp5DaOyUMwcE43Cjxsy</div></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+
+                </div>
+
+                <div>
+
+                </div>
+
+                <div>
+
+                  <div style="padding: 10px 0; margin: 20px auto; width: 88%; text-align: center;">
+                    <div>您觉得好,您就随意打赏点吧(*^__^*)您的鼓励,是我坚持的动力!</div>
+                    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+                      <span>赞赏支持</span>
+                    </button>
+                    <div id="QR" style="display: none;">
+
+                      <div id="wechat" style="display: inline-block">
+                        <img id="wechat_qr" src="/uploads/qrcode/wechat-reward.png" alt="YoungDone(B.S.) WeChat Pay"
+                        />
+                        <p>微信打赏</p>
+                      </div>
+
+                      <div id="alipay" style="display: inline-block">
+                        <img id="alipay_qr" src="/uploads/qrcode/alipay-reward.jpg" alt="YoungDone(B.S.) Alipay"
+                        />
+                        <p>支付宝打赏</p>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+
+                <div>
+
+                  <ul class="post-copyright">
+                    <li class="post-copyright-author">
+                      <strong>本文作者：</strong>
+                      YoungDone(B.S.)
+                    </li>
+                    <li class="post-copyright-link">
+                      <strong>本文链接：</strong>
+                      <a href="/2018/02/04/Supercharger(VisualStudio插件)AES高级加密标准(Rijndael算法)注册机KeyMaker/"
+                                                                                                      title="Supercharger(VisualStudio插件)AES高级加密标准(Rijndael算法)注册机KeyMaker">/2018/02/04/Supercharger(VisualStudio插件)AES高级加密标准(Rijndael算法)注册机KeyMaker/</a>
+                    </li>
+                    <li class="post-copyright-license">
+                      <strong>版权声明： </strong>
+                      本博客所有文章除特别声明外，均采用
+                      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                                                                                                      rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+                    </li>
+                  </ul>
+
+                </div>
+
+                <footer class="post-footer">
+
+                  <div class="post-tags">
+
+                    <a href="/tags/逆向工程-Reverse-Engineering/" rel="tag"># 逆向工程(Reverse Engineering)</a>
+
+                    <a href="/tags/破解-Crack/" rel="tag"># 破解(Crack)</a>
+
+                    <a href="/tags/C/" rel="tag"># C#</a>
+
+                    <a href="/tags/Net/" rel="tag"># .Net</a>
+
+                    <a href="/tags/Crack/" rel="tag"># Crack</a>
+
+                    <a href="/tags/Supercharger/" rel="tag"># Supercharger</a>
+
+                    <a href="/tags/VisualStudio插件/" rel="tag"># VisualStudio插件</a>
+
+                    <a href="/tags/AES高级加密标准/" rel="tag"># AES高级加密标准</a>
+
+                    <a href="/tags/Rijndael算法/" rel="tag"># Rijndael算法</a>
+
+                    <a href="/tags/注册机/" rel="tag"># 注册机</a>
+
+                    <a href="/tags/注册码/" rel="tag"># 注册码</a>
+
+                    <a href="/tags/CodeMap注册码/" rel="tag"># CodeMap注册码</a>
+
+                    <a href="/tags/Supercharger注册码/" rel="tag"># Supercharger注册码</a>
+
+                    <a href="/tags/axtools注册码/" rel="tag"># axtools注册码</a>
+
+                    <a href="/tags/KeyMaker/" rel="tag"># KeyMaker</a>
+
+                    <a href="/tags/KeyGen/" rel="tag"># KeyGen</a>
+
+                    <a href="/tags/CodeMap/" rel="tag"># CodeMap</a>
+
+                    <a href="/tags/Editor-View-Enhancer/" rel="tag"># Editor View Enhancer</a>
+
+                    <a href="/tags/Comment-Extender/" rel="tag"># Comment Extender</a>
+
+                    <a href="/tags/VS10X/" rel="tag"># VS10X</a>
+
+                    <a href="/tags/dnSpy/" rel="tag"># dnSpy</a>
+
+                    <a href="/tags/dotPeek/" rel="tag"># dotPeek</a>
+
+                    <a href="/tags/Reflector/" rel="tag"># Reflector</a>
+
+                    <a href="/tags/JetBrains-decompiler/" rel="tag"># JetBrains decompiler</a>
+
+                  </div>
+
+                  <div class="post-nav">
+                    <div class="post-nav-next post-nav-item">
+
+                      <a href="/2017/07/25/修改android_server默认调试端口号反调试/" rel="next" title="修改android_server默认调试端口号反调试">
+                        <i class="fa fa-chevron-left"></i> 修改android_server默认调试端口号反调试
+                      </a>
+
+                    </div>
+
+                    <span class="post-nav-divider"></span>
+
+                    <div class="post-nav-prev post-nav-item">
+
+                    </div>
+                  </div>
+
+                </footer>
+              </article>
+
+              <div class="post-spread">
+
+                <script>
+                  window._bd_share_config = {
+                    "common": {
+                      "bdText": "",
+                      "bdMini": "1",
+                      "bdMiniList": false,
+                      "bdPic": ""
+                    },
+                    "image": {
+                      "viewList": ["tsina", "douban", "sqq", "qzone",
+                        "weixin", "twi", "fbook"
+                      ],
+                      "viewText": "分享到：",
+                      "viewSize": "16"
+                    },
+                    "slide": {
+                      "bdImg": "5",
+                      "bdPos": "left",
+                      "bdTop": "100"
+                    }
+                  }
+
+                </script>
+
+                <script>
+                  with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(
+                      createElement('script')).src =
+                    '//bdimg.share.baidu.com/static/api/js/share.js?cdnversion=' +
+                    ~(-new Date() / 36e5)];
+
+                </script>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="comments" id="comments">
+
+            <div id="lv-container" data-id="city" data-uid="MTAyMC8yODcwNi81Mjc3"></div>
+
+          </div>
+
+        </div>
+
+        <div class="sidebar-toggle">
+          <div class="sidebar-toggle-line-wrap">
+            <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+            <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+            <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+          </div>
+        </div>
+
+        <aside id="sidebar" class="sidebar">
+          <div class="sidebar-inner">
+
+            <section class="site-overview sidebar-panel sidebar-panel-active">
+              <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="YoungDone(B.S.)"
+                />
+                <p class="site-author-name" itemprop="name">YoungDone(B.S.)</p>
+
+                <p class="site-description motion-element" itemprop="description">An My GitHub Hexo Blog. http://www.appleos.xyz</p>
+
+              </div>
+              <nav class="site-state motion-element">
+
+                <div class="site-state-item site-state-posts">
+                  <a href="/archives">
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    <span class="site-state-item-count">83</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+
+              </nav>
+
+              <div class="feed-link motion-element">
+                <a href="/atom.xml" rel="alternate">
+                  <i class="fa fa-rss"></i>
+                  RSS
+                </a>
+              </div>
+
+              <div class="links-of-author motion-element">
+
+                <span class="links-of-author-item">
+                  <a href="https://github.com/iDone/" target="_blank" title="GitHub">
+
+                    <i class="fa fa-fw fa-github"></i>
+
+                    GitHub
+                  </a>
+                </span>
+
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/iYoungDone/" target="_blank" title="Twitter">
+
+                    <i class="fa fa-fw fa-twitter"></i>
+
+                    Twitter
+                  </a>
+                </span>
+
+                <span class="links-of-author-item">
+                  <a href="" target="_blank" title="Facebook">
+
+                    <i class="fa fa-fw fa-facebook"></i>
+
+                    Facebook
+                  </a>
+                </span>
+
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com/u/0/115713567264921192616" target="_blank" title="Google">
+
+                    <i class="fa fa-fw fa-google"></i>
+
+                    Google
+                  </a>
+                </span>
+
+                <span class="links-of-author-item">
+                  <a href="https://weibo.com/82done/" target="_blank" title="Weibo">
+
+                    <i class="fa fa-fw fa-weibo"></i>
+
+                    Weibo
+                  </a>
+                </span>
+
+                <span class="links-of-author-item">
+                  <a href="/uploads/qrcode/wechat-qrcode.jpg" target="_blank" title="Weixin">
+
+                    <i class="fa fa-fw fa-weixin"></i>
+
+                    Weixin
+                  </a>
+                </span>
+
+                <span class="links-of-author-item">
+                  <a href="mailto:272253042@qq.com" target="_blank" title="Mail">
+
+                    <i class="fa fa-fw fa-envelope"></i>
+
+                    Mail
+                  </a>
+                </span>
+
+                <span class="links-of-author-item">
+                  <a href="" target="_blank" title="LinkedIn">
+
+                    <i class="fa fa-fw fa-linkedin"></i>
+
+                    LinkedIn
+                  </a>
+                </span>
+
+              </div>
+
+              <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+                <div class="links-of-blogroll-title">
+                  <i class="fa  fa-fw fa-globe"></i>
+                  Links
+                </div>
+                <ul class="links-of-blogroll-list">
+
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.allin1.xyz/" title="Blog" target="_blank">Blog</a>
+                  </li>
+
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hexo.io/" title="Hexo" target="_blank">Hexo</a>
+                  </li>
+
+                  <li class="links-of-blogroll-item">
+                    <a href="https://pages.github.com/" title="GitHub Pages" target="_blank">GitHub Pages</a>
+                  </li>
+
+                  <li class="links-of-blogroll-item">
+                    <a href="http://iissnan.com/" title="iissnan" target="_blank">iissnan</a>
+                  </li>
+
+                  <li class="links-of-blogroll-item">
+                    <a href="http://litten.me/" title="litten" target="_blank">litten</a>
+                  </li>
+
+                  <li class="links-of-blogroll-item">
+                    <a href="http://moxfive.xyz/" title="MOxFIVE" target="_blank">MOxFIVE</a>
+                  </li>
+
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.allin1.xyz/" title="allin1.xyz" target="_blank">allin1.xyz</a>
+                  </li>
+
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.appleos.xyz/" title="appleos.xyz" target="_blank">appleos.xyz</a>
+                  </li>
+
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.8idone.com/" title="8idone.com" target="_blank">8idone.com</a>
+                  </li>
+
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.a2ons.com/" title="a2ons.com" target="_blank">a2ons.com</a>
+                  </li>
+
+                </ul>
+              </div>
+
+            </section>
+
+            <div class="back-to-top">
+              <i class="fa fa-arrow-up"></i>
+
+              <span id="scrollpercent">
+                <span>0</span>%</span>
+
+            </div>
+
+          </div>
+        </aside>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+
+          &copy; 2006 -
+          <span itemprop="copyrightYear">2018</span>
+          <span class="with-love">
+            <i class="fa fa-heart"></i>
+          </span>
+          <span class="author" itemprop="copyrightHolder">YoungDone(B.S.)</span>
+        </div>
+
+        <div class="powered-by">
+          由
+          <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+        </div>
+
+        <div class="theme-info">
+          主题 -
+          <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+            NexT.Pisces
+          </a>
+        </div>
+
+        <div class="busuanzi-count">
+          <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+          <span class="site-uv">
+            <i class="fa fa-user"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+
+          </span>
+
+          <span class="site-pv">
+            <i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+
+          </span>
+
+        </div>
+
+      </div>
+    </footer>
+
+  </div>
+
+  <script type="text/javascript">
+    if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+      window.Promise = null;
+    }
+
+  </script>
+
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+      if (typeof LivereTower === 'function') {
+        return;
+      }
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+
+  </script>
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+    var onPopupClose = function(e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append(
+          '<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css(
+        'text-align', 'center');
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(
+                  /<[^>]+>/g, "");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if (title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text,
+                      caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0,
+                        position = [],
+                        index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word,
+                          startPosition)) > -1) {
+                        index.push({
+                          position: position,
+                          word: word
+                        });
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+                    indexOfTitle = indexOfTitle.concat(
+                      getIndexByWord(keyword,
+                        titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(
+                      getIndexByWord(keyword,
+                        contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length >
+                    0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length +
+                      indexOfContent.length;
+                  }
+                }
+                // show search results
+                if (isMatch) {
+                  // sort index by position of keyword
+                  [indexOfTitle, indexOfContent].forEach(function(
+                    index) {
+                    index.sort(function(itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft
+                        .position) {
+                        return itemRight.position -
+                          itemLeft.position;
+                      } else {
+                        return itemLeft.word.length -
+                          itemRight.word.length;
+                      }
+                    });
+                  });
+                  // merge hits into slices
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index
+                      .length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({
+                        position: position,
+                        length: word.length
+                      });
+                      var wordEnd = position + word.length;
+                      // move to next position of hit
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0,
+                      title.length, indexOfTitle));
+                  }
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length -
+                      1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if (start < 0) {
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if (end > content.length) {
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content,
+                      start, end, indexOfContent));
+                  }
+                  // sort slices in content by search text's count and hits' count
+                  slicesOfContent.sort(function(sliceLeft,
+                    sliceRight) {
+                    if (sliceLeft.searchTextCount !==
+                      sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount -
+                        sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !==
+                      sliceRight.hits.length) {
+                      return sliceRight.hits.length -
+                        sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+                  // select top N slices in content
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0,
+                      upperBound);
+                  }
+                  // highlight title and content
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function(hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' +
+                        text.substring(hit.position, end) +
+                        '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+                  var resultItem = '';
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl +
+                      "' class='search-result-title'>" +
+                      highlightKeyword(title, slicesOfTitle[0]) +
+                      "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl +
+                      "' class='search-result-title'>" + title +
+                      "</a>";
+                  }
+                  slicesOfContent.forEach(function(slice) {
+                    resultItem += "<a href='" + articleUrl +
+                      "'>" +
+                      "<p class=\"search-result\">" +
+                      highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML =
+                '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML =
+                '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function(resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft
+                    .searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList =
+                '<ul class=\"search-result-list\">';
+              resultItems.forEach(function(result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+          if ('auto' === 'manual') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function(event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+          proceedsearch();
+        }
+      });
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function(event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+  </script>
+
+  <script type="text/javascript" src="/js/src/exturl.js?v=5.1.1"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() { var all = MathJax.Hub.getAllJax(), i; for(i=0; i
+  <
+                                                                                  all.length; i +=1 ) { all[i].SourceElement().parentNode.className +=' has-jax'
+                                                                                  ; } }); </script>
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+
+
+    </script>
+    <!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+</body>
+
+</html>

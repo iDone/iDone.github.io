@@ -1,0 +1,3719 @@
+<!doctype html>
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
+  />
+
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
+
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+  <meta name="google-site-verification" content="8y8FSBTI7MzPBT0cEOMTQ9jUdF2rk4jyPmZo9MWYHxc"
+  />
+
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"
+  />
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
+                                                                                  rel="stylesheet" type="text/css">
+
+  <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet"
+                                                                                  type="text/css" />
+
+  <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+  <meta name="keywords" content="allin1, appleos, B.S., Hexo, NexT, Charles, CharlesBS, CharlesLoader"
+  />
+
+  <link rel="alternate" href="/atom.xml" title="@iYoungDone's Hexo Blog" type="application/atom+xml"
+  />
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+  <meta name="description" content="IDA - 010 Editor.i64 (010 Editor) /Applications/010 Editor.app/Contents/MacOS/010     Editor.i64            __int64 __fastcall sub_10034E190(_QWORD *a1)          {          _QWORD *v1     ;">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="@iYoungDone&#39;s Hexo Blog">
+  <meta property="og:url" content="/uploads/codes/010Edirot_macos_v801_sub_10034E190.html">
+  <meta property="og:site_name" content="@iYoungDone&#39;s Hexo Blog">
+  <meta property="og:description" content="IDA - 010 Editor.i64 (010 Editor) /Applications/010 Editor.app/Contents/MacOS/010     Editor.i64            __int64 __fastcall sub_10034E190(_QWORD *a1)          {          _QWORD *v1     ;">
+  <meta property="og:updated_time" content="2017-10-15T10:13:20.000Z">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="@iYoungDone&#39;s Hexo Blog">
+  <meta name="twitter:description" content="IDA - 010 Editor.i64 (010 Editor) /Applications/010 Editor.app/Contents/MacOS/010     Editor.i64            __int64 __fastcall sub_10034E190(_QWORD *a1)          {          _QWORD *v1     ;">
+
+  <script type="text/javascript" id="hexo.configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {
+      root: '/',
+      scheme: 'Pisces',
+      sidebar: {
+        "position": "right",
+        "display": "post",
+        "offset": 12,
+        "offset_float": 0,
+        "b2t": true,
+        "scrollpercent": true
+      },
+      fancybox: true,
+      motion: true,
+      duoshuo: {
+        userId: '0',
+        author: '博主'
+      },
+      algolia: {
+        applicationID: '',
+        apiKey: '',
+        indexName: '',
+        hits: {
+          "per_page": 10
+        },
+        labels: {
+          "input_placeholder": "Search for Posts",
+          "hits_empty": "We didn't find any results for the search: ${query}",
+          "hits_stats": "${hits} results found in ${time} ms"
+        }
+      }
+    };
+
+  </script>
+
+  <link rel="canonical" href="/uploads/codes/010Edirot_macos_v801_sub_10034E190.html"
+  />
+
+  <title> | @iYoungDone's Hexo Blog</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?5458071b11ad5bcea830141d3ae7f866";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+
+  </script>
+
+  <div class="container sidebar-position-right  ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner">
+        <div class="site-brand-wrapper">
+          <div class="site-meta ">
+
+            <div class="custom-logo-site-title">
+              <a href="/" class="brand" rel="start">
+                <span class="logo-line-before">
+                  <i></i>
+                </span>
+                <span class="site-title">@iYoungDone's Hexo Blog</span>
+                <span class="logo-line-after">
+                  <i></i>
+                </span>
+              </a>
+            </div>
+
+            <p class="site-subtitle">『想女孩子能使你成为哲学家--太相信女人』❤ http://www.allin1.xyz</p>
+
+          </div>
+
+          <div class="site-nav-toggle">
+            <button>
+              <span class="btn-bar"></span>
+              <span class="btn-bar"></span>
+              <span class="btn-bar"></span>
+            </button>
+          </div>
+        </div>
+
+        <nav class="site-nav">
+
+          <ul id="menu" class="menu">
+
+            <li class="menu-item menu-item-home">
+              <a href="/" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-home"></i>
+                <br /> 首页
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-categories">
+              <a href="/categories" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-th"></i>
+                <br /> 分类
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-archives">
+              <a href="/archives" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-archive"></i>
+                <br /> 归档
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-tags">
+              <a href="/tags" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-tags"></i>
+                <br /> 标签
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-about">
+              <a href="/about" rel="section">
+
+                <i class="menu-item-icon fa fa-fw fa-user"></i>
+                <br /> 关于
+              </a>
+            </li>
+
+            <li class="menu-item menu-item-search">
+
+              <a href="javascript:;" class="popup-trigger">
+
+                <i class="menu-item-icon fa fa-search fa-fw"></i>
+                <br /> 搜索
+              </a>
+            </li>
+
+          </ul>
+
+          <div class="site-search">
+
+            <div class="popup search-popup local-search-popup">
+              <div class="local-search-header clearfix">
+                <span class="search-icon">
+                  <i class="fa fa-search"></i>
+                </span>
+                <span class="popup-btn-close">
+                  <i class="fa fa-times-circle"></i>
+                </span>
+                <div class="local-search-input-wrapper">
+                  <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+                </div>
+              </div>
+              <div id="local-search-result"></div>
+            </div>
+
+          </div>
+
+        </nav>
+
+        <a href="https://github.com/idone/">
+          <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67"
+                                                                                          alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png">
+        </a>
+
+      </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+
+            <div id="posts" class="posts-expand">
+              <header class="post-header">
+
+                <h1 class="post-title" itemprop="name headline"></h1>
+
+              </header>
+
+              <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+              <html>
+
+              <head>
+                <!-- hexo-inject:begin -->
+                <!-- hexo-inject:end -->
+                <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+                <title>IDA - 010 Editor.i64 (010 Editor) /Applications/010 Editor.app/Contents/MacOS/010
+                  Editor.i64
+                </title>
+                <!-- hexo-inject:begin -->
+                <!-- hexo-inject:end -->
+              </head>
+
+              <body bgcolor="#ffffff">
+                <!-- hexo-inject:begin -->
+                <!-- hexo-inject:end -->
+                <span style="white-space: pre; font-family: Courier; color: blue; background: #ffffff">
+
+                  <span style="color:gray">__int64 __fastcall sub_10034E190(_QWORD *a1)
+                  </span>
+                  <span style="color:navy">{
+                  </span>
+                  <span style="color:gray">_QWORD *v1</span>
+                  <span style="color:navy">; </span>
+                  <span style="color:gray">// </span>
+                  <span style="color:#8080ff">r14
+                  </span>
+                  <span style="color:gray">__int64 v2</span>
+                  <span style="color:navy">; </span>
+                  <span style="color:gray">// </span>
+                  <span style="color:#8080ff">rsi
+                  </span>
+                  <span style="color:navy">int v3; // </span>
+                  <span style="color:#8080ff">edx
+                  </span>
+                  <span style="color:navy">__int64 v4; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:gray">int v5</span>
+                  <span style="color:navy">; </span>
+                  <span style="color:gray">// </span>
+                  <span style="color:#8080ff">ebx
+                  </span>
+                  <span style="color:navy">signed __int32 v6; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:gray">__int64 v7</span>
+                  <span style="color:navy">; </span>
+                  <span style="color:gray">// </span>
+                  <span style="color:#8080ff">rsi
+                  </span>
+                  <span style="color:navy">int v8; // </span>
+                  <span style="color:#8080ff">edx
+                  </span>
+                  <span style="color:navy">bool v9; // </span>
+                  <span style="color:#8080ff">bl
+                  </span>
+                  <span style="color:gray">__int64 v10</span>
+                  <span style="color:navy">; </span>
+                  <span style="color:gray">// </span>
+                  <span style="color:#8080ff">rsi
+                  </span>
+                  <span style="color:gray">int v11</span>
+                  <span style="color:navy">; </span>
+                  <span style="color:gray">// </span>
+                  <span style="color:#8080ff">edx
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v12; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v13; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v14; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v15; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">__int64 v16; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v17; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v18; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v19; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v20; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v21; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:gray">__int64 v22</span>
+                  <span style="color:navy">; </span>
+                  <span style="color:gray">// </span>
+                  <span style="color:#8080ff">rsi
+                  </span>
+                  <span style="color:navy">volatile signed __int32 **v23; // </span>
+                  <span style="color:#8080ff">rsi
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v24; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v25; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:gray">__int64 v26</span>
+                  <span style="color:navy">; </span>
+                  <span style="color:gray">// </span>
+                  <span style="color:#8080ff">rbx
+                  </span>
+                  <span style="color:gray">__int64 v27</span>
+                  <span style="color:navy">; </span>
+                  <span style="color:gray">// </span>
+                  <span style="color:#8080ff">r15
+                  </span>
+                  <span style="color:gray">int v28</span>
+                  <span style="color:navy">; </span>
+                  <span style="color:gray">// </span>
+                  <span style="color:#8080ff">eax
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v29; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v30; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">__int64 v31; // </span>
+                  <span style="color:#8080ff">rbx
+                  </span>
+                  <span style="color:gray">__int64 v32</span>
+                  <span style="color:navy">; </span>
+                  <span style="color:gray">// </span>
+                  <span style="color:#8080ff">rsi
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v33; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v34; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:gray">int v35</span>
+                  <span style="color:navy">; </span>
+                  <span style="color:gray">// </span>
+                  <span style="color:#8080ff">ebx
+                  </span>
+                  <span style="color:navy">int v36; // </span>
+                  <span style="color:#8080ff">edx
+                  </span>
+                  <span style="color:gray">int v37</span>
+                  <span style="color:navy">; </span>
+                  <span style="color:gray">// </span>
+                  <span style="color:#8080ff">er15
+                  </span>
+                  <span style="color:navy">int v38; // </span>
+                  <span style="color:#8080ff">eax
+                  </span>
+                  <span style="color:navy">int v39; // </span>
+                  <span style="color:#8080ff">edx
+                  </span>
+                  <span style="color:navy">int v40; // </span>
+                  <span style="color:#8080ff">er15
+                  </span>
+                  <span style="color:gray">int v41</span>
+                  <span style="color:navy">; </span>
+                  <span style="color:gray">// </span>
+                  <span style="color:#8080ff">edx
+                  </span>
+                  <span style="color:navy">volatile signed __int32 **v42; // </span>
+                  <span style="color:#8080ff">rsi
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v43; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v44; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v45; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v46; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v47; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v48; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v49; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v50; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v51; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v52; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">volatile signed __int32 **v53; // </span>
+                  <span style="color:#8080ff">rsi
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v54; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v55; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">signed int v56; // </span>
+                  <span style="color:#8080ff">eax
+                  </span>
+                  <span style="color:navy">signed int v57; // </span>
+                  <span style="color:#8080ff">ecx
+                  </span>
+                  <span style="color:navy">QString *v58; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">QString *v59; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v60; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v61; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">int v62; // </span>
+                  <span style="color:#8080ff">edx
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v63; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v64; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v65; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v66; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v67; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v68; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">int v69; // </span>
+                  <span style="color:#8080ff">edx
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v70; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v71; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v72; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v73; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">volatile signed __int32 **v74; // </span>
+                  <span style="color:#8080ff">rsi
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v75; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v76; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v77; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v78; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v79; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v80; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v81; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v82; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v83; // </span>
+                  <span style="color:#8080ff">rbx
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v84; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v85; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v86; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v87; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v88; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v89; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v90; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v91; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">signed __int32 v92; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v93; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v94; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v95; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v96; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v97; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v98; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v99; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v100; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v101; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:navy">signed __int32 v102; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v103; // </span>
+                  <span style="color:#8080ff">rdi
+                  </span>
+                  <span style="color:gray">__int64 result</span>
+                  <span style="color:navy">; </span>
+                  <span style="color:gray">// </span>
+                  <span style="color:#8080ff">rax
+                  </span>
+                  <span style="color:navy">signed __int32 v105; // </span>
+                  <span style="color:#8080ff">et0
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v106; // </span>
+                  <span style="color:#8080ff">[rsp+8h] [rbp-148h]
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v107; // </span>
+                  <span style="color:#8080ff">[rsp+10h] [rbp-140h]
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v108; // </span>
+                  <span style="color:#8080ff">[rsp+18h] [rbp-138h]
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v109; // </span>
+                  <span style="color:#8080ff">[rsp+20h] [rbp-130h]
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v110; // </span>
+                  <span style="color:#8080ff">[rsp+28h] [rbp-128h]
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v111; // </span>
+                  <span style="color:#8080ff">[rsp+30h] [rbp-120h]
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v112; // </span>
+                  <span style="color:#8080ff">[rsp+38h] [rbp-118h]
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v113; // </span>
+                  <span style="color:#8080ff">[rsp+40h] [rbp-110h]
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v114; // </span>
+                  <span style="color:#8080ff">[rsp+48h] [rbp-108h]
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v115; // </span>
+                  <span style="color:#8080ff">[rsp+50h] [rbp-100h]
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v116; // </span>
+                  <span style="color:#8080ff">[rsp+58h] [rbp-F8h]
+                  </span>
+                  <span style="color:gray">__int64 v117</span>
+                  <span style="color:navy">; </span>
+                  <span style="color:gray">// </span>
+                  <span style="color:#8080ff">[rsp+60h] [rbp-F0h]
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v118; // </span>
+                  <span style="color:#8080ff">[rsp+68h] [rbp-E8h]
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v119; // </span>
+                  <span style="color:#8080ff">[rsp+70h] [rbp-E0h]
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v120; // </span>
+                  <span style="color:#8080ff">[rsp+78h] [rbp-D8h]
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v121; // </span>
+                  <span style="color:#8080ff">[rsp+80h] [rbp-D0h]
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v122; // </span>
+                  <span style="color:#8080ff">[rsp+88h] [rbp-C8h]
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v123; // </span>
+                  <span style="color:#8080ff">[rsp+90h] [rbp-C0h]
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v124; // </span>
+                  <span style="color:#8080ff">[rsp+98h] [rbp-B8h]
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v125; // </span>
+                  <span style="color:#8080ff">[rsp+A0h] [rbp-B0h]
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v126; // </span>
+                  <span style="color:#8080ff">[rsp+A8h] [rbp-A8h]
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v127; // </span>
+                  <span style="color:#8080ff">[rsp+B0h] [rbp-A0h]
+                  </span>
+                  <span style="color:gray">__int64 v128</span>
+                  <span style="color:navy">; </span>
+                  <span style="color:gray">// </span>
+                  <span style="color:#8080ff">[rsp+B8h] [rbp-98h]
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v129; // </span>
+                  <span style="color:#8080ff">[rsp+C0h] [rbp-90h]
+                  </span>
+                  <span style="color:gray">__int64 v130</span>
+                  <span style="color:navy">; </span>
+                  <span style="color:gray">// </span>
+                  <span style="color:#8080ff">[rsp+C8h] [rbp-88h]
+                  </span>
+                  <span style="color:navy">int v131[2]; // </span>
+                  <span style="color:#8080ff">[rsp+D0h] [rbp-80h]
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v132; // </span>
+                  <span style="color:#8080ff">[rsp+D8h] [rbp-78h]
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v133; // </span>
+                  <span style="color:#8080ff">[rsp+E0h] [rbp-70h]
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v134; // </span>
+                  <span style="color:#8080ff">[rsp+E8h] [rbp-68h]
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v135; // </span>
+                  <span style="color:#8080ff">[rsp+F0h] [rbp-60h]
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v136; // </span>
+                  <span style="color:#8080ff">[rsp+F8h] [rbp-58h]
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v137; // </span>
+                  <span style="color:#8080ff">[rsp+100h] [rbp-50h]
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v138; // </span>
+                  <span style="color:#8080ff">[rsp+108h] [rbp-48h]
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v139; // </span>
+                  <span style="color:#8080ff">[rsp+110h] [rbp-40h]
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v140; // </span>
+                  <span style="color:#8080ff">[rsp+118h] [rbp-38h]
+                  </span>
+                  <span style="color:navy">volatile signed __int32 *v141; // </span>
+                  <span style="color:#8080ff">[rsp+120h] [rbp-30h]
+                  </span>
+                  <span style="color:navy">bool v142; // </span>
+                  <span style="color:#8080ff">[rsp+12Fh] [rbp-21h] v1 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">a1</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="color:#8080ff">v132 </span>
+                  <span style="color:navy">= (</span>
+                  <span style="color:gray">volatile signed __int32 *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#ff00ff">QArrayData::shared_null</span>
+                  <span style="color:navy">; *(
+                  </span>
+                  <span style="color:gray">_QWORD *</span>
+                  <span style="color:navy">)</span>
+                  <span style="color:#8080ff">v131 </span>
+                  <span style="color:navy">= &amp;</span>
+                  <span style="color:#ff00ff">QArrayData::shared_null</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="color:#8080ff">v2 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">a1</span>
+                  <span style="color:navy">[27];
+                  </span>QLineEdit::text
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QLineEdit *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v130</span>
+                  <span style="color:navy">);
+                  </span>
+                  <span style="color:#8080ff">v4 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v130</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="color:#8080ff">v5 </span>
+                  <span style="color:navy">= *(</span>
+                  <span style="color:gray">_DWORD *</span>
+                  <span style="color:navy">)(</span>
+                  <span style="color:#8080ff">v130 </span>
+                  <span style="color:navy">+ 4); if ( *(</span>
+                  <span style="color:gray">_DWORD *</span>
+                  <span style="color:navy">)</span>
+                  <span style="color:#8080ff">v130 </span>
+                  <span style="color:navy">!= -1 ) { if ( *(</span>
+                  <span style="color:gray">_DWORD *</span>
+                  <span style="color:navy">)</span>
+                  <span style="color:#8080ff">v130 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v6 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">volatile signed __int32 *</span>
+                  <span style="color:navy">)</span>
+                  <span style="color:#8080ff">v130</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v6 </span>
+                  <span style="color:navy">!= 0; if ( </span>
+                  <span style="color:#8080ff">v6 </span>
+                  <span style="color:navy">) goto LABEL_6;
+                  </span>
+                  <span style="color:#8080ff">v4 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v130</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="background:#8080ff"></span>
+                  <span style="color:navy">}
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v4</span>
+                  <span style="color:navy">, 2LL, 8LL);
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">} LABEL_6: if ( !</span>
+                  <span style="color:#8080ff">v5 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v129 </span>
+                  <span style="color:navy">= (</span>
+                  <span style="color:gray">volatile signed __int32 *</span>
+                  <span style="color:navy">)</span>QString::fromAscii_helper
+                  <span style="color:navy">( (
+                  </span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&quot;</span>
+                  <span style="color:green">Please enter a name.&quot;</span>
+                  <span style="color:navy">, (
+                  </span>
+                  <span style="color:gray">const char *</span>
+                  <span style="color:navy">)0x14,
+                  </span>
+                  <span style="color:#8080ff">v3</span>
+                  <span style="color:navy">);
+                  </span>sub_1001124D0
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v129</span>
+                  <span style="color:navy">);
+                  </span>
+                  <span style="color:#8080ff">v20 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v129</span>
+                  <span style="color:navy">; if ( *</span>
+                  <span style="color:#8080ff">v129 </span>
+                  <span style="color:navy">!= -1 ) { if ( !*</span>
+                  <span style="color:#8080ff">v129 </span>
+                  <span style="color:navy">) { LABEL_34:
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v20</span>
+                  <span style="color:navy">, 2LL, 8LL); goto LABEL_35;
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="color:#8080ff">v21 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v129</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v21 </span>
+                  <span style="color:navy">!= 0; if ( !</span>
+                  <span style="color:#8080ff">v21 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v20 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v129</span>
+                  <span style="color:navy">; goto LABEL_34;
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="background:blue"></span>
+                  <span style="color:navy">} LABEL_35:
+                  </span>QWidget::setFocus
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v1</span>
+                  <span style="color:navy">[27], 7LL); goto LABEL_213;
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="color:#8080ff">v7 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v1</span>
+                  <span style="color:navy">[29];
+                  </span>QLineEdit::text
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QLineEdit *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v128</span>
+                  <span style="color:navy">);
+                  </span>
+                  <span style="color:#8080ff">v9 </span>
+                  <span style="color:navy">= 1; if ( !*(</span>
+                  <span style="color:gray">_DWORD *</span>
+                  <span style="color:navy">)(</span>
+                  <span style="color:#8080ff">v128 </span>
+                  <span style="color:navy">+ 4) ) goto LABEL_18;
+                  </span>
+                  <span style="color:#8080ff">v10 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v1</span>
+                  <span style="color:navy">[29];
+                  </span>QLineEdit::text
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QLineEdit *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v127</span>
+                  <span style="color:navy">);
+                  </span>
+                  <span style="color:#8080ff">v126 </span>
+                  <span style="color:navy">= (</span>
+                  <span style="color:gray">volatile signed __int32 *</span>
+                  <span style="color:navy">)</span>QString::fromAscii_helper
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&quot; &quot;, (</span>
+                  <span style="color:gray">const char *</span>
+                  <span style="color:navy">)1, </span>
+                  <span style="color:#8080ff">v11</span>
+                  <span style="color:navy">);
+                  </span>
+                  <span style="color:#8080ff">v9 </span>
+                  <span style="color:navy">= (</span>
+                  <span style="color:gray">unsigned int</span>
+                  <span style="color:navy">)</span>QString::indexOf
+                  <span style="color:navy">(&amp;</span>
+                  <span style="color:#8080ff">v127</span>
+                  <span style="color:navy">, &amp;</span>
+                  <span style="color:#8080ff">v126</span>
+                  <span style="color:navy">, 0LL, 1LL) != -1;
+                  </span>
+                  <span style="color:#8080ff">v12 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v126</span>
+                  <span style="color:navy">; if ( *</span>
+                  <span style="color:#8080ff">v126 </span>
+                  <span style="color:navy">!= -1 ) { if ( *</span>
+                  <span style="color:#8080ff">v126 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v13 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v126</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v13 </span>
+                  <span style="color:navy">!= 0; if ( </span>
+                  <span style="color:#8080ff">v13 </span>
+                  <span style="color:navy">) goto LABEL_13;
+                  </span>
+                  <span style="color:#8080ff">v12 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v126</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="background:#8080ff"></span>
+                  <span style="color:navy">}
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v12</span>
+                  <span style="color:navy">, 2LL, 8LL);
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">} LABEL_13:
+                  </span>
+                  <span style="color:#8080ff">v14 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v127</span>
+                  <span style="color:navy">; if ( *</span>
+                  <span style="color:#8080ff">v127 </span>
+                  <span style="color:navy">== -1 ) goto LABEL_18; if ( *</span>
+                  <span style="color:#8080ff">v127 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v15 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v127</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v15 </span>
+                  <span style="color:navy">!= 0; if ( </span>
+                  <span style="color:#8080ff">v15 </span>
+                  <span style="color:navy">) goto LABEL_18;
+                  </span>
+                  <span style="color:#8080ff">v14 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v127</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="background:#8080ff"></span>
+                  <span style="color:navy">}
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v14</span>
+                  <span style="color:navy">, 2LL, 8LL); LABEL_18:
+                  </span>
+                  <span style="color:#8080ff">v16 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v128</span>
+                  <span style="color:navy">; if ( *(</span>
+                  <span style="color:gray">_DWORD *</span>
+                  <span style="color:navy">)</span>
+                  <span style="color:#8080ff">v128 </span>
+                  <span style="color:navy">== -1 ) goto LABEL_23; if ( *(</span>
+                  <span style="color:gray">_DWORD *</span>
+                  <span style="color:navy">)</span>
+                  <span style="color:#8080ff">v128 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v17 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">volatile signed __int32 *</span>
+                  <span style="color:navy">)</span>
+                  <span style="color:#8080ff">v128</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v17 </span>
+                  <span style="color:navy">!= 0; if ( </span>
+                  <span style="color:#8080ff">v17 </span>
+                  <span style="color:navy">) goto LABEL_23;
+                  </span>
+                  <span style="color:#8080ff">v16 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v128</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="background:#8080ff"></span>
+                  <span style="color:navy">}
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v16</span>
+                  <span style="color:navy">, 2LL, 8LL); LABEL_23: if ( </span>
+                  <span style="color:#8080ff">v9 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v125 </span>
+                  <span style="color:navy">= (</span>
+                  <span style="color:gray">volatile signed __int32 *</span>
+                  <span style="color:navy">)</span>QString::fromAscii_helper
+                  <span style="color:navy">( (
+                  </span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&quot;</span>
+                  <span style="color:green">Please completely enter your password.&quot;</span>
+                  <span style="color:navy">, (
+                  </span>
+                  <span style="color:gray">const char *</span>
+                  <span style="color:navy">)0x26,
+                  </span>
+                  <span style="color:#8080ff">v8</span>
+                  <span style="color:navy">);
+                  </span>sub_1001124D0
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v125</span>
+                  <span style="color:navy">);
+                  </span>
+                  <span style="color:#8080ff">v18 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v125</span>
+                  <span style="color:navy">; if ( *</span>
+                  <span style="color:#8080ff">v125 </span>
+                  <span style="color:navy">!= -1 ) { if ( !*</span>
+                  <span style="color:#8080ff">v125 </span>
+                  <span style="color:navy">) { LABEL_28:
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v18</span>
+                  <span style="color:navy">, 2LL, 8LL); goto LABEL_29;
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="color:#8080ff">v19 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v125</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v19 </span>
+                  <span style="color:navy">!= 0; if ( !</span>
+                  <span style="color:#8080ff">v19 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v18 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v125</span>
+                  <span style="color:navy">; goto LABEL_28;
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="background:blue"></span>
+                  <span style="color:navy">} LABEL_29:
+                  </span>QWidget::setFocus
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v1</span>
+                  <span style="color:navy">[27], 7LL); goto LABEL_213;
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="color:#8080ff">v22 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v1</span>
+                  <span style="color:navy">[29];
+                  </span>QLineEdit::text
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QLineEdit *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v124</span>
+                  <span style="color:navy">);
+                  </span>
+                  <span style="color:#8080ff">v23 </span>
+                  <span style="color:navy">= &amp;</span>
+                  <span style="color:#8080ff">v124</span>
+                  <span style="color:navy">;
+                  </span>QString::operator=
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v131</span>
+                  <span style="color:navy">, &amp;</span>
+                  <span style="color:#8080ff">v124</span>
+                  <span style="color:navy">);
+                  </span>
+                  <span style="color:#8080ff">v24 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v124</span>
+                  <span style="color:navy">; if ( *</span>
+                  <span style="color:#8080ff">v124 </span>
+                  <span style="color:navy">!= -1 ) { if ( *</span>
+                  <span style="color:#8080ff">v124 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v25 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v124</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v25 </span>
+                  <span style="color:navy">!= 0; if ( </span>
+                  <span style="color:#8080ff">v25 </span>
+                  <span style="color:navy">) goto LABEL_41;
+                  </span>
+                  <span style="color:#8080ff">v24 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v124</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="background:#8080ff"></span>
+                  <span style="color:navy">}
+                  </span>LODWORD
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v23</span>
+                  <span style="color:navy">) = 2;
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v24</span>
+                  <span style="color:navy">, 2LL, 8LL);
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">} LABEL_41:
+                  </span>
+                  <span style="color:#8080ff">v26 </span>
+                  <span style="color:navy">= *(</span>
+                  <span style="color:gray">_QWORD *</span>
+                  <span style="color:navy">)</span>
+                  <span style="color:#8080ff">v131</span>
+                  <span style="color:navy">; if ( *(</span>
+                  <span style="color:gray">_DWORD *</span>
+                  <span style="color:navy">)(*(</span>
+                  <span style="color:gray">_QWORD *</span>
+                  <span style="color:navy">)</span>
+                  <span style="color:#8080ff">v131 </span>
+                  <span style="color:navy">+ 4LL) &gt;= 9 ) {
+                  </span>
+                  <span style="color:#8080ff">v27 </span>
+                  <span style="color:navy">= *(</span>
+                  <span style="color:gray">_QWORD *</span>
+                  <span style="color:navy">)(*(</span>
+                  <span style="color:gray">_QWORD *</span>
+                  <span style="color:navy">)</span>
+                  <span style="color:#8080ff">v131 </span>
+                  <span style="color:navy">+ 16LL); if ( (</span>
+                  <span style="color:gray">unsigned __int16</span>
+                  <span style="color:navy">)</span>QChar::toUpper
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QChar *</span>
+                  <span style="color:navy">)*(</span>
+                  <span style="color:gray">unsigned __int16 *</span>
+                  <span style="color:navy">)(</span>
+                  <span style="color:#8080ff">v27 </span>
+                  <span style="color:navy">+ *(</span>
+                  <span style="color:gray">_QWORD *</span>
+                  <span style="color:navy">)</span>
+                  <span style="color:#8080ff">v131 </span>
+                  <span style="color:navy">+ 16), (</span>
+                  <span style="color:gray">unsigned int</span>
+                  <span style="color:navy">)</span>
+                  <span style="color:#8080ff">v23</span>
+                  <span style="color:navy">) == 67 ) {
+                  </span>
+                  <span style="color:#8080ff">v28 </span>
+                  <span style="color:navy">= (</span>
+                  <span style="color:gray">unsigned __int16</span>
+                  <span style="color:navy">)</span>QChar::toUpper
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QChar *</span>
+                  <span style="color:navy">)*(</span>
+                  <span style="color:gray">unsigned __int16 *</span>
+                  <span style="color:navy">)(</span>
+                  <span style="color:#8080ff">v27 </span>
+                  <span style="color:navy">+ </span>
+                  <span style="color:#8080ff">v26 </span>
+                  <span style="color:navy">+ 14), (</span>
+                  <span style="color:gray">unsigned int</span>
+                  <span style="color:navy">)</span>
+                  <span style="color:#8080ff">v23</span>
+                  <span style="color:navy">); if ( (</span>
+                  <span style="color:gray">unsigned __int16</span>
+                  <span style="color:navy">)</span>
+                  <span style="color:#8080ff">v28 </span>
+                  <span style="color:navy">== 57 || </span>
+                  <span style="color:#8080ff">v28 </span>
+                  <span style="color:navy">== 70 ) {
+                  </span>QString::left
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v123</span>
+                  <span style="color:navy">, (</span>
+                  <span style="color:gray">unsigned __int64</span>
+                  <span style="color:navy">)</span>
+                  <span style="color:#8080ff">v131</span>
+                  <span style="color:navy">);
+                  </span>QString::operator=
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v131</span>
+                  <span style="color:navy">, &amp;</span>
+                  <span style="color:#8080ff">v123</span>
+                  <span style="color:navy">);
+                  </span>
+                  <span style="color:#8080ff">v29 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v123</span>
+                  <span style="color:navy">; if ( *</span>
+                  <span style="color:#8080ff">v123 </span>
+                  <span style="color:navy">!= -1 ) { if ( *</span>
+                  <span style="color:#8080ff">v123 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v30 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v123</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v30 </span>
+                  <span style="color:navy">!= 0; if ( </span>
+                  <span style="color:#8080ff">v30 </span>
+                  <span style="color:navy">) goto LABEL_50;
+                  </span>
+                  <span style="color:#8080ff">v29 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v123</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="background:#8080ff"></span>
+                  <span style="color:navy">}
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v29</span>
+                  <span style="color:navy">, 2LL, 8LL);
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="background:blue"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="background:blue"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="background:blue"></span>
+                  <span style="color:navy">} LABEL_50:
+                  </span>
+                  <span style="color:#8080ff">v31 </span>
+                  <span style="color:navy">= </span>qword_100686140
+                  <span style="color:navy">;
+                  </span>
+                  <span style="color:#8080ff">v32 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v1</span>
+                  <span style="color:navy">[27];
+                  </span>QLineEdit::text
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QLineEdit *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v122</span>
+                  <span style="color:navy">);
+                  </span>sub_1000DB1C0
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v31</span>
+                  <span style="color:navy">, &amp;</span>
+                  <span style="color:#8080ff">v122</span>
+                  <span style="color:navy">);
+                  </span>
+                  <span style="color:#8080ff">v33 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v122</span>
+                  <span style="color:navy">; if ( *</span>
+                  <span style="color:#8080ff">v122 </span>
+                  <span style="color:navy">!= -1 ) { if ( !*</span>
+                  <span style="color:#8080ff">v122 </span>
+                  <span style="color:navy">) { LABEL_54:
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v33</span>
+                  <span style="color:navy">, 2LL, 8LL); goto LABEL_55;
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="color:#8080ff">v34 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v122</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v34 </span>
+                  <span style="color:navy">!= 0; if ( !</span>
+                  <span style="color:#8080ff">v34 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v33 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v122</span>
+                  <span style="color:navy">; goto LABEL_54;
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="background:blue"></span>
+                  <span style="color:navy">} LABEL_55:
+                  </span>sub_1000D9E20
+                  <span style="color:navy">(</span>qword_100686140
+                  <span style="color:navy">, </span>
+                  <span style="color:#8080ff">v131</span>
+                  <span style="color:navy">);
+                  </span>
+                  <span style="color:#8080ff">v35 </span>
+                  <span style="color:navy">= </span>sub_1000D8260
+                  <span style="color:navy">(</span>qword_100686140
+                  <span style="color:navy">, 9LL, 17289LL);
+                  </span>
+                  <span style="color:#8080ff">v37 </span>
+                  <span style="color:navy">= </span>sub_1000D8180
+                  <span style="color:navy">(</span>qword_100686140
+                  <span style="color:navy">, 9u, 17289LL); if ( </span>
+                  <span style="color:#8080ff">v35 </span>
+                  <span style="color:navy">== 0xE7 || !*(</span>
+                  <span style="color:gray">_DWORD *</span>
+                  <span style="color:navy">)(</span>qword_100686140
+                  <span style="color:navy">+ 60) ) goto LABEL_60;
+                  </span>
+                  <span style="color:#8080ff">v38 </span>
+                  <span style="color:navy">= </span>sub_100353FF0
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v1</span>
+                  <span style="color:navy">, 0LL);
+                  </span>
+                  <span style="color:#8080ff">v40 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v38</span>
+                  <span style="color:navy">; if ( </span>
+                  <span style="color:#8080ff">v38 &lt; </span>
+                  <span style="color:navy">0 ) {
+                  </span>
+                  <span style="color:#8080ff">v83 </span>
+                  <span style="color:navy">= (</span>
+                  <span style="color:gray">volatile signed __int32 *</span>
+                  <span style="color:navy">)</span>QString::fromAscii_helper
+                  <span style="color:navy">( (
+                  </span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&quot;</span>
+                  <span style="color:green">Could not contact the webserver. Please check your internet connection&quot;
+                    &quot;. If your internet connection is currently working, the
+                    server may be &quot; &quot;down. If this problem persists, please
+                    visit &#039;http://www.sweetscape.com/support/&#039; (&quot;
+                  </span>
+                  <span style="color:navy">, (
+                  </span>
+                  <span style="color:gray">const char *</span>
+                  <span style="color:navy">)0xDF,
+                  </span>
+                  <span style="color:#8080ff">v39</span>
+                  <span style="color:navy">);
+                  </span>QString::number
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v119</span>
+                  <span style="color:navy">, </span>
+                  <span style="color:#8080ff">v40</span>
+                  <span style="color:navy">, 10);
+                  </span>
+                  <span style="color:#8080ff">v120 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v83</span>
+                  <span style="color:navy">; if ( (</span>
+                  <span style="color:gray">unsigned int</span>
+                  <span style="color:navy">)(*</span>
+                  <span style="color:#8080ff">v83 </span>
+                  <span style="color:navy">+ 1) &gt;= 2 )
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>_InterlockedAdd
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v83</span>
+                  <span style="color:navy">, 1u) != 0;
+                  </span>QString::append
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v120</span>
+                  <span style="color:navy">, (</span>
+                  <span style="color:gray">const QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v119</span>
+                  <span style="color:navy">);
+                  </span>
+                  <span style="color:#8080ff">v121 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v120</span>
+                  <span style="color:navy">; if ( (</span>
+                  <span style="color:gray">unsigned int</span>
+                  <span style="color:navy">)(*</span>
+                  <span style="color:#8080ff">v120 </span>
+                  <span style="color:navy">+ 1) &gt;= 2 )
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>_InterlockedAdd
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v120</span>
+                  <span style="color:navy">, 1u) != 0;
+                  </span>QString::fromUtf8_helper
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v133</span>
+                  <span style="color:navy">, &quot;</span>
+                  <span style="color:green">).&quot;</span>
+                  <span style="color:navy">, 2);
+                  </span>QString::append
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v121</span>
+                  <span style="color:navy">, (</span>
+                  <span style="color:gray">const QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v133</span>
+                  <span style="color:navy">);
+                  </span>
+                  <span style="color:#8080ff">v84 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v133</span>
+                  <span style="color:navy">; if ( *</span>
+                  <span style="color:#8080ff">v133 </span>
+                  <span style="color:navy">!= -1 ) { if ( *</span>
+                  <span style="color:#8080ff">v133 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v85 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v133</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v85 </span>
+                  <span style="color:navy">!= 0; if ( </span>
+                  <span style="color:#8080ff">v85 </span>
+                  <span style="color:navy">) goto LABEL_172;
+                  </span>
+                  <span style="color:#8080ff">v84 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v133</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="background:#8080ff"></span>
+                  <span style="color:navy">}
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v84</span>
+                  <span style="color:navy">, 2LL, 8LL);
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">} LABEL_172:
+                  </span>sub_100112900
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v121</span>
+                  <span style="color:navy">);
+                  </span>
+                  <span style="color:#8080ff">v86 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v121</span>
+                  <span style="color:navy">; if ( *</span>
+                  <span style="color:#8080ff">v121 </span>
+                  <span style="color:navy">== -1 ) goto LABEL_177; if ( *</span>
+                  <span style="color:#8080ff">v121 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v87 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v121</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v87 </span>
+                  <span style="color:navy">!= 0; if ( </span>
+                  <span style="color:#8080ff">v87 </span>
+                  <span style="color:navy">) goto LABEL_177;
+                  </span>
+                  <span style="color:#8080ff">v86 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v121</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="background:#8080ff"></span>
+                  <span style="color:navy">}
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v86</span>
+                  <span style="color:navy">, 2LL, 8LL); LABEL_177:
+                  </span>
+                  <span style="color:#8080ff">v88 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v120</span>
+                  <span style="color:navy">; if ( *</span>
+                  <span style="color:#8080ff">v120 </span>
+                  <span style="color:navy">== -1 ) goto LABEL_182; if ( *</span>
+                  <span style="color:#8080ff">v120 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v89 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v120</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v89 </span>
+                  <span style="color:navy">!= 0; if ( </span>
+                  <span style="color:#8080ff">v89 </span>
+                  <span style="color:navy">) goto LABEL_182;
+                  </span>
+                  <span style="color:#8080ff">v88 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v120</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="background:#8080ff"></span>
+                  <span style="color:navy">}
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v88</span>
+                  <span style="color:navy">, 2LL, 8LL); LABEL_182:
+                  </span>
+                  <span style="color:#8080ff">v90 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v119</span>
+                  <span style="color:navy">; if ( *</span>
+                  <span style="color:#8080ff">v119 </span>
+                  <span style="color:navy">!= -1 ) { if ( !*</span>
+                  <span style="color:#8080ff">v119 </span>
+                  <span style="color:navy">) { LABEL_186:
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v90</span>
+                  <span style="color:navy">, 2LL, 8LL); goto LABEL_187;
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="color:#8080ff">v91 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v119</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v91 </span>
+                  <span style="color:navy">!= 0; if ( !</span>
+                  <span style="color:#8080ff">v91 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v90 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v119</span>
+                  <span style="color:navy">; goto LABEL_186;
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="background:blue"></span>
+                  <span style="color:navy">} LABEL_187: if ( *</span>
+                  <span style="color:#8080ff">v83 </span>
+                  <span style="color:navy">!= -1 ) { if ( !*</span>
+                  <span style="color:#8080ff">v83 </span>
+                  <span style="color:navy">|| (</span>
+                  <span style="color:#8080ff">v92 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v83</span>
+                  <span style="color:navy">, 1u), </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v92 </span>
+                  <span style="color:navy">!= 0, !</span>
+                  <span style="color:#8080ff">v92</span>
+                  <span style="color:navy">) )
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v83</span>
+                  <span style="color:navy">, 2LL, 8LL);
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">} goto LABEL_213;
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">} if ( !</span>
+                  <span style="color:#8080ff">v38 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v118 </span>
+                  <span style="color:navy">= (</span>
+                  <span style="color:gray">volatile signed __int32 *</span>
+                  <span style="color:navy">)</span>QString::fromAscii_helper
+                  <span style="color:navy">( (
+                  </span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&quot;</span>
+                  <span style="color:green">010 Editor has detected that you have entered an invalid license.
+                    Ple&quot; &quot;ase check to see if your license is entered correctly
+                    and try again. &quot; &quot;If this problem persists, please
+                    visit &#039;http://www.sweetscape.com/support/&#039;.&quot;</span>
+                  <span style="color:navy">, (
+                  </span>
+                  <span style="color:gray">const char *</span>
+                  <span style="color:navy">)0xD6,
+                  </span>
+                  <span style="color:#8080ff">v39</span>
+                  <span style="color:navy">);
+                  </span>sub_100112900
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v118</span>
+                  <span style="color:navy">);
+                  </span>
+                  <span style="color:#8080ff">v95 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v118</span>
+                  <span style="color:navy">; if ( *</span>
+                  <span style="color:#8080ff">v118 </span>
+                  <span style="color:navy">== -1 ) goto LABEL_213; if ( *</span>
+                  <span style="color:#8080ff">v118 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v96 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v118</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v96 </span>
+                  <span style="color:navy">!= 0; if ( </span>
+                  <span style="color:#8080ff">v96 </span>
+                  <span style="color:navy">) goto LABEL_213;
+                  </span>
+                  <span style="color:#8080ff">v95 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v118</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="background:#8080ff"></span>
+                  <span style="color:navy">}
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v95</span>
+                  <span style="color:navy">, 2LL, 8LL); goto LABEL_213;
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="color:#8080ff">v37 </span>
+                  <span style="color:navy">= </span>sub_1000D8180
+                  <span style="color:navy">(</span>qword_100686140
+                  <span style="color:navy">, 9u, 17289LL); LABEL_60: if ( </span>
+                  <span style="color:#8080ff">v37 </span>
+                  <span style="color:navy">== 0xDB ) {
+                  </span>
+                  <span style="color:#8080ff">v117 </span>
+                  <span style="color:navy">= </span>sub_1000DB360
+                  <span style="color:navy">(</span>qword_100686140
+                  <span style="color:navy">);
+                  </span>
+                  <span style="color:#8080ff">v113 </span>
+                  <span style="color:navy">= (</span>
+                  <span style="color:gray">volatile signed __int32 *</span>
+                  <span style="color:navy">)</span>QString::fromAscii_helper
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&quot;</span>
+                  <span style="color:green">MMMM d, yyyy&quot;</span>
+                  <span style="color:navy">, (</span>
+                  <span style="color:gray">const char *</span>
+                  <span style="color:navy">)0xC, </span>
+                  <span style="color:#8080ff">v41</span>
+                  <span style="color:navy">);
+                  </span>QDate::toString
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QDate *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v114</span>
+                  <span style="color:navy">, (</span>
+                  <span style="color:gray">const QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v117</span>
+                  <span style="color:navy">);
+                  </span>QString::fromUtf8_helper
+                  <span style="color:navy">( (
+                  </span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v115</span>
+                  <span style="color:navy">, &quot;
+                  </span>
+                  <span style="color:green">Password accepted. This license entitles you to:\n&quot; &quot;\n&quot;
+                    &quot; - Free Upgrades\n&quot; &quot; - Free Support\n&quot;
+                    &quot; - Free Repository Updates\n&quot; &quot;\n&quot; &quot;until
+                    &quot;</span>
+                  <span style="color:navy">, 120);
+                  </span>QString::append
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v115</span>
+                  <span style="color:navy">, (</span>
+                  <span style="color:gray">const QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v114</span>
+                  <span style="color:navy">);
+                  </span>
+                  <span style="color:#8080ff">v116 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v115</span>
+                  <span style="color:navy">; if ( (</span>
+                  <span style="color:gray">unsigned int</span>
+                  <span style="color:navy">)(*</span>
+                  <span style="color:#8080ff">v115 </span>
+                  <span style="color:navy">+ 1) &gt;= 2 )
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>_InterlockedAdd
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v115</span>
+                  <span style="color:navy">, 1u) != 0;
+                  </span>QString::fromUtf8_helper
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v134</span>
+                  <span style="color:navy">, &quot;</span>
+                  <span style="color:green">.&quot;</span>
+                  <span style="color:navy">, 1);
+                  </span>
+                  <span style="color:#8080ff">v42 </span>
+                  <span style="color:navy">= &amp;</span>
+                  <span style="color:#8080ff">v134</span>
+                  <span style="color:navy">;
+                  </span>QString::append
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v116</span>
+                  <span style="color:navy">, (</span>
+                  <span style="color:gray">const QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v134</span>
+                  <span style="color:navy">);
+                  </span>
+                  <span style="color:#8080ff">v43 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v134</span>
+                  <span style="color:navy">; if ( *</span>
+                  <span style="color:#8080ff">v134 </span>
+                  <span style="color:navy">!= -1 ) { if ( *</span>
+                  <span style="color:#8080ff">v134 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v44 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v134</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v44 </span>
+                  <span style="color:navy">!= 0; if ( </span>
+                  <span style="color:#8080ff">v44 </span>
+                  <span style="color:navy">) goto LABEL_68;
+                  </span>
+                  <span style="color:#8080ff">v43 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v134</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="background:#8080ff"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="color:#8080ff">v42 </span>
+                  <span style="color:navy">= (</span>
+                  <span style="color:gray">volatile signed __int32 **</span>
+                  <span style="color:navy">)2;
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v43</span>
+                  <span style="color:navy">, 2LL, 8LL);
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">} LABEL_68:
+                  </span>
+                  <span style="color:#8080ff">v45 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v115</span>
+                  <span style="color:navy">; if ( *</span>
+                  <span style="color:#8080ff">v115 </span>
+                  <span style="color:navy">== -1 ) goto LABEL_73; if ( *</span>
+                  <span style="color:#8080ff">v115 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v46 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v115</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v46 </span>
+                  <span style="color:navy">!= 0; if ( </span>
+                  <span style="color:#8080ff">v46 </span>
+                  <span style="color:navy">) goto LABEL_73;
+                  </span>
+                  <span style="color:#8080ff">v45 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v115</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="background:#8080ff"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="color:#8080ff">v42 </span>
+                  <span style="color:navy">= (</span>
+                  <span style="color:gray">volatile signed __int32 **</span>
+                  <span style="color:navy">)2;
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v45</span>
+                  <span style="color:navy">, 2LL, 8LL); LABEL_73:
+                  </span>
+                  <span style="color:#8080ff">v47 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v114</span>
+                  <span style="color:navy">; if ( *</span>
+                  <span style="color:#8080ff">v114 </span>
+                  <span style="color:navy">== -1 ) goto LABEL_78; if ( *</span>
+                  <span style="color:#8080ff">v114 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v48 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v114</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v48 </span>
+                  <span style="color:navy">!= 0; if ( </span>
+                  <span style="color:#8080ff">v48 </span>
+                  <span style="color:navy">) goto LABEL_78;
+                  </span>
+                  <span style="color:#8080ff">v47 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v114</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="background:#8080ff"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="color:#8080ff">v42 </span>
+                  <span style="color:navy">= (</span>
+                  <span style="color:gray">volatile signed __int32 **</span>
+                  <span style="color:navy">)2;
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v47</span>
+                  <span style="color:navy">, 2LL, 8LL); LABEL_78:
+                  </span>
+                  <span style="color:#8080ff">v49 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v113</span>
+                  <span style="color:navy">; if ( *</span>
+                  <span style="color:#8080ff">v113 </span>
+                  <span style="color:navy">!= -1 ) { if ( !*</span>
+                  <span style="color:#8080ff">v113 </span>
+                  <span style="color:navy">) { LABEL_82:
+                  </span>
+                  <span style="color:#8080ff">v42 </span>
+                  <span style="color:navy">= (</span>
+                  <span style="color:gray">volatile signed __int32 **</span>
+                  <span style="color:navy">)2;
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v49</span>
+                  <span style="color:navy">, 2LL, 8LL); goto LABEL_83;
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="color:#8080ff">v50 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v113</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v50 </span>
+                  <span style="color:navy">!= 0; if ( !</span>
+                  <span style="color:#8080ff">v50 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v49 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v113</span>
+                  <span style="color:navy">; goto LABEL_82;
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="background:blue"></span>
+                  <span style="color:navy">} LABEL_83: if ( (</span>
+                  <span style="color:gray">signed int</span>
+                  <span style="color:navy">)</span>sub_1000DB3A0
+                  <span style="color:navy">(</span>qword_100686140
+                  <span style="color:navy">, </span>
+                  <span style="color:#8080ff">v42</span>
+                  <span style="color:navy">) &lt; 0 ) {
+                  </span>QString::fromUtf8_helper
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v135</span>
+                  <span style="color:navy">, &quot; </span>
+                  <span style="color:green">(EXPIRED)&quot;</span>
+                  <span style="color:navy">, 10);
+                  </span>QString::append
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v116</span>
+                  <span style="color:navy">, (</span>
+                  <span style="color:gray">const QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v135</span>
+                  <span style="color:navy">);
+                  </span>
+                  <span style="color:#8080ff">v51 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v135</span>
+                  <span style="color:navy">; if ( *</span>
+                  <span style="color:#8080ff">v135 </span>
+                  <span style="color:navy">!= -1 ) { if ( *</span>
+                  <span style="color:#8080ff">v135 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v52 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v135</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v52 </span>
+                  <span style="color:navy">!= 0; if ( </span>
+                  <span style="color:#8080ff">v52 </span>
+                  <span style="color:navy">) goto LABEL_89;
+                  </span>
+                  <span style="color:#8080ff">v51 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v135</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="background:#8080ff"></span>
+                  <span style="color:navy">}
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v51</span>
+                  <span style="color:navy">, 2LL, 8LL);
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="background:blue"></span>
+                  <span style="color:navy">} LABEL_89:
+                  </span>QString::fromUtf8_helper
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v136</span>
+                  <span style="color:navy">, &quot; </span>
+                  <span style="color:green">Thank you for purchasing 010 Editor!&quot;</span>
+                  <span style="color:navy">, 37);
+                  </span>
+                  <span style="color:#8080ff">v53 </span>
+                  <span style="color:navy">= &amp;</span>
+                  <span style="color:#8080ff">v136</span>
+                  <span style="color:navy">;
+                  </span>QString::append
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v116</span>
+                  <span style="color:navy">, (</span>
+                  <span style="color:gray">const QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v136</span>
+                  <span style="color:navy">);
+                  </span>
+                  <span style="color:#8080ff">v54 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v136</span>
+                  <span style="color:navy">; if ( *</span>
+                  <span style="color:#8080ff">v136 </span>
+                  <span style="color:navy">== -1 ) goto LABEL_94; if ( *</span>
+                  <span style="color:#8080ff">v136 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v55 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v136</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v55 </span>
+                  <span style="color:navy">!= 0; if ( </span>
+                  <span style="color:#8080ff">v55 </span>
+                  <span style="color:navy">) goto LABEL_94;
+                  </span>
+                  <span style="color:#8080ff">v54 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v136</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="background:#8080ff"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="color:#8080ff">v53 </span>
+                  <span style="color:navy">= (</span>
+                  <span style="color:gray">volatile signed __int32 **</span>
+                  <span style="color:navy">)2;
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v54</span>
+                  <span style="color:navy">, 2LL, 8LL); LABEL_94:
+                  </span>sub_100112D10
+                  <span style="color:navy">(&amp;</span>
+                  <span style="color:#8080ff">v116</span>
+                  <span style="color:navy">, </span>
+                  <span style="color:#8080ff">v53</span>
+                  <span style="color:navy">); if ( *(</span>
+                  <span style="color:gray">_DWORD *</span>
+                  <span style="color:navy">)(</span>qword_100686140
+                  <span style="color:navy">+ 68) &gt; 0 ) {
+                  </span>
+                  <span style="color:#8080ff">v56 </span>
+                  <span style="color:navy">= </span>sub_1000DB3A0
+                  <span style="color:navy">(</span>qword_100686140
+                  <span style="color:navy">, </span>
+                  <span style="color:#8080ff">v53</span>
+                  <span style="color:navy">);
+                  </span>
+                  <span style="color:#8080ff">v57 </span>
+                  <span style="color:navy">= 2; if ( </span>
+                  <span style="color:#8080ff">v56 &gt;</span>
+                  <span style="color:navy">= 0 )
+                  </span>
+                  <span style="color:#8080ff">v57 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v56 &lt; </span>
+                  <span style="color:navy">40;
+                  </span>
+                  <span style="color:#8080ff">v58 </span>
+                  <span style="color:navy">= </span>qword_1006860E8
+                  <span style="color:navy">; if ( *((</span>
+                  <span style="color:gray">_DWORD *</span>
+                  <span style="color:navy">)</span>qword_1006860E8
+                  <span style="color:navy">+ 30) != </span>
+                  <span style="color:#8080ff">v57 </span>
+                  <span style="color:navy">) { *((
+                  </span>
+                  <span style="color:gray">_DWORD *</span>
+                  <span style="color:navy">)</span>qword_1006860E8
+                  <span style="color:navy">+ 30) = </span>
+                  <span style="color:#8080ff">v57</span>
+                  <span style="color:navy">; if ( !</span>byte_100683050
+                  <span style="color:navy">)
+                  </span>sub_100074330
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v58</span>
+                  <span style="color:navy">);
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="background:blue"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="color:#8080ff">v59 </span>
+                  <span style="color:navy">= </span>qword_1006860E8
+                  <span style="color:navy">; if ( *((</span>
+                  <span style="color:gray">_DWORD *</span>
+                  <span style="color:navy">)</span>qword_1006860E8
+                  <span style="color:navy">+ 150) ) { *((
+                  </span>
+                  <span style="color:gray">_DWORD *</span>
+                  <span style="color:navy">)</span>qword_1006860E8
+                  <span style="color:navy">+ 150) = 0; if ( !</span>byte_100683050
+                  <span style="color:navy">)
+                  </span>sub_100074330
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v59</span>
+                  <span style="color:navy">);
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="color:#8080ff">v60 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v116</span>
+                  <span style="color:navy">; if ( *</span>
+                  <span style="color:#8080ff">v116 </span>
+                  <span style="color:navy">!= -1 ) { if ( *</span>
+                  <span style="color:#8080ff">v116 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v61 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v116</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v61 </span>
+                  <span style="color:navy">!= 0; if ( </span>
+                  <span style="color:#8080ff">v61 </span>
+                  <span style="color:navy">) goto LABEL_108;
+                  </span>
+                  <span style="color:#8080ff">v60 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v116</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="background:#8080ff"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="color:#8080ff">v53 </span>
+                  <span style="color:navy">= (</span>
+                  <span style="color:gray">volatile signed __int32 **</span>
+                  <span style="color:navy">)2;
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v60</span>
+                  <span style="color:navy">, 2LL, 8LL);
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">} goto LABEL_108;
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">} if ( </span>
+                  <span style="color:#8080ff">v37 </span>
+                  <span style="color:navy">== 0xED || </span>
+                  <span style="color:#8080ff">v37 </span>
+                  <span style="color:navy">== 0x20C ) {
+                  </span>sub_1000D9840
+                  <span style="color:navy">(</span>qword_100686140
+                  <span style="color:navy">);
+                  </span>sub_10034FB20
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v1</span>
+                  <span style="color:navy">, 0xFFFFFFFFLL);
+                  </span>QString::fromUtf8_helper
+                  <span style="color:navy">( (
+                  </span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v137</span>
+                  <span style="color:navy">, &quot;
+                  </span>
+                  <span style="color:green">The password you entered is for an earlier version of this program.
+                    &quot;</span>
+                  <span style="color:navy">, 68);
+                  </span>QString::operator=
+                  <span style="color:navy">(&amp;</span>
+                  <span style="color:#8080ff">v132</span>
+                  <span style="color:navy">, &amp;</span>
+                  <span style="color:#8080ff">v137</span>
+                  <span style="color:navy">);
+                  </span>
+                  <span style="color:#8080ff">v63 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v137</span>
+                  <span style="color:navy">; if ( *</span>
+                  <span style="color:#8080ff">v137 </span>
+                  <span style="color:navy">== -1 ) goto LABEL_119; if ( *</span>
+                  <span style="color:#8080ff">v137 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v64 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v137</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v64 </span>
+                  <span style="color:navy">!= 0; if ( </span>
+                  <span style="color:#8080ff">v64 </span>
+                  <span style="color:navy">) goto LABEL_119;
+                  </span>
+                  <span style="color:#8080ff">v63 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v137</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="background:#8080ff"></span>
+                  <span style="color:navy">}
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v63</span>
+                  <span style="color:navy">, 2LL, 8LL); LABEL_119:
+                  </span>QString::fromUtf8_helper
+                  <span style="color:navy">( (
+                  </span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v138</span>
+                  <span style="color:navy">, &quot;
+                  </span>
+                  <span style="color:green">You will have to purchase an upgrade to continue using this software.
+                    &quot;</span>
+                  <span style="color:navy">, 70);
+                  </span>QString::append
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v132</span>
+                  <span style="color:navy">, (</span>
+                  <span style="color:gray">const QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v138</span>
+                  <span style="color:navy">);
+                  </span>
+                  <span style="color:#8080ff">v65 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v138</span>
+                  <span style="color:navy">; if ( *</span>
+                  <span style="color:#8080ff">v138 </span>
+                  <span style="color:navy">!= -1 ) { if ( !*</span>
+                  <span style="color:#8080ff">v138 </span>
+                  <span style="color:navy">) { LABEL_123:
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v65</span>
+                  <span style="color:navy">, 2LL, 8LL); goto LABEL_124;
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="color:#8080ff">v66 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v138</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v66 </span>
+                  <span style="color:navy">!= 0; if ( !</span>
+                  <span style="color:#8080ff">v66 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v65 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v138</span>
+                  <span style="color:navy">; goto LABEL_123;
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="background:blue"></span>
+                  <span style="color:navy">} LABEL_124: if ( </span>
+                  <span style="color:#8080ff">v37 </span>
+                  <span style="color:navy">== 524 ) {
+                  </span>QString::fromUtf8_helper
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v139</span>
+                  <span style="color:navy">, &quot;</span>
+                  <span style="color:green">You may continue to use this program as a trial version. &quot;</span>
+                  <span style="color:navy">, 57);
+                  </span>QString::append
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v132</span>
+                  <span style="color:navy">, (</span>
+                  <span style="color:gray">const QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v139</span>
+                  <span style="color:navy">);
+                  </span>
+                  <span style="color:#8080ff">v67 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v139</span>
+                  <span style="color:navy">; if ( *</span>
+                  <span style="color:#8080ff">v139 </span>
+                  <span style="color:navy">!= -1 ) { if ( *</span>
+                  <span style="color:#8080ff">v139 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v68 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v139</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v68 </span>
+                  <span style="color:navy">!= 0; if ( </span>
+                  <span style="color:#8080ff">v68 </span>
+                  <span style="color:navy">) goto LABEL_130;
+                  </span>
+                  <span style="color:#8080ff">v67 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v139</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="background:#8080ff"></span>
+                  <span style="color:navy">}
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v67</span>
+                  <span style="color:navy">, 2LL, 8LL);
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="background:blue"></span>
+                  <span style="color:navy">} LABEL_130:
+                  </span>QString::fromUtf8_helper
+                  <span style="color:navy">( (
+                  </span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v140</span>
+                  <span style="color:navy">, &quot;
+                  </span>
+                  <span style="color:green">If you decide to purchase an upgrade, please click the \&quot;Purchase
+                    an upgrade\&quot; link below or you &quot;</span>
+                  <span style="color:navy">, 95);
+                  </span>QString::append
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v132</span>
+                  <span style="color:navy">, (</span>
+                  <span style="color:gray">const QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v140</span>
+                  <span style="color:navy">);
+                  </span>
+                  <span style="color:#8080ff">v70 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v140</span>
+                  <span style="color:navy">; if ( *</span>
+                  <span style="color:#8080ff">v140 </span>
+                  <span style="color:navy">== -1 ) goto LABEL_135; if ( *</span>
+                  <span style="color:#8080ff">v140 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v71 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v140</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v71 </span>
+                  <span style="color:navy">!= 0; if ( </span>
+                  <span style="color:#8080ff">v71 </span>
+                  <span style="color:navy">) goto LABEL_135;
+                  </span>
+                  <span style="color:#8080ff">v70 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v140</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="background:#8080ff"></span>
+                  <span style="color:navy">}
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v70</span>
+                  <span style="color:navy">, 2LL, 8LL); LABEL_135:
+                  </span>
+                  <span style="color:#8080ff">v110 </span>
+                  <span style="color:navy">= (</span>
+                  <span style="color:gray">volatile signed __int32 *</span>
+                  <span style="color:navy">)</span>QString::fromAscii_helper
+                  <span style="color:navy">( (
+                  </span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&quot;</span>
+                  <span style="color:green">http://www.sweetscape.com/download/previous/&quot;</span>
+                  <span style="color:navy">, (
+                  </span>
+                  <span style="color:gray">const char *</span>
+                  <span style="color:navy">)0x2C,
+                  </span>
+                  <span style="color:#8080ff">v69</span>
+                  <span style="color:navy">);
+                  </span>QString::fromUtf8_helper
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v111</span>
+                  <span style="color:navy">, &quot;</span>
+                  <span style="color:green">may download previous versions of 010 Editor from the website \&quot;&quot;</span>
+                  <span style="color:navy">, 63);
+                  </span>QString::append
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v111</span>
+                  <span style="color:navy">, (</span>
+                  <span style="color:gray">const QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v110</span>
+                  <span style="color:navy">);
+                  </span>
+                  <span style="color:#8080ff">v112 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v111</span>
+                  <span style="color:navy">; if ( (</span>
+                  <span style="color:gray">unsigned int</span>
+                  <span style="color:navy">)(*</span>
+                  <span style="color:#8080ff">v111 </span>
+                  <span style="color:navy">+ 1) &gt;= 2 )
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>_InterlockedAdd
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v111</span>
+                  <span style="color:navy">, 1u) != 0;
+                  </span>QString::fromUtf8_helper
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v141</span>
+                  <span style="color:navy">, &quot;</span>
+                  <span style="color:green">\&quot;. Thank you!&quot;</span>
+                  <span style="color:navy">, 13);
+                  </span>QString::append
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v112</span>
+                  <span style="color:navy">, (</span>
+                  <span style="color:gray">const QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v141</span>
+                  <span style="color:navy">);
+                  </span>
+                  <span style="color:#8080ff">v72 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v141</span>
+                  <span style="color:navy">; if ( *</span>
+                  <span style="color:#8080ff">v141 </span>
+                  <span style="color:navy">!= -1 ) { if ( *</span>
+                  <span style="color:#8080ff">v141 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v73 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v141</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v73 </span>
+                  <span style="color:navy">!= 0; if ( </span>
+                  <span style="color:#8080ff">v73 </span>
+                  <span style="color:navy">) goto LABEL_142;
+                  </span>
+                  <span style="color:#8080ff">v72 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v141</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="background:#8080ff"></span>
+                  <span style="color:navy">}
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v72</span>
+                  <span style="color:navy">, 2LL, 8LL);
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">} LABEL_142:
+                  </span>
+                  <span style="color:#8080ff">v74 </span>
+                  <span style="color:navy">= &amp;</span>
+                  <span style="color:#8080ff">v112</span>
+                  <span style="color:navy">;
+                  </span>QString::append
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v132</span>
+                  <span style="color:navy">, (</span>
+                  <span style="color:gray">const QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v112</span>
+                  <span style="color:navy">);
+                  </span>
+                  <span style="color:#8080ff">v75 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v112</span>
+                  <span style="color:navy">; if ( *</span>
+                  <span style="color:#8080ff">v112 </span>
+                  <span style="color:navy">== -1 ) goto LABEL_147; if ( *</span>
+                  <span style="color:#8080ff">v112 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v76 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v112</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v76 </span>
+                  <span style="color:navy">!= 0; if ( </span>
+                  <span style="color:#8080ff">v76 </span>
+                  <span style="color:navy">) goto LABEL_147;
+                  </span>
+                  <span style="color:#8080ff">v75 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v112</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="background:#8080ff"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="color:#8080ff">v74 </span>
+                  <span style="color:navy">= (</span>
+                  <span style="color:gray">volatile signed __int32 **</span>
+                  <span style="color:navy">)2;
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v75</span>
+                  <span style="color:navy">, 2LL, 8LL); LABEL_147:
+                  </span>
+                  <span style="color:#8080ff">v77 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v111</span>
+                  <span style="color:navy">; if ( *</span>
+                  <span style="color:#8080ff">v111 </span>
+                  <span style="color:navy">== -1 ) goto LABEL_152; if ( *</span>
+                  <span style="color:#8080ff">v111 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v78 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v111</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v78 </span>
+                  <span style="color:navy">!= 0; if ( </span>
+                  <span style="color:#8080ff">v78 </span>
+                  <span style="color:navy">) goto LABEL_152;
+                  </span>
+                  <span style="color:#8080ff">v77 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v111</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="background:#8080ff"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="color:#8080ff">v74 </span>
+                  <span style="color:navy">= (</span>
+                  <span style="color:gray">volatile signed __int32 **</span>
+                  <span style="color:navy">)2;
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v77</span>
+                  <span style="color:navy">, 2LL, 8LL); LABEL_152:
+                  </span>
+                  <span style="color:#8080ff">v79 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v110</span>
+                  <span style="color:navy">; if ( *</span>
+                  <span style="color:#8080ff">v110 </span>
+                  <span style="color:navy">!= -1 ) { if ( !*</span>
+                  <span style="color:#8080ff">v110 </span>
+                  <span style="color:navy">) { LABEL_156:
+                  </span>
+                  <span style="color:#8080ff">v74 </span>
+                  <span style="color:navy">= (</span>
+                  <span style="color:gray">volatile signed __int32 **</span>
+                  <span style="color:navy">)2;
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v79</span>
+                  <span style="color:navy">, 2LL, 8LL); goto LABEL_157;
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="color:#8080ff">v80 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v110</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v80 </span>
+                  <span style="color:navy">!= 0; if ( !</span>
+                  <span style="color:#8080ff">v80 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v79 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v110</span>
+                  <span style="color:navy">; goto LABEL_156;
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="background:blue"></span>
+                  <span style="color:navy">} LABEL_157:
+                  </span>sub_100112D10
+                  <span style="color:navy">(&amp;</span>
+                  <span style="color:#8080ff">v132</span>
+                  <span style="color:navy">, </span>
+                  <span style="color:#8080ff">v74</span>
+                  <span style="color:navy">); goto LABEL_213;
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">} if ( </span>
+                  <span style="color:#8080ff">v35 </span>
+                  <span style="color:navy">== 0x93 ) { if ( </span>
+                  <span style="color:#8080ff">v37 </span>
+                  <span style="color:navy">== 0x71 ) {
+                  </span>
+                  <span style="color:#8080ff">v53 </span>
+                  <span style="color:navy">= (</span>
+                  <span style="color:gray">volatile signed __int32 **</span>
+                  <span style="color:navy">)55;
+                  </span>
+                  <span style="color:#8080ff">v109 </span>
+                  <span style="color:navy">= (</span>
+                  <span style="color:gray">volatile signed __int32 *</span>
+                  <span style="color:navy">)</span>QString::fromAscii_helper
+                  <span style="color:navy">( (
+                  </span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&quot;</span>
+                  <span style="color:green">Password accepted. Your trial period has been extended.&quot;</span>
+                  <span style="color:navy">, (
+                  </span>
+                  <span style="color:gray">const char *</span>
+                  <span style="color:navy">)0x37,
+                  </span>
+                  <span style="color:#8080ff">v36</span>
+                  <span style="color:navy">);
+                  </span>sub_100112D10
+                  <span style="color:navy">(&amp;</span>
+                  <span style="color:#8080ff">v109</span>
+                  <span style="color:navy">, 55LL);
+                  </span>
+                  <span style="color:#8080ff">v93 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v109</span>
+                  <span style="color:navy">; if ( *</span>
+                  <span style="color:#8080ff">v109 </span>
+                  <span style="color:navy">== -1 ) goto LABEL_108; if ( *</span>
+                  <span style="color:#8080ff">v109 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v94 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v109</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v94 </span>
+                  <span style="color:navy">!= 0; if ( </span>
+                  <span style="color:#8080ff">v94 </span>
+                  <span style="color:navy">) goto LABEL_108;
+                  </span>
+                  <span style="color:#8080ff">v93 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v109</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="background:#8080ff"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="color:#8080ff">v53 </span>
+                  <span style="color:navy">= (</span>
+                  <span style="color:gray">volatile signed __int32 **</span>
+                  <span style="color:navy">)2;
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v93</span>
+                  <span style="color:navy">, 2LL, 8LL); LABEL_108: if ( (</span>
+                  <span style="color:gray">unsigned __int8</span>
+                  <span style="color:navy">)</span>sub_1000D9840
+                  <span style="color:navy">(</span>qword_100686140
+                  <span style="color:navy">) ) { if ( </span>qword_100686710
+                  <span style="color:navy">)
+                  </span>sub_10038C940
+                  <span style="color:navy">(</span>qword_100686710
+                  <span style="color:navy">, </span>
+                  <span style="color:#8080ff">v53</span>
+                  <span style="color:navy">); (*(
+                  </span>
+                  <span style="color:gray">void (__fastcall **)(_QWORD *, volatile signed __int32 **)</span>
+                  <span style="color:navy">)(*</span>
+                  <span style="color:#8080ff">v1 </span>
+                  <span style="color:navy">+ 440LL))(</span>
+                  <span style="color:#8080ff">v1</span>
+                  <span style="color:navy">, </span>
+                  <span style="color:#8080ff">v53</span>
+                  <span style="color:navy">);
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">} else {
+                  </span>
+                  <span style="color:#8080ff">v106 </span>
+                  <span style="color:navy">= (</span>
+                  <span style="color:gray">volatile signed __int32 *</span>
+                  <span style="color:navy">)</span>QString::fromAscii_helper
+                  <span style="color:navy">( (
+                  </span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&quot;</span>
+                  <span style="color:green">Could not change password. You may need to be logged in as an adm&quot;
+                    &quot;inistrator to change the password.&quot;</span>
+                  <span style="color:navy">, (
+                  </span>
+                  <span style="color:gray">const char *</span>
+                  <span style="color:navy">)0x63,
+                  </span>
+                  <span style="color:#8080ff">v62</span>
+                  <span style="color:navy">);
+                  </span>sub_1001124D0
+                  <span style="color:navy">((</span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&amp;</span>
+                  <span style="color:#8080ff">v106</span>
+                  <span style="color:navy">);
+                  </span>
+                  <span style="color:#8080ff">v81 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v106</span>
+                  <span style="color:navy">; if ( *</span>
+                  <span style="color:#8080ff">v106 </span>
+                  <span style="color:navy">== -1 ) goto LABEL_213; if ( *</span>
+                  <span style="color:#8080ff">v106 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v82 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v106</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v82 </span>
+                  <span style="color:navy">!= 0; if ( </span>
+                  <span style="color:#8080ff">v82 </span>
+                  <span style="color:navy">) goto LABEL_213;
+                  </span>
+                  <span style="color:#8080ff">v81 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v106</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="background:#8080ff"></span>
+                  <span style="color:navy">}
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v81</span>
+                  <span style="color:navy">, 2LL, 8LL);
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">} goto LABEL_213;
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <span style="color:#8080ff">v108 </span>
+                  <span style="color:navy">= (</span>
+                  <span style="color:gray">volatile signed __int32 *</span>
+                  <span style="color:navy">)</span>QString::fromAscii_helper
+                  <span style="color:navy">( (
+                  </span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&quot;</span>
+                  <span style="color:green">Password accepted but the trial period is already over.&quot;</span>
+                  <span style="color:navy">, (
+                  </span>
+                  <span style="color:gray">const char *</span>
+                  <span style="color:navy">)0x37,
+                  </span>
+                  <span style="color:#8080ff">v36</span>
+                  <span style="color:navy">);
+                  </span>sub_100112D10
+                  <span style="color:navy">(&amp;</span>
+                  <span style="color:#8080ff">v108</span>
+                  <span style="color:navy">, 55LL);
+                  </span>
+                  <span style="color:#8080ff">v99 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v108</span>
+                  <span style="color:navy">; if ( *</span>
+                  <span style="color:#8080ff">v108 </span>
+                  <span style="color:navy">== -1 ) goto LABEL_213; if ( *</span>
+                  <span style="color:#8080ff">v108 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v100 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v108</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v100 </span>
+                  <span style="color:navy">!= 0; if ( </span>
+                  <span style="color:#8080ff">v100 </span>
+                  <span style="color:navy">) goto LABEL_213;
+                  </span>
+                  <span style="color:#8080ff">v99 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v108</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="background:#8080ff"></span>
+                  <span style="color:navy">}
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v99</span>
+                  <span style="color:navy">, 2LL, 8LL);
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">} else {
+                  </span>
+                  <span style="color:#8080ff">v107 </span>
+                  <span style="color:navy">= (</span>
+                  <span style="color:gray">volatile signed __int32 *</span>
+                  <span style="color:navy">)</span>QString::fromAscii_helper
+                  <span style="color:navy">( (
+                  </span>
+                  <span style="color:gray">QString *</span>
+                  <span style="color:navy">)&quot;</span>
+                  <span style="color:green">Invalid name or password. Please enter your name and password exactly&quot;
+                    &quot; as given when you purchased 010 Editor (make sure no quotes
+                    are included).&quot;</span>
+                  <span style="color:navy">, (
+                  </span>
+                  <span style="color:gray">const char *</span>
+                  <span style="color:navy">)0x90,
+                  </span>
+                  <span style="color:#8080ff">v36</span>
+                  <span style="color:navy">);
+                  </span>sub_100112D10
+                  <span style="color:navy">(&amp;</span>
+                  <span style="color:#8080ff">v107</span>
+                  <span style="color:navy">, 144LL);
+                  </span>
+                  <span style="color:#8080ff">v97 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v107</span>
+                  <span style="color:navy">; if ( *</span>
+                  <span style="color:#8080ff">v107 </span>
+                  <span style="color:navy">== -1 ) goto LABEL_213; if ( *</span>
+                  <span style="color:#8080ff">v107 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v98 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v107</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v98 </span>
+                  <span style="color:navy">!= 0; if ( </span>
+                  <span style="color:#8080ff">v98 </span>
+                  <span style="color:navy">) goto LABEL_213;
+                  </span>
+                  <span style="color:#8080ff">v97 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v107</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="background:#8080ff"></span>
+                  <span style="color:navy">}
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v97</span>
+                  <span style="color:navy">, 2LL, 8LL);
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">} LABEL_213:
+                  </span>
+                  <span style="color:#8080ff">v101 </span>
+                  <span style="color:navy">= *(</span>
+                  <span style="color:gray">volatile signed __int32 **</span>
+                  <span style="color:navy">)</span>
+                  <span style="color:#8080ff">v131</span>
+                  <span style="color:navy">; if ( **(</span>
+                  <span style="color:gray">_DWORD **</span>
+                  <span style="color:navy">)</span>
+                  <span style="color:#8080ff">v131 </span>
+                  <span style="color:navy">== -1 ) goto LABEL_218; if ( **(</span>
+                  <span style="color:gray">_DWORD **</span>
+                  <span style="color:navy">)</span>
+                  <span style="color:#8080ff">v131 </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v102 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(*(</span>
+                  <span style="color:gray">volatile signed __int32 **</span>
+                  <span style="color:navy">)</span>
+                  <span style="color:#8080ff">v131</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v102 </span>
+                  <span style="color:navy">!= 0; if ( </span>
+                  <span style="color:#8080ff">v102 </span>
+                  <span style="color:navy">) goto LABEL_218;
+                  </span>
+                  <span style="color:#8080ff">v101 </span>
+                  <span style="color:navy">= *(</span>
+                  <span style="color:gray">volatile signed __int32 **</span>
+                  <span style="color:navy">)</span>
+                  <span style="color:#8080ff">v131</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="background:#8080ff"></span>
+                  <span style="color:navy">}
+                  </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v101</span>
+                  <span style="color:navy">, 2LL, 8LL); LABEL_218:
+                  </span>
+                  <span style="color:#8080ff">v103 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v132</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="color:#8080ff">result </span>
+                  <span style="color:navy">= *(</span>
+                  <span style="color:gray">unsigned int *</span>
+                  <span style="color:navy">)</span>
+                  <span style="color:#8080ff">v132</span>
+                  <span style="color:navy">; if ( (</span>
+                  <span style="color:gray">_DWORD</span>
+                  <span style="color:navy">)</span>
+                  <span style="color:#8080ff">result </span>
+                  <span style="color:navy">== -1 ) return </span>
+                  <span style="color:#8080ff">result</span>
+                  <span style="color:navy">; if ( (</span>
+                  <span style="color:gray">_DWORD</span>
+                  <span style="color:navy">)</span>
+                  <span style="color:#8080ff">result </span>
+                  <span style="color:navy">) {
+                  </span>
+                  <span style="color:#8080ff">v105 </span>
+                  <span style="color:navy">= </span>_InterlockedSub
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v132</span>
+                  <span style="color:navy">, 1u);
+                  </span>
+                  <span style="color:#8080ff">v142 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v105 </span>
+                  <span style="color:navy">!= 0; if ( </span>
+                  <span style="color:#8080ff">v105 </span>
+                  <span style="color:navy">) return </span>
+                  <span style="color:#8080ff">result</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="color:#8080ff">v103 </span>
+                  <span style="color:navy">= </span>
+                  <span style="color:#8080ff">v132</span>
+                  <span style="color:navy">;
+                  </span>
+                  <span style="background:#8080ff"></span>
+                  <span style="color:navy">} return </span>QArrayData::deallocate
+                  <span style="color:navy">(</span>
+                  <span style="color:#8080ff">v103</span>
+                  <span style="color:navy">, 2LL, 8LL);
+                  </span>
+                  <span style="background:navy"></span>
+                  <span style="color:navy">}
+                  </span>
+                  <!-- hexo-inject:begin -->
+                  <!-- hexo-inject:end -->
+                </span>
+              </body>
+
+              </html>
+
+            </div>
+
+          </div>
+
+          <div class="comments" id="comments">
+
+            <div id="lv-container" data-id="city" data-uid="MTAyMC8yODcwNi81Mjc3"></div>
+
+          </div>
+
+        </div>
+
+        <div class="sidebar-toggle">
+          <div class="sidebar-toggle-line-wrap">
+            <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+            <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+            <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+          </div>
+        </div>
+
+        <aside id="sidebar" class="sidebar">
+          <div class="sidebar-inner">
+
+            <section class="site-overview sidebar-panel sidebar-panel-active">
+              <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="YoungDone(B.S.)"
+                />
+                <p class="site-author-name" itemprop="name">YoungDone(B.S.)</p>
+
+                <p class="site-description motion-element" itemprop="description">An My GitHub Hexo Blog. http://www.appleos.xyz</p>
+
+              </div>
+              <nav class="site-state motion-element">
+
+                <div class="site-state-item site-state-posts">
+                  <a href="/archives">
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    <span class="site-state-item-count">83</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+
+              </nav>
+
+              <div class="feed-link motion-element">
+                <a href="/atom.xml" rel="alternate">
+                  <i class="fa fa-rss"></i>
+                  RSS
+                </a>
+              </div>
+
+              <div class="links-of-author motion-element">
+
+                <span class="links-of-author-item">
+                  <a href="https://github.com/iDone/" target="_blank" title="GitHub">
+
+                    <i class="fa fa-fw fa-github"></i>
+
+                    GitHub
+                  </a>
+                </span>
+
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/iYoungDone/" target="_blank" title="Twitter">
+
+                    <i class="fa fa-fw fa-twitter"></i>
+
+                    Twitter
+                  </a>
+                </span>
+
+                <span class="links-of-author-item">
+                  <a href="" target="_blank" title="Facebook">
+
+                    <i class="fa fa-fw fa-facebook"></i>
+
+                    Facebook
+                  </a>
+                </span>
+
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com/u/0/115713567264921192616" target="_blank" title="Google">
+
+                    <i class="fa fa-fw fa-google"></i>
+
+                    Google
+                  </a>
+                </span>
+
+                <span class="links-of-author-item">
+                  <a href="https://weibo.com/82done/" target="_blank" title="Weibo">
+
+                    <i class="fa fa-fw fa-weibo"></i>
+
+                    Weibo
+                  </a>
+                </span>
+
+                <span class="links-of-author-item">
+                  <a href="/uploads/qrcode/wechat-qrcode.jpg" target="_blank" title="Weixin">
+
+                    <i class="fa fa-fw fa-weixin"></i>
+
+                    Weixin
+                  </a>
+                </span>
+
+                <span class="links-of-author-item">
+                  <a href="mailto:272253042@qq.com" target="_blank" title="Mail">
+
+                    <i class="fa fa-fw fa-envelope"></i>
+
+                    Mail
+                  </a>
+                </span>
+
+                <span class="links-of-author-item">
+                  <a href="" target="_blank" title="LinkedIn">
+
+                    <i class="fa fa-fw fa-linkedin"></i>
+
+                    LinkedIn
+                  </a>
+                </span>
+
+              </div>
+
+              <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+                <div class="links-of-blogroll-title">
+                  <i class="fa  fa-fw fa-globe"></i>
+                  Links
+                </div>
+                <ul class="links-of-blogroll-list">
+
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blog.allin1.xyz/" title="Blog" target="_blank">Blog</a>
+                  </li>
+
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hexo.io/" title="Hexo" target="_blank">Hexo</a>
+                  </li>
+
+                  <li class="links-of-blogroll-item">
+                    <a href="https://pages.github.com/" title="GitHub Pages" target="_blank">GitHub Pages</a>
+                  </li>
+
+                  <li class="links-of-blogroll-item">
+                    <a href="http://iissnan.com/" title="iissnan" target="_blank">iissnan</a>
+                  </li>
+
+                  <li class="links-of-blogroll-item">
+                    <a href="http://litten.me/" title="litten" target="_blank">litten</a>
+                  </li>
+
+                  <li class="links-of-blogroll-item">
+                    <a href="http://moxfive.xyz/" title="MOxFIVE" target="_blank">MOxFIVE</a>
+                  </li>
+
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.allin1.xyz/" title="allin1.xyz" target="_blank">allin1.xyz</a>
+                  </li>
+
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.appleos.xyz/" title="appleos.xyz" target="_blank">appleos.xyz</a>
+                  </li>
+
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.8idone.com/" title="8idone.com" target="_blank">8idone.com</a>
+                  </li>
+
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.a2ons.com/" title="a2ons.com" target="_blank">a2ons.com</a>
+                  </li>
+
+                </ul>
+              </div>
+
+            </section>
+
+            <div class="back-to-top">
+              <i class="fa fa-arrow-up"></i>
+
+              <span id="scrollpercent">
+                <span>0</span>%</span>
+
+            </div>
+
+          </div>
+        </aside>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+
+          &copy; 2006 -
+          <span itemprop="copyrightYear">2018</span>
+          <span class="with-love">
+            <i class="fa fa-heart"></i>
+          </span>
+          <span class="author" itemprop="copyrightHolder">YoungDone(B.S.)</span>
+        </div>
+
+        <div class="powered-by">
+          由
+          <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+        </div>
+
+        <div class="theme-info">
+          主题 -
+          <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+            NexT.Pisces
+          </a>
+        </div>
+
+        <div class="busuanzi-count">
+          <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+          <span class="site-uv">
+            <i class="fa fa-user"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+
+          </span>
+
+          <span class="site-pv">
+            <i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+
+          </span>
+
+        </div>
+
+      </div>
+    </footer>
+
+  </div>
+
+  <script type="text/javascript">
+    if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+      window.Promise = null;
+    }
+
+  </script>
+
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  <script type="text/javascript" src="/lib/three/three.min.js"></script>
+
+  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+  <script type="text/javascript">
+    (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+      if (typeof LivereTower === 'function') {
+        return;
+      }
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+
+  </script>
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+    var onPopupClose = function(e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append(
+          '<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css(
+        'text-align', 'center');
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(
+                  /<[^>]+>/g, "");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if (title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text,
+                      caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0,
+                        position = [],
+                        index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word,
+                          startPosition)) > -1) {
+                        index.push({
+                          position: position,
+                          word: word
+                        });
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+                    indexOfTitle = indexOfTitle.concat(
+                      getIndexByWord(keyword,
+                        titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(
+                      getIndexByWord(keyword,
+                        contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length >
+                    0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length +
+                      indexOfContent.length;
+                  }
+                }
+                // show search results
+                if (isMatch) {
+                  // sort index by position of keyword
+                  [indexOfTitle, indexOfContent].forEach(function(
+                    index) {
+                    index.sort(function(itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft
+                        .position) {
+                        return itemRight.position -
+                          itemLeft.position;
+                      } else {
+                        return itemLeft.word.length -
+                          itemRight.word.length;
+                      }
+                    });
+                  });
+                  // merge hits into slices
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index
+                      .length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({
+                        position: position,
+                        length: word.length
+                      });
+                      var wordEnd = position + word.length;
+                      // move to next position of hit
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0,
+                      title.length, indexOfTitle));
+                  }
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length -
+                      1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if (start < 0) {
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if (end > content.length) {
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content,
+                      start, end, indexOfContent));
+                  }
+                  // sort slices in content by search text's count and hits' count
+                  slicesOfContent.sort(function(sliceLeft,
+                    sliceRight) {
+                    if (sliceLeft.searchTextCount !==
+                      sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount -
+                        sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !==
+                      sliceRight.hits.length) {
+                      return sliceRight.hits.length -
+                        sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+                  // select top N slices in content
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0,
+                      upperBound);
+                  }
+                  // highlight title and content
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function(hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' +
+                        text.substring(hit.position, end) +
+                        '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+                  var resultItem = '';
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl +
+                      "' class='search-result-title'>" +
+                      highlightKeyword(title, slicesOfTitle[0]) +
+                      "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl +
+                      "' class='search-result-title'>" + title +
+                      "</a>";
+                  }
+                  slicesOfContent.forEach(function(slice) {
+                    resultItem += "<a href='" + articleUrl +
+                      "'>" +
+                      "<p class=\"search-result\">" +
+                      highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML =
+                '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML =
+                '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function(resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft
+                    .searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList =
+                '<ul class=\"search-result-list\">';
+              resultItems.forEach(function(result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+          if ('auto' === 'manual') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function(event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+          proceedsearch();
+        }
+      });
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function(event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+  </script>
+
+  <script type="text/javascript" src="/js/src/exturl.js?v=5.1.1"></script>
+
+</body>
+
+</html>

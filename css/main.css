@@ -1535,8 +1535,8 @@ pre .keyword, pre .javascript .function {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .vk_like {
@@ -1544,13 +1544,13 @@ pre .keyword, pre .javascript .function {
   height: 21px;
   padding-top: 7px;
   -ms-flex-item-align: center;
-  align-self: center;
+      align-self: center;
 }
 
 .fb_like {
   height: 30px;
   -ms-flex-item-align: center;
-  align-self: center;
+      align-self: center;
 }
 
 .post-button {
@@ -1960,7 +1960,7 @@ pre .keyword, pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #00abcf;
+  background: #ff90a4;
 }
 
 .links-of-blogroll {
@@ -2798,7 +2798,7 @@ pre .keyword, pre .javascript .function {
   transform: scale(1.2);
   color: #fff;
   -webkit-animation: dot-flash 1s alternate infinite ease-in-out;
-  animation: dot-flash 1s alternate infinite ease-in-out;
+          animation: dot-flash 1s alternate infinite ease-in-out;
 }
 
 #schedule ul#event-list li.event-now * {

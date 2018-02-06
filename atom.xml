@@ -24,9 +24,15 @@
     
     <content type="html"><![CDATA[<p>Created by B.S.</p>
 <p>February 5, 2018 9:22:33 PM</p>
-<p>利用业余时间,一锅端了VS10X系列的三个插件和Supercharger插件,
-  <br>至此 Michael Kiss [BG8] 的所有插件完爆.
-  <br>第一次分析AES高级加密标准(Rijndael算法),君莫笑.</p>
+<p>小弟不才,利用业余时间,一锅端了VS10X系列的三个插件和Supercharger插件,
+  <br>至此 Michael Kiss [BG8] 的所有VisualStudio插件完爆.
+  <br>第一次逆向AES高级加密标准(Rijndael算法),就遇到不可视字符的强混淆,君莫笑.</p>
+<p>
+  <em>如果您觉得还行,可以点本文尾部的赞赏支持一下,金额随意O(∩_∩)O~</em>
+</p>
+<blockquote>
+  <p>“奔走红尘，莫忘曾经是书生”</p>
+</blockquote>
 <p>
   <strong>仅供学习研究,请勿用作商业用途,如若喜欢请支持正版!</strong>
 </p>
@@ -37,11 +43,15 @@
 <p>
   <img src="/images/Supercharger-AES-KeyGen.jpg" alt="Supercharger-AES-KeyGen">
 </p>
-<p>###提供几组注册码给广大网友试用
-  <br>(算法不变的情况下可以永久使用)</p>
+<p>
+  <img src="/images/Supercharger-AES-KeyGen-MacOS.jpg" alt="SuperchargerKeyGenForMacOS">
+</p>
+<h3 id="提供几组注册码给广大网友试用">
+  <a href="#提供几组注册码给广大网友试用" class="headerlink" title="提供几组注册码给广大网友试用"></a>提供几组注册码给广大网友试用</h3>
+<p>(算法不变的情况下可以永久使用)</p>
 <hr>
 <ul>
-  <li>Supercharger 注册码(商业版授权)</li>
+  <li>Supercharger 商业版授权许可证</li>
 </ul>
 <figure class="highlight plain">
   <table>
@@ -91,9 +101,8 @@
     </tr>
   </table>
 </figure>
-<hr>
 <ul>
-  <li>Supercharger 注册码(个人专业版授权)</li>
+  <li>Supercharger 个人专业版授权许可证</li>
 </ul>
 <figure class="highlight plain">
   <table>
@@ -107,9 +116,8 @@
     </tr>
   </table>
 </figure>
-<hr>
 <ul>
-  <li>Supercharger 注册码(个人版授权)</li>
+  <li>Supercharger 个人版授权许可证(仅适用于VisualStudio社区版)</li>
 </ul>
 <figure class="highlight plain">
   <table>
@@ -175,9 +183,8 @@
     
       &lt;p&gt;Created by B.S.&lt;/p&gt;
 &lt;p&gt;February 5, 2018 9:22:33 PM&lt;/p&gt;
-&lt;p&gt;利用业余时间,一锅端了VS10X系列的三个插件和Supercharger插件,
-  &lt;br&gt;至此 Michael Kiss [BG8] 的所有插件完爆.
-  
+&lt;p&gt;小弟不才,利用业余时间,一锅端了VS10X系列的三个插件和Supercharger插件,
+  &lt;br&gt;至此 Michael Kiss [BG8] 的所有Vis
     
     </summary>
     
@@ -194,6 +201,8 @@
     
       <category term=".Net" scheme="/tags/Net/"/>
     
+      <category term=".Net Core" scheme="/tags/Net-Core/"/>
+    
       <category term="Crack" scheme="/tags/Crack/"/>
     
       <category term="Supercharger" scheme="/tags/Supercharger/"/>
@@ -204,19 +213,29 @@
     
       <category term="Rijndael算法" scheme="/tags/Rijndael%E7%AE%97%E6%B3%95/"/>
     
+      <category term="许可证" scheme="/tags/%E8%AE%B8%E5%8F%AF%E8%AF%81/"/>
+    
       <category term="注册机" scheme="/tags/%E6%B3%A8%E5%86%8C%E6%9C%BA/"/>
     
       <category term="注册码" scheme="/tags/%E6%B3%A8%E5%86%8C%E7%A0%81/"/>
     
       <category term="CodeMap注册码" scheme="/tags/CodeMap%E6%B3%A8%E5%86%8C%E7%A0%81/"/>
     
+      <category term="CodeMap许可证" scheme="/tags/CodeMap%E8%AE%B8%E5%8F%AF%E8%AF%81/"/>
+    
       <category term="Supercharger注册码" scheme="/tags/Supercharger%E6%B3%A8%E5%86%8C%E7%A0%81/"/>
+    
+      <category term="Supercharger许可证" scheme="/tags/Supercharger%E8%AE%B8%E5%8F%AF%E8%AF%81/"/>
     
       <category term="axtools注册码" scheme="/tags/axtools%E6%B3%A8%E5%86%8C%E7%A0%81/"/>
     
       <category term="KeyMaker" scheme="/tags/KeyMaker/"/>
     
       <category term="KeyGen" scheme="/tags/KeyGen/"/>
+    
+      <category term="Key" scheme="/tags/Key/"/>
+    
+      <category term="License" scheme="/tags/License/"/>
     
       <category term="CodeMap" scheme="/tags/CodeMap/"/>
     

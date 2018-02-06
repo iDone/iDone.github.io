@@ -435,7 +435,7 @@ ruby.zhuyin h-diao, ruby.mps h-diao, h-ruby.zhuyin h-diao {
 ruby.zhuyin h-diao h-char, ruby.mps h-diao h-char, h-ruby.zhuyin h-diao h-char {
   -webkit-writing-mode: horizontal-tb;
   -ms-writing-mode: lr-tb;
-      writing-mode: horizontal-tb;
+  writing-mode: horizontal-tb;
 }
 
 ruby.zhuyin [diao="˙"] h-diao, ruby.mps [diao="˙"] h-diao, h-ruby.zhuyin [diao="˙"] h-diao {

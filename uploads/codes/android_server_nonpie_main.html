@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>@iYoungDone&#39;s Hexo Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="IDA - android_server_nonpie &#x2F;Applications&#x2F;IDA Pro 7.0&#x2F;ida.app&#x2F;Contents&#x2F;MacOS&#x2F;dbgsrv&#x2F;android_server_nonpie     int __cdecl main(int argc, const char **argv, const char **envp) {   int v3; &#x2F;&#x2F; r5   c">
+<meta property="og:type" content="website">
+<meta property="og:title" content="@iYoungDone&#39;s Hexo Blog">
+<meta property="og:url" content="http://www.appleos.xyz/uploads/codes/android_server_nonpie_main.html">
+<meta property="og:site_name" content="@iYoungDone&#39;s Hexo Blog">
+<meta property="og:description" content="IDA - android_server_nonpie &#x2F;Applications&#x2F;IDA Pro 7.0&#x2F;ida.app&#x2F;Contents&#x2F;MacOS&#x2F;dbgsrv&#x2F;android_server_nonpie     int __cdecl main(int argc, const char **argv, const char **envp) {   int v3; &#x2F;&#x2F; r5   c">
+<meta property="og:locale">
+<meta property="article:published_time" content="2022-05-23T18:55:25.929Z">
+<meta property="article:modified_time" content="2017-10-15T03:45:05.000Z">
+<meta property="article:author" content="YoungDone(B.S.)">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="@iYoungDone&#39;s Hexo Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">@iYoungDone&#39;s Hexo Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.appleos.xyz"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/uploads/codes/android_server_nonpie_main.html" class="article-date">
+  <time datetime="2022-05-23T18:55:25.929Z" itemprop="datePublished">2022-05-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>IDA - android_server_nonpie /Applications/IDA Pro 7.0/ida.app/Contents/MacOS/dbgsrv/android_server_nonpie</title>
+</head>
+<body bgcolor="#ffffff">
+<span style="white-space: pre; font-family: Courier; color: blue; background: #ffffff">
+
+<span style="color:navy">int __cdecl main(int argc, const char **argv, const char **envp)
+{
+  int v3; // </span><span style="color:#8080ff">r5
+  </span><span style="color:navy">const char **v4; // </span><span style="color:#8080ff">r6
+  </span><span style="color:navy">int v5; // </span><span style="color:#8080ff">r0
+  </span><span style="color:navy">int result; // </span><span style="color:#8080ff">r0
+  </span><span style="color:navy">int v7; // </span><span style="color:#8080ff">r9
+  </span><span style="color:navy">const char *v8; // </span><span style="color:#8080ff">r3
+  </span><span style="color:navy">int v9; // </span><span style="color:#8080ff">r0
+  </span><span style="color:navy">int v10; // </span><span style="color:#8080ff">r7
+  </span><span style="color:navy">unsigned int v11; // </span><span style="color:#8080ff">r5
+  </span><span style="color:navy">int v12; // </span><span style="color:#8080ff">r0
+  </span><span style="color:navy">int v13; // </span><span style="color:#8080ff">r1
+  </span><span style="color:navy">unsigned int v14; // </span><span style="color:#8080ff">r4
+  </span><span style="color:navy">int v15; // </span><span style="color:#8080ff">r0
+  </span><span style="color:navy">int v16; // </span><span style="color:#8080ff">r0
+  </span><span style="color:navy">int *v17; // </span><span style="color:#8080ff">r3
+  </span><span style="color:navy">int *v18; // </span><span style="color:#8080ff">r1
+  </span><span style="color:navy">char *v19; // </span><span style="color:#8080ff">r3
+  </span><span style="color:navy">socklen_t *v20; // </span><span style="color:#8080ff">r7
+  </span><span style="color:navy">int v21; // </span><span style="color:#8080ff">r4
+  </span><span style="color:navy">int v22; // </span><span style="color:#8080ff">r8
+  </span><span style="color:gray">int v23</span><span style="color:navy">; </span><span style="color:gray">// </span><span style="color:#8080ff">r3
+  </span><span style="color:navy">char *v24; // </span><span style="color:#8080ff">r1
+  </span><span style="color:navy">unsigned int v25; // </span><span style="color:#8080ff">r5
+  </span><span style="color:navy">int v26; // </span><span style="color:#8080ff">r7
+  </span><span style="color:navy">char *v27; // </span><span style="color:#8080ff">r0
+  </span><span style="color:navy">char *v28; // </span><span style="color:#8080ff">r1
+  </span><span style="color:navy">signed int v29; // </span><span style="color:#8080ff">r5
+  </span><span style="color:navy">unsigned int v30; // </span><span style="color:#8080ff">r7
+  </span><span style="color:navy">int v31; // </span><span style="color:#8080ff">r10
+  </span><span style="color:navy">char *v32; // </span><span style="color:#8080ff">r3
+  </span><span style="color:navy">unsigned int v33; // </span><span style="color:#8080ff">[sp+4h] [bp-84h]
+  </span><span style="color:gray">char v34</span><span style="color:navy">; </span><span style="color:gray">// </span><span style="color:#8080ff">[sp+8h] [bp-80h]
+  </span><span style="color:navy">char *v35; // </span><span style="color:#8080ff">[sp+Ch] [bp-7Ch]
+  </span><span style="color:navy">unsigned int v36; // </span><span style="color:#8080ff">[sp+10h] [bp-78h]
+  </span><span style="color:gray">int v37</span><span style="color:navy">; </span><span style="color:gray">// </span><span style="color:#8080ff">[sp+14h] [bp-74h]
+  </span><span style="color:navy">char *v38; // </span><span style="color:#8080ff">[sp+18h] [bp-70h]
+  </span><span style="color:navy">unsigned int v39; // </span><span style="color:#8080ff">[sp+1Ch] [bp-6Ch]
+  </span><span style="color:navy">unsigned int v40; // </span><span style="color:#8080ff">[sp+20h] [bp-68h]
+  </span><span style="color:navy">char *v41; // </span><span style="color:#8080ff">[sp+24h] [bp-64h]
+  </span><span style="color:gray">int v42</span><span style="color:navy">; </span><span style="color:gray">// </span><span style="color:#8080ff">[sp+28h] [bp-60h]
+  </span><span style="color:navy">socklen_t v43; // </span><span style="color:#8080ff">[sp+30h] [bp-58h]
+  </span><span style="color:navy">unsigned int v44; // </span><span style="color:#8080ff">[sp+34h] [bp-54h]
+  </span><span style="color:gray">char v45</span><span style="color:navy">; </span><span style="color:gray">// </span><span style="color:#8080ff">[sp+3Ch] [bp-4Ch]
+  </span><span style="color:gray">__int16 v46</span><span style="color:navy">; </span><span style="color:gray">// </span><span style="color:#8080ff">[sp+3Eh] [bp-4Ah]
+  </span><span style="color:gray">int v47</span><span style="color:navy">; </span><span style="color:gray">// </span><span style="color:#8080ff">[sp+40h] [bp-48h]
+  </span><span style="color:gray">char v48</span><span style="color:navy">; </span><span style="color:gray">// </span><span style="color:#8080ff">[sp+4Ch] [bp-3Ch]
+  </span><span style="color:gray">int v49</span><span style="color:navy">; </span><span style="color:gray">// </span><span style="color:#8080ff">[sp+5Ch] [bp-2Ch]
+
+  v3 </span><span style="color:navy">= </span><span style="color:#8080ff">argc</span><span style="color:navy">;
+  </span><span style="color:#8080ff">v4 </span><span style="color:navy">= </span><span style="color:#8080ff">argv</span><span style="color:navy">;
+  </span><span style="color:#8080ff">v5 </span><span style="color:navy">= </span>sub_52A04<span style="color:navy">();
+  if ( </span>sub_216F4<span style="color:navy">(</span><span style="color:#8080ff">v5</span><span style="color:navy">) )
+  {
+    </span><span style="color:#8080ff">v36 </span><span style="color:navy">= 0;
+    </span><span style="color:#8080ff">v37 </span><span style="color:navy">= 0;
+    </span><span style="color:#8080ff">v35 </span><span style="color:navy">= 0;
+    if ( </span>qgetenv<span style="color:navy">(&quot;</span><span style="color:green">IDA_DBGSRV_PASSWD&quot;</span><span style="color:navy">) )
+    {
+      if ( </span><span style="color:#8080ff">v36 </span><span style="color:navy">)
+        </span><span style="color:#8080ff">v19 </span><span style="color:navy">= </span><span style="color:#8080ff">v35</span><span style="color:navy">;
+      else
+        </span><span style="color:#8080ff">v19 </span><span style="color:navy">= &amp;</span>byte_7FFE4<span style="color:navy">;
+      </span>dword_94984 <span style="color:navy">= (</span><span style="color:gray">int</span><span style="color:navy">)</span><span style="color:#8080ff">v19</span><span style="color:navy">;
+    </span><span style="background:#8080ff"></span><span style="color:navy">}
+    </span><span style="color:#8080ff">v7 </span><span style="color:navy">= (</span><span style="color:gray">unsigned __int8</span><span style="color:navy">)</span>byte_94DD0<span style="color:navy">;
+    </span>sub_14A90<span style="color:navy">(&quot;</span><span style="color:green">IDA Android 32-bit remote debug server(ST) v1.%d. Hex-Rays (c) 2004-2017\n&quot;</span><span style="color:navy">, 22);
+    if ( </span><span style="color:#8080ff">v3 &gt; </span><span style="color:navy">1 )
+    {
+      </span><span style="color:#8080ff">v8 </span><span style="color:navy">= </span><span style="color:#8080ff">v4</span><span style="color:navy">[1];
+      </span><span style="color:#8080ff">v21 </span><span style="color:navy">= 0;
+      if ( (*</span><span style="color:#8080ff">v8 &amp; </span><span style="color:navy">0xFD) == 45 )
+      {
+        </span><span style="color:#8080ff">v20 </span><span style="color:navy">= (</span><span style="color:gray">socklen_t *</span><span style="color:navy">)1;
+        </span><span style="color:#8080ff">v22 </span><span style="color:navy">= 23946;
+        while ( 1 )
+        {
+          </span><span style="color:#8080ff">result </span><span style="color:navy">= *((</span><span style="color:gray">unsigned __int8 *</span><span style="color:navy">)</span><span style="color:#8080ff">v8 </span><span style="color:navy">+ 1) - 80;
+          if ( (</span><span style="color:gray">unsigned int</span><span style="color:navy">)</span><span style="color:#8080ff">result &gt; </span><span style="color:navy">0x26 )
+LABEL_42:
+            ((</span><span style="color:gray">void (*)(void)</span><span style="color:navy">)</span>sub_10AC8<span style="color:navy">)();
+          switch ( *((</span><span style="color:gray">unsigned __int8 *</span><span style="color:navy">)</span><span style="color:#8080ff">v8 </span><span style="color:navy">+ 1) )
+          {
+            case 0x50u:
+              if ( </span><span style="color:#8080ff">v36 &lt;</span><span style="color:navy">= 1 )
+              {
+                </span>dword_94984 <span style="color:navy">= (</span><span style="color:gray">int</span><span style="color:navy">)(</span><span style="color:#8080ff">v8 </span><span style="color:navy">+ 2);
+                </span>sub_14A90<span style="color:navy">(&quot;</span><span style="color:green">The switch -P is unsecure. Please store the password in the IDA_DBGSRV_PASSWD environment variable\n&quot;</span><span style="color:navy">);
+              </span><span style="background:navy"></span><span style="color:navy">}
+              else
+              {
+                </span>sub_14A90<span style="color:navy">(&quot;</span><span style="color:green">Warning! -P switch has been ignored because the IDA_DBGSRV_PASSWD environment variable is set\n&quot;</span><span style="color:navy">);
+              </span><span style="background:navy"></span><span style="color:navy">}
+              goto LABEL_45;
+            case 0x51u:
+            case 0x52u:
+            case 0x53u:
+            case 0x54u:
+            case 0x55u:
+            case 0x56u:
+            case 0x57u:
+            case 0x58u:
+            case 0x59u:
+            case 0x5Au:
+            case 0x5Bu:
+            case 0x5Cu:
+            case 0x5Du:
+            case 0x5Eu:
+            case 0x5Fu:
+            case 0x60u:
+            case 0x61u:
+            case 0x62u:
+            case 0x63u:
+            case 0x64u:
+            case 0x65u:
+            case 0x66u:
+            case 0x67u:
+            case 0x68u:
+            case 0x6Au:
+            case 0x6Cu:
+            case 0x6Du:
+            case 0x6Eu:
+            case 0x6Fu:
+            case 0x71u:
+            case 0x72u:
+            case 0x73u:
+            case 0x74u:
+            case 0x75u:
+              goto LABEL_42;
+            case 0x69u:
+              </span><span style="color:#8080ff">v21 </span><span style="color:navy">= (</span><span style="color:gray">int</span><span style="color:navy">)(</span><span style="color:#8080ff">v8 </span><span style="color:navy">+ 2);
+              if ( !</span><span style="color:#8080ff">v8</span><span style="color:navy">[2] &amp;&amp; </span><span style="color:#8080ff">v3 &gt; </span><span style="color:navy">2 )
+              {
+                </span><span style="color:#8080ff">v21 </span><span style="color:navy">= (</span><span style="color:gray">int</span><span style="color:navy">)</span><span style="color:#8080ff">v4</span><span style="color:navy">[2];
+                --</span><span style="color:#8080ff">v3</span><span style="color:navy">;
+                ++</span><span style="color:#8080ff">v4</span><span style="color:navy">;
+              </span><span style="background:#8080ff"></span><span style="color:navy">}
+              goto LABEL_45;
+            case 0x6Bu:
+              if ( !</span><span style="color:#8080ff">v7 </span><span style="color:navy">)
+              {
+                </span><span style="color:#8080ff">v12 </span><span style="color:navy">= </span>sub_10D14<span style="color:navy">(&quot;</span><span style="color:green">Sorry, debugger doesn&#039;t support reusing broken connections\n&quot;</span><span style="color:navy">);
+                goto LABEL_62;
+              </span><span style="background:navy"></span><span style="color:navy">}
+              </span><span style="color:#8080ff">v23 </span><span style="color:navy">= *((</span><span style="color:gray">unsigned __int8 *</span><span style="color:navy">)</span><span style="color:#8080ff">v8 </span><span style="color:navy">+ 2);
+              if ( </span><span style="color:#8080ff">v23 </span><span style="color:navy">)
+              {
+                if ( (</span><span style="color:gray">unsigned __int8</span><span style="color:navy">)</span><span style="color:#8080ff">v23 </span><span style="color:navy">!= 107 )
+                  goto LABEL_58;
+                </span>dword_94988 <span style="color:navy">= 2;
+              </span><span style="background:navy"></span><span style="color:navy">}
+              else
+              {
+                </span>dword_94988 <span style="color:navy">= 1;
+              </span><span style="background:navy"></span><span style="color:navy">}
+LABEL_45:
+              if ( --</span><span style="color:#8080ff">v3 &lt;</span><span style="color:navy">= 1 )
+                goto LABEL_14;
+              </span><span style="color:#8080ff">v8 </span><span style="color:navy">= </span><span style="color:#8080ff">v4</span><span style="color:navy">[2];
+              if ( (*</span><span style="color:#8080ff">v8 &amp; </span><span style="color:navy">0xFD) != 45 )
+                goto LABEL_14;
+              ++</span><span style="color:#8080ff">v4</span><span style="color:navy">;
+              break;
+            case 0x70u:
+              </span><span style="color:#8080ff">v22 </span><span style="color:navy">= </span>j_atoi<span style="color:navy">(</span><span style="color:#8080ff">v8 </span><span style="color:navy">+ 2);
+              goto LABEL_45;
+            case 0x76u:
+              </span>byte_949AC <span style="color:navy">= 1;
+              </span>debug <span style="color:navy">= 0x10000;
+              goto LABEL_45;
+          </span><span style="background:navy"></span><span style="color:navy">}
+        </span><span style="background:blue"></span><span style="color:navy">}
+      </span><span style="background:blue"></span><span style="color:navy">}
+      </span><span style="color:#8080ff">v22 </span><span style="color:navy">= 23946;
+    </span><span style="background:navy"></span><span style="color:navy">}
+    else
+    {
+      </span><span style="color:#8080ff">v21 </span><span style="color:navy">= 0;
+      </span><span style="color:#8080ff">v22 </span><span style="color:navy">= 23946;
+    </span><span style="background:navy"></span><span style="color:navy">}
+LABEL_14:
+    </span>j_bsd_signal<span style="color:navy">(1, </span>sub_10B9C<span style="color:navy">);
+    </span>j_bsd_signal<span style="color:navy">(2, </span>sub_10B9C<span style="color:navy">);
+    </span>j_bsd_signal<span style="color:navy">(15, </span>sub_10B9C<span style="color:navy">);
+    </span><span style="color:#8080ff">v9 </span><span style="color:navy">= </span>j_bsd_signal<span style="color:navy">(11, </span>sub_10B9C<span style="color:navy">);
+    if ( !</span>sub_3C95C<span style="color:navy">(</span><span style="color:#8080ff">v9</span><span style="color:navy">) )
+      </span>sub_10B5C<span style="color:navy">(0, &quot;</span><span style="color:green">init_sockets&quot;</span><span style="color:navy">);
+    </span><span style="color:#8080ff">v7 </span><span style="color:navy">= </span>j_socket<span style="color:navy">(2, 1, 0);
+    </span>dword_94004 <span style="color:navy">= </span><span style="color:#8080ff">v7</span><span style="color:navy">;
+    if ( </span><span style="color:#8080ff">v7 </span><span style="color:navy">== -1 )
+      </span>sub_10B5C<span style="color:navy">(0, &quot;</span><span style="color:green">socket&quot;</span><span style="color:navy">);
+    ((</span><span style="color:gray">void (*)(void)</span><span style="color:navy">)</span>loc_3CAFC<span style="color:navy">)();
+    </span><span style="color:#8080ff">v4 </span><span style="color:navy">= (</span><span style="color:gray">const char **</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v45</span><span style="color:navy">;
+    </span>j_memset<span style="color:navy">(&amp;</span><span style="color:#8080ff">v45</span><span style="color:navy">, 0, 0x10u);
+    *(</span><span style="color:gray">_WORD *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v45 </span><span style="color:navy">= 2;
+    </span><span style="color:#8080ff">v46 </span><span style="color:navy">= ((</span><span style="color:gray">unsigned int</span><span style="color:navy">)(</span><span style="color:#8080ff">v22 &lt;&lt; </span><span style="color:navy">16) &gt;&gt; 24) | ((</span><span style="color:gray">_WORD</span><span style="color:navy">)</span><span style="color:#8080ff">v22 &lt;&lt; </span><span style="color:navy">8);
+    if ( </span><span style="color:#8080ff">v21 &amp;&amp; </span><span style="color:navy">!</span>qhost2addr_<span style="color:navy">(&amp;</span><span style="color:#8080ff">v45</span><span style="color:navy">, </span><span style="color:#8080ff">v21</span><span style="color:navy">) )
+    {
+      </span>sub_14A90<span style="color:navy">(&quot;</span><span style="color:green">Cannot parse IP v4 address \&quot;%s\&quot;, falling back to INADDR_ANY\n&quot;</span><span style="color:navy">, </span><span style="color:#8080ff">v21</span><span style="color:navy">);
+      </span><span style="color:#8080ff">v47 </span><span style="color:navy">= 0;
+    </span><span style="background:navy"></span><span style="color:navy">}
+    if ( </span>j_bind<span style="color:navy">(</span>dword_94004<span style="color:navy">, (</span><span style="color:gray">const struct sockaddr *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v45</span><span style="color:navy">, 16) == -1 )
+      </span>sub_10B5C<span style="color:navy">(</span><span style="color:#8080ff">v7</span><span style="color:navy">, &quot;</span><span style="color:green">bind&quot;</span><span style="color:navy">);
+    if ( </span>j_listen<span style="color:navy">(</span>dword_94004<span style="color:navy">, 128) == -1 )
+      </span>sub_10B5C<span style="color:navy">(</span><span style="color:#8080ff">v7</span><span style="color:navy">, &quot;</span><span style="color:green">listen&quot;</span><span style="color:navy">);
+    </span><span style="color:#8080ff">v39 </span><span style="color:navy">= 0;
+    </span><span style="color:#8080ff">v40 </span><span style="color:navy">= 0;
+    </span><span style="color:#8080ff">v38 </span><span style="color:navy">= 0;
+    </span>sub_10460<span style="color:navy">(&amp;</span><span style="color:#8080ff">v41</span><span style="color:navy">, &amp;</span><span style="color:#8080ff">v45</span><span style="color:navy">);
+    if ( !</span>qhost2addr_<span style="color:navy">(&amp;</span><span style="color:#8080ff">v48</span><span style="color:navy">, &amp;</span>unk_7FFF2<span style="color:navy">) )
+      goto LABEL_23;
+    </span>sub_10460<span style="color:navy">(&amp;</span><span style="color:#8080ff">v43</span><span style="color:navy">, &amp;</span><span style="color:#8080ff">v48</span><span style="color:navy">);
+    </span><span style="color:#8080ff">v25 </span><span style="color:navy">= </span><span style="color:#8080ff">v44</span><span style="color:navy">;
+    if ( </span><span style="color:#8080ff">v44 &amp;&amp; </span><span style="color:navy">(</span><span style="color:#8080ff">v26 </span><span style="color:navy">= </span><span style="color:#8080ff">v44 </span><span style="color:navy">- 1, </span><span style="color:#8080ff">v44 </span><span style="color:navy">!= 1) )
+    {
+      if ( </span><span style="color:#8080ff">v44 &gt; v39 </span><span style="color:navy">)
+      {
+        if ( </span><span style="color:#8080ff">v44 &gt; v40 </span><span style="color:navy">)
+          </span><span style="color:#8080ff">v38 </span><span style="color:navy">= (</span><span style="color:gray">char *</span><span style="color:navy">)</span>qvector_reserve<span style="color:navy">(&amp;</span><span style="color:#8080ff">v38</span><span style="color:navy">, </span><span style="color:#8080ff">v38</span><span style="color:navy">, </span><span style="color:#8080ff">v44</span><span style="color:navy">, 1);
+        </span>j_memset<span style="color:navy">(&amp;</span><span style="color:#8080ff">v38</span><span style="color:navy">[</span><span style="color:#8080ff">v39</span><span style="color:navy">], 0, </span><span style="color:#8080ff">v25 </span><span style="color:navy">- </span><span style="color:#8080ff">v39</span><span style="color:navy">);
+      </span><span style="background:navy"></span><span style="color:navy">}
+      </span><span style="color:#8080ff">v39 </span><span style="color:navy">= </span><span style="color:#8080ff">v25</span><span style="color:navy">;
+      </span>j_memmove<span style="color:navy">(</span><span style="color:#8080ff">v38</span><span style="color:navy">, (</span><span style="color:gray">const void *</span><span style="color:navy">)</span><span style="color:#8080ff">v43</span><span style="color:navy">, </span><span style="color:#8080ff">v25 </span><span style="color:navy">- 1);
+      </span><span style="color:#8080ff">v38</span><span style="color:navy">[</span><span style="color:#8080ff">v26</span><span style="color:navy">] = 0;
+    </span><span style="background:navy"></span><span style="color:navy">}
+    else
+    {
+      </span><span style="color:#8080ff">v39 </span><span style="color:navy">= 0;
+    </span><span style="background:navy"></span><span style="color:navy">}
+    </span>qfree<span style="color:navy">(</span><span style="color:#8080ff">v43</span><span style="color:navy">);
+    </span><span style="color:#8080ff">v10 </span><span style="color:navy">= </span><span style="color:#8080ff">v42</span><span style="color:navy">;
+    if ( </span><span style="color:#8080ff">v42 </span><span style="color:navy">)
+      </span><span style="color:#8080ff">v27 </span><span style="color:navy">= </span><span style="color:#8080ff">v41</span><span style="color:navy">;
+    else
+      </span><span style="color:#8080ff">v27 </span><span style="color:navy">= &amp;</span>byte_7FFE4<span style="color:navy">;
+    </span><span style="color:#8080ff">v11 </span><span style="color:navy">= </span><span style="color:#8080ff">v39</span><span style="color:navy">;
+    if ( </span><span style="color:#8080ff">v39 </span><span style="color:navy">)
+      </span><span style="color:#8080ff">v28 </span><span style="color:navy">= </span><span style="color:#8080ff">v38</span><span style="color:navy">;
+    else
+      </span><span style="color:#8080ff">v28 </span><span style="color:navy">= &amp;</span>byte_7FFE4<span style="color:navy">;
+    if ( !</span>j_strcmp<span style="color:navy">(</span><span style="color:#8080ff">v27</span><span style="color:navy">, </span><span style="color:#8080ff">v28</span><span style="color:navy">) )
+    {
+      if ( !</span><span style="color:#8080ff">v38 </span><span style="color:navy">)
+        goto LABEL_24;
+      </span><span style="color:#8080ff">v39 </span><span style="color:navy">= 0;
+      </span>qfree<span style="color:navy">(</span><span style="color:#8080ff">v38</span><span style="color:navy">);
+      </span><span style="color:#8080ff">v38 </span><span style="color:navy">= 0;
+      </span><span style="color:#8080ff">v40 </span><span style="color:navy">= 0;
+LABEL_23:
+      </span><span style="color:#8080ff">v10 </span><span style="color:navy">= </span><span style="color:#8080ff">v42</span><span style="color:navy">;
+      </span><span style="color:#8080ff">v11 </span><span style="color:navy">= </span><span style="color:#8080ff">v39</span><span style="color:navy">;
+LABEL_24:
+      if ( </span><span style="color:#8080ff">v10 </span><span style="color:navy">)
+        </span><span style="color:#8080ff">v24 </span><span style="color:navy">= </span><span style="color:#8080ff">v41</span><span style="color:navy">;
+      else
+        </span><span style="color:#8080ff">v24 </span><span style="color:navy">= &amp;</span>byte_7FFE4<span style="color:navy">;
+      if ( </span><span style="color:#8080ff">v11 </span><span style="color:navy">)
+        </span><span style="color:#8080ff">v32 </span><span style="color:navy">= </span><span style="color:#8080ff">v38</span><span style="color:navy">;
+      else
+        </span><span style="color:#8080ff">v32 </span><span style="color:navy">= &amp;</span>byte_7FFE4<span style="color:navy">;
+      </span>sub_14A90<span style="color:navy">(&quot;</span><span style="color:green">Listening on %s:%u%s...\n&quot;</span><span style="color:navy">, </span><span style="color:#8080ff">v24</span><span style="color:navy">, </span><span style="color:#8080ff">v22</span><span style="color:navy">, </span><span style="color:#8080ff">v32</span><span style="color:navy">);
+      </span><span style="color:#8080ff">v20 </span><span style="color:navy">= &amp;</span><span style="color:#8080ff">v43</span><span style="color:navy">;
+      </span><span style="color:#8080ff">v22 </span><span style="color:navy">= 16;
+      while ( 1 )
+      {
+        while ( 1 )
+        {
+          </span><span style="color:#8080ff">v43 </span><span style="color:navy">= </span><span style="color:#8080ff">v22</span><span style="color:navy">;
+          </span><span style="color:#8080ff">v12 </span><span style="color:navy">= </span>j_accept<span style="color:navy">(</span>dword_94004<span style="color:navy">, (</span><span style="color:gray">struct sockaddr *</span><span style="color:navy">)</span><span style="color:#8080ff">v4</span><span style="color:navy">, </span><span style="color:#8080ff">v20</span><span style="color:navy">);
+          </span><span style="color:#8080ff">v13 </span><span style="color:navy">= </span><span style="color:#8080ff">v12 </span><span style="color:navy">+ 1;
+          if ( </span><span style="color:#8080ff">v12 </span><span style="color:navy">== -1 )
+            break;
+          </span>j_fcntl<span style="color:navy">();
+          </span><span style="color:#8080ff">v14 </span><span style="color:navy">= </span>operator new<span style="color:navy">(0x89Cu);
+          </span>sub_141EC<span style="color:navy">();
+          *(</span><span style="color:gray">_DWORD *</span><span style="color:navy">)</span><span style="color:#8080ff">v14 </span><span style="color:navy">= &amp;</span>unk_92BE8<span style="color:navy">;
+          *(</span><span style="color:gray">_DWORD *</span><span style="color:navy">)(</span><span style="color:#8080ff">v14 </span><span style="color:navy">+ 24) = 0;
+          *(</span><span style="color:gray">_DWORD *</span><span style="color:navy">)(</span><span style="color:#8080ff">v14 </span><span style="color:navy">+ 1080) = 0;
+          *(</span><span style="color:gray">_DWORD *</span><span style="color:navy">)(</span><span style="color:#8080ff">v14 </span><span style="color:navy">+ 2136) = 0;
+          </span>j_memset<span style="color:navy">((</span><span style="color:gray">void *</span><span style="color:navy">)(</span><span style="color:#8080ff">v14 </span><span style="color:navy">+ 24), 0, 0x420u);
+          </span><span style="color:#8080ff">v15 </span><span style="color:navy">= </span>sub_15150<span style="color:navy">(</span><span style="color:#8080ff">v14</span><span style="color:navy">);
+          *(</span><span style="color:gray">_DWORD *</span><span style="color:navy">)(</span><span style="color:#8080ff">v14 </span><span style="color:navy">+ 20) = </span>sub_10CB0<span style="color:navy">;
+          *(</span><span style="color:gray">_BYTE *</span><span style="color:navy">)(</span><span style="color:#8080ff">v14 </span><span style="color:navy">+ 16) = </span>byte_949AC<span style="color:navy">;
+          </span><span style="color:#8080ff">v16 </span><span style="color:navy">= </span>sub_22874<span style="color:navy">(</span><span style="color:#8080ff">v15</span><span style="color:navy">);
+          </span>sub_1510C<span style="color:navy">(</span><span style="color:#8080ff">v14</span><span style="color:navy">, </span><span style="color:#8080ff">v16</span><span style="color:navy">);
+          </span><span style="color:#8080ff">v17 </span><span style="color:navy">= (</span><span style="color:gray">int *</span><span style="color:navy">)</span>dword_94994<span style="color:navy">;
+          </span><span style="color:#8080ff">v18 </span><span style="color:navy">= &amp;</span>dword_94990<span style="color:navy">;
+          if ( !</span>dword_94994 <span style="color:navy">)
+            goto LABEL_94;
+          do
+          {
+            while ( </span><span style="color:#8080ff">v14 &lt;</span><span style="color:navy">= </span><span style="color:#8080ff">v17</span><span style="color:navy">[4] )
+            {
+              </span><span style="color:#8080ff">v18 </span><span style="color:navy">= </span><span style="color:#8080ff">v17</span><span style="color:navy">;
+              </span><span style="color:#8080ff">v17 </span><span style="color:navy">= (</span><span style="color:gray">int *</span><span style="color:navy">)</span><span style="color:#8080ff">v17</span><span style="color:navy">[2];
+              if ( !</span><span style="color:#8080ff">v17 </span><span style="color:navy">)
+                goto LABEL_37;
+            </span><span style="background:navy"></span><span style="color:navy">}
+            </span><span style="color:#8080ff">v17 </span><span style="color:navy">= (</span><span style="color:gray">int *</span><span style="color:navy">)</span><span style="color:#8080ff">v17</span><span style="color:navy">[3];
+          </span><span style="background:navy"></span><span style="color:navy">}
+          while ( </span><span style="color:#8080ff">v17 </span><span style="color:navy">);
+LABEL_37:
+          if ( </span><span style="color:#8080ff">v18 </span><span style="color:navy">== &amp;</span>dword_94990 <span style="color:navy">)
+            goto LABEL_94;
+          if ( </span><span style="color:#8080ff">v14 &lt; v18</span><span style="color:navy">[4] )
+          {
+LABEL_94:
+            </span><span style="color:#8080ff">v33 </span><span style="color:navy">= </span><span style="color:#8080ff">v14</span><span style="color:navy">;
+            </span><span style="color:#8080ff">v34 </span><span style="color:navy">= 0;
+            </span><span style="color:#8080ff">v18 </span><span style="color:navy">= (</span><span style="color:gray">int *</span><span style="color:navy">)</span>sub_10EF4<span style="color:navy">(&amp;</span>unk_9498C<span style="color:navy">, </span><span style="color:#8080ff">v18</span><span style="color:navy">);
+          </span><span style="background:navy"></span><span style="color:navy">}
+          *((</span><span style="color:gray">_BYTE *</span><span style="color:navy">)</span><span style="color:#8080ff">v18 </span><span style="color:navy">+ 20) = 1;
+          </span>dword_949A8 <span style="color:navy">= </span><span style="color:#8080ff">v14</span><span style="color:navy">;
+          </span>sub_104F8<span style="color:navy">(</span><span style="color:#8080ff">v14</span><span style="color:navy">);
+        </span><span style="background:navy"></span><span style="color:navy">}
+LABEL_62:
+        if ( *(</span><span style="color:gray">_DWORD *</span><span style="color:navy">)</span>j___errno<span style="color:navy">(</span><span style="color:#8080ff">v12</span><span style="color:navy">, </span><span style="color:#8080ff">v13</span><span style="color:navy">) != 4 )
+          </span>sub_10B5C<span style="color:navy">(</span><span style="color:#8080ff">v7</span><span style="color:navy">, &quot;</span><span style="color:green">accept&quot;</span><span style="color:navy">);
+      </span><span style="background:navy"></span><span style="color:navy">}
+    </span><span style="background:blue"></span><span style="color:navy">}
+    </span>sub_10D28<span style="color:navy">(&amp;</span><span style="color:#8080ff">v38</span><span style="color:navy">, 0, &quot; </span><span style="color:green">(my ip &quot;</span><span style="color:navy">);
+    </span><span style="color:#8080ff">v29 </span><span style="color:navy">= </span><span style="color:#8080ff">v39</span><span style="color:navy">;
+    if ( </span><span style="color:#8080ff">v39 </span><span style="color:navy">)
+    {
+      </span><span style="color:#8080ff">v30 </span><span style="color:navy">= </span><span style="color:#8080ff">v39 </span><span style="color:navy">+ 1;
+      </span><span style="color:#8080ff">v31 </span><span style="color:navy">= </span><span style="color:#8080ff">v39 </span><span style="color:navy">- 1;
+      if ( </span><span style="color:#8080ff">v39 &gt;</span><span style="color:navy">= </span><span style="color:#8080ff">v39 </span><span style="color:navy">+ 1 )
+      {
+LABEL_85:
+        </span><span style="color:#8080ff">v39 </span><span style="color:navy">= </span><span style="color:#8080ff">v30</span><span style="color:navy">;
+        </span><span style="color:#8080ff">v38</span><span style="color:navy">[</span><span style="color:#8080ff">v29</span><span style="color:navy">] = 0;
+        </span><span style="color:#8080ff">v38</span><span style="color:navy">[</span><span style="color:#8080ff">v31</span><span style="color:navy">] = 41;
+        </span><span style="color:#8080ff">v10 </span><span style="color:navy">= </span><span style="color:#8080ff">v42</span><span style="color:navy">;
+        </span><span style="color:#8080ff">v11 </span><span style="color:navy">= </span><span style="color:#8080ff">v39</span><span style="color:navy">;
+        goto LABEL_24;
+      </span><span style="background:navy"></span><span style="color:navy">}
+    </span><span style="background:blue"></span><span style="color:navy">}
+    else
+    {
+      </span><span style="color:#8080ff">v30 </span><span style="color:navy">= 2;
+      </span><span style="color:#8080ff">v29 </span><span style="color:navy">= 1;
+      </span><span style="color:#8080ff">v31 </span><span style="color:navy">= 0;
+    </span><span style="background:navy"></span><span style="color:navy">}
+    if ( </span><span style="color:#8080ff">v40 &lt; v30 </span><span style="color:navy">)
+      </span><span style="color:#8080ff">v38 </span><span style="color:navy">= (</span><span style="color:gray">char *</span><span style="color:navy">)</span>qvector_reserve<span style="color:navy">(&amp;</span><span style="color:#8080ff">v38</span><span style="color:navy">, </span><span style="color:#8080ff">v38</span><span style="color:navy">, </span><span style="color:#8080ff">v30</span><span style="color:navy">, 1);
+    </span>j_memset<span style="color:navy">(&amp;</span><span style="color:#8080ff">v38</span><span style="color:navy">[</span><span style="color:#8080ff">v39</span><span style="color:navy">], 0, </span><span style="color:#8080ff">v30 </span><span style="color:navy">- </span><span style="color:#8080ff">v39</span><span style="color:navy">);
+    goto LABEL_85;
+  </span><span style="background:navy"></span><span style="color:navy">}
+  </span>sub_14A90<span style="color:navy">(&quot;</span><span style="color:green">Could not initialize subsystem!&quot;</span><span style="color:navy">);
+  </span><span style="color:#8080ff">result </span><span style="color:navy">= -1;
+  if ( </span><span style="color:#8080ff">v49 </span><span style="color:navy">!= </span><span style="color:#ff00ff">_stack_chk_guard </span><span style="color:navy">)
+LABEL_58:
+    </span>sub_10AC8<span style="color:navy">(</span><span style="color:#8080ff">result</span><span style="color:navy">);
+  return </span><span style="color:#8080ff">result</span><span style="color:navy">;
+</span><span style="background:#8080ff"></span><span style="color:navy">}
+</span></body></html>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.appleos.xyz/uploads/codes/android_server_nonpie_main.html" data-id="cl3j4iur6000k49je6jeveyzs" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/hexo/">hexo</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows/">Windows</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows/%E7%AC%94%E8%AE%B0/">笔记</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/macOS/">macOS</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/macOS/%E7%AC%94%E8%AE%B0/">笔记</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B-Reverse-Engineering/">逆向工程(Reverse Engineering)</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B-Reverse-Engineering/%E6%B3%A8%E5%86%8C%E6%9C%BA-KeyGen/">注册机(KeyGen)</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B-Reverse-Engineering/%E7%A0%B4%E8%A7%A3-Crack/">破解(Crack)</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Net/" rel="tag">.Net</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Net-Core/" rel="tag">.Net Core</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/23946/" rel="tag">23946</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/46003/" rel="tag">46003</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AES%E9%AB%98%E7%BA%A7%E5%8A%A0%E5%AF%86%E6%A0%87%E5%87%86/" rel="tag">AES高级加密标准</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Armadillo/" rel="tag">Armadillo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C#</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/" rel="tag">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CodeMap/" rel="tag">CodeMap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CodeMap%E6%B3%A8%E5%86%8C%E7%A0%81/" rel="tag">CodeMap注册码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CodeMap%E8%AE%B8%E5%8F%AF%E8%AF%81/" rel="tag">CodeMap许可证</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Comment-Extender/" rel="tag">Comment Extender</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Crack/" rel="tag">Crack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DEKE-TV/" rel="tag">DEKE TV</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECC/" rel="tag">ECC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECDSA/" rel="tag">ECDSA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECDSA%E7%A7%81%E9%92%A5/" rel="tag">ECDSA私钥</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Editor-View-Enhancer/" rel="tag">Editor View Enhancer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDA%E8%B0%83%E8%AF%95/" rel="tag">IDA调试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JetBrains-decompiler/" rel="tag">JetBrains decompiler</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Key/" rel="tag">Key</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KeyGen/" rel="tag">KeyGen</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KeyMaker/" rel="tag">KeyMaker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/License/" rel="tag">License</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Loader/" rel="tag">Loader</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MacOS/" rel="tag">MacOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Packet-Capture/" rel="tag">Packet Capture</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reflector/" rel="tag">Reflector</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ribbon/" rel="tag">Ribbon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Rijndael%E7%AE%97%E6%B3%95/" rel="tag">Rijndael算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SoftwarePassport/" rel="tag">SoftwarePassport</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Supercharger/" rel="tag">Supercharger</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Supercharger%E6%B3%A8%E5%86%8C%E7%A0%81/" rel="tag">Supercharger注册码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Supercharger%E8%AE%B8%E5%8F%AF%E8%AF%81/" rel="tag">Supercharger许可证</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/" rel="tag">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unix/" rel="tag">Unix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VS10X/" rel="tag">VS10X</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VisualStudio%E6%8F%92%E4%BB%B6/" rel="tag">VisualStudio插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android-killer/" rel="tag">android killer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android-server/" rel="tag">android_server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android%E8%B0%83%E8%AF%95/" rel="tag">android调试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apk%E8%B0%83%E8%AF%95/" rel="tag">apk调试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/authorized-keys/" rel="tag">authorized_keys</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/axtools%E6%B3%A8%E5%86%8C%E7%A0%81/" rel="tag">axtools注册码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/base64/" rel="tag">base64</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dnSpy/" rel="tag">dnSpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dotPeek/" rel="tag">dotPeek</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/egame/" rel="tag">egame</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jadx/" rel="tag">jadx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javassist/" rel="tag">javassist</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsp/" rel="tag">jsp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ln/" rel="tag">ln</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logcat/" rel="tag">logcat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/macOS/" rel="tag">macOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/native/" rel="tag">native</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/netsh/" rel="tag">netsh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nonpie/" rel="tag">nonpie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/patch%E5%85%AC%E9%92%A5/" rel="tag">patch公钥</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pbcopy/" rel="tag">pbcopy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/printf/" rel="tag">printf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/printfcolor/" rel="tag">printfcolor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/" rel="tag">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/signatures/" rel="tag">signatures</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/smali/" rel="tag">smali</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/smspay/" rel="tag">smspay</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/so%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81/" rel="tag">so签名验证</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/so%E8%B0%83%E8%AF%95/" rel="tag">so调试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/youdao1/" rel="tag">youdao1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A8%E5%B9%B3%E5%8F%B0/" rel="tag">全平台</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%85%E8%B4%AD/" rel="tag">内购</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8E%BB%E5%B9%BF%E5%91%8A/" rel="tag">去广告</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8E%BB%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81/" rel="tag">去签名验证</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%91%BD%E4%BB%A4%E8%AE%BE%E7%BD%AEIP%E5%92%8CDNS/" rel="tag">命令设置IP和DNS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%81%E5%8C%85/" rel="tag">封包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%93%E5%8C%85/" rel="tag">抓包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A0-root-%E6%8A%93%E5%8C%85/" rel="tag">无 root 抓包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF%E7%AE%97%E6%B3%95/" rel="tag">椭圆曲线算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B3%A8%E5%86%8C%E6%9C%BA/" rel="tag">注册机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B3%A8%E5%86%8C%E7%A0%81/" rel="tag">注册码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BA%90%E7%A0%81-source/" rel="tag">源码(source)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A0%B4%E8%A7%A3-Crack/" rel="tag">破解(Crack)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A9%BF%E5%B1%B1%E7%94%B2%E5%A3%B3/" rel="tag">穿山甲壳</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A9%BF%E5%B1%B1%E7%94%B2%E8%BD%AF%E4%BB%B6%E4%BF%9D%E6%8A%A4%E7%B3%BB%E7%BB%9F/" rel="tag">穿山甲软件保护系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81/" rel="tag">签名验证</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%B6%E5%B8%A6/" rel="tag">绶带</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%B8%E5%8F%AF%E8%AF%81/" rel="tag">许可证</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/" rel="tag">远程登录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B-Reverse-Engineering/" rel="tag">逆向工程(Reverse Engineering)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Net/" style="font-size: 10px;">.Net</a> <a href="/tags/Net-Core/" style="font-size: 10px;">.Net Core</a> <a href="/tags/23946/" style="font-size: 10px;">23946</a> <a href="/tags/46003/" style="font-size: 10px;">46003</a> <a href="/tags/AES%E9%AB%98%E7%BA%A7%E5%8A%A0%E5%AF%86%E6%A0%87%E5%87%86/" style="font-size: 10px;">AES高级加密标准</a> <a href="/tags/Armadillo/" style="font-size: 10px;">Armadillo</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/C/" style="font-size: 10px;">C#</a> <a href="/tags/Charles/" style="font-size: 10px;">Charles</a> <a href="/tags/CodeMap/" style="font-size: 10px;">CodeMap</a> <a href="/tags/CodeMap%E6%B3%A8%E5%86%8C%E7%A0%81/" style="font-size: 10px;">CodeMap注册码</a> <a href="/tags/CodeMap%E8%AE%B8%E5%8F%AF%E8%AF%81/" style="font-size: 10px;">CodeMap许可证</a> <a href="/tags/Comment-Extender/" style="font-size: 10px;">Comment Extender</a> <a href="/tags/Crack/" style="font-size: 18px;">Crack</a> <a href="/tags/DEKE-TV/" style="font-size: 10px;">DEKE TV</a> <a href="/tags/ECC/" style="font-size: 10px;">ECC</a> <a href="/tags/ECDSA/" style="font-size: 10px;">ECDSA</a> <a href="/tags/ECDSA%E7%A7%81%E9%92%A5/" style="font-size: 10px;">ECDSA私钥</a> <a href="/tags/Editor-View-Enhancer/" style="font-size: 10px;">Editor View Enhancer</a> <a href="/tags/IDA%E8%B0%83%E8%AF%95/" style="font-size: 10px;">IDA调试</a> <a href="/tags/Java/" style="font-size: 12px;">Java</a> <a href="/tags/JetBrains-decompiler/" style="font-size: 10px;">JetBrains decompiler</a> <a href="/tags/Key/" style="font-size: 12px;">Key</a> <a href="/tags/KeyGen/" style="font-size: 12px;">KeyGen</a> <a href="/tags/KeyMaker/" style="font-size: 12px;">KeyMaker</a> <a href="/tags/License/" style="font-size: 12px;">License</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Loader/" style="font-size: 10px;">Loader</a> <a href="/tags/MacOS/" style="font-size: 10px;">MacOS</a> <a href="/tags/Packet-Capture/" style="font-size: 10px;">Packet Capture</a> <a href="/tags/Reflector/" style="font-size: 10px;">Reflector</a> <a href="/tags/Ribbon/" style="font-size: 10px;">Ribbon</a> <a href="/tags/Rijndael%E7%AE%97%E6%B3%95/" style="font-size: 10px;">Rijndael算法</a> <a href="/tags/SoftwarePassport/" style="font-size: 10px;">SoftwarePassport</a> <a href="/tags/Supercharger/" style="font-size: 10px;">Supercharger</a> <a href="/tags/Supercharger%E6%B3%A8%E5%86%8C%E7%A0%81/" style="font-size: 10px;">Supercharger注册码</a> <a href="/tags/Supercharger%E8%AE%B8%E5%8F%AF%E8%AF%81/" style="font-size: 10px;">Supercharger许可证</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/Unix/" style="font-size: 10px;">Unix</a> <a href="/tags/VS10X/" style="font-size: 10px;">VS10X</a> <a href="/tags/VisualStudio%E6%8F%92%E4%BB%B6/" style="font-size: 10px;">VisualStudio插件</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/android/" style="font-size: 16px;">android</a> <a href="/tags/android-killer/" style="font-size: 14px;">android killer</a> <a href="/tags/android-server/" style="font-size: 10px;">android_server</a> <a href="/tags/android%E8%B0%83%E8%AF%95/" style="font-size: 10px;">android调试</a> <a href="/tags/apk%E8%B0%83%E8%AF%95/" style="font-size: 10px;">apk调试</a> <a href="/tags/authorized-keys/" style="font-size: 10px;">authorized_keys</a> <a href="/tags/axtools%E6%B3%A8%E5%86%8C%E7%A0%81/" style="font-size: 10px;">axtools注册码</a> <a href="/tags/base64/" style="font-size: 10px;">base64</a> <a href="/tags/dnSpy/" style="font-size: 10px;">dnSpy</a> <a href="/tags/dotPeek/" style="font-size: 10px;">dotPeek</a> <a href="/tags/egame/" style="font-size: 10px;">egame</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jadx/" style="font-size: 14px;">jadx</a> <a href="/tags/java/" style="font-size: 14px;">java</a> <a href="/tags/javassist/" style="font-size: 10px;">javassist</a> <a href="/tags/jsp/" style="font-size: 10px;">jsp</a> <a href="/tags/ln/" style="font-size: 10px;">ln</a> <a href="/tags/logcat/" style="font-size: 10px;">logcat</a> <a href="/tags/macOS/" style="font-size: 10px;">macOS</a> <a href="/tags/native/" style="font-size: 10px;">native</a> <a href="/tags/netsh/" style="font-size: 10px;">netsh</a> <a href="/tags/nonpie/" style="font-size: 10px;">nonpie</a> <a href="/tags/patch%E5%85%AC%E9%92%A5/" style="font-size: 10px;">patch公钥</a> <a href="/tags/pbcopy/" style="font-size: 10px;">pbcopy</a> <a href="/tags/printf/" style="font-size: 10px;">printf</a> <a href="/tags/printfcolor/" style="font-size: 10px;">printfcolor</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/signatures/" style="font-size: 10px;">signatures</a> <a href="/tags/smali/" style="font-size: 14px;">smali</a> <a href="/tags/smspay/" style="font-size: 10px;">smspay</a> <a href="/tags/so%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81/" style="font-size: 10px;">so签名验证</a> <a href="/tags/so%E8%B0%83%E8%AF%95/" style="font-size: 10px;">so调试</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/youdao1/" style="font-size: 10px;">youdao1</a> <a href="/tags/%E5%85%A8%E5%B9%B3%E5%8F%B0/" style="font-size: 10px;">全平台</a> <a href="/tags/%E5%86%85%E8%B4%AD/" style="font-size: 14px;">内购</a> <a href="/tags/%E5%8E%BB%E5%B9%BF%E5%91%8A/" style="font-size: 10px;">去广告</a> <a href="/tags/%E5%8E%BB%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81/" style="font-size: 10px;">去签名验证</a> <a href="/tags/%E5%91%BD%E4%BB%A4%E8%AE%BE%E7%BD%AEIP%E5%92%8CDNS/" style="font-size: 10px;">命令设置IP和DNS</a> <a href="/tags/%E5%B0%81%E5%8C%85/" style="font-size: 10px;">封包</a> <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 10px;">抓包</a> <a href="/tags/%E6%97%A0-root-%E6%8A%93%E5%8C%85/" style="font-size: 10px;">无 root 抓包</a> <a href="/tags/%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF%E7%AE%97%E6%B3%95/" style="font-size: 10px;">椭圆曲线算法</a> <a href="/tags/%E6%B3%A8%E5%86%8C%E6%9C%BA/" style="font-size: 10px;">注册机</a> <a href="/tags/%E6%B3%A8%E5%86%8C%E7%A0%81/" style="font-size: 10px;">注册码</a> <a href="/tags/%E6%BA%90%E7%A0%81-source/" style="font-size: 10px;">源码(source)</a> <a href="/tags/%E7%A0%B4%E8%A7%A3-Crack/" style="font-size: 20px;">破解(Crack)</a> <a href="/tags/%E7%A9%BF%E5%B1%B1%E7%94%B2%E5%A3%B3/" style="font-size: 10px;">穿山甲壳</a> <a href="/tags/%E7%A9%BF%E5%B1%B1%E7%94%B2%E8%BD%AF%E4%BB%B6%E4%BF%9D%E6%8A%A4%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">穿山甲软件保护系统</a> <a href="/tags/%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81/" style="font-size: 10px;">签名验证</a> <a href="/tags/%E7%BB%B6%E5%B8%A6/" style="font-size: 10px;">绶带</a> <a href="/tags/%E8%AE%B8%E5%8F%AF%E8%AF%81/" style="font-size: 10px;">许可证</a> <a href="/tags/%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/" style="font-size: 10px;">远程登录</a> <a href="/tags/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B-Reverse-Engineering/" style="font-size: 20px;">逆向工程(Reverse Engineering)</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 16px;">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/06/01/%E7%A9%BF%E5%B1%B1%E7%94%B2%E8%BD%AF%E4%BB%B6%E4%BF%9D%E6%8A%A4%E7%B3%BB%E7%BB%9FSoftwarePassport%20Armadillo%20KeyGen/">穿山甲软件保护系统SoftwarePassport Armadillo KeyGen</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/04/Supercharger(VisualStudio%E6%8F%92%E4%BB%B6)AES%E9%AB%98%E7%BA%A7%E5%8A%A0%E5%AF%86%E6%A0%87%E5%87%86(Rijndael%E7%AE%97%E6%B3%95)%E6%B3%A8%E5%86%8C%E6%9C%BAKeyMaker/">Supercharger(VisualStudio插件)AES高级加密标准(Rijndael算法)注册机KeyMaker</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/25/%E4%BF%AE%E6%94%B9android_server%E9%BB%98%E8%AE%A4%E8%B0%83%E8%AF%95%E7%AB%AF%E5%8F%A3%E5%8F%B7%E5%8F%8D%E8%B0%83%E8%AF%95/">修改android_server默认调试端口号反调试</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/26/%E7%81%AB%E6%9F%B4%E4%BA%BA%E8%81%94%E7%9B%9F%E5%8E%BB%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81%E5%8E%BB%E5%B9%BF%E5%91%8AAndroid%E5%86%85%E8%B4%AD%E7%A0%B4%E8%A7%A3/">火柴人联盟去签名验证去广告Android内购破解</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/24/%E9%A5%A5%E9%A5%BF%E9%B2%A8%EF%BC%9A%E8%BF%9B%E5%8C%96%E5%8E%BBso%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81Android%E5%86%85%E8%B4%AD%E7%A0%B4%E8%A7%A3/">饥饿鲨：进化去so签名验证Android内购破解</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 YoungDone(B.S.)<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

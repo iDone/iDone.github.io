@@ -1,0 +1,594 @@
+010Editor v8.0
+
+B.S.
+13AA-A2AC-B7AC-9203-6E39
+
+
+原始
+
+00007FF692BB5F10 | 48 89 5C 24 08           | mov qword ptr ss:[rsp+8],rbx            | rbx:EntryPoint
+00007FF692BB5F15 | 57                       | push rdi                                |
+00007FF692BB5F16 | 48 83 EC 20              | sub rsp,20                              |
+00007FF692BB5F1A | 83 79 3C 00              | cmp dword ptr ds:[rcx+3C],0             |
+00007FF692BB5F1E | 8B FA                    | mov edi,edx                             |
+00007FF692BB5F20 | 48 8B D9                 | mov rbx,rcx                             | rbx:EntryPoint
+00007FF692BB5F23 | 74 10                    | je 010editor-orign.7FF692BB5F35         |
+00007FF692BB5F25 | B8 13 01 00 00           | mov eax,113                             |
+00007FF692BB5F2A | 48 8B 5C 24 30           | mov rbx,qword ptr ss:[rsp+30]           | rbx:EntryPoint
+00007FF692BB5F2F | 48 83 C4 20              | add rsp,20                              |
+00007FF692BB5F33 | 5F                       | pop rdi                                 |
+00007FF692BB5F34 | C3                       | ret                                     |
+00007FF692BB5F35 | E8 07 DE 50 FF           | call 010editor-orign.7FF6920C3D41       |
+00007FF692BB5F3A | 83 F8 2D                 | cmp eax,2D                              | 2D:'-'
+00007FF692BB5F3D | 0F 84 CB 00 00 00        | je 010editor-orign.7FF692BB600E         |
+00007FF692BB5F43 | 83 F8 4E                 | cmp eax,4E                              | 4E:'N'
+00007FF692BB5F46 | 0F 84 90 00 00 00        | je 010editor-orign.7FF692BB5FDC         |
+00007FF692BB5F4C | 3D E7 00 00 00           | cmp eax,E7                              |
+00007FF692BB5F51 | 74 79                    | je 010editor-orign.7FF692BB5FCC         |
+00007FF692BB5F53 | 8B D7                    | mov edx,edi                             |
+00007FF692BB5F55 | 48 8B CB                 | mov rcx,rbx                             | rbx:EntryPoint
+00007FF692BB5F58 | E8 01 11 51 FF           | call 010editor-orign.7FF6920C705E       |
+00007FF692BB5F5D | 83 F8 17                 | cmp eax,17                              |
+00007FF692BB5F60 | 74 5A                    | je 010editor-orign.7FF692BB5FBC         |
+00007FF692BB5F62 | 83 F8 2A                 | cmp eax,2A                              | 2A:'*'
+00007FF692BB5F65 | 74 2E                    | je 010editor-orign.7FF692BB5F95         |
+00007FF692BB5F67 | 3D 38 01 00 00           | cmp eax,138                             |
+00007FF692BB5F6C | 75 5E                    | jne 010editor-orign.7FF692BB5FCC        |
+00007FF692BB5F6E | 48 8B CB                 | mov rcx,rbx                             | rbx:EntryPoint
+00007FF692BB5F71 | E8 9E 0F 51 FF           | call 010editor-orign.7FF6920C6F14       |
+00007FF692BB5F76 | B9 2F 00 00 00           | mov ecx,2F                              | 2F:'/'
+00007FF692BB5F7B | BA F9 00 00 00           | mov edx,F9                              |
+00007FF692BB5F80 | 3D A3 01 00 00           | cmp eax,1A3                             |
+00007FF692BB5F85 | 0F 44 CA                 | cmove ecx,edx                           |
+00007FF692BB5F88 | 8B C1                    | mov eax,ecx                             |
+00007FF692BB5F8A | 48 8B 5C 24 30           | mov rbx,qword ptr ss:[rsp+30]           | rbx:EntryPoint
+00007FF692BB5F8F | 48 83 C4 20              | add rsp,20                              |
+00007FF692BB5F93 | 5F                       | pop rdi                                 |
+00007FF692BB5F94 | C3                       | ret                                     |
+00007FF692BB5F95 | 48 8B CB                 | mov rcx,rbx                             | rbx:EntryPoint
+00007FF692BB5F98 | E8 77 0F 51 FF           | call 010editor-orign.7FF6920C6F14       |
+00007FF692BB5F9D | B9 77 01 00 00           | mov ecx,177                             |
+00007FF692BB5FA2 | BA F9 00 00 00           | mov edx,F9                              |
+00007FF692BB5FA7 | 3D A3 01 00 00           | cmp eax,1A3                             |
+00007FF692BB5FAC | 0F 44 CA                 | cmove ecx,edx                           |
+00007FF692BB5FAF | 8B C1                    | mov eax,ecx                             |
+00007FF692BB5FB1 | 48 8B 5C 24 30           | mov rbx,qword ptr ss:[rsp+30]           | rbx:EntryPoint
+00007FF692BB5FB6 | 48 83 C4 20              | add rsp,20                              |
+00007FF692BB5FBA | 5F                       | pop rdi                                 |
+00007FF692BB5FBB | C3                       | ret                                     |
+00007FF692BB5FBC | B8 71 00 00 00           | mov eax,71                              | 71:'q'
+00007FF692BB5FC1 | 48 8B 5C 24 30           | mov rbx,qword ptr ss:[rsp+30]           | rbx:EntryPoint
+00007FF692BB5FC6 | 48 83 C4 20              | add rsp,20                              |
+00007FF692BB5FCA | 5F                       | pop rdi                                 |
+00007FF692BB5FCB | C3                       | ret                                     |
+00007FF692BB5FCC | B8 77 01 00 00           | mov eax,177                             |
+00007FF692BB5FD1 | 48 8B 5C 24 30           | mov rbx,qword ptr ss:[rsp+30]           | rbx:EntryPoint
+00007FF692BB5FD6 | 48 83 C4 20              | add rsp,20                              |
+00007FF692BB5FDA | 5F                       | pop rdi                                 |
+00007FF692BB5FDB | C3                       | ret                                     |
+00007FF692BB5FDC | 8B D7                    | mov edx,edi                             |
+00007FF692BB5FDE | 48 8B CB                 | mov rcx,rbx                             | rbx:EntryPoint
+00007FF692BB5FE1 | E8 78 10 51 FF           | call 010editor-orign.7FF6920C705E       |
+00007FF692BB5FE6 | 83 F8 17                 | cmp eax,17                              |
+00007FF692BB5FE9 | 74 13                    | je 010editor-orign.7FF692BB5FFE         |
+00007FF692BB5FEB | 83 F8 2A                 | cmp eax,2A                              | 2A:'*'
+00007FF692BB5FEE | B8 ED 00 00 00           | mov eax,ED                              |
+00007FF692BB5FF3 | 48 8B 5C 24 30           | mov rbx,qword ptr ss:[rsp+30]           | rbx:EntryPoint
+00007FF692BB5FF8 | 48 83 C4 20              | add rsp,20                              |
+00007FF692BB5FFC | 5F                       | pop rdi                                 |
+00007FF692BB5FFD | C3                       | ret                                     |
+00007FF692BB5FFE | B8 0C 02 00 00           | mov eax,20C                             |
+00007FF692BB6003 | 48 8B 5C 24 30           | mov rbx,qword ptr ss:[rsp+30]           | rbx:EntryPoint
+00007FF692BB6008 | 48 83 C4 20              | add rsp,20                              |
+00007FF692BB600C | 5F                       | pop rdi                                 |
+00007FF692BB600D | C3                       | ret                                     |
+00007FF692BB600E | B8 DB 00 00 00           | mov eax,DB                              |
+00007FF692BB6013 | 48 8B 5C 24 30           | mov rbx,qword ptr ss:[rsp+30]           | rbx:EntryPoint
+00007FF692BB6018 | 48 83 C4 20              | add rsp,20                              |
+00007FF692BB601C | 5F                       | pop rdi                                 |
+00007FF692BB601D | C3                       | ret                                     |
+
+
+修改后
+
+00007FF7A87A5F10 | 48 89 5C 24 08           | mov qword ptr ss:[rsp+8],rbx            | rbx:EntryPoint
+00007FF7A87A5F15 | 57                       | push rdi                                |
+00007FF7A87A5F16 | 48 83 EC 20              | sub rsp,20                              |
+00007FF7A87A5F1A | 83 79 3C 00              | cmp dword ptr ds:[rcx+3C],0             |
+00007FF7A87A5F1E | 8B FA                    | mov edi,edx                             |
+00007FF7A87A5F20 | 48 8B D9                 | mov rbx,rcx                             | rbx:EntryPoint
+00007FF7A87A5F23 | 74 00                    | je 010editor.7FF7A87A5F25               | jmp $0
+00007FF7A87A5F25 | B8 DB 00 00 00           | mov eax,DB                              |
+00007FF7A87A5F2A | 48 8B 5C 24 30           | mov rbx,qword ptr ss:[rsp+30]           | rbx:EntryPoint
+00007FF7A87A5F2F | 48 83 C4 20              | add rsp,20                              |
+00007FF7A87A5F33 | 5F                       | pop rdi                                 |
+00007FF7A87A5F34 | C3                       | ret                                     |
+00007FF7A87A5F35 | E8 07 DE 50 FF           | call 010editor.7FF7A7CB3D41             |
+00007FF7A87A5F3A | 83 F8 2D                 | cmp eax,2D                              | 2D:'-'
+00007FF7A87A5F3D | 0F 84 CB 00 00 00        | je 010editor.7FF7A87A600E               |
+00007FF7A87A5F43 | 83 F8 4E                 | cmp eax,4E                              | 4E:'N'
+00007FF7A87A5F46 | 0F 84 90 00 00 00        | je 010editor.7FF7A87A5FDC               |
+00007FF7A87A5F4C | 3D E7 00 00 00           | cmp eax,E7                              |
+00007FF7A87A5F51 | 74 79                    | je 010editor.7FF7A87A5FCC               |
+00007FF7A87A5F53 | 8B D7                    | mov edx,edi                             |
+00007FF7A87A5F55 | 48 8B CB                 | mov rcx,rbx                             | rbx:EntryPoint
+00007FF7A87A5F58 | E8 01 11 51 FF           | call 010editor.7FF7A7CB705E             |
+00007FF7A87A5F5D | 83 F8 17                 | cmp eax,17                              |
+00007FF7A87A5F60 | 74 5A                    | je 010editor.7FF7A87A5FBC               |
+00007FF7A87A5F62 | 83 F8 2A                 | cmp eax,2A                              | 2A:'*'
+00007FF7A87A5F65 | 74 2E                    | je 010editor.7FF7A87A5F95               |
+00007FF7A87A5F67 | 3D 38 01 00 00           | cmp eax,138                             |
+00007FF7A87A5F6C | 75 5E                    | jne 010editor.7FF7A87A5FCC              |
+00007FF7A87A5F6E | 48 8B CB                 | mov rcx,rbx                             | rbx:EntryPoint
+00007FF7A87A5F71 | E8 9E 0F 51 FF           | call 010editor.7FF7A7CB6F14             |
+00007FF7A87A5F76 | B9 2F 00 00 00           | mov ecx,2F                              | 2F:'/'
+00007FF7A87A5F7B | BA F9 00 00 00           | mov edx,F9                              |
+00007FF7A87A5F80 | 3D A3 01 00 00           | cmp eax,1A3                             |
+00007FF7A87A5F85 | 0F 44 CA                 | cmove ecx,edx                           |
+00007FF7A87A5F88 | 8B C1                    | mov eax,ecx                             |
+00007FF7A87A5F8A | 48 8B 5C 24 30           | mov rbx,qword ptr ss:[rsp+30]           | rbx:EntryPoint
+00007FF7A87A5F8F | 48 83 C4 20              | add rsp,20                              |
+00007FF7A87A5F93 | 5F                       | pop rdi                                 |
+00007FF7A87A5F94 | C3                       | ret                                     |
+00007FF7A87A5F95 | 48 8B CB                 | mov rcx,rbx                             | rbx:EntryPoint
+00007FF7A87A5F98 | E8 77 0F 51 FF           | call 010editor.7FF7A7CB6F14             |
+00007FF7A87A5F9D | B9 77 01 00 00           | mov ecx,177                             |
+00007FF7A87A5FA2 | BA F9 00 00 00           | mov edx,F9                              |
+00007FF7A87A5FA7 | 3D A3 01 00 00           | cmp eax,1A3                             |
+00007FF7A87A5FAC | 0F 44 CA                 | cmove ecx,edx                           |
+00007FF7A87A5FAF | 8B C1                    | mov eax,ecx                             |
+00007FF7A87A5FB1 | 48 8B 5C 24 30           | mov rbx,qword ptr ss:[rsp+30]           | rbx:EntryPoint
+00007FF7A87A5FB6 | 48 83 C4 20              | add rsp,20                              |
+00007FF7A87A5FBA | 5F                       | pop rdi                                 |
+00007FF7A87A5FBB | C3                       | ret                                     |
+00007FF7A87A5FBC | B8 71 00 00 00           | mov eax,71                              | 71:'q'
+00007FF7A87A5FC1 | 48 8B 5C 24 30           | mov rbx,qword ptr ss:[rsp+30]           | rbx:EntryPoint
+00007FF7A87A5FC6 | 48 83 C4 20              | add rsp,20                              |
+00007FF7A87A5FCA | 5F                       | pop rdi                                 |
+00007FF7A87A5FCB | C3                       | ret                                     |
+00007FF7A87A5FCC | B8 77 01 00 00           | mov eax,177                             |
+00007FF7A87A5FD1 | 48 8B 5C 24 30           | mov rbx,qword ptr ss:[rsp+30]           | rbx:EntryPoint
+00007FF7A87A5FD6 | 48 83 C4 20              | add rsp,20                              |
+00007FF7A87A5FDA | 5F                       | pop rdi                                 |
+00007FF7A87A5FDB | C3                       | ret                                     |
+00007FF7A87A5FDC | 8B D7                    | mov edx,edi                             |
+00007FF7A87A5FDE | 48 8B CB                 | mov rcx,rbx                             | rbx:EntryPoint
+00007FF7A87A5FE1 | E8 78 10 51 FF           | call 010editor.7FF7A7CB705E             |
+00007FF7A87A5FE6 | 83 F8 17                 | cmp eax,17                              |
+00007FF7A87A5FE9 | 74 13                    | je 010editor.7FF7A87A5FFE               |
+00007FF7A87A5FEB | 83 F8 2A                 | cmp eax,2A                              | 2A:'*'
+00007FF7A87A5FEE | B8 ED 00 00 00           | mov eax,ED                              |
+00007FF7A87A5FF3 | 48 8B 5C 24 30           | mov rbx,qword ptr ss:[rsp+30]           | rbx:EntryPoint
+00007FF7A87A5FF8 | 48 83 C4 20              | add rsp,20                              |
+00007FF7A87A5FFC | 5F                       | pop rdi                                 |
+00007FF7A87A5FFD | C3                       | ret                                     |
+00007FF7A87A5FFE | B8 0C 02 00 00           | mov eax,20C                             |
+00007FF7A87A6003 | 48 8B 5C 24 30           | mov rbx,qword ptr ss:[rsp+30]           | rbx:EntryPoint
+00007FF7A87A6008 | 48 83 C4 20              | add rsp,20                              |
+00007FF7A87A600C | 5F                       | pop rdi                                 |
+00007FF7A87A600D | C3                       | ret                                     |
+00007FF7A87A600E | B8 DB 00 00 00           | mov eax,DB                              |
+00007FF7A87A6013 | 48 8B 5C 24 30           | mov rbx,qword ptr ss:[rsp+30]           | rbx:EntryPoint
+00007FF7A87A6018 | 48 83 C4 20              | add rsp,20                              |
+00007FF7A87A601C | 5F                       | pop rdi                                 |
+00007FF7A87A601D | C3                       | ret                                     |
+
+
+程序主模块Ctrl+F搜索整块
+
+mov eax,0x113
+无效的许可证
+
+---------------------------
+010 Editor
+---------------------------
+无效的名称或密码。到底是既定的当你购买 010 Editor，请输入您的名称和密码 （请确保没有引号包括在内）.
+---------------------------
+确定   
+---------------------------
+
+
+mov eax,0xdb
+注册 - 999 用户许可证
+
+mov eax,0xed
+升级所需的试用过期
+
+mov eax,0x20c
+早期版本的密码
+
+
+---------------------------
+010 Editor
+---------------------------
+您输入的密码是这个程序的早期版本. 你将不得不购买升级程序以继续使用此软件. 您可以继续使用该程序为试用版. 如果你决定购买升级程序，请单击下面的"购买升级"链接或你 可从网站下载以前版本的 010 Editor"http://www.sweetscape.com/download/previous/".谢谢！!
+---------------------------
+确定   
+---------------------------
+
+
+74 10 B8 13 01 00 00
+修改为
+74 00 B8 DB 00 00 00
+
+
+B8 DB 00 00 00 EB **
+
+B? 09 00 00 00 ?? ?? 89 43 00 00
+
+BA 09 00 00 00 41 B8 89 43 00 00
+
+BA 09 00 00 00 41 B8 89 43 00 00
+
+
+
+
+00007FF7A8393112 | FF 15 48 7C BB 01        | call qword ptr ds:[<&QLineEdit::text>]              |
+00007FF7A8393118 | 90                       | nop                                                 |
+00007FF7A8393119 | 48 8B D0                 | mov rdx,rax                                         |
+00007FF7A839311C | 48 8B 0D 75 8A 9A 01     | mov rcx,qword ptr ds:[7FF7A9D3BB98]                 |
+00007FF7A8393123 | E8 78 57 92 FF           | call 010editor.7FF7A7CB88A0                         |
+00007FF7A8393128 | 90                       | nop                                                 |
+00007FF7A8393129 | 48 8D 4D 28              | lea rcx,qword ptr ss:[rbp+28]                       |
+00007FF7A839312D | FF 15 2D 48 BB 01        | call qword ptr ds:[<&QLoggingRule::~QLoggingRule>]  |
+00007FF7A8393133 | 48 8D 55 38              | lea rdx,qword ptr ss:[rbp+38]                       |
+00007FF7A8393137 | 48 8B 0D 5A 8A 9A 01     | mov rcx,qword ptr ds:[7FF7A9D3BB98]                 |
+00007FF7A839313E | E8 A5 0A 92 FF           | call 010editor.7FF7A7CB3BE8                         |
+00007FF7A8393143 | BA 09 00 00 00           | mov edx,9                                           | 9:'\t'
+00007FF7A8393148 | 41 B8 89 43 00 00        | mov r8d,4389                                        |
+00007FF7A839314E | 48 8B 0D 43 8A 9A 01     | mov rcx,qword ptr ds:[7FF7A9D3BB98]                 |
+00007FF7A8393155 | E8 E7 0B 92 FF           | call 010editor.7FF7A7CB3D41                         |
+00007FF7A839315A | 8B F0                    | mov esi,eax                                         |
+00007FF7A839315C | BA 09 00 00 00           | mov edx,9                                           | 9:'\t'
+00007FF7A8393161 | 41 B8 89 43 00 00        | mov r8d,4389                                        |
+00007FF7A8393167 | 48 8B 0D 2A 8A 9A 01     | mov rcx,qword ptr ds:[7FF7A9D3BB98]                 |
+00007FF7A839316E | E8 3E 73 92 FF           | call 010editor.7FF7A7CBA4B1                         |
+00007FF7A8393173 | 8B D8                    | mov ebx,eax                                         |
+00007FF7A8393175 | 48 8B 0D 1C 8A 9A 01     | mov rcx,qword ptr ds:[7FF7A9D3BB98]                 |
+00007FF7A839317C | 81 FE E7 00 00 00        | cmp esi,E7                                          |
+00007FF7A8393182 | 0F 84 ED 00 00 00        | je 010editor.7FF7A8393275                           |
+00007FF7A8393188 | 83 79 3C 00              | cmp dword ptr ds:[rcx+3C],0                         |
+00007FF7A839318C | 0F 84 E3 00 00 00        | je 010editor.7FF7A8393275                           |
+00007FF7A8393192 | 33 D2                    | xor edx,edx                                         |
+00007FF7A8393194 | 48 8B CF                 | mov rcx,rdi                                         |
+00007FF7A8393197 | E8 25 63 92 FF           | call 010editor.7FF7A7CB94C1                         |
+00007FF7A839319C | 85 C0                    | test eax,eax                                        |
+00007FF7A839319E | 0F 89 84 00 00 00        | jns 010editor.7FF7A8393228                          |
+00007FF7A83931A4 | 41 B8 0A 00 00 00        | mov r8d,A                                           | A:'\n'
+00007FF7A83931AA | 8B D0                    | mov edx,eax                                         |
+00007FF7A83931AC | 48 8D 4D D8              | lea rcx,qword ptr ss:[rbp-28]                       |
+00007FF7A83931B0 | FF 15 62 58 BB 01        | call qword ptr ds:[<&QString::number>]              |
+00007FF7A83931B6 | 48 8B D8                 | mov rbx,rax                                         |
+00007FF7A83931B9 | 48 8D 15 C0 14 EE 00     | lea rdx,qword ptr ds:[7FF7A9274680]                 |
+00007FF7A83931C0 | 48 8D 4D E0              | lea rcx,qword ptr ss:[rbp-20]                       |
+00007FF7A83931C4 | FF 15 3E 58 BB 01        | call qword ptr ds:[<&QString::QString>]             |
+00007FF7A83931CA | 90                       | nop                                                 |
+00007FF7A83931CB | 4C 8B C3                 | mov r8,rbx                                          |
+00007FF7A83931CE | 48 8B D0                 | mov rdx,rax                                         |
+00007FF7A83931D1 | 48 8D 4D 40              | lea rcx,qword ptr ss:[rbp+40]                       |
+00007FF7A83931D5 | E8 B5 3A 92 FF           | call 010editor.7FF7A7CB6C8F                         |
+00007FF7A83931DA | 90                       | nop                                                 |
+00007FF7A83931DB | 4C 8D 05 5A CA AD 00     | lea r8,qword ptr ds:[7FF7A8E6FC3C]                  | 7FF7A8E6FC3C:")."
+00007FF7A83931E2 | 48 8B D0                 | mov rdx,rax                                         |
+00007FF7A83931E5 | 48 8D 4D 28              | lea rcx,qword ptr ss:[rbp+28]                       |
+00007FF7A83931E9 | E8 95 6E 92 FF           | call 010editor.7FF7A7CBA083                         |
+00007FF7A83931EE | 90                       | nop                                                 |
+00007FF7A83931EF | 48 8B C8                 | mov rcx,rax                                         |
+00007FF7A83931F2 | E8 A3 48 92 FF           | call 010editor.7FF7A7CB7A9A                         |
+00007FF7A83931F7 | 90                       | nop                                                 |
+00007FF7A83931F8 | 48 8D 4D 28              | lea rcx,qword ptr ss:[rbp+28]                       |
+00007FF7A83931FC | FF 15 5E 47 BB 01        | call qword ptr ds:[<&QLoggingRule::~QLoggingRule>]  |
+00007FF7A8393202 | 90                       | nop                                                 |
+00007FF7A8393203 | 48 8D 4D 40              | lea rcx,qword ptr ss:[rbp+40]                       |
+00007FF7A8393207 | FF 15 53 47 BB 01        | call qword ptr ds:[<&QLoggingRule::~QLoggingRule>]  |
+00007FF7A839320D | 90                       | nop                                                 |
+00007FF7A839320E | 48 8D 4D E0              | lea rcx,qword ptr ss:[rbp-20]                       |
+00007FF7A8393212 | FF 15 48 47 BB 01        | call qword ptr ds:[<&QLoggingRule::~QLoggingRule>]  |
+00007FF7A8393218 | 90                       | nop                                                 |
+00007FF7A8393219 | 48 8D 4D D8              | lea rcx,qword ptr ss:[rbp-28]                       |
+00007FF7A839321D | FF 15 3D 47 BB 01        | call qword ptr ds:[<&QLoggingRule::~QLoggingRule>]  |
+00007FF7A8393223 | E9 4F 03 00 00           | jmp 010editor.7FF7A8393577                          |
+00007FF7A8393228 | 75 2B                    | jne 010editor.7FF7A8393255                          |
+00007FF7A839322A | 48 8D 15 5F 15 EE 00     | lea rdx,qword ptr ds:[7FF7A9274790]                 |
+00007FF7A8393231 | 48 8D 4D 28              | lea rcx,qword ptr ss:[rbp+28]                       |
+00007FF7A8393235 | FF 15 CD 57 BB 01        | call qword ptr ds:[<&QString::QString>]             |
+00007FF7A839323B | 90                       | nop                                                 |
+00007FF7A839323C | 48 8D 4D 28              | lea rcx,qword ptr ss:[rbp+28]                       |
+00007FF7A8393240 | E8 55 48 92 FF           | call 010editor.7FF7A7CB7A9A                         |
+00007FF7A8393245 | 90                       | nop                                                 |
+00007FF7A8393246 | 48 8D 4D 28              | lea rcx,qword ptr ss:[rbp+28]                       |
+00007FF7A839324A | FF 15 10 47 BB 01        | call qword ptr ds:[<&QLoggingRule::~QLoggingRule>]  |
+00007FF7A8393250 | E9 22 03 00 00           | jmp 010editor.7FF7A8393577                          |
+00007FF7A8393255 | BA 09 00 00 00           | mov edx,9                                           | 9:'\t'
+00007FF7A839325A | 41 B8 89 43 00 00        | mov r8d,4389                                        |
+00007FF7A8393260 | 48 8B 0D 31 89 9A 01     | mov rcx,qword ptr ds:[7FF7A9D3BB98]                 |
+00007FF7A8393267 | E8 45 72 92 FF           | call 010editor.7FF7A7CBA4B1                         |
+00007FF7A839326C | 8B D8                    | mov ebx,eax                                         |
+00007FF7A839326E | 48 8B 0D 23 89 9A 01     | mov rcx,qword ptr ds:[7FF7A9D3BB98]                 |
+00007FF7A8393275 | 81 FB DB 00 00 00        | cmp ebx,DB                                          |
+00007FF7A839327B | 0F 85 2E 01 00 00        | jne 010editor.7FF7A83933AF                          |
+00007FF7A8393281 | 48 8D 55 E0              | lea rdx,qword ptr ss:[rbp-20]                       |
+00007FF7A8393285 | E8 32 6C 92 FF           | call 010editor.7FF7A7CB9EBC                         |
+00007FF7A839328A | 48 8D 15 07 16 EE 00     | lea rdx,qword ptr ds:[7FF7A9274898]                 | 7FF7A9274898:"MMMM d, yyyy"
+00007FF7A8393291 | 48 8D 4D 40              | lea rcx,qword ptr ss:[rbp+40]                       |
+00007FF7A8393295 | FF 15 6D 57 BB 01        | call qword ptr ds:[<&QString::QString>]             |
+00007FF7A839329B | 90                       | nop                                                 |
+00007FF7A839329C | 4C 8D 45 40              | lea r8,qword ptr ss:[rbp+40]                        |
+00007FF7A83932A0 | 48 8D 55 E8              | lea rdx,qword ptr ss:[rbp-18]                       |
+00007FF7A83932A4 | 48 8D 4D E0              | lea rcx,qword ptr ss:[rbp-20]                       |
+00007FF7A83932A8 | FF 15 6A 54 BB 01        | call qword ptr ds:[<&QDate::toString>]              |
+00007FF7A83932AE | 90                       | nop                                                 |
+00007FF7A83932AF | 4C 8B C0                 | mov r8,rax                                          |
+00007FF7A83932B2 | 48 8D 15 F7 15 EE 00     | lea rdx,qword ptr ds:[7FF7A92748B0]                 |
+00007FF7A83932B9 | 48 8D 4D D8              | lea rcx,qword ptr ss:[rbp-28]                       |
+00007FF7A83932BD | E8 4D 78 92 FF           | call 010editor.7FF7A7CBAB0F                         |
+00007FF7A83932C2 | 90                       | nop                                                 |
+00007FF7A83932C3 | 4C 8D 05 66 13 72 00     | lea r8,qword ptr ds:[7FF7A8AB4630]                  |
+00007FF7A83932CA | 48 8B D0                 | mov rdx,rax                                         |
+00007FF7A83932CD | 48 8D 4D 28              | lea rcx,qword ptr ss:[rbp+28]                       |
+00007FF7A83932D1 | E8 AD 6D 92 FF           | call 010editor.7FF7A7CBA083                         |
+00007FF7A83932D6 | 90                       | nop                                                 |
+00007FF7A83932D7 | 48 8D 4D D8              | lea rcx,qword ptr ss:[rbp-28]                       |
+00007FF7A83932DB | FF 15 7F 46 BB 01        | call qword ptr ds:[<&QLoggingRule::~QLoggingRule>]  |
+00007FF7A83932E1 | 90                       | nop                                                 |
+00007FF7A83932E2 | 48 8D 4D E8              | lea rcx,qword ptr ss:[rbp-18]                       |
+00007FF7A83932E6 | FF 15 74 46 BB 01        | call qword ptr ds:[<&QLoggingRule::~QLoggingRule>]  |
+00007FF7A83932EC | 90                       | nop                                                 |
+00007FF7A83932ED | 48 8D 4D 40              | lea rcx,qword ptr ss:[rbp+40]                       |
+00007FF7A83932F1 | FF 15 69 46 BB 01        | call qword ptr ds:[<&QLoggingRule::~QLoggingRule>]  |
+00007FF7A83932F7 | 48 8B 0D 9A 88 9A 01     | mov rcx,qword ptr ds:[7FF7A9D3BB98]                 |
+00007FF7A83932FE | E8 F7 7D 92 FF           | call 010editor.7FF7A7CBB0FA                         |
+00007FF7A8393303 | 85 C0                    | test eax,eax                                        |
+00007FF7A8393305 | 79 11                    | jns 010editor.7FF7A8393318                          |
+00007FF7A8393307 | 48 8D 15 3A 16 EE 00     | lea rdx,qword ptr ds:[7FF7A9274948]                 | 7FF7A9274948:" (EXPIRED)"
+00007FF7A839330E | 48 8D 4D 28              | lea rcx,qword ptr ss:[rbp+28]                       |
+00007FF7A8393312 | FF 15 E0 56 BB 01        | call qword ptr ds:[<&QString::operator+=>]          |
+00007FF7A8393318 | 48 8D 15 39 16 EE 00     | lea rdx,qword ptr ds:[7FF7A9274958]                 |
+00007FF7A839331F | 48 8D 4D 28              | lea rcx,qword ptr ss:[rbp+28]                       |
+00007FF7A8393323 | FF 15 CF 56 BB 01        | call qword ptr ds:[<&QString::operator+=>]          |
+00007FF7A8393329 | 48 8D 4D 28              | lea rcx,qword ptr ss:[rbp+28]                       |
+00007FF7A839332D | E8 E8 E0 91 FF           | call 010editor.7FF7A7CB141A                         |
+00007FF7A8393332 | 48 8B 0D 5F 88 9A 01     | mov rcx,qword ptr ds:[7FF7A9D3BB98]                 |
+00007FF7A8393339 | 83 79 44 00              | cmp dword ptr ds:[rcx+44],0                         |
+00007FF7A839333D | 7E 3E                    | jle 010editor.7FF7A839337D                          |
+00007FF7A839333F | E8 B6 7D 92 FF           | call 010editor.7FF7A7CBB0FA                         |
+00007FF7A8393344 | 8B C8                    | mov ecx,eax                                         |
+00007FF7A8393346 | 85 C0                    | test eax,eax                                        |
+00007FF7A8393348 | 79 07                    | jns 010editor.7FF7A8393351                          |
+00007FF7A839334A | B8 02 00 00 00           | mov eax,2                                           |
+00007FF7A839334F | EB 08                    | jmp 010editor.7FF7A8393359                          |
+00007FF7A8393351 | 33 C0                    | xor eax,eax                                         |
+00007FF7A8393353 | 83 F9 28                 | cmp ecx,28                                          | 28:'('
+00007FF7A8393356 | 0F 9C C0                 | setl al                                             |
+00007FF7A8393359 | 48 8B 0D 48 88 9A 01     | mov rcx,qword ptr ds:[7FF7A9D3BBA8]                 |
+00007FF7A8393360 | 39 41 78                 | cmp dword ptr ds:[rcx+78],eax                       |
+00007FF7A8393363 | 74 18                    | je 010editor.7FF7A839337D                           |
+00007FF7A8393365 | 89 41 78                 | mov dword ptr ds:[rcx+78],eax                       |
+00007FF7A8393368 | 80 3D 91 0C 99 01 00     | cmp byte ptr ds:[7FF7A9D24000],0                    |
+00007FF7A839336F | 75 0C                    | jne 010editor.7FF7A839337D                          |
+00007FF7A8393371 | 48 8B 0D 30 88 9A 01     | mov rcx,qword ptr ds:[7FF7A9D3BBA8]                 |
+00007FF7A8393378 | E8 31 60 92 FF           | call 010editor.7FF7A7CB93AE                         |
+00007FF7A839337D | 48 8B 05 24 88 9A 01     | mov rax,qword ptr ds:[7FF7A9D3BBA8]                 |
+00007FF7A8393384 | 83 B8 58 02 00 00 00     | cmp dword ptr ds:[rax+258],0                        |
+00007FF7A839338B | 74 20                    | je 010editor.7FF7A83933AD                           |
+00007FF7A839338D | C7 80 58 02 00 00 00 00  | mov dword ptr ds:[rax+258],0                        |
+00007FF7A8393397 | 80 3D 62 0C 99 01 00     | cmp byte ptr ds:[7FF7A9D24000],0                    |
+00007FF7A839339E | 75 0D                    | jne 010editor.7FF7A83933AD                          |
+00007FF7A83933A0 | 48 8B 0D 01 88 9A 01     | mov rcx,qword ptr ds:[7FF7A9D3BBA8]                 |
+00007FF7A83933A7 | E8 02 60 92 FF           | call 010editor.7FF7A7CB93AE                         |
+00007FF7A83933AC | 90                       | nop                                                 |
+00007FF7A83933AD | EB 45                    | jmp 010editor.7FF7A83933F4                          |
+00007FF7A83933AF | 81 FB ED 00 00 00        | cmp ebx,ED                                          |
+00007FF7A83933B5 | 0F 84 EE 00 00 00        | je 010editor.7FF7A83934A9                           |
+00007FF7A83933BB | 81 FB 0C 02 00 00        | cmp ebx,20C                                         |
+00007FF7A83933C1 | 0F 84 E2 00 00 00        | je 010editor.7FF7A83934A9                           |
+00007FF7A83933C7 | 48 8D 4D 28              | lea rcx,qword ptr ss:[rbp+28]                       |
+00007FF7A83933CB | 81 FE 93 00 00 00        | cmp esi,93                                          |
+00007FF7A83933D1 | 0F 85 AB 00 00 00        | jne 010editor.7FF7A8393482                          |
+00007FF7A83933D7 | 83 FB 71                 | cmp ebx,71                                          | 71:'q'
+00007FF7A83933DA | 75 7F                    | jne 010editor.7FF7A839345B                          |
+00007FF7A83933DC | 48 8D 15 BD 17 EE 00     | lea rdx,qword ptr ds:[7FF7A9274BA0]                 |
+00007FF7A83933E3 | FF 15 1F 56 BB 01        | call qword ptr ds:[<&QString::QString>]             |
+00007FF7A83933E9 | 90                       | nop                                                 |
+00007FF7A83933EA | 48 8D 4D 28              | lea rcx,qword ptr ss:[rbp+28]                       |
+00007FF7A83933EE | E8 27 E0 91 FF           | call 010editor.7FF7A7CB141A                         |
+00007FF7A83933F3 | 90                       | nop                                                 |
+00007FF7A83933F4 | 48 8D 4D 28              | lea rcx,qword ptr ss:[rbp+28]                       |
+00007FF7A83933F8 | FF 15 62 45 BB 01        | call qword ptr ds:[<&QLoggingRule::~QLoggingRule>]  |
+00007FF7A83933FE | 48 8B 0D 93 87 9A 01     | mov rcx,qword ptr ds:[7FF7A9D3BB98]                 |
+00007FF7A8393405 | E8 90 69 92 FF           | call 010editor.7FF7A7CB9D9A                         |
+00007FF7A839340A | 84 C0                    | test al,al                                          |
+00007FF7A839340C | 75 2B                    | jne 010editor.7FF7A8393439                          |
+00007FF7A839340E | 48 8D 15 CB 18 EE 00     | lea rdx,qword ptr ds:[7FF7A9274CE0]                 |
+00007FF7A8393415 | 48 8D 4D 28              | lea rcx,qword ptr ss:[rbp+28]                       |
+00007FF7A8393419 | FF 15 E9 55 BB 01        | call qword ptr ds:[<&QString::QString>]             |
+00007FF7A839341F | 90                       | nop                                                 |
+00007FF7A8393420 | 48 8D 4D 28              | lea rcx,qword ptr ss:[rbp+28]                       |
+00007FF7A8393424 | E8 D1 0E 92 FF           | call 010editor.7FF7A7CB42FA                         |
+00007FF7A8393429 | 90                       | nop                                                 |
+00007FF7A839342A | 48 8D 4D 28              | lea rcx,qword ptr ss:[rbp+28]                       |
+00007FF7A839342E | FF 15 2C 45 BB 01        | call qword ptr ds:[<&QLoggingRule::~QLoggingRule>]  |
+00007FF7A8393434 | E9 3E 01 00 00           | jmp 010editor.7FF7A8393577                          |
+00007FF7A8393439 | 48 8B 0D F8 90 9A 01     | mov rcx,qword ptr ds:[7FF7A9D3C538]                 |
+00007FF7A8393440 | 48 85 C9                 | test rcx,rcx                                        |
+00007FF7A8393443 | 74 05                    | je 010editor.7FF7A839344A                           |
+00007FF7A8393445 | E8 4E 3E 92 FF           | call 010editor.7FF7A7CB7298                         |
+00007FF7A839344A | 48 8B 07                 | mov rax,qword ptr ds:[rdi]                          |
+00007FF7A839344D | 48 8B CF                 | mov rcx,rdi                                         |
+00007FF7A8393450 | FF 90 80 01 00 00        | call qword ptr ds:[rax+180]                         |
+00007FF7A8393456 | E9 1C 01 00 00           | jmp 010editor.7FF7A8393577                          |
+00007FF7A839345B | 48 8D 15 86 17 EE 00     | lea rdx,qword ptr ds:[7FF7A9274BE8]                 |
+00007FF7A8393462 | FF 15 A0 55 BB 01        | call qword ptr ds:[<&QString::QString>]             |
+00007FF7A8393468 | 90                       | nop                                                 |
+00007FF7A8393469 | 48 8D 4D 28              | lea rcx,qword ptr ss:[rbp+28]                       |
+00007FF7A839346D | E8 A8 DF 91 FF           | call 010editor.7FF7A7CB141A                         |
+00007FF7A8393472 | 90                       | nop                                                 |
+00007FF7A8393473 | 48 8D 4D 28              | lea rcx,qword ptr ss:[rbp+28]                       |
+00007FF7A8393477 | FF 15 E3 44 BB 01        | call qword ptr ds:[<&QLoggingRule::~QLoggingRule>]  |
+00007FF7A839347D | E9 F5 00 00 00           | jmp 010editor.7FF7A8393577                          |
+00007FF7A8393482 | 48 8D 15 A7 17 EE 00     | lea rdx,qword ptr ds:[7FF7A9274C30]                 |
+00007FF7A8393489 | FF 15 79 55 BB 01        | call qword ptr ds:[<&QString::QString>]             |
+00007FF7A839348F | 90                       | nop                                                 |
+00007FF7A8393490 | 48 8D 4D 28              | lea rcx,qword ptr ss:[rbp+28]                       |
+00007FF7A8393494 | E8 81 DF 91 FF           | call 010editor.7FF7A7CB141A                         |
+00007FF7A8393499 | 90                       | nop                                                 |
+00007FF7A839349A | 48 8D 4D 28              | lea rcx,qword ptr ss:[rbp+28]                       |
+00007FF7A839349E | FF 15 BC 44 BB 01        | call qword ptr ds:[<&QLoggingRule::~QLoggingRule>]  |
+00007FF7A83934A4 | E9 CE 00 00 00           | jmp 010editor.7FF7A8393577                          |
+00007FF7A83934A9 | E8 EC 68 92 FF           | call 010editor.7FF7A7CB9D9A                         |
+00007FF7A83934AE | 83 CA FF                 | or edx,FFFFFFFF                                     |
+00007FF7A83934B1 | 48 8B CF                 | mov rcx,rdi                                         |
+00007FF7A83934B4 | E8 25 34 92 FF           | call 010editor.7FF7A7CB68DE                         |
+00007FF7A83934B9 | 48 8D 15 D0 14 EE 00     | lea rdx,qword ptr ds:[7FF7A9274990]                 |
+00007FF7A83934C0 | 48 8D 4D 30              | lea rcx,qword ptr ss:[rbp+30]                       | [rbp+30]:QArrayData::shared_null
+00007FF7A83934C4 | FF 15 36 55 BB 01        | call qword ptr ds:[<&QString::operator=>]           |
+00007FF7A83934CA | 48 8D 15 1F 15 EE 00     | lea rdx,qword ptr ds:[7FF7A92749F0]                 |
+00007FF7A83934D1 | 48 8D 4D 30              | lea rcx,qword ptr ss:[rbp+30]                       | [rbp+30]:QArrayData::shared_null
+00007FF7A83934D5 | FF 15 1D 55 BB 01        | call qword ptr ds:[<&QString::operator+=>]          |
+00007FF7A83934DB | 81 FB 0C 02 00 00        | cmp ebx,20C                                         |
+00007FF7A83934E1 | 75 11                    | jne 010editor.7FF7A83934F4                          |
+00007FF7A83934E3 | 48 8D 15 5E 15 EE 00     | lea rdx,qword ptr ds:[7FF7A9274A48]                 |
+00007FF7A83934EA | 48 8D 4D 30              | lea rcx,qword ptr ss:[rbp+30]                       | [rbp+30]:QArrayData::shared_null
+00007FF7A83934EE | FF 15 04 55 BB 01        | call qword ptr ds:[<&QString::operator+=>]          |
+00007FF7A83934F4 | 48 8D 15 95 15 EE 00     | lea rdx,qword ptr ds:[7FF7A9274A90]                 |
+00007FF7A83934FB | 48 8D 4D 30              | lea rcx,qword ptr ss:[rbp+30]                       | [rbp+30]:QArrayData::shared_null
+00007FF7A83934FF | FF 15 F3 54 BB 01        | call qword ptr ds:[<&QString::operator+=>]          |
+00007FF7A8393505 | 48 8D 15 0C 16 EE 00     | lea rdx,qword ptr ds:[7FF7A9274B18]                 | 7FF7A9274B18:"http://www.sweetscape.com/download/previous/"
+00007FF7A839350C | 48 8D 4D E8              | lea rcx,qword ptr ss:[rbp-18]                       |
+00007FF7A8393510 | FF 15 F2 54 BB 01        | call qword ptr ds:[<&QString::QString>]             |
+00007FF7A8393516 | 90                       | nop                                                 |
+00007FF7A8393517 | 4C 8B C0                 | mov r8,rax                                          |
+00007FF7A839351A | 48 8D 15 2F 16 EE 00     | lea rdx,qword ptr ds:[7FF7A9274B50]                 |
+00007FF7A8393521 | 48 8D 4D 40              | lea rcx,qword ptr ss:[rbp+40]                       |
+00007FF7A8393525 | E8 E5 75 92 FF           | call 010editor.7FF7A7CBAB0F                         |
+00007FF7A839352A | 90                       | nop                                                 |
+00007FF7A839352B | 4C 8D 05 D6 15 EE 00     | lea r8,qword ptr ds:[7FF7A9274B08]                  |
+00007FF7A8393532 | 48 8B D0                 | mov rdx,rax                                         |
+00007FF7A8393535 | 48 8D 4D 28              | lea rcx,qword ptr ss:[rbp+28]                       |
+00007FF7A8393539 | E8 45 6B 92 FF           | call 010editor.7FF7A7CBA083                         |
+00007FF7A839353E | 90                       | nop                                                 |
+00007FF7A839353F | 48 8B D0                 | mov rdx,rax                                         |
+00007FF7A8393542 | 48 8D 4D 30              | lea rcx,qword ptr ss:[rbp+30]                       | [rbp+30]:QArrayData::shared_null
+00007FF7A8393546 | FF 15 24 55 BB 01        | call qword ptr ds:[<&QString::push_back>]           |
+00007FF7A839354C | 90                       | nop                                                 |
+00007FF7A839354D | 48 8D 4D 28              | lea rcx,qword ptr ss:[rbp+28]                       |
+00007FF7A8393551 | FF 15 09 44 BB 01        | call qword ptr ds:[<&QLoggingRule::~QLoggingRule>]  |
+00007FF7A8393557 | 90                       | nop                                                 |
+00007FF7A8393558 | 48 8D 4D 40              | lea rcx,qword ptr ss:[rbp+40]                       |
+00007FF7A839355C | FF 15 FE 43 BB 01        | call qword ptr ds:[<&QLoggingRule::~QLoggingRule>]  |
+00007FF7A8393562 | 90                       | nop                                                 |
+00007FF7A8393563 | 48 8D 4D E8              | lea rcx,qword ptr ss:[rbp-18]                       |
+00007FF7A8393567 | FF 15 F3 43 BB 01        | call qword ptr ds:[<&QLoggingRule::~QLoggingRule>]  |
+00007FF7A839356D | 48 8D 4D 30              | lea rcx,qword ptr ss:[rbp+30]                       | [rbp+30]:QArrayData::shared_null
+00007FF7A8393571 | E8 A4 DE 91 FF           | call 010editor.7FF7A7CB141A                         |
+00007FF7A8393576 | 90                       | nop                                                 |
+00007FF7A8393577 | 48 8D 4D 38              | lea rcx,qword ptr ss:[rbp+38]                       |
+00007FF7A839357B | FF 15 DF 43 BB 01        | call qword ptr ds:[<&QLoggingRule::~QLoggingRule>]  |
+00007FF7A8393581 | 90                       | nop                                                 |
+00007FF7A8393582 | 48 8D 4D 30              | lea rcx,qword ptr ss:[rbp+30]                       | [rbp+30]:QArrayData::shared_null
+00007FF7A8393586 | FF 15 D4 43 BB 01        | call qword ptr ds:[<&QLoggingRule::~QLoggingRule>]  |
+00007FF7A839358C | 48 83 C4 48              | add rsp,48                                          |
+00007FF7A8393590 | 5F                       | pop rdi                                             |
+00007FF7A8393591 | 5E                       | pop rsi                                             |
+00007FF7A8393592 | 5B                       | pop rbx                                             |
+00007FF7A8393593 | 5D                       | pop rbp                                             |
+00007FF7A8393594 | C3                       | ret                                                 |
+
+
+
+
+010Editor v8.0.1 For MacOS
+
+__text:00000001000D8180
+__text:00000001000D8180                               ; =============== S U B R O U T I N E =======================================
+__text:00000001000D8180
+__text:00000001000D8180                               ; Attributes: bp-based frame
+__text:00000001000D8180
+__text:00000001000D8180                               sub_1000D8180 proc near                 ; CODE XREF: sub_100006280+42E↑p
+__text:00000001000D8180                                                                       ; sub_1000EDB40+63↓p ...
+__text:00000001000D8180                               ; __unwind {
+__text:00000001000D8180 55                              push    rbp
+__text:00000001000D8181 48 89 E5                        mov     rbp, rsp
+__text:00000001000D8184 41 56                           push    r14
+__text:00000001000D8186 53                              push    rbx
+__text:00000001000D8187 41 89 F6                        mov     r14d, esi
+__text:00000001000D818A 48 89 FB                        mov     rbx, rdi
+__text:00000001000D818D B8 13 01 00 00                  mov     eax, 113h
+__text:00000001000D8192 83 7B 3C 00                     cmp     dword ptr [rbx+3Ch], 0
+__text:00000001000D8196 0F 85 B2 00 00 00               jnz     loc_1000D824E
+__text:00000001000D819C 48 89 DF                        mov     rdi, rbx
+__text:00000001000D819F 44 89 F6                        mov     esi, r14d
+__text:00000001000D81A2 E8 B9 00 00 00                  call    sub_1000D8260
+__text:00000001000D81A7 89 C1                           mov     ecx, eax
+__text:00000001000D81A9 B8 DB 00 00 00                  mov     eax, 0DBh
+__text:00000001000D81AE 83 F9 2D                        cmp     ecx, 2Dh
+__text:00000001000D81B1 0F 84 97 00 00 00               jz      loc_1000D824E
+__text:00000001000D81B7 83 F9 4E                        cmp     ecx, 4Eh
+__text:00000001000D81BA 75 29                           jnz     short loc_1000D81E5
+__text:00000001000D81BC 48 89 DF                        mov     rdi, rbx
+__text:00000001000D81BF 44 89 F6                        mov     esi, r14d
+__text:00000001000D81C2 E8 29 04 00 00                  call    sub_1000D85F0
+__text:00000001000D81C7 89 C1                           mov     ecx, eax
+__text:00000001000D81C9 B8 0C 02 00 00                  mov     eax, 20Ch
+__text:00000001000D81CE 83 F9 17                        cmp     ecx, 17h
+__text:00000001000D81D1 74 7B                           jz      short loc_1000D824E
+__text:00000001000D81D3 83 F9 2A                        cmp     ecx, 2Ah
+__text:00000001000D81D6 74 06                           jz      short loc_1000D81DE
+__text:00000001000D81D8 81 F9 38 01 00 00               cmp     ecx, 138h
+__text:00000001000D81DE
+__text:00000001000D81DE                               loc_1000D81DE:                          ; CODE XREF: sub_1000D8180+56↑j
+__text:00000001000D81DE B8 ED 00 00 00                  mov     eax, 0EDh
+__text:00000001000D81E3 EB 69                           jmp     short loc_1000D824E
+__text:00000001000D81E5                               ; ---------------------------------------------------------------------------
+__text:00000001000D81E5
+__text:00000001000D81E5                               loc_1000D81E5:                          ; CODE XREF: sub_1000D8180+3A↑j
+__text:00000001000D81E5 81 F9 E7 00 00 00               cmp     ecx, 0E7h
+__text:00000001000D81EB 74 5C                           jz      short loc_1000D8249
+__text:00000001000D81ED 48 89 DF                        mov     rdi, rbx
+__text:00000001000D81F0 44 89 F6                        mov     esi, r14d
+__text:00000001000D81F3 E8 F8 03 00 00                  call    sub_1000D85F0
+__text:00000001000D81F8 89 C1                           mov     ecx, eax
+__text:00000001000D81FA B8 71 00 00 00                  mov     eax, 71h
+__text:00000001000D81FF 83 F9 17                        cmp     ecx, 17h
+__text:00000001000D8202 74 4A                           jz      short loc_1000D824E
+__text:00000001000D8204 83 F9 2A                        cmp     ecx, 2Ah
+__text:00000001000D8207 75 1C                           jnz     short loc_1000D8225
+__text:00000001000D8209 48 89 DF                        mov     rdi, rbx
+__text:00000001000D820C E8 AF 05 00 00                  call    sub_1000D87C0
+__text:00000001000D8211 3D A3 01 00 00                  cmp     eax, 1A3h
+__text:00000001000D8216 B9 F9 00 00 00                  mov     ecx, 0F9h
+__text:00000001000D821B B8 77 01 00 00                  mov     eax, 177h
+__text:00000001000D8220 0F 44 C1                        cmovz   eax, ecx
+__text:00000001000D8223 EB 29                           jmp     short loc_1000D824E
+__text:00000001000D8225                               ; ---------------------------------------------------------------------------
+__text:00000001000D8225
+__text:00000001000D8225                               loc_1000D8225:                          ; CODE XREF: sub_1000D8180+87↑j
+__text:00000001000D8225 81 F9 38 01 00 00               cmp     ecx, 138h
+__text:00000001000D822B 75 1C                           jnz     short loc_1000D8249
+__text:00000001000D822D 48 89 DF                        mov     rdi, rbx
+__text:00000001000D8230 E8 8B 05 00 00                  call    sub_1000D87C0
+__text:00000001000D8235 3D A3 01 00 00                  cmp     eax, 1A3h
+__text:00000001000D823A B9 F9 00 00 00                  mov     ecx, 0F9h
+__text:00000001000D823F B8 2F 00 00 00                  mov     eax, 2Fh
+__text:00000001000D8244 0F 44 C1                        cmovz   eax, ecx
+__text:00000001000D8247 EB 05                           jmp     short loc_1000D824E
+__text:00000001000D8249                               ; ---------------------------------------------------------------------------
+__text:00000001000D8249
+__text:00000001000D8249                               loc_1000D8249:                          ; CODE XREF: sub_1000D8180+6B↑j
+__text:00000001000D8249                                                                       ; sub_1000D8180+AB↑j
+__text:00000001000D8249 B8 77 01 00 00                  mov     eax, 177h
+__text:00000001000D824E
+__text:00000001000D824E                               loc_1000D824E:                          ; CODE XREF: sub_1000D8180+16↑j
+__text:00000001000D824E                                                                       ; sub_1000D8180+31↑j ...
+__text:00000001000D824E 5B                              pop     rbx
+__text:00000001000D824F 41 5E                           pop     r14
+__text:00000001000D8251 5D                              pop     rbp
+__text:00000001000D8252 C3                              retn
+__text:00000001000D8252                               ; } // starts at 1000D8180
+__text:00000001000D8252                               sub_1000D8180 endp
+__text:00000001000D8252
+__text:00000001000D8252                               ; ---------------------------------------------------------------------------
+__text:00000001000D8253 66 66 66 66 2E 0F 1F 84 00 00+  align 20h
+__text:00000001000D8260
+__text:00000001000D8260                               ; =============== S U B R O U T I N E =======================================
+

@@ -1,0 +1,4504 @@
+﻿================================================================================
+滑雪大冒险 v2.3.5
+滑雪大冒险2
+
+去广告
+
+.class public Lcom/yodo1/android/sdk/unity/UnityYodo1Advertising;
+.super Ljava/lang/Object;
+.source "UnityYodo1Advertising.java"
+
+5个广告相关的函数都是void类型的,直接返回即可移除广告.
+
+.method public showBannerAd(Ljava/lang/String;Ljava/lang/String;)V
+.method public showIapInterstitialAd(Ljava/lang/String;Ljava/lang/String;)V
+.method public showInterstitialAd(Ljava/lang/String;Ljava/lang/String;)V
+.method public showNativeAd(Ljava/lang/String;FFFFLjava/lang/String;)V
+
+.method public showRewardVideo(Ljava/lang/String;Ljava/lang/String;)V
+
+.method public SplashAd(Ljava/lang/String;Ljava/lang/String;)V
+
+
+.method public showInterstitialAd(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 2
+    .param p1, "gameObject"    # Ljava/lang/String;
+    .param p2, "callbackName"    # Ljava/lang/String;
+
+    .prologue
+    .line 95
+    const-string v0, "Yodo1SDK, Unity call Android --- showInterstitialAd ...B.S.移除插播式广告"
+
+    invoke-static {v0}, Lcom/yodo1/sdk/kit/YLog;->d(Ljava/lang/String;)V
+    return-void #直接返回
+    .line 96
+    invoke-static {}, Lcom/yodo1/android/sdk/unity/UnityYodo1SDK;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/yodo1/android/sdk/unity/UnityYodo1Advertising$3;
+
+    invoke-direct {v1, p0, p1, p2}, Lcom/yodo1/android/sdk/unity/UnityYodo1Advertising$3;-><init>(Lcom/yodo1/android/sdk/unity/UnityYodo1Advertising;Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
+
+    .line 113
+    return-void
+.end method
+
+
+.method public SplashAd(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 2
+    .param p1, "gameObject"    # Ljava/lang/String;
+    .param p2, "callbackName"    # Ljava/lang/String;
+
+    .prologue
+    .line 156
+    const-string v0, "Yodo1SDK, Unity call Android --- SplashAd ...B.S.移除启动界面广告"
+
+    invoke-static {v0}, Lcom/yodo1/sdk/kit/YLog;->d(Ljava/lang/String;)V
+    return-void #直接返回
+    .line 157
+
+    return-void
+.end method
+
+
+.class public Lcom/yodo1/android/sdk/open/Yodo1Advert;
+.super Ljava/lang/Object;
+.source "Yodo1Advert.java"
+
+.class public Lcom/yodo1/android/sdk/unity/UnityYodo1Advertising;
+.super Ljava/lang/Object;
+.source "UnityYodo1Advertising.java"
+
+
+签名验证
+
+Landroid/content/pm/PackageInfo;->signatures:[Landroid/content/pm/Signature
+
+sdk_code串为 : 
+
+.class public Lcom/yodo1/sdk/adapter/ChannelAdapterFactory;
+.super Ljava/lang/Object;
+.source "ChannelAdapterFactory.java"
+
+.method public initChannelAdapters(Landroid/content/Context;)V
+
+
+Yodo1Analytics, 验证签名失败! 将导致统计全部失效, 请检查你的包签名
+
+
+[发布渠道] :
+
+.class public Lcom/yodo1/android/ops/net/Yodo1OPSBuilder;
+.super Ljava/lang/Object;
+.source "Yodo1OPSBuilder.java"
+
+
+[OPS - GameAppKey] : 1Kiq09tiwV
+[OPS - RegionCode] : e2e652cf
+
+.class public Lcom/yodo1/android/sdk/helper/Yodo1AnalyticsHelper;
+.super Ljava/lang/Object;
+.source "Yodo1AnalyticsHelper.java"
+
+.method private check()V
+
+.class public Lcom/yodo1/android/sdk/helper/Yodo1AnalyticsHelper;
+.super Ljava/lang/Object;
+.source "Yodo1AnalyticsHelper.java"
+
+com.yodo1.android.sdk.exception.Yodo1CheckSignException: 检测到包签名无效， 统计功能将不能生效
+
+.class public Lcom/yodo1/android/sdk/exception/Yodo1CheckSignException;
+.super Ljava/lang/Exception;
+.source "Yodo1CheckSignException.java"
+
+
+内购破解
+
+删除收费权限
+
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+
+BillingResult.SUCCESS
+
+移动接口
+
+计费点  ：
+支付  SUCCESS
+
+.method public onResult(ILjava/lang/String;Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    .line 43
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_1  #:pswitch_1   #成功
+        :pswitch_1  #:pswitch_0   #失败
+        :pswitch_1  #:pswitch_2   #取消
+    .end packed-switch
+
+	
+为保护您的支付安全，请确保您的网络连接!
+	
+直接购买成功回调处理
+
+.class public Lcom/yodo1/sdk/pay/PayAdapterCMCC;
+.super Lcom/yodo1/sdk/adapter/function/PayAdapterBase;
+.source "PayAdapterCMCC.java"
+
+
+YLog.e("支付  SUCCESS");	
+this.val$callback.onResult(1, 0, "");
+return;	
+
+
+const/4 v3, 0x0
+
+.line 34
+const/4 v1, 0x1  #const/4 v1, 0x0  #修改这里的掉函数参数为0x1能离线购买直接成功
+
+const/4 v2, 0x0
+
+const-string v3, ""
+
+move-object/from16 v0, p6
+
+invoke-interface {v0, v1, v2, v3}, Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;->onResult(IILjava/lang/String;)V
+
+.line 36
+const-string v1, "\u4e3a\u4fdd\u62a4\u60a8\u7684\u652f\u4ed8\u5b89\u5168\uff0c\u8bf7\u786e\u4fdd\u60a8\u7684\u7f51\u7edc\u8fde\u63a5!"
+
+const/4 v2, 0x0
+
+invoke-static {p1, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+
+move-result-object v1
+
+invoke-virtual {v1}, Landroid/widget/Toast;->show()V
+
+.line 55
+:goto_0
+return-void
+
+
+
+.line 48
+:cond_1
+const-string v0, "\u652f\u4ed8  SUCCESS"
+
+invoke-static {v0}, Lcom/yodo1/sdk/kit/YLog;->e(Ljava/lang/String;)V
+
+.line 49
+iget-object v0, p0, Lcom/yodo1/sdk/basic/CmccIniter$1;->val$callback:Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;
+
+if-eqz v0, :cond_0
+
+.line 50
+iget-object v0, p0, Lcom/yodo1/sdk/basic/CmccIniter$1;->val$callback:Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;
+
+const/4 v1, 0x1
+
+const-string v2, ""
+
+invoke-interface {v0, v1, v3, v2}, Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;->onResult(IILjava/lang/String;)V
+
+goto :goto_0	
+
+ChannelSDKCallback回调大法上,强势秒杀,通杀
+
+java源码为
+
+public void pay(Activity activity, ChannelPayInfo payInfo, Element payElement, String extraParam, ChannelSDKUser user, ChannelSDKCallback callback) {
+        callback.onResult(1, 0, "");
+        Toast.makeText(activity, "无限内购B.S.破解版\n  www.appleos.xyz \n  爱淫荡  多合一 \n  www.allin1.xyz \n  -- by B.S.", 0).show();
+    }
+	
+java反汇编smali源码为
+
+    .line 52
+    :cond_1
+    #invoke-static/range {p1 .. p6}, Lcom/yodo1/sdk/basic/CmccIniter;->pay(Landroid/app/Activity;Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;Lorg/w3c/dom/Element;Ljava/lang/String;Lcom/yodo1/sdk/adapter/entity/ChannelSDKUser;Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;)V
+    
+       
+    ###### 
+    const/4 v1, 0x1  #修改这里的回调函数参数1为0x1能购买直接成功
+
+    const/4 v2, 0x0
+
+    const-string v3, ""
+
+    move-object/from16 v0, p6
+
+    invoke-interface {v0, v1, v2, v3}, Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;->onResult(IILjava/lang/String;)V
+
+    .line 36
+    const-string v1, "\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n  www.appleos.xyz \n  \u7231\u6DEB\u8361  \u591A\u5408\u4E00 \n  www.allin1.xyz \n  -- by B.S."
+
+    const/4 v2, 0x0
+
+    invoke-static {p1, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/widget/Toast;->show()V
+
+    ######return-void  
+    ######
+
+    goto :goto_0
+.end method
+
+
+
+
+
+
+电信支付
+
+计费点id	
+
+.class Lcom/yodo1/sdk/pay/PayAdapterTelecom3C$1;
+.super Ljava/lang/Object;
+.source "PayAdapterTelecom3C.java"
+
+payCancel,payFailed的函数体换成paySuccess.其实只需要改回调函数onResult第一个参数为1就行.
+
+public void paySuccess(Map<String, String> paramAnonymousMap)
+	{
+	  if (paramChannelSDKCallback != null) {
+		paramChannelSDKCallback.onResult(1, 0, paramString);
+	  }
+	}
+
+联通支付
+
+unicom pay
+
+计费点id
+
+
+
+短信支付
+
+Yodo1SDK, Unity call Android --- sendGoods ...
+
+
+
+
+
+微信支付
+
+小米支付  Wechat 计费点：
+
+小米支付  Wechat  是否可重复购买：
+
+小米支付, callback , msg = 没有安装客户端, i = 809
+
+
+.method private payForWechat(Landroid/app/Activity;Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;)V
+    .locals 12
+    .param p1, "activity"    # Landroid/app/Activity;
+    .param p2, "payInfo"    # Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;
+    .param p3, "callback"    # Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;
+
+	
+.line 192
+new-instance v2, Lcom/yodo1/sdk/pay/PayAdapterXiaomi$4;
+
+
+.class Lcom/yodo1/sdk/pay/PayAdapterXiaomi$4;
+.super Ljava/lang/Object;
+.source "PayAdapterXiaomi.java"
+
+# interfaces
+.implements Lcom/xiaomi/gamecenter/awpay/PayResultCallback;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/yodo1/sdk/pay/PayAdapterXiaomi;->payForWechat(Landroid/app/Activity;Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;)V
+.end annotation
+
+找出回调成功的代码,合并处理this指针
+
+.method public onSuccess(Ljava/lang/String;)V
+    .locals 4
+    .param p1, "s"    # Ljava/lang/String;
+
+    .prologue
+    .line 203
+    iget-object v0, p0, Lcom/yodo1/sdk/pay/PayAdapterXiaomi$4;->val$callback:Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;
+
+    if-eqz v0, :cond_BS
+
+    .line 204
+    iget-object v0, p0, Lcom/yodo1/sdk/pay/PayAdapterXiaomi$4;->val$callback:Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    iget-object v3, p0, Lcom/yodo1/sdk/pay/PayAdapterXiaomi$4;->val$orderId:Ljava/lang/String;
+
+    invoke-interface {v0, v1, v2, v3}, Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;->onResult(IILjava/lang/String;)V
+
+    .line 206
+    :cond_BS
+    return-void
+.end method
+
+处理后为
+
+    .line 191
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "\u5c0f\u7c73\u652f\u4ed8  Wechat  \u662f\u5426\u53ef\u91cd\u590d\u8d2d\u4e70\uff1a "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {p2}, Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;->isRepeated()Z
+
+    move-result v7
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v6}, Lcom/yodo1/sdk/kit/YLog;->i(Ljava/lang/String;)V
+
+    .line 192
+    #new-instance v2, Lcom/yodo1/sdk/pay/PayAdapterXiaomi$4;
+
+    #invoke-direct {v2, p0, p3, v1}, Lcom/yodo1/sdk/pay/PayAdapterXiaomi$4;-><init>(Lcom/yodo1/sdk/pay/PayAdapterXiaomi;Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;Ljava/lang/String;)V
+    
+    ######
+    if-eqz p3, :cond_BS  #这里填入ChannelSDKCallback参数
+    
+    const/4 v3, 0x1  #修改这里的回调函数参数1为0x1能购买直接成功
+    
+    const/4 v2, 0x0
+    
+    #const-string v3, ""  #String orderId
+    
+    move-object/from16 v0, p3  #这里填入ChannelSDKCallback参数
+    
+    #前面的.local v1, "orderId":Ljava/lang/String;
+    invoke-interface {v0, v3, v2, v1}, Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;->onResult(IILjava/lang/String;)V
+    
+    const-string v1, "\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n  www.appleos.xyz \n  \u7231\u6DEB\u8361  \u591A\u5408\u4E00 \n  www.allin1.xyz \n  -- by B.S."
+    
+    const/4 v2, 0x0
+    
+    invoke-static {p1, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    
+    move-result-object v1
+    
+    invoke-virtual {v1}, Landroid/widget/Toast;->show()V
+    
+    :cond_BS
+    return-void  
+    ######
+
+
+
+
+支付宝支付
+
+小米支付  Alipay  计费点：
+
+小米支付  Alipay  是否可重复购买：
+
+小米支付  可重复购买  计费点购买
+
+.method private payForAlipay(Landroid/app/Activity;Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;)V
+    .locals 12
+    .param p1, "activity"    # Landroid/app/Activity;
+    .param p2, "payInfo"    # Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;
+    .param p3, "callback"    # Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;
+
+
+    .line 136
+    new-instance v2, Lcom/yodo1/sdk/pay/PayAdapterXiaomi$3;
+
+    invoke-direct {v2, p0, p3, v1}, Lcom/yodo1/sdk/pay/PayAdapterXiaomi$3;-><init>(Lcom/yodo1/sdk/pay/PayAdapterXiaomi;Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;Ljava/lang/String;)V
+	
+
+	
+.class Lcom/yodo1/sdk/pay/PayAdapterXiaomi$3;
+.super Ljava/lang/Object;
+.source "PayAdapterXiaomi.java"
+
+# interfaces
+.implements Lcom/xiaomi/gamecenter/awpay/PayResultCallback;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/yodo1/sdk/pay/PayAdapterXiaomi;->payForAlipay(Landroid/app/Activity;Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;)V
+.end annotation
+	
+	
+
+搬迁里面的回调函数里的成功代码到.line 136的new-instance v2, Lcom/yodo1/sdk/pay/PayAdapterXiaomi$3;
+
+最终修改为
+
+    .line 136
+    #new-instance v2, Lcom/yodo1/sdk/pay/PayAdapterXiaomi$3;
+
+    #invoke-direct {v2, p0, p3, v1}, Lcom/yodo1/sdk/pay/PayAdapterXiaomi$3;-><init>(Lcom/yodo1/sdk/pay/PayAdapterXiaomi;Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;Ljava/lang/String;)V
+    
+    ######
+    if-eqz p3, :cond_BS  #这里填入ChannelSDKCallback参数
+    
+    const/4 v3, 0x1  #修改这里的回调函数参数1为0x1能购买直接成功
+    
+    const/4 v2, 0x0
+    
+    #const-string v3, ""  #String orderId
+    
+    move-object/from16 v0, p3  #这里填入ChannelSDKCallback参数
+    
+    #前面的.local v1, "orderId":Ljava/lang/String;
+    invoke-interface {v0, v3, v2, v1}, Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;->onResult(IILjava/lang/String;)V
+    
+    const-string v1, "\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n  www.appleos.xyz \n  \u7231\u6DEB\u8361  \u591A\u5408\u4E00 \n  www.allin1.xyz \n  -- by B.S."
+    
+    const/4 v2, 0x0
+    
+    invoke-static {p1, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    
+    move-result-object v1
+    
+    invoke-virtual {v1}, Landroid/widget/Toast;->show()V
+    
+    :cond_BS
+    return-void  
+    ######
+    
+
+    .line 152
+    .local v2, "payCallback":Lcom/xiaomi/gamecenter/awpay/PayResultCallback;
+
+
+	
+	
+
+
+EGL_adreno
+
+eglSurfaceAttrib not implemented
+
+KTPlayCallStack
+
+onPause
+
+cn.cmgame.d.a
+
+went background
+
+cn.cmgame.d.a
+
+went foreground
+
+
+KTPlayCallStack
+
+onResume
+
+
+米币支付
+
+Yodo1SDK, Activity onStart end, time = 
+
+Service Connected
+
+disconnect:
+
+.class public final Lcom/xiaomi/gamecenter/sdk/MiCommplatform;
+.super Ljava/lang/Object;
+
+
+Lcom/xiaomi/gamecenter/awpay/PayResultCallback;
+
+
+.class Lcom/anysdk/framework/IAPOnlineXiaoMi$5;
+.super Ljava/lang/Object;
+.source "IAPOnlineXiaoMi.java
+
+.class public Lcom/anysdk/framework/IAPOnlineXiaoMi;
+.super Ljava/lang/Object;
+.source "IAPOnlineXiaoMi.java"
+
+
+米币离线线支付在下面位置改成相应代码
+
+.method public payOffline(Landroid/app/Activity;Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;)V
+    .locals 7
+    .param p1, "activity"    # Landroid/app/Activity;
+    .param p2, "payInfo"    # Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;
+    .param p3, "callback"    # Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;
+
+    .line 331
+    #invoke-static {}, Lcom/xiaomi/gamecenter/sdk/MiCommplatform;->getInstance()Lcom/xiaomi/gamecenter/sdk/MiCommplatform;
+
+    #move-result-object v4
+
+    #new-instance v5, Lcom/yodo1/sdk/pay/PayAdapterXiaomi$7;
+
+    #invoke-direct {v5, p0, p3, v3}, Lcom/yodo1/sdk/pay/PayAdapterXiaomi$7;-><init>(Lcom/yodo1/sdk/pay/PayAdapterXiaomi;Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;Ljava/lang/String;)V
+
+    #invoke-virtual {v4, p1, v2, v5}, Lcom/xiaomi/gamecenter/sdk/MiCommplatform;->miUniPayOffline(Landroid/app/Activity;Lcom/xiaomi/gamecenter/sdk/entry/MiBuyInfoOffline;Lcom/xiaomi/gamecenter/sdk/OnPayProcessListener;)I
+    
+    ######
+    if-eqz p3, :cond_BS  #这里填入ChannelSDKCallback参数
+    
+    const/4 v1, 0x1  #修改这里的回调函数参数1为0x1能购买直接成功
+    
+    const/4 v2, 0x0
+    
+    #const-string v3, ""  #String orderId
+    
+    move-object/from16 v0, p3  #这里填入ChannelSDKCallback参数
+    
+    #前面的.local v3, "orderId":Ljava/lang/String;
+    invoke-interface {v0, v1, v2, v3}, Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;->onResult(IILjava/lang/String;)V
+    
+    const-string v1, "\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n  www.appleos.xyz \n  \u7231\u6DEB\u8361  \u591A\u5408\u4E00 \n  www.allin1.xyz \n  -- by B.S."
+    
+    const/4 v2, 0x0
+    
+    invoke-static {p1, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    
+    move-result-object v1
+    
+    invoke-virtual {v1}, Landroid/widget/Toast;->show()V
+    
+    :cond_BS
+    return-void  
+    ######
+
+米币在线支付最终修改如下	
+	
+.method public payOnline(Landroid/app/Activity;Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;Lcom/yodo1/sdk/adapter/entity/ChannelSDKUser;Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;)V
+    .locals 7
+    .param p1, "activity"    # Landroid/app/Activity;
+    .param p2, "payInfo"    # Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;
+    .param p3, "user"    # Lcom/yodo1/sdk/adapter/entity/ChannelSDKUser;
+    .param p4, "callback"    # Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;
+
+    .prologue
+    .line 243
+    invoke-virtual {p2}, Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;->getOrderId()Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 245
+    .local v3, "orderId":Ljava/lang/String;
+    new-instance v2, Lcom/xiaomi/gamecenter/sdk/entry/MiBuyInfoOnline;
+
+    invoke-direct {v2}, Lcom/xiaomi/gamecenter/sdk/entry/MiBuyInfoOnline;-><init>()V
+
+    .line 246
+    .local v2, "online":Lcom/xiaomi/gamecenter/sdk/entry/MiBuyInfoOnline;
+    invoke-virtual {v2, v3}, Lcom/xiaomi/gamecenter/sdk/entry/MiBuyInfoOnline;->setCpOrderId(Ljava/lang/String;)V
+
+    .line 247
+    const-string v4, "http://payment.api.yodo1.cn/payment/channel/XIAOMI/callback"
+
+    invoke-virtual {v2, v4}, Lcom/xiaomi/gamecenter/sdk/entry/MiBuyInfoOnline;->setCpUserInfo(Ljava/lang/String;)V
+
+    .line 248
+    invoke-virtual {p2}, Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;->getProductPrice()D
+
+    move-result-wide v4
+
+    double-to-int v4, v4
+
+    invoke-virtual {v2, v4}, Lcom/xiaomi/gamecenter/sdk/entry/MiBuyInfoOnline;->setMiBi(I)V
+
+    .line 251
+    :try_start_0
+    new-instance v1, Landroid/os/Bundle;
+
+    invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
+
+    .line 252
+    .local v1, "mBundle":Landroid/os/Bundle;
+    const-string v4, "balance"
+
+    const-string v5, "0"
+
+    invoke-virtual {v1, v4, v5}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 253
+    const-string v4, "vip"
+
+    const-string v5, "0"
+
+    invoke-virtual {v1, v4, v5}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 254
+    const-string v4, "lv"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {p3}, Lcom/yodo1/sdk/adapter/entity/ChannelSDKUser;->getLevel()I
+
+    move-result v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string v6, ""
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v1, v4, v5}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 255
+    const-string v4, "partyName"
+
+    const-string v5, "\u730e\u4eba"
+
+    invoke-virtual {v1, v4, v5}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 256
+    const-string v4, "roleName"
+
+    invoke-virtual {p3}, Lcom/yodo1/sdk/adapter/entity/ChannelSDKUser;->getNickName()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v1, v4, v5}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 257
+    const-string v4, "roleId"
+
+    invoke-virtual {p3}, Lcom/yodo1/sdk/adapter/entity/ChannelSDKUser;->getUid()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v1, v4, v5}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 258
+    const-string v4, "serverName"
+
+    invoke-virtual {p3}, Lcom/yodo1/sdk/adapter/entity/ChannelSDKUser;->getGameServerId()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v1, v4, v5}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 261
+    #invoke-static {}, Lcom/xiaomi/gamecenter/sdk/MiCommplatform;->getInstance()Lcom/xiaomi/gamecenter/sdk/MiCommplatform;
+
+    #move-result-object v4
+
+    #new-instance v5, Lcom/yodo1/sdk/pay/PayAdapterXiaomi$5;
+
+    #invoke-direct {v5, p0, p4, v3}, Lcom/yodo1/sdk/pay/PayAdapterXiaomi$5;-><init>(Lcom/yodo1/sdk/pay/PayAdapterXiaomi;Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;Ljava/lang/String;)V
+
+    #invoke-virtual {v4, p1, v2, v1, v5}, Lcom/xiaomi/gamecenter/sdk/MiCommplatform;->miUniPayOnline(Landroid/app/Activity;Lcom/xiaomi/gamecenter/sdk/entry/MiBuyInfoOnline;Landroid/os/Bundle;Lcom/xiaomi/gamecenter/sdk/OnPayProcessListener;)I
+    
+    ######
+    if-eqz p3, :cond_BS  #这里填入ChannelSDKCallback参数
+    
+    const/4 v1, 0x1  #修改这里的回调函数参数1为0x1能购买直接成功
+    
+    const/4 v2, 0x0
+    
+    #const-string v3, ""  #String orderId
+    
+    move-object/from16 v0, p3  #这里填入ChannelSDKCallback参数
+    
+    #前面的.local v3, "orderId":Ljava/lang/String;
+    invoke-interface {v0, v1, v2, v3}, Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;->onResult(IILjava/lang/String;)V
+    
+    const-string v1, "\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n  www.appleos.xyz \n  \u7231\u6DEB\u8361  \u591A\u5408\u4E00 \n  www.allin1.xyz \n  -- by B.S."
+    
+    const/4 v2, 0x0
+    
+    invoke-static {p1, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    
+    move-result-object v1
+    
+    invoke-virtual {v1}, Landroid/widget/Toast;->show()V
+    
+    :cond_BS
+    goto :goto_0
+    ###return-void  
+    ######    
+    
+    
+    
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 293
+    .end local v1    # "mBundle":Landroid/os/Bundle;
+    :goto_0
+    return-void
+
+    .line 289
+    :catch_0
+    move-exception v0
+
+    .line 290
+    .local v0, "e":Ljava/lang/Exception;
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+
+    goto :goto_0
+.end method
+
+
+小米支付, callback , msg = 没有安装客户端, i = 809
+
+misdk pay productCode =
+ 
+mi pay, callback , code = -18003
+
+Yodo1PayHelpe,  已购买，返回购买成功
+
+
+httpType = 1, submit str = {"sign":"51dae58ec391fa88234c8105e232f339","data":{"orderid":"6420c85f768944f0a6f41931658307dc"}}	
+response={"error_code":0,"error":"","status":0,"orderid":"6420c85f768944f0a6f41931658307dc"}	
+query order , queryResult = CONTINUE_LOOP_UNKNOWN
+query order unknown, continue loop
+
+
+response={"error_code":208,"error":"","status":0,"orderid":"292627149ac0455283e5f66b8f6d76b8"}
+
+
+
+
+
+callBack(Lcom/yodo1/android/ops/payment/QueryResult;Ljava/lang/String;)V
+
+	
+全部统一到移动支付接口
+
+cmcc UIAdapterCMCC
+
+cmcc  动态加载 megjb
+
+cmcc  动态加载成功
+
+.class public Lcom/yodo1/sdk/basic/BasicAdapterCMCC;
+.super Lcom/yodo1/sdk/adapter/function/BasicAdapterBase;
+.source "BasicAdapterCMCC.java"
+
+
+# instance fields
+.field private payAdapter:Lcom/yodo1/sdk/pay/PayAdapterCMCC;
+
+.field private uiAdapter:Lcom/yodo1/sdk/ui/UIAdapterCMCC;
+
+
+.method public onCreateApplication(Landroid/app/Application;)V
+
+返回值为0x1为移动支付
+
+
+.class public Lcom/yodo1/android/sdk/utils/YOperatorUtils;
+.super Ljava/lang/Object;
+.source "YOperatorUtils.java"
+
+
+.method public static getOperatorChannelId(Landroid/content/Context;)I
+
+
+.line 63
+:cond_0
+:goto_0
+#move v2, v3  #返回0x1,伪装为移动支付
+
+return v2
+
+.line 48
+:cond_1
+const-string v4, "phone"
+
+invoke-virtual {p0, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+move-result-object v1
+
+check-cast v1, Landroid/telephony/TelephonyManager;
+
+.line 49
+.local v1, "phoneManager":Landroid/telephony/TelephonyManager;
+invoke-virtual {v1}, Landroid/telephony/TelephonyManager;->getSubscriberId()Ljava/lang/String;
+
+move-result-object v0
+
+.line 50
+.local v0, "operator":Ljava/lang/String;
+if-eqz v0, :cond_0
+
+
+应该调用的是下面这个
+
+.class public Lcom/yodo1/advert/utils/Yodo1OperatorUtils;
+.super Ljava/lang/Object;
+.source "Yodo1OperatorUtils.java"
+
+
+.method public static getOperatorType(Landroid/content/Context;)I
+
+还可统一各支付平台
+
+private void channelPay(Activity activity, ChannelPayInfo payInfo, Platform type, ChannelSDKUser user, ChannelSDKCallback callback) {
+	if (type == Platform.WECHAT) {
+		payForWechat(activity, payInfo, callback);
+	} else if (type == Platform.ALIPAY) {
+		payForAlipay(activity, payInfo, callback);
+	} else if ("online" == SdkConfigXiaomi.NETWORKING) {
+		payOnline(activity, payInfo, user, callback);
+	} else {
+		payOffline(activity, payInfo, callback);
+	}
+
+强大的ChannelSDKCallback回调大法	
+	
+.method private channelPay(Landroid/app/Activity;Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;Lcom/yodo1/sdk/adapter/callback/Yodo1PayViewCallback$Platform;Lcom/yodo1/sdk/adapter/entity/ChannelSDKUser;Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;)V
+    .locals 2
+    .param p1, "activity"    # Landroid/app/Activity;
+    .param p2, "payInfo"    # Lcom/yodo1/sdk/adapter/entity/ChannelPayInfo;
+    .param p3, "type"    # Lcom/yodo1/sdk/adapter/callback/Yodo1PayViewCallback$Platform;
+    .param p4, "user"    # Lcom/yodo1/sdk/adapter/entity/ChannelSDKUser;
+    .param p5, "callback"    # Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;
+
+    .prologue
+    .line 118
+    ######ChannelSDKCallback回调大法
+    if-eqz p5, :cond_BS  #这里填入ChannelSDKCallback参数
+    
+    const/4 v1, 0x1  #修改这里的回调函数参数1为0x1能购买直接成功
+    
+    const/4 v2, 0x0
+    
+    const-string v3, ""  #String orderId
+    
+    move-object/from16 v0, p5  #这里填入ChannelSDKCallback参数
+    
+    #前面的.local v3, "orderId":Ljava/lang/String;
+    invoke-interface {v0, v1, v2, v3}, Lcom/yodo1/sdk/adapter/callback/ChannelSDKCallback;->onResult(IILjava/lang/String;)V
+    
+    const-string v1, "\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n  www.appleos.xyz \n  \u7231\u6DEB\u8361  \u591A\u5408\u4E00 \n  www.allin1.xyz \n  -- by B.S."
+    
+    const/4 v2, 0x0
+    
+    invoke-static {p1, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    
+    move-result-object v1
+    
+    invoke-virtual {v1}, Landroid/widget/Toast;->show()V
+    
+    :cond_BS
+    goto :goto_0
+    :goto_0
+    return-void  
+    ###### 
+.end method
+
+================================================================================
+
+割绳子2 微信QQ版
+
+sdk通知支付失败...... 
+sdk通知支付失败...... 
+
+======onResult=====sdk通知结果 : 取消, msg = a7a127f40e0a43b6b26c4a731680455f
+MidasNetFinish(Ljava/lang/String;Ljava/lang/String;)V
+.method public onResp(Lcom/tencent/mm/sdk/modelbase/BaseResp;)V
+APMidawxPayHelper
+Yodo1ResultConst.ResultCode.Failed
+Yodo1ResultConst.ResultCode.Cancel
+Yodo1ResultConst.ResultCode.Success
+
+
+.class Lcom/zeptolab/zframework/billing/ZYodo1BillingManager$1;
+.super Ljava/lang/Object;
+.source "ZYodo1BillingManager.java"
+
+
+.method public onResult(Lcom/yodo1/android/core/constants/Yodo1ResultConst$ResultType;Lcom/yodo1/android/core/constants/Yodo1ResultConst$ResultCode;Ljava/lang/String;)V
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/zeptolab/zframework/billing/ZYodo1BillingManager;->purchase(Ljava/lang/String;)V
+.end annotation
+
+.class public Lcom/zeptolab/zframework/billing/ZYodo1BillingManager;
+.super Lcom/zeptolab/zframework/billing/ZBillingManager;
+.source "ZYodo1BillingManager.java"
+
+.method public purchase(Ljava/lang/String;)V
+
+
+
+    ######直接支付成功,后面的pay支付回调函数全部删除或者注释掉.
+    ######从.class Lcom/zeptolab/zframework/billing/ZYodo1BillingManager$1;里的onResult搬过来的成功代码
+    .line 138
+    invoke-virtual {v1}, Lcom/yodo1/android/sdk/entity/Yodo1PayInfo;->getProductId()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/zeptolab/zframework/billing/ZYodo1BillingManager;->userPaySuccess(Ljava/lang/String;)V
+    ######
+
+
+	
+移动咪咕版
+
+.class final Lcom/zeptolab/zframework/billing/Yodo1SDKHelper$2;
+	
+.class public Lcom/zeptolab/zframework/billing/Yodo1SDKHelper;
+	
+.method public static pay(Ljava/lang/String;Lcom/yodo1/android/sdk/constants/PayType;)V
+
+    .line 730
+    :cond_BS
+    ######直接支付成功,后面的pay支付回调函数全部删除或者注释掉.
+    ######从.class final Lcom/zeptolab/zframework/billing/Yodo1SDKHelper$2;里的purchase搬过来的成功代码
+    .line 221
+    invoke-virtual {v1}, Lcom/yodo1/android/sdk/helper/ProductData;->getProductId()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/zeptolab/zframework/billing/Yodo1SDKHelper;->userPaySuccess(Ljava/lang/String;)V
+    ######
+
+--------------------------------------------------------------------------------
+割绳子2  官方版
+
+去广告
+
+
+去今日推荐5秒闪屏广告
+
+.class public Lcn/cmgame/billing/api/game/main/Tool;
+.super Ljava/lang/Object;
+
+.method public static adSplashShow(Landroid/app/Activity;Ljava/lang/Class;Ljava/lang/Class;Landroid/os/Handler;)Z
+    .locals 7
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    const-string v2, "---adSplashShow----"
+
+    invoke-static {v2}, Lcn/cmgame/billing/api/game/e/d;->b(Ljava/lang/String;)V
+
+    sput-object p0, Lcn/cmgame/billing/api/game/main/Tool;->splashActivity:Landroid/app/Activity;
+
+    :try_start_0
+    ###### 自带日志输出  appSign
+    const-string v3, "---B.S.---Tool.adSplashShow"
+    #move-object/from16 v2, v2  #v0是要打印输出的内容
+    invoke-static {v3, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    move v0, v1  #这里要，返回为0去闪屏广告，返回为1会一直黑屏
+    goto :goto_0
+    ######
+
+
+.class public Lcom/yodo1/android/sdk/unity/UnityYodo1Advertising;
+.super Ljava/lang/Object;
+.source "UnityYodo1Advertising.java"
+
+
+.method public showBannerAd(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 2
+    .param p1, "gameObject"    # Ljava/lang/String;
+    .param p2, "callbackName"    # Ljava/lang/String;
+
+    .prologue
+    .line 150
+    const-string v0, "Yodo1SDK, Unity call Android --- showBannerAd ..."
+
+    invoke-static {v0}, Lcom/yodo1/sdk/kit/YLog;->d(Ljava/lang/String;)V
+    
+    return-void  #直接返回
+
+.method public showIapInterstitialAd(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 2
+    .param p1, "gameObject"    # Ljava/lang/String;
+    .param p2, "callbackName"    # Ljava/lang/String;
+
+    .prologue
+    .line 67
+    const-string v0, "Yodo1SDK, Unity call Android --- showIapInterstitialAd ..."
+
+    invoke-static {v0}, Lcom/yodo1/sdk/kit/YLog;->d(Ljava/lang/String;)V
+    
+    return-void  #直接返回	
+	
+.method public showInterstitialAd(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 2
+    .param p1, "gameObject"    # Ljava/lang/String;
+    .param p2, "callbackName"    # Ljava/lang/String;
+
+    .prologue
+    .line 93
+    const-string v0, "Yodo1SDK, Unity call Android --- showInterstitialAd ..."
+
+    invoke-static {v0}, Lcom/yodo1/sdk/kit/YLog;->d(Ljava/lang/String;)V
+
+    return-void  #直接返回
+
+.method public showNativeAd(Ljava/lang/String;FFFFLjava/lang/String;)V
+    .locals 9
+    .param p1, "gameObject"    # Ljava/lang/String;
+    .param p2, "px"    # F
+    .param p3, "py"    # F
+    .param p4, "pw"    # F
+    .param p5, "ph"    # F
+    .param p6, "callbackName"    # Ljava/lang/String;
+
+    .prologue
+    .line 124
+    const-string v0, "Yodo1SDK, Unity call Android --- showNativeAd ..."
+
+    invoke-static {v0}, Lcom/yodo1/sdk/kit/YLog;->d(Ljava/lang/String;)V
+    
+    return-void  #直接返回
+	
+	
+
+libctr2.so
+	
+CHANNEL ID ERROR
+
+
+.text:000B4814 00 2E                                         CMP             R6, #0
+.text:000B4816 18 BF                                         IT NE
+.text:000B4818 01 26                                         MOVNE           R6, #1
+.text:000B481A 30 46                                         MOV             R0, R6
+.text:000B481C BD E8 F0 88                                   POP.W           {R4-R7,R11,PC}
+
+
+.text:000B4814 00 2E                                         CMP             R6, #0
+.text:000B4816 18 BF                                         IT NE
+.text:000B4818 01 26                                         MOVNE           R6, #1
+.text:000B481A 01 20                                         MOVS            R0, #1
+.text:000B481C BD E8 F0 88                                   POP.W           {R4-R7,R11,PC}
+
+
+ZFRAMEWORK
+－－－－－－－－首次启动游戏--－－－－
+X86                   0042B8B3
+armeabi-v7a           002AE19A
+
+ZFRAMEWORK
+－－－------hidePopup-----－－---
+armeabi-v7a           002AE1D3
+
+
+002AE19A  2D 2D 2D 2D 2D 2D 2D 2D  2D 2D 2D 2D 2D 2D 2D 2D
+002AE1AA  2D 2D 2D 2D 2D 2D 2D 3E  E9 A6 96 E6 AC A1 E5 90
+002AE1BA  AF E5 8A A8 E6 B8 B8 E6  88 8F 3C 2D 2D 2D 2D 2D
+002AE1CA  2D 2D 2D 2D 2D 2D 2D 2D  00 2D 2D 2D 2D 2D 2D 2D
+002AE1DA  2D 2D 2D 2D 2D 2D 2D 3D  68 69 64 65 50 6F 70 75
+002AE1EA  70 3D 2D 2D 2D 2D 2D 2D  2D 2D 2D 2D 2D 2D 2D 00
+
+
+ZFRAMEWORK	
+－－－userIsLogin----1
+ZFRAMEWORK
+=========pay=====warning====popup======
+
+com.yodo1.android.core.Yodo1CheckSignException: 检测到包签名无效， 统计功能将不能生效	
+
+
+Should have subtitle controller already set
+
+Yodo1SDKHelper
+===eventName====OPEN_SET_EXIT
+
+ZFRAMEWORK	
+－－－－－－guest,
+
+Yodo1SDKHelper
+===eventName====VISITORS_LOGIN
+
+Yodo1SDKHelper
+===eventName====QQ_LOGIN
+
+ZActivity
+========user=====loginType====Channel
+========user=====loginResult==失败
+
+Yodo1SDKHelpe
+===eventName====WEIXIN_LOGIN
+
+System.err
+com.yodo1.android.core.Yodo1CheckSignException: 检测到包签名无效， 统计功能将不能生效
+ZActivity
+========user=====loginType====Channel
+========user=====loginResult==失败
+
+
+ZActivity
+========user=====loginType====Channel_WX
+========user=====loginResult==成功
+
+ZFRAMEWORK
+－－－－－－callback---－－login------success-----－－－－
+
+LoginType
+Channel(0),  Device(1),  Account(2),  Channel_GUEST(10),  Channel_QQ(11),  Channel_WX(12),  Channel_Weibo(13);
+
+
+CHANNEL ID ERROR
+
+
+
+vip	
+
+.line 20
+const-string v0, "vip"  #const-string v0, "0" #vip
+
+iput-object v0, p0, Lcom/yodo1/android/sdk/usercenter/Yodo1UserInfo;->vip:Ljava/lang/String;
+
+
+BillingResult.SUCCESS
+
+
+.class final Lcom/yodo1/sdk/basic/CmccIniter$1;
+.super Ljava/lang/Object;
+.source "CmccIniter.java"
+
+
+
+
+
+    public static void pay(Activity arg4, ChannelPayInfo arg5, Element arg6, String arg7, ChannelSDKUser arg8, ChannelSDKCallback arg9) {
+        String v0 = arg5.getChannelFid();
+        YLog.e("计费点  ：" + v0);
+        int v1 = arg5.isRepeated() ? 2 : 1;
+        GameInterface.doBilling(((Context)arg4), v1, v0, null, new GameInterface$IPayCallback(arg9) {
+            public void onResult(int arg5, String arg6, Object arg7) {
+                switch(arg5) {
+                    case 1: {
+                        YLog.e("支付  BillingResult.SUCCESS");
+                        if("10".equals(arg7.toString())) {
+                            if(this.val$callback == null) {
+                                return;
+                            }
+
+                            this.val$callback.onResult(0, 202, "");
+                            return;
+                        }
+
+                        YLog.e("支付  SUCCESS");
+                        if(this.val$callback == null) {
+                            return;
+                        }
+
+                        this.val$callback.onResult(1, 0, "");
+                        break;
+                    }
+                    case 3: {
+                        YLog.e("BillingResult.CANCELLED");
+                        if(this.val$callback == null) {
+                            return;
+                        }
+
+                        this.val$callback.onResult(2, 0, "");
+                        break;
+                    }
+                    default: {
+                        YLog.e("BillingResult.STATUS_FAILED  == " + arg5 + "   billingIndex :" + arg6);
+                        if(this.val$callback == null) {
+                            return;
+                        }
+
+                        this.val$callback.onResult(0, 0, "");
+                        break;
+                    }
+                }
+            }
+        });
+    }
+
+
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_1  #:pswitch_1  #SUCCESS  成功
+        :pswitch_1  #:pswitch_0  #STATUS_FAILED  失败
+        :pswitch_1  #:pswitch_2  #CANCELLED
+    .end packed-switch
+
+
+
+
+
+
+更改成功后
+
+    public static void pay(Activity arg4, ChannelPayInfo arg5, Element arg6, String arg7, ChannelSDKUser arg8, ChannelSDKCallback arg9) {
+        String v0 = arg5.getChannelFid();
+        YLog.e("计费点  ：" + v0);
+        int v1 = arg5.isRepeated() ? 2 : 1;
+        GameInterface.doBilling(((Context)arg4), v1, v0, null, new GameInterface$IPayCallback(arg9) {
+            public void onResult(int arg5, String arg6, Object arg7) {
+                switch(arg5) {
+                    case 1: 
+                    case 2: 
+                    case 3: {
+                        YLog.e("支付  BillingResult.SUCCESS");
+                        if(!"10".equals(arg7.toString())) {
+                            YLog.e("支付  SUCCESS");
+                            if(this.val$callback != null) {
+                                this.val$callback.onResult(1, 0, "");
+                            }
+                        }
+                        else if(this.val$callback != null) {
+                            this.val$callback.onResult(0, 202, "");
+                        }
+
+                        break;
+                    }
+                    default: {
+                        YLog.e("BillingResult.STATUS_FAILED  == " + arg5 + "   billingIndex :" + arg6);
+                        if(this.val$callback != null) {
+                            this.val$callback.onResult(0, 0, "");
+                        }
+
+                        break;
+                    }
+                }
+            }
+        });
+    }
+
+	
+电信Egame支付EgamePayListener
+
+
+.class public Lcn/egame/terminal/paysdk/EgamePay;
+.super Ljava/lang/Object;
+.source "EgamePay.java"
+
+.method public static pay(Landroid/app/Activity;Ljava/util/Map;Lcn/egame/terminal/paysdk/EgamePayListener;)V
+    .locals 1
+    .param p0, "activity"    # Landroid/app/Activity;
+    .param p2, "listener"    # Lcn/egame/terminal/paysdk/EgamePayListener;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/app/Activity;",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;",
+            "Lcn/egame/terminal/paysdk/EgamePayListener;",
+            ")V"
+        }
+    .end annotation
+
+    .prologue
+    .line 78
+    #.local p1, "payParams":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
+    #sget v0, Lcn/egame/terminal/paysdk/EgamePay;->sInitStatus:I
+
+    #if-eqz v0, :cond_0
+
+    #.line 79
+    #sget v0, Lcn/egame/terminal/paysdk/EgamePay;->sInitStatus:I
+
+    #invoke-interface {p2, p1, v0}, Lcn/egame/terminal/paysdk/EgamePayListener;->payFailed(Ljava/util/Map;I)V
+
+    #.line 84
+    #:goto_0
+    #return-void
+
+    #.line 83
+    #:cond_0
+    #invoke-static {p0, p1, p2}, Lcn/egame/terminal/sdk/jni/EgamePayProtocol;->pay(Landroid/content/Context;Ljava/util/Map;Lcn/egame/terminal/paysdk/EgamePayListener;)V
+    
+
+    ######EgamePayListener回调大法
+    #注意paySuccess这个函数只有一个参数.method public abstract paySuccess(Ljava/util/Map;)V
+    #而失败payFailed这个函数有第二个整型参数 .method public abstract payFailed(Ljava/util/Map;I)V
+    # Egame支付成功
+    invoke-interface {p2, p1}, Lcn/egame/terminal/paysdk/EgamePayListener;->paySuccess(Ljava/util/Map;)V
+
+    return-void
+    ######
+
+    #goto :goto_0
+.end method
+	
+
+联通游戏联盟支付Utils$UnipayPayResultListener	
+
+
+	
+	
+	
+统一支付接口	
+	
+.class public Lcom/yodo1/android/sdk/utils/YOperatorUtils;
+.super Ljava/lang/Object;
+.source "YOperatorUtils.java"
+
+
+# static fields
+.field public static final CHANNEL_ID_cmcc:I = 0x1
+
+.field public static final CHANNEL_ID_default:I = 0x0
+
+.field public static final CHANNEL_ID_telecom:I = 0x2
+
+.field public static final CHANNEL_ID_unicom:I = 0x4
+
+
+    public static int getOperatorChannelId(Context arg5) {
+        int v2 = 0;
+        if(!YOperatorUtils.isTablet(arg5)) {
+            Object v1 = arg5.getSystemService("phone");
+            String v0 = ((TelephonyManager)v1).getSubscriberId();
+            if(v0 != null && v0.length() >= 1 && ((TelephonyManager)v1).getSimState() != 1) {
+                if(!v0.startsWith("46000") && !v0.startsWith("46002") && !v0.startsWith("46007") && !v0.startsWith("46020")) {
+                    if(!v0.startsWith("46001") && !v0.startsWith("46006")) {
+                        if(!v0.startsWith("46003") && !v0.startsWith("46005") && !v0.startsWith("46011")) {
+                            return v2;
+                        }
+
+                        return 2;
+                    }
+
+                    return 4;
+                }
+
+                v2 = 1;
+            }
+        }
+
+        return v2;
+    }
+
+
+================================================================================
+
+饥饿鲨：进化 去so签名验证和内购破解
+
+v3.7.2.0
+v4.3.1.0
+
+\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n www.appleos.xyz \n-- by B.S.
+
+
+内购破解:
+
+搜索定位字符串,
+
+支付 测试:
+unity购买失败
+unity购买成功
+
+doCMCCBilling
+
+
+解析支付协议失败
+ourpalm_tip_prasecharginfoerror
+
+
+
+
+    .line 718
+    #可以不提示,解析支付协议失败,这里注意这个函数里16个寄存器都给用了
+    invoke-static {v1, v2, v3}, Lourpalm/android/view/Ourpalm_Toast;->makeText(Landroid/content/Context;Ljava/lang/String;I)V
+    
+    ######Toast显示自定义字符串
+    const-string v3, "\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n www.appleos.xyz \n-- by B.S."
+    move-object/from16 v2, v3
+    const/4 v3, 0x0
+    invoke-static {v1, v2, v3}, Lourpalm/android/view/Ourpalm_Toast;->makeText(Landroid/content/Context;Ljava/lang/String;I)V
+    ######
+
+
+
+在
+Ourpalm_Pay_FormSdk
+里
+
+
+跳过支付窗口
+
+    .line 714
+    goto :cond_4  #直接跳过下面的pay支付框 #if-eqz v1, :cond_4
+
+    .line 716
+    invoke-static {}, Lourpalm/android/channels/Ourpalm_Channels_Manage;->getInstance()Lourpalm/android/channels/Ourpalm_Channels_Manage;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lourpalm/android/channels/Ourpalm_Channels_Manage;->Pay()Z
+
+    goto/16 :goto_0
+
+    .line 718
+    :cond_4
+    sget-object v1, Lourpalm/android/pay/Ourpalm_Entry_Model;->mActivity:Landroid/app/Activity;
+
+改失败为直接成功然后,goto返回
+
+    .line 724
+    const/16 v2, 0x6a
+
+    const-string v3, ""
+
+    .line 723
+    move-object/from16 v0, p1
+
+    #invoke-virtual {v1, v2, v3, v0}, Lourpalm/android/callback/Ourpalm_PaymentCallBack;->Ourpalm_PaymentFail(ILjava/lang/String;Ljava/lang/String;)V
+    
+    #这里换为调用成功
+    invoke-virtual {v1, v2, v3, v0}, Lourpalm/android/callback/Ourpalm_PaymentCallBack;->Ourpalm_PaymentSuccess(ILjava/lang/String;Ljava/lang/String;)V
+
+    .line 725
+    const/4 v1, 0x0
+
+    sput-boolean v1, Lourpalm/android/pay/Ourpalm_Statics;->IsExecute:Z
+
+    goto/16 :goto_0
+
+
+
+
+也可以将
+.class public Lcom/fgol/OurpalmIAPListener;
+.super Lourpalm/android/callback/Ourpalm_PaymentCallBack;
+.source "OurpalmIAPListener.java"
+
+
+.method public Ourpalm_PaymentSuccess(ILjava/lang/String;Ljava/lang/String;)V
+方法体里的代码代替
+.method public Ourpalm_PaymentFail(ILjava/lang/String;Ljava/lang/String;)V
+
+
+
+
+签名验证:
+
+搜索定位字符串
+
+内购接口初始化
+掌趣SDK初始化成功
+ourpalm_sdk_a
+
+
+ShareSDKUtils.prepare
+
+
+Ourpalm_Init
+
+
+在lib文件夹里,找到libourpalm_sdk_a.so文件
+
+\lib\armeabi-v7a\libourpalm_sdk_a.so
+
+IDA载入导出函数表里Alt-T搜索RunSign
+
+EXPORT Java_ourpalm_android_sdkjni_ourpalm_1android_1SdkJni_RunSign
+.text:000244B4 Java_ourpalm_android_sdkjni_ourpalm_1android_1SdkJni_RunSign
+
+
+.text:000244C4 FF F7 3E FF                             BL              checksign
+
+.text:000244CE FF F7 55 FD                             BL              checkdexex
+
+
+改这两个函数call调用的地方
+
+
+改为"悙悙" 即是,填充为0或者90
+
+.text:000244C4 90 90 90 90             aRrrr_0         DCB "悙悙"
+
+.text:000244CE 90 90 90 90             aRrrr           DCB "悙悙"
+
+
+\lib\x86\libourpalm_sdk_a.so文件也一样
+
+.text:000302DA  90 90 90 90 90
+
+.text:000302EA  90 90 90 90 90
+
+
+
+
+  public void init()
+  {
+    Log.d("HSE", "内购接口初始化");
+    FlurryHelper.init(this.mContext);
+    getMobileType(this.mContext);
+    Log.d("HSE", this.mContext.getPackageName() + "++" + this.mContext.toString());
+    this.mIAPIdentifier = new IAPIdentifier();
+    this.mListener = new OurpalmIAPListener(this);
+    Ourpalm_Entry.getInstance(this).Ourpalm_Init("2", "1.0", "1.0", this.mListener);
+    setCanBuy(true);
+  }
+  
+================================================================================
+
+火柴人联盟
+v1.14.1
+
+
+v1.15.1
+http://www.appchina.com/app/com.DBGame.DiabloLOL.yyh
+http://android.myapp.com/myapp/detail.htm?apkName=com.DBGame.DiabloLOL
+
+腾讯加固壳带壳破解
+
+改4个地方
+
+1,
+.class public Lcom/DBGame/DiabloLOL/DiabloLOL;
+.super Lorg/cocos2dx/lib/Cocos2dxActivity;
+.source "DiabloLOL.java"
+
+
+.method private getSimType()I
+    .locals 6
+
+    .prologue
+    .line 353
+    ###统一为电信Egame支付接口直接返回为1
+    const/4 v4, 0x1
+
+    return v4
+
+	
+2,
+
+.class public Lcn/play/egamemanager/GameManager;
+.super Ljava/lang/Object;
+	
+.method public EGamePay(Landroid/app/Activity;Ljava/util/HashMap;Lcn/egame/terminal/paysdk/EgamePayListener;)V
+
+	
+    :goto_0
+    iget-object v0, p0, Lcn/play/egamemanager/GameManager;->gameConfig:Lcn/play/egamemanager/GameConfig;
+
+    invoke-virtual {v0}, Lcn/play/egamemanager/GameConfig;->getPayConfirm()I
+
+    move-result v0
+
+    #const/4 v0, 0x0  #添加这句不要确认支付弹框
+    
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_1
+
+    new-instance v0, Landroid/app/AlertDialog$Builder;
+
+    invoke-direct {v0, p1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+
+    const-string v1, "B.S.\u6e29\u99a8\u63d0\u793a\u652f\u4ed8\u786e\u8ba4"
+
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+
+    const-string v1, "\u4ee5\u4e0b\u64cd\u4f5c\u5c06\u901a\u8fc7B.S.\u8bdd\u8d39\u652f\u4ed8\uff0c\u786e\u8ba4\u64cd\u4f5c\uff1f \n  www.appleos.xyz \n  爱淫荡 多合一 \n  www.allin1.xyz \n  EGamePay --by B.S."
+
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+
+    const-string v1, "\u786e\u8ba4B.S.\u7834\u89e3\u652f\u4ed8"
+
+    new-instance v2, Lcn/play/egamemanager/f;
+
+    invoke-direct {v2, p0, p1, p2, p3}, Lcn/play/egamemanager/f;-><init>(Lcn/play/egamemanager/GameManager;Landroid/app/Activity;Ljava/util/HashMap;Lcn/egame/terminal/paysdk/EgamePayListener;)V
+
+    invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    const-string v1, "\u53d6\u6d88"
+
+    new-instance v2, Lcn/play/egamemanager/g;
+
+    invoke-direct {v2, p0, p3, p2}, Lcn/play/egamemanager/g;-><init>(Lcn/play/egamemanager/GameManager;Lcn/egame/terminal/paysdk/EgamePayListener;Ljava/util/HashMap;)V
+
+    invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
+
+    :goto_1
+    return-void
+	
+3,
+
+.class public Lcn/egame/terminal/paysdk/EgamePay;
+.super Ljava/lang/Object;
+.source "EgamePay.java"
+
+
+.method public static pay(Landroid/app/Activity;Ljava/util/Map;Lcn/egame/terminal/paysdk/EgamePayListener;)V
+    .locals 1
+    .param p0, "activity"    # Landroid/app/Activity;
+    .param p2, "listener"    # Lcn/egame/terminal/paysdk/EgamePayListener;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/app/Activity;",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;",
+            "Lcn/egame/terminal/paysdk/EgamePayListener;",
+            ")V"
+        }
+    .end annotation
+
+    .prologue
+    .line 78
+    .local p1, "payParams":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
+    #sget v0, Lcn/egame/terminal/paysdk/EgamePay;->sInitStatus:I
+
+    #if-eqz v0, :cond_0
+
+    #.line 79
+    #sget v0, Lcn/egame/terminal/paysdk/EgamePay;->sInitStatus:I
+
+    #invoke-interface {p2, p1, v0}, Lcn/egame/terminal/paysdk/EgamePayListener;->payFailed(Ljava/util/Map;I)V
+    
+    ######
+    #注意paySuccess这个函数只有一个参数.method public abstract paySuccess(Ljava/util/Map;)V
+    #而失败payFailed这个函数有第二个整型参数 .method public abstract payFailed(Ljava/util/Map;I)V
+    # Egame支付成功
+    invoke-interface {p2, p1}, Lcn/egame/terminal/paysdk/EgamePayListener;->paySuccess(Ljava/util/Map;)V
+
+    return-void
+    ######	
+.end method
+
+4,
+
+去签名验证:
+
+
+signatures
+
+getAPPSecretString
+
+
+3AooNepowFYqscHpDu0DfouzXs9ilTw
+e89b158e4bcf988ebd09eb83f5378e87
+
+
+
+call AppKey
+
+APPKEY: W0gn7H5K8Odj9SycTo9N
+CHANNEL: hoolai
+
+
+IMEI
+
+######deviceID#####
+
+
+.class public Lcn/mycompany/addblackname/utils/utils;
+.super Ljava/lang/Object;
+.source "utils.java"
+
+
+.method public static getAPPSecretString(Landroid/content/Context;)Ljava/lang/String;
+
+    .prologue
+    .line 21
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 22
+    .local v4, "pkgname":Ljava/lang/String;
+    const-string v1, ""
+    #去签名验证从:try_start_0开始到:catch_0,但里面的返回留着.直接返回空的字符串
+
+
+    return-object v1
+
+
+修改方法很多种,还可以在下面的类里定位到
+.class public Lcom/DBGame/DiabloLOL/DiabloLOL;
+.super Lorg/cocos2dx/lib/Cocos2dxActivity;
+.source "DiabloLOL.java"
+
+
+.method protected onCreate(Landroid/os/Bundle;)V
+
+
+    ###黑名单功能开始
+    .line 240
+
+    new-instance v0, Lcn/mycompany/addblackname/AddBlackName;
+
+    invoke-direct {v0, p0}, Lcn/mycompany/addblackname/AddBlackName;-><init>(Landroid/content/Context;)V
+
+    .line 241
+    .local v0, "blackName":Lcn/mycompany/addblackname/AddBlackName;
+    #invoke-static {}, Lcn/mycompany/addblackname/AddBlackName;->Check()V
+    ###黑名单功能结束
+
+顺便广告的也处理了
+
+    ###广告的初始化开始
+    .line 260
+    #invoke-static {p0, v7}, Lcn/cmgame/billing/api/game/main/Tool;->adIntervalInit(Landroid/app/Activity;Lcn/cmgame/billing/api/game/main/Listener;)V
+
+    .line 262
+    #invoke-static {p0, v7}, Lcn/cmgame/billing/api/game/main/Tool;->adNativeInit(Landroid/app/Activity;Lcn/cmgame/billing/api/game/main/Listener;)V
+    ###广告的初始化结束
+
+
+去除返回退出的横幅广告:
+
+不让他发送显示广告的消息
+
+
+----- showInterAD --exit
+----- showInterAD
+ 
+HANDLER_SHOW_INTER_AD
+
+public static final int HANDLER_SHOW_INTER_AD = 211;
+
+    :cond_0
+    new-instance v2, Landroid/os/Message;
+
+    invoke-direct {v2}, Landroid/os/Message;-><init>()V
+
+    .line 369
+    .local v2, "msg":Landroid/os/Message;
+    const/16 v3, 0xd3
+
+    iput v3, v2, Landroid/os/Message;->what:I
+
+    .line 370
+    iput v1, v2, Landroid/os/Message;->arg1:I
+
+    .line 371
+    sget-object v3, Lcom/DBGame/Common/BLHelper;->sContext:Lcom/DBGame/DiabloLOL/DiabloLOL;
+    #去退出广告，不让他发送显示广告的消息
+    #invoke-virtual {v3, v2}, Lcom/DBGame/DiabloLOL/DiabloLOL;->sendMessage(Landroid/os/Message;)V
+
+    .line 372
+    return-void
+
+    .line 362
+    .end local v2    # "msg":Landroid/os/Message;
+    :cond_1
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+
+
+去除选英雄和副本的横幅广告：
+
+
+public static final int HANDLER_SHOWBANNER = 200;
+public static final int HANDLER_HIDEBANNER = 210;
+
+
+
+
+case DiabloLOL.HANDLER_HIDEBANNER /*210*/:
+                    DiabloLOL.this.hideBanner();
+case 200:
+                    DiabloLOL.this.showBanner();
+
+
+
+.class public Lcom/DBGame/Common/BLHelper;
+.super Ljava/lang/Object;
+.source "BLHelper.java"
+
+
+
+.method public static showBanner(Ljava/lang/String;)V
+    .locals 2
+    .param p0, "tag"    # Ljava/lang/String;
+
+    .prologue
+    .line 375
+    new-instance v0, Landroid/os/Message;
+
+    invoke-direct {v0}, Landroid/os/Message;-><init>()V
+
+    .line 376
+    .local v0, "msg":Landroid/os/Message;
+    const/16 v1, 0xd2  #const/16 v1, 0xc8  #显示横幅广告的发送消息的代码 0xc8 200 休改为 0xd2 210   隐藏横幅
+    
+    iput v1, v0, Landroid/os/Message;->what:I
+
+    .line 377
+    sget-object v1, Lcom/DBGame/Common/BLHelper;->sContext:Lcom/DBGame/DiabloLOL/DiabloLOL;
+
+    #去横幅广告,或者不让他发送显示广告的消息,
+    invoke-virtual {v1, v0}, Lcom/DBGame/DiabloLOL/DiabloLOL;->sendMessage(Landroid/os/Message;)V
+
+    .line 378
+    return-void
+.end method
+
+
+
+
+
+
+.class Lcom/DBGame/DiabloLOL/DiabloLOL$3;
+.super Landroid/os/Handler;
+.source "DiabloLOL.java"
+
+
+
+    case 200: 
+      //DiabloLOL.access$400(this.this$0);
+      return;
+    case 210: 
+      //DiabloLOL.access$500(this.this$0);
+      return;
+    case 211: 
+      Log.e("qq", "HANDLER_SHOW_INTER_AD==========");
+      //DiabloLOL.access$600(this.this$0, paramMessage.arg1);
+      return;
+
+对应的smali
+
+    .line 650
+    #去除显示横幅sswitch_8
+    :sswitch_8
+    iget-object v2, p0, Lcom/DBGame/DiabloLOL/DiabloLOL$3;->this$0:Lcom/DBGame/DiabloLOL/DiabloLOL;
+
+    # invokes: Lcom/DBGame/DiabloLOL/DiabloLOL;->showBanner()V
+    #invoke-static {v2}, Lcom/DBGame/DiabloLOL/DiabloLOL;->access$400(Lcom/DBGame/DiabloLOL/DiabloLOL;)V
+
+    goto :goto_0
+
+    .line 654
+    #去除隐藏横幅sswitch_9
+    :sswitch_9
+    iget-object v2, p0, Lcom/DBGame/DiabloLOL/DiabloLOL$3;->this$0:Lcom/DBGame/DiabloLOL/DiabloLOL;
+
+    # invokes: Lcom/DBGame/DiabloLOL/DiabloLOL;->hideBanner()V
+    #invoke-static {v2}, Lcom/DBGame/DiabloLOL/DiabloLOL;->access$500(Lcom/DBGame/DiabloLOL/DiabloLOL;)V
+
+    goto :goto_0
+
+    .line 658
+    #去除显示嵌入式广告sswitch_a
+    :sswitch_a
+    const-string v2, "qq"
+
+    const-string v3, "HANDLER_SHOW_INTER_AD=========="
+
+    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 659
+    iget-object v2, p0, Lcom/DBGame/DiabloLOL/DiabloLOL$3;->this$0:Lcom/DBGame/DiabloLOL/DiabloLOL;
+
+    iget v3, p1, Landroid/os/Message;->arg1:I
+
+    # invokes: Lcom/DBGame/DiabloLOL/DiabloLOL;->showInterAd(I)V
+    #invoke-static {v2, v3}, Lcom/DBGame/DiabloLOL/DiabloLOL;->access$600(Lcom/DBGame/DiabloLOL/DiabloLOL;I)V
+
+    goto/16 :goto_0
+
+
+
+
+消息处理的代码如下：
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case 10:
+                    DiabloLOL.this.exitGame();
+                    return;
+                case 11:
+                    ((ClipboardManager) Cocos2dxActivity.getContext().getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText(MiniDefine.ax, BLHelper.copyString));
+                    Toast.makeText(DiabloLOL.this, "拷贝成功！", 0).show();
+                    return;
+                case 30:
+                    if (BLHelper.IPAYTAYPE == 1) {
+                        DiabloLOL.this.payInDuanXin();
+                        return;
+                    } else if (BLHelper.IPAYTAYPE != 2 && DiabloLOL.RECHARGE_CHANNELS.indexOf(String.valueOf(DiabloLOL.this.iFromPay)) != -1) {
+                        DiabloLOL.this.payInDuanXin();
+                        return;
+                    } else {
+                        return;
+                    }
+                case 102:
+                    OGPub.Instance().closeLoad();
+                    return;
+                case 200:
+                    DiabloLOL.this.showBanner();
+                    return;
+                case DiabloLOL.HANDLER_HIDEBANNER /*210*/:
+                    DiabloLOL.this.hideBanner();
+                    return;
+                case DiabloLOL.HANDLER_SHOW_INTER_AD /*211*/:
+                    Log.e("qq", "HANDLER_SHOW_INTER_AD==========");
+                    DiabloLOL.this.showInterAd(msg.arg1);
+                    return;
+                case DiabloLOL.HANDLER_REYUN_EXIT /*400*/:
+                    ReYun.exitSdk();
+                    return;
+                case DiabloLOL.HANDLER_SHOWSHARE /*420*/:
+                    DiabloLOL.this.showShareDialog();
+                    return;
+                case DiabloLOL.HANDLER_SAVEPIC /*450*/:
+                    BLHelper.savePic();
+                    return;
+                case DiabloLOL.HANDLER_MONTHCONTRA /*470*/:
+                    DiabloLOL.this.purchaseMonthlyContract(msg.arg1);
+                    return;
+                case DiabloLOL.HANDLER_HIDEWEBDATA /*998*/:
+                    BLHelper.webout();
+                    return;
+                default:
+                    return;
+            }
+        }
+
+
+顺便也解决下其他的函数
+.class public Lcom/DBGame/DiabloLOL/DiabloLOL;
+.super Lorg/cocos2dx/lib/Cocos2dxActivity;
+.source "DiabloLOL.java"
+
+
+.method private showBanner()V
+    .locals 5
+
+    .prologue
+    .line 338
+    return-void    #直接返回
+    
+    const v1, 0x3e4ccccd    # 0.2f
+
+    const v2, 0x3f4ccccd    # 0.8f
+
+    const v3, 0x3f19999a    # 0.6f
+
+    const v4, 0x3e19999a    # 0.15f
+    
+    :try_start_0
+    invoke-static {p0, v1, v2, v3, v4}, Lcn/cmgame/billing/api/game/main/Tool;->adNativeShow(Landroid/app/Activity;FFFF)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 342
+    :goto_0
+    return-void
+
+    .line 339
+    :catch_0
+    move-exception v0
+
+    .line 340
+    .local v0, "e":Ljava/lang/Exception;
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+
+    goto :goto_0
+.end method
+
+.method private showInterAd(I)V
+    .locals 1
+    .param p1, "index"    # I
+
+    .prologue
+    .line 354
+    return-void  #直接返回
+    :try_start_0
+    invoke-static {p0, p1}, Lcn/cmgame/billing/api/game/main/Tool;->adIntervalShow(Landroid/app/Activity;I)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 358
+    :goto_0
+    return-void
+
+    .line 355
+    :catch_0
+    move-exception v0
+
+    .line 356
+    .local v0, "e":Ljava/lang/Exception;
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+
+    goto :goto_0
+.end method
+
+去今日推荐5秒闪屏广告
+
+.class public Lcn/cmgame/billing/api/game/main/Tool;
+.super Ljava/lang/Object;
+
+.method public static adSplashShow(Landroid/app/Activity;Ljava/lang/Class;Ljava/lang/Class;Landroid/os/Handler;)Z
+    .locals 7
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    const-string v2, "---adSplashShow----"
+
+    invoke-static {v2}, Lcn/cmgame/billing/api/game/e/d;->b(Ljava/lang/String;)V
+
+    sput-object p0, Lcn/cmgame/billing/api/game/main/Tool;->splashActivity:Landroid/app/Activity;
+
+    :try_start_0
+    ###### 自带日志输出  appSign
+    const-string v3, "---B.S.---Tool.adSplashShow"
+    #move-object/from16 v2, v2  #v0是要打印输出的内容
+    invoke-static {v3, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    move v0, v1  #这里要，返回为0去今日推荐5秒闪屏广告，返回为1会一直黑屏
+    goto :goto_0
+    ######
+
+
+内购破解：
+
+http://www.52pojie.cn/forum.php?mod=redirect&goto=findpost&ptid=620244&pid=16469555
+
+<uses-permission android:name="android.permission.SEND_SMS"/>
+<uses-permission android:name="android.permission.CALL_PHONE"/>
+
+
+
+###不需要支付购买?!!!竟然有这函数
+invoke-direct {p0}, Lcom/DBGame/DiabloLOL/DiabloLOL;->buyWithoutPay()V
+
+public void paySuccess(Map<String, String> paramAnonymousMap)
+{
+	DiabloLOL.this.setPayment();
+	BLHelper.purchaseComplete(DiabloLOL.this.PRO_ID_Str[DiabloLOL.this.mPayIndex], 1);
+	BLHelper.closeShieldLayer();
+	Log.e("B.S.", "模拟Egame支付成功 --by B.S.");
+	DiabloLOL.access$202(DiabloLOL.this, -1);
+}
+
+将原来的buyWithoutPay模拟上面的paySuccess成功代码处理一下,要不然只能第一次购买成功.
+
+private void buyWithoutPay()
+{
+	setPayment();
+	BLHelper.purchaseComplete(this.PRO_ID_Str[this.mPayIndex], 1);
+	BLHelper.closeShieldLayer();
+}
+
+
+经过修正过的不支付购买函数
+
+
+private void buyWithoutPay() {
+	com.android.BS.Log.LogStr("无限内购B.S.破解版\n  www.appleos.xyz \n  爱淫荡  多合一 \n  www.allin1.xyz \n  buyWithoutPay -- by B.S.");
+	setPayment();
+	BLHelper.purchaseComplete(this.PRO_ID_Str[this.mPayIndex], 1);
+	BLHelper.closeShieldLayer();
+	Log.e("---B.S.---", "模拟EGame支付成功 --by B.S.");
+	this.mPayIndex = -1;
+}
+
+修正后的buyWithoutPay对应的smali
+
+.method private buyWithoutPay()V
+    .locals 2
+
+    .prologue
+    .line 730
+    ######插入代码开始 coded by B.S.
+    
+    const-string v0, "\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n  www.appleos.xyz \n  \u7231\u6DEB\u8361  \u591A\u5408\u4E00 \n  www.allin1.xyz \n  buyWithoutPay -- by B.S."
+    
+    invoke-static {v0}, Lcom/android/BS/Log;->LogStr(Ljava/lang/String;)V
+    
+    ######插入代码结束 coded by B.S.  
+    
+    invoke-direct {p0}, Lcom/DBGame/DiabloLOL/DiabloLOL;->setPayment()V
+
+    .line 731
+    iget-object v0, p0, Lcom/DBGame/DiabloLOL/DiabloLOL;->PRO_ID_Str:[Ljava/lang/String;
+
+    iget v1, p0, Lcom/DBGame/DiabloLOL/DiabloLOL;->mPayIndex:I
+
+    aget-object v0, v0, v1
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1}, Lcom/DBGame/Common/BLHelper;->purchaseComplete(Ljava/lang/String;I)V
+
+    .line 732
+    invoke-static {}, Lcom/DBGame/Common/BLHelper;->closeShieldLayer()V
+
+    ###
+    const-string v0, "---B.S.---"
+
+    const-string v1, "\u6a21\u62dfEGame\u652f\u4ed8\u6210\u529f --by B.S."
+
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 v1, -0x1
+
+    # setter for: Lcom/DBGame/DiabloLOL/DiabloLOL;->mPayIndex:I
+    #invoke-static {p0, v1}, Lcom/DBGame/DiabloLOL/DiabloLOL;->access$202(Lcom/DBGame/DiabloLOL/DiabloLOL;I)I
+    ######下面是上一句代码里面的简写形式 setter for: Lcom/DBGame/DiabloLOL/DiabloLOL;->mPayIndex:I
+    iput v1, p0, Lcom/DBGame/DiabloLOL/DiabloLOL;->mPayIndex:I
+    ###
+
+
+    .line 733
+    return-void
+.end method
+
+
+  
+order id:		
+
+电信：
+
+Egame支付成功
+
+Egame支付Cancel
+
+.class public Lcn/egame/terminal/paysdk/EgamePay;
+.super Ljava/lang/Object;
+.source "EgamePay.java"
+
+
+
+.method public static pay(Landroid/app/Activity;Ljava/util/Map;Lcn/egame/terminal/paysdk/EgamePayListener;)V
+    .locals 1
+    .param p0, "activity"    # Landroid/app/Activity;
+    .param p2, "listener"    # Lcn/egame/terminal/paysdk/EgamePayListener;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/app/Activity;",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;",
+            "Lcn/egame/terminal/paysdk/EgamePayListener;",
+            ")V"
+        }
+    .end annotation
+
+    .prologue
+    .line 78
+    #注意paySuccess这个函数只有一个参数.method public abstract paySuccess(Ljava/util/Map;)V
+    #而失败payFailed这个函数有第二个整型参数 .method public abstract payFailed(Ljava/util/Map;I)V
+    # Egame支付成功
+    invoke-interface {p2, p1}, Lcn/egame/terminal/paysdk/EgamePayListener;->paySuccess(Ljava/util/Map;)V
+
+    return-void
+
+.end method
+
+
+
+还可以用paySuccess函数体代替payCancel和payFailed.
+
+.class Lcom/DBGame/DiabloLOL/DiabloLOL$6;
+.super Ljava/lang/Object;
+.source "DiabloLOL.java"
+
+
+
+
+联通：
+
+Unicom支付成功
+
+Unicom支付cancel
+
+
+.class Lcom/DBGame/DiabloLOL/DiabloLOL$4;
+.super Ljava/lang/Object;
+.source "DiabloLOL.java"
+
+.method public PayResult(Ljava/lang/String;IILjava/lang/String;)V
+
+
+    .prologue
+    .line 694
+    goto  :pswitch_0  #联通支付接口，直接JMP无条件跳到支付成功 
+    packed-switch p2, :pswitch_data_0
+
+
+移动：
+
+购买道具：[
+
+
+] 成功！
+
+] 失败！
+
+
+.class Lcom/DBGame/DiabloLOL/DiabloLOL$5;
+.super Ljava/lang/Object;
+.source "DiabloLOL.java"
+
+
+
+    .prologue
+    .line 735
+    const-string v0, ""
+
+    .line 736
+    .local v0, "result":Ljava/lang/String;
+    goto :pswitch_0   #移动支付接口，直接JMP无条件跳到支付成功 
+    packed-switch p1, :pswitch_data_0
+
+
+统一为电信接支付接口:
+
+
+电信初始化成功
+
+.method protected onCreate(Landroid/os/Bundle;)V
+
+    private int getSimType() {
+        int type = 0;
+        String sOperator = ((TelephonyManager) getSystemService("phone")).getSimOperator().trim();
+        if (sOperator == null || sOperator.equals("")) {
+            return 0;
+        }
+        switch (Integer.valueOf(sOperator).intValue()) {
+            case 46000:
+            case 46002:
+            case 46007:
+            case 46020:
+                type = 0;
+                break;
+            case 46001:
+            case 46006:
+                type = 2;
+                break;
+            case 46003:
+            case 46005:
+            case 46011:
+                type = 1;
+                break;
+        }
+        return type;
+    }
+
+
+
+直接return 1;伪装为电信.支付统一完毕.
+
+
+    private void payInDuanXin() {
+        if (RECHARGE_CHANNELS.indexOf(String.valueOf(this.iFromPay)) != -1) {
+            if (this.iFromPay == 2) {
+                payInUnicom();
+            } else if (this.iFromPay == 0) {
+                payInYidong();
+            } else if (this.iFromPay == 1) {
+                payInEgame();
+            }
+        }
+    }
+
+    private void payInUnicom() {
+        Utils.getInstances().pay(this, this.PAY_CODE_UNICOM[this.mPayIndex], new UnipayPayResultListener() {
+            public void PayResult(String arg0, int arg1, int arg2, String arg3) {
+                switch (arg1) {
+                    case 1:
+                        DiabloLOL.this.setPayment();
+                        BLHelper.purchaseComplete(DiabloLOL.this.PRO_ID_Str[DiabloLOL.this.mPayIndex], 1);
+                        BLHelper.closeShieldLayer();
+                        Log.e("qq", "Unicom支付成功");
+                        return;
+                    case 2:
+                        BLHelper.closeShieldLayer();
+                        Log.e("qq", "Unicom支付Fail");
+                        return;
+                    case 3:
+                        BLHelper.closeShieldLayer();
+                        Log.e("qq", "Unicom支付cancel");
+                        return;
+                    default:
+                        Log.e("qq", "Unicom支付Default");
+                        return;
+                }
+            }
+        });
+    }
+
+    private void payInYidong() {
+        if (LOLConstant.sCMCC_OPEN == 0) {
+            BLHelper.showShieldLayer("正在处理,请稍后.....");
+        }
+        GameInterface.doBilling(this, true, true, this.PAY_CODE_MM[this.mPayIndex], null, this.payCallback);
+    }
+
+    public void payInEgame() {
+        HashMap<String, String> payParams = new HashMap();
+        payParams.put(EgamePay.PAY_PARAMS_KEY_TOOLS_ALIAS, this.PAY_CODE_SMS[this.mPayIndex]);
+        if (this.iOpen == -1) {
+            this.iOpen = BLHelper.getOpenCTCC("ctcc", this, true);
+        }
+        Log.e("qq", "iOpen=" + this.iOpen);
+        if (this.iOpen == 1) {
+            this.gameManager.gameConfig.PaySdkUIForCP = 1;
+        } else {
+            this.gameManager.gameConfig.PaySdkUIForCP = 0;
+        }
+        this.gameManager.EGamePay(payParams, new EgamePayListener() {
+            public void paySuccess(Map<String, String> map) {
+                DiabloLOL.this.setPayment();
+                BLHelper.purchaseComplete(DiabloLOL.this.PRO_ID_Str[DiabloLOL.this.mPayIndex], 1);
+                BLHelper.closeShieldLayer();
+                Log.e("qq", "Egame支付成功");
+                DiabloLOL.this.mPayIndex = -1;
+            }
+
+            public void payFailed(Map<String, String> map, int arg1) {
+                BLHelper.closeShieldLayer();
+                Log.e("qq", "Egame支付Fail==" + arg1);
+                DiabloLOL.this.mPayIndex = -1;
+            }
+
+            public void payCancel(Map<String, String> map) {
+                BLHelper.closeShieldLayer();
+                Log.e("qq", "Egame支付Cancel");
+                DiabloLOL.this.mPayIndex = -1;
+            }
+        });
+    }
+
+
+
+
+
+联通支付下,游戏联盟,是否铂金会员礼包
+
+
+purchaseMonthlyContract>>>command is {"command":"month_order_25"}
+purchaseMonthlyContract>>>respond is {"md5":"","msg":"用户取消","result":3,"firstOrder":""}
+
+
+purchaseMonthlyContract>>>respond is
+
+purchaseMonthlyContract>>>command is
+
+
+.method public purchaseMonthlyContract(I)V
+    .locals 5
+    .param p1, "command"    # I
+
+    .prologue
+    .line 996
+    new-instance v1, Lorg/json/JSONObject;
+
+    invoke-direct {v1}, Lorg/json/JSONObject;-><init>()V
+
+    .line 998
+    .local v1, "object":Lorg/json/JSONObject;
+    :try_start_0
+    const-string v2, "command"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "month_order_"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    :try_end_0
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 1002
+    :goto_0
+    sget-object v2, Lcom/DBGame/DiabloLOL/DiabloLOL;->LOG_TAG:Ljava/lang/String;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "purchaseMonthlyContract>>>command is "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    .line 1003
+    invoke-virtual {v1}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 1002
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 1004
+    #invoke-static {}, Lcom/unicom/dcLoader/Utils;->getInstances()Lcom/unicom/dcLoader/Utils;
+
+    #move-result-object v2
+
+    #invoke-virtual {v1}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
+
+    #move-result-object v3
+
+    #new-instance v4, Lcom/DBGame/DiabloLOL/DiabloLOL$10;
+
+    #invoke-direct {v4, p0}, Lcom/DBGame/DiabloLOL/DiabloLOL$10;-><init>(Lcom/DBGame/DiabloLOL/DiabloLOL;)V
+
+    #invoke-virtual {v2, p0, v3, v4}, Lcom/unicom/dcLoader/Utils;->customCommand(Landroid/content/Context;Ljava/lang/String;Lcom/unicom/dcLoader/Utils$UnipayCommandResultListener;)V
+    
+    ######
+    .line 1019
+    const/4 v4, 0x1  #游戏联盟铂金已经包月0x1
+
+    invoke-static {v4}, Lcom/DBGame/Common/BLHelper;->onMonthlyContractPurchased(Z)V
+    ######
+
+    .line 1032
+    return-void
+
+    .line 999
+    :catch_0
+    move-exception v0
+
+    .line 1000
+    .local v0, "e":Lorg/json/JSONException;
+    invoke-virtual {v0}, Lorg/json/JSONException;->printStackTrace()V
+
+    goto :goto_0
+.end method
+
+================================================================================
+
+
+    ### 自带日志输出  app加密串    
+    const-string v4, "---B.S.---getAPPSecretString  sSecret: "
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "sSecret="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    move v3, v1
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v4, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    ####
+
+
+================================================================================
+梦想城镇v5.6.0  小米版
+http://game.xiaomi.com/app-appdetail--app_id__45383.html
+
+http://app.flyme.cn/
+
+bf4a5a4d5b3c2bdb
+7039043556374859
+
+代码:
+SJFZ53
+XJQZZU
+UEQWG7
+
+
+
+GSC2EY     mi4s    MI    
+WQE34W     m1 note
+
+MJ9X7V     m1 note    9game
+
+
+CDFDE398
+CDFDE3A0
+
+
+CDFDE3820
+CDFDE3828
+
+
+共存版只要修改包名就可以了,可以搜索定位字符串
+
+package=
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.playrix.township.chukong.mi.bs" platformBuildVersionCode="24" platformBuildVersionName="7.0">
+
+搜索定位字符串
+
+app_name
+
+修改strings.xml里的app_name程序名字为
+
+<string name="app_name">梦想城镇[B.S.Cr]</string>
+
+添加自定义版权东西:
+
+搜索定位字符串
+
+Loading
+
+修改文件all_strings_preload.xml
+
+<p id="Loading" attr="font=Style3_1_14 align=center valign=center">Loadıng...Cracked by B.S.</p>
+<p id="Loading" attr="font=Style3_1_14 align=center valign=center">加载中…Cracked by B.S.</p>
+<p id="Connecting">Connecting...Cracked by B.S.</p>
+<p id="Connecting">连接中...Cracked by B.S.</p>
+
+
+
+去登录提示:
+
+.method private doLogin(J)V
+    .locals 3
+
+    const/4 v2, 0x1  #const/4 v2, 0x0
+
+    invoke-static {}, Lcom/playrix/township/AnyChannel;->nativeIsLogin()Z
+
+    move-result v1
+
+    #if-eqz v1, :cond_0   #直接去掉条件,执行下面语句,跳过提示.传入1使hasLogin登陆过
+
+    # setter for: Lcom/playrix/township/AnyChannel;->hasLogin:Z
+    invoke-static {v2}, Lcom/playrix/township/AnyChannel;->access$302(Z)Z
+
+    :goto_0
+    return-void
+
+    :cond_0
+    new-instance v0, Landroid/app/AlertDialog$Builder;
+
+    # getter for: Lcom/playrix/township/AnyChannel;->mActivity:Landroid/app/Activity;
+    invoke-static {}, Lcom/playrix/township/AnyChannel;->access$000()Landroid/app/Activity;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+
+    const-string v1, "\u63d0\u793a"
+
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+
+    invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
+
+    const-string v1, "\u8bf7\u767b\u5f55"
+
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+
+    const-string v1, "\u786e\u5b9a"
+
+    new-instance v2, Lcom/playrix/township/AnyChannel$5$1;
+
+    invoke-direct {v2, p0, p1, p2}, Lcom/playrix/township/AnyChannel$5$1;-><init>(Lcom/playrix/township/AnyChannel$5;J)V
+
+    invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
+
+    move-result-object v1
+
+    # setter for: Lcom/playrix/township/AnyChannel;->loginDialog:Landroid/app/AlertDialog;
+    invoke-static {v1}, Lcom/playrix/township/AnyChannel;->access$402(Landroid/app/AlertDialog;)Landroid/app/AlertDialog;
+
+    # getter for: Lcom/playrix/township/AnyChannel;->loginDialog:Landroid/app/AlertDialog;
+    invoke-static {}, Lcom/playrix/township/AnyChannel;->access$400()Landroid/app/AlertDialog;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/app/AlertDialog;->show()V
+
+    goto :goto_0
+.end method
+
+
+修改金币和绿钞后
+
+搜索定位字符串
+
+cheat
+
+<p id="NoSocialText" attr="font=Style1_12 width=300 align=center valign=center">We suspect you may be cheatıng, whıch ıs why you are no longer permıtted to ınteract wıth other players. We apologıze for any ınconvenıence caused.</p>
+<p id="NoSocialText" attr="font=Style1_12 width=300 align=center valign=center">我们认为你有作弊的嫌疑，因此禁止你与其他玩家互动。对此造成的不便，我们深表歉意。</p>
+
+
+回溯后
+
+.method public static isMaybeCheater()Z
+    .locals 1
+
+    invoke-static {}, Lcom/playrix/lib/Playrix;->nativeIsMaybeCheater()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+在下面函数有调用
+
+.method public trackIap(Lcom/playrix/lib/PlayrixBilling$PurchaseDetails;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 3
+
+    const/4 v2, 0x0
+
+    invoke-static {}, Lcom/playrix/lib/Playrix;->isMaybeCheater()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    const-string v1, "AppsFlyerDisabled"
+
+    invoke-static {v1, v2}, Lcom/playrix/lib/Playrix;->nativeGetConstBool(Ljava/lang/String;Z)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    const-string v1, "AppsFlyerTrackPurchaseDisabled"
+
+    invoke-static {v1, v2}, Lcom/playrix/lib/Playrix;->nativeGetConstBool(Ljava/lang/String;Z)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    :cond_0
+    const-string v1, "AppsFlyerWrapper"
+
+    const-string v2, "trackIap disabled"
+
+    invoke-static {v1, v2}, Lcom/playrix/lib/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    :goto_0
+    return-void
+
+    :cond_1
+    new-instance v0, Lcom/playrix/township/lib/AppsFlyerWrapper$5;
+
+    invoke-direct {v0, p0, p1, p2, p3}, Lcom/playrix/township/lib/AppsFlyerWrapper$5;-><init>(Lcom/playrix/township/lib/AppsFlyerWrapper;Lcom/playrix/lib/PlayrixBilling$PurchaseDetails;Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-direct {p0, v0}, Lcom/playrix/township/lib/AppsFlyerWrapper;->runOrQueue(Ljava/lang/Runnable;)V
+
+    goto :goto_0
+.end method
+
+改为
+
+.method public static isMaybeCheater()Z
+    .locals 1
+
+    invoke-static {}, Lcom/playrix/lib/Playrix;->nativeIsMaybeCheater()Z
+
+    move-result v0
+    
+    const/4 v0, 0x0  #返回0为假
+
+    return v0
+.end method
+
+
+
+
+
+
+.class public Lcom/xiaomi/gamecenter/awpay/HyAwPay;
+.super Ljava/lang/Object;
+.source "HyAwPay.java"
+
+
+.class public Lcom/xiaomi/gamecenter/awpay/HyMixpayActivity;
+.super Landroid/app/Activity;
+.source "HyMixpayActivity.java"
+
+计费代码不能为空
+
+
+需要更新
+
+VersionDescription
+
+newVersion
+
+
+CloseButton
+
+更新按钮打开
+
+<string name="app_store_url">market://details?id=com.playrix.township</string>
+<string name="app_store_url">market://details?id=com.playrix.township</string>
+
+获取app信息：
+
+#####
+const-string v0, "phone"
+
+invoke-virtual {p0, v0}, Lcom/example/hbssz/MainActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+move-result-object v0
+
+check-cast v0, Landroid/telephony/TelephonyManager;
+
+invoke-virtual {p0}, Lcom/example/hbssz/MainActivity;->getApplicationContext()Landroid/content/Context;
+
+move-result-object v2
+
+new-instance v3, Ljava/lang/StringBuilder;
+
+const-string v4, "AppInfo Ver:"
+
+invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+sget-object v4, Landroid/os/Build$VERSION;->RELEASE:Ljava/lang/String;
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+const-string v4, ","
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+const-string v4, "\n==>"
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+sget-object v4, Landroid/os/Build;->MODEL:Ljava/lang/String;
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+const-string v4, "\n==>"
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+sget-object v4, Landroid/os/Build;->CPU_ABI:Ljava/lang/String;
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+const-string v4, "\n==>"
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+sget-object v4, Landroid/os/Build;->CPU_ABI2:Ljava/lang/String;
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+const-string v4, "\n==>"
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+sget-object v4, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+const-string v4, "\n==>"
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+sget-object v4, Landroid/os/Build;->ID:Ljava/lang/String;
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+const-string v4, "\n==>"
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+sget-object v4, Landroid/os/Build;->SERIAL:Ljava/lang/String;
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+const-string v4, "\n==>"
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+sget-object v4, Landroid/os/Build;->HARDWARE:Ljava/lang/String;
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+const-string v4, "\n==>"
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+sget-object v4, Landroid/os/Build;->FINGERPRINT:Ljava/lang/String;
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+const-string v4, "\n==>"
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+iget-object v4, p0, Lcom/example/hbssz/MainActivity;->m:Ljava/lang/String;
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+const-string v4, "\n==>"
+
+invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+invoke-virtual {v0}, Landroid/telephony/TelephonyManager;->getDeviceId()Ljava/lang/String;
+
+move-result-object v0
+
+invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v0
+
+const-string v3, "\n  --Coded by B.S."
+
+invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v0
+
+invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+move-result-object v0
+
+invoke-static {v2, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+
+move-result-object v0
+
+const/16 v2, 0x31
+
+invoke-virtual {v0, v2, v6, v6}, Landroid/widget/Toast;->setGravity(III)V
+
+invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+######
+      
+
+
+
+###### logBS origin日志输出
+new-instance v3, Ljava/lang/StringBuilder;
+
+const-string v4, "---B.S.---"
+
+invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+const-string v1, "sSecret = "
+
+invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v3
+
+######invoke-virtual {v0}, Landroid/telephony/TelephonyManager;->getDeviceId()Ljava/lang/String;
+
+######move-result-object v0
+
+move-object/from16 v2, v12  #v0是要打印输出的对象内容
+
+invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v0
+
+const-string v3, "\n  --Coded by B.S."
+
+invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+move-result-object v0
+
+invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+move-result-object v0
+
+invoke-static {v4, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+######
+
+###### 自带日志输出  mobileType
+#const-string v3, "---B.S.---  mobileType= "
+#invoke-static {v2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+#move-result-object v4
+#invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+######
+
+.method public onCreate()V
+    .locals 5
+    ######插入代码开始 coded by B.S.
+    
+    const-string v0, "\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n  www.appleos.xyz \n  \u7231\u6deb\u8361 \n  -- by B.S."
+    
+    invoke-static {v0}, Lcom/android/BS/Log;->LogStr(Ljava/lang/String;)V
+    
+    ######插入代码结束 coded by B.S.
+    
+    
+    ######插入代码开始 coded by B.S.
+    
+    const-string v0, "\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n  www.appleos.xyz \n  \u7231\u6deb\u8361 \n  -- by B.S."
+    
+    invoke-static {v0}, Lcom/android/BS/Log;->LogStr(Ljava/lang/String;)V
+    
+    ######插入代码结束 coded by B.S.
+    ######显示通知消息
+    const-string v0, "\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n  www.appleos.xyz \n  \u7231\u6deb\u8361 \n  -- by B.S."
+    
+    const/4 v1, 0x1
+    
+    invoke-static {p0, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    
+    move-result-object v2
+    
+    const/4 v4, 0x0
+    
+    const/16 v3, 0x31
+    
+    invoke-virtual {v2, v3, v4, v4}, Landroid/widget/Toast;->setGravity(III)V
+    
+    invoke-virtual {v2}, Landroid/widget/Toast;->show()V
+    ######
+    ######显示通知消息
+    const-string v0, "\u65e0\u9650\u5185\u8d2dB.S.\u7834\u89e3\u7248\n  www.appleos.xyz \n  \u7231\u6deb\u8361 \n  -- by B.S."
+    
+    const/4 v1, 0x1
+    
+    invoke-static {p0, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    
+    move-result-object v2
+    
+    const/4 v4, 0x0
+    
+    const/16 v3, 0x11
+    
+    invoke-virtual {v2, v3, v4, v4}, Landroid/widget/Toast;->setGravity(III)V
+    
+    invoke-virtual {v2}, Landroid/widget/Toast;->show()V
+    ######
+
+    
+    ######插入代码开始 coded by B.S.  存档注入
+    #invoke-static/range {p0 .. p0}, Lcom/savegame/SavesRestoring;->DoSmth(Landroid/content/Context;)V
+    #invoke-direct {p0}, Lcom/playrix/township/chukong/ChuKongLuancher;->data()V
+    ######插入代码结束 coded by B.S.
+    
+    
+
+    const/4 v2, 0x0
+
+    invoke-super {p0}, Lcom/anysdk/framework/HyApplication;->onCreate()V
+
+    invoke-virtual {p0}, Lcom/playrix/township/chukong/ChuKongApplication;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/playrix/lib/Playrix;->onCreate(Landroid/content/Context;)V
+
+    const-string v0, "ChuKongApplication init flurry."
+
+    new-array v1, v2, [Ljava/lang/Object;
+
+    invoke-static {v0, v1}, Lcom/playrix/township/CkLog;->dd(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    invoke-static {v2}, Lcom/flurry/android/FlurryAgent;->setLogEnabled(Z)V
+
+    const-string v0, "24BV5TB27668H6GTG5YX"
+
+    invoke-static {p0, v0}, Lcom/flurry/android/FlurryAgent;->init(Landroid/content/Context;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+
+
+
+
+
+
+
+
+================================================================================
+
+帮MT管理器群里一位朋友逆向筑梦桃子手游,得的联系客服QQ的代码,有代码混淆
+
+
+package defpackage;
+
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.widget.Toast;
+
+public final class biq {
+    public static boolean a(Context context) {
+        String str = (String) bkl.a("last_qq_service_number_CustomerServiceHelper", String.class);
+        if (str == null) {
+            switch ((int) (System.currentTimeMillis() % 3)) {
+                case 0:
+                    str = "844552471";
+                    break;
+                case 1:
+                    str = "844552471";
+                    break;
+                case 2:
+                    str = "844552471";
+                    break;
+                default:
+                    str = "844552471";
+                    break;
+            }
+            bkl.a("last_qq_service_number_CustomerServiceHelper", (Object) str);
+        }
+        if (biq.b(context)) {
+            context.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("mqqwpa://im/chat?chat_type=wpa&uin=" + str + "&version=1")));
+            return true;
+        }
+        Toast.makeText(context, "请先安装QQ", 0).show();
+        return false;
+    }
+
+    private static boolean b(Context context) {
+        try {
+            context.getPackageManager().getPackageInfo("com.tencent.mobileqq", 0);
+            return true;
+        } catch (Throwable e) {
+            bjs.a("CustomerServiceHelper", "checkHasInstallQQ: ", e);
+            return false;
+        } catch (Exception e2) {
+            return false;
+        }
+    }
+}
+
+================================================================================
+andftp
+
+
+
+public boolean c(String str) {
+        return str != null && str.length() > 0 && Pattern.compile("^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$", 2).matcher(str).matches();
+    }
+
+public boolean a(Context context, boolean z) {
+        if (!this.aq || z) {
+            try {
+                Object invoke = context.getClass().getMethod(a("FDUq@BJ@FDl@O@FDS", "!"), (Class[]) null).invoke(context, (Object[]) null);
+                Method method = invoke.getClass().getMethod(a("BIDBJrHFO@UTSDR", "!"), new Class[]{String.class, String.class});
+                int intValue = ((Integer) method.invoke(invoke, new Object[]{this.ah.toString(), this.ai.toString()})).intValue();
+                int intValue2 = ((Integer) method.invoke(invoke, new Object[]{this.ah.toString(), this.aj.toString()})).intValue();
+                this.ar = ((intValue2 != 0 ? 1 : 0) & (intValue == 0 ? 1 : 0)) & this.ak;
+            } catch (Throwable e) {
+                l.b(Y, e.getMessage(), e);
+            } finally {
+                this.aq = true;
+            }
+        }
+        return this.ar;
+    }
+
+
+.method public onClick(Landroid/content/DialogInterface;I)V
+    .locals 7
+
+    const v6, 0x7f08018c  #options_activate_popup_error_title激活出错
+
+    const/4 v4, 0x1
+
+    iget-object v0, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    iget-object v1, p0, Llysesoft/andftp/ay;->a:Landroid/widget/EditText;
+
+    invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Llysesoft/andftp/OptionsActivity;->a(Llysesoft/andftp/OptionsActivity;Ljava/lang/String;)Ljava/lang/String;
+
+    iget-object v0, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    invoke-static {v0}, Llysesoft/andftp/OptionsActivity;->b(Llysesoft/andftp/OptionsActivity;)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_2  #验证激活码是否为空
+
+    iget-object v0, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    invoke-static {v0}, Llysesoft/andftp/OptionsActivity;->b(Llysesoft/andftp/OptionsActivity;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    if-lez v0, :cond_2  #验证激活码长度小于等于0
+
+    :try_start_0
+    iget-object v0, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    invoke-static {v0}, Llysesoft/andftp/OptionsActivity;->a(Llysesoft/andftp/OptionsActivity;)Llysesoft/transfer/client/util/c;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "{"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    invoke-static {v2}, Llysesoft/andftp/OptionsActivity;->b(Llysesoft/andftp/OptionsActivity;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "}"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Llysesoft/transfer/client/util/c;->q(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {}, Llysesoft/andftp/OptionsActivity;->j()Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Key: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Llysesoft/transfer/client/util/l;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v1, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    invoke-static {v1}, Llysesoft/andftp/OptionsActivity;->a(Llysesoft/andftp/OptionsActivity;)Llysesoft/transfer/client/util/c;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Llysesoft/transfer/client/util/c;->c(Ljava/lang/String;)Z
+
+    move-result v0   #正则表达式是否验证成功
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    invoke-static {v0}, Llysesoft/andftp/OptionsActivity;->c(Llysesoft/andftp/OptionsActivity;)Llysesoft/andftp/client/ftpdesign/a;
+
+    move-result-object v0
+
+    iget-object v1, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    invoke-static {v1}, Llysesoft/andftp/OptionsActivity;->b(Llysesoft/andftp/OptionsActivity;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Llysesoft/andftp/client/ftpdesign/a;->aa(Ljava/lang/String;)V
+
+    iget-object v0, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    invoke-virtual {v0}, Llysesoft/andftp/OptionsActivity;->h()V
+
+    iget-object v0, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    const v1, 0x7f0a00a0  #options_activate_info_label_id
+
+    invoke-virtual {v0, v1}, Llysesoft/andftp/OptionsActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iget-object v1, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    invoke-static {v1}, Llysesoft/andftp/OptionsActivity;->b(Llysesoft/andftp/OptionsActivity;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object v0, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    invoke-static {v0}, Llysesoft/andftp/OptionsActivity;->a(Llysesoft/andftp/OptionsActivity;)Llysesoft/transfer/client/util/c;
+
+    move-result-object v0
+
+    iget-object v1, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Llysesoft/transfer/client/util/c;->a(Landroid/content/Context;Z)Z
+
+    move-result v0  #这里返回为1
+
+    new-instance v1, Landroid/app/AlertDialog$Builder;
+
+    iget-object v2, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    invoke-direct {v1, v2}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+
+    const v2, 0x7f020023
+
+    invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
+
+    const v2, 0x7f080187  #options_activate_popup_title激活
+
+    invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
+
+    if-ne v0, v4, :cond_0     #不等于v4=1跳到激活成功,并下载pro版本
+
+    const v2, 0x7f08018a  #options_activate_popup_success_label激活成功
+
+    invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
+
+    :goto_0
+    const v2, 0x7f0800bd  #settings_ok_button确认
+
+    new-instance v3, Llysesoft/andftp/az;
+
+    invoke-direct {v3, p0, v0}, Llysesoft/andftp/az;-><init>(Llysesoft/andftp/ay;Z)V
+
+    invoke-virtual {v1, v2, v3}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
+
+    :goto_1
+    return-void
+
+    :cond_0
+    const v2, 0x7f08018b  #options_activate_popup_success_download_label激活成功。AndFTPPro 将被下载并安装
+
+    invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    invoke-static {}, Llysesoft/andftp/OptionsActivity;->j()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v1, v0}, Llysesoft/transfer/client/util/l;->b(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    iget-object v1, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    invoke-virtual {v1, v6}, Llysesoft/andftp/OptionsActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    iget-object v2, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    const v3, 0x7f08018e   #options_activate_popup_error_syntax_label无效的激活密钥格式, 请检查确保您没有出现拼写错误。
+
+    invoke-virtual {v2, v3}, Llysesoft/andftp/OptionsActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Llysesoft/andftp/OptionsActivity;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_1
+
+    :cond_1
+    :try_start_1
+    iget-object v0, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    iget-object v1, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    const v2, 0x7f08018c  #options_activate_popup_error_title激活出错
+
+    invoke-virtual {v1, v2}, Llysesoft/andftp/OptionsActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    iget-object v2, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    const v3, 0x7f08018f  #options_activate_popup_error_invalid_label无效的激活密钥, 请仔细检查如果问题仍然存在请联系
+
+    invoke-virtual {v2, v3}, Llysesoft/andftp/OptionsActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    const/4 v3, 0x1
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    const/4 v4, 0x0
+
+    const-string v5, "support@lysesoft.com"
+
+    aput-object v5, v3, v4
+
+    invoke-static {v2, v3}, Ljava/text/MessageFormat;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Llysesoft/andftp/OptionsActivity;->a(Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+
+    goto :goto_1
+
+    :cond_2
+    iget-object v0, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    iget-object v1, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    invoke-virtual {v1, v6}, Llysesoft/andftp/OptionsActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    iget-object v2, p0, Llysesoft/andftp/ay;->b:Llysesoft/andftp/OptionsActivity;
+
+    const v3, 0x7f08018d  #options_activate_popup_error_empty_label激活密匙不能为空
+
+    invoke-virtual {v2, v3}, Llysesoft/andftp/OptionsActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Llysesoft/andftp/OptionsActivity;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_1
+.end method
+
+================================================================================
+apk加固脱壳
+
+
+在动态调试加固apk程序的时候，需要在几个关键点函数 open、strtol、mmap、memcmp处下断点，后面具体的分析。由于android系统是由Linux系统修改而来，因此Android系统上很多的属性和Linux系统下的属性。Linux下进程和线程的信息是保存在文件中的，因此要查询进程或者线程的信息必须通过open或者fopen等方式操作文件来完成。
+ 
+Android的so调试的步骤略过，已经在上面提到的4个函数处下断点，注意下断点的技巧，下断点的时候，要在一个函数的第1条指令和最后一条指令的地方下断点。
+
+/proc/self/status
+过掉通过TracePid方式的反调试的方法是在strtol函数处下断点，在strstol函数的最后一行指令的地方，修改该函数的返回值R0的值为0即可，然后F9运行程序。
+
+/proc/net/tcp
+当strstr函数的返回值不为0为字符串“sl local_address rem_address”时，需要注意，说明当前进程已经检测到了本地连接的套接字，因此需要修改strstsr函数的返回值为0即可。
+
+/proc/pid/mdline
+通过"/proc/pid/mdline"对android_server、gdb、strace、ltrace调试器进行反调试，但是只要向前文提到的修改android_server的名称即可过掉该反调试。
+
+/proc/pid/maps
+
+再经过大约2次mmap函数运行以后，再一次调用memcmp函数即到了脱壳的地方，注意此时加固外壳apk程序呈现的堆栈和内存的状态。由于360加固自己制作了dvmDexFileOpenPartial函数，但是该函数需要调用memcmp进行dex文件的魔法字符串”dex“的比较，因此此时是脱壳的最佳时机。
+
+
+
+
+
+
+================================================================================
+补丁android killer反编译引擎jd为jadx
+
+Breakpoints
+地址                                  模块                              激活                       反汇编                                注释
+7435B000 kernel32.CreateProcessW      kernel32                          始终                         mov edi,edi
+74367B30 kernel32.ExitProcess         kernel32                          始终                         push ebp
+7437FF70 kernel32.WinExec             kernel32                          始终                         mov edi,edi
+74380750 kernel32.CreateProcessA      kernel32                          始终                         mov edi,edi
+76010530 shell32.ShellExecuteW        shell32                           始终                         mov edi,edi
+760EEF50 shell32.ShellExecuteA        shell32                           始终                         mov edi,edi
+
+
+
+Breakpoints
+地址                                                                     模块                          激活                       反汇编                                注释
+00FB7B8C AKCommon.Ak::Shell::TWindowsShell::Open                         AKCommon                      已禁止                        push ebp
+06CBC394 APKKille.Apk::Fui::TfrmApkUI::OpenJar                           APKKille                      已禁止                        push ebp
+06CCA030 APKKille.Apk::Feditor::TfrmApkEditor::actJavaViewExecute        APKKille                      已禁止                        push ebp
+06CCA063                                                                 APKKille                      已禁止                        mov ecx,APKKille.06CCA150
+7435B000 kernel32.CreateProcessW                                         kernel32                      始终                         mov edi,edi
+74367B30 kernel32.ExitProcess                                            kernel32                      始终                         push ebp
+7437FF70 kernel32.WinExec                                                kernel32                      始终                         mov edi,edi
+74380750 kernel32.CreateProcessA                                         kernel32                      始终                         mov edi,edi
+76010530 shell32.ShellExecuteW                                           shell32                       始终                         mov edi,edi
+760EEF50 shell32.ShellExecuteA                                           shell32                       始终                         mov edi,edi
+
+
+
+
+Breakpoints, 条目 0
+ 地址=00FB7B8C AKCommon.Ak::Shell::TWindowsShell::Open
+ 模块=AKCommon
+ 激活=始终
+ 反汇编=push ebp
+
+Breakpoints, 条目 0
+ 地址=00FB7B8C AKCommon.Ak::Shell::TWindowsShell::Open
+ 模块=AKCommon
+ 激活=始终
+ 反汇编=push ebp
+
+?00FB7B8C-00DC0000=001F7B8C
+
+RVA=001F7B8C 
+
+-------------------------------------------------------------------------------- 
+Breakpoints, 条目 2
+ 地址=06FAA030 APKKille.Apk::Feditor::TfrmApkEditor::actJavaViewExecute
+ 模块=APKKille
+ 激活=始终
+ 反汇编=push ebp
+
+Breakpoints, 条目 1
+ 地址=070EA030 APKKille.Apk::Feditor::TfrmApkEditor::actJavaViewExecute
+ 模块=APKKille
+ 激活=始终
+ 反汇编=push ebp
+ 
+
+Breakpoints, 条目 1
+ 地址=070DA030 APKKille.Apk::Feditor::TfrmApkEditor::actJavaViewExecute
+ 模块=APKKille
+ 激活=始终
+ 反汇编=push ebp
+ 
+Breakpoints, 条目 0
+ 地址=06FAA030 APKKille.Apk::Feditor::TfrmApkEditor::actJavaViewExecute
+ 模块=APKKille
+ 激活=已禁止
+ 反汇编=push ebp
+ True
+Breakpoints, 条目 1
+ 地址=06CCA030 APKKille.Apk::Feditor::TfrmApkEditor::actJavaViewExecute
+ 模块=APKKille
+ 激活=已禁止
+ 反汇编=push ebp
+
+Log data, 条目 63
+ 地址=06B90000
+ 消息=Module D:\AndroidKiller_1.3.1\plugins\APKKiller.bpl
+
+06CCA030-06B90000=0013A030
+
+RVA=0013A030
+
+06CCA150-06B90000=0013A150
+
+注意模块的重定位
+
+修改\plugins\APKKiller.bpl文件的代码
+
+OD载入这个dll文件,也就是这个bpl
+
+找到字符串,
+ 
+bin\jd-gui\jd-gui.exe
+
+
+06CCA150  62 00 69 00 6E 00 5C 00 6A 00 64 00 2D 00 67 00  bin\jd-g
+06CCA160  75 00 69 00 5C 00 6A 00 64 00 2D 00 67 00 75 00  ui\jd-gu
+06CCA170  69 00 2E 00 65 00 78 00 65 00 00 00 B0 04 02 00  i.exe.Ұ
+
+或者Ctrl+B搜索二进制代码
+
+62 00 69 00 6E 00 5C 00 6A 00 64 00 2D 00 67 00 75 00 69 00 5C 00 6A 00 64 00 2D 00 67 00 75 00
+69 00 2E 00 65 00 78 00 65 00 00 00
+
+修改为字符串
+bin\jadx\bin\jadx.cmd
+的二进制代码
+
+62 00 69 00 6E 00 5C 00 6A 00 61 00 64 00 78 00 5C 00 62 00 69 00 6E 00 5C 00 6A 00 61 00 64 00
+78 00 2E 00 63 00 6D 00 64 00 00 00
+
+44个字节
+
+bin\jadx\bin\jadx-gui.bat
+bin\jadx\bin\jadx.cmd
+
+
+
+06CCA0A7                  B9 88A1CC06     mov ecx,APKKille.06CCA188                ; UNICODE ".class"
+06CCA0AC                  BA A4A1CC06     mov edx,APKKille.06CCA1A4                ; UNICODE ".smali"
+06CCA0B1                  E8 5280ECFF     call APKKille.06B92108                   ; jmp 到 offset rtl230.System::Sysutils::TStringHelper::Replace
+
+定位特征码
+
+B9 88 ?? ?? ?? BA A4 ?? ?? ?? E8
+
+
+06CCA0DC                  BA C0A1CC06     mov edx,APKKille.06CCA1C0                ; UNICODE "androidjavanotsmalisrc"
+06CCA0E1                  E8 B6D6ECFF     call APKKille.06B9779C                   ; jmp 到 AKCommon.Ak::Lang::TAKLang::GetValue
+
+BA C0 ?? ?? ?? E8
+ 
+
+06CCA030 APKKille.Apk::Feditor::TfrmApkEditor::actJavaViewExecute     55              push ebp
+06CCA031                                                              8BEC            mov ebp,esp
+06CCA033                                                              B9 05000000     mov ecx,0x5
+06CCA038                                                              6A 00           push 0x0
+06CCA03A                                                              6A 00           push 0x0
+06CCA03C                                                              49              dec ecx
+06CCA03D                                                            ^ 75 F9           jnz short APKKille.06CCA038
+06CCA03F                                                              53              push ebx
+06CCA040                                                              8BD8            mov ebx,eax
+06CCA042                                                              33C0            xor eax,eax
+06CCA044                                                              55              push ebp
+06CCA045                                                              68 38A1CC06     push APKKille.06CCA138
+06CCA04A                                                              64:FF30         push dword ptr fs:[eax]
+06CCA04D                                                              64:8920         mov dword ptr fs:[eax],esp
+06CCA050                                                              8D55 F4         lea edx,dword ptr ss:[ebp-0xC]
+06CCA053                                                              A1 24D7CD06     mov eax,dword ptr ds:[0x6CDD724]
+06CCA058                                                              E8 7788ECFF     call APKKille.06B928D4                   ; jmp 到 AKCommon.Ak::Paths::TPaths::AppPath
+06CCA05D                                                              8B55 F4         mov edx,dword ptr ss:[ebp-0xC]
+06CCA060                                                              8D45 FC         lea eax,dword ptr ss:[ebp-0x4]
+06CCA063                                                              B9 50A1CC06     mov ecx,APKKille.06CCA150                ; UNICODE "bin\jd-gui\jd-gui.exe"
+06CCA068                                                              E8 5371ECFF     call APKKille.06B911C0                   ; jmp 到 offset rtl230.System::UStrCat3
+06CCA06D                                                              8D45 F8         lea eax,dword ptr ss:[ebp-0x8]
+06CCA070                                                              50              push eax
+06CCA071                                                              8D55 F0         lea edx,dword ptr ss:[ebp-0x10]
+06CCA074                                                              8B83 60050000   mov eax,dword ptr ds:[ebx+0x560]
+06CCA07A                                                              8B08            mov ecx,dword ptr ds:[eax]
+06CCA07C                                                              FF51 10         call dword ptr ds:[ecx+0x10]
+06CCA07F                                                              8B45 F0         mov eax,dword ptr ss:[ebp-0x10]
+06CCA082                                                              50              push eax
+06CCA083                                                              8D55 EC         lea edx,dword ptr ss:[ebp-0x14]
+06CCA086                                                              8B83 60050000   mov eax,dword ptr ds:[ebx+0x560]
+06CCA08C                                                              8B08            mov ecx,dword ptr ds:[eax]
+06CCA08E                                                              FF51 0C         call dword ptr ds:[ecx+0xC]
+06CCA091                                                              8B55 EC         mov edx,dword ptr ss:[ebp-0x14]
+06CCA094                                                              8D83 44050000   lea eax,dword ptr ds:[ebx+0x544]
+06CCA09A                                                              59              pop ecx
+06CCA09B                                                              E8 6880ECFF     call APKKille.06B92108                   ; jmp 到 offset rtl230.System::Sysutils::TStringHelper::Replace
+06CCA0A0                                                              8D45 E8         lea eax,dword ptr ss:[ebp-0x18]
+06CCA0A3                                                              50              push eax
+06CCA0A4                                                              8D45 F8         lea eax,dword ptr ss:[ebp-0x8]
+06CCA0A7                                                              B9 88A1CC06     mov ecx,APKKille.06CCA188                ; UNICODE ".class"
+06CCA0AC                                                              BA A4A1CC06     mov edx,APKKille.06CCA1A4                ; UNICODE ".smali"
+06CCA0B1                                                              E8 5280ECFF     call APKKille.06B92108                   ; jmp 到 offset rtl230.System::Sysutils::TStringHelper::Replace
+06CCA0B6                                                              8B55 E8         mov edx,dword ptr ss:[ebp-0x18]
+06CCA0B9                                                              8D45 F8         lea eax,dword ptr ss:[ebp-0x8]
+06CCA0BC                                                              E8 AF70ECFF     call APKKille.06B91170                   ; jmp 到 offset rtl230.System::UStrLAsg
+06CCA0C1                                                              B2 01           mov dl,0x1
+06CCA0C3                                                              8B45 F8         mov eax,dword ptr ss:[ebp-0x8]
+06CCA0C6                                                              E8 0D7FECFF     call APKKille.06B91FD8                   ; jmp 到 offset rtl230.System::Sysutils::FileExists
+06CCA0CB                                                              84C0            test al,al
+06CCA0CD                                                              75 21           jnz short APKKille.06CCA0F0
+06CCA0CF                                                              A1 B0E0CD06     mov eax,dword ptr ds:[0x6CDE0B0]
+06CCA0D4                                                              E8 CBD6ECFF     call APKKille.06B977A4                   ; jmp 到 AKCommon.Ak::Lang::TAKLang::Instance
+06CCA0D9                                                              8D4D E4         lea ecx,dword ptr ss:[ebp-0x1C]
+06CCA0DC                                                              BA C0A1CC06     mov edx,APKKille.06CCA1C0                ; UNICODE "androidjavanotsmalisrc"
+06CCA0E1                                                              E8 B6D6ECFF     call APKKille.06B9779C                   ; jmp 到 AKCommon.Ak::Lang::TAKLang::GetValue
+06CCA0E6                                                              8B45 E4         mov eax,dword ptr ss:[ebp-0x1C]
+06CCA0E9                                                              E8 4ED0ECFF     call APKKille.06B9713C                   ; jmp 到 offset vcl230.Vcl::Dialogs::ShowMessage
+06CCA0EE                                                              EB 2D           jmp short APKKille.06CCA11D
+06CCA0F0                                                              8D45 E0         lea eax,dword ptr ss:[ebp-0x20]
+06CCA0F3                                                              50              push eax
+06CCA0F4                                                              8B45 F8         mov eax,dword ptr ss:[ebp-0x8]
+06CCA0F7                                                              8945 D8         mov dword ptr ss:[ebp-0x28],eax
+06CCA0FA                                                              C645 DC 11      mov byte ptr ss:[ebp-0x24],0x11
+06CCA0FE                                                              8D55 D8         lea edx,dword ptr ss:[ebp-0x28]
+06CCA101                                                              33C9            xor ecx,ecx
+06CCA103                                                              B8 FCA1CC06     mov eax,APKKille.06CCA1FC                ; UNICODE ""%s""
+06CCA108                                                              E8 337FECFF     call APKKille.06B92040                   ; jmp 到 offset rtl230.System::Sysutils::Format
+06CCA10D                                                              8B4D E0         mov ecx,dword ptr ss:[ebp-0x20]
+06CCA110                                                              8B55 FC         mov edx,dword ptr ss:[ebp-0x4]
+06CCA113                                                              A1 34D8CD06     mov eax,dword ptr ds:[0x6CDD834]
+06CCA118                                                              E8 2FCCECFF     call APKKille.06B96D4C                   ; jmp 到 AKCommon.Ak::Shell::TWindowsShell::Open
+06CCA11D                                                              33C0            xor eax,eax
+06CCA11F                                                              5A              pop edx
+06CCA120                                                              59              pop ecx
+06CCA121                                                              59              pop ecx
+06CCA122                                                              64:8910         mov dword ptr fs:[eax],edx
+06CCA125                                                              68 3FA1CC06     push APKKille.06CCA13F
+06CCA12A                                                              8D45 E0         lea eax,dword ptr ss:[ebp-0x20]
+06CCA12D                                                              BA 08000000     mov edx,0x8
+06CCA132                                                              E8 1170ECFF     call APKKille.06B91148                   ; jmp 到 offset rtl230.System::UStrArrayClr
+06CCA137                                                              C3              retn
+06CCA138                                                            ^ E9 BB6FECFF     jmp APKKille.06B910F8                    ; jmp 到 offset rtl230.System::HandleFinally
+06CCA13D                                                            ^ EB EB           jmp short APKKille.06CCA12A
+06CCA13F                                                              5B              pop ebx
+06CCA140                                                              8BE5            mov esp,ebp
+06CCA142                                                              5D              pop ebp
+06CCA143                                                              C3              retn
+
+
+
+bin\jd-gui\jd-gui.exe
+
+bin\jadx\bin\jadx-gui.bat
+bin\jadx\bin\jadx.cmd
+
+
+06CBC430-06B90000=0012C430
+
+06CBC430  62 00 69 00 6E 00 5C 00 6A 00 64 00 2D 00 67 00  bin\jd-g
+06CBC440  75 00 69 00 5C 00 6A 00 64 00 2D 00 67 00 75 00  ui\jd-gu
+06CBC450  69 00 2E 00 65 00 78 00 65 00 00 00 B0 04 02 00  i.exe.Ұ
+
+
+62 00 69 00 6E 00 5C 00 6A 00 64 00 2D 00 67 00 75 00 69 00 5C 00 6A 00 64 00 2D 00 67 00 75 00
+69 00 2E 00 65 00 78 00 65 00 00 00
+
+62 00 69 00 6E 00 5C 00 6A 00 61 00 64 00 78 00 5C 00 62 00 69 00 6E 00 5C 00 6A 00 61 00 64 00
+78 00 2E 00 63 00 6D 00 64 00 00 00
+
+
+
+06CBC3D3                                          50              push eax
+06CBC3D4                                          68 68C4CB06     push APKKille.06CBC468             ; UNICODE """
+06CBC3D9                                          FF75 FC         push dword ptr ss:[ebp-0x4]
+06CBC3DC                                          68 68C4CB06     push APKKille.06CBC468             ; UNICODE """
+06CBC3E1                                          8D45 F4         lea eax,dword ptr ss:[ebp-0xC]
+06CBC3E4                                          BA 03000000     mov edx,0x3
+06CBC3E9                                          E8 DA4DEDFF     call APKKille.06B911C8             ; jmp 到 offset rtl230.System::UStrCatN
+
+
+50 68 68 C4 CB 06 FF 75 FC 68 68 C4 CB 06 8D 45 F4 BA 03 00 00 00 E8
+
+06CBC394 APKKille.Apk::Fui::TfrmApkUI::OpenJar    55              push ebp                           ; user32.77294BBE
+06CBC395                                          8BEC            mov ebp,esp
+06CBC397                                          6A 00           push 0x0
+06CBC399                                          6A 00           push 0x0
+06CBC39B                                          6A 00           push 0x0
+06CBC39D                                          8955 FC         mov dword ptr ss:[ebp-0x4],edx
+06CBC3A0                                          8B45 FC         mov eax,dword ptr ss:[ebp-0x4]
+06CBC3A3                                          E8 B04DEDFF     call APKKille.06B91158             ; jmp 到 offset rtl230.System::UStrAddRef
+06CBC3A8                                          33C0            xor eax,eax
+06CBC3AA                                          55              push ebp                           ; user32.77294BBE
+06CBC3AB                                          68 17C4CB06     push APKKille.06CBC417
+06CBC3B0                                          64:FF30         push dword ptr fs:[eax]
+06CBC3B3                                          64:8920         mov dword ptr fs:[eax],esp
+06CBC3B6                                          8D55 F8         lea edx,dword ptr ss:[ebp-0x8]
+06CBC3B9                                          A1 24D7CD06     mov eax,dword ptr ds:[0x6CDD724]
+06CBC3BE                                          E8 1165EDFF     call APKKille.06B928D4             ; jmp 到 AKCommon.Ak::Paths::TPaths::AppPath
+06CBC3C3                                          8D45 F8         lea eax,dword ptr ss:[ebp-0x8]
+06CBC3C6                                          BA 30C4CB06     mov edx,APKKille.06CBC430          ; UNICODE "bin\jd-gui\jd-gui.exe"
+06CBC3CB                                          E8 E84DEDFF     call APKKille.06B911B8             ; jmp 到 offset rtl230.System::UStrCat
+06CBC3D0                                          8B45 F8         mov eax,dword ptr ss:[ebp-0x8]
+06CBC3D3                                          50              push eax
+06CBC3D4                                          68 68C4CB06     push APKKille.06CBC468             ; UNICODE """
+06CBC3D9                                          FF75 FC         push dword ptr ss:[ebp-0x4]
+06CBC3DC                                          68 68C4CB06     push APKKille.06CBC468             ; UNICODE """
+06CBC3E1                                          8D45 F4         lea eax,dword ptr ss:[ebp-0xC]
+06CBC3E4                                          BA 03000000     mov edx,0x3
+06CBC3E9                                          E8 DA4DEDFF     call APKKille.06B911C8             ; jmp 到 offset rtl230.System::UStrCatN
+06CBC3EE                                          8B4D F4         mov ecx,dword ptr ss:[ebp-0xC]
+06CBC3F1                                          A1 34D8CD06     mov eax,dword ptr ds:[0x6CDD834]
+06CBC3F6                                          5A              pop edx
+06CBC3F7                                          E8 50A9EDFF     call APKKille.06B96D4C             ; jmp 到 AKCommon.Ak::Shell::TWindowsShell::Open
+06CBC3FC                                          33C0            xor eax,eax
+06CBC3FE                                          5A              pop edx
+06CBC3FF                                          59              pop ecx
+06CBC400                                          59              pop ecx
+06CBC401                                          64:8910         mov dword ptr fs:[eax],edx
+06CBC404                                          68 1EC4CB06     push APKKille.06CBC41E
+06CBC409                                          8D45 F4         lea eax,dword ptr ss:[ebp-0xC]
+06CBC40C                                          BA 03000000     mov edx,0x3
+06CBC411                                          E8 324DEDFF     call APKKille.06B91148             ; jmp 到 offset rtl230.System::UStrArrayClr
+06CBC416                                          C3              retn
+06CBC417                                        ^ E9 DC4CEDFF     jmp APKKille.06B910F8              ; jmp 到 offset rtl230.System::HandleFinally
+06CBC41C                                        ^ EB EB           jmp short APKKille.06CBC409
+06CBC41E                                          8BE5            mov esp,ebp                        ; user32.77294BBE
+06CBC420                                          5D              pop ebp                            ; user32.77294BBE
+06CBC421                                          C3              retn
+
+
+================================================================================
+修改android_server默认调试端口号反调试
+
+IDA载入文件android_server分析
+
+Shift+F12 查找字符串
+
+.rodata:00074224 0000004A C IDA Android 32-bit remote debug server(ST) v1.%d. Hex-Rays (c) 2004-2015\n
+
+.rodata:00074160 0000000D C init_sockets
+
+点击数据交叉来到代码区
+
+第一处:
+
+.text:0000B620                               loc_B620                                ; CODE XREF: sub_B5DC+22j
+.text:0000B620 A9 4B                                         LDR     R3, =(off_7FBD0 - 0xB62A)
+.text:0000B622 AA 48                                         LDR     R0, =(aIdaAndroid32Bi - 0xB62E)
+.text:0000B624 13 21                                         MOVS    R1, #0x13
+.text:0000B626 7B 44                                         ADD     R3, PC ; off_7FBD0
+.text:0000B628 1B 68                                         LDR     R3, [R3] ; unk_80BB0
+.text:0000B62A 78 44                                         ADD     R0, PC          ; "IDA Android 32-bit remote debug server("...
+.text:0000B62C 1D 78                                         LDRB    R5, [R3]
+.text:0000B62E 04 F0 AB FC                                   BL      sub_FF88
+.text:0000B632 01 2E                                         CMP     R6, #1
+.text:0000B634 1C DD                                         BLE     loc_B670
+.text:0000B636 62 68                                         LDR     R2, [R4,#4]
+.text:0000B638 13 78                                         LDRB    R3, [R2]
+.text:0000B63A 02 22                                         MOVS    R2, #2
+.text:0000B63C 93 43                                         BICS    R3, R2
+.text:0000B63E 2D 2B                                         CMP     R3, #0x2D
+.text:0000B640 16 D1                                         BNE     loc_B670
+.text:0000B642 00 2D                                         CMP     R5, #0
+.text:0000B644 00 D1                                         BNE     loc_B648
+.text:0000B646 9F E1                                         B       loc_B988
+.text:0000B648                               ; ---------------------------------------------------------------------------
+.text:0000B648
+.text:0000B648                               loc_B648                                ; CODE XREF: sub_B5DC+68j
+.text:0000B648 A1 4B                                         LDR     R3, =(dword_8074C - 0xB652)
+.text:0000B64A A2 4A                                         LDR     R2, =(dword_8074C - 0xB654)
+.text:0000B64C A2 4D                                         LDR     R5, =0x5D8A
+.text:0000B64E 7B 44                                         ADD     R3, PC ; dword_8074C
+.text:0000B650 7A 44                                         ADD     R2, PC ; dword_8074C
+.text:0000B652 99 46                                         MOV     R9, R3
+.text:0000B654 01 27                                         MOVS    R7, #1
+.text:0000B656 90 46                                         MOV     R8, R2
+.text:0000B658
+.text:0000B658                               loc_B658                                ; CODE XREF: sub_B5DC+2BAj
+.text:0000B658 63 68                                         LDR     R3, [R4,#4]
+.text:0000B65A 58 78                                         LDRB    R0, [R3,#1]
+.text:0000B65C 50 38                                         SUBS    R0, #0x50       ; switch 39 cases
+.text:0000B65E 26 28                                         CMP     R0, #0x26
+.text:0000B660 00 D8                                         BHI     def_B826        ; jumptable 0000B826 default case
+.text:0000B662 E0 E0                                         B       loc_B826
+
+第二处:
+
+.text:0000B97E                               loc_B97E                                ; CODE XREF: sub_B5DC+C2j
+.text:0000B97E 30 49                                         LDR     R1, =(aInit_sockets - 0xB986)
+.text:0000B980 00 20                                         MOVS    R0, #0
+.text:0000B982 79 44                                         ADD     R1, PC          ; "init_sockets"
+.text:0000B984 00 F0 EC FC                                   BL      sub_C360
+.text:0000B988                               ; ---------------------------------------------------------------------------
+.text:0000B988
+.text:0000B988                               loc_B988                                ; CODE XREF: sub_B5DC+6Aj
+.text:0000B988 2E 4B                                         LDR     R3, =(dword_8074C - 0xB992)
+.text:0000B98A 2F 4D                                         LDR     R5, =0x5D8A
+.text:0000B98C 2C 22                                         MOVS    R2, #0x2C
+.text:0000B98E 7B 44                                         ADD     R3, PC ; dword_8074C
+.text:0000B990 99 46                                         MOV     R9, R3
+.text:0000B992 90 46                                         MOV     R8, R2
+.text:0000B994 01 27                                         MOVS    R7, #1
+.text:0000B996
+.text:0000B996                               loc_B996                                ; CODE XREF: sub_B5DC:loc_B9CCj
+.text:0000B996 60 68                                         LDR     R0, [R4,#4]
+.text:0000B998 43 78                                         LDRB    R3, [R0,#1]
+.text:0000B99A 1A 06                                         LSLS    R2, R3, #0x18
+.text:0000B99C 13 0E                                         LSRS    R3, R2, #0x18
+.text:0000B99E 6B 2B                                         CMP     R3, #0x6B
+.text:0000B9A0 37 D0                                         BEQ     loc_BA12
+.text:0000B9A2 2D D8                                         BHI     loc_BA00
+.text:0000B9A4 50 2B                                         CMP     R3, #0x50
+.text:0000B9A6 3D D0                                         BEQ     loc_BA24
+.text:0000B9A8 69 2B                                         CMP     R3, #0x69
+
+
+
+IDA Ctrl+J 列出交叉参考来源
+
+.text:0000B8D8 8A 5D 00 00                   dword_B8D8      DCD 0x5D8A              ; DATA XREF: sub_B5DC+70r
+.text:0000B8D8                                                                       ; sub_B5DC:loc_B670r
+
+
+.text:0000BA44                                                                       ; DATA XREF: sub_B5DC:loc_B988r
+.text:0000BA48 8A 5D 00 00                   dword_BA48      DCD 0x5D8A              ; DATA XREF: sub_B5DC+3AEr
+
+几个端口号对应16进制
+
+0x5D8A=23946
+
+0x41F8=16888
+
+0x3039=12345
+
+用十六进制工具 010 Editor Ctrl+G 修改
+
+0000B8D8 和 0000BA48两处的值为 0x41F8 注意字节序是输入F841
+
+
+
+
+
+
+D:\Program Files\IDA Pro v6.8>adb devices
+List of devices attached
+71MBBKU24655    device
+
+D:\Program Files\IDA Pro v6.8>adb push dbgsrv\android_server /data/data/android_server
+failed to copy 'dbgsrv\android_server' to '/data/data/android_server': Permission denied
+
+shell@m1note:/ $ id
+id
+uid=2000(shell) gid=2000(shell) groups=1003(graphics),1004(input),1007(log),1011(adb),1015(sdcard_rw),1028(sdcard_r),3001(net_bt_admin),3002(net_bt),3003(inet),3006(net_bw_stats) context=u:r:shell:s0
+shell@m1note:/
+shell@m1note:/ # id
+id
+uid=0(root) gid=0(root) groups=1003(graphics),1004(input),1007(log),1011(adb),1015(sdcard_rw),1028(sdcard_r),3001(net_bt_admin),3002(net_bt),3003(inet),3006(net_bw_stats) context=u:r:shell:s0
+shell@m1note:/ #
+
+D:\Program Files\IDA Pro v6.8>adb shell ls /data/local/tmp/
+busybox
+busybox1
+flatland
+
+D:\Program Files\IDA Pro v6.8>adb push dbgsrv\android_server /data/local/tmp/
+3798 KB/s (523480 bytes in 0.134s)
+
+D:\Program Files\IDA Pro v6.8>adb shell ls -al /data/local/tmp/
+-rw-rw-rw- shell    shell      523480 2015-04-13 18:35 android_server
+-rwxr-xr-x shell    shell     1062992 2016-03-28 14:41 busybox
+-rwxr-xr-x shell    shell      358336 2016-03-28 14:41 busybox1
+-rw-r--r-- root     root        34284 2015-04-13 20:56 flatland
+
+D:\Program Files\IDA Pro v6.8>adb shell /data/local/tmp/android_server
+/system/bin/sh: /data/local/tmp/android_server: can't execute: Permission denied
+
+D:\Program Files\IDA Pro v6.8>adb shell chmod 777 /data/local/tmp/android_server
+
+D:\Program Files\IDA Pro v6.8>adb shell /data/local/tmp/android_server
+IDA Android 32-bit remote debug server(ST) v1.19. Hex-Rays (c) 2004-2015
+Listening on port #23946...
+
+
+
+<application android:allowBackup="true" android:debuggable="true
+
+C:\Users\Administrator\Desktop>adb shell
+* daemon not running. starting it now on port 5037 *
+* daemon started successfully *
+root@m1note:/ # id
+id
+uid=0(root) gid=0(root) context=u:r:shell:s0
+
+
+
+
+
+C:\Users\Administrator\Desktop>adb shell am start -D -n com.ali.tg.testapp/com.ali.tg.testapp.MainActivity
+Starting: Intent { cmp=com.ali.tg.testapp/.MainActivity }
+
+C:\Users\Administrator\Desktop>adb shell am start -D -n com.ali.tg.testapp/.MainActivity
+Starting: Intent { cmp=com.ali.tg.testapp/.MainActivity }
+
+adb forward tcp:23946 tcp:23946
+
+
+jdb -connect com.sun.jdi.SocketAttach:hostname=localhost,port=8700
+
+C:\Users\Administrator\Desktop>jdb -attach localhost:12345
+
+
+C:\Users\Administrator\Desktop>adb shell am start -D -n loading.androidmanual/loading.androidmanual.BeginningActivity
+Starting: Intent { cmp=loading.androidmanual/.BeginningActivity }
+
+
+C:\Users\Administrator\Desktop>adb shell am start -D -n com.ali.tg.testapp/.MainActivity
+Starting: Intent { cmp=com.ali.tg.testapp/.MainActivity }
+
+C:\Users\Administrator\Desktop>adb jdwp
+1429
+10898
+
+C:\Users\Administrator\Desktop>adb forward tcp:8877 jdwp:10898
+
+C:\Users\Administrator\Desktop>jdb -connect com.sun.jdi.SocketAttach:hostname=localhost,port=8877
+设置未捕获的java.lang.Throwable
+设置延迟的未捕获的java.lang.Throwable
+正在初始化jdb...
+>
+
+
+android:debuggable="true"
+
+C:\Users\Administrator\Desktop>adb devices
+List of devices attached
+71MBBKU24655    device
+127.0.0.1:62001 device
+127.0.0.1:21503 device
+
+adb -s 71MBBKU24655 push mprop /data/local/tmp/mprop
+adb -s 71MBBKU24655 shell ls -al /data/local/tmp/mprop
+adb -s 71MBBKU24655 shell chmod 777 /data/local/tmp/mprop
+
+adb -s 71MBBKU24655 shell /data/local/tmp/mprop ro.debuggable 1
+adb -s 71MBBKU24655 shell getprop ro.debuggable
+
+adb -s 71MBBKU24655 shell stop;start
+
+adb -s 71MBBKU24655 jdwp
+
+adb -s 71MBBKU24655 push android_server  /data/local/tmp/android_server
+
+adb -s 71MBBKU24655 shell chmod 777 /data/local/tmp/android_server
+
+adb -s 71MBBKU24655 shell /data/local/tmp/android_server
+
+adb -s 71MBBKU24655 forward tcp:23946 tcp:16888
+
+netstat -ano | findstr :23946
+
+netstat -ano | findstr :16888
+
+tasklist | findstr 8300
+
+adb -s 71MBBKU24655 shell am start -D -n loading.androidmanual/.BeginningActivity
+
+adb -s 71MBBKU24655 shell am start -D -n com.droider.crackme0201/.MainActivity
+
+adb -s 71MBBKU24655 shell dumpsys package com.droider.crackme0201
+
+
+adb -s 71MBBKU24655 shell am start -D -n com.yaotong.crackme/.MainActivity
+
+aapt dump xmltree AliCrackme_2.apk AndroidManifest.xml > D:\AndroidManifest.txt
+
+
+
+adb -s 71MBBKU24655 shell am start -D -n com.CMapp/com.e4a.runtime.android.mainActivity
+
+adb -s 71MBBKU24655 shell am start -D -n com.example.hbssz/.MainActivity
+
+jdb -connect com.sun.jdi.SocketAttach:hostname=localhost,port=8700
+
+adb -s 71MBBKU24655 jdwp
+
+adb -s 71MBBKU24655 forward tcp:8877 jdwp:20524
+
+jdb -connect com.sun.jdi.SocketAttach:hostname=localhost,port=8877
+
+
+mmap
+mmap+4e
+
+fopen
+fopen+0x82
+
+fgets
+fgets+0x98
+
+com.CMapp_1.apk:78CAC004 00 F0 20 E3                   NOP
+
+11次f9断在mmap后f8单步
+
+
+返回到这里
+78CF7000: loaded /data/data/com.CMapp/files/libjiagu.so
+
+0x59e0
+
+libjiagu.so:78CFC9E0 01 00 70 E3                   CMN             R0, #1
+libjiagu.so:78CFC9E4 00 00 85 15                   STRNE           R0, [R5]
+libjiagu.so:78CFC9E8 04 40 85 15                   STRNE           R4, [R5,#4]
+libjiagu.so:78CFC9EC 0C D0 8D E2                   ADD             SP, SP, #0xC
+libjiagu.so:78CFC9F0 30 80 BD E8                   LDMFD           SP!, {R4,R5,PC}
+
+
+com.CMapp_1.apk:78CAC014                               loc_78CAC014                            ; CODE XREF: com.CMapp_1.apk:78CAC00Cj
+com.CMapp_1.apk:78CAC014 3E FF 2F E1                   BLX             LR ; loc_78CFA42C
+com.CMapp_1.apk:78CAC018 00 00 50 E3                   CMP             R0, #0
+com.CMapp_1.apk:78CAC01C 00 00 00 1A                   BNE             loc_78CAC024
+com.CMapp_1.apk:78CAC020 01 00 00 EA                   B               loc_78CAC02C
+
+
+0x35ec  第1处反调试改为
+00 00 A0 E3
+
+libjiagu.so:78CF95D4 0A 20 A0 E3                   MOV             R2, #0xA
+libjiagu.so:78CF95D8 09 00 A0 E1                   MOV             R0, R9
+libjiagu.so:78CF95DC B2 F8 FF EB                   BL              unk_78CF78AC
+libjiagu.so:78CF95E0 00 40 A0 E1                   MOV             R4, R0
+libjiagu.so:78CF95E4 06 00 A0 E1                   MOV             R0, R6
+libjiagu.so:78CF95E8 AC F8 FF EB                   BL              unk_78CF78A0
+libjiagu.so:78CF95EC 04 00 A0 E1                   MOV             R0, R4
+libjiagu.so:78CF95F0 F0 FF FF EA                   B               loc_78CF95B8
+
+libjiagu.so:78CF95D4 0A 20 A0 E3                   MOV             R2, #0xA
+libjiagu.so:78CF95D8 09 00 A0 E1                   MOV             R0, R9
+libjiagu.so:78CF95DC B2 F8 FF EB                   BL              unk_78CF78AC
+libjiagu.so:78CF95E0 00 40 A0 E1                   MOV             R4, R0
+libjiagu.so:78CF95E4 06 00 A0 E1                   MOV             R0, R6
+libjiagu.so:78CF95E8 AC F8 FF EB                   BL              unk_78CF78A0
+libjiagu.so:78CF95EC 00 00 A0 E3                   MOV             R0, #0
+libjiagu.so:78CF95F0 F0 FF FF EA                   B               loc_78CF95B8
+
+
+com.CMapp_1.apk:78CAC038                               loc_78CAC038                            ; CODE XREF: com.CMapp_1.apk:78CAC030j
+com.CMapp_1.apk:78CAC038 3E FF 2F E1                   BLX             LR ; loc_78CFA614
+com.CMapp_1.apk:78CAC03C 00 00 50 E3                   CMP             R0, #0
+com.CMapp_1.apk:78CAC040 00 00 00 1A                   BNE             loc_78CAC048
+com.CMapp_1.apk:78CAC044 01 00 00 EA                   B               loc_78CAC050
+
+0x3720  第2处反调试改为
+00 00 A0 E3
+
+libjiagu.so:78CF9708 06 00 A0 E1                   MOV             R0, R6
+libjiagu.so:78CF970C 1E F8 FF EB                   BL              unk_78CF778C
+libjiagu.so:78CF9710 00 10 50 E2                   SUBS            R1, R0, #0
+libjiagu.so:78CF9714 F1 FF FF 0A                   BEQ             loc_78CF96E0
+libjiagu.so:78CF9718 07 00 A0 E1                   MOV             R0, R7
+libjiagu.so:78CF971C 5F F8 FF EB                   BL              unk_78CF78A0
+libjiagu.so:78CF9720 01 00 A0 E3                   MOV             R0, #1
+libjiagu.so:78CF9724 02 00 00 EA                   B               loc_78CF9734
+
+
+libjiagu.so:78CF9708 06 00 A0 E1                   MOV             R0, R6
+libjiagu.so:78CF970C 1E F8 FF EB                   BL              unk_78CF778C
+libjiagu.so:78CF9710 00 10 50 E2                   SUBS            R1, R0, #0
+libjiagu.so:78CF9714 F1 FF FF 0A                   BEQ             loc_78CF96E0
+libjiagu.so:78CF9718 07 00 A0 E1                   MOV             R0, R7
+libjiagu.so:78CF971C 5F F8 FF EB                   BL              unk_78CF78A0
+libjiagu.so:78CF9720 00 00 A0 E3                   MOV             R0, #0
+libjiagu.so:78CF9724 02 00 00 EA                   B               loc_78CF9734
+
+f9运行28次断在fopen,观察r0为
+/proc/6922/maps.
+f9运行1次断在mmap,堆栈里出现
+data@app@com.CMapp_1.apk@classes.dex:78C926BD
+f8单步,直到Hex View里r0的指向的数据,出现dex.035.然后dump下来
+debug155:7905D818 03 9B             LDR             R3, [SP,#0xC]
+debug155:7905D81A 20 1C             MOVS            R0, R4
+debug155:7905D81C 5B 69             LDR             R3, [R3,#0x14]
+debug155:7905D81E 70 21             MOVS            R1, #0x70
+debug155:7905D820 1A 1C             MOVS            R2, R3
+debug155:7905D822 0C 93             STR             R3, [SP,#0x30]
+debug155:7905D824 02 F0 28 FF       BL              unk_79060678
+debug155:7905D828 20 1C             MOVS            R0, R4
+debug155:7905D82A 1D F0 7F FA       BL              unk_7907AD2C
+
+
+
+C:\Users\Administrator\Desktop>adb -s 71MBBKU24655 shell am start -D -n com.droider.crackme0201/.MainActivity
+Starting: Intent { cmp=com.droider.crackme0201/.MainActivity }
+
+C:\Users\Administrator\Desktop>adb -s 71MBBKU24655 jdwp
+1429
+12935
+
+adb -s 71MBBKU24655 shell kill -19 29542
+adb -s 71MBBKU24655 shell kill -18 29542
+
+
+C:\Users\Administrator\Desktop>adb -s 71MBBKU24655 forward tcp:8877 jdwp:13069
+
+C:\Users\Administrator\Desktop>adb -s 71MBBKU24655 forward tcp:23946 tcp:16888
+
+F9运行IDA
+
+C:\Users\Administrator\Desktop>jdb -connect com.sun.jdi.SocketAttach:hostname=localhost,port=8877
+设置未捕获的java.lang.Throwable
+设置延迟的未捕获的java.lang.Throwable
+正在初始化jdb...
+>
+
+adb -s 71MBBKU24655 shell cat /proc/13753/status
+
+IDA,再两次F9
+
+adb -s 71MBBKU24655 shell cat /proc/13753/status
+
+
+adb -s 71MBBKU24655 shell ps | grep 32008
+
+C:\Users\Administrator\Desktop>adb shell
+root@m1note:/ # ps |grep 32008
+ps |grep 32008
+root      32008 16052 15168  13396 ffffffff b6ea7948 S /data/local/tmp/android_server
+
+
+
+root@m1note:/sdcard # setprop ro.build.version.sdk 22
+setprop ro.build.version.sdk 22
+root@m1note:/sdcard # getprop ro.build.version.sdk
+getprop ro.build.version.sdk
+19
+
+
+400B9000: loaded /system/bin/linker
+
+0x400bb870
+
+.text:00002868                 ADD             R1, PC  ; "linker"
+.text:0000286A                 ADD             R2, PC  ; "[ Calling %s @ %p for '%s' ]"
+.text:0000286C                 BL              sub_47E4
+.text:00002870
+.text:00002870 loc_2870                                ; CODE XREF: sub_2844+16j
+.text:00002870                 BLX             R4
+.text:00002872                 LDR             R1, =(dword_146AC - 0x2878)
+.text:00002874                 ADD             R1, PC ; dword_146AC
+.text:00002876                 LDR             R2, [R1]
+.text:00002878                 CMP             R2, #1
+.text:0000287A                 BLE             loc_2890
+.text:0000287C                 LDR             R1, =(aLinker - 0x288C)
+.text:0000287E                 MOVS            R0, #4
+
+
+.fini_array:00005E84
+.fini_array:00005E84 ; Segment type: Pure data
+.fini_array:00005E84                 AREA .fini_array, DATA
+.fini_array:00005E84                 ; ORG 0x5E84
+.fini_array:00005E84                 DCD sub_1164
+.fini_array:00005E88                 DCB    0
+.fini_array:00005E89                 DCB    0
+.fini_array:00005E8A                 DCB    0
+.fini_array:00005E8B                 DCB    0
+.fini_array:00005E8B ; .fini_array   ends
+.fini_array:00005E8B
+.init_array:00005E8C ; ===========================================================================
+.init_array:00005E8C
+.init_array:00005E8C ; Segment type: Pure data
+.init_array:00005E8C                 AREA .init_array, DATA
+.init_array:00005E8C                 ; ORG 0x5E8C
+.init_array:00005E8C                 DCD sub_2378
+.init_array:00005E90                 DCB    0
+.init_array:00005E91                 DCB    0
+.init_array:00005E92                 DCB    0
+.init_array:00005E93                 DCB    0
+.init_array:00005E93 ; .init_array   ends
+.init_array:00005E93
+.got:00005F94 ; ===========================================================================
+.got:00005F94
+
+78F04000: loaded /data/app-lib/com.yaotong.crackme-1/libcrackme.so
+
+.text:00001B9C ; =============== S U B R O U T I N E =======================================
+.text:00001B9C
+.text:00001B9C ; Attributes: bp-based frame
+.text:00001B9C
+.text:00001B9C                 EXPORT JNI_OnLoad
+.text:00001B9C JNI_OnLoad
+.text:00001B9C
+.text:00001B9C var_20          = -0x20
+.text:00001B9C
+.text:00001B9C                 STMFD   SP!, {R4-R9,R11,LR}
+.text:00001BA0                 ADD     R11, SP, #0x18
+.text:00001BA4                 SUB     SP, SP, #8
+.text:00001BA8                 MOV     R4, R0
+.text:00001BAC                 LDR     R0, =(_GLOBAL_OFFSET_TABLE_ - 0x1BC0)
+.text:00001BB0                 LDR     R9, =(unk_6290 - 0x5FBC)
+.text:00001BB4                 MOV     R8, #0
+.text:00001BB8                 ADD     R0, PC, R0 ; _GLOBAL_OFFSET_TABLE_
+.text:00001BBC                 ADD     R0, R9, R0 ; unk_6290
+.text:00001BC0                 STR     R8, [R0,#(dword_62C8 - 0x6290)]
+.text:00001BC4                 LDR     R5, [R0,#(dword_62C4 - 0x6290)]
+.text:00001BC8                 CMP     R5, #0
+.text:00001BCC                 BEQ     loc_1C28
+.text:00001BD0
+.text:00001BD0 loc_1BD0
+
+.text:00001C28                               loc_1C28                                ; CODE XREF: JNI_OnLoad+30j
+.text:00001C28 08 50 4D E2                                   SUB     R5, SP, #8
+.text:00001C2C 05 D0 A0 E1                                   MOV     SP, R5
+.text:00001C30 68 00 9F E5                                   LDR     R0, =(_GLOBAL_OFFSET_TABLE_ - 0x1C48)
+.text:00001C34 68 10 9F E5                                   LDR     R1, =(sub_16A4 - 0x5FBC)
+.text:00001C38 00 30 A0 E3                                   MOV     R3, #0
+.text:00001C3C 00 80 85 E5                                   STR     R8, [R5]
+.text:00001C40 00 00 8F E0                                   ADD     R0, PC, R0 ; _GLOBAL_OFFSET_TABLE_
+.text:00001C44 00 20 81 E0                                   ADD     R2, R1, R0 ; sub_16A4
+.text:00001C48 00 00 89 E0                                   ADD     R0, R9, R0 ; unk_6290
+.text:00001C4C 00 10 A0 E3                                   MOV     R1, #0          ; name
+.text:00001C50 24 70 90 E5                                   LDR     R7, [R0,#(dword_62B4 - 0x6290)]
+.text:00001C54 20 00 4B E2                                   SUB     R0, R11, #-handle ; handle
+.text:00001C58 37 FF 2F E1                                   BLX     R7 ; __imp_dlsym
+.text:00001C5C E4 FE FF EB                                   BL      sub_17F4
+.text:00001C60 00 00 94 E5                                   LDR     R0, [R4]
+.text:00001C64 04 60 A0 E3                                   MOV     R6, #4
+.text:00001C68 05 10 A0 E1                                   MOV     R1, R5
+.text:00001C6C 01 68 86 E3                                   ORR     R6, R6, #0x10000
+.text:00001C70 06 20 A0 E1                                   MOV     R2, R6
+.text:00001C74 18 30 90 E5                                   LDR     R3, [R0,#0x18]
+.text:00001C78 04 00 A0 E1                                   MOV     R0, R4
+.text:00001C7C 33 FF 2F E1                                   BLX     R3 ; __imp___aeabi_memset
+.text:00001C80 00 00 50 E3                                   CMP     R0, #0
+.text:00001C84 00 60 E0 13                                   MOVNE   R6, #0xFFFFFFFF
+.text:00001C88 06 00 A0 E1                                   MOV     R0, R6
+.text:00001C8C 18 D0 4B E2                                   SUB     SP, R11, #0x18
+.text:00001C90 F0 8B BD E8                                   LDMFD   SP!, {R4-R9,R11,PC}
+
+.text:00001C58 00 00 A0 E1                                   NOP
+.text:00001C5C E4 FE FF EB                                   BL      sub_17F4
+                    
+.text:000011A8
+.text:000011A8 ; =============== S U B R O U T I N E =======================================
+.text:000011A8
+.text:000011A8
+.text:000011A8                 EXPORT Java_com_yaotong_crackme_MainActivity_securityCheck
+.text:000011A8 Java_com_yaotong_crackme_MainActivity_securityCheck
+.text:000011A8
+.text:000011A8 var_20          = -0x20
+.text:000011A8 var_1C          = -0x1C
+.text:000011A8
+.text:000011A8                 STMFD   SP!, {R4-R7,R11,LR}
+.text:000011AC                 SUB     SP, SP, #8
+.text:000011B0                 MOV     R5, R0
+.text:000011B4                 LDR     R0, =(_GLOBAL_OFFSET_TABLE_ - 0x11C8)
+.text:000011B8                 LDR     R6, =(unk_6290 - 0x5FBC)
+.text:000011BC                 MOV     R4, R2
+.text:000011C0                 ADD     R0, PC, R0 ; _GLOBAL_OFFSET_TABLE_
+.text:000011C4                 ADD     R0, R6, R0 ; unk_6290
+.text:000011C8                 LDRB    R0, [R0,#(byte_6359 - 0x6290)]
+.text:000011CC                 CMP     R0, #0
+.text:000011D0                 BNE     loc_1214
+.text:000011D4                 MOV     R1, #2
+.text:000011D8                 MOV     R0, #7
+.text:000011DC                 STR     R1, [SP,#0x20+var_20]
+.text:000011E0                 STR     R0, [SP,#0x20+var_1C]
+.text:000011E4                 LDR     R0, =(_GLOBAL_OFFSET_TABLE_ - 0x11F4)
+.text:000011E8                 LDR     R1, =(unk_446B - 0x5FBC)
+.text:000011EC                 ADD     R0, PC, R0 ; _GLOBAL_OFFSET_TABLE_
+
+yaotong
+SecurityCheck Started...
+
+.text:0000126C
+.text:0000126C                               loc_126C                                ; CODE XREF: Java_com_yaotong_crackme_MainActivity_securityCheck+80j
+.text:0000126C 90 00 9F E5                                   LDR     R0, =(_GLOBAL_OFFSET_TABLE_ - 0x1278)
+.text:00001270 00 70 8F E0                                   ADD     R7, PC, R0 ; _GLOBAL_OFFSET_TABLE_
+.text:00001274 07 00 86 E0                                   ADD     R0, R6, R7 ; unk_6290
+.text:00001278 74 10 80 E2                                   ADD     R1, R0, #0x74 ; off_628C
+.text:0000127C DC 20 80 E2                                   ADD     R2, R0, #0xDC ; off_628C
+.text:00001280 04 00 A0 E3                                   MOV     R0, #4
+.text:00001284 92 FF FF EB                                   BL      __android_log_print
+.text:00001288 00 00 95 E5                                   LDR     R0, [R5]
+.text:0000128C 04 10 A0 E1                                   MOV     R1, R4
+.text:00001290 00 20 A0 E3                                   MOV     R2, #0
+.text:00001294 A4 32 90 E5                                   LDR     R3, [R0,#0x2A4]
+.text:00001298 05 00 A0 E1                                   MOV     R0, R5
+.text:0000129C 33 FF 2F E1                                   BLX     R3
+.text:000012A0 60 10 9F E5                                   LDR     R1, =(off_628C - 0x5FBC)
+.text:000012A4 07 20 91 E7                                   LDR     R2, [R1,R7] ; off_628C
+.text:000012A8
+.text:000012A8                               loc_12A8                                ; CODE XREF: Java_com_yaotong_crackme_MainActivity_securityCheck+120j
+.text:000012A8 00 30 D2 E5                                   LDRB    R3, [R2]
+.text:000012AC 00 10 D0 E5                                   LDRB    R1, [R0]
+.text:000012B0 01 00 53 E1                                   CMP     R3, R1
+.text:000012B4 05 00 00 1A                                   BNE     loc_12D0
+.text:000012B8 01 20 82 E2                                   ADD     R2, R2, #1
+.text:000012BC 01 00 80 E2                                   ADD     R0, R0, #1
+.text:000012C0 01 10 A0 E3                                   MOV     R1, #1
+.text:000012C4 00 00 53 E3                                   CMP     R3, #0
+
+aiyou,bucuoo
+aiyou,bucuoo
+
+.text:0000126C
+.text:0000126C                               loc_126C                                ; CODE XREF: Java_com_yaotong_crackme_MainActivity_securityCheck+80j
+.text:0000126C 90 00 9F E5                                   LDR     R0, =(_GLOBAL_OFFSET_TABLE_ - 0x1278)
+.text:00001270 00 70 8F E0                                   ADD     R7, PC, R0 ; _GLOBAL_OFFSET_TABLE_
+.text:00001274 8C 60 9F E5                                   LDR     R6, =(off_628C - 0x5FBC) ; unk_6290
+.text:00001278 07 10 96 E7                                   LDR     R1, [R6,R7] ; off_628C
+.text:0000127C 07 20 96 E7                                   LDR     R2, [R6,R7] ; off_628C
+.text:00001280 04 00 A0 E3                                   MOV     R0, #4
+.text:00001284 92 FF FF EB                                   BL      __android_log_print
+.text:00001288 00 00 95 E5                                   LDR     R0, [R5]
+.text:0000128C 04 10 A0 E1                                   MOV     R1, R4
+.text:00001290 00 20 A0 E3                                   MOV     R2, #0
+.text:00001294 A4 32 90 E5                                   LDR     R3, [R0,#0x2A4]
+.text:00001298 05 00 A0 E1                                   MOV     R0, R5
+.text:0000129C 33 FF 2F E1                                   BLX     R3
+.text:000012A0 60 10 9F E5                                   LDR     R1, =(off_628C - 0x5FBC)
+.text:000012A4 07 20 91 E7                                   LDR     R2, [R1,R7] ; off_628C
+.text:000012A8
+.text:000012A8                               loc_12A8                                ; CODE XREF: Java_com_yaotong_crackme_MainActivity_securityCheck+120j
+.text:000012A8 00 30 D2 E5                                   LDRB    R3, [R2]
+.text:000012AC 00 10 D0 E5                                   LDRB    R1, [R0]
+.text:000012B0 01 00 53 E1                                   CMP     R3, R1
+.text:000012B4 05 00 00 1A                                   BNE     loc_12D0
+.text:000012B8 01 20 82 E2                                   ADD     R2, R2, #1
+.text:000012BC 01 00 80 E2                                   ADD     R0, R0, #1
+.text:000012C0 01 10 A0 E3                                   MOV     R1, #1
+.text:000012C4 00 00 53 E3                                   CMP     R3, #0
+
+
+
+
+.data:0000628C off_628C        DCD aWojiushidaan       ; DATA XREF: Java_com_yaotong_crackme_MainActivity_securityCheck+FCr
+.data:0000628C                                         ; .text:off_1308o
+.data:0000628C ; .data         ends                    ; "wojiushidaan"
+.data:0000628C
+
+aiyou,bucuoo
+
+libcrackme.so:78F08450 61 69 79 6F 75 2C 62 75 63 75+aAiyouBucuoo DCB "aiyou,bucuoo",0
+libcrackme.so:78F0845D 4C                            DCB 0x4C ; L
+libcrackme.so:78F0845E 37                            DCB 0x37 ; 7
+libcrackme.so:78F0845F 39                            DCB 0x39 ; 9
+
+
+.text:000016A4
+.text:000016A4                               ; =============== S U B R O U T I N E =======================================
+.text:000016A4
+.text:000016A4                               ; Attributes: noreturn
+.text:000016A4
+.text:000016A4                               sub_16A4                                ; DATA XREF: JNI_OnLoad+A8o
+.text:000016A4                                                                       ; .text:off_1CA4o
+.text:000016A4 10 40 2D E9                                   STMFD   SP!, {R4,LR}
+.text:000016A8 1C 00 9F E5                                   LDR     R0, =(_GLOBAL_OFFSET_TABLE_ - 0x16B8)
+.text:000016AC 1C 10 9F E5                                   LDR     R1, =(unk_6290 - 0x5FBC)
+.text:000016B0 00 00 8F E0                                   ADD     R0, PC, R0 ; _GLOBAL_OFFSET_TABLE_
+.text:000016B4 00 40 81 E0                                   ADD     R4, R1, R0 ; unk_6290
+.text:000016B8
+.text:000016B8                               loc_16B8                                ; CODE XREF: sub_16A4+24j
+.text:000016B8 13 FF FF EB                                   BL      sub_130C
+.text:000016BC 20 10 94 E5                                   LDR     R1, [R4,#(dword_62B0 - 0x6290)]
+.text:000016C0 03 00 A0 E3                                   MOV     R0, #3
+.text:000016C4 31 FF 2F E1                                   BLX     R1
+.text:000016C8 FA FF FF EA                                   B       loc_16B8
+.text:000016C8                               ; End of function sub_16A4
+
+
+.text:000016B8 00 00 A0 E1                                   NOP
+
+
+
+C:\Python27>pip install gmpy2-2.0.8-cp27-none-win32.whl
+Processing c:\python27\gmpy2-2.0.8-cp27-none-win32.whl
+Installing collected packages: gmpy2
+Successfully installed gmpy2-2.0.8
+
+C:\Python27>pip install capstone
+Requirement already satisfied: capstone in c:\python27\lib\site-packages
+
+https://alexaltea.github.io/capstone.js/dist/capstone.min.js
+
+F552B38DBDDE72E2E693B2AED5C769C0DCB3DA83534480A80E652FFE53544CD91A18C3
+
+.sympath SRV*C:\Symbols*http://msdl.microsoft.com/download/symbols/
+c:\symbols;srv*c:\symbols*https://msdl.microsoft.com/download/symbols
+_NT_SYMBOL_PATH = SRV*E:\localsymbols*http://msdl.microsoft.com/download/symbols/
+
+
+http://vv.video.qq.com/getinfo?vids=x0013uxrjp0
+http://vv.video.qq.com/getkey?vid=x0013uxrjp0&filename=x0013uxrjp0.p201.2.mp4&format=10201
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>@iYoungDone&#39;s Hexo Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="IDA - 010 Editor.i64 (010 Editor) &#x2F;Applications&#x2F;010 Editor.app&#x2F;Contents&#x2F;MacOS&#x2F;010 Editor.i64     __int64 __fastcall sub_10034E190(_QWORD *a1) {   _QWORD *v1; &#x2F;&#x2F; r14   __int64 v2; &#x2F;&#x2F; rsi   int v3;">
+<meta property="og:type" content="website">
+<meta property="og:title" content="@iYoungDone&#39;s Hexo Blog">
+<meta property="og:url" content="http://www.appleos.xyz/uploads/codes/010Edirot_macos_v801_sub_10034E190.html">
+<meta property="og:site_name" content="@iYoungDone&#39;s Hexo Blog">
+<meta property="og:description" content="IDA - 010 Editor.i64 (010 Editor) &#x2F;Applications&#x2F;010 Editor.app&#x2F;Contents&#x2F;MacOS&#x2F;010 Editor.i64     __int64 __fastcall sub_10034E190(_QWORD *a1) {   _QWORD *v1; &#x2F;&#x2F; r14   __int64 v2; &#x2F;&#x2F; rsi   int v3;">
+<meta property="og:locale">
+<meta property="article:published_time" content="2022-05-23T18:55:25.677Z">
+<meta property="article:modified_time" content="2017-10-15T10:13:20.000Z">
+<meta property="article:author" content="YoungDone(B.S.)">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="@iYoungDone&#39;s Hexo Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">@iYoungDone&#39;s Hexo Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.appleos.xyz"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/uploads/codes/010Edirot_macos_v801_sub_10034E190.html" class="article-date">
+  <time datetime="2022-05-23T18:55:25.677Z" itemprop="datePublished">2022-05-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>IDA - 010 Editor.i64 (010 Editor) /Applications/010 Editor.app/Contents/MacOS/010 Editor.i64</title>
+</head>
+<body bgcolor="#ffffff">
+<span style="white-space: pre; font-family: Courier; color: blue; background: #ffffff">
+
+<span style="color:gray">__int64 __fastcall sub_10034E190(_QWORD *a1)
+</span><span style="color:navy">{
+  </span><span style="color:gray">_QWORD *v1</span><span style="color:navy">; </span><span style="color:gray">// </span><span style="color:#8080ff">r14
+  </span><span style="color:gray">__int64 v2</span><span style="color:navy">; </span><span style="color:gray">// </span><span style="color:#8080ff">rsi
+  </span><span style="color:navy">int v3; // </span><span style="color:#8080ff">edx
+  </span><span style="color:navy">__int64 v4; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:gray">int v5</span><span style="color:navy">; </span><span style="color:gray">// </span><span style="color:#8080ff">ebx
+  </span><span style="color:navy">signed __int32 v6; // </span><span style="color:#8080ff">et0
+  </span><span style="color:gray">__int64 v7</span><span style="color:navy">; </span><span style="color:gray">// </span><span style="color:#8080ff">rsi
+  </span><span style="color:navy">int v8; // </span><span style="color:#8080ff">edx
+  </span><span style="color:navy">bool v9; // </span><span style="color:#8080ff">bl
+  </span><span style="color:gray">__int64 v10</span><span style="color:navy">; </span><span style="color:gray">// </span><span style="color:#8080ff">rsi
+  </span><span style="color:gray">int v11</span><span style="color:navy">; </span><span style="color:gray">// </span><span style="color:#8080ff">edx
+  </span><span style="color:navy">volatile signed __int32 *v12; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v13; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">volatile signed __int32 *v14; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v15; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">__int64 v16; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v17; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">volatile signed __int32 *v18; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v19; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">volatile signed __int32 *v20; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v21; // </span><span style="color:#8080ff">et0
+  </span><span style="color:gray">__int64 v22</span><span style="color:navy">; </span><span style="color:gray">// </span><span style="color:#8080ff">rsi
+  </span><span style="color:navy">volatile signed __int32 **v23; // </span><span style="color:#8080ff">rsi
+  </span><span style="color:navy">volatile signed __int32 *v24; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v25; // </span><span style="color:#8080ff">et0
+  </span><span style="color:gray">__int64 v26</span><span style="color:navy">; </span><span style="color:gray">// </span><span style="color:#8080ff">rbx
+  </span><span style="color:gray">__int64 v27</span><span style="color:navy">; </span><span style="color:gray">// </span><span style="color:#8080ff">r15
+  </span><span style="color:gray">int v28</span><span style="color:navy">; </span><span style="color:gray">// </span><span style="color:#8080ff">eax
+  </span><span style="color:navy">volatile signed __int32 *v29; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v30; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">__int64 v31; // </span><span style="color:#8080ff">rbx
+  </span><span style="color:gray">__int64 v32</span><span style="color:navy">; </span><span style="color:gray">// </span><span style="color:#8080ff">rsi
+  </span><span style="color:navy">volatile signed __int32 *v33; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v34; // </span><span style="color:#8080ff">et0
+  </span><span style="color:gray">int v35</span><span style="color:navy">; </span><span style="color:gray">// </span><span style="color:#8080ff">ebx
+  </span><span style="color:navy">int v36; // </span><span style="color:#8080ff">edx
+  </span><span style="color:gray">int v37</span><span style="color:navy">; </span><span style="color:gray">// </span><span style="color:#8080ff">er15
+  </span><span style="color:navy">int v38; // </span><span style="color:#8080ff">eax
+  </span><span style="color:navy">int v39; // </span><span style="color:#8080ff">edx
+  </span><span style="color:navy">int v40; // </span><span style="color:#8080ff">er15
+  </span><span style="color:gray">int v41</span><span style="color:navy">; </span><span style="color:gray">// </span><span style="color:#8080ff">edx
+  </span><span style="color:navy">volatile signed __int32 **v42; // </span><span style="color:#8080ff">rsi
+  </span><span style="color:navy">volatile signed __int32 *v43; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v44; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">volatile signed __int32 *v45; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v46; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">volatile signed __int32 *v47; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v48; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">volatile signed __int32 *v49; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v50; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">volatile signed __int32 *v51; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v52; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">volatile signed __int32 **v53; // </span><span style="color:#8080ff">rsi
+  </span><span style="color:navy">volatile signed __int32 *v54; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v55; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">signed int v56; // </span><span style="color:#8080ff">eax
+  </span><span style="color:navy">signed int v57; // </span><span style="color:#8080ff">ecx
+  </span><span style="color:navy">QString *v58; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">QString *v59; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">volatile signed __int32 *v60; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v61; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">int v62; // </span><span style="color:#8080ff">edx
+  </span><span style="color:navy">volatile signed __int32 *v63; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v64; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">volatile signed __int32 *v65; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v66; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">volatile signed __int32 *v67; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v68; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">int v69; // </span><span style="color:#8080ff">edx
+  </span><span style="color:navy">volatile signed __int32 *v70; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v71; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">volatile signed __int32 *v72; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v73; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">volatile signed __int32 **v74; // </span><span style="color:#8080ff">rsi
+  </span><span style="color:navy">volatile signed __int32 *v75; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v76; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">volatile signed __int32 *v77; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v78; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">volatile signed __int32 *v79; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v80; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">volatile signed __int32 *v81; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v82; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">volatile signed __int32 *v83; // </span><span style="color:#8080ff">rbx
+  </span><span style="color:navy">volatile signed __int32 *v84; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v85; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">volatile signed __int32 *v86; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v87; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">volatile signed __int32 *v88; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v89; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">volatile signed __int32 *v90; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v91; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">signed __int32 v92; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">volatile signed __int32 *v93; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v94; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">volatile signed __int32 *v95; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v96; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">volatile signed __int32 *v97; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v98; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">volatile signed __int32 *v99; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v100; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">volatile signed __int32 *v101; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:navy">signed __int32 v102; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">volatile signed __int32 *v103; // </span><span style="color:#8080ff">rdi
+  </span><span style="color:gray">__int64 result</span><span style="color:navy">; </span><span style="color:gray">// </span><span style="color:#8080ff">rax
+  </span><span style="color:navy">signed __int32 v105; // </span><span style="color:#8080ff">et0
+  </span><span style="color:navy">volatile signed __int32 *v106; // </span><span style="color:#8080ff">[rsp+8h] [rbp-148h]
+  </span><span style="color:navy">volatile signed __int32 *v107; // </span><span style="color:#8080ff">[rsp+10h] [rbp-140h]
+  </span><span style="color:navy">volatile signed __int32 *v108; // </span><span style="color:#8080ff">[rsp+18h] [rbp-138h]
+  </span><span style="color:navy">volatile signed __int32 *v109; // </span><span style="color:#8080ff">[rsp+20h] [rbp-130h]
+  </span><span style="color:navy">volatile signed __int32 *v110; // </span><span style="color:#8080ff">[rsp+28h] [rbp-128h]
+  </span><span style="color:navy">volatile signed __int32 *v111; // </span><span style="color:#8080ff">[rsp+30h] [rbp-120h]
+  </span><span style="color:navy">volatile signed __int32 *v112; // </span><span style="color:#8080ff">[rsp+38h] [rbp-118h]
+  </span><span style="color:navy">volatile signed __int32 *v113; // </span><span style="color:#8080ff">[rsp+40h] [rbp-110h]
+  </span><span style="color:navy">volatile signed __int32 *v114; // </span><span style="color:#8080ff">[rsp+48h] [rbp-108h]
+  </span><span style="color:navy">volatile signed __int32 *v115; // </span><span style="color:#8080ff">[rsp+50h] [rbp-100h]
+  </span><span style="color:navy">volatile signed __int32 *v116; // </span><span style="color:#8080ff">[rsp+58h] [rbp-F8h]
+  </span><span style="color:gray">__int64 v117</span><span style="color:navy">; </span><span style="color:gray">// </span><span style="color:#8080ff">[rsp+60h] [rbp-F0h]
+  </span><span style="color:navy">volatile signed __int32 *v118; // </span><span style="color:#8080ff">[rsp+68h] [rbp-E8h]
+  </span><span style="color:navy">volatile signed __int32 *v119; // </span><span style="color:#8080ff">[rsp+70h] [rbp-E0h]
+  </span><span style="color:navy">volatile signed __int32 *v120; // </span><span style="color:#8080ff">[rsp+78h] [rbp-D8h]
+  </span><span style="color:navy">volatile signed __int32 *v121; // </span><span style="color:#8080ff">[rsp+80h] [rbp-D0h]
+  </span><span style="color:navy">volatile signed __int32 *v122; // </span><span style="color:#8080ff">[rsp+88h] [rbp-C8h]
+  </span><span style="color:navy">volatile signed __int32 *v123; // </span><span style="color:#8080ff">[rsp+90h] [rbp-C0h]
+  </span><span style="color:navy">volatile signed __int32 *v124; // </span><span style="color:#8080ff">[rsp+98h] [rbp-B8h]
+  </span><span style="color:navy">volatile signed __int32 *v125; // </span><span style="color:#8080ff">[rsp+A0h] [rbp-B0h]
+  </span><span style="color:navy">volatile signed __int32 *v126; // </span><span style="color:#8080ff">[rsp+A8h] [rbp-A8h]
+  </span><span style="color:navy">volatile signed __int32 *v127; // </span><span style="color:#8080ff">[rsp+B0h] [rbp-A0h]
+  </span><span style="color:gray">__int64 v128</span><span style="color:navy">; </span><span style="color:gray">// </span><span style="color:#8080ff">[rsp+B8h] [rbp-98h]
+  </span><span style="color:navy">volatile signed __int32 *v129; // </span><span style="color:#8080ff">[rsp+C0h] [rbp-90h]
+  </span><span style="color:gray">__int64 v130</span><span style="color:navy">; </span><span style="color:gray">// </span><span style="color:#8080ff">[rsp+C8h] [rbp-88h]
+  </span><span style="color:navy">int v131[2]; // </span><span style="color:#8080ff">[rsp+D0h] [rbp-80h]
+  </span><span style="color:navy">volatile signed __int32 *v132; // </span><span style="color:#8080ff">[rsp+D8h] [rbp-78h]
+  </span><span style="color:navy">volatile signed __int32 *v133; // </span><span style="color:#8080ff">[rsp+E0h] [rbp-70h]
+  </span><span style="color:navy">volatile signed __int32 *v134; // </span><span style="color:#8080ff">[rsp+E8h] [rbp-68h]
+  </span><span style="color:navy">volatile signed __int32 *v135; // </span><span style="color:#8080ff">[rsp+F0h] [rbp-60h]
+  </span><span style="color:navy">volatile signed __int32 *v136; // </span><span style="color:#8080ff">[rsp+F8h] [rbp-58h]
+  </span><span style="color:navy">volatile signed __int32 *v137; // </span><span style="color:#8080ff">[rsp+100h] [rbp-50h]
+  </span><span style="color:navy">volatile signed __int32 *v138; // </span><span style="color:#8080ff">[rsp+108h] [rbp-48h]
+  </span><span style="color:navy">volatile signed __int32 *v139; // </span><span style="color:#8080ff">[rsp+110h] [rbp-40h]
+  </span><span style="color:navy">volatile signed __int32 *v140; // </span><span style="color:#8080ff">[rsp+118h] [rbp-38h]
+  </span><span style="color:navy">volatile signed __int32 *v141; // </span><span style="color:#8080ff">[rsp+120h] [rbp-30h]
+  </span><span style="color:navy">bool v142; // </span><span style="color:#8080ff">[rsp+12Fh] [rbp-21h]
+
+  v1 </span><span style="color:navy">= </span><span style="color:#8080ff">a1</span><span style="color:navy">;
+  </span><span style="color:#8080ff">v132 </span><span style="color:navy">= (</span><span style="color:gray">volatile signed __int32 *</span><span style="color:navy">)&amp;</span><span style="color:#ff00ff">QArrayData::shared_null</span><span style="color:navy">;
+  *(</span><span style="color:gray">_QWORD *</span><span style="color:navy">)</span><span style="color:#8080ff">v131 </span><span style="color:navy">= &amp;</span><span style="color:#ff00ff">QArrayData::shared_null</span><span style="color:navy">;
+  </span><span style="color:#8080ff">v2 </span><span style="color:navy">= </span><span style="color:#8080ff">a1</span><span style="color:navy">[27];
+  </span>QLineEdit::text<span style="color:navy">((</span><span style="color:gray">QLineEdit *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v130</span><span style="color:navy">);
+  </span><span style="color:#8080ff">v4 </span><span style="color:navy">= </span><span style="color:#8080ff">v130</span><span style="color:navy">;
+  </span><span style="color:#8080ff">v5 </span><span style="color:navy">= *(</span><span style="color:gray">_DWORD *</span><span style="color:navy">)(</span><span style="color:#8080ff">v130 </span><span style="color:navy">+ 4);
+  if ( *(</span><span style="color:gray">_DWORD *</span><span style="color:navy">)</span><span style="color:#8080ff">v130 </span><span style="color:navy">!= -1 )
+  {
+    if ( *(</span><span style="color:gray">_DWORD *</span><span style="color:navy">)</span><span style="color:#8080ff">v130 </span><span style="color:navy">)
+    {
+      </span><span style="color:#8080ff">v6 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">((</span><span style="color:gray">volatile signed __int32 *</span><span style="color:navy">)</span><span style="color:#8080ff">v130</span><span style="color:navy">, 1u);
+      </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v6 </span><span style="color:navy">!= 0;
+      if ( </span><span style="color:#8080ff">v6 </span><span style="color:navy">)
+        goto LABEL_6;
+      </span><span style="color:#8080ff">v4 </span><span style="color:navy">= </span><span style="color:#8080ff">v130</span><span style="color:navy">;
+    </span><span style="background:#8080ff"></span><span style="color:navy">}
+    </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v4</span><span style="color:navy">, 2LL, 8LL);
+  </span><span style="background:navy"></span><span style="color:navy">}
+LABEL_6:
+  if ( !</span><span style="color:#8080ff">v5 </span><span style="color:navy">)
+  {
+    </span><span style="color:#8080ff">v129 </span><span style="color:navy">= (</span><span style="color:gray">volatile signed __int32 *</span><span style="color:navy">)</span>QString::fromAscii_helper<span style="color:navy">(
+                                        (</span><span style="color:gray">QString *</span><span style="color:navy">)&quot;</span><span style="color:green">Please enter a name.&quot;</span><span style="color:navy">,
+                                        (</span><span style="color:gray">const char *</span><span style="color:navy">)0x14,
+                                        </span><span style="color:#8080ff">v3</span><span style="color:navy">);
+    </span>sub_1001124D0<span style="color:navy">((</span><span style="color:gray">QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v129</span><span style="color:navy">);
+    </span><span style="color:#8080ff">v20 </span><span style="color:navy">= </span><span style="color:#8080ff">v129</span><span style="color:navy">;
+    if ( *</span><span style="color:#8080ff">v129 </span><span style="color:navy">!= -1 )
+    {
+      if ( !*</span><span style="color:#8080ff">v129 </span><span style="color:navy">)
+      {
+LABEL_34:
+        </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v20</span><span style="color:navy">, 2LL, 8LL);
+        goto LABEL_35;
+      </span><span style="background:navy"></span><span style="color:navy">}
+      </span><span style="color:#8080ff">v21 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v129</span><span style="color:navy">, 1u);
+      </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v21 </span><span style="color:navy">!= 0;
+      if ( !</span><span style="color:#8080ff">v21 </span><span style="color:navy">)
+      {
+        </span><span style="color:#8080ff">v20 </span><span style="color:navy">= </span><span style="color:#8080ff">v129</span><span style="color:navy">;
+        goto LABEL_34;
+      </span><span style="background:navy"></span><span style="color:navy">}
+    </span><span style="background:blue"></span><span style="color:navy">}
+LABEL_35:
+    </span>QWidget::setFocus<span style="color:navy">(</span><span style="color:#8080ff">v1</span><span style="color:navy">[27], 7LL);
+    goto LABEL_213;
+  </span><span style="background:navy"></span><span style="color:navy">}
+  </span><span style="color:#8080ff">v7 </span><span style="color:navy">= </span><span style="color:#8080ff">v1</span><span style="color:navy">[29];
+  </span>QLineEdit::text<span style="color:navy">((</span><span style="color:gray">QLineEdit *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v128</span><span style="color:navy">);
+  </span><span style="color:#8080ff">v9 </span><span style="color:navy">= 1;
+  if ( !*(</span><span style="color:gray">_DWORD *</span><span style="color:navy">)(</span><span style="color:#8080ff">v128 </span><span style="color:navy">+ 4) )
+    goto LABEL_18;
+  </span><span style="color:#8080ff">v10 </span><span style="color:navy">= </span><span style="color:#8080ff">v1</span><span style="color:navy">[29];
+  </span>QLineEdit::text<span style="color:navy">((</span><span style="color:gray">QLineEdit *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v127</span><span style="color:navy">);
+  </span><span style="color:#8080ff">v126 </span><span style="color:navy">= (</span><span style="color:gray">volatile signed __int32 *</span><span style="color:navy">)</span>QString::fromAscii_helper<span style="color:navy">((</span><span style="color:gray">QString *</span><span style="color:navy">)&quot; &quot;, (</span><span style="color:gray">const char *</span><span style="color:navy">)1, </span><span style="color:#8080ff">v11</span><span style="color:navy">);
+  </span><span style="color:#8080ff">v9 </span><span style="color:navy">= (</span><span style="color:gray">unsigned int</span><span style="color:navy">)</span>QString::indexOf<span style="color:navy">(&amp;</span><span style="color:#8080ff">v127</span><span style="color:navy">, &amp;</span><span style="color:#8080ff">v126</span><span style="color:navy">, 0LL, 1LL) != -1;
+  </span><span style="color:#8080ff">v12 </span><span style="color:navy">= </span><span style="color:#8080ff">v126</span><span style="color:navy">;
+  if ( *</span><span style="color:#8080ff">v126 </span><span style="color:navy">!= -1 )
+  {
+    if ( *</span><span style="color:#8080ff">v126 </span><span style="color:navy">)
+    {
+      </span><span style="color:#8080ff">v13 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v126</span><span style="color:navy">, 1u);
+      </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v13 </span><span style="color:navy">!= 0;
+      if ( </span><span style="color:#8080ff">v13 </span><span style="color:navy">)
+        goto LABEL_13;
+      </span><span style="color:#8080ff">v12 </span><span style="color:navy">= </span><span style="color:#8080ff">v126</span><span style="color:navy">;
+    </span><span style="background:#8080ff"></span><span style="color:navy">}
+    </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v12</span><span style="color:navy">, 2LL, 8LL);
+  </span><span style="background:navy"></span><span style="color:navy">}
+LABEL_13:
+  </span><span style="color:#8080ff">v14 </span><span style="color:navy">= </span><span style="color:#8080ff">v127</span><span style="color:navy">;
+  if ( *</span><span style="color:#8080ff">v127 </span><span style="color:navy">== -1 )
+    goto LABEL_18;
+  if ( *</span><span style="color:#8080ff">v127 </span><span style="color:navy">)
+  {
+    </span><span style="color:#8080ff">v15 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v127</span><span style="color:navy">, 1u);
+    </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v15 </span><span style="color:navy">!= 0;
+    if ( </span><span style="color:#8080ff">v15 </span><span style="color:navy">)
+      goto LABEL_18;
+    </span><span style="color:#8080ff">v14 </span><span style="color:navy">= </span><span style="color:#8080ff">v127</span><span style="color:navy">;
+  </span><span style="background:#8080ff"></span><span style="color:navy">}
+  </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v14</span><span style="color:navy">, 2LL, 8LL);
+LABEL_18:
+  </span><span style="color:#8080ff">v16 </span><span style="color:navy">= </span><span style="color:#8080ff">v128</span><span style="color:navy">;
+  if ( *(</span><span style="color:gray">_DWORD *</span><span style="color:navy">)</span><span style="color:#8080ff">v128 </span><span style="color:navy">== -1 )
+    goto LABEL_23;
+  if ( *(</span><span style="color:gray">_DWORD *</span><span style="color:navy">)</span><span style="color:#8080ff">v128 </span><span style="color:navy">)
+  {
+    </span><span style="color:#8080ff">v17 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">((</span><span style="color:gray">volatile signed __int32 *</span><span style="color:navy">)</span><span style="color:#8080ff">v128</span><span style="color:navy">, 1u);
+    </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v17 </span><span style="color:navy">!= 0;
+    if ( </span><span style="color:#8080ff">v17 </span><span style="color:navy">)
+      goto LABEL_23;
+    </span><span style="color:#8080ff">v16 </span><span style="color:navy">= </span><span style="color:#8080ff">v128</span><span style="color:navy">;
+  </span><span style="background:#8080ff"></span><span style="color:navy">}
+  </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v16</span><span style="color:navy">, 2LL, 8LL);
+LABEL_23:
+  if ( </span><span style="color:#8080ff">v9 </span><span style="color:navy">)
+  {
+    </span><span style="color:#8080ff">v125 </span><span style="color:navy">= (</span><span style="color:gray">volatile signed __int32 *</span><span style="color:navy">)</span>QString::fromAscii_helper<span style="color:navy">(
+                                        (</span><span style="color:gray">QString *</span><span style="color:navy">)&quot;</span><span style="color:green">Please completely enter your password.&quot;</span><span style="color:navy">,
+                                        (</span><span style="color:gray">const char *</span><span style="color:navy">)0x26,
+                                        </span><span style="color:#8080ff">v8</span><span style="color:navy">);
+    </span>sub_1001124D0<span style="color:navy">((</span><span style="color:gray">QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v125</span><span style="color:navy">);
+    </span><span style="color:#8080ff">v18 </span><span style="color:navy">= </span><span style="color:#8080ff">v125</span><span style="color:navy">;
+    if ( *</span><span style="color:#8080ff">v125 </span><span style="color:navy">!= -1 )
+    {
+      if ( !*</span><span style="color:#8080ff">v125 </span><span style="color:navy">)
+      {
+LABEL_28:
+        </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v18</span><span style="color:navy">, 2LL, 8LL);
+        goto LABEL_29;
+      </span><span style="background:navy"></span><span style="color:navy">}
+      </span><span style="color:#8080ff">v19 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v125</span><span style="color:navy">, 1u);
+      </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v19 </span><span style="color:navy">!= 0;
+      if ( !</span><span style="color:#8080ff">v19 </span><span style="color:navy">)
+      {
+        </span><span style="color:#8080ff">v18 </span><span style="color:navy">= </span><span style="color:#8080ff">v125</span><span style="color:navy">;
+        goto LABEL_28;
+      </span><span style="background:navy"></span><span style="color:navy">}
+    </span><span style="background:blue"></span><span style="color:navy">}
+LABEL_29:
+    </span>QWidget::setFocus<span style="color:navy">(</span><span style="color:#8080ff">v1</span><span style="color:navy">[27], 7LL);
+    goto LABEL_213;
+  </span><span style="background:navy"></span><span style="color:navy">}
+  </span><span style="color:#8080ff">v22 </span><span style="color:navy">= </span><span style="color:#8080ff">v1</span><span style="color:navy">[29];
+  </span>QLineEdit::text<span style="color:navy">((</span><span style="color:gray">QLineEdit *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v124</span><span style="color:navy">);
+  </span><span style="color:#8080ff">v23 </span><span style="color:navy">= &amp;</span><span style="color:#8080ff">v124</span><span style="color:navy">;
+  </span>QString::operator=<span style="color:navy">(</span><span style="color:#8080ff">v131</span><span style="color:navy">, &amp;</span><span style="color:#8080ff">v124</span><span style="color:navy">);
+  </span><span style="color:#8080ff">v24 </span><span style="color:navy">= </span><span style="color:#8080ff">v124</span><span style="color:navy">;
+  if ( *</span><span style="color:#8080ff">v124 </span><span style="color:navy">!= -1 )
+  {
+    if ( *</span><span style="color:#8080ff">v124 </span><span style="color:navy">)
+    {
+      </span><span style="color:#8080ff">v25 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v124</span><span style="color:navy">, 1u);
+      </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v25 </span><span style="color:navy">!= 0;
+      if ( </span><span style="color:#8080ff">v25 </span><span style="color:navy">)
+        goto LABEL_41;
+      </span><span style="color:#8080ff">v24 </span><span style="color:navy">= </span><span style="color:#8080ff">v124</span><span style="color:navy">;
+    </span><span style="background:#8080ff"></span><span style="color:navy">}
+    </span>LODWORD<span style="color:navy">(</span><span style="color:#8080ff">v23</span><span style="color:navy">) = 2;
+    </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v24</span><span style="color:navy">, 2LL, 8LL);
+  </span><span style="background:navy"></span><span style="color:navy">}
+LABEL_41:
+  </span><span style="color:#8080ff">v26 </span><span style="color:navy">= *(</span><span style="color:gray">_QWORD *</span><span style="color:navy">)</span><span style="color:#8080ff">v131</span><span style="color:navy">;
+  if ( *(</span><span style="color:gray">_DWORD *</span><span style="color:navy">)(*(</span><span style="color:gray">_QWORD *</span><span style="color:navy">)</span><span style="color:#8080ff">v131 </span><span style="color:navy">+ 4LL) &gt;= 9 )
+  {
+    </span><span style="color:#8080ff">v27 </span><span style="color:navy">= *(</span><span style="color:gray">_QWORD *</span><span style="color:navy">)(*(</span><span style="color:gray">_QWORD *</span><span style="color:navy">)</span><span style="color:#8080ff">v131 </span><span style="color:navy">+ 16LL);
+    if ( (</span><span style="color:gray">unsigned __int16</span><span style="color:navy">)</span>QChar::toUpper<span style="color:navy">((</span><span style="color:gray">QChar *</span><span style="color:navy">)*(</span><span style="color:gray">unsigned __int16 *</span><span style="color:navy">)(</span><span style="color:#8080ff">v27 </span><span style="color:navy">+ *(</span><span style="color:gray">_QWORD *</span><span style="color:navy">)</span><span style="color:#8080ff">v131 </span><span style="color:navy">+ 16), (</span><span style="color:gray">unsigned int</span><span style="color:navy">)</span><span style="color:#8080ff">v23</span><span style="color:navy">) == 67 )
+    {
+      </span><span style="color:#8080ff">v28 </span><span style="color:navy">= (</span><span style="color:gray">unsigned __int16</span><span style="color:navy">)</span>QChar::toUpper<span style="color:navy">((</span><span style="color:gray">QChar *</span><span style="color:navy">)*(</span><span style="color:gray">unsigned __int16 *</span><span style="color:navy">)(</span><span style="color:#8080ff">v27 </span><span style="color:navy">+ </span><span style="color:#8080ff">v26 </span><span style="color:navy">+ 14), (</span><span style="color:gray">unsigned int</span><span style="color:navy">)</span><span style="color:#8080ff">v23</span><span style="color:navy">);
+      if ( (</span><span style="color:gray">unsigned __int16</span><span style="color:navy">)</span><span style="color:#8080ff">v28 </span><span style="color:navy">== 57 || </span><span style="color:#8080ff">v28 </span><span style="color:navy">== 70 )
+      {
+        </span>QString::left<span style="color:navy">((</span><span style="color:gray">QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v123</span><span style="color:navy">, (</span><span style="color:gray">unsigned __int64</span><span style="color:navy">)</span><span style="color:#8080ff">v131</span><span style="color:navy">);
+        </span>QString::operator=<span style="color:navy">(</span><span style="color:#8080ff">v131</span><span style="color:navy">, &amp;</span><span style="color:#8080ff">v123</span><span style="color:navy">);
+        </span><span style="color:#8080ff">v29 </span><span style="color:navy">= </span><span style="color:#8080ff">v123</span><span style="color:navy">;
+        if ( *</span><span style="color:#8080ff">v123 </span><span style="color:navy">!= -1 )
+        {
+          if ( *</span><span style="color:#8080ff">v123 </span><span style="color:navy">)
+          {
+            </span><span style="color:#8080ff">v30 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v123</span><span style="color:navy">, 1u);
+            </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v30 </span><span style="color:navy">!= 0;
+            if ( </span><span style="color:#8080ff">v30 </span><span style="color:navy">)
+              goto LABEL_50;
+            </span><span style="color:#8080ff">v29 </span><span style="color:navy">= </span><span style="color:#8080ff">v123</span><span style="color:navy">;
+          </span><span style="background:#8080ff"></span><span style="color:navy">}
+          </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v29</span><span style="color:navy">, 2LL, 8LL);
+        </span><span style="background:navy"></span><span style="color:navy">}
+      </span><span style="background:blue"></span><span style="color:navy">}
+    </span><span style="background:blue"></span><span style="color:navy">}
+  </span><span style="background:blue"></span><span style="color:navy">}
+LABEL_50:
+  </span><span style="color:#8080ff">v31 </span><span style="color:navy">= </span>qword_100686140<span style="color:navy">;
+  </span><span style="color:#8080ff">v32 </span><span style="color:navy">= </span><span style="color:#8080ff">v1</span><span style="color:navy">[27];
+  </span>QLineEdit::text<span style="color:navy">((</span><span style="color:gray">QLineEdit *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v122</span><span style="color:navy">);
+  </span>sub_1000DB1C0<span style="color:navy">(</span><span style="color:#8080ff">v31</span><span style="color:navy">, &amp;</span><span style="color:#8080ff">v122</span><span style="color:navy">);
+  </span><span style="color:#8080ff">v33 </span><span style="color:navy">= </span><span style="color:#8080ff">v122</span><span style="color:navy">;
+  if ( *</span><span style="color:#8080ff">v122 </span><span style="color:navy">!= -1 )
+  {
+    if ( !*</span><span style="color:#8080ff">v122 </span><span style="color:navy">)
+    {
+LABEL_54:
+      </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v33</span><span style="color:navy">, 2LL, 8LL);
+      goto LABEL_55;
+    </span><span style="background:navy"></span><span style="color:navy">}
+    </span><span style="color:#8080ff">v34 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v122</span><span style="color:navy">, 1u);
+    </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v34 </span><span style="color:navy">!= 0;
+    if ( !</span><span style="color:#8080ff">v34 </span><span style="color:navy">)
+    {
+      </span><span style="color:#8080ff">v33 </span><span style="color:navy">= </span><span style="color:#8080ff">v122</span><span style="color:navy">;
+      goto LABEL_54;
+    </span><span style="background:navy"></span><span style="color:navy">}
+  </span><span style="background:blue"></span><span style="color:navy">}
+LABEL_55:
+  </span>sub_1000D9E20<span style="color:navy">(</span>qword_100686140<span style="color:navy">, </span><span style="color:#8080ff">v131</span><span style="color:navy">);
+  </span><span style="color:#8080ff">v35 </span><span style="color:navy">= </span>sub_1000D8260<span style="color:navy">(</span>qword_100686140<span style="color:navy">, 9LL, 17289LL);
+  </span><span style="color:#8080ff">v37 </span><span style="color:navy">= </span>sub_1000D8180<span style="color:navy">(</span>qword_100686140<span style="color:navy">, 9u, 17289LL);
+  if ( </span><span style="color:#8080ff">v35 </span><span style="color:navy">== 0xE7 || !*(</span><span style="color:gray">_DWORD *</span><span style="color:navy">)(</span>qword_100686140 <span style="color:navy">+ 60) )
+    goto LABEL_60;
+  </span><span style="color:#8080ff">v38 </span><span style="color:navy">= </span>sub_100353FF0<span style="color:navy">(</span><span style="color:#8080ff">v1</span><span style="color:navy">, 0LL);
+  </span><span style="color:#8080ff">v40 </span><span style="color:navy">= </span><span style="color:#8080ff">v38</span><span style="color:navy">;
+  if ( </span><span style="color:#8080ff">v38 &lt; </span><span style="color:navy">0 )
+  {
+    </span><span style="color:#8080ff">v83 </span><span style="color:navy">= (</span><span style="color:gray">volatile signed __int32 *</span><span style="color:navy">)</span>QString::fromAscii_helper<span style="color:navy">(
+                                       (</span><span style="color:gray">QString *</span><span style="color:navy">)&quot;</span><span style="color:green">Could not contact the webserver. Please check your internet connection&quot;
+                                                  &quot;. If your internet connection is currently working, the server may be &quot;
+                                                  &quot;down. If this problem persists, please visit &#039;http://www.sweetscape.com/support/&#039; (&quot;</span><span style="color:navy">,
+                                       (</span><span style="color:gray">const char *</span><span style="color:navy">)0xDF,
+                                       </span><span style="color:#8080ff">v39</span><span style="color:navy">);
+    </span>QString::number<span style="color:navy">((</span><span style="color:gray">QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v119</span><span style="color:navy">, </span><span style="color:#8080ff">v40</span><span style="color:navy">, 10);
+    </span><span style="color:#8080ff">v120 </span><span style="color:navy">= </span><span style="color:#8080ff">v83</span><span style="color:navy">;
+    if ( (</span><span style="color:gray">unsigned int</span><span style="color:navy">)(*</span><span style="color:#8080ff">v83 </span><span style="color:navy">+ 1) &gt;= 2 )
+      </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span>_InterlockedAdd<span style="color:navy">(</span><span style="color:#8080ff">v83</span><span style="color:navy">, 1u) != 0;
+    </span>QString::append<span style="color:navy">((</span><span style="color:gray">QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v120</span><span style="color:navy">, (</span><span style="color:gray">const QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v119</span><span style="color:navy">);
+    </span><span style="color:#8080ff">v121 </span><span style="color:navy">= </span><span style="color:#8080ff">v120</span><span style="color:navy">;
+    if ( (</span><span style="color:gray">unsigned int</span><span style="color:navy">)(*</span><span style="color:#8080ff">v120 </span><span style="color:navy">+ 1) &gt;= 2 )
+      </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span>_InterlockedAdd<span style="color:navy">(</span><span style="color:#8080ff">v120</span><span style="color:navy">, 1u) != 0;
+    </span>QString::fromUtf8_helper<span style="color:navy">((</span><span style="color:gray">QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v133</span><span style="color:navy">, &quot;</span><span style="color:green">).&quot;</span><span style="color:navy">, 2);
+    </span>QString::append<span style="color:navy">((</span><span style="color:gray">QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v121</span><span style="color:navy">, (</span><span style="color:gray">const QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v133</span><span style="color:navy">);
+    </span><span style="color:#8080ff">v84 </span><span style="color:navy">= </span><span style="color:#8080ff">v133</span><span style="color:navy">;
+    if ( *</span><span style="color:#8080ff">v133 </span><span style="color:navy">!= -1 )
+    {
+      if ( *</span><span style="color:#8080ff">v133 </span><span style="color:navy">)
+      {
+        </span><span style="color:#8080ff">v85 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v133</span><span style="color:navy">, 1u);
+        </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v85 </span><span style="color:navy">!= 0;
+        if ( </span><span style="color:#8080ff">v85 </span><span style="color:navy">)
+          goto LABEL_172;
+        </span><span style="color:#8080ff">v84 </span><span style="color:navy">= </span><span style="color:#8080ff">v133</span><span style="color:navy">;
+      </span><span style="background:#8080ff"></span><span style="color:navy">}
+      </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v84</span><span style="color:navy">, 2LL, 8LL);
+    </span><span style="background:navy"></span><span style="color:navy">}
+LABEL_172:
+    </span>sub_100112900<span style="color:navy">((</span><span style="color:gray">QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v121</span><span style="color:navy">);
+    </span><span style="color:#8080ff">v86 </span><span style="color:navy">= </span><span style="color:#8080ff">v121</span><span style="color:navy">;
+    if ( *</span><span style="color:#8080ff">v121 </span><span style="color:navy">== -1 )
+      goto LABEL_177;
+    if ( *</span><span style="color:#8080ff">v121 </span><span style="color:navy">)
+    {
+      </span><span style="color:#8080ff">v87 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v121</span><span style="color:navy">, 1u);
+      </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v87 </span><span style="color:navy">!= 0;
+      if ( </span><span style="color:#8080ff">v87 </span><span style="color:navy">)
+        goto LABEL_177;
+      </span><span style="color:#8080ff">v86 </span><span style="color:navy">= </span><span style="color:#8080ff">v121</span><span style="color:navy">;
+    </span><span style="background:#8080ff"></span><span style="color:navy">}
+    </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v86</span><span style="color:navy">, 2LL, 8LL);
+LABEL_177:
+    </span><span style="color:#8080ff">v88 </span><span style="color:navy">= </span><span style="color:#8080ff">v120</span><span style="color:navy">;
+    if ( *</span><span style="color:#8080ff">v120 </span><span style="color:navy">== -1 )
+      goto LABEL_182;
+    if ( *</span><span style="color:#8080ff">v120 </span><span style="color:navy">)
+    {
+      </span><span style="color:#8080ff">v89 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v120</span><span style="color:navy">, 1u);
+      </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v89 </span><span style="color:navy">!= 0;
+      if ( </span><span style="color:#8080ff">v89 </span><span style="color:navy">)
+        goto LABEL_182;
+      </span><span style="color:#8080ff">v88 </span><span style="color:navy">= </span><span style="color:#8080ff">v120</span><span style="color:navy">;
+    </span><span style="background:#8080ff"></span><span style="color:navy">}
+    </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v88</span><span style="color:navy">, 2LL, 8LL);
+LABEL_182:
+    </span><span style="color:#8080ff">v90 </span><span style="color:navy">= </span><span style="color:#8080ff">v119</span><span style="color:navy">;
+    if ( *</span><span style="color:#8080ff">v119 </span><span style="color:navy">!= -1 )
+    {
+      if ( !*</span><span style="color:#8080ff">v119 </span><span style="color:navy">)
+      {
+LABEL_186:
+        </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v90</span><span style="color:navy">, 2LL, 8LL);
+        goto LABEL_187;
+      </span><span style="background:navy"></span><span style="color:navy">}
+      </span><span style="color:#8080ff">v91 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v119</span><span style="color:navy">, 1u);
+      </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v91 </span><span style="color:navy">!= 0;
+      if ( !</span><span style="color:#8080ff">v91 </span><span style="color:navy">)
+      {
+        </span><span style="color:#8080ff">v90 </span><span style="color:navy">= </span><span style="color:#8080ff">v119</span><span style="color:navy">;
+        goto LABEL_186;
+      </span><span style="background:navy"></span><span style="color:navy">}
+    </span><span style="background:blue"></span><span style="color:navy">}
+LABEL_187:
+    if ( *</span><span style="color:#8080ff">v83 </span><span style="color:navy">!= -1 )
+    {
+      if ( !*</span><span style="color:#8080ff">v83 </span><span style="color:navy">|| (</span><span style="color:#8080ff">v92 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v83</span><span style="color:navy">, 1u), </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v92 </span><span style="color:navy">!= 0, !</span><span style="color:#8080ff">v92</span><span style="color:navy">) )
+        </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v83</span><span style="color:navy">, 2LL, 8LL);
+    </span><span style="background:navy"></span><span style="color:navy">}
+    goto LABEL_213;
+  </span><span style="background:navy"></span><span style="color:navy">}
+  if ( !</span><span style="color:#8080ff">v38 </span><span style="color:navy">)
+  {
+    </span><span style="color:#8080ff">v118 </span><span style="color:navy">= (</span><span style="color:gray">volatile signed __int32 *</span><span style="color:navy">)</span>QString::fromAscii_helper<span style="color:navy">(
+                                        (</span><span style="color:gray">QString *</span><span style="color:navy">)&quot;</span><span style="color:green">010 Editor has detected that you have entered an invalid license. Ple&quot;
+                                                   &quot;ase check to see if your license is entered correctly and try again. &quot;
+                                                   &quot;If this problem persists, please visit &#039;http://www.sweetscape.com/support/&#039;.&quot;</span><span style="color:navy">,
+                                        (</span><span style="color:gray">const char *</span><span style="color:navy">)0xD6,
+                                        </span><span style="color:#8080ff">v39</span><span style="color:navy">);
+    </span>sub_100112900<span style="color:navy">((</span><span style="color:gray">QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v118</span><span style="color:navy">);
+    </span><span style="color:#8080ff">v95 </span><span style="color:navy">= </span><span style="color:#8080ff">v118</span><span style="color:navy">;
+    if ( *</span><span style="color:#8080ff">v118 </span><span style="color:navy">== -1 )
+      goto LABEL_213;
+    if ( *</span><span style="color:#8080ff">v118 </span><span style="color:navy">)
+    {
+      </span><span style="color:#8080ff">v96 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v118</span><span style="color:navy">, 1u);
+      </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v96 </span><span style="color:navy">!= 0;
+      if ( </span><span style="color:#8080ff">v96 </span><span style="color:navy">)
+        goto LABEL_213;
+      </span><span style="color:#8080ff">v95 </span><span style="color:navy">= </span><span style="color:#8080ff">v118</span><span style="color:navy">;
+    </span><span style="background:#8080ff"></span><span style="color:navy">}
+    </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v95</span><span style="color:navy">, 2LL, 8LL);
+    goto LABEL_213;
+  </span><span style="background:navy"></span><span style="color:navy">}
+  </span><span style="color:#8080ff">v37 </span><span style="color:navy">= </span>sub_1000D8180<span style="color:navy">(</span>qword_100686140<span style="color:navy">, 9u, 17289LL);
+LABEL_60:
+  if ( </span><span style="color:#8080ff">v37 </span><span style="color:navy">== 0xDB )
+  {
+    </span><span style="color:#8080ff">v117 </span><span style="color:navy">= </span>sub_1000DB360<span style="color:navy">(</span>qword_100686140<span style="color:navy">);
+    </span><span style="color:#8080ff">v113 </span><span style="color:navy">= (</span><span style="color:gray">volatile signed __int32 *</span><span style="color:navy">)</span>QString::fromAscii_helper<span style="color:navy">((</span><span style="color:gray">QString *</span><span style="color:navy">)&quot;</span><span style="color:green">MMMM d, yyyy&quot;</span><span style="color:navy">, (</span><span style="color:gray">const char *</span><span style="color:navy">)0xC, </span><span style="color:#8080ff">v41</span><span style="color:navy">);
+    </span>QDate::toString<span style="color:navy">((</span><span style="color:gray">QDate *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v114</span><span style="color:navy">, (</span><span style="color:gray">const QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v117</span><span style="color:navy">);
+    </span>QString::fromUtf8_helper<span style="color:navy">(
+      (</span><span style="color:gray">QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v115</span><span style="color:navy">,
+      &quot;</span><span style="color:green">Password accepted. This license entitles you to:\n&quot;
+      &quot;\n&quot;
+      &quot;  - Free Upgrades\n&quot;
+      &quot;  - Free Support\n&quot;
+      &quot;  - Free Repository Updates\n&quot;
+      &quot;\n&quot;
+      &quot;until &quot;</span><span style="color:navy">,
+      120);
+    </span>QString::append<span style="color:navy">((</span><span style="color:gray">QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v115</span><span style="color:navy">, (</span><span style="color:gray">const QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v114</span><span style="color:navy">);
+    </span><span style="color:#8080ff">v116 </span><span style="color:navy">= </span><span style="color:#8080ff">v115</span><span style="color:navy">;
+    if ( (</span><span style="color:gray">unsigned int</span><span style="color:navy">)(*</span><span style="color:#8080ff">v115 </span><span style="color:navy">+ 1) &gt;= 2 )
+      </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span>_InterlockedAdd<span style="color:navy">(</span><span style="color:#8080ff">v115</span><span style="color:navy">, 1u) != 0;
+    </span>QString::fromUtf8_helper<span style="color:navy">((</span><span style="color:gray">QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v134</span><span style="color:navy">, &quot;</span><span style="color:green">.&quot;</span><span style="color:navy">, 1);
+    </span><span style="color:#8080ff">v42 </span><span style="color:navy">= &amp;</span><span style="color:#8080ff">v134</span><span style="color:navy">;
+    </span>QString::append<span style="color:navy">((</span><span style="color:gray">QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v116</span><span style="color:navy">, (</span><span style="color:gray">const QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v134</span><span style="color:navy">);
+    </span><span style="color:#8080ff">v43 </span><span style="color:navy">= </span><span style="color:#8080ff">v134</span><span style="color:navy">;
+    if ( *</span><span style="color:#8080ff">v134 </span><span style="color:navy">!= -1 )
+    {
+      if ( *</span><span style="color:#8080ff">v134 </span><span style="color:navy">)
+      {
+        </span><span style="color:#8080ff">v44 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v134</span><span style="color:navy">, 1u);
+        </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v44 </span><span style="color:navy">!= 0;
+        if ( </span><span style="color:#8080ff">v44 </span><span style="color:navy">)
+          goto LABEL_68;
+        </span><span style="color:#8080ff">v43 </span><span style="color:navy">= </span><span style="color:#8080ff">v134</span><span style="color:navy">;
+      </span><span style="background:#8080ff"></span><span style="color:navy">}
+      </span><span style="color:#8080ff">v42 </span><span style="color:navy">= (</span><span style="color:gray">volatile signed __int32 **</span><span style="color:navy">)2;
+      </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v43</span><span style="color:navy">, 2LL, 8LL);
+    </span><span style="background:navy"></span><span style="color:navy">}
+LABEL_68:
+    </span><span style="color:#8080ff">v45 </span><span style="color:navy">= </span><span style="color:#8080ff">v115</span><span style="color:navy">;
+    if ( *</span><span style="color:#8080ff">v115 </span><span style="color:navy">== -1 )
+      goto LABEL_73;
+    if ( *</span><span style="color:#8080ff">v115 </span><span style="color:navy">)
+    {
+      </span><span style="color:#8080ff">v46 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v115</span><span style="color:navy">, 1u);
+      </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v46 </span><span style="color:navy">!= 0;
+      if ( </span><span style="color:#8080ff">v46 </span><span style="color:navy">)
+        goto LABEL_73;
+      </span><span style="color:#8080ff">v45 </span><span style="color:navy">= </span><span style="color:#8080ff">v115</span><span style="color:navy">;
+    </span><span style="background:#8080ff"></span><span style="color:navy">}
+    </span><span style="color:#8080ff">v42 </span><span style="color:navy">= (</span><span style="color:gray">volatile signed __int32 **</span><span style="color:navy">)2;
+    </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v45</span><span style="color:navy">, 2LL, 8LL);
+LABEL_73:
+    </span><span style="color:#8080ff">v47 </span><span style="color:navy">= </span><span style="color:#8080ff">v114</span><span style="color:navy">;
+    if ( *</span><span style="color:#8080ff">v114 </span><span style="color:navy">== -1 )
+      goto LABEL_78;
+    if ( *</span><span style="color:#8080ff">v114 </span><span style="color:navy">)
+    {
+      </span><span style="color:#8080ff">v48 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v114</span><span style="color:navy">, 1u);
+      </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v48 </span><span style="color:navy">!= 0;
+      if ( </span><span style="color:#8080ff">v48 </span><span style="color:navy">)
+        goto LABEL_78;
+      </span><span style="color:#8080ff">v47 </span><span style="color:navy">= </span><span style="color:#8080ff">v114</span><span style="color:navy">;
+    </span><span style="background:#8080ff"></span><span style="color:navy">}
+    </span><span style="color:#8080ff">v42 </span><span style="color:navy">= (</span><span style="color:gray">volatile signed __int32 **</span><span style="color:navy">)2;
+    </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v47</span><span style="color:navy">, 2LL, 8LL);
+LABEL_78:
+    </span><span style="color:#8080ff">v49 </span><span style="color:navy">= </span><span style="color:#8080ff">v113</span><span style="color:navy">;
+    if ( *</span><span style="color:#8080ff">v113 </span><span style="color:navy">!= -1 )
+    {
+      if ( !*</span><span style="color:#8080ff">v113 </span><span style="color:navy">)
+      {
+LABEL_82:
+        </span><span style="color:#8080ff">v42 </span><span style="color:navy">= (</span><span style="color:gray">volatile signed __int32 **</span><span style="color:navy">)2;
+        </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v49</span><span style="color:navy">, 2LL, 8LL);
+        goto LABEL_83;
+      </span><span style="background:navy"></span><span style="color:navy">}
+      </span><span style="color:#8080ff">v50 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v113</span><span style="color:navy">, 1u);
+      </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v50 </span><span style="color:navy">!= 0;
+      if ( !</span><span style="color:#8080ff">v50 </span><span style="color:navy">)
+      {
+        </span><span style="color:#8080ff">v49 </span><span style="color:navy">= </span><span style="color:#8080ff">v113</span><span style="color:navy">;
+        goto LABEL_82;
+      </span><span style="background:navy"></span><span style="color:navy">}
+    </span><span style="background:blue"></span><span style="color:navy">}
+LABEL_83:
+    if ( (</span><span style="color:gray">signed int</span><span style="color:navy">)</span>sub_1000DB3A0<span style="color:navy">(</span>qword_100686140<span style="color:navy">, </span><span style="color:#8080ff">v42</span><span style="color:navy">) &lt; 0 )
+    {
+      </span>QString::fromUtf8_helper<span style="color:navy">((</span><span style="color:gray">QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v135</span><span style="color:navy">, &quot; </span><span style="color:green">(EXPIRED)&quot;</span><span style="color:navy">, 10);
+      </span>QString::append<span style="color:navy">((</span><span style="color:gray">QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v116</span><span style="color:navy">, (</span><span style="color:gray">const QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v135</span><span style="color:navy">);
+      </span><span style="color:#8080ff">v51 </span><span style="color:navy">= </span><span style="color:#8080ff">v135</span><span style="color:navy">;
+      if ( *</span><span style="color:#8080ff">v135 </span><span style="color:navy">!= -1 )
+      {
+        if ( *</span><span style="color:#8080ff">v135 </span><span style="color:navy">)
+        {
+          </span><span style="color:#8080ff">v52 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v135</span><span style="color:navy">, 1u);
+          </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v52 </span><span style="color:navy">!= 0;
+          if ( </span><span style="color:#8080ff">v52 </span><span style="color:navy">)
+            goto LABEL_89;
+          </span><span style="color:#8080ff">v51 </span><span style="color:navy">= </span><span style="color:#8080ff">v135</span><span style="color:navy">;
+        </span><span style="background:#8080ff"></span><span style="color:navy">}
+        </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v51</span><span style="color:navy">, 2LL, 8LL);
+      </span><span style="background:navy"></span><span style="color:navy">}
+    </span><span style="background:blue"></span><span style="color:navy">}
+LABEL_89:
+    </span>QString::fromUtf8_helper<span style="color:navy">((</span><span style="color:gray">QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v136</span><span style="color:navy">, &quot; </span><span style="color:green">Thank you for purchasing 010 Editor!&quot;</span><span style="color:navy">, 37);
+    </span><span style="color:#8080ff">v53 </span><span style="color:navy">= &amp;</span><span style="color:#8080ff">v136</span><span style="color:navy">;
+    </span>QString::append<span style="color:navy">((</span><span style="color:gray">QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v116</span><span style="color:navy">, (</span><span style="color:gray">const QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v136</span><span style="color:navy">);
+    </span><span style="color:#8080ff">v54 </span><span style="color:navy">= </span><span style="color:#8080ff">v136</span><span style="color:navy">;
+    if ( *</span><span style="color:#8080ff">v136 </span><span style="color:navy">== -1 )
+      goto LABEL_94;
+    if ( *</span><span style="color:#8080ff">v136 </span><span style="color:navy">)
+    {
+      </span><span style="color:#8080ff">v55 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v136</span><span style="color:navy">, 1u);
+      </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v55 </span><span style="color:navy">!= 0;
+      if ( </span><span style="color:#8080ff">v55 </span><span style="color:navy">)
+        goto LABEL_94;
+      </span><span style="color:#8080ff">v54 </span><span style="color:navy">= </span><span style="color:#8080ff">v136</span><span style="color:navy">;
+    </span><span style="background:#8080ff"></span><span style="color:navy">}
+    </span><span style="color:#8080ff">v53 </span><span style="color:navy">= (</span><span style="color:gray">volatile signed __int32 **</span><span style="color:navy">)2;
+    </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v54</span><span style="color:navy">, 2LL, 8LL);
+LABEL_94:
+    </span>sub_100112D10<span style="color:navy">(&amp;</span><span style="color:#8080ff">v116</span><span style="color:navy">, </span><span style="color:#8080ff">v53</span><span style="color:navy">);
+    if ( *(</span><span style="color:gray">_DWORD *</span><span style="color:navy">)(</span>qword_100686140 <span style="color:navy">+ 68) &gt; 0 )
+    {
+      </span><span style="color:#8080ff">v56 </span><span style="color:navy">= </span>sub_1000DB3A0<span style="color:navy">(</span>qword_100686140<span style="color:navy">, </span><span style="color:#8080ff">v53</span><span style="color:navy">);
+      </span><span style="color:#8080ff">v57 </span><span style="color:navy">= 2;
+      if ( </span><span style="color:#8080ff">v56 &gt;</span><span style="color:navy">= 0 )
+        </span><span style="color:#8080ff">v57 </span><span style="color:navy">= </span><span style="color:#8080ff">v56 &lt; </span><span style="color:navy">40;
+      </span><span style="color:#8080ff">v58 </span><span style="color:navy">= </span>qword_1006860E8<span style="color:navy">;
+      if ( *((</span><span style="color:gray">_DWORD *</span><span style="color:navy">)</span>qword_1006860E8 <span style="color:navy">+ 30) != </span><span style="color:#8080ff">v57 </span><span style="color:navy">)
+      {
+        *((</span><span style="color:gray">_DWORD *</span><span style="color:navy">)</span>qword_1006860E8 <span style="color:navy">+ 30) = </span><span style="color:#8080ff">v57</span><span style="color:navy">;
+        if ( !</span>byte_100683050 <span style="color:navy">)
+          </span>sub_100074330<span style="color:navy">(</span><span style="color:#8080ff">v58</span><span style="color:navy">);
+      </span><span style="background:navy"></span><span style="color:navy">}
+    </span><span style="background:blue"></span><span style="color:navy">}
+    </span><span style="color:#8080ff">v59 </span><span style="color:navy">= </span>qword_1006860E8<span style="color:navy">;
+    if ( *((</span><span style="color:gray">_DWORD *</span><span style="color:navy">)</span>qword_1006860E8 <span style="color:navy">+ 150) )
+    {
+      *((</span><span style="color:gray">_DWORD *</span><span style="color:navy">)</span>qword_1006860E8 <span style="color:navy">+ 150) = 0;
+      if ( !</span>byte_100683050 <span style="color:navy">)
+        </span>sub_100074330<span style="color:navy">(</span><span style="color:#8080ff">v59</span><span style="color:navy">);
+    </span><span style="background:navy"></span><span style="color:navy">}
+    </span><span style="color:#8080ff">v60 </span><span style="color:navy">= </span><span style="color:#8080ff">v116</span><span style="color:navy">;
+    if ( *</span><span style="color:#8080ff">v116 </span><span style="color:navy">!= -1 )
+    {
+      if ( *</span><span style="color:#8080ff">v116 </span><span style="color:navy">)
+      {
+        </span><span style="color:#8080ff">v61 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v116</span><span style="color:navy">, 1u);
+        </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v61 </span><span style="color:navy">!= 0;
+        if ( </span><span style="color:#8080ff">v61 </span><span style="color:navy">)
+          goto LABEL_108;
+        </span><span style="color:#8080ff">v60 </span><span style="color:navy">= </span><span style="color:#8080ff">v116</span><span style="color:navy">;
+      </span><span style="background:#8080ff"></span><span style="color:navy">}
+      </span><span style="color:#8080ff">v53 </span><span style="color:navy">= (</span><span style="color:gray">volatile signed __int32 **</span><span style="color:navy">)2;
+      </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v60</span><span style="color:navy">, 2LL, 8LL);
+    </span><span style="background:navy"></span><span style="color:navy">}
+    goto LABEL_108;
+  </span><span style="background:navy"></span><span style="color:navy">}
+  if ( </span><span style="color:#8080ff">v37 </span><span style="color:navy">== 0xED || </span><span style="color:#8080ff">v37 </span><span style="color:navy">== 0x20C )
+  {
+    </span>sub_1000D9840<span style="color:navy">(</span>qword_100686140<span style="color:navy">);
+    </span>sub_10034FB20<span style="color:navy">(</span><span style="color:#8080ff">v1</span><span style="color:navy">, 0xFFFFFFFFLL);
+    </span>QString::fromUtf8_helper<span style="color:navy">(
+      (</span><span style="color:gray">QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v137</span><span style="color:navy">,
+      &quot;</span><span style="color:green">The password you entered is for an earlier version of this program. &quot;</span><span style="color:navy">,
+      68);
+    </span>QString::operator=<span style="color:navy">(&amp;</span><span style="color:#8080ff">v132</span><span style="color:navy">, &amp;</span><span style="color:#8080ff">v137</span><span style="color:navy">);
+    </span><span style="color:#8080ff">v63 </span><span style="color:navy">= </span><span style="color:#8080ff">v137</span><span style="color:navy">;
+    if ( *</span><span style="color:#8080ff">v137 </span><span style="color:navy">== -1 )
+      goto LABEL_119;
+    if ( *</span><span style="color:#8080ff">v137 </span><span style="color:navy">)
+    {
+      </span><span style="color:#8080ff">v64 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v137</span><span style="color:navy">, 1u);
+      </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v64 </span><span style="color:navy">!= 0;
+      if ( </span><span style="color:#8080ff">v64 </span><span style="color:navy">)
+        goto LABEL_119;
+      </span><span style="color:#8080ff">v63 </span><span style="color:navy">= </span><span style="color:#8080ff">v137</span><span style="color:navy">;
+    </span><span style="background:#8080ff"></span><span style="color:navy">}
+    </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v63</span><span style="color:navy">, 2LL, 8LL);
+LABEL_119:
+    </span>QString::fromUtf8_helper<span style="color:navy">(
+      (</span><span style="color:gray">QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v138</span><span style="color:navy">,
+      &quot;</span><span style="color:green">You will have to purchase an upgrade to continue using this software. &quot;</span><span style="color:navy">,
+      70);
+    </span>QString::append<span style="color:navy">((</span><span style="color:gray">QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v132</span><span style="color:navy">, (</span><span style="color:gray">const QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v138</span><span style="color:navy">);
+    </span><span style="color:#8080ff">v65 </span><span style="color:navy">= </span><span style="color:#8080ff">v138</span><span style="color:navy">;
+    if ( *</span><span style="color:#8080ff">v138 </span><span style="color:navy">!= -1 )
+    {
+      if ( !*</span><span style="color:#8080ff">v138 </span><span style="color:navy">)
+      {
+LABEL_123:
+        </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v65</span><span style="color:navy">, 2LL, 8LL);
+        goto LABEL_124;
+      </span><span style="background:navy"></span><span style="color:navy">}
+      </span><span style="color:#8080ff">v66 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v138</span><span style="color:navy">, 1u);
+      </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v66 </span><span style="color:navy">!= 0;
+      if ( !</span><span style="color:#8080ff">v66 </span><span style="color:navy">)
+      {
+        </span><span style="color:#8080ff">v65 </span><span style="color:navy">= </span><span style="color:#8080ff">v138</span><span style="color:navy">;
+        goto LABEL_123;
+      </span><span style="background:navy"></span><span style="color:navy">}
+    </span><span style="background:blue"></span><span style="color:navy">}
+LABEL_124:
+    if ( </span><span style="color:#8080ff">v37 </span><span style="color:navy">== 524 )
+    {
+      </span>QString::fromUtf8_helper<span style="color:navy">((</span><span style="color:gray">QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v139</span><span style="color:navy">, &quot;</span><span style="color:green">You may continue to use this program as a trial version. &quot;</span><span style="color:navy">, 57);
+      </span>QString::append<span style="color:navy">((</span><span style="color:gray">QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v132</span><span style="color:navy">, (</span><span style="color:gray">const QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v139</span><span style="color:navy">);
+      </span><span style="color:#8080ff">v67 </span><span style="color:navy">= </span><span style="color:#8080ff">v139</span><span style="color:navy">;
+      if ( *</span><span style="color:#8080ff">v139 </span><span style="color:navy">!= -1 )
+      {
+        if ( *</span><span style="color:#8080ff">v139 </span><span style="color:navy">)
+        {
+          </span><span style="color:#8080ff">v68 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v139</span><span style="color:navy">, 1u);
+          </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v68 </span><span style="color:navy">!= 0;
+          if ( </span><span style="color:#8080ff">v68 </span><span style="color:navy">)
+            goto LABEL_130;
+          </span><span style="color:#8080ff">v67 </span><span style="color:navy">= </span><span style="color:#8080ff">v139</span><span style="color:navy">;
+        </span><span style="background:#8080ff"></span><span style="color:navy">}
+        </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v67</span><span style="color:navy">, 2LL, 8LL);
+      </span><span style="background:navy"></span><span style="color:navy">}
+    </span><span style="background:blue"></span><span style="color:navy">}
+LABEL_130:
+    </span>QString::fromUtf8_helper<span style="color:navy">(
+      (</span><span style="color:gray">QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v140</span><span style="color:navy">,
+      &quot;</span><span style="color:green">If you decide to purchase an upgrade, please click the \&quot;Purchase an upgrade\&quot; link below or you &quot;</span><span style="color:navy">,
+      95);
+    </span>QString::append<span style="color:navy">((</span><span style="color:gray">QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v132</span><span style="color:navy">, (</span><span style="color:gray">const QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v140</span><span style="color:navy">);
+    </span><span style="color:#8080ff">v70 </span><span style="color:navy">= </span><span style="color:#8080ff">v140</span><span style="color:navy">;
+    if ( *</span><span style="color:#8080ff">v140 </span><span style="color:navy">== -1 )
+      goto LABEL_135;
+    if ( *</span><span style="color:#8080ff">v140 </span><span style="color:navy">)
+    {
+      </span><span style="color:#8080ff">v71 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v140</span><span style="color:navy">, 1u);
+      </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v71 </span><span style="color:navy">!= 0;
+      if ( </span><span style="color:#8080ff">v71 </span><span style="color:navy">)
+        goto LABEL_135;
+      </span><span style="color:#8080ff">v70 </span><span style="color:navy">= </span><span style="color:#8080ff">v140</span><span style="color:navy">;
+    </span><span style="background:#8080ff"></span><span style="color:navy">}
+    </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v70</span><span style="color:navy">, 2LL, 8LL);
+LABEL_135:
+    </span><span style="color:#8080ff">v110 </span><span style="color:navy">= (</span><span style="color:gray">volatile signed __int32 *</span><span style="color:navy">)</span>QString::fromAscii_helper<span style="color:navy">(
+                                        (</span><span style="color:gray">QString *</span><span style="color:navy">)&quot;</span><span style="color:green">http://www.sweetscape.com/download/previous/&quot;</span><span style="color:navy">,
+                                        (</span><span style="color:gray">const char *</span><span style="color:navy">)0x2C,
+                                        </span><span style="color:#8080ff">v69</span><span style="color:navy">);
+    </span>QString::fromUtf8_helper<span style="color:navy">((</span><span style="color:gray">QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v111</span><span style="color:navy">, &quot;</span><span style="color:green">may download previous versions of 010 Editor from the website \&quot;&quot;</span><span style="color:navy">, 63);
+    </span>QString::append<span style="color:navy">((</span><span style="color:gray">QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v111</span><span style="color:navy">, (</span><span style="color:gray">const QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v110</span><span style="color:navy">);
+    </span><span style="color:#8080ff">v112 </span><span style="color:navy">= </span><span style="color:#8080ff">v111</span><span style="color:navy">;
+    if ( (</span><span style="color:gray">unsigned int</span><span style="color:navy">)(*</span><span style="color:#8080ff">v111 </span><span style="color:navy">+ 1) &gt;= 2 )
+      </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span>_InterlockedAdd<span style="color:navy">(</span><span style="color:#8080ff">v111</span><span style="color:navy">, 1u) != 0;
+    </span>QString::fromUtf8_helper<span style="color:navy">((</span><span style="color:gray">QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v141</span><span style="color:navy">, &quot;</span><span style="color:green">\&quot;. Thank you!&quot;</span><span style="color:navy">, 13);
+    </span>QString::append<span style="color:navy">((</span><span style="color:gray">QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v112</span><span style="color:navy">, (</span><span style="color:gray">const QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v141</span><span style="color:navy">);
+    </span><span style="color:#8080ff">v72 </span><span style="color:navy">= </span><span style="color:#8080ff">v141</span><span style="color:navy">;
+    if ( *</span><span style="color:#8080ff">v141 </span><span style="color:navy">!= -1 )
+    {
+      if ( *</span><span style="color:#8080ff">v141 </span><span style="color:navy">)
+      {
+        </span><span style="color:#8080ff">v73 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v141</span><span style="color:navy">, 1u);
+        </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v73 </span><span style="color:navy">!= 0;
+        if ( </span><span style="color:#8080ff">v73 </span><span style="color:navy">)
+          goto LABEL_142;
+        </span><span style="color:#8080ff">v72 </span><span style="color:navy">= </span><span style="color:#8080ff">v141</span><span style="color:navy">;
+      </span><span style="background:#8080ff"></span><span style="color:navy">}
+      </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v72</span><span style="color:navy">, 2LL, 8LL);
+    </span><span style="background:navy"></span><span style="color:navy">}
+LABEL_142:
+    </span><span style="color:#8080ff">v74 </span><span style="color:navy">= &amp;</span><span style="color:#8080ff">v112</span><span style="color:navy">;
+    </span>QString::append<span style="color:navy">((</span><span style="color:gray">QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v132</span><span style="color:navy">, (</span><span style="color:gray">const QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v112</span><span style="color:navy">);
+    </span><span style="color:#8080ff">v75 </span><span style="color:navy">= </span><span style="color:#8080ff">v112</span><span style="color:navy">;
+    if ( *</span><span style="color:#8080ff">v112 </span><span style="color:navy">== -1 )
+      goto LABEL_147;
+    if ( *</span><span style="color:#8080ff">v112 </span><span style="color:navy">)
+    {
+      </span><span style="color:#8080ff">v76 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v112</span><span style="color:navy">, 1u);
+      </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v76 </span><span style="color:navy">!= 0;
+      if ( </span><span style="color:#8080ff">v76 </span><span style="color:navy">)
+        goto LABEL_147;
+      </span><span style="color:#8080ff">v75 </span><span style="color:navy">= </span><span style="color:#8080ff">v112</span><span style="color:navy">;
+    </span><span style="background:#8080ff"></span><span style="color:navy">}
+    </span><span style="color:#8080ff">v74 </span><span style="color:navy">= (</span><span style="color:gray">volatile signed __int32 **</span><span style="color:navy">)2;
+    </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v75</span><span style="color:navy">, 2LL, 8LL);
+LABEL_147:
+    </span><span style="color:#8080ff">v77 </span><span style="color:navy">= </span><span style="color:#8080ff">v111</span><span style="color:navy">;
+    if ( *</span><span style="color:#8080ff">v111 </span><span style="color:navy">== -1 )
+      goto LABEL_152;
+    if ( *</span><span style="color:#8080ff">v111 </span><span style="color:navy">)
+    {
+      </span><span style="color:#8080ff">v78 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v111</span><span style="color:navy">, 1u);
+      </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v78 </span><span style="color:navy">!= 0;
+      if ( </span><span style="color:#8080ff">v78 </span><span style="color:navy">)
+        goto LABEL_152;
+      </span><span style="color:#8080ff">v77 </span><span style="color:navy">= </span><span style="color:#8080ff">v111</span><span style="color:navy">;
+    </span><span style="background:#8080ff"></span><span style="color:navy">}
+    </span><span style="color:#8080ff">v74 </span><span style="color:navy">= (</span><span style="color:gray">volatile signed __int32 **</span><span style="color:navy">)2;
+    </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v77</span><span style="color:navy">, 2LL, 8LL);
+LABEL_152:
+    </span><span style="color:#8080ff">v79 </span><span style="color:navy">= </span><span style="color:#8080ff">v110</span><span style="color:navy">;
+    if ( *</span><span style="color:#8080ff">v110 </span><span style="color:navy">!= -1 )
+    {
+      if ( !*</span><span style="color:#8080ff">v110 </span><span style="color:navy">)
+      {
+LABEL_156:
+        </span><span style="color:#8080ff">v74 </span><span style="color:navy">= (</span><span style="color:gray">volatile signed __int32 **</span><span style="color:navy">)2;
+        </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v79</span><span style="color:navy">, 2LL, 8LL);
+        goto LABEL_157;
+      </span><span style="background:navy"></span><span style="color:navy">}
+      </span><span style="color:#8080ff">v80 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v110</span><span style="color:navy">, 1u);
+      </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v80 </span><span style="color:navy">!= 0;
+      if ( !</span><span style="color:#8080ff">v80 </span><span style="color:navy">)
+      {
+        </span><span style="color:#8080ff">v79 </span><span style="color:navy">= </span><span style="color:#8080ff">v110</span><span style="color:navy">;
+        goto LABEL_156;
+      </span><span style="background:navy"></span><span style="color:navy">}
+    </span><span style="background:blue"></span><span style="color:navy">}
+LABEL_157:
+    </span>sub_100112D10<span style="color:navy">(&amp;</span><span style="color:#8080ff">v132</span><span style="color:navy">, </span><span style="color:#8080ff">v74</span><span style="color:navy">);
+    goto LABEL_213;
+  </span><span style="background:navy"></span><span style="color:navy">}
+  if ( </span><span style="color:#8080ff">v35 </span><span style="color:navy">== 0x93 )
+  {
+    if ( </span><span style="color:#8080ff">v37 </span><span style="color:navy">== 0x71 )
+    {
+      </span><span style="color:#8080ff">v53 </span><span style="color:navy">= (</span><span style="color:gray">volatile signed __int32 **</span><span style="color:navy">)55;
+      </span><span style="color:#8080ff">v109 </span><span style="color:navy">= (</span><span style="color:gray">volatile signed __int32 *</span><span style="color:navy">)</span>QString::fromAscii_helper<span style="color:navy">(
+                                          (</span><span style="color:gray">QString *</span><span style="color:navy">)&quot;</span><span style="color:green">Password accepted. Your trial period has been extended.&quot;</span><span style="color:navy">,
+                                          (</span><span style="color:gray">const char *</span><span style="color:navy">)0x37,
+                                          </span><span style="color:#8080ff">v36</span><span style="color:navy">);
+      </span>sub_100112D10<span style="color:navy">(&amp;</span><span style="color:#8080ff">v109</span><span style="color:navy">, 55LL);
+      </span><span style="color:#8080ff">v93 </span><span style="color:navy">= </span><span style="color:#8080ff">v109</span><span style="color:navy">;
+      if ( *</span><span style="color:#8080ff">v109 </span><span style="color:navy">== -1 )
+        goto LABEL_108;
+      if ( *</span><span style="color:#8080ff">v109 </span><span style="color:navy">)
+      {
+        </span><span style="color:#8080ff">v94 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v109</span><span style="color:navy">, 1u);
+        </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v94 </span><span style="color:navy">!= 0;
+        if ( </span><span style="color:#8080ff">v94 </span><span style="color:navy">)
+          goto LABEL_108;
+        </span><span style="color:#8080ff">v93 </span><span style="color:navy">= </span><span style="color:#8080ff">v109</span><span style="color:navy">;
+      </span><span style="background:#8080ff"></span><span style="color:navy">}
+      </span><span style="color:#8080ff">v53 </span><span style="color:navy">= (</span><span style="color:gray">volatile signed __int32 **</span><span style="color:navy">)2;
+      </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v93</span><span style="color:navy">, 2LL, 8LL);
+LABEL_108:
+      if ( (</span><span style="color:gray">unsigned __int8</span><span style="color:navy">)</span>sub_1000D9840<span style="color:navy">(</span>qword_100686140<span style="color:navy">) )
+      {
+        if ( </span>qword_100686710 <span style="color:navy">)
+          </span>sub_10038C940<span style="color:navy">(</span>qword_100686710<span style="color:navy">, </span><span style="color:#8080ff">v53</span><span style="color:navy">);
+        (*(</span><span style="color:gray">void (__fastcall **)(_QWORD *, volatile signed __int32 **)</span><span style="color:navy">)(*</span><span style="color:#8080ff">v1 </span><span style="color:navy">+ 440LL))(</span><span style="color:#8080ff">v1</span><span style="color:navy">, </span><span style="color:#8080ff">v53</span><span style="color:navy">);
+      </span><span style="background:navy"></span><span style="color:navy">}
+      else
+      {
+        </span><span style="color:#8080ff">v106 </span><span style="color:navy">= (</span><span style="color:gray">volatile signed __int32 *</span><span style="color:navy">)</span>QString::fromAscii_helper<span style="color:navy">(
+                                            (</span><span style="color:gray">QString *</span><span style="color:navy">)&quot;</span><span style="color:green">Could not change password. You may need to be logged in as an adm&quot;
+                                                       &quot;inistrator to change the password.&quot;</span><span style="color:navy">,
+                                            (</span><span style="color:gray">const char *</span><span style="color:navy">)0x63,
+                                            </span><span style="color:#8080ff">v62</span><span style="color:navy">);
+        </span>sub_1001124D0<span style="color:navy">((</span><span style="color:gray">QString *</span><span style="color:navy">)&amp;</span><span style="color:#8080ff">v106</span><span style="color:navy">);
+        </span><span style="color:#8080ff">v81 </span><span style="color:navy">= </span><span style="color:#8080ff">v106</span><span style="color:navy">;
+        if ( *</span><span style="color:#8080ff">v106 </span><span style="color:navy">== -1 )
+          goto LABEL_213;
+        if ( *</span><span style="color:#8080ff">v106 </span><span style="color:navy">)
+        {
+          </span><span style="color:#8080ff">v82 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v106</span><span style="color:navy">, 1u);
+          </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v82 </span><span style="color:navy">!= 0;
+          if ( </span><span style="color:#8080ff">v82 </span><span style="color:navy">)
+            goto LABEL_213;
+          </span><span style="color:#8080ff">v81 </span><span style="color:navy">= </span><span style="color:#8080ff">v106</span><span style="color:navy">;
+        </span><span style="background:#8080ff"></span><span style="color:navy">}
+        </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v81</span><span style="color:navy">, 2LL, 8LL);
+      </span><span style="background:navy"></span><span style="color:navy">}
+      goto LABEL_213;
+    </span><span style="background:navy"></span><span style="color:navy">}
+    </span><span style="color:#8080ff">v108 </span><span style="color:navy">= (</span><span style="color:gray">volatile signed __int32 *</span><span style="color:navy">)</span>QString::fromAscii_helper<span style="color:navy">(
+                                        (</span><span style="color:gray">QString *</span><span style="color:navy">)&quot;</span><span style="color:green">Password accepted but the trial period is already over.&quot;</span><span style="color:navy">,
+                                        (</span><span style="color:gray">const char *</span><span style="color:navy">)0x37,
+                                        </span><span style="color:#8080ff">v36</span><span style="color:navy">);
+    </span>sub_100112D10<span style="color:navy">(&amp;</span><span style="color:#8080ff">v108</span><span style="color:navy">, 55LL);
+    </span><span style="color:#8080ff">v99 </span><span style="color:navy">= </span><span style="color:#8080ff">v108</span><span style="color:navy">;
+    if ( *</span><span style="color:#8080ff">v108 </span><span style="color:navy">== -1 )
+      goto LABEL_213;
+    if ( *</span><span style="color:#8080ff">v108 </span><span style="color:navy">)
+    {
+      </span><span style="color:#8080ff">v100 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v108</span><span style="color:navy">, 1u);
+      </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v100 </span><span style="color:navy">!= 0;
+      if ( </span><span style="color:#8080ff">v100 </span><span style="color:navy">)
+        goto LABEL_213;
+      </span><span style="color:#8080ff">v99 </span><span style="color:navy">= </span><span style="color:#8080ff">v108</span><span style="color:navy">;
+    </span><span style="background:#8080ff"></span><span style="color:navy">}
+    </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v99</span><span style="color:navy">, 2LL, 8LL);
+  </span><span style="background:navy"></span><span style="color:navy">}
+  else
+  {
+    </span><span style="color:#8080ff">v107 </span><span style="color:navy">= (</span><span style="color:gray">volatile signed __int32 *</span><span style="color:navy">)</span>QString::fromAscii_helper<span style="color:navy">(
+                                        (</span><span style="color:gray">QString *</span><span style="color:navy">)&quot;</span><span style="color:green">Invalid name or password. Please enter your name and password exactly&quot;
+                                                   &quot; as given when you purchased 010 Editor (make sure no quotes are included).&quot;</span><span style="color:navy">,
+                                        (</span><span style="color:gray">const char *</span><span style="color:navy">)0x90,
+                                        </span><span style="color:#8080ff">v36</span><span style="color:navy">);
+    </span>sub_100112D10<span style="color:navy">(&amp;</span><span style="color:#8080ff">v107</span><span style="color:navy">, 144LL);
+    </span><span style="color:#8080ff">v97 </span><span style="color:navy">= </span><span style="color:#8080ff">v107</span><span style="color:navy">;
+    if ( *</span><span style="color:#8080ff">v107 </span><span style="color:navy">== -1 )
+      goto LABEL_213;
+    if ( *</span><span style="color:#8080ff">v107 </span><span style="color:navy">)
+    {
+      </span><span style="color:#8080ff">v98 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v107</span><span style="color:navy">, 1u);
+      </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v98 </span><span style="color:navy">!= 0;
+      if ( </span><span style="color:#8080ff">v98 </span><span style="color:navy">)
+        goto LABEL_213;
+      </span><span style="color:#8080ff">v97 </span><span style="color:navy">= </span><span style="color:#8080ff">v107</span><span style="color:navy">;
+    </span><span style="background:#8080ff"></span><span style="color:navy">}
+    </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v97</span><span style="color:navy">, 2LL, 8LL);
+  </span><span style="background:navy"></span><span style="color:navy">}
+LABEL_213:
+  </span><span style="color:#8080ff">v101 </span><span style="color:navy">= *(</span><span style="color:gray">volatile signed __int32 **</span><span style="color:navy">)</span><span style="color:#8080ff">v131</span><span style="color:navy">;
+  if ( **(</span><span style="color:gray">_DWORD **</span><span style="color:navy">)</span><span style="color:#8080ff">v131 </span><span style="color:navy">== -1 )
+    goto LABEL_218;
+  if ( **(</span><span style="color:gray">_DWORD **</span><span style="color:navy">)</span><span style="color:#8080ff">v131 </span><span style="color:navy">)
+  {
+    </span><span style="color:#8080ff">v102 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(*(</span><span style="color:gray">volatile signed __int32 **</span><span style="color:navy">)</span><span style="color:#8080ff">v131</span><span style="color:navy">, 1u);
+    </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v102 </span><span style="color:navy">!= 0;
+    if ( </span><span style="color:#8080ff">v102 </span><span style="color:navy">)
+      goto LABEL_218;
+    </span><span style="color:#8080ff">v101 </span><span style="color:navy">= *(</span><span style="color:gray">volatile signed __int32 **</span><span style="color:navy">)</span><span style="color:#8080ff">v131</span><span style="color:navy">;
+  </span><span style="background:#8080ff"></span><span style="color:navy">}
+  </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v101</span><span style="color:navy">, 2LL, 8LL);
+LABEL_218:
+  </span><span style="color:#8080ff">v103 </span><span style="color:navy">= </span><span style="color:#8080ff">v132</span><span style="color:navy">;
+  </span><span style="color:#8080ff">result </span><span style="color:navy">= *(</span><span style="color:gray">unsigned int *</span><span style="color:navy">)</span><span style="color:#8080ff">v132</span><span style="color:navy">;
+  if ( (</span><span style="color:gray">_DWORD</span><span style="color:navy">)</span><span style="color:#8080ff">result </span><span style="color:navy">== -1 )
+    return </span><span style="color:#8080ff">result</span><span style="color:navy">;
+  if ( (</span><span style="color:gray">_DWORD</span><span style="color:navy">)</span><span style="color:#8080ff">result </span><span style="color:navy">)
+  {
+    </span><span style="color:#8080ff">v105 </span><span style="color:navy">= </span>_InterlockedSub<span style="color:navy">(</span><span style="color:#8080ff">v132</span><span style="color:navy">, 1u);
+    </span><span style="color:#8080ff">v142 </span><span style="color:navy">= </span><span style="color:#8080ff">v105 </span><span style="color:navy">!= 0;
+    if ( </span><span style="color:#8080ff">v105 </span><span style="color:navy">)
+      return </span><span style="color:#8080ff">result</span><span style="color:navy">;
+    </span><span style="color:#8080ff">v103 </span><span style="color:navy">= </span><span style="color:#8080ff">v132</span><span style="color:navy">;
+  </span><span style="background:#8080ff"></span><span style="color:navy">}
+  return </span>QArrayData::deallocate<span style="color:navy">(</span><span style="color:#8080ff">v103</span><span style="color:navy">, 2LL, 8LL);
+</span><span style="background:navy"></span><span style="color:navy">}
+</span></body></html>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.appleos.xyz/uploads/codes/010Edirot_macos_v801_sub_10034E190.html" data-id="cl3j4iur9000q49je2uqm2ytu" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/hexo/">hexo</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows/">Windows</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Windows/%E7%AC%94%E8%AE%B0/">笔记</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/macOS/">macOS</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/macOS/%E7%AC%94%E8%AE%B0/">笔记</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B-Reverse-Engineering/">逆向工程(Reverse Engineering)</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B-Reverse-Engineering/%E6%B3%A8%E5%86%8C%E6%9C%BA-KeyGen/">注册机(KeyGen)</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B-Reverse-Engineering/%E7%A0%B4%E8%A7%A3-Crack/">破解(Crack)</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Net/" rel="tag">.Net</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Net-Core/" rel="tag">.Net Core</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/23946/" rel="tag">23946</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/46003/" rel="tag">46003</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/AES%E9%AB%98%E7%BA%A7%E5%8A%A0%E5%AF%86%E6%A0%87%E5%87%86/" rel="tag">AES高级加密标准</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Armadillo/" rel="tag">Armadillo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C#</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/" rel="tag">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CodeMap/" rel="tag">CodeMap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CodeMap%E6%B3%A8%E5%86%8C%E7%A0%81/" rel="tag">CodeMap注册码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CodeMap%E8%AE%B8%E5%8F%AF%E8%AF%81/" rel="tag">CodeMap许可证</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Comment-Extender/" rel="tag">Comment Extender</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Crack/" rel="tag">Crack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DEKE-TV/" rel="tag">DEKE TV</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECC/" rel="tag">ECC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECDSA/" rel="tag">ECDSA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECDSA%E7%A7%81%E9%92%A5/" rel="tag">ECDSA私钥</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Editor-View-Enhancer/" rel="tag">Editor View Enhancer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDA%E8%B0%83%E8%AF%95/" rel="tag">IDA调试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JetBrains-decompiler/" rel="tag">JetBrains decompiler</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Key/" rel="tag">Key</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KeyGen/" rel="tag">KeyGen</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KeyMaker/" rel="tag">KeyMaker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/License/" rel="tag">License</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Loader/" rel="tag">Loader</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MacOS/" rel="tag">MacOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Packet-Capture/" rel="tag">Packet Capture</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reflector/" rel="tag">Reflector</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ribbon/" rel="tag">Ribbon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Rijndael%E7%AE%97%E6%B3%95/" rel="tag">Rijndael算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SoftwarePassport/" rel="tag">SoftwarePassport</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Supercharger/" rel="tag">Supercharger</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Supercharger%E6%B3%A8%E5%86%8C%E7%A0%81/" rel="tag">Supercharger注册码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Supercharger%E8%AE%B8%E5%8F%AF%E8%AF%81/" rel="tag">Supercharger许可证</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/" rel="tag">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unix/" rel="tag">Unix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VS10X/" rel="tag">VS10X</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VisualStudio%E6%8F%92%E4%BB%B6/" rel="tag">VisualStudio插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/" rel="tag">android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android-killer/" rel="tag">android killer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android-server/" rel="tag">android_server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android%E8%B0%83%E8%AF%95/" rel="tag">android调试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apk%E8%B0%83%E8%AF%95/" rel="tag">apk调试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/authorized-keys/" rel="tag">authorized_keys</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/axtools%E6%B3%A8%E5%86%8C%E7%A0%81/" rel="tag">axtools注册码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/base64/" rel="tag">base64</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dnSpy/" rel="tag">dnSpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dotPeek/" rel="tag">dotPeek</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/egame/" rel="tag">egame</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jadx/" rel="tag">jadx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javassist/" rel="tag">javassist</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsp/" rel="tag">jsp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ln/" rel="tag">ln</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logcat/" rel="tag">logcat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/macOS/" rel="tag">macOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/native/" rel="tag">native</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/netsh/" rel="tag">netsh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nonpie/" rel="tag">nonpie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/patch%E5%85%AC%E9%92%A5/" rel="tag">patch公钥</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pbcopy/" rel="tag">pbcopy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/printf/" rel="tag">printf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/printfcolor/" rel="tag">printfcolor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/" rel="tag">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/signatures/" rel="tag">signatures</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/smali/" rel="tag">smali</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/smspay/" rel="tag">smspay</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/so%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81/" rel="tag">so签名验证</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/so%E8%B0%83%E8%AF%95/" rel="tag">so调试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/youdao1/" rel="tag">youdao1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%85%A8%E5%B9%B3%E5%8F%B0/" rel="tag">全平台</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%85%E8%B4%AD/" rel="tag">内购</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8E%BB%E5%B9%BF%E5%91%8A/" rel="tag">去广告</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8E%BB%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81/" rel="tag">去签名验证</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%91%BD%E4%BB%A4%E8%AE%BE%E7%BD%AEIP%E5%92%8CDNS/" rel="tag">命令设置IP和DNS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%81%E5%8C%85/" rel="tag">封包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%93%E5%8C%85/" rel="tag">抓包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A0-root-%E6%8A%93%E5%8C%85/" rel="tag">无 root 抓包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF%E7%AE%97%E6%B3%95/" rel="tag">椭圆曲线算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B3%A8%E5%86%8C%E6%9C%BA/" rel="tag">注册机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B3%A8%E5%86%8C%E7%A0%81/" rel="tag">注册码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%BA%90%E7%A0%81-source/" rel="tag">源码(source)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A0%B4%E8%A7%A3-Crack/" rel="tag">破解(Crack)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A9%BF%E5%B1%B1%E7%94%B2%E5%A3%B3/" rel="tag">穿山甲壳</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%A9%BF%E5%B1%B1%E7%94%B2%E8%BD%AF%E4%BB%B6%E4%BF%9D%E6%8A%A4%E7%B3%BB%E7%BB%9F/" rel="tag">穿山甲软件保护系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81/" rel="tag">签名验证</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%B6%E5%B8%A6/" rel="tag">绶带</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%B8%E5%8F%AF%E8%AF%81/" rel="tag">许可证</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/" rel="tag">远程登录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B-Reverse-Engineering/" rel="tag">逆向工程(Reverse Engineering)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Net/" style="font-size: 10px;">.Net</a> <a href="/tags/Net-Core/" style="font-size: 10px;">.Net Core</a> <a href="/tags/23946/" style="font-size: 10px;">23946</a> <a href="/tags/46003/" style="font-size: 10px;">46003</a> <a href="/tags/AES%E9%AB%98%E7%BA%A7%E5%8A%A0%E5%AF%86%E6%A0%87%E5%87%86/" style="font-size: 10px;">AES高级加密标准</a> <a href="/tags/Armadillo/" style="font-size: 10px;">Armadillo</a> <a href="/tags/C/" style="font-size: 10px;">C</a> <a href="/tags/C/" style="font-size: 10px;">C#</a> <a href="/tags/Charles/" style="font-size: 10px;">Charles</a> <a href="/tags/CodeMap/" style="font-size: 10px;">CodeMap</a> <a href="/tags/CodeMap%E6%B3%A8%E5%86%8C%E7%A0%81/" style="font-size: 10px;">CodeMap注册码</a> <a href="/tags/CodeMap%E8%AE%B8%E5%8F%AF%E8%AF%81/" style="font-size: 10px;">CodeMap许可证</a> <a href="/tags/Comment-Extender/" style="font-size: 10px;">Comment Extender</a> <a href="/tags/Crack/" style="font-size: 18px;">Crack</a> <a href="/tags/DEKE-TV/" style="font-size: 10px;">DEKE TV</a> <a href="/tags/ECC/" style="font-size: 10px;">ECC</a> <a href="/tags/ECDSA/" style="font-size: 10px;">ECDSA</a> <a href="/tags/ECDSA%E7%A7%81%E9%92%A5/" style="font-size: 10px;">ECDSA私钥</a> <a href="/tags/Editor-View-Enhancer/" style="font-size: 10px;">Editor View Enhancer</a> <a href="/tags/IDA%E8%B0%83%E8%AF%95/" style="font-size: 10px;">IDA调试</a> <a href="/tags/Java/" style="font-size: 12px;">Java</a> <a href="/tags/JetBrains-decompiler/" style="font-size: 10px;">JetBrains decompiler</a> <a href="/tags/Key/" style="font-size: 12px;">Key</a> <a href="/tags/KeyGen/" style="font-size: 12px;">KeyGen</a> <a href="/tags/KeyMaker/" style="font-size: 12px;">KeyMaker</a> <a href="/tags/License/" style="font-size: 12px;">License</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Loader/" style="font-size: 10px;">Loader</a> <a href="/tags/MacOS/" style="font-size: 10px;">MacOS</a> <a href="/tags/Packet-Capture/" style="font-size: 10px;">Packet Capture</a> <a href="/tags/Reflector/" style="font-size: 10px;">Reflector</a> <a href="/tags/Ribbon/" style="font-size: 10px;">Ribbon</a> <a href="/tags/Rijndael%E7%AE%97%E6%B3%95/" style="font-size: 10px;">Rijndael算法</a> <a href="/tags/SoftwarePassport/" style="font-size: 10px;">SoftwarePassport</a> <a href="/tags/Supercharger/" style="font-size: 10px;">Supercharger</a> <a href="/tags/Supercharger%E6%B3%A8%E5%86%8C%E7%A0%81/" style="font-size: 10px;">Supercharger注册码</a> <a href="/tags/Supercharger%E8%AE%B8%E5%8F%AF%E8%AF%81/" style="font-size: 10px;">Supercharger许可证</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/Unix/" style="font-size: 10px;">Unix</a> <a href="/tags/VS10X/" style="font-size: 10px;">VS10X</a> <a href="/tags/VisualStudio%E6%8F%92%E4%BB%B6/" style="font-size: 10px;">VisualStudio插件</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/android/" style="font-size: 16px;">android</a> <a href="/tags/android-killer/" style="font-size: 14px;">android killer</a> <a href="/tags/android-server/" style="font-size: 10px;">android_server</a> <a href="/tags/android%E8%B0%83%E8%AF%95/" style="font-size: 10px;">android调试</a> <a href="/tags/apk%E8%B0%83%E8%AF%95/" style="font-size: 10px;">apk调试</a> <a href="/tags/authorized-keys/" style="font-size: 10px;">authorized_keys</a> <a href="/tags/axtools%E6%B3%A8%E5%86%8C%E7%A0%81/" style="font-size: 10px;">axtools注册码</a> <a href="/tags/base64/" style="font-size: 10px;">base64</a> <a href="/tags/dnSpy/" style="font-size: 10px;">dnSpy</a> <a href="/tags/dotPeek/" style="font-size: 10px;">dotPeek</a> <a href="/tags/egame/" style="font-size: 10px;">egame</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jadx/" style="font-size: 14px;">jadx</a> <a href="/tags/java/" style="font-size: 14px;">java</a> <a href="/tags/javassist/" style="font-size: 10px;">javassist</a> <a href="/tags/jsp/" style="font-size: 10px;">jsp</a> <a href="/tags/ln/" style="font-size: 10px;">ln</a> <a href="/tags/logcat/" style="font-size: 10px;">logcat</a> <a href="/tags/macOS/" style="font-size: 10px;">macOS</a> <a href="/tags/native/" style="font-size: 10px;">native</a> <a href="/tags/netsh/" style="font-size: 10px;">netsh</a> <a href="/tags/nonpie/" style="font-size: 10px;">nonpie</a> <a href="/tags/patch%E5%85%AC%E9%92%A5/" style="font-size: 10px;">patch公钥</a> <a href="/tags/pbcopy/" style="font-size: 10px;">pbcopy</a> <a href="/tags/printf/" style="font-size: 10px;">printf</a> <a href="/tags/printfcolor/" style="font-size: 10px;">printfcolor</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/signatures/" style="font-size: 10px;">signatures</a> <a href="/tags/smali/" style="font-size: 14px;">smali</a> <a href="/tags/smspay/" style="font-size: 10px;">smspay</a> <a href="/tags/so%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81/" style="font-size: 10px;">so签名验证</a> <a href="/tags/so%E8%B0%83%E8%AF%95/" style="font-size: 10px;">so调试</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/youdao1/" style="font-size: 10px;">youdao1</a> <a href="/tags/%E5%85%A8%E5%B9%B3%E5%8F%B0/" style="font-size: 10px;">全平台</a> <a href="/tags/%E5%86%85%E8%B4%AD/" style="font-size: 14px;">内购</a> <a href="/tags/%E5%8E%BB%E5%B9%BF%E5%91%8A/" style="font-size: 10px;">去广告</a> <a href="/tags/%E5%8E%BB%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81/" style="font-size: 10px;">去签名验证</a> <a href="/tags/%E5%91%BD%E4%BB%A4%E8%AE%BE%E7%BD%AEIP%E5%92%8CDNS/" style="font-size: 10px;">命令设置IP和DNS</a> <a href="/tags/%E5%B0%81%E5%8C%85/" style="font-size: 10px;">封包</a> <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 10px;">抓包</a> <a href="/tags/%E6%97%A0-root-%E6%8A%93%E5%8C%85/" style="font-size: 10px;">无 root 抓包</a> <a href="/tags/%E6%A4%AD%E5%9C%86%E6%9B%B2%E7%BA%BF%E7%AE%97%E6%B3%95/" style="font-size: 10px;">椭圆曲线算法</a> <a href="/tags/%E6%B3%A8%E5%86%8C%E6%9C%BA/" style="font-size: 10px;">注册机</a> <a href="/tags/%E6%B3%A8%E5%86%8C%E7%A0%81/" style="font-size: 10px;">注册码</a> <a href="/tags/%E6%BA%90%E7%A0%81-source/" style="font-size: 10px;">源码(source)</a> <a href="/tags/%E7%A0%B4%E8%A7%A3-Crack/" style="font-size: 20px;">破解(Crack)</a> <a href="/tags/%E7%A9%BF%E5%B1%B1%E7%94%B2%E5%A3%B3/" style="font-size: 10px;">穿山甲壳</a> <a href="/tags/%E7%A9%BF%E5%B1%B1%E7%94%B2%E8%BD%AF%E4%BB%B6%E4%BF%9D%E6%8A%A4%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">穿山甲软件保护系统</a> <a href="/tags/%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81/" style="font-size: 10px;">签名验证</a> <a href="/tags/%E7%BB%B6%E5%B8%A6/" style="font-size: 10px;">绶带</a> <a href="/tags/%E8%AE%B8%E5%8F%AF%E8%AF%81/" style="font-size: 10px;">许可证</a> <a href="/tags/%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/" style="font-size: 10px;">远程登录</a> <a href="/tags/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B-Reverse-Engineering/" style="font-size: 20px;">逆向工程(Reverse Engineering)</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 16px;">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/06/01/%E7%A9%BF%E5%B1%B1%E7%94%B2%E8%BD%AF%E4%BB%B6%E4%BF%9D%E6%8A%A4%E7%B3%BB%E7%BB%9FSoftwarePassport%20Armadillo%20KeyGen/">穿山甲软件保护系统SoftwarePassport Armadillo KeyGen</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/04/Supercharger(VisualStudio%E6%8F%92%E4%BB%B6)AES%E9%AB%98%E7%BA%A7%E5%8A%A0%E5%AF%86%E6%A0%87%E5%87%86(Rijndael%E7%AE%97%E6%B3%95)%E6%B3%A8%E5%86%8C%E6%9C%BAKeyMaker/">Supercharger(VisualStudio插件)AES高级加密标准(Rijndael算法)注册机KeyMaker</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/25/%E4%BF%AE%E6%94%B9android_server%E9%BB%98%E8%AE%A4%E8%B0%83%E8%AF%95%E7%AB%AF%E5%8F%A3%E5%8F%B7%E5%8F%8D%E8%B0%83%E8%AF%95/">修改android_server默认调试端口号反调试</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/26/%E7%81%AB%E6%9F%B4%E4%BA%BA%E8%81%94%E7%9B%9F%E5%8E%BB%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81%E5%8E%BB%E5%B9%BF%E5%91%8AAndroid%E5%86%85%E8%B4%AD%E7%A0%B4%E8%A7%A3/">火柴人联盟去签名验证去广告Android内购破解</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/24/%E9%A5%A5%E9%A5%BF%E9%B2%A8%EF%BC%9A%E8%BF%9B%E5%8C%96%E5%8E%BBso%E7%AD%BE%E5%90%8D%E9%AA%8C%E8%AF%81Android%E5%86%85%E8%B4%AD%E7%A0%B4%E8%A7%A3/">饥饿鲨：进化去so签名验证Android内购破解</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 YoungDone(B.S.)<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

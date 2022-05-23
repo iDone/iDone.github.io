@@ -200,34 +200,152 @@
           <div id="js-content" class="content-ll">
             
   
-  
+    <article id="post-yodo1偶滴神(最SB塔防)Android内购破解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/14/yodo1%E5%81%B6%E6%BB%B4%E7%A5%9E(%E6%9C%80SB%E5%A1%94%E9%98%B2)Android%E5%86%85%E8%B4%AD%E7%A0%B4%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2017-06-14T06:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-14</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/14/yodo1%E5%81%B6%E6%BB%B4%E7%A5%9E(%E6%9C%80SB%E5%A1%94%E9%98%B2)Android%E5%86%85%E8%B4%AD%E7%A0%B4%E8%A7%A3/">yodo1偶滴神(最SB塔防)Android内购破解</a>
+      <a class="article-title" href="/2017/06/14/yodo1%E5%81%B6%E6%BB%B4%E7%A5%9E(%E6%9C%80SB%E5%A1%94%E9%98%B2)Android%E5%86%85%E8%B4%AD%E7%A0%B4%E8%A7%A3/">yodo1偶滴神(最SB塔防)Android内购破解</a>
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/06/14/yodo1%E5%81%B6%E6%BB%B4%E7%A5%9E(%E6%9C%80SB%E5%A1%94%E9%98%B2)Android%E5%86%85%E8%B4%AD%E7%A0%B4%E8%A7%A3/" class="archive-article-date">
+  	<time datetime="2017-06-14T06:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>—Creaked by  B.S. 6/14/2017 2:10:58 PM</p>
+<p>无聊练手,当作学习Android优秀源码的笔记</p>
+<p><strong>仅供学习研究,请勿用作商业用途,如若喜欢请支持正版!</strong></p>
+<p>原程序:(貌似android 5.x 以上版本运行不起来)</p>
+<p><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1o8fWad8">百度下载</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.yodo1.cn/archives/omg-td.html" title="游道易官网">游道易官网: http://www.yodo1.cn/archives/omg-td.html</a></p>
+<p>B.S.内购破解版:</p>
+<p><a target="_blank" rel="noopener" href="http://www.8idone.com/app/omg-TD-BS-Cr.apk">百度下载</a></p>
+<p>也可以去各大安卓市场搜索下载最新版本:(推荐支付接口比较熟悉的移动,咪咕游戏,爱游戏)</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.play.cn/" title="爱游戏">爱游戏: http://www.play.cn/</a></p>
+<p><a target="_blank" rel="noopener" href="http://g.10086.cn/" title="咪咕游戏">咪咕游戏: http://g.10086.cn/</a></p>
+<p><a target="_blank" rel="noopener" href="http://mm.10086.cn/android" title="中国移动应用商城">中国移动应用商城: http://mm.10086.cn/android</a></p>
+<p><a target="_blank" rel="noopener" href="http://android.myapp.com/" title="腾讯应用宝">腾讯应用宝: http://android.myapp.com/</a></p>
+<p><a target="_blank" rel="noopener" href="http://zhushou.360.cn/" title="360手机助手">360手机助手: http://zhushou.360.cn/</a></p>
+<p><a target="_blank" rel="noopener" href="http://apk.hiapk.com/" title="安卓市场">百度旗下安卓市场: http://apk.hiapk.com/</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.anzhi.com/" title="安智市场">安智市场: http://www.anzhi.com/</a></p>
+</blockquote>
+<p>有图有真相,动画演示:</p>
+<p><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1o89Ig7w">破解了移动接口的动画演示</a></p>
+<p><img src="/images/omg-td-002.png" alt="无限内购B.S.破解版"></p>
+<h3 id="1-找到支付相关的sdk类的关键破解点在”onResult”Method中"><a href="#1-找到支付相关的sdk类的关键破解点在”onResult”Method中" class="headerlink" title="1. 找到支付相关的sdk类的关键破解点在”onResult”Method中"></a>1. 找到支付相关的sdk类的关键破解点在”onResult”Method中</h3><blockquote>
+<p>public void onResult(int arg0, String arg1, Object arg2)</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.method <span class="keyword">public</span> <span class="title function_">onResult</span><span class="params">(ILjava/lang/String;Ljava/lang/Object;)</span>V</span><br><span class="line">    .locals <span class="number">3</span></span><br><span class="line">    .param p1, <span class="string">&quot;arg0&quot;</span>    # I</span><br><span class="line">    .param p2, <span class="string">&quot;arg1&quot;</span>    # Ljava/lang/String;</span><br><span class="line">    .param p3, <span class="string">&quot;arg2&quot;</span>    # Ljava/lang/Object;</span><br><span class="line"></span><br><span class="line">    .prologue  #此处省略Java汇编smali代码若干</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">.end method</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-android-killer出马java反编译后到路径"><a href="#2-android-killer出马java反编译后到路径" class="headerlink" title="2. android killer出马java反编译后到路径"></a>2. android killer出马java反编译后到路径</h3><blockquote>
+<p>package com.yodo1.sdk.game.smspay;</p>
+</blockquote>
+<p>移动咪咕和支付接口,相关源码,直接上图.当然还有电信,联通的<br>关键在这个switch里,使他总是走case 1:支付成功.有时候需要向上层调用回溯才能定位到他支付校验的代码,让他支付校验的代码总是返回真即可.可以在最后的smali汇编代码里修该为这个样子.<br><strong>秒杀所有smspay支付</strong></p>
+<blockquote>
+<p>.class Lcom/yodo1/sdk/game/smspay/YgSmsPayAdapterCMCC$1;</p>
+<p>.super Ljava/lang/Object;</p>
+<p>.source “YgSmsPayAdapterCMCC.java”</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">    .line <span class="number">46</span></span><br><span class="line">    .local v0, <span class="string">&quot;result&quot;</span>:Ljava/lang/String;</span><br><span class="line">    goto :pswitch_0 #这里添加一句代码直接跳到支付成功witch等于<span class="number">0</span></span><br><span class="line">    packed-<span class="keyword">switch</span> p1, :pswitch_data_0</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    goto :goto_0</span><br><span class="line"></span><br><span class="line">    .line <span class="number">46</span></span><br><span class="line">    :pswitch_data_0</span><br><span class="line">    .packed-<span class="keyword">switch</span> <span class="number">0x1</span></span><br><span class="line">        :pswitch_0  #全部调到:pswitch_0 支付成功分支  #:pswitch_0   #成功</span><br><span class="line">        :pswitch_0  #全部调到:pswitch_0 支付成功分支  #:pswitch_1   #失败</span><br><span class="line">        :pswitch_0  #全部调到:pswitch_0 支付成功分支  #:pswitch_2   #取消</span><br><span class="line">    .end packed-<span class="keyword">switch</span></span><br><span class="line">.end method</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/omg-td-001.png" alt="smspay"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onResult</span><span class="params">(<span class="type">int</span> arg0, String arg1, Object arg2)</span> &#123;</span><br><span class="line">                    <span class="type">String</span> <span class="variable">result</span> <span class="operator">=</span> HttpNet.URL;</span><br><span class="line">                    <span class="keyword">switch</span> (arg0) &#123;</span><br><span class="line">                        <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                            <span class="keyword">if</span> (!isRepeat) &#123;</span><br><span class="line">                                YgSmsPayAdapterBase.setPaid(activity2, str);</span><br><span class="line">                            &#125;</span><br><span class="line">                            <span class="keyword">if</span> (yodo14GameSmsPayListener != <span class="literal">null</span>) &#123;</span><br><span class="line">                                yodo14GameSmsPayListener.onSuccess();</span><br><span class="line">                            &#125;</span><br><span class="line">                            result = <span class="string">&quot;支付成功&quot;</span>;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                            <span class="keyword">if</span> (yodo14GameSmsPayListener != <span class="literal">null</span>) &#123;</span><br><span class="line">                                yodo14GameSmsPayListener.onFailed();</span><br><span class="line">                            &#125;</span><br><span class="line">                            result = <span class="string">&quot;支付失败&quot;</span>;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">                            <span class="keyword">if</span> (yodo14GameSmsPayListener != <span class="literal">null</span>) &#123;</span><br><span class="line">                                yodo14GameSmsPayListener.onCanceled();</span><br><span class="line">                                <span class="keyword">break</span>;</span><br><span class="line">                            &#125;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        <span class="keyword">default</span>:</span><br><span class="line">                            <span class="keyword">if</span> (yodo14GameSmsPayListener != <span class="literal">null</span>) &#123;</span><br><span class="line">                                yodo14GameSmsPayListener.onFailed();</span><br><span class="line">                                <span class="keyword">break</span>;</span><br><span class="line">                            &#125;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">if</span> (result != <span class="literal">null</span> &amp;&amp; result.length() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                        Toast.makeText(activity2, result, <span class="number">0</span>).show();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-破解修改的另一处更简单的地方"><a href="#3-破解修改的另一处更简单的地方" class="headerlink" title="3. 破解修改的另一处更简单的地方:"></a>3. 破解修改的另一处更简单的地方:</h3><p>也可以试试修改这里<br>通过logcat定位到的字符串所在的类一个内部类或者嵌套类里</p>
+<blockquote>
+<p>successMessage or failedMessage is null</p>
+</blockquote>
+<p>android killer 找到下面这个类的smali文件</p>
+<blockquote>
+<p>.class Lcom/yodo1/sdk/game/Yodo14GameSmsPay$2;</p>
+<p>.super Ljava/lang/Object;</p>
+<p>.source “Yodo14GameSmsPay.java”</p>
+</blockquote>
+<p>删掉原来的.method public onCanceled()V方法实现,用下面的.method public onSuccess()V里的代码来替换.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.method <span class="keyword">public</span> <span class="title function_">onCanceled</span><span class="params">()</span>V</span><br><span class="line">#这里的原先的代码块全删掉,用下面.method <span class="keyword">public</span> <span class="title function_">onSuccess</span><span class="params">()</span>V里的代码块填入这里</span><br><span class="line">#这样点取消,或者返回支付,就会走支付成功的流程.</span><br><span class="line">.end method</span><br></pre></td></tr></table></figure>
+
+<p>改为:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">.method <span class="keyword">public</span> <span class="title function_">onCanceled</span><span class="params">()</span>V</span><br><span class="line">     .locals <span class="number">2</span></span><br><span class="line"></span><br><span class="line">    .prologue</span><br><span class="line">    .line <span class="number">180</span></span><br><span class="line">    iget-object v0, p0, Lcom/yodo1/sdk/game/Yodo14GameSmsPay$<span class="number">2</span>;-&gt;val$activity:Landroid/app/Activity;</span><br><span class="line"></span><br><span class="line">    iget-object v1, p0, Lcom/yodo1/sdk/game/Yodo14GameSmsPay$<span class="number">2</span>;-&gt;val$productId:Ljava/lang/String;</span><br><span class="line"></span><br><span class="line">    invoke-<span class="keyword">static</span> &#123;v0, v1&#125;, Lcom/yodo1/sdk/game/smspay/YgSmsPayAdapterBase;-&gt;setPaid(Landroid/content/Context;Ljava/lang/String;)V</span><br><span class="line"></span><br><span class="line">    .line <span class="number">182</span></span><br><span class="line">    iget-object v0, p0, Lcom/yodo1/sdk/game/Yodo14GameSmsPay$<span class="number">2</span>;-&gt;val$listener:Lcom/yodo1/sdk/game/Yodo14GameSmsPayListener;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>-eqz v0, :cond_0</span><br><span class="line"></span><br><span class="line">    .line <span class="number">183</span></span><br><span class="line">    iget-object v0, p0, Lcom/yodo1/sdk/game/Yodo14GameSmsPay$<span class="number">2</span>;-&gt;val$listener:Lcom/yodo1/sdk/game/Yodo14GameSmsPayListener;</span><br><span class="line"></span><br><span class="line">    invoke-interface &#123;v0&#125;, Lcom/yodo1/sdk/game/Yodo14GameSmsPayListener;-&gt;onSuccess()V</span><br><span class="line"></span><br><span class="line">    .line <span class="number">185</span></span><br><span class="line">    :cond_0</span><br><span class="line">    invoke-<span class="keyword">static</span> &#123;&#125;, Lcom/yodo1/sdk/game/smspay/YgSmsPayAdapterBase;-&gt;getBillingSuccessMessageKey()Ljava/lang/String;</span><br><span class="line"></span><br><span class="line">    move-result-object v0</span><br><span class="line"></span><br><span class="line">    invoke-direct &#123;p0, v0&#125;, Lcom/yodo1/sdk/game/Yodo14GameSmsPay$<span class="number">2</span>;-&gt;showDialog(Ljava/lang/String;)V</span><br><span class="line"></span><br><span class="line">    .line <span class="number">188</span></span><br><span class="line">    iget-object v0, p0, Lcom/yodo1/sdk/game/Yodo14GameSmsPay$<span class="number">2</span>;-&gt;val$smsPayAdapter:Lcom/yodo1/sdk/game/smspay/YgSmsPayAdapterBase;</span><br><span class="line"></span><br><span class="line">    iget-object v1, p0, Lcom/yodo1/sdk/game/Yodo14GameSmsPay$<span class="number">2</span>;-&gt;val$productId:Ljava/lang/String;</span><br><span class="line"></span><br><span class="line">    invoke-virtual &#123;v0, v1&#125;, Lcom/yodo1/sdk/game/smspay/YgSmsPayAdapterBase;-&gt;onPayFinish(Ljava/lang/String;)V</span><br><span class="line"></span><br><span class="line">    .line <span class="number">189</span></span><br><span class="line">    <span class="keyword">return</span>-<span class="keyword">void</span></span><br><span class="line">.end method</span><br></pre></td></tr></table></figure>
+
+<p>这几个函数接口原来的源码为:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onCanceled</span><span class="params">()</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">this</span>.val$listener != <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="built_in">this</span>.val$listener.onCanceled();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">this</span>.val$smsPayAdapter.onPayFinish(<span class="built_in">this</span>.val$productId);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onFailed</span><span class="params">()</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">this</span>.val$listener != <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="built_in">this</span>.val$listener.onFailed();</span><br><span class="line">    &#125;</span><br><span class="line">    showDialog(YgSmsPayAdapterBase.getBillingFailedMessageKey());</span><br><span class="line">    <span class="built_in">this</span>.val$smsPayAdapter.onPayFinish(<span class="built_in">this</span>.val$productId);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onSuccess</span><span class="params">()</span></span><br><span class="line">  &#123;</span><br><span class="line">    YgSmsPayAdapterBase.setPaid(<span class="built_in">this</span>.val$activity, <span class="built_in">this</span>.val$productId);</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">this</span>.val$listener != <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="built_in">this</span>.val$listener.onSuccess();</span><br><span class="line">    &#125;</span><br><span class="line">    showDialog(YgSmsPayAdapterBase.getBillingSuccessMessageKey());</span><br><span class="line">    <span class="built_in">this</span>.val$smsPayAdapter.onPayFinish(<span class="built_in">this</span>.val$productId);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-后记-一点总结和补充"><a href="#4-后记-一点总结和补充" class="headerlink" title="4. 后记(一点总结和补充):"></a>4. 后记(一点总结和补充):</h3><p>先破解电信支付(不弹窗支付窗口的,不弹消息的购买成功的修改方法有很多种),然后把联通和移动的接口强制改为电信接口.</p>
+<h5 id="破解电信支付"><a href="#破解电信支付" class="headerlink" title="破解电信支付:"></a>破解电信支付:</h5><blockquote>
+<p>.class Lcom/yodo1/sdk/game/smspay/YgSmsPayAdapterTelsub$1;</p>
+<p>.super Ljava/lang/Object;</p>
+<p>.source “YgSmsPayAdapterTelsub.java”</p>
+</blockquote>
+<p>用onSuccess函数,替换掉onCanceled,onFailed函数.修改smali汇编代码,变为下面这个样子:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">.method <span class="keyword">public</span> <span class="title function_">payCancel</span><span class="params">(Ljava/lang/String;)</span>V</span><br><span class="line">    #替换为paySuccess函数体代码</span><br><span class="line">    .locals <span class="number">2</span></span><br><span class="line">    .param p1, <span class="string">&quot;arg0&quot;</span>    # Ljava/lang/String;</span><br><span class="line"></span><br><span class="line">    .prologue</span><br><span class="line">    .line <span class="number">44</span></span><br><span class="line">    iget-object v0, p0, Lcom/yodo1/sdk/game/smspay/YgSmsPayAdapterTelsub$<span class="number">1</span>;-&gt;val$listener:Lcom/yodo1/sdk/game/Yodo14GameSmsPayListener;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>-eqz v0, :cond_0</span><br><span class="line"></span><br><span class="line">    .line <span class="number">45</span></span><br><span class="line">    iget-object v0, p0, Lcom/yodo1/sdk/game/smspay/YgSmsPayAdapterTelsub$<span class="number">1</span>;-&gt;val$listener:Lcom/yodo1/sdk/game/Yodo14GameSmsPayListener;</span><br><span class="line"></span><br><span class="line">    invoke-interface &#123;v0&#125;, Lcom/yodo1/sdk/game/Yodo14GameSmsPayListener;-&gt;onSuccess()V</span><br><span class="line"></span><br><span class="line">    .line <span class="number">46</span></span><br><span class="line">    iget-<span class="type">boolean</span> v0, p0, Lcom/yodo1/sdk/game/smspay/YgSmsPayAdapterTelsub$<span class="number">1</span>;-&gt;val$isRepeated:Z</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>-nez v0, :cond_0</span><br><span class="line"></span><br><span class="line">    .line <span class="number">47</span></span><br><span class="line">    iget-object v0, p0, Lcom/yodo1/sdk/game/smspay/YgSmsPayAdapterTelsub$<span class="number">1</span>;-&gt;val$activity:Landroid/app/Activity;</span><br><span class="line"></span><br><span class="line">    iget-object v1, p0, Lcom/yodo1/sdk/game/smspay/YgSmsPayAdapterTelsub$<span class="number">1</span>;-&gt;val$productId:Ljava/lang/String;</span><br><span class="line"></span><br><span class="line">    invoke-<span class="keyword">static</span> &#123;v0, v1&#125;, Lcom/yodo1/sdk/game/smspay/YgSmsPayAdapterBase;-&gt;setPaid(Landroid/content/Context;Ljava/lang/String;)V</span><br><span class="line"></span><br><span class="line">    .line <span class="number">50</span></span><br><span class="line">    :cond_0</span><br><span class="line">    <span class="keyword">return</span>-<span class="keyword">void</span></span><br><span class="line">.end method</span><br></pre></td></tr></table></figure>
+
+
+<h5 id="统一接口-强制改为电信的支付接口"><a href="#统一接口-强制改为电信的支付接口" class="headerlink" title="统一接口,强制改为电信的支付接口:"></a>统一接口,强制改为电信的支付接口:</h5><blockquote>
+<p>.class public Lcom/talaya/share/utils/OperatorUtils;</p>
+<p>.super Ljava/lang/Object;</p>
+<p>.source “OperatorUtils.java”</p>
+</blockquote>
+<p>修改getOperatorChannelId让其所有条件下的返回值全部返回为2;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line">.method <span class="keyword">public</span> <span class="keyword">static</span> <span class="title function_">getOperatorChannelId</span><span class="params">(Landroid/content/Context;)</span>I</span><br><span class="line">    .locals <span class="number">5</span></span><br><span class="line">    .param p0, <span class="string">&quot;context&quot;</span>    # Landroid/content/Context;</span><br><span class="line"></span><br><span class="line">    .prologue</span><br><span class="line">    const/<span class="number">4</span> v2, <span class="number">0x2</span>  #const/<span class="number">4</span> v2, <span class="number">0x0</span>  #默认分支 返回为<span class="number">0</span>,初始赋值变量v2</span><br><span class="line"></span><br><span class="line">    const/<span class="number">4</span> v3, <span class="number">0x2</span>  #const/<span class="number">4</span> v3, <span class="number">0x1</span>  #移动分支 返回为<span class="number">1</span>,初始赋值变量v3</span><br><span class="line"></span><br><span class="line">    .line <span class="number">26</span></span><br><span class="line">    const-string v4, <span class="string">&quot;phone&quot;</span></span><br><span class="line"></span><br><span class="line">    invoke-virtual &#123;p0, v4&#125;, Landroid/content/Context;-&gt;getSystemService(Ljava/lang/String;)Ljava/lang/Object;</span><br><span class="line"></span><br><span class="line">    move-result-object v1</span><br><span class="line"></span><br><span class="line">    check-cast v1, Landroid/telephony/TelephonyManager;</span><br><span class="line"></span><br><span class="line">    .line <span class="number">27</span></span><br><span class="line">    .local v1, <span class="string">&quot;phoneManager&quot;</span>:Landroid/telephony/TelephonyManager;</span><br><span class="line">    invoke-virtual &#123;v1&#125;, Landroid/telephony/TelephonyManager;-&gt;getSimOperator()Ljava/lang/String;</span><br><span class="line"></span><br><span class="line">    move-result-object v0</span><br><span class="line"></span><br><span class="line">    .line <span class="number">28</span></span><br><span class="line">    .local v0, <span class="string">&quot;operator&quot;</span>:Ljava/lang/String;</span><br><span class="line">    <span class="keyword">if</span>-eqz v0, :cond_0</span><br><span class="line"></span><br><span class="line">    invoke-virtual &#123;v0&#125;, Ljava/lang/String;-&gt;length()I</span><br><span class="line"></span><br><span class="line">    move-result v4</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>-lt v4, v3, :cond_0</span><br><span class="line"></span><br><span class="line">    invoke-virtual &#123;v1&#125;, Landroid/telephony/TelephonyManager;-&gt;getSimState()I</span><br><span class="line"></span><br><span class="line">    move-result v4</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>-ne v4, v3, :cond_1</span><br><span class="line"></span><br><span class="line">    .line <span class="number">41</span></span><br><span class="line">    :cond_0</span><br><span class="line">    :goto_0</span><br><span class="line">    <span class="keyword">return</span> v2   #默认分支 返回为<span class="number">0</span>,前面初始赋值过变量v2</span><br><span class="line"></span><br><span class="line">    .line <span class="number">31</span></span><br><span class="line">    :cond_1</span><br><span class="line">    const-string v4, <span class="string">&quot;46000&quot;</span> #中国移动分支</span><br><span class="line"></span><br><span class="line">    invoke-virtual &#123;v0, v4&#125;, Ljava/lang/String;-&gt;startsWith(Ljava/lang/String;)Z</span><br><span class="line"></span><br><span class="line">    move-result v4</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>-nez v4, :cond_2</span><br><span class="line"></span><br><span class="line">    const-string v4, <span class="string">&quot;46002&quot;</span> #中国移动分支</span><br><span class="line"></span><br><span class="line">    invoke-virtual &#123;v0, v4&#125;, Ljava/lang/String;-&gt;startsWith(Ljava/lang/String;)Z</span><br><span class="line"></span><br><span class="line">    move-result v4</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>-nez v4, :cond_2</span><br><span class="line"></span><br><span class="line">    const-string v4, <span class="string">&quot;46007&quot;</span> #中国移动分支</span><br><span class="line"></span><br><span class="line">    invoke-virtual &#123;v0, v4&#125;, Ljava/lang/String;-&gt;startsWith(Ljava/lang/String;)Z</span><br><span class="line"></span><br><span class="line">    move-result v4</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>-eqz v4, :cond_3</span><br><span class="line"></span><br><span class="line">    :cond_2</span><br><span class="line">    const/<span class="number">4</span> v2, <span class="number">0x2</span>  #<span class="number">0x2</span>代表电信  #move v2, v3 #移动分支 返回为<span class="number">1</span>,前面初始赋值过变量v3</span><br><span class="line"></span><br><span class="line">    .line <span class="number">32</span></span><br><span class="line">    goto :goto_0</span><br><span class="line"></span><br><span class="line">    .line <span class="number">34</span></span><br><span class="line">    :cond_3</span><br><span class="line">    const-string v3, <span class="string">&quot;46001&quot;</span>  #中国联通分支</span><br><span class="line"></span><br><span class="line">    invoke-virtual &#123;v0, v3&#125;, Ljava/lang/String;-&gt;startsWith(Ljava/lang/String;)Z</span><br><span class="line"></span><br><span class="line">    move-result v3</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>-eqz v3, :cond_4</span><br><span class="line"></span><br><span class="line">    .line <span class="number">35</span></span><br><span class="line">    const/<span class="number">4</span> v2, <span class="number">0x2</span>  #<span class="number">0x2</span>代表电信  #const/<span class="number">4</span> v2, <span class="number">0x4</span></span><br><span class="line"></span><br><span class="line">    goto :goto_0</span><br><span class="line"></span><br><span class="line">    .line <span class="number">37</span></span><br><span class="line">    :cond_4</span><br><span class="line">    const-string v3, <span class="string">&quot;46003&quot;</span>  #中国电信分支</span><br><span class="line"></span><br><span class="line">    invoke-virtual &#123;v0, v3&#125;, Ljava/lang/String;-&gt;startsWith(Ljava/lang/String;)Z</span><br><span class="line"></span><br><span class="line">    move-result v3</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>-eqz v3, :cond_0   #默认分支</span><br><span class="line"></span><br><span class="line">    .line <span class="number">38</span></span><br><span class="line">    const/<span class="number">4</span> v2, <span class="number">0x2</span>  #<span class="number">0x2</span>代表电信</span><br><span class="line"></span><br><span class="line">    goto :goto_0</span><br><span class="line">.end method</span><br></pre></td></tr></table></figure>
+
+<p>所以,以后遇到热门的支付的游戏,简单的破解步骤就是:</p>
+<blockquote>
+<p>先搜索”46003”,修改代码让它getOperatorChannelId全部返回2,即:中国电信,的接口；<br>然后用onSuccess函数,替换掉onCanceled,onFailed函数.也就是说,只要将对应的方法在Smali代码中全部替换成”???Success”的代码即到达在支付界面，无论点击“返回”或者“关闭”都能到达破解成功的效果。为了以防万一，还要可以将AndroidManifest.xml文件中的发送短信权限“android.permission.SEND_SMS”删除。</p>
+</blockquote>
+<p>可以尝试搜索的关键词:</p>
+<blockquote>
+<p>1、”Succeed”、”Fail”、”Cancel”、”Success”、”Failure”相应的关键词有“paySucceed””payFailed”、”payCanceled”和<br>有“onSucceed””onFailed”、”onCanceled”等等</p>
+</blockquote>
+<blockquote>
+<p>2、”purchase”、”purchaseCode”、”pay”、”payCode”、”resultCode”、“onBillingFinish”等</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>运营商网络</th>
+<th>特征码</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>中国移动</td>
+<td>46000、46002、46007</td>
+<td></td>
+</tr>
+<tr>
+<td>中国联通</td>
+<td>46001、46006、46010</td>
+<td></td>
+</tr>
+<tr>
+<td>中国电信</td>
+<td>46003、46005、46011</td>
+<td></td>
+</tr>
+<tr>
+<td>中国铁通</td>
+<td>46020、</td>
+<td>归属移动</td>
+</tr>
+</tbody></table>
+<p>顺便说一句,保存软件数据和缓存配置卸载app的方法,相当于adb uninstall [-k] <package>.<br>可以直接在手机/data/app/文件夹里删掉类似com.yodo1.olympus.QIHU36001-1.apk文件.格式: [package包名]-x.apk的文件,x为1-N的数字.</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -279,7 +397,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -296,18 +414,24 @@
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/14/yodo1%E5%81%B6%E6%BB%B4%E7%A5%9E(%E6%9C%80SB%E5%A1%94%E9%98%B2)Android%E5%86%85%E8%B4%AD%E7%A0%B4%E8%A7%A3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
 
-    
 
+
+
+
+  
+  
 
           </div>
         </div>
@@ -427,66 +551,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Charles</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Loader</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">javassist</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">源码(source)</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">printf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">C</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Unix</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">全平台</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">printfcolor</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">C#</a>
               </li>
              
@@ -599,11 +663,87 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Charles</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Loader</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">javassist</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">源码(source)</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">printf</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">C</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Unix</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">全平台</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">printfcolor</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">netsh</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">命令设置IP和DNS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">logcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">root</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Google Pixel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -628,10 +768,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">android</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -715,10 +851,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">logcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">signatures</a>
               </li>
              
@@ -767,18 +899,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">去签名验证</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">so签名验证</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">native</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">DEKE TV</a>
               </li>
              
@@ -804,6 +924,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">base64</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">去签名验证</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">so签名验证</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">native</a>
               </li>
             
             <div class="clearfix"></div>

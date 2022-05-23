@@ -200,34 +200,43 @@
           <div id="js-content" class="content-ll">
             
   
-  
+    <article id="post-Windows命令netsh设置IP和DNS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/22/Windows%E5%91%BD%E4%BB%A4netsh%E8%AE%BE%E7%BD%AEIP%E5%92%8CDNS/" class="archive-article-date">
-  	<time datetime="2017-05-22T10:41:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/22/Windows%E5%91%BD%E4%BB%A4netsh%E8%AE%BE%E7%BD%AEIP%E5%92%8CDNS/">Windows命令netsh设置IP和DNS</a>
+      <a class="article-title" href="/2017/05/22/Windows%E5%91%BD%E4%BB%A4netsh%E8%AE%BE%E7%BD%AEIP%E5%92%8CDNS/">Windows命令netsh设置IP和DNS</a>
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/05/22/Windows%E5%91%BD%E4%BB%A4netsh%E8%AE%BE%E7%BD%AEIP%E5%92%8CDNS/" class="archive-article-date">
+  	<time datetime="2017-05-22T10:41:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Windows命令netsh设置IP和DNS"><a href="#Windows命令netsh设置IP和DNS" class="headerlink" title="Windows命令netsh设置IP和DNS"></a>Windows命令netsh设置IP和DNS</h3><hr>
+<ul>
+<li>今天去王总新搬的公司混饭吃,新办公地网络受公司要求必须要指定内部用的 IP 和 DNS.有个同事的电脑 Windows7网络设置一直闪退,没法界面设置 IP 和 DNS,后来我写了个简单的bat批处理用命令 netsh 来设置 IP 和 DNS 的. bat批处理代码如下:(可以更改相应 IP 地址适用于你自己)</li>
+</ul>
+<blockquote>
+<p><a href="/uploads/codes/ip-netsh.bat">ip-netsh.bat</a></p>
+<p><a href="/uploads/codes/%E5%86%85%E5%A4%96%E7%BD%91%E5%88%87%E6%8D%A2%E7%A8%8B%E5%BA%8F-zgrs&zgdx.ex">搞到一个人家的内外网切换工具–管理密码我破解了(￣▽￣)</a></p>
+</blockquote>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">@<span class="built_in">echo</span> ==================</span><br><span class="line">@<span class="built_in">echo</span> 开始设置IP......</span><br><span class="line">@<span class="built_in">echo</span> ==================</span><br><span class="line"><span class="comment">@rem echo on</span></span><br><span class="line">:: 自动获取IP</span><br><span class="line">@<span class="built_in">echo</span> 自动获取DNS......</span><br><span class="line">::netsh interface ip <span class="built_in">set</span> address name=&quot;本地连接&quot; source=dhcp</span><br><span class="line">:: 设置静态IP</span><br><span class="line">@<span class="built_in">echo</span> 设置静态IP......</span><br><span class="line">netsh interface ip <span class="built_in">set</span> address name=&quot;本地连接&quot; source=static address=<span class="number">9</span>.<span class="number">236</span>.<span class="number">40</span>.<span class="number">71</span> mask=<span class="number">255</span>.<span class="number">255</span>.<span class="number">255</span>.<span class="number">192</span> gateway=<span class="number">9</span>.<span class="number">236</span>.<span class="number">40</span>.<span class="number">126</span> gwmetric=<span class="number">1</span></span><br><span class="line">@<span class="built_in">echo</span>;</span><br><span class="line">@<span class="built_in">echo</span> ==================</span><br><span class="line">@<span class="built_in">echo</span> 开始设置DNS......</span><br><span class="line">@<span class="built_in">echo</span> ==================</span><br><span class="line">:: 自动获取DNS</span><br><span class="line">@<span class="built_in">echo</span> 自动获取DNS......</span><br><span class="line">netsh interface ip <span class="built_in">set</span> dnsservers name=&quot;本地连接&quot; source=dhcp</span><br><span class="line">@<span class="built_in">echo</span> 添加主DNS......</span><br><span class="line">netsh interface ip add dnsservers name=&quot;本地连接&quot; address=<span class="number">9</span>.<span class="number">236</span>.<span class="number">5</span>.<span class="number">3</span>  index=<span class="number">1</span></span><br><span class="line">@<span class="built_in">echo</span> 添加副DNS......</span><br><span class="line">netsh interface ip add dnsservers name=&quot;本地连接&quot; address=<span class="number">202</span>.<span class="number">96</span>.<span class="number">128</span>.<span class="number">166</span>  index=<span class="number">2</span></span><br><span class="line">:: 设置静态DNS</span><br><span class="line">@<span class="built_in">echo</span> 修改设置注册主DNS......</span><br><span class="line">netsh interface ip <span class="built_in">set</span> dnsservers name=&quot;本地连接&quot; source=static address=<span class="number">9</span>.<span class="number">236</span>.<span class="number">5</span>.<span class="number">3</span>  register=primary</span><br><span class="line">@<span class="built_in">echo</span>,</span><br><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">@<span class="built_in">echo</span> ==================</span><br><span class="line">@<span class="built_in">echo</span> IP和DNS设置完毕<span class="variable">!!!</span></span><br><span class="line">@<span class="built_in">echo</span> ==================</span><br><span class="line">@<span class="built_in">pause</span></span><br><span class="line">@<span class="keyword">exit</span></span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -247,7 +256,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -264,18 +273,24 @@
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/22/Windows%E5%91%BD%E4%BB%A4netsh%E8%AE%BE%E7%BD%AEIP%E5%92%8CDNS/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
 
-    
 
+
+
+
+  
+  
 
           </div>
         </div>
@@ -395,66 +410,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Charles</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Loader</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">javassist</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">源码(source)</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">printf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">C</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Unix</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">全平台</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">printfcolor</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">C#</a>
               </li>
              
@@ -567,11 +522,87 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Charles</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Loader</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">javassist</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">源码(source)</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">printf</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">C</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Unix</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">全平台</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">printfcolor</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">netsh</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">命令设置IP和DNS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">logcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">root</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Google Pixel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -596,10 +627,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">android</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -683,10 +710,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">logcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">signatures</a>
               </li>
              
@@ -735,18 +758,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">去签名验证</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">so签名验证</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">native</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">DEKE TV</a>
               </li>
              
@@ -772,6 +783,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">base64</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">去签名验证</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">so签名验证</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">native</a>
               </li>
             
             <div class="clearfix"></div>

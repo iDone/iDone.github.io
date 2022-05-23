@@ -200,34 +200,140 @@
           <div id="js-content" class="content-ll">
             
   
-  
+    <article id="post-Charles逆向分析记录及破解程序CharlesLoader源码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/05/Charles%E9%80%86%E5%90%91%E5%88%86%E6%9E%90%E8%AE%B0%E5%BD%95%E5%8F%8A%E7%A0%B4%E8%A7%A3%E7%A8%8B%E5%BA%8FCharlesLoader%E6%BA%90%E7%A0%81/" class="archive-article-date">
-  	<time datetime="2017-05-05T00:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-05</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/05/Charles%E9%80%86%E5%90%91%E5%88%86%E6%9E%90%E8%AE%B0%E5%BD%95%E5%8F%8A%E7%A0%B4%E8%A7%A3%E7%A8%8B%E5%BA%8FCharlesLoader%E6%BA%90%E7%A0%81/">Charles逆向分析记录及破解程序CharlesLoader源码</a>
+      <a class="article-title" href="/2017/05/05/Charles%E9%80%86%E5%90%91%E5%88%86%E6%9E%90%E8%AE%B0%E5%BD%95%E5%8F%8A%E7%A0%B4%E8%A7%A3%E7%A8%8B%E5%BA%8FCharlesLoader%E6%BA%90%E7%A0%81/">Charles逆向分析记录及破解程序CharlesLoader源码</a>
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/05/05/Charles%E9%80%86%E5%90%91%E5%88%86%E6%9E%90%E8%AE%B0%E5%BD%95%E5%8F%8A%E7%A0%B4%E8%A7%A3%E7%A8%8B%E5%BA%8FCharlesLoader%E6%BA%90%E7%A0%81/" class="archive-article-date">
+  	<time datetime="2017-05-05T00:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="查尔斯动态加载启动器-CharlesLoader-v4-x"><a href="#查尔斯动态加载启动器-CharlesLoader-v4-x" class="headerlink" title="查尔斯动态加载启动器(CharlesLoader) v4.x"></a><strong>查尔斯动态加载启动器(CharlesLoader) v4.x</strong></h1><hr>
+<p> —by B.S.    5/5/2017</p>
+<h5 id="极其强大的Web调试、代理抓包工具启动器。-Charles-v4-x-动态加载启动器loader-最新版v4-x-x相对v-4-0-2以上版本比较，明文类名已混淆。"><a href="#极其强大的Web调试、代理抓包工具启动器。-Charles-v4-x-动态加载启动器loader-最新版v4-x-x相对v-4-0-2以上版本比较，明文类名已混淆。" class="headerlink" title="极其强大的Web调试、代理抓包工具启动器。 Charles v4.x 动态加载启动器loader 最新版v4.x.x相对v.4.0.2以上版本比较，明文类名已混淆。"></a>极其强大的Web调试、代理抓包工具启动器。 Charles v4.x 动态加载启动器loader 最新版v4.x.x相对v.4.0.2以上版本比较，明文类名已混淆。</h5><blockquote>
+<p><a target="_blank" rel="noopener" href="https://gitee.com/iYoungDone/charlesloader">gitoschina码云源码: https://gitee.com/iYoungDone/charlesloader</a></p>
+</blockquote>
+<h5 id="破解-Charles-的屌炸天的-shell-脚本For-macOS-Linux-Unix"><a href="#破解-Charles-的屌炸天的-shell-脚本For-macOS-Linux-Unix" class="headerlink" title="破解 Charles 的屌炸天的 shell 脚本For macOS,Linux,Unix"></a><a href="/uploads/codes/charles-bs-v425.sh">破解 Charles 的屌炸天的 shell 脚本For macOS,Linux,Unix</a></h5><p><a href="/uploads/codes/charles.jar">最新charles-v4.2.5 64 Bit 破解文件(For All)</a></p>
+<p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1sl4YMK1">https://pan.baidu.com/s/1sl4YMK1</a> 密码: b8cy</p>
+<p><img src="/uploads/codes/charles-bs-v420.png"></p>
+<blockquote>
+<ol>
+<li>Windows 平台,将下载的charles.jar文件覆盖到安装目录下的lib文件夹下即可完成破解!</li>
+<li>Mac 平台,将下载的charles.jar文件右键 Charles.app 显示包内容,覆盖到Content-&gt;Java下即可完成破解!</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>注意: 这是v4.2.5的破解文件,不确定其他版本也同样适用!请下载相应版本文件,然后改名为charles.jar.</p>
+</blockquote>
+<hr>
+<h2 id="Charles-v4-2版本分析记录"><a href="#Charles-v4-2版本分析记录" class="headerlink" title="Charles v4.2版本分析记录"></a><strong>Charles v4.2版本分析记录</strong></h2><p>–by B.S.</p>
+<p>October 6, 2017 10:08 PM</p>
+<h5 id="最新版v4-2相对v-4-0-2比较，明文类名已混淆"><a href="#最新版v4-2相对v-4-0-2比较，明文类名已混淆" class="headerlink" title="最新版v4.2相对v.4.0.2比较，明文类名已混淆."></a>最新版v4.2相对v.4.0.2比较，明文类名已混淆.</h5><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.charlesproxy.com/assets/release/4.2/charles-proxy-4.2-win64.msi">https://www.charlesproxy.com/assets/release/4.2/charles-proxy-4.2-win64.msi</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.charlesproxy.com/assets/release/4.2/charles-proxy-4.2-win32.msi">https://www.charlesproxy.com/assets/release/4.2/charles-proxy-4.2-win32.msi</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.charlesproxy.com/assets/release/4.2/charles-proxy-4.2.dmg">https://www.charlesproxy.com/assets/release/4.2/charles-proxy-4.2.dmg</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.charlesproxy.com/assets/release/4.2/charles-proxy-4.2_amd64.tar.gz">https://www.charlesproxy.com/assets/release/4.2/charles-proxy-4.2_amd64.tar.gz</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.charlesproxy.com/assets/release/4.2/charles-proxy-4.2.tar.gz">https://www.charlesproxy.com/assets/release/4.2/charles-proxy-4.2.tar.gz</a></p>
+</blockquote>
+<h5 id="反编译为源码后-找关键点的分析流程"><a href="#反编译为源码后-找关键点的分析流程" class="headerlink" title="反编译为源码后,找关键点的分析流程:"></a>反编译为源码后,找关键点的分析流程:</h5><h6 id="这里414试一试另外一种更简单的方法"><a href="#这里414试一试另外一种更简单的方法" class="headerlink" title="这里414试一试另外一种更简单的方法:"></a>这里414试一试另外一种更简单的方法:</h6><blockquote>
+<ol>
+<li>在com.xk72.charles.gui.SplashWindow.java里找到<br>public void showRegistrationStatus()函数方法;</li>
+</ol>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">showRegistrationStatus</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (WNzU.OjEP()) &#123;</span><br><span class="line">            <span class="built_in">this</span>.showStatus(<span class="string">&quot;Registered to: &quot;</span> + WNzU.DZZn());</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">this</span>.showSharewareStatus();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>在if()条件里的,是否注册成功 WNzU.OjEP() 函数和 “Registered to: “ 后面的注册给谁的WNzU.DZZn() 函数,都来自 import com.xk72.charles.WNzU 类;</li>
+<li>在com.xk72.charles.WNzU 就是关键类。修改掉上面两个函数即可。</li>
+</ol>
+<blockquote>
+<p>hook掉public static boolean x1()和public static java.lang.String x3()两个方法函数就可以了,当然最好public修饰的都hook掉;</p>
+</blockquote>
+<h5 id="只需要在用javassist时-设置这一句就可以将破解好的class类文件就会dump出来"><a href="#只需要在用javassist时-设置这一句就可以将破解好的class类文件就会dump出来" class="headerlink" title="只需要在用javassist时,设置这一句就可以将破解好的class类文件就会dump出来"></a>只需要在用javassist时,设置这一句就可以将破解好的class类文件就会dump出来</h5><blockquote>
+<p>CtClass.debugDump = “./charles-bs-cr”;</p>
+</blockquote>
+<hr>
+<h2 id="Charles-v4-1-4版本分析记录"><a href="#Charles-v4-1-4版本分析记录" class="headerlink" title="Charles v4.1.4版本分析记录"></a><strong>Charles v4.1.4版本分析记录</strong></h2><p>–by B.S.</p>
+<p>July 18, 2017 5:25 PM</p>
+<h5 id="最新版v4-1-4相对v-4-0-2比较，明文类名已混淆"><a href="#最新版v4-1-4相对v-4-0-2比较，明文类名已混淆" class="headerlink" title="最新版v4.1.4相对v.4.0.2比较，明文类名已混淆."></a>最新版v4.1.4相对v.4.0.2比较，明文类名已混淆.</h5><h5 id="反编译为源码后-找关键点的分析流程-1"><a href="#反编译为源码后-找关键点的分析流程-1" class="headerlink" title="反编译为源码后,找关键点的分析流程:"></a>反编译为源码后,找关键点的分析流程:</h5><h6 id="这里414试一试另外一种更简单的方法-1"><a href="#这里414试一试另外一种更简单的方法-1" class="headerlink" title="这里414试一试另外一种更简单的方法:"></a>这里414试一试另外一种更简单的方法:</h6><blockquote>
+<ol>
+<li>在com.xk72.charles.gui.SplashWindow.java里找到<br>public void showRegistrationStatus()函数方法;</li>
+</ol>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">showRegistrationStatus</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (gIbD.xUFT()) &#123;</span><br><span class="line">        <span class="built_in">this</span>.showStatus(<span class="string">&quot;Registered to: &quot;</span> + gIbD.PcqR());</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">this</span>.showSharewareStatus();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>在if()条件里的,是否注册成功gIbD.xUFT()函数和”Registered to: “后面的注册给谁的gIbD.PcqR()函数,都来自import com.xk72.charles.gIbD类</li>
+<li>在com.xk72.charles.gIbD就是关键类。修改掉上面两个函数即可。</li>
+</ol>
+<blockquote>
+<p>hook掉public static boolean x1()和public static java.lang.String x3()两个方法函数就可以了,当然最好public修饰的都hook掉;</p>
+</blockquote>
+<h5 id="只需要在用javassist时-设置这一句就可以将破解好的class类文件就会dump出来-1"><a href="#只需要在用javassist时-设置这一句就可以将破解好的class类文件就会dump出来-1" class="headerlink" title="只需要在用javassist时,设置这一句就可以将破解好的class类文件就会dump出来"></a>只需要在用javassist时,设置这一句就可以将破解好的class类文件就会dump出来</h5><blockquote>
+<p>CtClass.debugDump = “./charles-bs-cr”;</p>
+</blockquote>
+<hr>
+<h2 id="Charles-v4-1-3版本分析记录"><a href="#Charles-v4-1-3版本分析记录" class="headerlink" title="Charles v4.1.3版本分析记录"></a><strong>Charles v4.1.3版本分析记录</strong></h2><p>–by B.S.</p>
+<p>6/27/2017 2:07:52 PM </p>
+<h5 id="最新版v4-1-3相对v-4-0-2比较，明文类名已混淆"><a href="#最新版v4-1-3相对v-4-0-2比较，明文类名已混淆" class="headerlink" title="最新版v4.1.3相对v.4.0.2比较，明文类名已混淆."></a>最新版v4.1.3相对v.4.0.2比较，明文类名已混淆.</h5><h5 id="反编译为源码后-找关键点的分析流程-2"><a href="#反编译为源码后-找关键点的分析流程-2" class="headerlink" title="反编译为源码后,找关键点的分析流程:"></a>反编译为源码后,找关键点的分析流程:</h5><blockquote>
+<ol>
+<li>在com\xk72\charles\gui\frames\RegisterFrame.java里找到this.bRegister.addActionListener导入的类import com.xk72.charles.gui.frames.NvMh;</li>
+<li>在com.xk72.charles.gui.frames.NvMh里找到if (object2 != null) 使他永久为null的函数导入的类import com.xk72.charles.psPJ;</li>
+<li>在com.xk72.charles.psPJ里就是关键类。分析关键点HOOK。</li>
+<li>用javap -public psPj.class查看给外部类调用的公有函数方法如下:</li>
+</ol>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">class</span> <span class="title class_">com</span>.xk72.charles.psPJ &#123;</span><br><span class="line">  <span class="keyword">public</span> com.xk72.charles.psPJ();</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">qIvM</span><span class="params">()</span>;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">mLFE</span><span class="params">()</span>;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> java.lang.String <span class="title function_">tCiz</span><span class="params">()</span>;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> java.lang.String <span class="title function_">qIvM</span><span class="params">(java.lang.String, java.lang.String)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>hook掉public static boolean x1()和public static java.lang.String x3()两个方法函数就可以了,当然最好public修饰的都hook掉;</p>
+</blockquote>
+<ul>
+<li><p><strong>只需要在用javassist时,设置这一句就可以将破解好的class类文件dump出来然后打包回原来的charles.jar里,破解文件制作完成.</strong></p>
+<blockquote>
+<p>CtClass.debugDump = “./charles-bs-cr”;</p>
+</blockquote>
+</li>
+<li><p>要做跨平台的破解文件最好用MacOS下的charles.jar文件进行破解,Windows平台下的文件破解后到MacOS下起不来.我比对过破解的class类文件,二进制是相同的,估计在其他地方有细微差别.</p>
+</li>
+</ul>
+<hr>
+<h2 id="Charles-v4-1-2版本分析记录"><a href="#Charles-v4-1-2版本分析记录" class="headerlink" title="Charles v4.1.2版本分析记录"></a><strong>Charles v4.1.2版本分析记录</strong></h2><p>–by B.S.</p>
+<p>5/23/2017 1:32:17 PM</p>
+<h5 id="最新版v4-1-2相对v-4-0-2比较，明文类名已混淆"><a href="#最新版v4-1-2相对v-4-0-2比较，明文类名已混淆" class="headerlink" title="最新版v4.1.2相对v.4.0.2比较，明文类名已混淆."></a>最新版v4.1.2相对v.4.0.2比较，明文类名已混淆.</h5><h5 id="反编译为源码后-找关键点的分析流程-3"><a href="#反编译为源码后-找关键点的分析流程-3" class="headerlink" title="反编译为源码后,找关键点的分析流程:"></a>反编译为源码后,找关键点的分析流程:</h5><blockquote>
+<ol>
+<li>在com\xk72\charles\gui\frames\RegisterFrame.java里找到this.bRegister.addActionListener导入的类import com.xk72.charles.gui.frames.GTvL;</li>
+<li>在com.xk72.charles.gui.frames.GTvL里找到if (object2 != null) 使他永久为null的函数导入的类import com.xk72.charles.qFep;</li>
+<li>在com.xk72.charles.qFep里就是关键类。分析关键点HOOK。</li>
+</ol>
+</blockquote>
+<hr>
+<h2 id="Charles-v4-1-1版本分析记录"><a href="#Charles-v4-1-1版本分析记录" class="headerlink" title="Charles v4.1.1版本分析记录"></a><strong>Charles v4.1.1版本分析记录</strong></h2><p>–by B.S.</p>
+<p>5/5/2017 8:30:00 AM</p>
+<h5 id="最新版v4-1-1相对v-4-0-2比较，明文类名已混淆"><a href="#最新版v4-1-1相对v-4-0-2比较，明文类名已混淆" class="headerlink" title="最新版v4.1.1相对v.4.0.2比较，明文类名已混淆."></a>最新版v4.1.1相对v.4.0.2比较，明文类名已混淆.</h5><h5 id="反编译为源码后-找关键点的分析流程-4"><a href="#反编译为源码后-找关键点的分析流程-4" class="headerlink" title="反编译为源码后,找关键点的分析流程:"></a>反编译为源码后,找关键点的分析流程:</h5><blockquote>
+<ol>
+<li>在com\xk72\charles\gui\frames\RegisterFrame.java里找到this.bRegister.addActionListener导入的类<br>import com.xk72.charles.gui.frames.idkH;</li>
+<li>在com.xk72.charles.gui.frames.idkH里找到if (object2 != null) 使他永久为null的函数导入的类import com.xk72.charles.slZe;</li>
+<li>在com.xk72.charles.slZe里就是关键类。分析关键点HOOK。</li>
+</ol>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -267,7 +373,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -284,18 +390,24 @@
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/05/Charles%E9%80%86%E5%90%91%E5%88%86%E6%9E%90%E8%AE%B0%E5%BD%95%E5%8F%8A%E7%A0%B4%E8%A7%A3%E7%A8%8B%E5%BA%8FCharlesLoader%E6%BA%90%E7%A0%81/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
 
-    
 
+
+
+
+  
+  
 
           </div>
         </div>
@@ -415,66 +527,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Charles</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Loader</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">javassist</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">源码(source)</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">printf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">C</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Unix</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">全平台</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">printfcolor</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">C#</a>
               </li>
              
@@ -587,11 +639,87 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Charles</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Loader</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">javassist</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">源码(source)</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">shell</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">printf</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">C</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Unix</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Windows</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">全平台</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">printfcolor</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">netsh</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">命令设置IP和DNS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">logcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">root</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Google Pixel</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -616,10 +744,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">android</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -703,10 +827,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">logcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">signatures</a>
               </li>
              
@@ -755,18 +875,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">去签名验证</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">so签名验证</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">native</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">DEKE TV</a>
               </li>
              
@@ -792,6 +900,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">base64</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">去签名验证</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">so签名验证</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">native</a>
               </li>
             
             <div class="clearfix"></div>

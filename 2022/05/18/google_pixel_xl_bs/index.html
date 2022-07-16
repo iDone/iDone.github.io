@@ -15,6 +15,9 @@
 <meta property="og:site_name" content="@iYoungDone&#39;s Hexo Blog">
 <meta property="og:description" content="Google Pixel XL 刷机解锁BL和Root开启全局调试1) 查看手机设备确认相关信息查看设备信息 adb devices -l List of devices attached HT77D0201269      device usb:336592896X product:marlin model:Pixel_XL device:marlin transport_id:1 安装爬梯软件">
 <meta property="og:locale">
+<meta property="og:image" content="http://www.appleos.xyz/Users/idone/Library/Application%20Support/typora-user-images/image-20211212170126510.png">
+<meta property="og:image" content="http://www.appleos.xyz/Users/idone/Library/Application%20Support/typora-user-images/image-20211212170515131.png">
+<meta property="og:image" content="http://www.appleos.xyz/Users/idone/Library/Application%20Support/typora-user-images/image-20211213053055978.png">
 <meta property="article:published_time" content="2022-05-18T12:22:00.000Z">
 <meta property="article:modified_time" content="2022-05-23T21:02:06.025Z">
 <meta property="article:author" content="YoungDone(B.S.)">
@@ -25,6 +28,7 @@
 <meta property="article:tag" content="root">
 <meta property="article:tag" content="Google Pixel">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.appleos.xyz/Users/idone/Library/Application%20Support/typora-user-images/image-20211212170126510.png">
   
     <link rel="alternative" href="/atom.xml" title="@iYoungDone&#39;s Hexo Blog" type="application/atom+xml">
   
@@ -236,8 +240,8 @@
 <p>adb shell input text <a target="_blank" rel="noopener" href="http://key.allin1.xyz/51vpn/51vpn.json">http://key.allin1.xyz/51vpn/51vpn.json</a></p>
 <p>adb shell input text <a target="_blank" rel="noopener" href="http://key.allin1.xyz/51vpn/51vpn.txt">http://key.allin1.xyz/51vpn/51vpn.txt</a></p>
 <p>Vysor 投屏软件</p>
-<p>![image-20211212170126510](/Users/idone/Library/Application Support/typora-user-images/image-20211212170126510.png)</p>
-<p>![image-20211212170515131](/Users/idone/Library/Application Support/typora-user-images/image-20211212170515131.png)</p>
+<p><img src="/Users/idone/Library/Application Support/typora-user-images/image-20211212170126510.png" alt="image-20211212170126510"></p>
+<p><img src="/Users/idone/Library/Application Support/typora-user-images/image-20211212170515131.png" alt="image-20211212170515131"></p>
 <h2 id="2-解决原生安卓出现-WiFi-网络受限、网络打×、优化网速、网络无法连接问题"><a href="#2-解决原生安卓出现-WiFi-网络受限、网络打×、优化网速、网络无法连接问题" class="headerlink" title="2) 解决原生安卓出现 WiFi 网络受限、网络打×、优化网速、网络无法连接问题"></a>2) 解决原生安卓出现 WiFi 网络受限、网络打×、优化网速、网络无法连接问题</h2><h3 id="已ROOT方法"><a href="#已ROOT方法" class="headerlink" title="已ROOT方法"></a>已ROOT方法</h3><p>已经 ROOT 的安卓机很简单，可以用面具模块、Scene、Captivemgr等工具来修改，这里用的是 Captivemgr 因为可以自定义服务器地址。</p>
 <p>默认提供了三个服务器，分别是小米、高通、V2EX，根据延迟选择就行了，然后应用。手机切换飞行模式，再切换回来就OK了。</p>
 <p>具体参照：<a target="_blank" rel="noopener" href="https://www.xiaoyi.vc/captive-portal.html">https://www.xiaoyi.vc/captive-portal.html</a></p>
@@ -258,7 +262,7 @@
 <p>adb shell reboot</p>
 <p>参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/145266379">https://zhuanlan.zhihu.com/p/145266379</a></p>
 <h2 id="3-获取官方固件和TWRP-Recovery、登录谷歌账号"><a href="#3-获取官方固件和TWRP-Recovery、登录谷歌账号" class="headerlink" title="3) 获取官方固件和TWRP Recovery、登录谷歌账号"></a>3) 获取官方固件和TWRP Recovery、登录谷歌账号</h2><p>在设置、账号、添加账号</p>
-<p>adb shell input text <a href="mailto:&#x42;&#x2e;&#x53;&#104;&#101;&#x65;&#x70;&#104;&#x65;&#x72;&#100;&#x65;&#x72;&#x40;&#103;&#x6d;&#97;&#105;&#108;&#46;&#x63;&#111;&#x6d;">&#x42;&#x2e;&#x53;&#104;&#101;&#x65;&#x70;&#104;&#x65;&#x72;&#100;&#x65;&#x72;&#x40;&#103;&#x6d;&#97;&#105;&#108;&#46;&#x63;&#111;&#x6d;</a></p>
+<p>adb shell input text B.Sheepherder@gmail.com</p>
 <h3 id="获取-Factory-Images-for-Nexus-and-Pixel-Devices"><a href="#获取-Factory-Images-for-Nexus-and-Pixel-Devices" class="headerlink" title="获取 Factory Images for Nexus and Pixel Devices"></a>获取 Factory Images for Nexus and Pixel Devices</h3><h4 id="“marlin”-for-Pixel-XL"><a href="#“marlin”-for-Pixel-XL" class="headerlink" title="“marlin” for Pixel XL"></a>“marlin” for Pixel XL</h4><p><a target="_blank" rel="noopener" href="https://developers.google.com/android/images#marlin">https://developers.google.com/android/images#marlin</a></p>
 <p>7.1.0 (NDE63V, Nov 2016)</p>
 <p>a66866ba4b8f9f1baa856828d46a747d769098add86098bece50854983ecea3e</p>
@@ -297,21 +301,16 @@
 <p><a target="_blank" rel="noopener" href="https://github.com/topjohnwu/Magisk/releases/download/v17.2/Magisk-v17.2.zip">https://github.com/topjohnwu/Magisk/releases/download/v17.2/Magisk-v17.2.zip</a></p>
 <h3 id="手机OEM解锁"><a href="#手机OEM解锁" class="headerlink" title="手机OEM解锁"></a>手机OEM解锁</h3><p>在手机”开发者选项”中打开”OEM解锁”开关；手机连接电脑之后，执行如下命令解锁bootloader</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">adb reboot bootloader</span><br><span class="line"></span><br><span class="line">fastboot devices</span><br><span class="line">HT77D0201269	fastboot</span><br><span class="line"></span><br><span class="line">fastboot oem unlock</span><br><span class="line">(bootloader) 	Device already : unlocked!</span><br><span class="line">OKAY [  0.046s]</span><br><span class="line">Finished. Total time: 0.047s</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
 <p>检查是否已经解锁，执行 fastboot oem device-info </p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">fastboot oem device-info</span><br><span class="line">(bootloader) 	Device tampered: false</span><br><span class="line">(bootloader) 	Device unlocked: true</span><br><span class="line">(bootloader) 	Device critical unlocked: false</span><br><span class="line">(bootloader) 	Charger screen enabled: true</span><br><span class="line">(bootloader) 	Display panel: </span><br><span class="line">OKAY [  0.143s]</span><br><span class="line">Finished. Total time: 0.143s</span><br></pre></td></tr></table></figure>
-
 <p>锁BL后状态如下图：</p>
-<p>![image-20211213053055978](/Users/idone/Library/Application Support/typora-user-images/image-20211213053055978.png)</p>
+<p><img src="/Users/idone/Library/Application Support/typora-user-images/image-20211213053055978.png" alt="image-20211213053055978"></p>
 <p>下载 Magisk-v21.4.zip<br><a target="_blank" rel="noopener" href="https://github.com/topjohnwu/Magisk/releases/tag/v21.4">https://github.com/topjohnwu/Magisk/releases/tag/v21.4</a></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/topjohnwu/Magisk/releases/download/v21.4/Magisk-v21.4.zip">https://github.com/topjohnwu/Magisk/releases/download/v21.4/Magisk-v21.4.zip</a></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/topjohnwu/Magisk/releases/download/v21.4/Magisk-uninstaller-20210117.zip">https://github.com/topjohnwu/Magisk/releases/download/v21.4/Magisk-uninstaller-20210117.zip</a></p>
 <p>将 Magisk-v21.4.zip 拷到手机SD卡根目录或者Download目录下<br>在目录下，执行 adb reboot bootloader<br>执行 fastboot boot twrp-3.3.0-0-marlin.img </p>
 <p>或者 fastboot boot twrp-3.6.1_9-0-marlin.img</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fastboot boot twrp-3.6.1_9-0-marlin.img</span><br><span class="line">Sending &#x27;boot.img&#x27; (27609 KB)                      OKAY [  0.633s]</span><br><span class="line">Booting                                            OKAY [  0.903s]</span><br><span class="line">Finished. Total time: 1.556s</span><br></pre></td></tr></table></figure>
-
 <p>在手机上找到 Magisk-v21.4.zip，安装，重启后就能够了。</p>
 <p>adb reboot-bootloader<br>fastboot boot twrp-3.3.0-0-marlin.img<br>adb shell twrp sideload<br>adb sideload twrp-pixel-installer-marlin-3.3.0-0.zip</p>
 <h3 id="手机解锁成功之后，安装-twrp-recovery"><a href="#手机解锁成功之后，安装-twrp-recovery" class="headerlink" title="手机解锁成功之后，安装 twrp recovery"></a>手机解锁成功之后，安装 twrp recovery</h3><p>手机开机情况下执行 adb reboot bootloader，进入fastboot模式或者关机状态下同时长按“音量加键”+“开机键”。</p>
@@ -354,9 +353,7 @@
 <p>adb shell su -c “getprop ro.product.cpu.abi”<br>adb shell su -c “getprop ro.product.cpu.abilist”</p>
 <h2 id="6-使用面具-Magisk-打开全局调试-ro-debuggable"><a href="#6-使用面具-Magisk-打开全局调试-ro-debuggable" class="headerlink" title="6) 使用面具 Magisk 打开全局调试 ro.debuggable"></a>6) 使用面具 Magisk 打开全局调试 ro.debuggable</h2><p>刷入 magisk 后每次都执行如下命令后通过 stop;start; 软重启才能生效（正常重启失效）</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">adb shell</span><br><span class="line">marlin:/ $ su</span><br><span class="line">marlin:/ # getprop ro.debuggable</span><br><span class="line">0</span><br><span class="line">marlin:/ # magisk resetprop ro.debuggable 1                                                        </span><br><span class="line">marlin:/ # getprop ro.debuggable                                                                   </span><br><span class="line">1</span><br><span class="line">marlin:/ # stop;start; </span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell su -c magisk resetprop ro.debuggable 1</span><br><span class="line">adb shell su -c getprop ro.debuggable</span><br></pre></td></tr></table></figure>
-
 <p>刷入 magisk 后安装 MagiskHiden props Config</p>
 <p><a target="_blank" rel="noopener" href="https://github.com/Magisk-Modules-Repo/MagiskHidePropsConf/releases/download/v5.2.5/MagiskHidePropsConf-v5.2.5.zip">https://github.com/Magisk-Modules-Repo/MagiskHidePropsConf/releases/download/v5.2.5/MagiskHidePropsConf-v5.2.5.zip</a><br><a target="_blank" rel="noopener" href="https://github.com/Magisk-Modules-Repo/MagiskHidePropsConf/releases/download/v6.1.2/MagiskHidePropsConf-v6.1.2.zip">https://github.com/Magisk-Modules-Repo/MagiskHidePropsConf/releases/download/v6.1.2/MagiskHidePropsConf-v6.1.2.zip</a></p>
 <p>adb shell<br>marlin:/ $ props</p>
@@ -365,95 +362,23 @@
 <p>cp 你提取的 boot.img  ./boot.img</p>
 <p>然后执行如下命令 解开 img</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./gradlew unpack</span><br></pre></td></tr></table></figure>
-
 <p>修改 ./Android_boot_image_editor/build/unzip_boot/root/default.prop 如下</p>
 <p>ro.secure=0<br>ro.adb.secure=0<br>ro.debuggable=1</p>
 <p>增加<br>service.adb.root=1</p>
 <p>执行</p>
-<p>‘’’<br>./gradlew pack</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">打包 修改后的 boot 得 ./Android_boot_image_editor/boot.img.signed</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">将其刷入手机的 boot 分区</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>adb reboot bootloader<br>fastboot flash boot boot.img.signed</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-<p>fastboot flash boot_a boot.img.signed<br>fastboot flash boot_b boot.img.signed</p>
-<pre><code>
-查看 是否开启了 永久全局调试 标识
-adb shell getprop ro.debuggable
-
-
-
-假如出现无限重启,无限恢复模式刷入官方线刷包 bootloader-*.img
-
-
-fastboot flash bootloader bootloader-marlin-8996-012001-1704121145.img
-Sending &#39;bootloader_a&#39; (32380 KB)                  OKAY [  0.911s]
-Writing &#39;bootloader_a&#39;                             (bootloader) Valid bootloader version.
-(bootloader) Flashing active slot &quot;_a&quot; 
-(bootloader) Flashing active slot &quot;_a&quot; 
-OKAY [  2.051s]
-Finished. Total time: 3.144s
-
-
-
-adb shell su -c &quot;getprop |grep ro.product&quot;
-[ro.product.board]: [marlin]
-[ro.product.brand]: [google]
-[ro.product.cpu.abi]: [arm64-v8a]
-[ro.product.cpu.abilist]: [arm64-v8a,armeabi-v7a,armeabi]
-[ro.product.cpu.abilist32]: [armeabi-v7a,armeabi]
-[ro.product.cpu.abilist64]: [arm64-v8a]
-[ro.product.device]: [marlin]
-[ro.product.first_api_level]: [24]
-[ro.product.locale]: [en-US]
-[ro.product.manufacturer]: [Google]
-[ro.product.model]: [Pixel XL]
-[ro.product.name]: [marlin]
-
-
-adb shell su -c &quot;getprop |grep ro.build&quot;
-[ro.build.ab_update]: [true]
-[ro.build.characteristics]: [nosdcard]
-[ro.build.date]: [Thu Jun 29 18:12:29 UTC 2017]
-[ro.build.date.utc]: [1498759949]
-[ro.build.description]: [marlin-user 7.1.2 NJH47F 4146041 release-keys]
-[ro.build.display.id]: [NJH47F]
-[ro.build.expect.baseband]: [8996-012901-1702171013]
-[ro.build.expect.bootloader]: [8996-012001-1704121145]
-[ro.build.fingerprint]: [google/marlin/marlin:7.1.2/NJH47F/4146041:user/release-keys]
-[ro.build.flavor]: [marlin-user]
-[ro.build.host]: [wphp8.hot.corp.google.com]
-[ro.build.id]: [NJH47F]
-[ro.build.product]: [marlin]
-[ro.build.system_root_image]: [true]
-[ro.build.tags]: [release-keys]
-[ro.build.type]: [user]
-[ro.build.user]: [android-build]
-[ro.build.version.all_codenames]: [REL]
-[ro.build.version.base_os]: []
-[ro.build.version.codename]: [REL]
-[ro.build.version.incremental]: [4146041]
-[ro.build.version.preview_sdk]: [0]
-[ro.build.version.release]: [7.1.2]
-[ro.build.version.sdk]: [25]
-[ro.build.version.security_patch]: [2017-08-05]
-
-
-
-https://www.androidtcpdump.com/download/4.99.1.1.10.1/tcpdump
-
-https://www.androidtcpdump.com/download/64bit/4.99.1.1.10.1/tcpdump
-
-
-
-
-
-https://github.com/ViRb3/magisk-frida
-
-https://github.com/ViRb3/magisk-frida/releases/download/15.1.17-1/MagiskFrida-15.1.17-1.zip
-
-
-
-
-</code></pre>
+<p>‘’’<br>./gradlew pack<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">打包 修改后的 boot 得 ./Android_boot_image_editor/boot.img.signed</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">将其刷入手机的 boot 分区</span><br><span class="line"></span><br></pre></td></tr></table></figure><br>adb reboot bootloader<br>fastboot flash boot boot.img.signed<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure><br>fastboot flash boot_a boot.img.signed<br>fastboot flash boot_b boot.img.signed<br>```</p>
+<p>查看 是否开启了 永久全局调试 标识<br>adb shell getprop ro.debuggable</p>
+<p>假如出现无限重启,无限恢复模式刷入官方线刷包 bootloader-*.img</p>
+<p>fastboot flash bootloader bootloader-marlin-8996-012001-1704121145.img<br>Sending ‘bootloader_a’ (32380 KB)                  OKAY [  0.911s]<br>Writing ‘bootloader_a’                             (bootloader) Valid bootloader version.<br>(bootloader) Flashing active slot “_a”<br>(bootloader) Flashing active slot “_a”<br>OKAY [  2.051s]<br>Finished. Total time: 3.144s</p>
+<p>adb shell su -c “getprop |grep ro.product”</p>
+<p>[ro.product.model]: [Pixel XL]</p>
+<p>adb shell su -c “getprop |grep ro.build”</p>
+<p>[ro.build.date]: [Thu Jun 29 18:12:29 UTC 2017]</p>
+<p>[ro.build.description]: [marlin-user 7.1.2 NJH47F 4146041 release-keys]</p>
+<p><a target="_blank" rel="noopener" href="https://www.androidtcpdump.com/download/4.99.1.1.10.1/tcpdump">https://www.androidtcpdump.com/download/4.99.1.1.10.1/tcpdump</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.androidtcpdump.com/download/64bit/4.99.1.1.10.1/tcpdump">https://www.androidtcpdump.com/download/64bit/4.99.1.1.10.1/tcpdump</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/ViRb3/magisk-frida">https://github.com/ViRb3/magisk-frida</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/ViRb3/magisk-frida/releases/download/15.1.17-1/MagiskFrida-15.1.17-1.zip">https://github.com/ViRb3/magisk-frida/releases/download/15.1.17-1/MagiskFrida-15.1.17-1.zip</a></p>
 
       
 
@@ -802,6 +727,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">netsh</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">命令设置IP和DNS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">C#</a>
               </li>
              
@@ -914,51 +847,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">netsh</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">命令设置IP和DNS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">logcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">root</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Google Pixel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">macOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssh</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">pbcopy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">authorized_keys</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">远程登录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -990,35 +879,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ribbon</a>
+                <a href="javascript:void(0)" class="js-tag color1">macOS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">ssh</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">绶带</a>
+                <a href="javascript:void(0)" class="js-tag color2">pbcopy</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">签名验证</a>
+                <a href="javascript:void(0)" class="js-tag color1">authorized_keys</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">去广告</a>
+                <a href="javascript:void(0)" class="js-tag color5">远程登录</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">signatures</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">46003</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">egame</a>
+                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1051,6 +932,42 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nonpie</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Ribbon</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">绶带</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">签名验证</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">去广告</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">logcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">signatures</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">46003</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">egame</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1090,6 +1007,26 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">去签名验证</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">so签名验证</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">native</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">root</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Google Pixel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">DEKE TV</a>
               </li>
              
@@ -1115,18 +1052,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">base64</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">去签名验证</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">so签名验证</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">native</a>
               </li>
             
             <div class="clearfix"></div>

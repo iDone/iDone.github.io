@@ -230,18 +230,15 @@
 </blockquote>
 <p>点击数据交叉来到代码区</p>
 <h5 id="第一处"><a href="#第一处" class="headerlink" title="第一处:"></a>第一处:</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">.text:0000B620                               loc_B620                                ; CODE XREF: sub_B5DC+22j</span><br><span class="line">.text:0000B620 A9 4B                                         LDR     R3, =(off_7FBD0 - 0xB62A)</span><br><span class="line">.text:0000B622 AA 48                                         LDR     R0, =(aIdaAndroid32Bi - 0xB62E)</span><br><span class="line">.text:0000B624 13 21                                         MOVS    R1, #0x13</span><br><span class="line">.text:0000B626 7B 44                                         ADD     R3, PC ; off_7FBD0</span><br><span class="line">.text:0000B628 1B 68                                         LDR     R3, [R3] ; unk_80BB0</span><br><span class="line">.text:0000B62A 78 44                                         ADD     R0, PC          ; &quot;IDA Android 32-bit remote debug server(&quot;...</span><br><span class="line">.text:0000B62C 1D 78                                         LDRB    R5, [R3]</span><br><span class="line">.text:0000B62E 04 F0 AB FC                                   BL      sub_FF88</span><br><span class="line">.text:0000B632 01 2E                                         CMP     R6, #1</span><br><span class="line">.text:0000B634 1C DD                                         BLE     loc_B670</span><br><span class="line">.text:0000B636 62 68                                         LDR     R2, [R4,#4]</span><br><span class="line">.text:0000B638 13 78                                         LDRB    R3, [R2]</span><br><span class="line">.text:0000B63A 02 22                                         MOVS    R2, #2</span><br><span class="line">.text:0000B63C 93 43                                         BICS    R3, R2</span><br><span class="line">.text:0000B63E 2D 2B                                         CMP     R3, #0x2D</span><br><span class="line">.text:0000B640 16 D1                                         BNE     loc_B670</span><br><span class="line">.text:0000B642 00 2D                                         CMP     R5, #0</span><br><span class="line">.text:0000B644 00 D1                                         BNE     loc_B648</span><br><span class="line">.text:0000B646 9F E1                                         B       loc_B988</span><br><span class="line">.text:0000B648                               ; ---------------------------------------------------------------------------</span><br><span class="line">.text:0000B648</span><br><span class="line">.text:0000B648                               loc_B648                                ; CODE XREF: sub_B5DC+68j</span><br><span class="line">.text:0000B648 A1 4B                                         LDR     R3, =(dword_8074C - 0xB652)</span><br><span class="line">.text:0000B64A A2 4A                                         LDR     R2, =(dword_8074C - 0xB654)</span><br><span class="line">.text:0000B64C A2 4D                                         LDR     R5, =0x5D8A</span><br><span class="line">.text:0000B64E 7B 44                                         ADD     R3, PC ; dword_8074C</span><br><span class="line">.text:0000B650 7A 44                                         ADD     R2, PC ; dword_8074C</span><br><span class="line">.text:0000B652 99 46                                         MOV     R9, R3</span><br><span class="line">.text:0000B654 01 27                                         MOVS    R7, #1</span><br><span class="line">.text:0000B656 90 46                                         MOV     R8, R2</span><br><span class="line">.text:0000B658</span><br><span class="line">.text:0000B658                               loc_B658                                ; CODE XREF: sub_B5DC+2BAj</span><br><span class="line">.text:0000B658 63 68                                         LDR     R3, [R4,#4]</span><br><span class="line">.text:0000B65A 58 78                                         LDRB    R0, [R3,#1]</span><br><span class="line">.text:0000B65C 50 38                                         SUBS    R0, #0x50       ; switch 39 cases</span><br><span class="line">.text:0000B65E 26 28                                         CMP     R0, #0x26</span><br><span class="line">.text:0000B660 00 D8                                         BHI     def_B826        ; jumptable 0000B826 default case</span><br><span class="line">.text:0000B662 E0 E0                                         B       loc_B826</span><br></pre></td></tr></table></figure>
-
 <h5 id="第二处"><a href="#第二处" class="headerlink" title="第二处:"></a>第二处:</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">.text:0000B97E                               loc_B97E                                ; CODE XREF: sub_B5DC+C2j</span><br><span class="line">.text:0000B97E 30 49                                         LDR     R1, =(aInit_sockets - 0xB986)</span><br><span class="line">.text:0000B980 00 20                                         MOVS    R0, #0</span><br><span class="line">.text:0000B982 79 44                                         ADD     R1, PC          ; &quot;init_sockets&quot;</span><br><span class="line">.text:0000B984 00 F0 EC FC                                   BL      sub_C360</span><br><span class="line">.text:0000B988                               ; ---------------------------------------------------------------------------</span><br><span class="line">.text:0000B988</span><br><span class="line">.text:0000B988                               loc_B988                                ; CODE XREF: sub_B5DC+6Aj</span><br><span class="line">.text:0000B988 2E 4B                                         LDR     R3, =(dword_8074C - 0xB992)</span><br><span class="line">.text:0000B98A 2F 4D                                         LDR     R5, =0x5D8A</span><br><span class="line">.text:0000B98C 2C 22                                         MOVS    R2, #0x2C</span><br><span class="line">.text:0000B98E 7B 44                                         ADD     R3, PC ; dword_8074C</span><br><span class="line">.text:0000B990 99 46                                         MOV     R9, R3</span><br><span class="line">.text:0000B992 90 46                                         MOV     R8, R2</span><br><span class="line">.text:0000B994 01 27                                         MOVS    R7, #1</span><br><span class="line">.text:0000B996</span><br><span class="line">.text:0000B996                               loc_B996                                ; CODE XREF: sub_B5DC:loc_B9CCj</span><br><span class="line">.text:0000B996 60 68                                         LDR     R0, [R4,#4]</span><br><span class="line">.text:0000B998 43 78                                         LDRB    R3, [R0,#1]</span><br><span class="line">.text:0000B99A 1A 06                                         LSLS    R2, R3, #0x18</span><br><span class="line">.text:0000B99C 13 0E                                         LSRS    R3, R2, #0x18</span><br><span class="line">.text:0000B99E 6B 2B                                         CMP     R3, #0x6B</span><br><span class="line">.text:0000B9A0 37 D0                                         BEQ     loc_BA12</span><br><span class="line">.text:0000B9A2 2D D8                                         BHI     loc_BA00</span><br><span class="line">.text:0000B9A4 50 2B                                         CMP     R3, #0x50</span><br><span class="line">.text:0000B9A6 3D D0                                         BEQ     loc_BA24</span><br><span class="line">.text:0000B9A8 69 2B                                         CMP     R3, #0x69</span><br></pre></td></tr></table></figure>
-
 <p>IDA按 ==Ctrl+J== 列出交叉参考来源</p>
 <h5 id="第一处-1"><a href="#第一处-1" class="headerlink" title="第一处:"></a>第一处:</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.text:0000B8D8 8A 5D 00 00                   dword_B8D8      DCD 0x5D8A              ; DATA XREF: sub_B5DC+70r</span><br><span class="line">.text:0000B8D8                                                                       ; sub_B5DC:loc_B670r</span><br></pre></td></tr></table></figure>
 <h5 id="第二处-1"><a href="#第二处-1" class="headerlink" title="第二处:"></a>第二处:</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.text:0000BA44                                                                       ; DATA XREF: sub_B5DC:loc_B988r</span><br><span class="line">.text:0000BA48 8A 5D 00 00                   dword_BA48      DCD 0x5D8A              ; DATA XREF: sub_B5DC+3AEr</span><br></pre></td></tr></table></figure>
-
 <h3 id="用十六进制工具-010-Editor"><a href="#用十六进制工具-010-Editor" class="headerlink" title="用十六进制工具 010 Editor"></a>用十六进制工具 010 Editor</h3><p>==Ctrl+G== 到文件物理地址offset去修改，</p>
 <p>IDA v6.8里 ==0000B8D8== 和 ==0000BA48== 两处的值 ==0x5D8A== 改为 ==0x41F8==<br>注意字节序是输入 ==F841==</p>
 <p>October 15, 2017 1:00 PM<br>IDA v7.0里 ==0000FBA0== 处的值 ==0x5D8A== 改为 ==0xFFFF==<br>注意字节序是输入 ==FFFF==</p>
 <ul>
-<li><input checked="" disabled="" type="checkbox"> 如果是nonpie版本的，IDA的地址要减去 ==Imagebase:8000== 才能得到文件物理地址offset偏移</li>
+<li>[x] 如果是nonpie版本的，IDA的地址要减去 ==Imagebase:8000== 才能得到文件物理地址offset偏移</li>
 </ul>
 <p>几个端口号对应16进制</p>
 <blockquote>
@@ -259,10 +256,8 @@
 </blockquote>
 <p>然后运行试试,看看效果</p>
 <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Users</span>\<span class="title">Administrator</span>\<span class="title">Desktop</span>&gt;<span class="title">adb</span> <span class="title">shell</span> /<span class="title">data</span>/<span class="title">local</span>/<span class="title">tmp</span>/<span class="title">android_server</span></span></span><br><span class="line"><span class="function"><span class="title">IDA</span> <span class="title">Android</span> 32-<span class="title">bit</span> <span class="title">remote</span> <span class="title">debug</span> <span class="title">server</span>(<span class="title">ST</span>) <span class="title">v1</span>.19. <span class="title">Hex</span>-<span class="title">Rays</span> (<span class="title">c</span>) 2004-2015</span></span><br><span class="line"><span class="function"><span class="title">Listening</span> <span class="title">on</span> <span class="title">port</span> #16888...</span></span><br></pre></td></tr></table></figure>
-
 <p>还可以 ==ln -s== ====做一个软链接，链接到/system/xbin/下或者/system/bin/下作为环境命令执行<br>需要root权限和adbd为root启动</p>
 <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell ln -s /data/local/tmp/bs70_nonpie /system/xbin/bs70_nonpie</span><br></pre></td></tr></table></figure>
-
 <p>换言之，就是修改所有v22 = 23946;的地方，参考如下</p>
 <p><a href="/uploads/codes/android_server_nonpie_main.html">IDA PRO v7.0 android_server_nonpie_v1.20分析修改参考（右键下载保存）</a></p>
 <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Users</span>\<span class="title">Administrator</span>\<span class="title">Desktop</span>&gt;<span class="title">adb</span> <span class="title">shell</span> <span class="title">bs70_nonpie</span></span></span><br><span class="line"><span class="function"><span class="title">IDA</span> <span class="title">Android</span> 32-<span class="title">bit</span> <span class="title">remote</span> <span class="title">debug</span> <span class="title">server</span>(<span class="title">ST</span>) <span class="title">v1</span>.22. <span class="title">Hex</span>-<span class="title">Rays</span> (<span class="title">c</span>) 2004-2017</span></span><br><span class="line"><span class="function"><span class="title">Listening</span> <span class="title">on</span> 0.0.0.0:65535...</span></span><br><span class="line"><span class="function">^<span class="title">C</span></span></span><br><span class="line"><span class="function"><span class="title">C</span>:\<span class="title">Users</span>\<span class="title">Administrator</span>\<span class="title">Desktop</span>&gt;<span class="title">adb</span> <span class="title">shell</span> <span class="title">bs70_nonpie</span> -<span class="title">p12345</span></span></span><br><span class="line"><span class="function"><span class="title">IDA</span> <span class="title">Android</span> 32-<span class="title">bit</span> <span class="title">remote</span> <span class="title">debug</span> <span class="title">server</span>(<span class="title">ST</span>) <span class="title">v1</span>.22. <span class="title">Hex</span>-<span class="title">Rays</span> (<span class="title">c</span>) 2004-2017</span></span><br><span class="line"><span class="function"><span class="title">Listening</span> <span class="title">on</span> 0.0.0.0:12345...</span></span><br><span class="line"><span class="function">^<span class="title">C</span></span></span><br><span class="line"><span class="function"><span class="title">C</span>:\<span class="title">Users</span>\<span class="title">Administrator</span>\<span class="title">Desktop</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -543,6 +538,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">netsh</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">命令设置IP和DNS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">C#</a>
               </li>
              
@@ -655,51 +658,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">netsh</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">命令设置IP和DNS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">logcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">root</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Google Pixel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">macOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssh</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">pbcopy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">authorized_keys</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">远程登录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -731,35 +690,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ribbon</a>
+                <a href="javascript:void(0)" class="js-tag color1">macOS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">ssh</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">绶带</a>
+                <a href="javascript:void(0)" class="js-tag color2">pbcopy</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">签名验证</a>
+                <a href="javascript:void(0)" class="js-tag color1">authorized_keys</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">去广告</a>
+                <a href="javascript:void(0)" class="js-tag color5">远程登录</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">signatures</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">46003</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">egame</a>
+                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -792,6 +743,42 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nonpie</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Ribbon</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">绶带</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">签名验证</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">去广告</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">logcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">signatures</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">46003</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">egame</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -831,6 +818,26 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">去签名验证</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">so签名验证</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">native</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">root</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Google Pixel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">DEKE TV</a>
               </li>
              
@@ -856,18 +863,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">base64</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">去签名验证</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">so签名验证</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">native</a>
               </li>
             
             <div class="clearfix"></div>

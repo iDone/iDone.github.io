@@ -226,7 +226,7 @@
 </ul>
 <blockquote>
 <p><a href="/uploads/codes/ip-netsh.bat">ip-netsh.bat</a></p>
-<p><a href="/uploads/codes/%E5%86%85%E5%A4%96%E7%BD%91%E5%88%87%E6%8D%A2%E7%A8%8B%E5%BA%8F-zgrs&zgdx.ex">搞到一个人家的内外网切换工具–管理密码我破解了(￣▽￣)</a></p>
+<p><a href="/uploads/codes/内外网切换程序-zgrs&amp;zgdx.ex">搞到一个人家的内外网切换工具—管理密码我破解了(￣▽￣)</a></p>
 </blockquote>
 <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">@<span class="built_in">echo</span> ==================</span><br><span class="line">@<span class="built_in">echo</span> 开始设置IP......</span><br><span class="line">@<span class="built_in">echo</span> ==================</span><br><span class="line"><span class="comment">@rem echo on</span></span><br><span class="line">:: 自动获取IP</span><br><span class="line">@<span class="built_in">echo</span> 自动获取DNS......</span><br><span class="line">::netsh interface ip <span class="built_in">set</span> address name=&quot;本地连接&quot; source=dhcp</span><br><span class="line">:: 设置静态IP</span><br><span class="line">@<span class="built_in">echo</span> 设置静态IP......</span><br><span class="line">netsh interface ip <span class="built_in">set</span> address name=&quot;本地连接&quot; source=static address=<span class="number">9</span>.<span class="number">236</span>.<span class="number">40</span>.<span class="number">71</span> mask=<span class="number">255</span>.<span class="number">255</span>.<span class="number">255</span>.<span class="number">192</span> gateway=<span class="number">9</span>.<span class="number">236</span>.<span class="number">40</span>.<span class="number">126</span> gwmetric=<span class="number">1</span></span><br><span class="line">@<span class="built_in">echo</span>;</span><br><span class="line">@<span class="built_in">echo</span> ==================</span><br><span class="line">@<span class="built_in">echo</span> 开始设置DNS......</span><br><span class="line">@<span class="built_in">echo</span> ==================</span><br><span class="line">:: 自动获取DNS</span><br><span class="line">@<span class="built_in">echo</span> 自动获取DNS......</span><br><span class="line">netsh interface ip <span class="built_in">set</span> dnsservers name=&quot;本地连接&quot; source=dhcp</span><br><span class="line">@<span class="built_in">echo</span> 添加主DNS......</span><br><span class="line">netsh interface ip add dnsservers name=&quot;本地连接&quot; address=<span class="number">9</span>.<span class="number">236</span>.<span class="number">5</span>.<span class="number">3</span>  index=<span class="number">1</span></span><br><span class="line">@<span class="built_in">echo</span> 添加副DNS......</span><br><span class="line">netsh interface ip add dnsservers name=&quot;本地连接&quot; address=<span class="number">202</span>.<span class="number">96</span>.<span class="number">128</span>.<span class="number">166</span>  index=<span class="number">2</span></span><br><span class="line">:: 设置静态DNS</span><br><span class="line">@<span class="built_in">echo</span> 修改设置注册主DNS......</span><br><span class="line">netsh interface ip <span class="built_in">set</span> dnsservers name=&quot;本地连接&quot; source=static address=<span class="number">9</span>.<span class="number">236</span>.<span class="number">5</span>.<span class="number">3</span>  register=primary</span><br><span class="line">@<span class="built_in">echo</span>,</span><br><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">@<span class="built_in">echo</span> ==================</span><br><span class="line">@<span class="built_in">echo</span> IP和DNS设置完毕<span class="variable">!!!</span></span><br><span class="line">@<span class="built_in">echo</span> ==================</span><br><span class="line">@<span class="built_in">pause</span></span><br><span class="line">@<span class="keyword">exit</span></span><br></pre></td></tr></table></figure>
 
@@ -314,13 +314,9 @@
 <h5 id="1-先去获取一份漂亮的绶带"><a href="#1-先去获取一份漂亮的绶带" class="headerlink" title="1. 先去获取一份漂亮的绶带,"></a>1. 先去获取一份漂亮的绶带,</h5><blockquote>
 <p><a target="_blank" rel="noopener" href="https://github.com/blog/273-github-ribbons">https://github.com/blog/273-github-ribbons</a></p>
 </blockquote>
-<h5 id="2-然后将代码放在主题源码的layout-相关文件里-layout-ejs-或者-layout-swig-等等-比如-next-主题的-layout-layout-swig-文件的标签之前-或者放在你想放的位置-我自己就放在-layout-custom-header-swig-文件里-假如-你想像本文这样在单个页面里-你也可以将代码直接放在-md-文件的最下方"><a href="#2-然后将代码放在主题源码的layout-相关文件里-layout-ejs-或者-layout-swig-等等-比如-next-主题的-layout-layout-swig-文件的标签之前-或者放在你想放的位置-我自己就放在-layout-custom-header-swig-文件里-假如-你想像本文这样在单个页面里-你也可以将代码直接放在-md-文件的最下方" class="headerlink" title="2. 然后将代码放在主题源码的layout 相关文件里(layout.ejs 或者 layout.swig 等等),比如 next 主题的 layout/_layout.swig 文件的标签之前;或者放在你想放的位置,我自己就放在 layout/_custom/header.swig 文件里.假如,你想像本文这样在单个页面里,你也可以将代码直接放在 md 文件的最下方."></a>2. 然后将代码放在主题源码的layout 相关文件里(layout.ejs 或者 layout.swig 等等),比如 next 主题的 layout/_layout.swig 文件的</body>标签之前;或者放在你想放的位置,我自己就放在 layout/_custom/header.swig 文件里.假如,你想像本文这样在单个页面里,你也可以将代码直接放在 md 文件的最下方.</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;https://github.com/idone/&quot;&gt;</span><br><span class="line">  &lt;img style=&quot;position: absolute; top: 0; right: 0; border: 0; z-index: 100;&quot; src=&quot;https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67&quot; alt=&quot;Fork me on GitHub&quot; data-canonical-src=&quot;https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png&quot;&gt;</span><br><span class="line">&lt;/a&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<a target="_blank" rel="noopener" href="https://github.com/idone/">
-  <img style="position: absolute; top: 0; right: 0; border: 0; z-index: 100;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png">
-</a>
+<h5 id="2-然后将代码放在主题源码的layout-相关文件里-layout-ejs-或者-layout-swig-等等-比如-next-主题的-layout-layout-swig-文件的-lt-body-gt-标签之前-或者放在你想放的位置-我自己就放在-layout-custom-header-swig-文件里-假如-你想像本文这样在单个页面里-你也可以将代码直接放在-md-文件的最下方"><a href="#2-然后将代码放在主题源码的layout-相关文件里-layout-ejs-或者-layout-swig-等等-比如-next-主题的-layout-layout-swig-文件的-lt-body-gt-标签之前-或者放在你想放的位置-我自己就放在-layout-custom-header-swig-文件里-假如-你想像本文这样在单个页面里-你也可以将代码直接放在-md-文件的最下方" class="headerlink" title="2. 然后将代码放在主题源码的layout 相关文件里(layout.ejs 或者 layout.swig 等等),比如 next 主题的 layout/_layout.swig 文件的&lt;/body&gt;标签之前;或者放在你想放的位置,我自己就放在 layout/_custom/header.swig 文件里.假如,你想像本文这样在单个页面里,你也可以将代码直接放在 md 文件的最下方."></a>2. 然后将代码放在主题源码的layout 相关文件里(layout.ejs 或者 layout.swig 等等),比如 next 主题的 layout/_layout.swig 文件的&lt;/body&gt;标签之前;或者放在你想放的位置,我自己就放在 layout/_custom/header.swig 文件里.假如,你想像本文这样在单个页面里,你也可以将代码直接放在 md 文件的最下方.</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;https://github.com/idone/&quot;&gt;</span><br><span class="line">  &lt;img style=&quot;position: absolute; top: 0; right: 0; border: 0; z-index: 100;&quot; src=&quot;https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67&quot; alt=&quot;Fork me on GitHub&quot; data-canonical-src=&quot;https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png&quot;&gt;</span><br><span class="line">&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://github.com/idone/"><br>  <img style="position: absolute; top: 0; right: 0; border: 0; z-index: 100;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png">
+</a></p>
 
       
 
@@ -414,7 +410,7 @@
 <p>-P表示密码，-P ‘’ 就表示空密码，也可以不用-P参数，这样就要三车回车，用-P就一次回车.</p>
 <p>该命令将在~/.ssh目录下面产生一对密钥id_rsa和id_rsa.pub.<br>一般采用的ssh的rsa密钥:<br>id_rsa     私钥<br>id_rsa.pub 公钥<br>下述命令产生不同类型的密钥<br>ssh-keygen -t dsa<br>ssh-keygen -t rsa<br>ssh-keygen -t rsa1</p>
 <h5 id="2-如果在Ubuntu服务器远程机B上没有-ssh-这个目录-要先创建好-ssh-这个目录-可以同样执行刚才上面在客户机A下生成公钥密钥对的命令-然后-把客户机下A的-ssh-id-rsa-pub-复制到Ubuntu服务器远程机B的-ssh-authorized-keys-文件里-用scp复制-由于还没有免密码登录的-所以要输入一次Ubuntu服务远程机的授权密码"><a href="#2-如果在Ubuntu服务器远程机B上没有-ssh-这个目录-要先创建好-ssh-这个目录-可以同样执行刚才上面在客户机A下生成公钥密钥对的命令-然后-把客户机下A的-ssh-id-rsa-pub-复制到Ubuntu服务器远程机B的-ssh-authorized-keys-文件里-用scp复制-由于还没有免密码登录的-所以要输入一次Ubuntu服务远程机的授权密码" class="headerlink" title="2. 如果在Ubuntu服务器远程机B上没有 ~/.ssh 这个目录,要先创建好 ~/.ssh 这个目录,可以同样执行刚才上面在客户机A下生成公钥密钥对的命令.然后,把客户机下A的 ~/.ssh/id_rsa.pub 复制到Ubuntu服务器远程机B的 ~/.ssh/authorized_keys 文件里,用scp复制.由于还没有免密码登录的,所以要输入一次Ubuntu服务远程机的授权密码."></a>2. 如果在Ubuntu服务器远程机B上没有 ~/.ssh 这个目录,要先创建好 ~/.ssh 这个目录,可以同样执行刚才上面在客户机A下生成公钥密钥对的命令.然后,把客户机下A的 ~/.ssh/id_rsa.pub 复制到Ubuntu服务器远程机B的 ~/.ssh/authorized_keys 文件里,用scp复制.由于还没有免密码登录的,所以要输入一次Ubuntu服务远程机的授权密码.</h5><blockquote>
-<p>scp <del>/.ssh/id_rsa.pub <a href="mailto:&#105;&#x64;&#111;&#110;&#x65;&#x40;&#97;&#x32;&#111;&#x6e;&#115;&#x2e;&#x63;&#x6f;&#x6d;">&#105;&#x64;&#111;&#110;&#x65;&#x40;&#97;&#x32;&#111;&#x6e;&#115;&#x2e;&#x63;&#x6f;&#x6d;</a>:</del>/.ssh/authorized_keys</p>
+<p>scp ~/.ssh/id_rsa.pub idone@a2ons.com:~/.ssh/authorized_keys</p>
 </blockquote>
 <p>或者,用</p>
 <blockquote>
@@ -445,7 +441,6 @@ Welcome to Alibaba Cloud Elastic Compute Service !
 Last login: Thu May 18 16:27:08 2017 from 103.209.201.12
 idone@AY1402261427509974f2Z:~$
 </code></pre>
-
       
 
       
@@ -543,24 +538,22 @@ idone@AY1402261427509974f2Z:~$
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="查尔斯动态加载启动器-CharlesLoader-v4-x"><a href="#查尔斯动态加载启动器-CharlesLoader-v4-x" class="headerlink" title="查尔斯动态加载启动器(CharlesLoader) v4.x"></a><strong>查尔斯动态加载启动器(CharlesLoader) v4.x</strong></h1><hr>
-<p> —by B.S.    5/5/2017</p>
+<p> —-by B.S.    5/5/2017</p>
 <h5 id="极其强大的Web调试、代理抓包工具启动器。-Charles-v4-x-动态加载启动器loader-最新版v4-x-x相对v-4-0-2以上版本比较，明文类名已混淆。"><a href="#极其强大的Web调试、代理抓包工具启动器。-Charles-v4-x-动态加载启动器loader-最新版v4-x-x相对v-4-0-2以上版本比较，明文类名已混淆。" class="headerlink" title="极其强大的Web调试、代理抓包工具启动器。 Charles v4.x 动态加载启动器loader 最新版v4.x.x相对v.4.0.2以上版本比较，明文类名已混淆。"></a>极其强大的Web调试、代理抓包工具启动器。 Charles v4.x 动态加载启动器loader 最新版v4.x.x相对v.4.0.2以上版本比较，明文类名已混淆。</h5><blockquote>
 <p><a target="_blank" rel="noopener" href="https://gitee.com/iYoungDone/charlesloader">gitoschina码云源码: https://gitee.com/iYoungDone/charlesloader</a></p>
 </blockquote>
 <h5 id="破解-Charles-的屌炸天的-shell-脚本For-macOS-Linux-Unix"><a href="#破解-Charles-的屌炸天的-shell-脚本For-macOS-Linux-Unix" class="headerlink" title="破解 Charles 的屌炸天的 shell 脚本For macOS,Linux,Unix"></a><a href="/uploads/codes/charles-bs-v425.sh">破解 Charles 的屌炸天的 shell 脚本For macOS,Linux,Unix</a></h5><p><a href="/uploads/codes/charles.jar">最新charles-v4.2.5 64 Bit 破解文件(For All)</a></p>
 <p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1sl4YMK1">https://pan.baidu.com/s/1sl4YMK1</a> 密码: b8cy</p>
-<p><img src="/uploads/codes/charles-bs-v420.png"></p>
+<p><img src="/uploads/codes/charles-bs-v420.png" alt=""></p>
 <blockquote>
 <ol>
 <li>Windows 平台,将下载的charles.jar文件覆盖到安装目录下的lib文件夹下即可完成破解!</li>
 <li>Mac 平台,将下载的charles.jar文件右键 Charles.app 显示包内容,覆盖到Content-&gt;Java下即可完成破解!</li>
 </ol>
-</blockquote>
-<blockquote>
 <p>注意: 这是v4.2.5的破解文件,不确定其他版本也同样适用!请下载相应版本文件,然后改名为charles.jar.</p>
 </blockquote>
 <hr>
-<h2 id="Charles-v4-2版本分析记录"><a href="#Charles-v4-2版本分析记录" class="headerlink" title="Charles v4.2版本分析记录"></a><strong>Charles v4.2版本分析记录</strong></h2><p>–by B.S.</p>
+<h2 id="Charles-v4-2版本分析记录"><a href="#Charles-v4-2版本分析记录" class="headerlink" title="Charles v4.2版本分析记录"></a><strong>Charles v4.2版本分析记录</strong></h2><p>—by B.S.</p>
 <p>October 6, 2017 10:08 PM</p>
 <h5 id="最新版v4-2相对v-4-0-2比较，明文类名已混淆"><a href="#最新版v4-2相对v-4-0-2比较，明文类名已混淆" class="headerlink" title="最新版v4.2相对v.4.0.2比较，明文类名已混淆."></a>最新版v4.2相对v.4.0.2比较，明文类名已混淆.</h5><blockquote>
 <p><a target="_blank" rel="noopener" href="https://www.charlesproxy.com/assets/release/4.2/charles-proxy-4.2-win64.msi">https://www.charlesproxy.com/assets/release/4.2/charles-proxy-4.2-win64.msi</a></p>
@@ -571,53 +564,40 @@ idone@AY1402261427509974f2Z:~$
 </blockquote>
 <h5 id="反编译为源码后-找关键点的分析流程"><a href="#反编译为源码后-找关键点的分析流程" class="headerlink" title="反编译为源码后,找关键点的分析流程:"></a>反编译为源码后,找关键点的分析流程:</h5><h6 id="这里414试一试另外一种更简单的方法"><a href="#这里414试一试另外一种更简单的方法" class="headerlink" title="这里414试一试另外一种更简单的方法:"></a>这里414试一试另外一种更简单的方法:</h6><blockquote>
 <ol>
-<li>在com.xk72.charles.gui.SplashWindow.java里找到<br>public void showRegistrationStatus()函数方法;</li>
-</ol>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">showRegistrationStatus</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (WNzU.OjEP()) &#123;</span><br><span class="line">            <span class="built_in">this</span>.showStatus(<span class="string">&quot;Registered to: &quot;</span> + WNzU.DZZn());</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">this</span>.showSharewareStatus();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<ol start="2">
+<li>在com.xk72.charles.gui.SplashWindow.java里找到<br>public void showRegistrationStatus()函数方法;<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">showRegistrationStatus</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (WNzU.OjEP()) &#123;</span><br><span class="line">            <span class="built_in">this</span>.showStatus(<span class="string">&quot;Registered to: &quot;</span> + WNzU.DZZn());</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">this</span>.showSharewareStatus();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
 <li>在if()条件里的,是否注册成功 WNzU.OjEP() 函数和 “Registered to: “ 后面的注册给谁的WNzU.DZZn() 函数,都来自 import com.xk72.charles.WNzU 类;</li>
 <li>在com.xk72.charles.WNzU 就是关键类。修改掉上面两个函数即可。</li>
 </ol>
-<blockquote>
 <p>hook掉public static boolean x1()和public static java.lang.String x3()两个方法函数就可以了,当然最好public修饰的都hook掉;</p>
 </blockquote>
 <h5 id="只需要在用javassist时-设置这一句就可以将破解好的class类文件就会dump出来"><a href="#只需要在用javassist时-设置这一句就可以将破解好的class类文件就会dump出来" class="headerlink" title="只需要在用javassist时,设置这一句就可以将破解好的class类文件就会dump出来"></a>只需要在用javassist时,设置这一句就可以将破解好的class类文件就会dump出来</h5><blockquote>
 <p>CtClass.debugDump = “./charles-bs-cr”;</p>
 </blockquote>
 <hr>
-<h2 id="Charles-v4-1-4版本分析记录"><a href="#Charles-v4-1-4版本分析记录" class="headerlink" title="Charles v4.1.4版本分析记录"></a><strong>Charles v4.1.4版本分析记录</strong></h2><p>–by B.S.</p>
+<h2 id="Charles-v4-1-4版本分析记录"><a href="#Charles-v4-1-4版本分析记录" class="headerlink" title="Charles v4.1.4版本分析记录"></a><strong>Charles v4.1.4版本分析记录</strong></h2><p>—by B.S.</p>
 <p>July 18, 2017 5:25 PM</p>
 <h5 id="最新版v4-1-4相对v-4-0-2比较，明文类名已混淆"><a href="#最新版v4-1-4相对v-4-0-2比较，明文类名已混淆" class="headerlink" title="最新版v4.1.4相对v.4.0.2比较，明文类名已混淆."></a>最新版v4.1.4相对v.4.0.2比较，明文类名已混淆.</h5><h5 id="反编译为源码后-找关键点的分析流程-1"><a href="#反编译为源码后-找关键点的分析流程-1" class="headerlink" title="反编译为源码后,找关键点的分析流程:"></a>反编译为源码后,找关键点的分析流程:</h5><h6 id="这里414试一试另外一种更简单的方法-1"><a href="#这里414试一试另外一种更简单的方法-1" class="headerlink" title="这里414试一试另外一种更简单的方法:"></a>这里414试一试另外一种更简单的方法:</h6><blockquote>
 <ol>
-<li>在com.xk72.charles.gui.SplashWindow.java里找到<br>public void showRegistrationStatus()函数方法;</li>
-</ol>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">showRegistrationStatus</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (gIbD.xUFT()) &#123;</span><br><span class="line">        <span class="built_in">this</span>.showStatus(<span class="string">&quot;Registered to: &quot;</span> + gIbD.PcqR());</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">this</span>.showSharewareStatus();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="2">
+<li>在com.xk72.charles.gui.SplashWindow.java里找到<br>public void showRegistrationStatus()函数方法;<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">showRegistrationStatus</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (gIbD.xUFT()) &#123;</span><br><span class="line">        <span class="built_in">this</span>.showStatus(<span class="string">&quot;Registered to: &quot;</span> + gIbD.PcqR());</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">this</span>.showSharewareStatus();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 <li>在if()条件里的,是否注册成功gIbD.xUFT()函数和”Registered to: “后面的注册给谁的gIbD.PcqR()函数,都来自import com.xk72.charles.gIbD类</li>
 <li>在com.xk72.charles.gIbD就是关键类。修改掉上面两个函数即可。</li>
 </ol>
-<blockquote>
 <p>hook掉public static boolean x1()和public static java.lang.String x3()两个方法函数就可以了,当然最好public修饰的都hook掉;</p>
 </blockquote>
 <h5 id="只需要在用javassist时-设置这一句就可以将破解好的class类文件就会dump出来-1"><a href="#只需要在用javassist时-设置这一句就可以将破解好的class类文件就会dump出来-1" class="headerlink" title="只需要在用javassist时,设置这一句就可以将破解好的class类文件就会dump出来"></a>只需要在用javassist时,设置这一句就可以将破解好的class类文件就会dump出来</h5><blockquote>
 <p>CtClass.debugDump = “./charles-bs-cr”;</p>
 </blockquote>
 <hr>
-<h2 id="Charles-v4-1-3版本分析记录"><a href="#Charles-v4-1-3版本分析记录" class="headerlink" title="Charles v4.1.3版本分析记录"></a><strong>Charles v4.1.3版本分析记录</strong></h2><p>–by B.S.</p>
+<h2 id="Charles-v4-1-3版本分析记录"><a href="#Charles-v4-1-3版本分析记录" class="headerlink" title="Charles v4.1.3版本分析记录"></a><strong>Charles v4.1.3版本分析记录</strong></h2><p>—by B.S.</p>
 <p>6/27/2017 2:07:52 PM </p>
 <h5 id="最新版v4-1-3相对v-4-0-2比较，明文类名已混淆"><a href="#最新版v4-1-3相对v-4-0-2比较，明文类名已混淆" class="headerlink" title="最新版v4.1.3相对v.4.0.2比较，明文类名已混淆."></a>最新版v4.1.3相对v.4.0.2比较，明文类名已混淆.</h5><h5 id="反编译为源码后-找关键点的分析流程-2"><a href="#反编译为源码后-找关键点的分析流程-2" class="headerlink" title="反编译为源码后,找关键点的分析流程:"></a>反编译为源码后,找关键点的分析流程:</h5><blockquote>
 <ol>
 <li>在com\xk72\charles\gui\frames\RegisterFrame.java里找到this.bRegister.addActionListener导入的类import com.xk72.charles.gui.frames.NvMh;</li>
 <li>在com.xk72.charles.gui.frames.NvMh里找到if (object2 != null) 使他永久为null的函数导入的类import com.xk72.charles.psPJ;</li>
 <li>在com.xk72.charles.psPJ里就是关键类。分析关键点HOOK。</li>
-<li>用javap -public psPj.class查看给外部类调用的公有函数方法如下:</li>
+<li>用javap -public psPj.class查看给外部类调用的公有函数方法如下:<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">class</span> <span class="title class_">com</span>.xk72.charles.psPJ &#123;</span><br><span class="line">  <span class="keyword">public</span> com.xk72.charles.psPJ();</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">qIvM</span><span class="params">()</span>;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">mLFE</span><span class="params">()</span>;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> java.lang.String <span class="title function_">tCiz</span><span class="params">()</span>;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> java.lang.String <span class="title function_">qIvM</span><span class="params">(java.lang.String, java.lang.String)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+hook掉public static boolean x1()和public static java.lang.String x3()两个方法函数就可以了,当然最好public修饰的都hook掉;</li>
 </ol>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">class</span> <span class="title class_">com</span>.xk72.charles.psPJ &#123;</span><br><span class="line">  <span class="keyword">public</span> com.xk72.charles.psPJ();</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">qIvM</span><span class="params">()</span>;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">mLFE</span><span class="params">()</span>;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> java.lang.String <span class="title function_">tCiz</span><span class="params">()</span>;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> java.lang.String <span class="title function_">qIvM</span><span class="params">(java.lang.String, java.lang.String)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>hook掉public static boolean x1()和public static java.lang.String x3()两个方法函数就可以了,当然最好public修饰的都hook掉;</p>
 </blockquote>
 <ul>
 <li><p><strong>只需要在用javassist时,设置这一句就可以将破解好的class类文件dump出来然后打包回原来的charles.jar里,破解文件制作完成.</strong></p>
@@ -629,7 +609,7 @@ idone@AY1402261427509974f2Z:~$
 </li>
 </ul>
 <hr>
-<h2 id="Charles-v4-1-2版本分析记录"><a href="#Charles-v4-1-2版本分析记录" class="headerlink" title="Charles v4.1.2版本分析记录"></a><strong>Charles v4.1.2版本分析记录</strong></h2><p>–by B.S.</p>
+<h2 id="Charles-v4-1-2版本分析记录"><a href="#Charles-v4-1-2版本分析记录" class="headerlink" title="Charles v4.1.2版本分析记录"></a><strong>Charles v4.1.2版本分析记录</strong></h2><p>—by B.S.</p>
 <p>5/23/2017 1:32:17 PM</p>
 <h5 id="最新版v4-1-2相对v-4-0-2比较，明文类名已混淆"><a href="#最新版v4-1-2相对v-4-0-2比较，明文类名已混淆" class="headerlink" title="最新版v4.1.2相对v.4.0.2比较，明文类名已混淆."></a>最新版v4.1.2相对v.4.0.2比较，明文类名已混淆.</h5><h5 id="反编译为源码后-找关键点的分析流程-3"><a href="#反编译为源码后-找关键点的分析流程-3" class="headerlink" title="反编译为源码后,找关键点的分析流程:"></a>反编译为源码后,找关键点的分析流程:</h5><blockquote>
 <ol>
@@ -639,7 +619,7 @@ idone@AY1402261427509974f2Z:~$
 </ol>
 </blockquote>
 <hr>
-<h2 id="Charles-v4-1-1版本分析记录"><a href="#Charles-v4-1-1版本分析记录" class="headerlink" title="Charles v4.1.1版本分析记录"></a><strong>Charles v4.1.1版本分析记录</strong></h2><p>–by B.S.</p>
+<h2 id="Charles-v4-1-1版本分析记录"><a href="#Charles-v4-1-1版本分析记录" class="headerlink" title="Charles v4.1.1版本分析记录"></a><strong>Charles v4.1.1版本分析记录</strong></h2><p>—by B.S.</p>
 <p>5/5/2017 8:30:00 AM</p>
 <h5 id="最新版v4-1-1相对v-4-0-2比较，明文类名已混淆"><a href="#最新版v4-1-1相对v-4-0-2比较，明文类名已混淆" class="headerlink" title="最新版v4.1.1相对v.4.0.2比较，明文类名已混淆."></a>最新版v4.1.1相对v.4.0.2比较，明文类名已混淆.</h5><h5 id="反编译为源码后-找关键点的分析流程-4"><a href="#反编译为源码后-找关键点的分析流程-4" class="headerlink" title="反编译为源码后,找关键点的分析流程:"></a>反编译为源码后,找关键点的分析流程:</h5><blockquote>
 <ol>
@@ -909,6 +889,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">netsh</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">命令设置IP和DNS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">C#</a>
               </li>
              
@@ -1021,51 +1009,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">netsh</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">命令设置IP和DNS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">logcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">root</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Google Pixel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">macOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssh</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">pbcopy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">authorized_keys</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">远程登录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1097,35 +1041,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ribbon</a>
+                <a href="javascript:void(0)" class="js-tag color1">macOS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">ssh</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">绶带</a>
+                <a href="javascript:void(0)" class="js-tag color2">pbcopy</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">签名验证</a>
+                <a href="javascript:void(0)" class="js-tag color1">authorized_keys</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">去广告</a>
+                <a href="javascript:void(0)" class="js-tag color5">远程登录</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">signatures</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">46003</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">egame</a>
+                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1158,6 +1094,42 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nonpie</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Ribbon</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">绶带</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">签名验证</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">去广告</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">logcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">signatures</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">46003</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">egame</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1197,6 +1169,26 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">去签名验证</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">so签名验证</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">native</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">root</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Google Pixel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">DEKE TV</a>
               </li>
              
@@ -1222,18 +1214,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">base64</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">去签名验证</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">so签名验证</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">native</a>
               </li>
             
             <div class="clearfix"></div>

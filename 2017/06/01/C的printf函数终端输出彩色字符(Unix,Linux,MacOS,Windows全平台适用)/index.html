@@ -234,6 +234,7 @@
 <p>在 ANSI 兼容终端（例如 xterm、rxvt、konsole 等）里， 可以用彩色显示文本而不仅仅是黑白。但是我们自己编写的程序能否输出彩色的字符呢？当然答案是肯定的。下面的语句就输出高亮的黑色背景的绿色字。</p>
 <p>printf(“\033[1;40;32m%s\033[0m”, “Hello,PrintfColor.\n”);<br>\033 声明了转义序列的开始，然后是 [ 开始定义颜色。后面的 1 定义了高亮显示字符。然后是背景颜色，这里面是40，表示黑色背景。接着是前景颜色，这里面是32，表示绿色。我们用 \033[0m 关闭转义序列， \033[0m 是终端默认颜色。</p>
 <p>通过上面的介绍，就知道了如何输出彩色字符了。因此，我就不再多说了。下面是对于彩色字符颜色的一些定义：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -242,7 +243,8 @@
 <th>颜色</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>30</td>
 <td>40</td>
 <td>黑色</td>
@@ -282,7 +284,10 @@
 <td>47</td>
 <td>白色</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -290,7 +295,8 @@
 <th>意义</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>0</td>
 <td>终端默认设置</td>
 </tr>
@@ -314,10 +320,10 @@
 <td>8</td>
 <td>不可见</td>
 </tr>
-</tbody></table>
-<p>下面给出了一个C语言的示例：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> attr[] = &#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">8</span>&#125;;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> fore[] = &#123;<span class="number">30</span>,<span class="number">31</span>,<span class="number">32</span>,<span class="number">33</span>,<span class="number">34</span>,<span class="number">35</span>,<span class="number">36</span>,<span class="number">37</span>&#125;;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> back[] = &#123;<span class="number">40</span>,<span class="number">41</span>,<span class="number">42</span>,<span class="number">43</span>,<span class="number">44</span>,<span class="number">45</span>,<span class="number">46</span>,<span class="number">47</span>&#125;;</span><br><span class="line">    <span class="type">int</span> adx,fdx,bdx;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(bdx = <span class="number">0</span>; bdx &lt; <span class="keyword">sizeof</span>(back); bdx++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(fdx = <span class="number">0</span>; fdx &lt; <span class="keyword">sizeof</span>(fore); fdx++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(adx = <span class="number">0</span>; adx &lt; <span class="keyword">sizeof</span>(attr); adx++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;\033[%d;%d;%dmHello,PrintfColor!!!\033[0m&quot;</span>,</span><br><span class="line">                    attr[adx],fore[fdx],back[bdx]);</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;&lt;==attr=%d,fore=%d,back=%d\n&quot;</span>,</span><br><span class="line">                    attr[adx],fore[fdx],back[bdx]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+</tbody>
+</table>
+</div>
+<p>下面给出了一个C语言的示例：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> attr[] = &#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">8</span>&#125;;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> fore[] = &#123;<span class="number">30</span>,<span class="number">31</span>,<span class="number">32</span>,<span class="number">33</span>,<span class="number">34</span>,<span class="number">35</span>,<span class="number">36</span>,<span class="number">37</span>&#125;;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">char</span> back[] = &#123;<span class="number">40</span>,<span class="number">41</span>,<span class="number">42</span>,<span class="number">43</span>,<span class="number">44</span>,<span class="number">45</span>,<span class="number">46</span>,<span class="number">47</span>&#125;;</span><br><span class="line">    <span class="type">int</span> adx,fdx,bdx;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(bdx = <span class="number">0</span>; bdx &lt; <span class="keyword">sizeof</span>(back); bdx++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(fdx = <span class="number">0</span>; fdx &lt; <span class="keyword">sizeof</span>(fore); fdx++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(adx = <span class="number">0</span>; adx &lt; <span class="keyword">sizeof</span>(attr); adx++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;\033[%d;%d;%dmHello,PrintfColor!!!\033[0m&quot;</span>,</span><br><span class="line">                    attr[adx],fore[fdx],back[bdx]);</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;&lt;==attr=%d,fore=%d,back=%d\n&quot;</span>,</span><br><span class="line">                    attr[adx],fore[fdx],back[bdx]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <hr>
 
       
@@ -688,6 +694,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">netsh</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">命令设置IP和DNS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">C#</a>
               </li>
              
@@ -800,51 +814,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">netsh</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">命令设置IP和DNS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">logcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">root</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Google Pixel</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">macOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ssh</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">pbcopy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">authorized_keys</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">远程登录</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -876,35 +846,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Ribbon</a>
+                <a href="javascript:void(0)" class="js-tag color1">macOS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">ssh</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">绶带</a>
+                <a href="javascript:void(0)" class="js-tag color2">pbcopy</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">签名验证</a>
+                <a href="javascript:void(0)" class="js-tag color1">authorized_keys</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">去广告</a>
+                <a href="javascript:void(0)" class="js-tag color5">远程登录</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">signatures</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">46003</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">egame</a>
+                <a href="javascript:void(0)" class="js-tag color2">Ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -937,6 +899,42 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nonpie</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Ribbon</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">绶带</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">签名验证</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">去广告</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">logcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">signatures</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">46003</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">egame</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -976,6 +974,26 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">去签名验证</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">so签名验证</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">native</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">root</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Google Pixel</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">DEKE TV</a>
               </li>
              
@@ -1001,18 +1019,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">base64</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">去签名验证</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">so签名验证</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">native</a>
               </li>
             
             <div class="clearfix"></div>
